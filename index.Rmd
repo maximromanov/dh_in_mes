@@ -23,7 +23,7 @@ This is a collection of relevant materials for a DH course at Afrika-Asien Insti
 * Course: 57-525 S: Digital Humanities in Middle East Studies --- `Introduction to Algorithmic Analysis` (WS2021)
 * Meeting time: Mo 12:00-14:00
 * Meeting place: due to COVID, all meetings will be held online via Zoom
-* Meeting link: *shared via Slack*
+* Meeting link: *shared via Slack*; other details are available via STiNE
 * Instructor: Dr. Maxim Romanov, [maxim.romanov@uni-hamburg.de](maxim.romanov@uni-hamburg.de)
 * Language of instruction: English
 * Office hours: Mo 14:00-15:00 (on Zoom)
@@ -42,38 +42,38 @@ This is a collection of relevant materials for a DH course at Afrika-Asien Insti
 * Meeting time: Tu 09:00-10:30
 * Meeting place: Seminarraum Geschichte 3 Hauptgebäude, 2.Stock, Stiege 9; due to COVID, all meetings will be held online
 
-# Aims, contents and method of the course
+## Aims, contents and method of the course
 
 The course is a practical introduction to a series of digital tools and techniques that are relevant for analytical work both inside and outside of academia. The course will cover such topics as sustainable academic/analytical writing, organization of research workflow, data collection and structuring, as well as basics of text analysis, mapping, and social network analysis. In the course of these units, you will start working with Python, one of the most prominent programming languages used now by humanists and data scientists alike (no prior programming experience is required, but beneficial). The assessment will be based on your in-class participation, timely submission of homework assignments, and the final project, where you will be encouraged to work with data from your disciplinary domain.
 
 Personal computers are required both for in-class work and for your homework (running full versions of either Windows, MacOS, or Linux; not tablets!).
 
-# Course Evaluation 
+## Course Evaluation 
 
 Course evaluation will be a combination of in-class participation (30%), weekly homework assignments (50%), and the final project (20%). 
 
-# Class Participation
+## Class Participation
 
 Each class session will consist in large part of practical hands-on exercises led by the instructor. BRING YOUR LAPTOP! We will accommodate whatever operating system you use (Windows, Mac, Linux), but it should be a laptop rather than a tablet. Don’t forget that asking for help counts as participation!
 
-# Homework
+## Homework
 
 Just as in research and real life, collaboration is a very good way to learn and is therefore encouraged. If you need help with any assignment, you are welcome to ask a fellow student. If you do work together on homework assignments, then when you submit it please include a brief note (just a sentence or two) to indicate who did what.
 
 **NB:** On submitting homework, see below.
 
-# Final Project
+## Final Project
 
-The final project is your website built in Jekyll and hosted on Github. Your website must include blogposts about all homework assignments. You are most welcome to work on this in groups, but everybody is required to submit his/her own course website.
+Final project will be discussed later. You will have an option to build on what we will be doing in class, but you are most encouraged to pick a topic of your own. The best option will be to work on something relevant to your field of study, your term paper or your thesis.
 
-# Study materials:
+## Study materials:
 
 Most study materials will be distributed by the instructor.
 * Zelle, John M. 2016. *Python Programming: An Introduction to Computer Science*. 3rd edition. Portland, Oregon: FRANKLIN BEEDLE & ASSOC.
 * “Programming Historian” offers a number of tutorials for aspiring digital humanists. These will be assigned to you as reference materials. You also are encouraged to explore those tutorials that are not included into the course. <https://programminghistorian.org/lessons/>
 * Paul Vierthaler's “Hacking the Humanities Tutorials” (Python), <https://www.youtube.com/playlist?list=PL6kqrM2i6BPIpEF5yHPNkYhjHm-FYWh17>
 
-# Software, Tools, & Technologies:
+## Software, Tools, & Technologies:
 
 The following is the list of software, applications and packages that we will be using in the course. Make sure to have them installed by the class when we are supposed to use them.
 
@@ -89,7 +89,7 @@ The following is the list of software, applications and packages that we will be
 * [TEI] XML, csv/tsv, json, yml, etc.
 * Gephi (<https://gephi.org/>)
 
-# Submitting Homework:
+## Submitting Homework:
 
 * Homework assignments are to be submitted by the beginning of the next class;
 * For the first few classes you must email them to the instructor (as attachments)
@@ -97,7 +97,7 @@ The following is the list of software, applications and packages that we will be
 	*  In the subject of your email, please, use the following format: `CourseID-LessonID-HW-Lastname-matriculationNumber`, for example, if I were to submit homework for the first lesson, my subject header would look like: `070112-L01-HW-Romanov-12435687`.
 * DH is a collaborative field, so you are most welcome to work on your homework assignments in groups, however, you must still submit it. That is, if a groups of three works on one assignment, there must be three separate submissions: either emailed from each member’s email and published at each member’s github page.  
 
-# Schedule
+## Schedule
 
 **Location**: Online
 
@@ -116,7 +116,7 @@ The following is the list of software, applications and packages that we will be
 * 13 - Mo, 17. Jan. 2022 - 12:00-14:00
 * 14 - Mo, 24. Jan. 2022 - 12:00-14:00
 
-# Lesson Topics (subject to modification)
+## Lesson Topics (subject to modification)
 
 - **[ #01 ]** Citation Management and Academic Writing I - with Zotero and MS Word or Open Office
 - **[ #02 ]** “Off with the Interface!” Getting to know the command line
