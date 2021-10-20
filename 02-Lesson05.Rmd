@@ -1,0 +1,268 @@
+# Lesson 05
+
+## Constructing Robust Searches
+
+## `regular expressions`
+
+In this lesson we will learn about `regular expressions`, an important semi-language for constructing complex searches. Any text editor that supports `regular expressions` will work fine for this lesson, but let's all use [Sublime Text](https://www.sublimetext.com/) (both Mac and Windows).
+
+Let's use the following practicum files (`Right Click > Save File as ...`) for the in-class practice: 1) [version for training](https://raw.githubusercontent.com/maximromanov/re_tutorial/master/re_practucum_text_western.txt); 2) [version with answers](https://raw.githubusercontent.com/maximromanov/re_tutorial/master/re_practucum_text_western_answers.txt).
+
+Open the practicum file in `Sublime Text`.
+
+### What are `regular expressions`?**
+
+- very small language for describing textual patterns
+- not a programming language, yet a part of each one
+- incredibly powerful tool for find/replace operations
+- old (1950s-60s)
+- “arcane art”
+- ubiquitous
+
+![**Source**: <https://xkcd.com/208/>](https://imgs.xkcd.com/comics/regular_expressions.png)
+
+### What would we use `regular Expressions` for?
+
+**to search**:
+
+  * all spelling variations of the same word:
+    - Österreich, Osterreich or Oesterreich..
+  * words of specific morphological patterns:
+    - [*search*], [*search*]er, [*search*]ed, [*search*]ing, [*search*]es: all derivatives from the same root/word 
+  * entities that may be referred to differently: 
+    - references to Vienna in different languages? (Wien, Vienna, Вена, فيينا, etc.) 
+    - references to Austria? (Vienna, Graz, Linz, Salzburg, Innsbruck, etc.)
+  * references to concepts:
+    - references to education in biographies: "s/he graduated from", "s/he studied", etc. 
+
+**to search and replace**:
+
+  * reformat “dirty”/inconsistent data (OCR output, for example)
+
+**to tag**:
+
+  * make texts navigable and more readable
+  * tag information relevant to your research 
+
+**and many other uses…**
+
+### The Basics 
+
+A *regular expression* (can be shortened as *regex* or *regexp*) is a sequence of symbols and characters expressing a string or pattern to be searched for within a longer piece of text. In this sequence there are characters that match themselves (most characters) and there are characters that activate special functionality (*special characters*). For example: 
+
+- `Vienna` is a regular expression that matches “Vienna”;
+- “`Vienna`” is a pattern;
+
+**Question:** if the pattern `at` matches strings with “a” followed by “t”, which of the following strings will it match?[^Q1]
+
+[]() |     |      |       |     |        |
+-----|-----|------|-------|-----|--------|
+at   | hat | that | atlas | aft | Athens |
+
+[^Q1]: Matches are highlighted: **at**, h**at**, th**at**, **at**las, aft, Athens.
+
+### Characters *&* Special Characters
+
+- most characters match themselves.
+- matching is case sensitive.
+- special characters: `()^${}[]\|.+?*`. 
+- to match a special character in your text, you need to “escape it”, i.e. precede it with “\” in your pattern: 
+	– `Osterreich [sic]` **does not* match “Osterreich [sic]”.
+	– `Osterreich \[sic\]` matches “Osterreich [sic]”.
+	
+
+### Character Classes: `[]` 
+
+- characters within `[]` are choices for a single-character match; think of this as a type of **either or**.
+- the order within `[]` is unimportant.
+	- `x[01]` matches “x0” and “x1”.
+	- `[10][23]` matches “02”, “03”, “12” and “13”.
+- initial `^` negates the class: 
+	– `[^45]` matches any character except 4 or 5.
+
+**Question:** if the pattern `[ch]at` matches strings with “c” or “h” followed by “a”, and then by “t”, which of the following strings will this regular expression match?[^Q2]:
+
+[]() |    |      |     |     |      |
+-----|----|------|-----|-----|-------
+that | at | chat | cat | fat | phat |
+
+[^Q2]: Matches are highlighted: t**hat**, at, c**hat**, **cat**, fat, p**hat**.
+
+### Ranges (within classes) 
+
+- Ranges define sets of characters within a class. 
+	– `[1-9]` matches any number in the range from 1 to 9 (i.e., any non-zero digit)
+	– `[a-zA-Z]` matches any letter of the English alphabet (ranges for specific languages will vary)
+	– `[12][0-9]` matches numbers between 10 and 29 (i.e., the first digit is either 1 or 2; the second one---any digit) 
+
+**Ranges shortcuts**
+
+Shortcut | Name | Equivalent Class  
+:---------|:------|:----------------
+`\d` | digit       | `[0-9]`  
+`\D` | not digit   | `[^0-9]`  
+`\w` | word        | `[a-zA-Z0-9_]` (*actually more*) 
+`\W` | not word    | `[^a-zA-Z0-9_]` (*actually more*)
+`\s` | space       | `[\t\n\r\f\v ]`  
+`\S` | not space   | `[^\t\n\r\f\v ]`  
+`.`  | everything  | `[^\n]` (depends on mode)  
+
+**Question:** if the pattern `/\d\d\d[- ]\d\d\d\d/` matches strings with a group of three digits, followed by a space or a dash, and then---by another group of four digits, which of the following strings will this regular expression match?[^Q3]:
+
+
+[]() |    |      |     |     |      |
+-----|----|------|-----|-----|-------
+501-1234 | 234 1252 | 652.2648 | 713-342-7452 | PE6-5000 | 653-6464x256 |
+
+[^Q3]: Matches are highlighted: **501-1234**, **234 1252**, 652.2648, 713-**342-7452**, PE6-5000, **653-6464**x256.
+
+### Repeaters
+
+- these special characters indicate that the preceding element of the pattern can be repeated in a particular manner: 
+	- `runs?` matches “runs” or “run”
+	- `1\d*` matches any number beginning with “1”
+
+repeater | count 
+:--------|:------
+`?`        | zero or one
+`+`        | one or more
+`*`        | zero or more
+`{n}`      | exactly *n* times
+`{n,m}`    | between *n* and *m* times
+`{,m}`     | no more than *m* times
+`{n,}`     | no less than *n* times
+
+**Question:** We have several patterns, which strings will they match?[^Q4]
+
+Patterns  |           |               |           |           |       
+:---------|:----------|:--------------|:----------|:----------|:----------
+A) `ar?t` | B) `ar*t` |  C) `a[fr]?t` | D) `ar+t` | E) `a.*t` | F) `a.+t`
+
+Strings |          |             |
+:-------|:---------|:------------|:----------
+1) “at” | 2) “art” | 3) “arrrrt” | 4) “aft” 
+
+[^Q4]: `ar?t` matches “at” and “art” but not “arrrt”; `a[fr]?t` matches “at”, “art”, and “aft”; `ar*t` matches “at”, “art”, and “arrrrt”; `ar+t` matches “art” and “arrrt” but not “at”; `a.*t` matches anything with an ‘a’ eventually followed by a ‘t’.
+
+### Lab: *Intro*  (in the *practicum file*).
+
+![](./images/regex01.png)
+
+### Anchoring
+
+- anchors match *between* characters.
+- anchors are used to assert that the characters you’re matching must appear in a certain place.
+- for example, `\bat\b` matches “**at** work” but not “b**at**ch”.
+
+Anchor | matches...
+:------|:----------
+`^`    | the beginning of a line or a string
+`$`    | the end of a line of a string
+`\b`   | *word boundary*
+`\B`   | *not word boundary*
+
+### Alternation: “|” (*pipe*)
+
+- in `regex`, “|” means “or”
+  - on the US keyboard layout, this character is in the vicinity of “Enter” and “Right Shift”.
+- you can put a full expression to the left of the *pipe* and another full expression to the right, so that either one could match:
+  - `seek|seeks|sought` matches “seek”, “seeks”, or “sought”. 
+  - `seeks?|sought` matches “seek”, “seeks”, or “sought”. 
+
+### Grouping 
+
+- everything within `( … )` is grouped into a single element for the purposes of repetition or alternation:
+  - the expression `(la)+` matches “la”, “lala”, “lalalala” (but not “all”). 
+  - `schema(ta)?` matches “schema” and “schemata” but not “schematic”. 
+- grouping example: what regular expression would match “eat”, “eats”, “ate” and “eaten”? 
+  - `eat(s|en)?|ate`
+  - **NB**: we can make it more precise by adding word boundary anchors to exclude what we do not need, like, for example, words “sate” and “eating”: `\b(eat(s|en)?|ate)\b`.
+  
+
+### Lab: Part I (in the *practicum file*).
+
+![](./images/regex02.png)
+
+### Replacement
+
+- `regular expressions` are most often used for search/replace operations
+- in *text editors*:
+  - *Search Window*: search pattern
+  - *Replace Window*: replacement pattern
+  
+### Capture
+
+- during searches, `( … )` groups capture patterns for use in replacement.
+- special variables `\1`, `\2`, `\3`, etc. contain the capture (in some text editors: `$1`, `$2`, `$3`).
+- if we apply `(\d\d\d)-(\d\d\d\d)` to “123-4567”:
+  – `\1` (or, `$1`) captures “123”
+  – `\2` (or, `$2`) captures “4567”
+
+### Capture *&* Reformat
+
+- How to convert “Schwarzenegger, Arnold” to “Arnold Schwarzenegger”?
+  - Search: `(\w+), (\w+)`
+  - Replace (a): `\2 \1`
+  - Replace (b): `$2 $1`
+- **NB:** (!) Before hitting “Replace”, make sure that your match does not catch what you do NOT want to change
+
+### Lab: Part II (in the *practicum file*).
+
+![](./images/regex02.png)
+
+- Finding toponyms (placenames):
+  - *very simple:* Construct regular expressions that find references to *all* Austrian cities.[^QII1]
+  - *a bit tricky*: Construct regular expression that finds only cities from 1) Lower Austria; 2) Salzburg.[^QII2]
+
+[^QII1]: *Solution*: Simply connect all toponyms from the list with a pipe symbol “|”
+[^QII2]: *Solution 1*: `\b([\w ]+) \(Lower Austria\)` --- for Lower Austria; `\b([\w ]+) \(Salzburg\)` --- for Salzburg; *Solution 2 (cooler):* `\b([\w ]+)(?=( \(Lower Austria\)))` --- for Lower Austria; `\b([\w ]+)(?=( \(Salzburg\)))` --- for Salzburg.
+
+### *To keep in mind*
+
+- `regular expressions` are “greedy,” i.e. they tend to catch more than you may need. Always test!
+- test before applying! (In text editors Ctrl+Z (Win), Cmd+Z (Mac) can help to revert changes)
+- check the language/application-specific documentation: some common shortcuts are not universal (for example, some languages/applications use `\1` to refer to groups, while others use `$1` for the same purpose).
+
+## Class materials
+
+* Presentation with all the slides:
+	- [PDF](https://github.com/maximromanov/re_tutorial/blob/master/RegularExpressions_Western.pdf?raw=true) (Windows PowerPoint Format)
+
+## Digital materials
+
+* Online references:
+	- <http://www.regular-expressions.info/>
+	- <http://ruby.bastardsbook.com/chapters/regexes/>
+* Interactive tutorial: <http://regexone.com/>
+* Cheat Sheets:
+	- <http://krijnhoetmer.nl/stuff/regex/cheat-sheet/>
+	- <http://www.rexegg.com/regex-quickstart.html>
+
+
+## Reference Materials
+
+* Goyvaerts, J. and Levithan, S. (2012). *Regular Expressions Cookbook*. Second edition. Beijing: O’Reilly. [Amazon Link](http://www.amazon.com/Regular-Expressions-Cookbook-Jan-Goyvaerts/dp/1449319432/).
+* Friedl, J. E. F. (2006). *Mastering Regular Expressions*. 3rd ed. Sebastapol, CA: O’Reilly. [Amazon Link](http://www.amazon.com/Mastering-Regular-Expressions-Jeffrey-Friedl/dp/0596528124/)
+
+(I will share PDFs of these books via Slack; I strongly recommend to flip through the first book just to get an idea of what kind of things one can do with regular expressions.)
+
+## Homework{#HWL05}
+
+- Finish the practicum; push your answers to your github repository.
+
+**Python**
+
+- Work through Chapters 6 and 7 of Zelle's book; read chapters carefully; work through the chapter summaries and exercises; complete the following programming exercises: 1-8 in Chapter 6; 1-9 in Chapter 7;
+- Watch [Dr. Vierthaler's videos](https://www.youtube.com/playlist?list=PL6kqrM2i6BPIpEF5yHPNkYhjHm-FYWh17):
+	- Episode 09: Dictionaries
+	- Episode 10: Putting it Together (Analyses)
+	- Episode 11: Errors (reading and handling)
+- **Note:** the sequences are somewhat different in Zelle's textbook and Vierthaler's videos. I would recommend you to always check Vierthaler's videos and also check videos which cover topics that you read about in Zelle's book.
+
+**Submitting homework:**
+
+* Homework assignment must be submitted by the beginning of the next class;
+* Now, that you know how to use GitHub, you will be submitting your homework pushing it to github:
+  * Create a relevant subfoler in your `HW070172` repository and place your HW files there; push them to your GitHub account;
+	* Email me the link to your repository with a short message (Something like: *I have completed homework for Lesson 3, which is uploaded to my repository ... in subfolder `L03`*)
+	* In the subject of your email, please, add the following: `CCXXXXX-LXX-HW-YourLastName-YourMatriculationNumber`, where `CCXXXXX` is the numeric code of the course; `LXX` is the lesson for which the homework is being submitted; `YourLastName` is your last name, and `YourMatriculationNumber` is your matriculation number.

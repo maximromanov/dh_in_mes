@@ -1,2 +1,15 @@
-# dh_in_mes
-Toward a Handbook of DH methods for Middle Eastern Studies
+# To render book:
+
+bookdown::render_book('foo.Rmd', "bookdown::gitbook")
+
+
+# Settings:
+
+```
+bookdown::gitbook:
+  css: style.css
+  toc_depth: 1
+  
+```
+
+`toc_depth` can be added to modify the way TOC appears.

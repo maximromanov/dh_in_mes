@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>3 Lesson 03 | 070172-1 UE Methodological course - Introduction to DH: Tools &amp; Techniques (2020W) Memex Edition</title>
+  <meta name="description" content="This is a collection of relevant materials for the class ‘070172-1 UE Methodological course - Introduction to DH: Tools &amp; Techniques (2020W) Memex Edition,’ offered at the University of Vienna and taught by Maxim G. Romanov" />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="3 Lesson 03 | 070172-1 UE Methodological course - Introduction to DH: Tools &amp; Techniques (2020W) Memex Edition" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://maximromanov.github.io/univie2020/" />
+  
+  <meta property="og:description" content="This is a collection of relevant materials for the class ‘070172-1 UE Methodological course - Introduction to DH: Tools &amp; Techniques (2020W) Memex Edition,’ offered at the University of Vienna and taught by Maxim G. Romanov" />
+  <meta name="github-repo" content="maximromanov/univie2020" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="3 Lesson 03 | 070172-1 UE Methodological course - Introduction to DH: Tools &amp; Techniques (2020W) Memex Edition" />
+  
+  <meta name="twitter:description" content="This is a collection of relevant materials for the class ‘070172-1 UE Methodological course - Introduction to DH: Tools &amp; Techniques (2020W) Memex Edition,’ offered at the University of Vienna and taught by Maxim G. Romanov" />
+  
+
+<meta name="author" content="Maxim G. Romanov" />
+
+
+<meta name="date" content="2021-10-20" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="touch-icon.png" />
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="prev" href="lesson-02.html"/>
+<link rel="next" href="lesson-04.html"/>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<script src="libs/viz-1.8.2/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-1.0.6.1/grViz.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">DH Methods for Middle Eastern Studies: Toward A Handbook</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preliminaries</a></li>
+<li class="chapter" data-level="" data-path="memex-and-zettelkasten.html"><a href="memex-and-zettelkasten.html"><i class="fa fa-check"></i>Memex and Zettelkasten</a>
+<ul>
+<li class="chapter" data-level="" data-path="memex-and-zettelkasten.html"><a href="memex-and-zettelkasten.html#on-memex"><i class="fa fa-check"></i>On Memex</a></li>
+<li class="chapter" data-level="" data-path="memex-and-zettelkasten.html"><a href="memex-and-zettelkasten.html#on-zettelkasten"><i class="fa fa-check"></i>On Zettelkasten</a>
+<ul>
+<li><a href="memex-and-zettelkasten.html#niklas-luhmann-on-his-zettelkasten">Niklas Luhmann on his <em>Zettelkasten</em></a></li>
+<li><a href="memex-and-zettelkasten.html#others-on-luhmanns-zettelkasten">Others on Luhmann’s <em>Zettelkasten</em></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="work-plan.html"><a href="work-plan.html"><i class="fa fa-check"></i>Work Plan</a>
+<ul>
+<li class="chapter" data-level="" data-path="work-plan.html"><a href="work-plan.html#memex-building-cycle"><i class="fa fa-check"></i>Memex-Building Cycle</a></li>
+<li class="chapter" data-level="" data-path="work-plan.html"><a href="work-plan.html#research-cycle"><i class="fa fa-check"></i>Research Cycle</a>
+<ul>
+<li class="chapter" data-level="" data-path="work-plan.html"><a href="work-plan.html#building-trails"><i class="fa fa-check"></i>Building Trails</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="lesson-01.html"><a href="lesson-01.html"><i class="fa fa-check"></i><b>1</b> Lesson 01</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="lesson-01.html"><a href="lesson-01.html#bibliography-managers"><i class="fa fa-check"></i><b>1.1</b> Bibliography Managers</a></li>
+<li class="chapter" data-level="1.2" data-path="lesson-01.html"><a href="lesson-01.html#zotero"><i class="fa fa-check"></i><b>1.2</b> Zotero</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="lesson-01.html"><a href="lesson-01.html#getting-started"><i class="fa fa-check"></i><b>1.2.1</b> Getting Started</a></li>
+<li class="chapter" data-level="1.2.2" data-path="lesson-01.html"><a href="lesson-01.html#main-functionality"><i class="fa fa-check"></i><b>1.2.2</b> Main Functionality</a></li>
+<li class="chapter" data-level="1.2.3" data-path="lesson-01.html"><a href="lesson-01.html#additional-functionality-plug-ins"><i class="fa fa-check"></i><b>1.2.3</b> Additional Functionality: Plug-Ins</a></li>
+<li class="chapter" data-level="1.2.4" data-path="lesson-01.html"><a href="lesson-01.html#zotfile"><i class="fa fa-check"></i><b>1.2.4</b> Zotfile</a></li>
+<li class="chapter" data-level="1.2.5" data-path="lesson-01.html"><a href="lesson-01.html#better-bibtex-for-zotero"><i class="fa fa-check"></i><b>1.2.5</b> Better BibTeX for Zotero</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="lesson-01.html"><a href="lesson-01.html#HWL01"><i class="fa fa-check"></i><b>1.3</b> Homework</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="lesson-02.html"><a href="lesson-02.html"><i class="fa fa-check"></i><b>2</b> Lesson 02</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="lesson-02.html"><a href="lesson-02.html#command-line"><i class="fa fa-check"></i><b>2.1</b> Command Line</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="lesson-02.html"><a href="lesson-02.html#the-filesystem"><i class="fa fa-check"></i><b>2.1.1</b> The filesystem</a></li>
+<li class="chapter" data-level="2.1.2" data-path="lesson-02.html"><a href="lesson-02.html#getting-started-with-the-command-line"><i class="fa fa-check"></i><b>2.1.2</b> Getting started with the command line</a></li>
+<li class="chapter" data-level="2.1.3" data-path="lesson-02.html"><a href="lesson-02.html#components-of-the-command-line"><i class="fa fa-check"></i><b>2.1.3</b> Components of the command line</a></li>
+<li class="chapter" data-level="2.1.4" data-path="lesson-02.html"><a href="lesson-02.html#file-paths-and-path-notations"><i class="fa fa-check"></i><b>2.1.4</b> File paths and path notations</a></li>
+<li class="chapter" data-level="2.1.5" data-path="lesson-02.html"><a href="lesson-02.html#command-line-arguments"><i class="fa fa-check"></i><b>2.1.5</b> Command line arguments</a></li>
+<li class="chapter" data-level="2.1.6" data-path="lesson-02.html"><a href="lesson-02.html#more-commands"><i class="fa fa-check"></i><b>2.1.6</b> More commands</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="lesson-02.html"><a href="lesson-02.html#HWL02"><i class="fa fa-check"></i><b>2.2</b> Homework</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="lesson-03.html"><a href="lesson-03.html"><i class="fa fa-check"></i><b>3</b> Lesson 03</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="lesson-03.html"><a href="lesson-03.html#version-control-and-collaboration"><i class="fa fa-check"></i><b>3.1</b> Version Control and Collaboration</a></li>
+<li class="chapter" data-level="3.2" data-path="lesson-03.html"><a href="lesson-03.html#setting-up-git"><i class="fa fa-check"></i><b>3.2</b> Setting-up <code>git</code></a></li>
+<li class="chapter" data-level="3.3" data-path="lesson-03.html"><a href="lesson-03.html#general-git-workflow"><i class="fa fa-check"></i><b>3.3</b> General <code>git</code> workflow</a></li>
+<li class="chapter" data-level="3.4" data-path="lesson-03.html"><a href="lesson-03.html#main-git-commands"><i class="fa fa-check"></i><b>3.4</b> Main <code>git</code> Commands</a></li>
+<li class="chapter" data-level="3.5" data-path="lesson-03.html"><a href="lesson-03.html#some-useful-command-line-commands-to-remember"><i class="fa fa-check"></i><b>3.5</b> Some useful command line commands to remember</a></li>
+<li class="chapter" data-level="3.6" data-path="lesson-03.html"><a href="lesson-03.html#practice"><i class="fa fa-check"></i><b>3.6</b> Practice</a></li>
+<li class="chapter" data-level="3.7" data-path="lesson-03.html"><a href="lesson-03.html#HWL03"><i class="fa fa-check"></i><b>3.7</b> Homework</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="lesson-04.html"><a href="lesson-04.html"><i class="fa fa-check"></i><b>4</b> Lesson 04</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="lesson-04.html"><a href="lesson-04.html#sustainable-academic-writing-with-markdown-pandoc-and-the-tex-family"><i class="fa fa-check"></i><b>4.1</b> Sustainable Academic Writing with <code>markdown</code>, <code>pandoc</code>, and the <code>*TeX</code> family</a></li>
+<li class="chapter" data-level="4.2" data-path="lesson-04.html"><a href="lesson-04.html#class-notes"><i class="fa fa-check"></i><b>4.2</b> Class Notes</a></li>
+<li class="chapter" data-level="4.3" data-path="lesson-04.html"><a href="lesson-04.html#pandoc-commands"><i class="fa fa-check"></i><b>4.3</b> <code>pandoc</code> <em>Commands</em></a></li>
+<li class="chapter" data-level="4.4" data-path="lesson-04.html"><a href="lesson-04.html#writing-with-markdown-in-atom"><i class="fa fa-check"></i><b>4.4</b> Writing with markdown in Atom</a></li>
+<li class="chapter" data-level="4.5" data-path="lesson-04.html"><a href="lesson-04.html#reference-materials"><i class="fa fa-check"></i><b>4.5</b> Reference Materials:</a></li>
+<li class="chapter" data-level="4.6" data-path="lesson-04.html"><a href="lesson-04.html#HWL04"><i class="fa fa-check"></i><b>4.6</b> Homework</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="lesson-05.html"><a href="lesson-05.html"><i class="fa fa-check"></i><b>5</b> Lesson 05</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="lesson-05.html"><a href="lesson-05.html#constructing-robust-searches"><i class="fa fa-check"></i><b>5.1</b> Constructing Robust Searches</a></li>
+<li class="chapter" data-level="5.2" data-path="lesson-05.html"><a href="lesson-05.html#regular-expressions"><i class="fa fa-check"></i><b>5.2</b> <code>regular expressions</code></a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="lesson-05.html"><a href="lesson-05.html#what-are-regular-expressions"><i class="fa fa-check"></i><b>5.2.1</b> What are <code>regular expressions</code>?**</a></li>
+<li class="chapter" data-level="5.2.2" data-path="lesson-05.html"><a href="lesson-05.html#what-would-we-use-regular-expressions-for"><i class="fa fa-check"></i><b>5.2.2</b> What would we use <code>regular Expressions</code> for?</a></li>
+<li class="chapter" data-level="5.2.3" data-path="lesson-05.html"><a href="lesson-05.html#the-basics"><i class="fa fa-check"></i><b>5.2.3</b> The Basics</a></li>
+<li class="chapter" data-level="5.2.4" data-path="lesson-05.html"><a href="lesson-05.html#characters-special-characters"><i class="fa fa-check"></i><b>5.2.4</b> Characters <em>&amp;</em> Special Characters</a></li>
+<li class="chapter" data-level="5.2.5" data-path="lesson-05.html"><a href="lesson-05.html#character-classes"><i class="fa fa-check"></i><b>5.2.5</b> Character Classes: <code>[]</code></a></li>
+<li class="chapter" data-level="5.2.6" data-path="lesson-05.html"><a href="lesson-05.html#ranges-within-classes"><i class="fa fa-check"></i><b>5.2.6</b> Ranges (within classes)</a></li>
+<li class="chapter" data-level="5.2.7" data-path="lesson-05.html"><a href="lesson-05.html#repeaters"><i class="fa fa-check"></i><b>5.2.7</b> Repeaters</a></li>
+<li class="chapter" data-level="5.2.8" data-path="lesson-05.html"><a href="lesson-05.html#lab-intro-in-the-practicum-file."><i class="fa fa-check"></i><b>5.2.8</b> Lab: <em>Intro</em> (in the <em>practicum file</em>).</a></li>
+<li class="chapter" data-level="5.2.9" data-path="lesson-05.html"><a href="lesson-05.html#anchoring"><i class="fa fa-check"></i><b>5.2.9</b> Anchoring</a></li>
+<li class="chapter" data-level="5.2.10" data-path="lesson-05.html"><a href="lesson-05.html#alternation-pipe"><i class="fa fa-check"></i><b>5.2.10</b> Alternation: “|” (<em>pipe</em>)</a></li>
+<li class="chapter" data-level="5.2.11" data-path="lesson-05.html"><a href="lesson-05.html#grouping"><i class="fa fa-check"></i><b>5.2.11</b> Grouping</a></li>
+<li class="chapter" data-level="5.2.12" data-path="lesson-05.html"><a href="lesson-05.html#lab-part-i-in-the-practicum-file."><i class="fa fa-check"></i><b>5.2.12</b> Lab: Part I (in the <em>practicum file</em>).</a></li>
+<li class="chapter" data-level="5.2.13" data-path="lesson-05.html"><a href="lesson-05.html#replacement"><i class="fa fa-check"></i><b>5.2.13</b> Replacement</a></li>
+<li class="chapter" data-level="5.2.14" data-path="lesson-05.html"><a href="lesson-05.html#capture"><i class="fa fa-check"></i><b>5.2.14</b> Capture</a></li>
+<li class="chapter" data-level="5.2.15" data-path="lesson-05.html"><a href="lesson-05.html#capture-reformat"><i class="fa fa-check"></i><b>5.2.15</b> Capture <em>&amp;</em> Reformat</a></li>
+<li class="chapter" data-level="5.2.16" data-path="lesson-05.html"><a href="lesson-05.html#lab-part-ii-in-the-practicum-file."><i class="fa fa-check"></i><b>5.2.16</b> Lab: Part II (in the <em>practicum file</em>).</a></li>
+<li class="chapter" data-level="5.2.17" data-path="lesson-05.html"><a href="lesson-05.html#to-keep-in-mind"><i class="fa fa-check"></i><b>5.2.17</b> <em>To keep in mind</em></a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="lesson-05.html"><a href="lesson-05.html#class-materials"><i class="fa fa-check"></i><b>5.3</b> Class materials</a></li>
+<li class="chapter" data-level="5.4" data-path="lesson-05.html"><a href="lesson-05.html#digital-materials"><i class="fa fa-check"></i><b>5.4</b> Digital materials</a></li>
+<li class="chapter" data-level="5.5" data-path="lesson-04.html"><a href="lesson-04.html#reference-materials"><i class="fa fa-check"></i><b>5.5</b> Reference Materials</a></li>
+<li class="chapter" data-level="5.6" data-path="lesson-05.html"><a href="lesson-05.html#HWL05"><i class="fa fa-check"></i><b>5.6</b> Homework</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="lesson-06.html"><a href="lesson-06.html"><i class="fa fa-check"></i><b>6</b> Lesson 06</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="lesson-06.html"><a href="lesson-06.html#understanding-structured-data"><i class="fa fa-check"></i><b>6.1</b> Understanding Structured Data</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="lesson-06.html"><a href="lesson-06.html#xml-extensible-markup-language"><i class="fa fa-check"></i><b>6.1.1</b> XML (<em>Extensible Markup Language</em>)</a></li>
+<li class="chapter" data-level="6.1.2" data-path="lesson-06.html"><a href="lesson-06.html#csvtsv-comma-separated-values-tab-separated-values"><i class="fa fa-check"></i><b>6.1.2</b> CSV/TSV (<em>Comma-Separated Values</em>/ <em>Tab-Separated Values</em>)</a></li>
+<li class="chapter" data-level="6.1.3" data-path="lesson-06.html"><a href="lesson-06.html#json-javascript-object-notation"><i class="fa fa-check"></i><b>6.1.3</b> JSON (<em>JavaScript Object Notation</em>)</a></li>
+<li class="chapter" data-level="6.1.4" data-path="lesson-06.html"><a href="lesson-06.html#yml-or-yaml-yet-another-markup-language-yaml-aint-markup-language"><i class="fa fa-check"></i><b>6.1.4</b> YML or YAML (<em>Yet Another Markup Language</em> &gt; <em>YAML Ain’t Markup Language</em>)</a></li>
+<li class="chapter" data-level="6.1.5" data-path="lesson-06.html"><a href="lesson-06.html#bibtex-most-common-bibliographic-format"><i class="fa fa-check"></i><b>6.1.5</b> <code>BibTeX</code>: <em>most common bibliographic format</em></a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="lesson-06.html"><a href="lesson-06.html#larger-examples"><i class="fa fa-check"></i><b>6.2</b> Larger Examples</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="lesson-06.html"><a href="lesson-06.html#csv-tsv"><i class="fa fa-check"></i><b>6.2.1</b> <code>CSV</code> / <code>TSV</code></a></li>
+<li class="chapter" data-level="6.2.2" data-path="lesson-06.html"><a href="lesson-06.html#json"><i class="fa fa-check"></i><b>6.2.2</b> <code>JSON</code></a></li>
+<li class="chapter" data-level="6.2.3" data-path="lesson-06.html"><a href="lesson-06.html#ymlyaml"><i class="fa fa-check"></i><b>6.2.3</b> <code>YML</code>/<code>YAML</code></a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="lesson-06.html"><a href="lesson-06.html#in-class-practice"><i class="fa fa-check"></i><b>6.3</b> In-Class Practice</a></li>
+<li class="chapter" data-level="6.4" data-path="lesson-06.html"><a href="lesson-06.html#HWL06"><i class="fa fa-check"></i><b>6.4</b> Homework</a></li>
+<li class="chapter" data-level="6.5" data-path="lesson-06.html"><a href="lesson-06.html#HWL06S"><i class="fa fa-check"></i><b>6.5</b> Homework Solution</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="lesson-06.html"><a href="lesson-06.html#pseudocode-solution"><i class="fa fa-check"></i><b>6.5.1</b> Pseudocode solution</a></li>
+<li class="chapter" data-level="6.5.2" data-path="lesson-06.html"><a href="lesson-06.html#scripts"><i class="fa fa-check"></i><b>6.5.2</b> Scripts</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="lesson-07.html"><a href="lesson-07.html"><i class="fa fa-check"></i><b>7</b> Lesson 07</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="lesson-07.html"><a href="lesson-07.html#building-memex---step-1"><i class="fa fa-check"></i><b>7.1</b> Building Memex - Step 1</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="lesson-07.html"><a href="lesson-07.html#pseudocode"><i class="fa fa-check"></i><b>7.1.1</b> Pseudocode</a></li>
+<li class="chapter" data-level="7.1.2" data-path="lesson-07.html"><a href="lesson-07.html#code-snippets"><i class="fa fa-check"></i><b>7.1.2</b> Code snippets</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="lesson-06.html"><a href="lesson-06.html#HWL06"><i class="fa fa-check"></i><b>7.2</b> Homework</a></li>
+<li class="chapter" data-level="7.3" data-path="lesson-07.html"><a href="lesson-07.html#HWL07S"><i class="fa fa-check"></i><b>7.3</b> Homework Solution</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="lesson-07.html"><a href="lesson-07.html#pseudocode-1"><i class="fa fa-check"></i><b>7.3.1</b> Pseudocode</a></li>
+<li class="chapter" data-level="7.3.2" data-path="lesson-07.html"><a href="lesson-07.html#note-on-folderfile-organization"><i class="fa fa-check"></i><b>7.3.2</b> Note on Folder/File Organization</a></li>
+<li class="chapter" data-level="7.3.3" data-path="lesson-07.html"><a href="lesson-07.html#script-1_build_structure.py"><i class="fa fa-check"></i><b>7.3.3</b> Script (<code>1_build_structure.py</code>)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="lesson-08.html"><a href="lesson-08.html"><i class="fa fa-check"></i><b>8</b> Lesson 08</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="lesson-08.html"><a href="lesson-08.html#building-memex---step-2"><i class="fa fa-check"></i><b>8.1</b> Building Memex - Step 2</a></li>
+<li class="chapter" data-level="8.2" data-path="lesson-08.html"><a href="lesson-08.html#ocr-software-tesseract"><i class="fa fa-check"></i><b>8.2</b> OCR software: Tesseract</a></li>
+<li class="chapter" data-level="8.3" data-path="lesson-08.html"><a href="lesson-08.html#task-general-map-pseudocode"><i class="fa fa-check"></i><b>8.3</b> Task: General Map Pseudocode</a></li>
+<li class="chapter" data-level="8.4" data-path="lesson-08.html"><a href="lesson-08.html#code-snippets-functions"><i class="fa fa-check"></i><b>8.4</b> Code snippets &amp; functions</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="lesson-08.html"><a href="lesson-08.html#new-libraries"><i class="fa fa-check"></i><b>8.4.1</b> New libraries</a></li>
+<li class="chapter" data-level="8.4.2" data-path="lesson-08.html"><a href="lesson-08.html#code-reuse"><i class="fa fa-check"></i><b>8.4.2</b> Code Reuse</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="lesson-08.html"><a href="lesson-08.html#clean-temporary-copy-of-a-pdf"><i class="fa fa-check"></i><b>8.5</b> Clean Temporary Copy of a PDF</a>
+<ul>
+<li class="chapter" data-level="8.5.1" data-path="lesson-08.html"><a href="lesson-08.html#ocr-ing-pdf"><i class="fa fa-check"></i><b>8.5.1</b> OCR-ing PDF</a></li>
+<li class="chapter" data-level="8.5.2" data-path="lesson-08.html"><a href="lesson-08.html#missing-functions"><i class="fa fa-check"></i><b>8.5.2</b> Missing functions</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="lesson-08.html"><a href="lesson-08.html#one-more-note-on-ocr"><i class="fa fa-check"></i><b>8.6</b> One more note on OCR</a></li>
+<li class="chapter" data-level="8.7" data-path="lesson-08.html"><a href="lesson-08.html#HWL08"><i class="fa fa-check"></i><b>8.7</b> Homework</a></li>
+<li class="chapter" data-level="8.8" data-path="lesson-08.html"><a href="lesson-08.html#HWL08S"><i class="fa fa-check"></i><b>8.8</b> Homework Solution</a></li>
+<li class="chapter" data-level="8.9" data-path="lesson-08.html"><a href="lesson-08.html#tesseract-language-codes"><i class="fa fa-check"></i><b>8.9</b> Tesseract Language Codes</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="lesson-09.html"><a href="lesson-09.html"><i class="fa fa-check"></i><b>9</b> Lesson 09</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="lesson-09.html"><a href="lesson-09.html#building-memex---step-3"><i class="fa fa-check"></i><b>9.1</b> Building Memex - Step 3</a></li>
+<li class="chapter" data-level="9.2" data-path="lesson-08.html"><a href="lesson-08.html#code-snippets-functions"><i class="fa fa-check"></i><b>9.2</b> Code snippets &amp; functions</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="lesson-09.html"><a href="lesson-09.html#the-main-function-publication-interface"><i class="fa fa-check"></i><b>9.2.1</b> The main function: Publication Interface</a></li>
+<li class="chapter" data-level="9.2.2" data-path="lesson-09.html"><a href="lesson-09.html#additional-functions"><i class="fa fa-check"></i><b>9.2.2</b> Additional functions</a></li>
+<li class="chapter" data-level="9.2.3" data-path="lesson-09.html"><a href="lesson-09.html#extra-function"><i class="fa fa-check"></i><b>9.2.3</b> Extra function</a></li>
+<li class="chapter" data-level="9.2.4" data-path="lesson-08.html"><a href="lesson-08.html#code-reuse"><i class="fa fa-check"></i><b>9.2.4</b> Code Reuse</a></li>
+<li class="chapter" data-level="9.2.5" data-path="lesson-09.html"><a href="lesson-09.html#missing-functions-the-index-page-and-the-contents-page"><i class="fa fa-check"></i><b>9.2.5</b> Missing functions: The Index Page and the Contents Page</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="lesson-09.html"><a href="lesson-09.html#HWL09"><i class="fa fa-check"></i><b>9.3</b> Homework</a></li>
+<li class="chapter" data-level="9.4" data-path="lesson-09.html"><a href="lesson-09.html#HWL09S"><i class="fa fa-check"></i><b>9.4</b> Homework Solution</a></li>
+<li class="chapter" data-level="9.5" data-path="lesson-09.html"><a href="lesson-09.html#additional-materials-html-css-tfidf"><i class="fa fa-check"></i><b>9.5</b> Additional materials: HTML, CSS; TFIDF</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="lesson-10.html"><a href="lesson-10.html"><i class="fa fa-check"></i><b>10</b> Lesson 10</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="lesson-10.html"><a href="lesson-10.html#building-memex---step-4"><i class="fa fa-check"></i><b>10.1</b> Building Memex - Step 4</a></li>
+<li class="chapter" data-level="10.2" data-path="lesson-10.html"><a href="lesson-10.html#some-explanations-tf-idf-document-distance"><i class="fa fa-check"></i><b>10.2</b> Some explanations: TF-IDF, Document Distance</a></li>
+<li class="chapter" data-level="10.3" data-path="lesson-10.html"><a href="lesson-10.html#practicalities"><i class="fa fa-check"></i><b>10.3</b> Practicalities</a></li>
+<li class="chapter" data-level="10.4" data-path="lesson-10.html"><a href="lesson-10.html#CSL10"><i class="fa fa-check"></i><b>10.4</b> Code Snippets</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="lesson-10.html"><a href="lesson-10.html#aggregating-publications-into-a-corpus"><i class="fa fa-check"></i><b>10.4.1</b> Aggregating publications into a corpus</a></li>
+<li class="chapter" data-level="10.4.2" data-path="lesson-10.html"><a href="lesson-10.html#getting-tf-idf-values-and-distance-matrix-with-sklearn"><i class="fa fa-check"></i><b>10.4.2</b> Getting <em>tf-idf</em> Values and Distance Matrix with <code>sklearn</code></a></li>
+<li class="chapter" data-level="10.4.3" data-path="lesson-10.html"><a href="lesson-10.html#converting-results"><i class="fa fa-check"></i><b>10.4.3</b> Converting Results</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="lesson-10.html"><a href="lesson-10.html#HWL10"><i class="fa fa-check"></i><b>10.5</b> Homework</a></li>
+<li class="chapter" data-level="10.6" data-path="lesson-10.html"><a href="lesson-10.html#HWL10S"><i class="fa fa-check"></i><b>10.6</b> Homework Solution</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="lesson-11.html"><a href="lesson-11.html"><i class="fa fa-check"></i><b>11</b> Lesson 11</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="lesson-11.html"><a href="lesson-11.html#building-memex---step-5"><i class="fa fa-check"></i><b>11.1</b> Building Memex - Step 5</a></li>
+<li class="chapter" data-level="11.2" data-path="lesson-11.html"><a href="lesson-11.html#running-searches"><i class="fa fa-check"></i><b>11.2</b> Running searches</a></li>
+<li class="chapter" data-level="11.3" data-path="lesson-11.html"><a href="lesson-11.html#wordclouds-as-visual-summaries"><i class="fa fa-check"></i><b>11.3</b> Wordclouds as visual summaries</a></li>
+<li class="chapter" data-level="11.4" data-path="lesson-11.html"><a href="lesson-11.html#stopwords-for-tf-idf"><i class="fa fa-check"></i><b>11.4</b> Stopwords for <em>tf-idf</em></a></li>
+<li class="chapter" data-level="11.5" data-path="lesson-11.html"><a href="lesson-11.html#HWL11"><i class="fa fa-check"></i><b>11.5</b> Homework</a></li>
+<li class="chapter" data-level="11.6" data-path="lesson-11.html"><a href="lesson-11.html#HWL11S"><i class="fa fa-check"></i><b>11.6</b> Homework Solution</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="lesson-12.html"><a href="lesson-12.html"><i class="fa fa-check"></i><b>12</b> Lesson 12</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="lesson-12.html"><a href="lesson-12.html#building-memex---step-6-or-actually-back-to-step-3"><i class="fa fa-check"></i><b>12.1</b> Building Memex - Step 6 (or, actually, back to Step 3)</a></li>
+<li class="chapter" data-level="12.2" data-path="lesson-12.html"><a href="lesson-12.html#the-index-page"><i class="fa fa-check"></i><b>12.2</b> The Index Page</a></li>
+<li class="chapter" data-level="12.3" data-path="lesson-12.html"><a href="lesson-12.html#the-publication-pages"><i class="fa fa-check"></i><b>12.3</b> The Publication Pages</a></li>
+<li class="chapter" data-level="12.4" data-path="lesson-12.html"><a href="lesson-12.html#HWL12"><i class="fa fa-check"></i><b>12.4</b> Homework</a></li>
+<li class="chapter" data-level="12.5" data-path="lesson-12.html"><a href="lesson-12.html#HWL12S"><i class="fa fa-check"></i><b>12.5</b> Homework Solution</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html"><i class="fa fa-check"></i>Syllabus</a>
+<ul>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#course-details"><i class="fa fa-check"></i>Course Details</a></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#aims-contents-and-method-of-the-course"><i class="fa fa-check"></i>Aims, Contents and Method of the Course</a></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#course-evaluation"><i class="fa fa-check"></i>Course Evaluation</a></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#class-participation"><i class="fa fa-check"></i>Class Participation</a></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#homework-assignments"><i class="fa fa-check"></i>Homework Assignments</a></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#final-project"><i class="fa fa-check"></i>Final Project</a></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#study-materials"><i class="fa fa-check"></i>Study materials</a></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#software-tools-technologies"><i class="fa fa-check"></i>Software, Tools, &amp; Technologies</a></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#schedule"><i class="fa fa-check"></i>Schedule</a></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#lesson-topics"><i class="fa fa-check"></i>Lesson Topics</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">070172-1 UE Methodological course - Introduction to DH: Tools &amp; Techniques (2020W) <code>Memex Edition</code></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="lesson-03" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> Lesson 03</h1>
+<div id="version-control-and-collaboration" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> Version Control and Collaboration</h2>
+<p>Version control systems are extremely helpful for the development of DH projects, which are often lengthy and complex and require organic collaboration. <code>Git</code> and <code>GitHub</code> are currently the most popular tools of this kind. It is difficult to imagine a DH project that would not rely on the use of <code>git</code> and <code>GitHub</code>.</p>
+<p>Before we begin, make sure to:</p>
+<ul>
+<li>Create a github account at <a href="https://github.com/" class="uri">https://github.com/</a>, if you do not have one yet.</li>
+<li>Download and install <code>git</code> software:
+<ul>
+<li>for Windows:
+<ul>
+<li>you can download it from <a href="https://git-scm.com/download/win" class="uri">https://git-scm.com/download/win</a>. Please, choose <strong>64-bit Git for Windows Setup</strong>.
+<ul>
+<li>you can also install a portable version of <code>git</code> which does not require installation <a href="https://git-scm.com/download/win" class="uri">https://git-scm.com/download/win</a>. For this, choose <strong>64-bit Git for Windows Portable</strong>. Simply download and unzip (<em>Suggestion</em>: move that unzipped folder to the folder where you keep all class-related files and materials). In the folder, run <code>git-bash.exe</code> (for a more Unix-like command line) or <code>git-cmd.exe</code> (for Windows command line).</li>
+</ul></li>
+</ul></li>
+<li>for Mac: try to run <code>git --version</code> from Terminal. If <code>git</code> is not installed, you will be prompted to install <code>Xcode Command Line Tools</code> which comes with <code>git</code> among other things. This is the easiest way.</li>
+<li><strong>Note:</strong> there are also interface tools for <em>github</em>. We will not be working with them in the class, but you are welcome to test them on your own at home. See, <a href="https://desktop.github.com" class="uri">https://desktop.github.com</a>. The main reason for this is because interface tools will be different for different operating systems, while the command line usage will be exactly the same across all platforms.</li>
+</ul></li>
+</ul>
+<p>In class we will cover the following:</p>
+<ul>
+<li>Basic <code>git</code> functionality;</li>
+<li>Starting a <code>github</code>-based website;</li>
+<li>Basics of <code>markdown</code>;</li>
+</ul>
+</div>
+<div id="setting-up-git" class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> Setting-up <code>git</code></h2>
+<ul>
+<li><code>git config --global user.name "YourName"</code></li>
+<li><code>git config --global user.email "YourEmail"</code></li>
+</ul>
+</div>
+<div id="general-git-workflow" class="section level2" number="3.3">
+<h2><span class="header-section-number">3.3</span> General <code>git</code> workflow</h2>
+<ul>
+<li><em>In <code>Terminal</code> (on Mac) or <code>Git-Bash</code> (on Windows)</em>
+<ol style="list-style-type: decimal">
+<li>create a repository under your account online at <a href="https://github.com" class="uri">https://github.com</a>.</li>
+<li>Alternatively, you can also <code>fork</code> somebody else’s repository.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></li>
+<li><code>clone</code> (<strong>NB:</strong> this is done on <a href="https://github.com" class="uri">https://github.com</a>!)</li>
+<li><em>work</em></li>
+<li><code>add</code></li>
+<li><code>commit</code></li>
+<li><code>push</code> / <code>pull</code></li>
+<li>send <code>pull request</code> (<strong>NB:</strong> this is done on <a href="https://github.com" class="uri">https://github.com</a>)</li>
+</ol></li>
+</ul>
+<p><strong>Note:</strong> Steps 2 and 8 are relevant only when you work on a project (<em>repository</em>) that is owned by somebody else. If you work on a <em>repository</em> that you created under your account, you only need steps 1, 3-7. Below is a visual representation of this cycle.</p>
+<div id="htmlwidget-d59c87723c700c07e03d" style="width:672px;height:600px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-d59c87723c700c07e03d">{"x":{"diagram":"\ndigraph research_cycle {\n\n  # a \"graph\" statement\n  graph [overlap = false, fontsize = 10, rankdir = TB]\n\n  # several \"node\" statements\n  node [shape = box,\n        fontname = Baskerville,\n        fontsize = 10,\n        style = rounded,\n        penwidth = 0.1]\n  github;\n  create;\n  fork;\n\n  # several \"node\" statements\n  work [shape=box, regular=1, style=rounded, fillcolor=grey50, label = \"working...\"]\n\n  # several \"node\" statements\n  node [shape = box,\n        fontname = Courier,\n        fontsize = 10,\n        style = filled,\n        penwidth = 0.1]  \n  clone [label = \"git clone <repository_link>\"];\n  add [label = \"git add .\"];\n  commit [label = \"git commit -m “message”\"];\n  push [label = \"git push origin master\"];\n  pull [label = \"git pull origin master\"];\n  \n  subgraph cluster1 {\n  github->create; github->fork;\n    color = gray;\n    style = rounded;\n    label = \"github.com\";\n    fontcolor = gray;\n  }\n  \n  subgraph cluster2 {\n  clone->work;\n  work->add; add->commit;\n  commit->push;\n  push->github;\n  github->pull; pull->work;\n    color = black;\n    style = rounded;\n    label = \"work cycle\";\n    fontcolor = gray;\n    fillcolor = gray;\n  }\n  \n  create->clone; fork->clone;\n\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="main-git-commands" class="section level2" number="3.4">
+<h2><span class="header-section-number">3.4</span> Main <code>git</code> Commands</h2>
+<ul>
+<li><code>git clone &lt;link&gt;</code>
+<ul>
+<li>clones/downloads a repository on you machine</li>
+</ul></li>
+<li><code>git status</code>
+<ul>
+<li>shows the current status of the repository (new, changed, deleted)</li>
+</ul></li>
+<li><code>git add .</code>
+<ul>
+<li>adds all new files and modified files to the repository</li>
+</ul></li>
+<li><code>git commit -m "message"</code>
+<ul>
+<li>saves all files in their current state into the repository, and created a milestone</li>
+</ul></li>
+<li><code>git push origin master</code>
+<ul>
+<li>uploads changes to <a href="https://github.com" class="uri">https://github.com</a></li>
+<li><code>origin</code> is a specific repository you are pushing your changes to; it is automatically set up, when you clone a repository on your computer.</li>
+<li><code>master</code> is the <em>branch</em> you are pushing to the repository; <code>master</code> is the default name of the main branch in a git repository. To check the names of your branches, you can type <code>git branch</code>.</li>
+<li><strong>NB:</strong> sometimes you may get an error, which in most cases means that you need to <code>pull</code> first</li>
+</ul></li>
+<li><code>git pull origin master</code>
+<ul>
+<li>downloads changes from <a href="https://github.com" class="uri">https://github.com</a></li>
+</ul></li>
+<li><code>git log</code>
+<ul>
+<li>shows the history of <code>commit</code>s; here you can choose where you want to roll back, in case of troubles.</li>
+</ul></li>
+</ul>
+</div>
+<div id="some-useful-command-line-commands-to-remember" class="section level2" number="3.5">
+<h2><span class="header-section-number">3.5</span> Some useful command line commands to remember</h2>
+<ul>
+<li><code>pwd</code>
+<ul>
+<li>shows you where you are on a drive (gives you path)</li>
+</ul></li>
+<li><code>ls</code> / <code>dir</code> [on Windows]
+<ul>
+<li>shows everything in the your current location/folder</li>
+</ul></li>
+<li><code>cd &lt;name of the folder&gt;</code>
+<ul>
+<li>takes you to that folder</li>
+</ul></li>
+<li><code>cd ..</code>
+<ul>
+<li>takes you one level up in the tree structure of your computer</li>
+</ul></li>
+</ul>
+</div>
+<div id="practice" class="section level2" number="3.6">
+<h2><span class="header-section-number">3.6</span> Practice</h2>
+<ul>
+<li>Under your GitHub account, create repository <code>HW070172</code>;</li>
+<li>clone it to your computer (use command line: <code>git clone LinkToYourRepository</code>);</li>
+<li>Now, in the repository:
+<ul>
+<li>let’s edit <code>README.md</code> (create it, if you have not yet); add some text into this file</li>
+<li>create subfolders for Lessons, like <code>L01</code>, <code>L02</code>, <code>L03</code>, etc.</li>
+<li>copy/paste your homework files in respective subfolders.</li>
+<li>Now, do the <code>add</code>-<code>commit</code>-<code>push</code> routine to upload the files to your repository</li>
+</ul></li>
+<li>Now, online:
+<ul>
+<li>check if your files are there</li>
+<li>let’s do some edits to the <code>README.md</code> file (markdown basics / <em>github flavor</em>)</li>
+</ul></li>
+<li><code>pull</code> / <code>push</code></li>
+</ul>
+</div>
+<div id="HWL03" class="section level2" number="3.7">
+<h2><span class="header-section-number">3.7</span> Homework</h2>
+<p><strong>Git and GitHub</strong></p>
+<ul>
+<li>Watch a video on <code>Git &amp; GitHub</code> in Dr. Vierthaler’s <em>Hacking the Humanities</em> series: <a href="https://www.youtube.com/watch?v=YetC-gxgIVY">Supplement 1: A quick Git and Github Tutorial</a>. This will help you to go over the new material and pick up a few more useful <code>git</code> <em>&amp;</em> <code>gitHub</code> tricks.</li>
+<li>There is an interface for github that you can also use, but I strongly recommend to use command line; interfaces change, but commandline commands remain the same!
+<ul>
+<li>Daniel van Strien. 2016. “An Introduction to Version Control Using GitHub Desktop,” The Programming Historian 5, <a href="https://programminghistorian.org/en/lessons/getting-started-with-github-desktop">https://programminghistorian.org/</a>.</li>
+</ul></li>
+<li>Please, also read (for <code>markdown</code>): Simpkin, Sarah. 2015. “Getting Started with Markdown.” Programming Historian, November. <a href="https://programminghistorian.org/lessons/getting-started-with-markdown">https://programminghistorian.org/</a>.
+<ul>
+<li>More on github-flavored <code>markdown</code>: <a href="https://guides.github.com/features/mastering-markdown/" class="uri">https://guides.github.com/features/mastering-markdown/</a>.</li>
+<li>On <code>markdown</code> for academic writing, see <a href="https://pandoc.org/MANUAL.html" class="uri">https://pandoc.org/MANUAL.html</a>.</li>
+<li>A cheat-sheet &amp; interactive tutorial for your practice: <a href="https://commonmark.org/help/" class="uri">https://commonmark.org/help/</a>.</li>
+</ul></li>
+</ul>
+<p><em>Extra</em>: you can build and host a website on <code>github.com</code>; your website will have the name: <code>YourUserName.github.io</code> — you can create a repository with that name and build your website there using Jekyll and GitHub Pages. Any other repository may also be converted into a part of your website, which will be accessible at <code>YourUserName.github.io/YourRepository/</code></p>
+<ul>
+<li>Visconti, Amanda. 2016. “Building a Static Website with Jekyll and GitHub Pages.” Programming Historian, April. <a href="https://programminghistorian.org/lessons/building-static-sites-with-jekyll-github-pages">https://programminghistorian.org/</a>.</li>
+</ul>
+<p><strong>Python</strong></p>
+<ul>
+<li>Work through Chapter II of Zelle’s book; read the entire chapter; retype and run all code snippets as described in the book; work through the chapter summary and exercises; complete all programming exercises;</li>
+<li>Watch <a href="https://www.youtube.com/playlist?list=PL6kqrM2i6BPIpEF5yHPNkYhjHm-FYWh17">Dr. Vierthaler’s videos</a>:
+<ul>
+<li>Episode 04: Strings;</li>
+<li>Episode 05: Integers, Floats, and Math in Python;</li>
+<li>Episode 06: Lists</li>
+</ul></li>
+</ul>
+<p><strong>Submitting homework</strong></p>
+<ul>
+<li>Homework assignment must be submitted by the beginning of the next class;</li>
+<li>Now, that you know how to use GitHub, you will be submitting your homework pushing it to github:
+<ul>
+<li>Create a relevant subfoler in your <code>HW070172</code> repository and place your HW files there; push them to your GitHub account;
+<ul>
+<li>Email me the link to your repository with a short message (Something like: <em>I have completed homework for Lesson 3, which is uploaded to my repository … in subfolder <code>L03</code></em>)</li>
+<li>In the subject of your email, please, add the following: <code>CCXXXXX-LXX-HW-YourLastName-YourMatriculationNumber</code>, where <code>CCXXXXX</code> is the numeric code of the course; <code>LXX</code> is the lesson for which the homework is being submitted; <code>YourLastName</code> is your last name, and <code>YourMatriculationNumber</code> is your matriculation number.</li>
+</ul></li>
+</ul></li>
+</ul>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p><strong>NB:</strong> this is done on <a href="https://github.com" class="uri">https://github.com</a>); forking means creating your own copy of some one’s repository at that specific moment in time<a href="lesson-03.html#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="lesson-02.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="lesson-04.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "github"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "serif",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/maximromanov/dh_in_mes/edit/master/02-Lesson03.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/maximromanov/dh_in_mes/blob/master/02-Lesson03.Rmd",
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"search": true,
+"info": true
+});
+});
+</script>
+
+</body>
+
+</html>

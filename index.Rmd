@@ -1,0 +1,39 @@
+--- 
+title: "070172-1 UE Methodological course - Introduction to DH: Tools & Techniques (2020W) `Memex Edition`"
+author: "Maxim G. Romanov"
+date: "`r Sys.Date()`"
+description: "This is a collection of relevant materials for the class '070172-1 UE Methodological course - Introduction to DH: Tools & Techniques (2020W) `Memex Edition`', offered at the University of Vienna and taught by Maxim G. Romanov"
+url: 'https\://maximromanov.github.io/univie2020/'
+github-repo: "maximromanov/univie2020"
+apple-touch-icon: "touch-icon.png"
+apple-touch-icon-size: 120
+favicon: "favicon.ico"
+documentclass: book
+link-citations: yes
+bibliography:
+- book.bib
+- packages.bib
+biblio-style: apalike
+---
+
+# Preliminaries{-}
+
+This is a collection of relevant materials for a DH course by the Department of History, the University of Vienna.
+
+* Course: 070172-1 UE Methodological course - Introduction to DH: Tools & Techniques (2020W) `Memex Edition`
+* u:find Link: <https://ufind.univie.ac.at/en/course.html?lv=070172&semester=2020W>
+* Meeting time: Tu 09:00-10:30
+* Meeting place: Seminarraum Geschichte 3 Hauptgebäude, 2.Stock, Stiege 9; due to COVID, all meetings will be held online
+* Instructor: Dr. Maxim Romanov, [maxim.romanov@univie.ac.at](maxim.romanov@univie.ac.at)
+* Language of instruction: English
+* Office hours: Tu 14:00-15:00 (on Zoom; please, contact beforehand!)
+* Office: Department of History,  Maria-Theresien-Straße 9, 1090 Wien, Room 1.10
+
+![](./images/memex01.jpg)
+
+Back in 1945, Vannevar Bush, a Director of the US Office of Scientific Research and Development, proposed a device, which he called memex:
+
+> Consider a future device ... in which an individual stores all his books, records, and communications, and which is mechanized so that it may be consulted with exceeding speed and flexibility. It is an enlarged intimate supplement to his memory. ... The owner of the memex, let us say, is interested in the origin and properties of the bow and arrow. Specifically he is studying why the short Turkish bow was apparently superior to the English long bow in the skirmishes of the Crusades. He has dozens of possibly pertinent books and articles in his memex. First he runs through an encyclopedia, finds an interesting but sketchy article, leaves it projected. Next, in a history, he finds another pertinent item, and ties the two together. Thus he goes, building a trail of many items. Occasionally he inserts a comment of his own, either linking it into the main trail or joining it by a side trail to a particular item. When it becomes evident that the elastic properties of available materials had a great deal to do with the bow, he branches off on a side trail which takes him through textbooks on elasticity and tables of physical constants. He inserts a page of longhand analysis of his own. Thus he builds a trail of his interest through the maze of materials available to him. And his trails do not fade. Several years later, his talk with a friend turns to the queer ways in which a people resist innovations, even of vital interest. He has an example, in the fact that the outraged Europeans still failed to adopt the Turkish bow. In fact he has a trail on it. A touch brings up the code book. Tapping a few keys projects the head of the trail. A lever runs through it at will, stopping at interesting items, going off on side excursions. It is an interesting trail, pertinent to the discussion. ... — [The Atlantic, July 1945](https://www.theatlantic.com/magazine/archive/1945/07/as-we-may-think/303881/).
+
+![](./images/memex02.jpg)
+![](./images/memex03.jpg)

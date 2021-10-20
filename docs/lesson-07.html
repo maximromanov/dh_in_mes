@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>7 Lesson 07 | 070172-1 UE Methodological course - Introduction to DH: Tools &amp; Techniques (2020W) Memex Edition</title>
+  <meta name="description" content="This is a collection of relevant materials for the class ‘070172-1 UE Methodological course - Introduction to DH: Tools &amp; Techniques (2020W) Memex Edition,’ offered at the University of Vienna and taught by Maxim G. Romanov" />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="7 Lesson 07 | 070172-1 UE Methodological course - Introduction to DH: Tools &amp; Techniques (2020W) Memex Edition" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://maximromanov.github.io/univie2020/" />
+  
+  <meta property="og:description" content="This is a collection of relevant materials for the class ‘070172-1 UE Methodological course - Introduction to DH: Tools &amp; Techniques (2020W) Memex Edition,’ offered at the University of Vienna and taught by Maxim G. Romanov" />
+  <meta name="github-repo" content="maximromanov/univie2020" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="7 Lesson 07 | 070172-1 UE Methodological course - Introduction to DH: Tools &amp; Techniques (2020W) Memex Edition" />
+  
+  <meta name="twitter:description" content="This is a collection of relevant materials for the class ‘070172-1 UE Methodological course - Introduction to DH: Tools &amp; Techniques (2020W) Memex Edition,’ offered at the University of Vienna and taught by Maxim G. Romanov" />
+  
+
+<meta name="author" content="Maxim G. Romanov" />
+
+
+<meta name="date" content="2021-10-20" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="touch-icon.png" />
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="prev" href="lesson-06.html"/>
+<link rel="next" href="lesson-08.html"/>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<script src="libs/viz-1.8.2/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-1.0.6.1/grViz.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">DH Methods for Middle Eastern Studies: Toward A Handbook</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preliminaries</a></li>
+<li class="chapter" data-level="" data-path="memex-and-zettelkasten.html"><a href="memex-and-zettelkasten.html"><i class="fa fa-check"></i>Memex and Zettelkasten</a>
+<ul>
+<li class="chapter" data-level="" data-path="memex-and-zettelkasten.html"><a href="memex-and-zettelkasten.html#on-memex"><i class="fa fa-check"></i>On Memex</a></li>
+<li class="chapter" data-level="" data-path="memex-and-zettelkasten.html"><a href="memex-and-zettelkasten.html#on-zettelkasten"><i class="fa fa-check"></i>On Zettelkasten</a>
+<ul>
+<li><a href="memex-and-zettelkasten.html#niklas-luhmann-on-his-zettelkasten">Niklas Luhmann on his <em>Zettelkasten</em></a></li>
+<li><a href="memex-and-zettelkasten.html#others-on-luhmanns-zettelkasten">Others on Luhmann’s <em>Zettelkasten</em></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="work-plan.html"><a href="work-plan.html"><i class="fa fa-check"></i>Work Plan</a>
+<ul>
+<li class="chapter" data-level="" data-path="work-plan.html"><a href="work-plan.html#memex-building-cycle"><i class="fa fa-check"></i>Memex-Building Cycle</a></li>
+<li class="chapter" data-level="" data-path="work-plan.html"><a href="work-plan.html#research-cycle"><i class="fa fa-check"></i>Research Cycle</a>
+<ul>
+<li class="chapter" data-level="" data-path="work-plan.html"><a href="work-plan.html#building-trails"><i class="fa fa-check"></i>Building Trails</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="lesson-01.html"><a href="lesson-01.html"><i class="fa fa-check"></i><b>1</b> Lesson 01</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="lesson-01.html"><a href="lesson-01.html#bibliography-managers"><i class="fa fa-check"></i><b>1.1</b> Bibliography Managers</a></li>
+<li class="chapter" data-level="1.2" data-path="lesson-01.html"><a href="lesson-01.html#zotero"><i class="fa fa-check"></i><b>1.2</b> Zotero</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="lesson-01.html"><a href="lesson-01.html#getting-started"><i class="fa fa-check"></i><b>1.2.1</b> Getting Started</a></li>
+<li class="chapter" data-level="1.2.2" data-path="lesson-01.html"><a href="lesson-01.html#main-functionality"><i class="fa fa-check"></i><b>1.2.2</b> Main Functionality</a></li>
+<li class="chapter" data-level="1.2.3" data-path="lesson-01.html"><a href="lesson-01.html#additional-functionality-plug-ins"><i class="fa fa-check"></i><b>1.2.3</b> Additional Functionality: Plug-Ins</a></li>
+<li class="chapter" data-level="1.2.4" data-path="lesson-01.html"><a href="lesson-01.html#zotfile"><i class="fa fa-check"></i><b>1.2.4</b> Zotfile</a></li>
+<li class="chapter" data-level="1.2.5" data-path="lesson-01.html"><a href="lesson-01.html#better-bibtex-for-zotero"><i class="fa fa-check"></i><b>1.2.5</b> Better BibTeX for Zotero</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="lesson-01.html"><a href="lesson-01.html#HWL01"><i class="fa fa-check"></i><b>1.3</b> Homework</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="lesson-02.html"><a href="lesson-02.html"><i class="fa fa-check"></i><b>2</b> Lesson 02</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="lesson-02.html"><a href="lesson-02.html#command-line"><i class="fa fa-check"></i><b>2.1</b> Command Line</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="lesson-02.html"><a href="lesson-02.html#the-filesystem"><i class="fa fa-check"></i><b>2.1.1</b> The filesystem</a></li>
+<li class="chapter" data-level="2.1.2" data-path="lesson-02.html"><a href="lesson-02.html#getting-started-with-the-command-line"><i class="fa fa-check"></i><b>2.1.2</b> Getting started with the command line</a></li>
+<li class="chapter" data-level="2.1.3" data-path="lesson-02.html"><a href="lesson-02.html#components-of-the-command-line"><i class="fa fa-check"></i><b>2.1.3</b> Components of the command line</a></li>
+<li class="chapter" data-level="2.1.4" data-path="lesson-02.html"><a href="lesson-02.html#file-paths-and-path-notations"><i class="fa fa-check"></i><b>2.1.4</b> File paths and path notations</a></li>
+<li class="chapter" data-level="2.1.5" data-path="lesson-02.html"><a href="lesson-02.html#command-line-arguments"><i class="fa fa-check"></i><b>2.1.5</b> Command line arguments</a></li>
+<li class="chapter" data-level="2.1.6" data-path="lesson-02.html"><a href="lesson-02.html#more-commands"><i class="fa fa-check"></i><b>2.1.6</b> More commands</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="lesson-02.html"><a href="lesson-02.html#HWL02"><i class="fa fa-check"></i><b>2.2</b> Homework</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="lesson-03.html"><a href="lesson-03.html"><i class="fa fa-check"></i><b>3</b> Lesson 03</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="lesson-03.html"><a href="lesson-03.html#version-control-and-collaboration"><i class="fa fa-check"></i><b>3.1</b> Version Control and Collaboration</a></li>
+<li class="chapter" data-level="3.2" data-path="lesson-03.html"><a href="lesson-03.html#setting-up-git"><i class="fa fa-check"></i><b>3.2</b> Setting-up <code>git</code></a></li>
+<li class="chapter" data-level="3.3" data-path="lesson-03.html"><a href="lesson-03.html#general-git-workflow"><i class="fa fa-check"></i><b>3.3</b> General <code>git</code> workflow</a></li>
+<li class="chapter" data-level="3.4" data-path="lesson-03.html"><a href="lesson-03.html#main-git-commands"><i class="fa fa-check"></i><b>3.4</b> Main <code>git</code> Commands</a></li>
+<li class="chapter" data-level="3.5" data-path="lesson-03.html"><a href="lesson-03.html#some-useful-command-line-commands-to-remember"><i class="fa fa-check"></i><b>3.5</b> Some useful command line commands to remember</a></li>
+<li class="chapter" data-level="3.6" data-path="lesson-03.html"><a href="lesson-03.html#practice"><i class="fa fa-check"></i><b>3.6</b> Practice</a></li>
+<li class="chapter" data-level="3.7" data-path="lesson-03.html"><a href="lesson-03.html#HWL03"><i class="fa fa-check"></i><b>3.7</b> Homework</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="lesson-04.html"><a href="lesson-04.html"><i class="fa fa-check"></i><b>4</b> Lesson 04</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="lesson-04.html"><a href="lesson-04.html#sustainable-academic-writing-with-markdown-pandoc-and-the-tex-family"><i class="fa fa-check"></i><b>4.1</b> Sustainable Academic Writing with <code>markdown</code>, <code>pandoc</code>, and the <code>*TeX</code> family</a></li>
+<li class="chapter" data-level="4.2" data-path="lesson-04.html"><a href="lesson-04.html#class-notes"><i class="fa fa-check"></i><b>4.2</b> Class Notes</a></li>
+<li class="chapter" data-level="4.3" data-path="lesson-04.html"><a href="lesson-04.html#pandoc-commands"><i class="fa fa-check"></i><b>4.3</b> <code>pandoc</code> <em>Commands</em></a></li>
+<li class="chapter" data-level="4.4" data-path="lesson-04.html"><a href="lesson-04.html#writing-with-markdown-in-atom"><i class="fa fa-check"></i><b>4.4</b> Writing with markdown in Atom</a></li>
+<li class="chapter" data-level="4.5" data-path="lesson-04.html"><a href="lesson-04.html#reference-materials"><i class="fa fa-check"></i><b>4.5</b> Reference Materials:</a></li>
+<li class="chapter" data-level="4.6" data-path="lesson-04.html"><a href="lesson-04.html#HWL04"><i class="fa fa-check"></i><b>4.6</b> Homework</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="lesson-05.html"><a href="lesson-05.html"><i class="fa fa-check"></i><b>5</b> Lesson 05</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="lesson-05.html"><a href="lesson-05.html#constructing-robust-searches"><i class="fa fa-check"></i><b>5.1</b> Constructing Robust Searches</a></li>
+<li class="chapter" data-level="5.2" data-path="lesson-05.html"><a href="lesson-05.html#regular-expressions"><i class="fa fa-check"></i><b>5.2</b> <code>regular expressions</code></a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="lesson-05.html"><a href="lesson-05.html#what-are-regular-expressions"><i class="fa fa-check"></i><b>5.2.1</b> What are <code>regular expressions</code>?**</a></li>
+<li class="chapter" data-level="5.2.2" data-path="lesson-05.html"><a href="lesson-05.html#what-would-we-use-regular-expressions-for"><i class="fa fa-check"></i><b>5.2.2</b> What would we use <code>regular Expressions</code> for?</a></li>
+<li class="chapter" data-level="5.2.3" data-path="lesson-05.html"><a href="lesson-05.html#the-basics"><i class="fa fa-check"></i><b>5.2.3</b> The Basics</a></li>
+<li class="chapter" data-level="5.2.4" data-path="lesson-05.html"><a href="lesson-05.html#characters-special-characters"><i class="fa fa-check"></i><b>5.2.4</b> Characters <em>&amp;</em> Special Characters</a></li>
+<li class="chapter" data-level="5.2.5" data-path="lesson-05.html"><a href="lesson-05.html#character-classes"><i class="fa fa-check"></i><b>5.2.5</b> Character Classes: <code>[]</code></a></li>
+<li class="chapter" data-level="5.2.6" data-path="lesson-05.html"><a href="lesson-05.html#ranges-within-classes"><i class="fa fa-check"></i><b>5.2.6</b> Ranges (within classes)</a></li>
+<li class="chapter" data-level="5.2.7" data-path="lesson-05.html"><a href="lesson-05.html#repeaters"><i class="fa fa-check"></i><b>5.2.7</b> Repeaters</a></li>
+<li class="chapter" data-level="5.2.8" data-path="lesson-05.html"><a href="lesson-05.html#lab-intro-in-the-practicum-file."><i class="fa fa-check"></i><b>5.2.8</b> Lab: <em>Intro</em> (in the <em>practicum file</em>).</a></li>
+<li class="chapter" data-level="5.2.9" data-path="lesson-05.html"><a href="lesson-05.html#anchoring"><i class="fa fa-check"></i><b>5.2.9</b> Anchoring</a></li>
+<li class="chapter" data-level="5.2.10" data-path="lesson-05.html"><a href="lesson-05.html#alternation-pipe"><i class="fa fa-check"></i><b>5.2.10</b> Alternation: “|” (<em>pipe</em>)</a></li>
+<li class="chapter" data-level="5.2.11" data-path="lesson-05.html"><a href="lesson-05.html#grouping"><i class="fa fa-check"></i><b>5.2.11</b> Grouping</a></li>
+<li class="chapter" data-level="5.2.12" data-path="lesson-05.html"><a href="lesson-05.html#lab-part-i-in-the-practicum-file."><i class="fa fa-check"></i><b>5.2.12</b> Lab: Part I (in the <em>practicum file</em>).</a></li>
+<li class="chapter" data-level="5.2.13" data-path="lesson-05.html"><a href="lesson-05.html#replacement"><i class="fa fa-check"></i><b>5.2.13</b> Replacement</a></li>
+<li class="chapter" data-level="5.2.14" data-path="lesson-05.html"><a href="lesson-05.html#capture"><i class="fa fa-check"></i><b>5.2.14</b> Capture</a></li>
+<li class="chapter" data-level="5.2.15" data-path="lesson-05.html"><a href="lesson-05.html#capture-reformat"><i class="fa fa-check"></i><b>5.2.15</b> Capture <em>&amp;</em> Reformat</a></li>
+<li class="chapter" data-level="5.2.16" data-path="lesson-05.html"><a href="lesson-05.html#lab-part-ii-in-the-practicum-file."><i class="fa fa-check"></i><b>5.2.16</b> Lab: Part II (in the <em>practicum file</em>).</a></li>
+<li class="chapter" data-level="5.2.17" data-path="lesson-05.html"><a href="lesson-05.html#to-keep-in-mind"><i class="fa fa-check"></i><b>5.2.17</b> <em>To keep in mind</em></a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="lesson-05.html"><a href="lesson-05.html#class-materials"><i class="fa fa-check"></i><b>5.3</b> Class materials</a></li>
+<li class="chapter" data-level="5.4" data-path="lesson-05.html"><a href="lesson-05.html#digital-materials"><i class="fa fa-check"></i><b>5.4</b> Digital materials</a></li>
+<li class="chapter" data-level="5.5" data-path="lesson-04.html"><a href="lesson-04.html#reference-materials"><i class="fa fa-check"></i><b>5.5</b> Reference Materials</a></li>
+<li class="chapter" data-level="5.6" data-path="lesson-05.html"><a href="lesson-05.html#HWL05"><i class="fa fa-check"></i><b>5.6</b> Homework</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="lesson-06.html"><a href="lesson-06.html"><i class="fa fa-check"></i><b>6</b> Lesson 06</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="lesson-06.html"><a href="lesson-06.html#understanding-structured-data"><i class="fa fa-check"></i><b>6.1</b> Understanding Structured Data</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="lesson-06.html"><a href="lesson-06.html#xml-extensible-markup-language"><i class="fa fa-check"></i><b>6.1.1</b> XML (<em>Extensible Markup Language</em>)</a></li>
+<li class="chapter" data-level="6.1.2" data-path="lesson-06.html"><a href="lesson-06.html#csvtsv-comma-separated-values-tab-separated-values"><i class="fa fa-check"></i><b>6.1.2</b> CSV/TSV (<em>Comma-Separated Values</em>/ <em>Tab-Separated Values</em>)</a></li>
+<li class="chapter" data-level="6.1.3" data-path="lesson-06.html"><a href="lesson-06.html#json-javascript-object-notation"><i class="fa fa-check"></i><b>6.1.3</b> JSON (<em>JavaScript Object Notation</em>)</a></li>
+<li class="chapter" data-level="6.1.4" data-path="lesson-06.html"><a href="lesson-06.html#yml-or-yaml-yet-another-markup-language-yaml-aint-markup-language"><i class="fa fa-check"></i><b>6.1.4</b> YML or YAML (<em>Yet Another Markup Language</em> &gt; <em>YAML Ain’t Markup Language</em>)</a></li>
+<li class="chapter" data-level="6.1.5" data-path="lesson-06.html"><a href="lesson-06.html#bibtex-most-common-bibliographic-format"><i class="fa fa-check"></i><b>6.1.5</b> <code>BibTeX</code>: <em>most common bibliographic format</em></a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="lesson-06.html"><a href="lesson-06.html#larger-examples"><i class="fa fa-check"></i><b>6.2</b> Larger Examples</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="lesson-06.html"><a href="lesson-06.html#csv-tsv"><i class="fa fa-check"></i><b>6.2.1</b> <code>CSV</code> / <code>TSV</code></a></li>
+<li class="chapter" data-level="6.2.2" data-path="lesson-06.html"><a href="lesson-06.html#json"><i class="fa fa-check"></i><b>6.2.2</b> <code>JSON</code></a></li>
+<li class="chapter" data-level="6.2.3" data-path="lesson-06.html"><a href="lesson-06.html#ymlyaml"><i class="fa fa-check"></i><b>6.2.3</b> <code>YML</code>/<code>YAML</code></a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="lesson-06.html"><a href="lesson-06.html#in-class-practice"><i class="fa fa-check"></i><b>6.3</b> In-Class Practice</a></li>
+<li class="chapter" data-level="6.4" data-path="lesson-06.html"><a href="lesson-06.html#HWL06"><i class="fa fa-check"></i><b>6.4</b> Homework</a></li>
+<li class="chapter" data-level="6.5" data-path="lesson-06.html"><a href="lesson-06.html#HWL06S"><i class="fa fa-check"></i><b>6.5</b> Homework Solution</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="lesson-06.html"><a href="lesson-06.html#pseudocode-solution"><i class="fa fa-check"></i><b>6.5.1</b> Pseudocode solution</a></li>
+<li class="chapter" data-level="6.5.2" data-path="lesson-06.html"><a href="lesson-06.html#scripts"><i class="fa fa-check"></i><b>6.5.2</b> Scripts</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="lesson-07.html"><a href="lesson-07.html"><i class="fa fa-check"></i><b>7</b> Lesson 07</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="lesson-07.html"><a href="lesson-07.html#building-memex---step-1"><i class="fa fa-check"></i><b>7.1</b> Building Memex - Step 1</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="lesson-07.html"><a href="lesson-07.html#pseudocode"><i class="fa fa-check"></i><b>7.1.1</b> Pseudocode</a></li>
+<li class="chapter" data-level="7.1.2" data-path="lesson-07.html"><a href="lesson-07.html#code-snippets"><i class="fa fa-check"></i><b>7.1.2</b> Code snippets</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="lesson-06.html"><a href="lesson-06.html#HWL06"><i class="fa fa-check"></i><b>7.2</b> Homework</a></li>
+<li class="chapter" data-level="7.3" data-path="lesson-07.html"><a href="lesson-07.html#HWL07S"><i class="fa fa-check"></i><b>7.3</b> Homework Solution</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="lesson-07.html"><a href="lesson-07.html#pseudocode-1"><i class="fa fa-check"></i><b>7.3.1</b> Pseudocode</a></li>
+<li class="chapter" data-level="7.3.2" data-path="lesson-07.html"><a href="lesson-07.html#note-on-folderfile-organization"><i class="fa fa-check"></i><b>7.3.2</b> Note on Folder/File Organization</a></li>
+<li class="chapter" data-level="7.3.3" data-path="lesson-07.html"><a href="lesson-07.html#script-1_build_structure.py"><i class="fa fa-check"></i><b>7.3.3</b> Script (<code>1_build_structure.py</code>)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="lesson-08.html"><a href="lesson-08.html"><i class="fa fa-check"></i><b>8</b> Lesson 08</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="lesson-08.html"><a href="lesson-08.html#building-memex---step-2"><i class="fa fa-check"></i><b>8.1</b> Building Memex - Step 2</a></li>
+<li class="chapter" data-level="8.2" data-path="lesson-08.html"><a href="lesson-08.html#ocr-software-tesseract"><i class="fa fa-check"></i><b>8.2</b> OCR software: Tesseract</a></li>
+<li class="chapter" data-level="8.3" data-path="lesson-08.html"><a href="lesson-08.html#task-general-map-pseudocode"><i class="fa fa-check"></i><b>8.3</b> Task: General Map Pseudocode</a></li>
+<li class="chapter" data-level="8.4" data-path="lesson-08.html"><a href="lesson-08.html#code-snippets-functions"><i class="fa fa-check"></i><b>8.4</b> Code snippets &amp; functions</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="lesson-08.html"><a href="lesson-08.html#new-libraries"><i class="fa fa-check"></i><b>8.4.1</b> New libraries</a></li>
+<li class="chapter" data-level="8.4.2" data-path="lesson-08.html"><a href="lesson-08.html#code-reuse"><i class="fa fa-check"></i><b>8.4.2</b> Code Reuse</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="lesson-08.html"><a href="lesson-08.html#clean-temporary-copy-of-a-pdf"><i class="fa fa-check"></i><b>8.5</b> Clean Temporary Copy of a PDF</a>
+<ul>
+<li class="chapter" data-level="8.5.1" data-path="lesson-08.html"><a href="lesson-08.html#ocr-ing-pdf"><i class="fa fa-check"></i><b>8.5.1</b> OCR-ing PDF</a></li>
+<li class="chapter" data-level="8.5.2" data-path="lesson-08.html"><a href="lesson-08.html#missing-functions"><i class="fa fa-check"></i><b>8.5.2</b> Missing functions</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="lesson-08.html"><a href="lesson-08.html#one-more-note-on-ocr"><i class="fa fa-check"></i><b>8.6</b> One more note on OCR</a></li>
+<li class="chapter" data-level="8.7" data-path="lesson-08.html"><a href="lesson-08.html#HWL08"><i class="fa fa-check"></i><b>8.7</b> Homework</a></li>
+<li class="chapter" data-level="8.8" data-path="lesson-08.html"><a href="lesson-08.html#HWL08S"><i class="fa fa-check"></i><b>8.8</b> Homework Solution</a></li>
+<li class="chapter" data-level="8.9" data-path="lesson-08.html"><a href="lesson-08.html#tesseract-language-codes"><i class="fa fa-check"></i><b>8.9</b> Tesseract Language Codes</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="lesson-09.html"><a href="lesson-09.html"><i class="fa fa-check"></i><b>9</b> Lesson 09</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="lesson-09.html"><a href="lesson-09.html#building-memex---step-3"><i class="fa fa-check"></i><b>9.1</b> Building Memex - Step 3</a></li>
+<li class="chapter" data-level="9.2" data-path="lesson-08.html"><a href="lesson-08.html#code-snippets-functions"><i class="fa fa-check"></i><b>9.2</b> Code snippets &amp; functions</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="lesson-09.html"><a href="lesson-09.html#the-main-function-publication-interface"><i class="fa fa-check"></i><b>9.2.1</b> The main function: Publication Interface</a></li>
+<li class="chapter" data-level="9.2.2" data-path="lesson-09.html"><a href="lesson-09.html#additional-functions"><i class="fa fa-check"></i><b>9.2.2</b> Additional functions</a></li>
+<li class="chapter" data-level="9.2.3" data-path="lesson-09.html"><a href="lesson-09.html#extra-function"><i class="fa fa-check"></i><b>9.2.3</b> Extra function</a></li>
+<li class="chapter" data-level="9.2.4" data-path="lesson-08.html"><a href="lesson-08.html#code-reuse"><i class="fa fa-check"></i><b>9.2.4</b> Code Reuse</a></li>
+<li class="chapter" data-level="9.2.5" data-path="lesson-09.html"><a href="lesson-09.html#missing-functions-the-index-page-and-the-contents-page"><i class="fa fa-check"></i><b>9.2.5</b> Missing functions: The Index Page and the Contents Page</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="lesson-09.html"><a href="lesson-09.html#HWL09"><i class="fa fa-check"></i><b>9.3</b> Homework</a></li>
+<li class="chapter" data-level="9.4" data-path="lesson-09.html"><a href="lesson-09.html#HWL09S"><i class="fa fa-check"></i><b>9.4</b> Homework Solution</a></li>
+<li class="chapter" data-level="9.5" data-path="lesson-09.html"><a href="lesson-09.html#additional-materials-html-css-tfidf"><i class="fa fa-check"></i><b>9.5</b> Additional materials: HTML, CSS; TFIDF</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="lesson-10.html"><a href="lesson-10.html"><i class="fa fa-check"></i><b>10</b> Lesson 10</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="lesson-10.html"><a href="lesson-10.html#building-memex---step-4"><i class="fa fa-check"></i><b>10.1</b> Building Memex - Step 4</a></li>
+<li class="chapter" data-level="10.2" data-path="lesson-10.html"><a href="lesson-10.html#some-explanations-tf-idf-document-distance"><i class="fa fa-check"></i><b>10.2</b> Some explanations: TF-IDF, Document Distance</a></li>
+<li class="chapter" data-level="10.3" data-path="lesson-10.html"><a href="lesson-10.html#practicalities"><i class="fa fa-check"></i><b>10.3</b> Practicalities</a></li>
+<li class="chapter" data-level="10.4" data-path="lesson-10.html"><a href="lesson-10.html#CSL10"><i class="fa fa-check"></i><b>10.4</b> Code Snippets</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="lesson-10.html"><a href="lesson-10.html#aggregating-publications-into-a-corpus"><i class="fa fa-check"></i><b>10.4.1</b> Aggregating publications into a corpus</a></li>
+<li class="chapter" data-level="10.4.2" data-path="lesson-10.html"><a href="lesson-10.html#getting-tf-idf-values-and-distance-matrix-with-sklearn"><i class="fa fa-check"></i><b>10.4.2</b> Getting <em>tf-idf</em> Values and Distance Matrix with <code>sklearn</code></a></li>
+<li class="chapter" data-level="10.4.3" data-path="lesson-10.html"><a href="lesson-10.html#converting-results"><i class="fa fa-check"></i><b>10.4.3</b> Converting Results</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="lesson-10.html"><a href="lesson-10.html#HWL10"><i class="fa fa-check"></i><b>10.5</b> Homework</a></li>
+<li class="chapter" data-level="10.6" data-path="lesson-10.html"><a href="lesson-10.html#HWL10S"><i class="fa fa-check"></i><b>10.6</b> Homework Solution</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="lesson-11.html"><a href="lesson-11.html"><i class="fa fa-check"></i><b>11</b> Lesson 11</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="lesson-11.html"><a href="lesson-11.html#building-memex---step-5"><i class="fa fa-check"></i><b>11.1</b> Building Memex - Step 5</a></li>
+<li class="chapter" data-level="11.2" data-path="lesson-11.html"><a href="lesson-11.html#running-searches"><i class="fa fa-check"></i><b>11.2</b> Running searches</a></li>
+<li class="chapter" data-level="11.3" data-path="lesson-11.html"><a href="lesson-11.html#wordclouds-as-visual-summaries"><i class="fa fa-check"></i><b>11.3</b> Wordclouds as visual summaries</a></li>
+<li class="chapter" data-level="11.4" data-path="lesson-11.html"><a href="lesson-11.html#stopwords-for-tf-idf"><i class="fa fa-check"></i><b>11.4</b> Stopwords for <em>tf-idf</em></a></li>
+<li class="chapter" data-level="11.5" data-path="lesson-11.html"><a href="lesson-11.html#HWL11"><i class="fa fa-check"></i><b>11.5</b> Homework</a></li>
+<li class="chapter" data-level="11.6" data-path="lesson-11.html"><a href="lesson-11.html#HWL11S"><i class="fa fa-check"></i><b>11.6</b> Homework Solution</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="lesson-12.html"><a href="lesson-12.html"><i class="fa fa-check"></i><b>12</b> Lesson 12</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="lesson-12.html"><a href="lesson-12.html#building-memex---step-6-or-actually-back-to-step-3"><i class="fa fa-check"></i><b>12.1</b> Building Memex - Step 6 (or, actually, back to Step 3)</a></li>
+<li class="chapter" data-level="12.2" data-path="lesson-12.html"><a href="lesson-12.html#the-index-page"><i class="fa fa-check"></i><b>12.2</b> The Index Page</a></li>
+<li class="chapter" data-level="12.3" data-path="lesson-12.html"><a href="lesson-12.html#the-publication-pages"><i class="fa fa-check"></i><b>12.3</b> The Publication Pages</a></li>
+<li class="chapter" data-level="12.4" data-path="lesson-12.html"><a href="lesson-12.html#HWL12"><i class="fa fa-check"></i><b>12.4</b> Homework</a></li>
+<li class="chapter" data-level="12.5" data-path="lesson-12.html"><a href="lesson-12.html#HWL12S"><i class="fa fa-check"></i><b>12.5</b> Homework Solution</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html"><i class="fa fa-check"></i>Syllabus</a>
+<ul>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#course-details"><i class="fa fa-check"></i>Course Details</a></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#aims-contents-and-method-of-the-course"><i class="fa fa-check"></i>Aims, Contents and Method of the Course</a></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#course-evaluation"><i class="fa fa-check"></i>Course Evaluation</a></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#class-participation"><i class="fa fa-check"></i>Class Participation</a></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#homework-assignments"><i class="fa fa-check"></i>Homework Assignments</a></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#final-project"><i class="fa fa-check"></i>Final Project</a></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#study-materials"><i class="fa fa-check"></i>Study materials</a></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#software-tools-technologies"><i class="fa fa-check"></i>Software, Tools, &amp; Technologies</a></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#schedule"><i class="fa fa-check"></i>Schedule</a></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#lesson-topics"><i class="fa fa-check"></i>Lesson Topics</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">070172-1 UE Methodological course - Introduction to DH: Tools &amp; Techniques (2020W) <code>Memex Edition</code></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="lesson-07" class="section level1" number="7">
+<h1><span class="header-section-number">7</span> Lesson 07</h1>
+<div id="building-memex---step-1" class="section level2" number="7.1">
+<h2><span class="header-section-number">7.1</span> Building Memex - Step 1</h2>
+<p>First and foremost, we need to build the structure for our memex. This involves the following steps:</p>
+<ol style="list-style-type: decimal">
+<li>loading our bibTeX data and parsing it properly into a dictionary (you can build on the solution to the previous lesson);</li>
+<li>looping through the dictionary of our bibliographical data in order to save relevant information into the structure of our memex, which shoould be as shown on the screenshot below. Such folder structure is very easy to generate computationally knowing only the citation key of each publication, which will allow to manipulate our data with ease, no matter how massive it becomes.</li>
+</ol>
+<p><img src="images/memexFolderStructure.png" /></p>
+<div id="pseudocode" class="section level3" number="7.1.1">
+<h3><span class="header-section-number">7.1.1</span> Pseudocode</h3>
+<ul>
+<li>load bibliographical data into a dictionary
+<ul>
+<li>some data will need to be filtered, fixed, and probably reformatted slightly, etc. (build on the previously created function); use your Zotero data;</li>
+</ul></li>
+<li>loop through your dictionary and process each record:
+<ul>
+<li>generate relative path for your record
+<ul>
+<li>this path will consist of two parts:
+<ul>
+<li>the path to your memex folder (either relative or absolute); this one you can define in your yml settings file (something like <code>./MEMEX_SANDBOX/data/</code>).</li>
+<li>the relative path to a publucation within your memex folder
+<ul>
+<li>the relative path must be generated from the citation key of each publication like this — <code>./1stLetter/2firstLetters/citeKey/</code></li>
+<li>thus, if the key is <code>McCartyHumanities2014</code>, the path must be <code>./m/mc/McCartyHumanities2014/</code> (subFolder = <code>key.lower()[0]</code>;
+subSubFolder = <code>key.lower()[:2]</code>; subSubSubFolder = <code>key</code>; <strong>Question:</strong> Why would we need to <code>.lower()</code>?)</li>
+</ul></li>
+</ul></li>
+<li>create the subfolder, using this path</li>
+<li>save into this folder a bibTeX record for the publication with the name <code>key.bib</code> (i.e., <code>McCartyHumanities2014.bib</code>);</li>
+<li>copy the PDF file into this folder and save it in a similar manner: <code>key.pdf</code> (i.e., <code>McCartyHumanities2014.pdf</code>).</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+<div id="code-snippets" class="section level3" number="7.1.2">
+<h3><span class="header-section-number">7.1.2</span> Code snippets</h3>
+<p>Some of the following code snippets should be helpful (although you may find different ways of getting to the same results, which is, of course, totally fine).</p>
+<p><strong>Snippet 1: Load YML File into a Dictionary</strong></p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb41-1"><a href="lesson-07.html#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> yaml</span>
+<span id="cb41-2"><a href="lesson-07.html#cb41-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-3"><a href="lesson-07.html#cb41-3" aria-hidden="true" tabindex="-1"></a>settingsFile <span class="op">=</span> <span class="st">&quot;z_config.yml&quot;</span></span>
+<span id="cb41-4"><a href="lesson-07.html#cb41-4" aria-hidden="true" tabindex="-1"></a>settings <span class="op">=</span> yaml.load(<span class="bu">open</span>(settingsFile))</span></code></pre></div>
+<p><strong>Snippet 2: Create Folder, if Does Not Exist</strong></p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb42-1"><a href="lesson-07.html#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb42-2"><a href="lesson-07.html#cb42-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-3"><a href="lesson-07.html#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">not</span> os.path.exists(folder):</span>
+<span id="cb42-4"><a href="lesson-07.html#cb42-4" aria-hidden="true" tabindex="-1"></a>  os.makedirs(folder)</span></code></pre></div>
+<p><strong>Snippet 3: Copy File to a Distination</strong></p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb43-1"><a href="lesson-07.html#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> shutil</span>
+<span id="cb43-2"><a href="lesson-07.html#cb43-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-3"><a href="lesson-07.html#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">not</span> os.path.isfile(dst):</span>
+<span id="cb43-4"><a href="lesson-07.html#cb43-4" aria-hidden="true" tabindex="-1"></a>  shutil.copyfile(src, dst)</span></code></pre></div>
+<p>where <code>scr</code> is the path to where the file was, and <code>dst</code> is the path to where you want your file. Keep in mind, that in <code>dst</code> you can use the name of the file that you want!</p>
+<p><strong>Snippet 4: Making Path Properly</strong></p>
+<p>As you remember from our introduction to command line, Mac and Windows format paths differently, which will create issues if <em>manually</em> construct the path. The best way to avoid any issues is to construct paths with a proper library.</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb44-1"><a href="lesson-07.html#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb44-2"><a href="lesson-07.html#cb44-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-3"><a href="lesson-07.html#cb44-3" aria-hidden="true" tabindex="-1"></a>yourPath <span class="op">=</span> os.path.join(folder, subfolder, subsubfolder, fileName)</span></code></pre></div>
+</div>
+</div>
+<div id="HWL06" class="section level2" number="7.2">
+<h2><span class="header-section-number">7.2</span> Homework</h2>
+<ul>
+<li>the assignment is described above</li>
+<li>additionally, take the solution scripts from the previous lesson and annotate every line of code; submit your annnotations together with the main assignment</li>
+<li>upload your results to your homework github repository</li>
+</ul>
+</div>
+<div id="HWL07S" class="section level2" number="7.3">
+<h2><span class="header-section-number">7.3</span> Homework Solution</h2>
+<div id="pseudocode-1" class="section level3" number="7.3.1">
+<h3><span class="header-section-number">7.3.1</span> Pseudocode</h3>
+<ul>
+<li>creating the overall structure for our MEMEX on HDD
+<ol style="list-style-type: decimal">
+<li>using out bibliographical data, we algorithmically generate paths for each publication</li>
+<li>we create those paths</li>
+<li>we copy relevant data into those paths:
+<ol style="list-style-type: decimal">
+<li>bibliographical record (bib);</li>
+<li>PDF files</li>
+</ol></li>
+</ol></li>
+</ul>
+<p>Let’s break it down into smaller steps:</p>
+<ul>
+<li>first of all, it will actually be easier of take a look at this task from another perspective.
+<ul>
+<li>we should start from a single publication, or, better, a single bibliographical record.</li>
+<li>after we figure out how to process a single publication, we will just need to figure out how to process all of them</li>
+</ul></li>
+<li>so, let’s start with a single bib record:
+<ul>
+<li>(we have written a function before that creates a dictionary from every bib record (let’s call it <strong>loadBib()</strong>); so let our function take such a single-record dictionary as its argument);</li>
+<li>what will we need from our function (let’s call it <strong>processBibRecord()</strong>)? it must do the following:
+<ul>
+<li>to generate a unique path for the publication</li>
+<li>check if that path exists, if not: create it</li>
+<li>save bib record into that folder</li>
+<li>copy PDF to that folder</li>
+</ul></li>
+<li>what do we need to consider:
+<ul>
+<li>we need a simple and transparent way to algorithmically generate all this data, which will ensure easy access, browsability, and overall transparency of our approach. In order to achieve it, we can use <em>a single</em> element from each record to generate all necessary paths and filenames. Namely, the <em>citation key</em>.</li>
+</ul></li>
+<li><strong>path:</strong> our path will be a concatenation of the path to memex (for example, <code>./MEMEX_SANDBOX/data/</code>) and a subpath unique to each publication, which we can generate from the citation key.
+<ul>
+<li>for example, if the citation key is <code>SavantMuslims2017</code>, the publication path should be <code>/s/sa/SavantMuslims2017/</code></li>
+<li>the concatenated path thus will be: <code>./MEMEX_SANDBOX/data/s/sa/SavantMuslims2017/</code></li>
+<li><strong>NB:</strong> it may be a good idea to have a small function that takes paths to memex and the citation key as its arguments and returns the final path (let’s call it <strong>generatePublPath()</strong>).</li>
+</ul></li>
+<li>now, that we have <strong>the path</strong>, we can check whether it exists, and, if not, create it</li>
+<li>now, we have our path and the actual folder on HDD, it is easy-peasy-lemon-squeezy to save a bibliographical record and a PDF into that folder.
+<ul>
+<li>for the same considerations of machine-readability, we should use use the citation key to name our files: for example, <code>SavantMuslims2017.bib</code> for our bibliographical record, and <code>SavantMuslims2017.pdf</code> for our PDF file.</li>
+</ul></li>
+</ul></li>
+<li>now, we have a function that does all that we need from a single record, we can write another function (let’s call it <strong>processAllRecords()</strong>) that will
+<ul>
+<li>take the large bibliographical dictionary generated with <strong>loadBib()</strong> as its argument</li>
+<li>loops through this dictionary, and processes each record with <strong>processBibRecord()</strong>.</li>
+</ul></li>
+</ul>
+</div>
+<div id="note-on-folderfile-organization" class="section level3" number="7.3.2">
+<h3><span class="header-section-number">7.3.2</span> Note on Folder/File Organization</h3>
+<p>It is crucial that all our files have their places and there are only as many files as we need. Otherwise, things get unmanageable very quickly.</p>
+<ol style="list-style-type: decimal">
+<li>Create <code>memex_sandbox</code> repository on github
+<ol style="list-style-type: decimal">
+<li>add <code>.gitignore</code> with template for Python</li>
+<li>edit <code>.gitignore</code> on github.com, by adding the following two lines to the top</li>
+</ol></li>
+</ol>
+<pre><code>_data/
+.DS_Store</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>Clone the repository to your machine</li>
+<li>Let’s organize everything nicely here. Like this:</li>
+</ol>
+<div class="sourceCode" id="cb46"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb46-1"><a href="lesson-07.html#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="ex">_bib/</span></span>
+<span id="cb46-2"><a href="lesson-07.html#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="ex">_data/</span></span>
+<span id="cb46-3"><a href="lesson-07.html#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="ex">_misc/</span></span>
+<span id="cb46-4"><a href="lesson-07.html#cb46-4" aria-hidden="true" tabindex="-1"></a><span class="ex">1_build_structure.md</span></span>
+<span id="cb46-5"><a href="lesson-07.html#cb46-5" aria-hidden="true" tabindex="-1"></a><span class="ex">1_build_structure.py</span></span>
+<span id="cb46-6"><a href="lesson-07.html#cb46-6" aria-hidden="true" tabindex="-1"></a><span class="ex">2_OCR_test.py</span></span>
+<span id="cb46-7"><a href="lesson-07.html#cb46-7" aria-hidden="true" tabindex="-1"></a><span class="ex">settings.yml</span></span></code></pre></div>
+<ul>
+<li><code>_bib/</code> : all bibliography-related files
+<ul>
+<li>Zotero bibliography</li>
+<li>language codes dictionary</li>
+<li>etc.</li>
+</ul></li>
+<li><code>_data/</code> : folder where we will be generating all the data; this folder is added to <code>.gitignore</code> so that none of the data would be uploaded to github (reason: copyright)</li>
+<li><code>_misc</code> : all other miscellaneous files go here; we can also move all the files we no longer need into this folder (keeping the main folder clean).</li>
+<li><code>settings.yml</code> should look something like:</li>
+</ul>
+<div class="sourceCode" id="cb47"><pre class="sourceCode yml"><code class="sourceCode yaml"><span id="cb47-1"><a href="lesson-07.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">path_to_memex</span><span class="kw">:</span><span class="at"> ./_data/</span></span>
+<span id="cb47-2"><a href="lesson-07.html#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="fu">bib_all</span><span class="kw">:</span><span class="at"> ./_bib/zotero_bibliography.bib</span></span>
+<span id="cb47-3"><a href="lesson-07.html#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="fu">bibtex_keys</span><span class="kw">:</span><span class="at"> ./_bib/bibtex_keys.yml</span></span></code></pre></div>
+</div>
+<div id="script-1_build_structure.py" class="section level3" number="7.3.3">
+<h3><span class="header-section-number">7.3.3</span> Script (<code>1_build_structure.py</code>)</h3>
+<div class="sourceCode" id="cb48"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb48-1"><a href="lesson-07.html#cb48-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-2"><a href="lesson-07.html#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os, shutil, re</span>
+<span id="cb48-3"><a href="lesson-07.html#cb48-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> yaml</span>
+<span id="cb48-4"><a href="lesson-07.html#cb48-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-5"><a href="lesson-07.html#cb48-5" aria-hidden="true" tabindex="-1"></a><span class="co">###########################################################</span></span>
+<span id="cb48-6"><a href="lesson-07.html#cb48-6" aria-hidden="true" tabindex="-1"></a><span class="co"># VARIABLES ###############################################</span></span>
+<span id="cb48-7"><a href="lesson-07.html#cb48-7" aria-hidden="true" tabindex="-1"></a><span class="co">###########################################################</span></span>
+<span id="cb48-8"><a href="lesson-07.html#cb48-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-9"><a href="lesson-07.html#cb48-9" aria-hidden="true" tabindex="-1"></a>settingsFile <span class="op">=</span> <span class="st">&quot;./settings.yml&quot;</span></span>
+<span id="cb48-10"><a href="lesson-07.html#cb48-10" aria-hidden="true" tabindex="-1"></a>settings <span class="op">=</span> yaml.load(<span class="bu">open</span>(settingsFile))</span>
+<span id="cb48-11"><a href="lesson-07.html#cb48-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-12"><a href="lesson-07.html#cb48-12" aria-hidden="true" tabindex="-1"></a>memexPath <span class="op">=</span> settings[<span class="st">&quot;path_to_memex&quot;</span>]</span>
+<span id="cb48-13"><a href="lesson-07.html#cb48-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-14"><a href="lesson-07.html#cb48-14" aria-hidden="true" tabindex="-1"></a><span class="co">###########################################################</span></span>
+<span id="cb48-15"><a href="lesson-07.html#cb48-15" aria-hidden="true" tabindex="-1"></a><span class="co"># FUNCTIONS ###############################################</span></span>
+<span id="cb48-16"><a href="lesson-07.html#cb48-16" aria-hidden="true" tabindex="-1"></a><span class="co">###########################################################</span></span>
+<span id="cb48-17"><a href="lesson-07.html#cb48-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-18"><a href="lesson-07.html#cb48-18" aria-hidden="true" tabindex="-1"></a><span class="co"># load bibTex Data into a dictionary</span></span>
+<span id="cb48-19"><a href="lesson-07.html#cb48-19" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> loadBib(bibTexFile):</span>
+<span id="cb48-20"><a href="lesson-07.html#cb48-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-21"><a href="lesson-07.html#cb48-21" aria-hidden="true" tabindex="-1"></a>    bibDic <span class="op">=</span> {}</span>
+<span id="cb48-22"><a href="lesson-07.html#cb48-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-23"><a href="lesson-07.html#cb48-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> <span class="bu">open</span>(bibTexFile, <span class="st">&quot;r&quot;</span>, encoding<span class="op">=</span><span class="st">&quot;utf8&quot;</span>) <span class="im">as</span> f1:</span>
+<span id="cb48-24"><a href="lesson-07.html#cb48-24" aria-hidden="true" tabindex="-1"></a>        records <span class="op">=</span> f1.read().split(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">@&quot;</span>)</span>
+<span id="cb48-25"><a href="lesson-07.html#cb48-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-26"><a href="lesson-07.html#cb48-26" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> record <span class="kw">in</span> records[<span class="dv">1</span>:]:</span>
+<span id="cb48-27"><a href="lesson-07.html#cb48-27" aria-hidden="true" tabindex="-1"></a>            <span class="co"># let process ONLY those records that have PDFs</span></span>
+<span id="cb48-28"><a href="lesson-07.html#cb48-28" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> <span class="st">&quot;.pdf&quot;</span> <span class="kw">in</span> record.lower():</span>
+<span id="cb48-29"><a href="lesson-07.html#cb48-29" aria-hidden="true" tabindex="-1"></a>                completeRecord <span class="op">=</span> <span class="st">&quot;</span><span class="ch">\n</span><span class="st">@&quot;</span> <span class="op">+</span> record</span>
+<span id="cb48-30"><a href="lesson-07.html#cb48-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-31"><a href="lesson-07.html#cb48-31" aria-hidden="true" tabindex="-1"></a>                record <span class="op">=</span> record.strip().split(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)[:<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb48-32"><a href="lesson-07.html#cb48-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-33"><a href="lesson-07.html#cb48-33" aria-hidden="true" tabindex="-1"></a>                rType <span class="op">=</span> record[<span class="dv">0</span>].split(<span class="st">&quot;{&quot;</span>)[<span class="dv">0</span>].strip()</span>
+<span id="cb48-34"><a href="lesson-07.html#cb48-34" aria-hidden="true" tabindex="-1"></a>                rCite <span class="op">=</span> record[<span class="dv">0</span>].split(<span class="st">&quot;{&quot;</span>)[<span class="dv">1</span>].strip().replace(<span class="st">&quot;,&quot;</span>, <span class="st">&quot;&quot;</span>)</span>
+<span id="cb48-35"><a href="lesson-07.html#cb48-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-36"><a href="lesson-07.html#cb48-36" aria-hidden="true" tabindex="-1"></a>                bibDic[rCite] <span class="op">=</span> {}</span>
+<span id="cb48-37"><a href="lesson-07.html#cb48-37" aria-hidden="true" tabindex="-1"></a>                bibDic[rCite][<span class="st">&quot;rCite&quot;</span>] <span class="op">=</span> rCite</span>
+<span id="cb48-38"><a href="lesson-07.html#cb48-38" aria-hidden="true" tabindex="-1"></a>                bibDic[rCite][<span class="st">&quot;rType&quot;</span>] <span class="op">=</span> rType</span>
+<span id="cb48-39"><a href="lesson-07.html#cb48-39" aria-hidden="true" tabindex="-1"></a>                bibDic[rCite][<span class="st">&quot;complete&quot;</span>] <span class="op">=</span> completeRecord</span>
+<span id="cb48-40"><a href="lesson-07.html#cb48-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-41"><a href="lesson-07.html#cb48-41" aria-hidden="true" tabindex="-1"></a>                <span class="cf">for</span> r <span class="kw">in</span> record[<span class="dv">1</span>:]:</span>
+<span id="cb48-42"><a href="lesson-07.html#cb48-42" aria-hidden="true" tabindex="-1"></a>                    key <span class="op">=</span> r.split(<span class="st">&quot;=&quot;</span>)[<span class="dv">0</span>].strip()</span>
+<span id="cb48-43"><a href="lesson-07.html#cb48-43" aria-hidden="true" tabindex="-1"></a>                    val <span class="op">=</span> r.split(<span class="st">&quot;=&quot;</span>)[<span class="dv">1</span>].strip()</span>
+<span id="cb48-44"><a href="lesson-07.html#cb48-44" aria-hidden="true" tabindex="-1"></a>                    val <span class="op">=</span> re.sub(<span class="st">&quot;^\{|\},?&quot;</span>, <span class="st">&quot;&quot;</span>, val)</span>
+<span id="cb48-45"><a href="lesson-07.html#cb48-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-46"><a href="lesson-07.html#cb48-46" aria-hidden="true" tabindex="-1"></a>                    bibDic[rCite][key] <span class="op">=</span> val</span>
+<span id="cb48-47"><a href="lesson-07.html#cb48-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-48"><a href="lesson-07.html#cb48-48" aria-hidden="true" tabindex="-1"></a>                    <span class="co"># fix the path to PDF</span></span>
+<span id="cb48-49"><a href="lesson-07.html#cb48-49" aria-hidden="true" tabindex="-1"></a>                    <span class="cf">if</span> key <span class="op">==</span> <span class="st">&quot;file&quot;</span>:</span>
+<span id="cb48-50"><a href="lesson-07.html#cb48-50" aria-hidden="true" tabindex="-1"></a>                        <span class="cf">if</span> <span class="st">&quot;;&quot;</span> <span class="kw">in</span> val:</span>
+<span id="cb48-51"><a href="lesson-07.html#cb48-51" aria-hidden="true" tabindex="-1"></a>                            <span class="co">#print(val)</span></span>
+<span id="cb48-52"><a href="lesson-07.html#cb48-52" aria-hidden="true" tabindex="-1"></a>                            temp <span class="op">=</span> val.split(<span class="st">&quot;;&quot;</span>)</span>
+<span id="cb48-53"><a href="lesson-07.html#cb48-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-54"><a href="lesson-07.html#cb48-54" aria-hidden="true" tabindex="-1"></a>                            <span class="cf">for</span> t <span class="kw">in</span> temp:</span>
+<span id="cb48-55"><a href="lesson-07.html#cb48-55" aria-hidden="true" tabindex="-1"></a>                                <span class="cf">if</span> t.endswith(<span class="st">&quot;.pdf&quot;</span>):</span>
+<span id="cb48-56"><a href="lesson-07.html#cb48-56" aria-hidden="true" tabindex="-1"></a>                                    val <span class="op">=</span> t</span>
+<span id="cb48-57"><a href="lesson-07.html#cb48-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-58"><a href="lesson-07.html#cb48-58" aria-hidden="true" tabindex="-1"></a>                            bibDic[rCite][key] <span class="op">=</span> val</span>
+<span id="cb48-59"><a href="lesson-07.html#cb48-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-60"><a href="lesson-07.html#cb48-60" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;=&quot;</span><span class="op">*</span><span class="dv">80</span>)</span>
+<span id="cb48-61"><a href="lesson-07.html#cb48-61" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;NUMBER OF RECORDS IN BIBLIGORAPHY: </span><span class="sc">%d</span><span class="st">&quot;</span> <span class="op">%</span> <span class="bu">len</span>(bibDic))</span>
+<span id="cb48-62"><a href="lesson-07.html#cb48-62" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;=&quot;</span><span class="op">*</span><span class="dv">80</span>)</span>
+<span id="cb48-63"><a href="lesson-07.html#cb48-63" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span>(bibDic)</span>
+<span id="cb48-64"><a href="lesson-07.html#cb48-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-65"><a href="lesson-07.html#cb48-65" aria-hidden="true" tabindex="-1"></a><span class="co"># generate path from bibtex code, and create a folder, if does not exist;</span></span>
+<span id="cb48-66"><a href="lesson-07.html#cb48-66" aria-hidden="true" tabindex="-1"></a><span class="co"># if the code is `SavantMuslims2017`, the path will be pathToMemex+`/s/sa/SavantMuslims2017/`</span></span>
+<span id="cb48-67"><a href="lesson-07.html#cb48-67" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> generatePublPath(pathToMemex, bibTexCode):</span>
+<span id="cb48-68"><a href="lesson-07.html#cb48-68" aria-hidden="true" tabindex="-1"></a>    temp <span class="op">=</span> bibTexCode.lower()</span>
+<span id="cb48-69"><a href="lesson-07.html#cb48-69" aria-hidden="true" tabindex="-1"></a>    directory <span class="op">=</span> os.path.join(pathToMemex, temp[<span class="dv">0</span>], temp[:<span class="dv">2</span>], bibTexCode)</span>
+<span id="cb48-70"><a href="lesson-07.html#cb48-70" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span>(directory)</span>
+<span id="cb48-71"><a href="lesson-07.html#cb48-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-72"><a href="lesson-07.html#cb48-72" aria-hidden="true" tabindex="-1"></a><span class="co"># process a single bibliographical record: 1) create its unique path; 2) save a bib file; 3) save PDF file </span></span>
+<span id="cb48-73"><a href="lesson-07.html#cb48-73" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> processBibRecord(pathToMemex, bibRecDict):</span>
+<span id="cb48-74"><a href="lesson-07.html#cb48-74" aria-hidden="true" tabindex="-1"></a>    tempPath <span class="op">=</span> generatePublPath(pathToMemex, bibRecDict[<span class="st">&quot;rCite&quot;</span>])</span>
+<span id="cb48-75"><a href="lesson-07.html#cb48-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-76"><a href="lesson-07.html#cb48-76" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;=&quot;</span><span class="op">*</span><span class="dv">80</span>)</span>
+<span id="cb48-77"><a href="lesson-07.html#cb48-77" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;</span><span class="sc">%s</span><span class="st"> :: </span><span class="sc">%s</span><span class="st">&quot;</span> <span class="op">%</span> (bibRecDict[<span class="st">&quot;rCite&quot;</span>], tempPath))</span>
+<span id="cb48-78"><a href="lesson-07.html#cb48-78" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;=&quot;</span><span class="op">*</span><span class="dv">80</span>)</span>
+<span id="cb48-79"><a href="lesson-07.html#cb48-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-80"><a href="lesson-07.html#cb48-80" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> os.path.exists(tempPath):</span>
+<span id="cb48-81"><a href="lesson-07.html#cb48-81" aria-hidden="true" tabindex="-1"></a>        os.makedirs(tempPath)</span>
+<span id="cb48-82"><a href="lesson-07.html#cb48-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-83"><a href="lesson-07.html#cb48-83" aria-hidden="true" tabindex="-1"></a>        bibFilePath <span class="op">=</span> os.path.join(tempPath, <span class="st">&quot;</span><span class="sc">%s</span><span class="st">.bib&quot;</span> <span class="op">%</span> bibRecDict[<span class="st">&quot;rCite&quot;</span>])</span>
+<span id="cb48-84"><a href="lesson-07.html#cb48-84" aria-hidden="true" tabindex="-1"></a>        <span class="cf">with</span> <span class="bu">open</span>(bibFilePath, <span class="st">&quot;w&quot;</span>, encoding<span class="op">=</span><span class="st">&quot;utf8&quot;</span>) <span class="im">as</span> f9:</span>
+<span id="cb48-85"><a href="lesson-07.html#cb48-85" aria-hidden="true" tabindex="-1"></a>            f9.write(bibRecDict[<span class="st">&quot;complete&quot;</span>])</span>
+<span id="cb48-86"><a href="lesson-07.html#cb48-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-87"><a href="lesson-07.html#cb48-87" aria-hidden="true" tabindex="-1"></a>        pdfFileSRC <span class="op">=</span> bibRecDict[<span class="st">&quot;file&quot;</span>]</span>
+<span id="cb48-88"><a href="lesson-07.html#cb48-88" aria-hidden="true" tabindex="-1"></a>        pdfFileDST <span class="op">=</span> os.path.join(tempPath, <span class="st">&quot;</span><span class="sc">%s</span><span class="st">.pdf&quot;</span> <span class="op">%</span> bibRecDict[<span class="st">&quot;rCite&quot;</span>])</span>
+<span id="cb48-89"><a href="lesson-07.html#cb48-89" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="kw">not</span> os.path.isfile(pdfFileDST): <span class="co"># this is to avoid copying that had been already copied.</span></span>
+<span id="cb48-90"><a href="lesson-07.html#cb48-90" aria-hidden="true" tabindex="-1"></a>            shutil.copyfile(pdfFileSRC, pdfFileDST)</span>
+<span id="cb48-91"><a href="lesson-07.html#cb48-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-92"><a href="lesson-07.html#cb48-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-93"><a href="lesson-07.html#cb48-93" aria-hidden="true" tabindex="-1"></a><span class="co">###########################################################</span></span>
+<span id="cb48-94"><a href="lesson-07.html#cb48-94" aria-hidden="true" tabindex="-1"></a><span class="co"># PROCESS ALL RECORDS #####################################</span></span>
+<span id="cb48-95"><a href="lesson-07.html#cb48-95" aria-hidden="true" tabindex="-1"></a><span class="co">###########################################################</span></span>
+<span id="cb48-96"><a href="lesson-07.html#cb48-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-97"><a href="lesson-07.html#cb48-97" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> processAllRecords(bibData):</span>
+<span id="cb48-98"><a href="lesson-07.html#cb48-98" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> k,v <span class="kw">in</span> bibData.items():</span>
+<span id="cb48-99"><a href="lesson-07.html#cb48-99" aria-hidden="true" tabindex="-1"></a>        processBibRecord(memexPath, v)</span>
+<span id="cb48-100"><a href="lesson-07.html#cb48-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-101"><a href="lesson-07.html#cb48-101" aria-hidden="true" tabindex="-1"></a>bibData <span class="op">=</span> loadBib(settings[<span class="st">&quot;bib_all&quot;</span>])</span>
+<span id="cb48-102"><a href="lesson-07.html#cb48-102" aria-hidden="true" tabindex="-1"></a>processAllRecords(bibData)</span>
+<span id="cb48-103"><a href="lesson-07.html#cb48-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-104"><a href="lesson-07.html#cb48-104" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Done!&quot;</span>)</span></code></pre></div>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="lesson-06.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="lesson-08.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "github"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "serif",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/maximromanov/dh_in_mes/edit/master/02-Lesson07.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/maximromanov/dh_in_mes/blob/master/02-Lesson07.Rmd",
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"search": true,
+"info": true
+});
+});
+</script>
+
+</body>
+
+</html>

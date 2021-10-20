@@ -1,0 +1,250 @@
+# Lesson 04
+
+## Sustainable Academic Writing with `markdown`, `pandoc`, and the `*TeX` family
+
+Introduction to sustainable academic writing that avoids any proprietary software solutions and formats. Before the class, make sure to install the following.
+
+* `pandoc` (follow instructions on [https://pandoc.org/installing.html](https://pandoc.org/installing.html))
+* `LaTeX` engine (install from here: [https://miktex.org/](https://miktex.org/))
+	* `LaTeX` for Mac: MikTeX seems to be very finicky with Macs. The following solution proves to be more manageable and stable (you need to run this command in Terminal): `brew install librsvg python homebrew/cask/basictex` (from Pandoc page); after that missing packages might have to be installed manually, but that is relatively easy --- the sustem will prompt you to install them, and that needs to be done only once; alternatively, one can install MacTeX (this one is quite large, about 4Gb).
+* `markdown`
+
+
+```{r echo=FALSE}
+
+DiagrammeR::grViz("
+digraph writing_cycle {
+
+  # a 'graph' statement
+  graph [overlap = false, fontsize = 10, rankdir = TB]
+
+  # several 'node' statements
+  node [shape = box,
+        fontname = Baskerville,
+        fontsize = 10,
+        style = rounded,
+        penwidth = 0.1]
+  bibtex [label = 'bibTex bibliography']
+  markdown [shape=box, style=filled, fillcolor=grey50, fontcolor=white, fontname='courier-bold', label = 'textfile in markdown'] ;
+  zotero[label = 'Zotero']
+  pandoc[label='pandoc engine']
+  style[label='citation style']
+  latex[label='TeX engine']
+  html[label='HTML']
+  doc[label='MS Word']
+  pdf[label='PDF']
+  
+  
+  zotero->bibtex; bibtex->markdown; bibtex->pandoc;
+  markdown->pandoc; style->pandoc;
+  pandoc->html; pandoc->doc; pandoc->latex->pdf;
+
+}",height = 600)
+```
+
+
+## Class Notes
+
+*Files*: Download the following archive file: [sustainable_writing.zip](./files/sustainable_writing.zip). Make sure to unzip it! It contains the following files:
+
+* `biblio.bib`—a bibliography file;
+* `cms-fullnote.csl`—a citation style;
+* `main.md`—the main text file (its contents are also shown below);
+
+**NB:** remember that all files must be in the same folder; it makes sense to put folders into a subfolder (not to overcrowd your main folder), but then do not forget to change the path in your `image` code. 
+
+*TEXT for your `main.md` file.*
+
+```
+---
+title: |
+    *From*: "Modeling: A Study in Words and Meanings" by Willard McCarty
+subtitle: 
+author: 
+date: \today
+bibliography: biblio.bib
+csl: cms-fullnote.csl
+---
+
+>> Out on site, you were never parted from your plans.
+They were your Bible. They got dog-eared, yellowed,
+smeared with mud, peppered with little holes from
+where you had unrolled them on the ground. But
+although so sacred, the plans were only the start.
+Once you got out there on the site everything was
+different. No matter how carefully done, the plans
+could not foresee the *variables*. It was always
+interesting, this moment when you saw for the first
+time the actual site rather than the idealised
+drawings of it.
+
+>> Kate Grenville, *The Idea of Perfection*
+(Sydney: Picador, 1999): 62–3
+
+
+# Introduction
+
+The question of modeling arises naturally for
+humanities computing from the prior question
+of what its practitioners across the disciplines
+have in common. What are they all doing with
+their computers that we might find in their
+diverse activities indications of a coherent or
+cohesible practice? How do we make the best,
+most productive sense of what we observe? There
+are, of course, many answers: practice varies 
+from person to person, from project to project, 
+and ways of construing it perhaps vary even more. 
+In this chapter I argue for modeling as a model 
+of such a practice. I have three confluent goals: 
+to identify humanities computing with an intellectual 
+ground shared by the older disciplines, so that we 
+may say how and to what extent our field is of as 
+well as *in* the humanities, how it draws from and 
+adds to them; at the same time to reflect experience 
+with computers "in the wild"; and to aim at the
+most challenging problems, and so the most
+intellectually rewarding future now imaginable.
+
+My primary concern here is, as Confucius almost 
+said, that we use *the correct word* for the 
+activity we share lest our practice go awry 
+for want of understanding (*Analects 13.3*). 
+Several words are on offer. By what might be 
+called a moral philology I examine them, arguing 
+for the most popular of these, "modeling." The 
+nominal form, "model", is of course very useful 
+and even more popular, but for reasons I will 
+adduce, its primary virtue is that properly 
+defined it defaults to the present participle, 
+its semantic lemma. Before getting to the 
+philology I discuss modeling in the light of 
+the available literature and then consider 
+the strong and learned complaints about the 
+term.
+
+# Background
+
+Let me begin with provisional definitions[^1]. 
+By "modeling" I mean *the heuristic process of 
+constructing and manipulating models*, a "model" 
+I take to be either *a representation of something 
+for purposes of study*, or *a design for realizing 
+something new*. These two senses follow Clifford 
+Geertz's analytic distinction between a denotative 
+"model *of*" such as a grammar describing the 
+features of a language, and an exemplary "model 
+*for*" such as an architectural plan
+[@geertz_interpretation_2017, 93][^2]. In both 
+cases, as the literature consistently emphasizes, 
+a model is by nature a simplified and therefore 
+fictional or idealized representation, often taking 
+quite a rough-and-ready form: hence the term 
+"tinker toy" model from physics, accurately suggesting 
+play, relative crudity, and heuristic purpose 
+[@cartwright_how_1984, 158]. By nature modeling 
+defines a ternary relationship in which it mediates 
+epistemologically, between modeler and modeled, 
+researcher and data or theory and the world 
+[@morgan_models_1999]. Since modeling is 
+fundamentally relational, the same object may 
+in different contexts play either role: thus, 
+e.g., the grammar may function prescriptively, 
+as a model for correct usage, the architectural 
+plan descriptively, as a model of an existing style. 
+The distinction also reaches its vanishing point in 
+the convergent purposes of modeling: the model of 
+exists to tell us that we do not know, the model 
+for to give us what we do not yet have. Models 
+*realize*.
+
+[^1]: My definitions reflect the great majority of 
+the literature explicitly on modeling in the history 
+and philosophy of the natural sciences, especially 
+of physics. The literature tends to be concerned 
+with the role of modeling more in formal scientific 
+theory than in experiment. The close relationship 
+between modeling and experimenting means that the 
+rise of a robust philosophy of experiment since 
+the 1980s is directly relevant to our topic; see 
+[@hacking_stability_1988]. Quite helpful in 
+rethinking the basic issues for the humanities 
+are the writings from the disciplines other 
+than physics, e.g., [@clarke_models_2015] on 
+archaeology; on the social sciences, the essays 
+by de Callatay, Mironesco, Burch, and Gardin 
+in [@franck_explanatory_2011]. For interdisciplinary 
+studies see Shanin (1972) and [@morgan_models_1999], 
+esp. "Models as Mediating Instruments" (pp. 10–37).
+
+[^2]: Cf. Goodman's distinction between 
+"denotative" and "exemplary" models, respectively 
+(1976: 172–3); H. J. Groenewold's "more or less 
+poor substitute" and "more or less exemplary ideal" 
+(1960: 98). Similar distinctions are quite common 
+in the literature.
+
+# Bibliography
+```
+
+## `pandoc` *Commands*
+
+**NB:** On Windows, you may see a pop-up Windows from `MikTex` asking to download a missing package for `LaTeX`. This means that some package is missing and you need to download it (or several of them). Uncheck a birdie to install all necessary packages at once. After that everything should work.
+
+First try to convert to `docx` or `html`. These two formats do not require
+
+```
+pandoc -f markdown -t docx -o main.docx --filter pandoc-citeproc main.md
+pandoc -f markdown -t html -o main.html --filter pandoc-citeproc main.md
+pandoc -f markdown -t epub -o main.epub --filter pandoc-citeproc main.md
+pandoc -f markdown -t latex -o main.pdf --filter pandoc-citeproc main.md
+```
+
+**NB:** it may so happen that your version of `pandoc` will complain about `--filter pandoc-citeproc`. If that happens, your commands should look like the following:
+
+```
+pandoc -f markdown -t docx -o main.docx --citeproc main.md
+pandoc -f markdown -t html -o main.html --citeproc main.md
+pandoc -f markdown -t epub -o main.epub --citeproc main.md
+pandoc -f markdown -t latex -o main.pdf --citeproc main.md
+```
+
+
+**Comment:**
+
+* `-f` means “convert `from` a specific format”.
+* `-t` means “convert `to` a specific format”.
+
+Thus, the whole command (say, the first one) reads as follows: `pandoc converts from (-f) markdown to (-t) latex, then outputs (-o) main.pdf, to which a ‘filter’ that processes citations (--filter pandoc-citeproc) is applied; and the file to which this all is applied is main.md`.
+
+## Writing with markdown in Atom
+
+Atom (<https://atom.io/>) allows one to integrate writing in markdown with the helpfulness of Zotero, as well as offers quite a few other nice features. You can find how to set everything up in Scott Selisker's blog post: <http://u.arizona.edu/~selisker/post/workflow/>.
+
+## Reference Materials:
+
+* Simpkin, Sarah. 2015. “Getting Started with Markdown.” Programming Historian, November. [https://programminghistorian.org/lessons/getting-started-with-markdown](https://programminghistorian.org/lessons/getting-started-with-markdown).
+* Tenen, Dennis, and Grant Wythoff. 2014. “Sustainable Authorship in Plain Text Using Pandoc and Markdown.” Programming Historian, March. [https://programminghistorian.org/lessons/sustainable-authorship-in-plain-text-using-pandoc-and-markdown](https://programminghistorian.org/lessons/sustainable-authorship-in-plain-text-using-pandoc-and-markdown).
+
+## Homework{#HWL04}
+
+* Convert a plain text paper into markdown and convert it with Pandoc into a PDF, MS Word, and HTML documents.
+	* Plain text file for the task: [McCarty_Modeling.txt](./files/McCarty_Modeling.txt)
+	* Use this PDF file as a guide for your formatting: [McCarty_Modeling.pdf](./files/McCarty_Modeling.pdf) 
+	* Convert only the first 7 pages. You can skip up to 1/3 of bibliographical records, if you cannot find them online.
+	* Alternatively, you can use any of your own papers that you have already written: 5 pages, 10 footnotes, 5 bibliography items.
+
+**Python**
+
+- Work through Chapters 3 and 5 of Zelle's book; read chapters carefully; work through the chapter summaries and exercises; complete the following programming exercises: 1-8 in Chapter 3; 1-7 in Chapter 5;
+- Watch [Dr. Vierthaler's videos](https://www.youtube.com/playlist?list=PL6kqrM2i6BPIpEF5yHPNkYhjHm-FYWh17):
+	- Episode 07: Booleans (and Boolean Operators)
+	- Episode 08: Loops (and file objects)
+
+**Submitting homework:**
+
+* Homework assignment must be submitted by the beginning of the next class;
+* Now, that you know how to use GitHub, you will be submitting your homework pushing it to github:
+  * Create a relevant subfoler in your `HW070172` repository and place your HW files there; push them to your GitHub account;
+	* Email me the link to your repository with a short message (Something like: *I have completed homework for Lesson 3, which is uploaded to my repository ... in subfolder `L03`*)
+	* In the subject of your email, please, add the following: `CCXXXXX-LXX-HW-YourLastName-YourMatriculationNumber`, where `CCXXXXX` is the numeric code of the course; `LXX` is the lesson for which the homework is being submitted; `YourLastName` is your last name, and `YourMatriculationNumber` is your matriculation number.

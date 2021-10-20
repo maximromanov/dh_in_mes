@@ -1,0 +1,137 @@
+# Syllabus{-}
+
+* Course: 070172-1 UE Methodological course - Introduction to DH: Tools & Techniques (2020W) `Memex Edition`
+* Instructor: Dr. Maxim Romanov, [maxim.romanov@univie.ac.at](maxim.romanov@univie.ac.at)
+* Language of instruction: English
+* Office hours: Tu 14:00-15:00 (on Zoom; please, contact beforehand!)
+* Office: Department of History,  Maria-Theresien-Straße 9, 1090 Wien, Room 1.10
+
+## Course Details{-}
+
+* u:find Link: <https://ufind.univie.ac.at/en/course.html?lv=070172&semester=2020W>
+* Meeting time: Tu 09:00-10:30
+* Meeting place: Seminarraum Geschichte 3 Hauptgebäude, 2.Stock, Stiege 9; due to COVID, all meetings will be held online
+
+## Aims, Contents and Method of the Course {-}
+
+Back in 1945, Vannevar Bush, a Director of the US Office of Scientific Research and Development, proposed a device, which he called memex:
+
+> *Consider a future device ... in which an individual stores all his books, records, and communications, and which is mechanized so that it may be consulted with exceeding speed and flexibility. It is an enlarged intimate supplement to his memory. ... The owner of the memex, let us say, is interested in the origin and properties of the bow and arrow. Specifically he is studying why the short Turkish bow was apparently superior to the English long bow in the skirmishes of the Crusades. He has dozens of possibly pertinent books and articles in his memex. First he runs through an encyclopedia, finds an interesting but sketchy article, leaves it projected. Next, in a history, he finds another pertinent item, and ties the two together. Thus he goes, building a trail of many items. Occasionally he inserts a comment of his own, either linking it into the main trail or joining it by a side trail to a particular item. When it becomes evident that the elastic properties of available materials had a great deal to do with the bow, he branches off on a side trail which takes him through textbooks on elasticity and tables of physical constants. He inserts a page of longhand analysis of his own. Thus he builds a trail of his interest through the maze of materials available to him. And his trails do not fade. Several years later, his talk with a friend turns to the queer ways in which a people resist innovations, even of vital interest. He has an example, in the fact that the outraged Europeans still failed to adopt the Turkish bow. In fact he has a trail on it. A touch brings up the code book. Tapping a few keys projects the head of the trail. A lever runs through it at will, stopping at interesting items, going off on side excursions. It is an interesting trail, pertinent to the discussion.* ... — [The Atlantic, July 1945](<https://www.theatlantic.com/magazine/archive/1945/07/as-we-may-think/303881/>); YouTube: <https://www.youtube.com/watch?v=c539cK58ees>.
+
+The memex machine is often thought of as a precursor of the Internet. Be it as it may, the idea of a personal knowledge device is still of great relevance and of great importance to scholars and scientists whose job is to construct such trails on a regular basis. Needless to say that *historians* will benefit greatly from having such a machine at their disposal. The course will introduce you to basic, intermediate, and some advanced computational techniques, which will allow you to build and maintain your own digital memex machine.
+
+No prior programming experience is expected (we will be learning Python). Each class session will consist in large part of practical hands-on exercises led by the instructor. Laptops are required for the course. We will accommodate whatever operating system you use (Windows, Mac, or Linux), but it must be a laptop rather than a tablet.
+
+## Course Evaluation  {-}
+
+Course evaluation will be a combination of in-class participation (30%), weekly homework assignments (50%), and the final project (20%).
+
+## Class Participation {-}
+
+Attendance is required; regular participation is the key to completing the course; all students must come with their laptops; homework assignments must be submitted on time (some can be completed later as a part of the final project, but this must be discussed with the instructor whenever the issue arises); the final project must be submitted on time.
+
+## Homework Assignments {-}
+
+* Homework assignments are to be submitted by the beginning of the next class;
+* These must be emailed to the instructor as attachments;
+* In the subject of your email, please, use the following format: `CourseID-LessonID-HW-Lastname-matriculationNumber`, for example, if I were to submit homework for the first lesson, my subject header would look like: `070112-L01-HW-Romanov-12435687`.
+* DH is a collaborative field, so you are most welcome to work on your homework assignments in groups, however: you must still submit it. That is, if a groups of three works on one assignment, there must be three separate submissions emailed from each member’s email.
+
+## Final Project {-}
+
+The final project is your own memex machine, which can help you with your studies and your research. Your final project must include all working scripts that will allow you in the future to continuously expand your memex machine by adding new readings into the mix. You are most welcome to work on this final project in groups, but everybody is required to produce their own working machine.
+
+## Study materials {-}
+
+**MAIN TEXTBOOK**
+
+- **Zelle, John M. *Python Programming: An Introduction to Computer Science*.** Third edition. Portland, Oregon: Franklin, Beedle & Associates Inc, 2017. (*access via Moodle*); [@ZellePython2017]
+	- We will focus primarily on learning how to work with `python`, which is one of the most popular programming languages used in digital humanities. We will use several resources and the emphasis will be on you studying on your own: partially, this is because of time constraints, but more importantly, you will need to acquire a skill of learning on your own. No worries, I will provide necessary help whenever needed.
+	- This textbook will be our main resource. It is well written and will help you to wrap your heads around important computer science concepts; this reading is crucial and without it many interactive tutorials out there will not be particularly helpful. Each chapter has assignments and self-test multiple choice sections;
+	- Supplementary materials are available at [the publisher's website](<https://fbeedle.com/our-books/23-python-programming-an-introduction-to-computer-science-3rd-ed-9781590282755.html>), where you can download example code and end-of-chapter solutions; additionaly, you can find videos with complimentary instructions
+	- **Additional:**
+		- Paul Vierthaler's “Hacking the Humanities Tutorials” (Python+): <https://www.youtube.com/playlist?list=PL6kqrM2i6BPIpEF5yHPNkYhjHm-FYWh17>
+		- <https://www.codecademy.com/learn/learn-python> :: you can use this free interactive Python course; it, however, uses Python 2.x, while the main textbook focuses on Python 3.x; the course is still a good supplementary practice.  
+
+**ADDITIONAL MATERIALS**
+
+* <https://www.codecademy.com>
+	* `Codecademy` has a series of free course that you are encouraged to use for specific skills and technologies:
+		* <https://www.codecademy.com/learn/learn-how-to-code>
+		* <https://www.codecademy.com/learn/learn-python>
+		* <https://www.codecademy.com/learn/learn-html>
+		* <https://www.codecademy.com/learn/introduction-to-regular-expressions> 
+		* <https://www.codecademy.com/learn/learn-css>
+
+* <https://programminghistorian.org/lessons/>
+	* “Programming Historian” offers a number of tutorials for aspiring digital humanists. These will be assigned to you as reference materials. You also are encouraged to explore those tutorials that are not included into the course.
+
+## Software, Tools, & Technologies {-}
+
+The following is the list of software, applications and packages that we will be using in the course. Make sure to have them installed by the class when we are supposed to use them.
+
+* Zotero, <https://www.zotero.org/>
+* [Mac] Terminal / [Windows] Powershell (both are already on your machines)
+* Python <https://www.python.org/>, install the latest 3.x version
+* git and <https://github.com/>, version control system
+* pandoc (<https://pandoc.org/>), markdown, bibTex (bibliographical format for LaTeX)
+* Regular expressions; (Sublime Text, <https://www.sublimetext.com/> is a text editor which supports regular expressions)
+* Wget (<https://www.gnu.org/software/wget/>), a free software package for retrieving files
+* Understanding formats: [TEI] XML, csv/tsv, json, yml, etc.
+* Creating: HTML, css, tiny snippets of Javascript
+
+## Schedule  {-}
+
+**Location**: Seminarraum Geschichte 3 Hauptgebäude, 2.Stock, Stiege 9; due to COVID, all meetings will be held online via video-conferencing
+
+- **Tuesday**	06.10.	09:00 - 10:30
+- **Tuesday**	13.10.	09:00 - 10:30
+- **Tuesday**	20.10.	09:00 - 10:30
+- **Tuesday**	27.10.	09:00 - 10:30
+- **Tuesday**	03.11.	09:00 - 10:30
+- **Tuesday**	10.11.	09:00 - 10:30
+- **Tuesday**	17.11.	09:00 - 10:30
+- **Tuesday**	24.11.	09:00 - 10:30
+- **Tuesday**	01.12.	09:00 - 10:30
+- **Tuesday**	15.12.	09:00 - 10:30
+- **Tuesday**	12.01.	09:00 - 10:30
+- **Tuesday**	19.01.	09:00 - 10:30
+- **Tuesday**	26.01.	09:00 - 10:30
+
+## Lesson Topics {-}
+
+- **=== CORE TOOLS & METHODS ===**
+- **[ #01 ]** Introduction & Roadmap; Managing Bibliography with Zotero
+- **[ #02 ]** Getting to Know the Command Line; Getting Started with Python
+- **[ #03 ]** Version Control and Collaboration 
+- **[ #04 ]** Sustainable [Academic] Writing
+- **[ #05 ]** Constructing Robust Searches / *Optional*: Basics of Webscraping
+- **[ #06 ]** Understanding Structured Data and Major Formats 
+- **=== BUILDING MEMEX ===**
+- **[ #07 ]** Parsing and Manipulating Bibliographic Data 
+- **[ #08 ]** Processing PDFs: OCR
+- **[ #09 ]** View and Display: Simple HTML-based Interface 
+- **[ #10 ]** Summarizing Textual Data: Keyword Extraction
+- **[ #11 ]** Finding Connections: Similarity Measures
+- **[ #12 ]** Processing Everything Together: Batch Processing and re-Processing
+- **[ #13 ]** Improving the Overall Memex Design: What Else Can We Add?
+
+<!--
+- **=== CORE TOOLS & METHODS ===**
+- **[ #01 ]** Introduction & Roadmap (Core tools, Memex and *Zettelkasten*; Tool #1: Zotero; Getting started with Python)
+- **[ #02 ]** “Off with the Interface!” Getting to know the `command line`
+- **[ #03 ]** Version Control and Collaboration: `git` and GitHub.com 
+- **[ #04 ]** Sustainable Academic Writing: with `pandoc`, `markdown`, `BibTex` (via Zotero)
+- **[ #05 ]** Constructing Robust Searches with `regular expressions` / *Optional*: `wget` and webscraping
+- **[ #06 ]** Understanding Structured Data and Major Formats: XML/HTML, JSON, CSV, etc. 
+- **=== BUILDING MEMEX ===**
+- **[ #07 ]** Parsing `bibTeX` Data: Collecting library (via Zotero); Managing and exporting bibliographical data (`bibLaTeX`; `BetterBibTeX`); Transforming bibliographic data 
+- **[ #08 ]** Processing a PDF: Saving Images and OCR Results
+- **[ #09 ]** A Simple Way to View/Display Data: creating HTML template, CSS 
+- **[ #10 ]** Summarizing Textual Data: extracting keywords with `tf-idf`
+- **[ #11 ]** Finding Connections: applying similarity measures
+- **[ #12 ]** Processing Everything Together: batch processing and re-processing
+- **[ #13 ]** Improving the Overall Memex Design: What else can we add?
+-->
+
+Note: one of the classes might be canceled; this will be announced separately. Lesson materials will be appearing on the website shortly before each class. Lessons will be accessible via the *Lessons* link on the left panel.

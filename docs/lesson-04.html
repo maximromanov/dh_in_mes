@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>4 Lesson 04 | 070172-1 UE Methodological course - Introduction to DH: Tools &amp; Techniques (2020W) Memex Edition</title>
+  <meta name="description" content="This is a collection of relevant materials for the class ‘070172-1 UE Methodological course - Introduction to DH: Tools &amp; Techniques (2020W) Memex Edition,’ offered at the University of Vienna and taught by Maxim G. Romanov" />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="4 Lesson 04 | 070172-1 UE Methodological course - Introduction to DH: Tools &amp; Techniques (2020W) Memex Edition" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://maximromanov.github.io/univie2020/" />
+  
+  <meta property="og:description" content="This is a collection of relevant materials for the class ‘070172-1 UE Methodological course - Introduction to DH: Tools &amp; Techniques (2020W) Memex Edition,’ offered at the University of Vienna and taught by Maxim G. Romanov" />
+  <meta name="github-repo" content="maximromanov/univie2020" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="4 Lesson 04 | 070172-1 UE Methodological course - Introduction to DH: Tools &amp; Techniques (2020W) Memex Edition" />
+  
+  <meta name="twitter:description" content="This is a collection of relevant materials for the class ‘070172-1 UE Methodological course - Introduction to DH: Tools &amp; Techniques (2020W) Memex Edition,’ offered at the University of Vienna and taught by Maxim G. Romanov" />
+  
+
+<meta name="author" content="Maxim G. Romanov" />
+
+
+<meta name="date" content="2021-10-20" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="touch-icon.png" />
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="prev" href="lesson-03.html"/>
+<link rel="next" href="lesson-05.html"/>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<script src="libs/viz-1.8.2/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-1.0.6.1/grViz.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">DH Methods for Middle Eastern Studies: Toward A Handbook</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preliminaries</a></li>
+<li class="chapter" data-level="" data-path="memex-and-zettelkasten.html"><a href="memex-and-zettelkasten.html"><i class="fa fa-check"></i>Memex and Zettelkasten</a>
+<ul>
+<li class="chapter" data-level="" data-path="memex-and-zettelkasten.html"><a href="memex-and-zettelkasten.html#on-memex"><i class="fa fa-check"></i>On Memex</a></li>
+<li class="chapter" data-level="" data-path="memex-and-zettelkasten.html"><a href="memex-and-zettelkasten.html#on-zettelkasten"><i class="fa fa-check"></i>On Zettelkasten</a>
+<ul>
+<li><a href="memex-and-zettelkasten.html#niklas-luhmann-on-his-zettelkasten">Niklas Luhmann on his <em>Zettelkasten</em></a></li>
+<li><a href="memex-and-zettelkasten.html#others-on-luhmanns-zettelkasten">Others on Luhmann’s <em>Zettelkasten</em></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="work-plan.html"><a href="work-plan.html"><i class="fa fa-check"></i>Work Plan</a>
+<ul>
+<li class="chapter" data-level="" data-path="work-plan.html"><a href="work-plan.html#memex-building-cycle"><i class="fa fa-check"></i>Memex-Building Cycle</a></li>
+<li class="chapter" data-level="" data-path="work-plan.html"><a href="work-plan.html#research-cycle"><i class="fa fa-check"></i>Research Cycle</a>
+<ul>
+<li class="chapter" data-level="" data-path="work-plan.html"><a href="work-plan.html#building-trails"><i class="fa fa-check"></i>Building Trails</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="lesson-01.html"><a href="lesson-01.html"><i class="fa fa-check"></i><b>1</b> Lesson 01</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="lesson-01.html"><a href="lesson-01.html#bibliography-managers"><i class="fa fa-check"></i><b>1.1</b> Bibliography Managers</a></li>
+<li class="chapter" data-level="1.2" data-path="lesson-01.html"><a href="lesson-01.html#zotero"><i class="fa fa-check"></i><b>1.2</b> Zotero</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="lesson-01.html"><a href="lesson-01.html#getting-started"><i class="fa fa-check"></i><b>1.2.1</b> Getting Started</a></li>
+<li class="chapter" data-level="1.2.2" data-path="lesson-01.html"><a href="lesson-01.html#main-functionality"><i class="fa fa-check"></i><b>1.2.2</b> Main Functionality</a></li>
+<li class="chapter" data-level="1.2.3" data-path="lesson-01.html"><a href="lesson-01.html#additional-functionality-plug-ins"><i class="fa fa-check"></i><b>1.2.3</b> Additional Functionality: Plug-Ins</a></li>
+<li class="chapter" data-level="1.2.4" data-path="lesson-01.html"><a href="lesson-01.html#zotfile"><i class="fa fa-check"></i><b>1.2.4</b> Zotfile</a></li>
+<li class="chapter" data-level="1.2.5" data-path="lesson-01.html"><a href="lesson-01.html#better-bibtex-for-zotero"><i class="fa fa-check"></i><b>1.2.5</b> Better BibTeX for Zotero</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="lesson-01.html"><a href="lesson-01.html#HWL01"><i class="fa fa-check"></i><b>1.3</b> Homework</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="lesson-02.html"><a href="lesson-02.html"><i class="fa fa-check"></i><b>2</b> Lesson 02</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="lesson-02.html"><a href="lesson-02.html#command-line"><i class="fa fa-check"></i><b>2.1</b> Command Line</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="lesson-02.html"><a href="lesson-02.html#the-filesystem"><i class="fa fa-check"></i><b>2.1.1</b> The filesystem</a></li>
+<li class="chapter" data-level="2.1.2" data-path="lesson-02.html"><a href="lesson-02.html#getting-started-with-the-command-line"><i class="fa fa-check"></i><b>2.1.2</b> Getting started with the command line</a></li>
+<li class="chapter" data-level="2.1.3" data-path="lesson-02.html"><a href="lesson-02.html#components-of-the-command-line"><i class="fa fa-check"></i><b>2.1.3</b> Components of the command line</a></li>
+<li class="chapter" data-level="2.1.4" data-path="lesson-02.html"><a href="lesson-02.html#file-paths-and-path-notations"><i class="fa fa-check"></i><b>2.1.4</b> File paths and path notations</a></li>
+<li class="chapter" data-level="2.1.5" data-path="lesson-02.html"><a href="lesson-02.html#command-line-arguments"><i class="fa fa-check"></i><b>2.1.5</b> Command line arguments</a></li>
+<li class="chapter" data-level="2.1.6" data-path="lesson-02.html"><a href="lesson-02.html#more-commands"><i class="fa fa-check"></i><b>2.1.6</b> More commands</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="lesson-02.html"><a href="lesson-02.html#HWL02"><i class="fa fa-check"></i><b>2.2</b> Homework</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="lesson-03.html"><a href="lesson-03.html"><i class="fa fa-check"></i><b>3</b> Lesson 03</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="lesson-03.html"><a href="lesson-03.html#version-control-and-collaboration"><i class="fa fa-check"></i><b>3.1</b> Version Control and Collaboration</a></li>
+<li class="chapter" data-level="3.2" data-path="lesson-03.html"><a href="lesson-03.html#setting-up-git"><i class="fa fa-check"></i><b>3.2</b> Setting-up <code>git</code></a></li>
+<li class="chapter" data-level="3.3" data-path="lesson-03.html"><a href="lesson-03.html#general-git-workflow"><i class="fa fa-check"></i><b>3.3</b> General <code>git</code> workflow</a></li>
+<li class="chapter" data-level="3.4" data-path="lesson-03.html"><a href="lesson-03.html#main-git-commands"><i class="fa fa-check"></i><b>3.4</b> Main <code>git</code> Commands</a></li>
+<li class="chapter" data-level="3.5" data-path="lesson-03.html"><a href="lesson-03.html#some-useful-command-line-commands-to-remember"><i class="fa fa-check"></i><b>3.5</b> Some useful command line commands to remember</a></li>
+<li class="chapter" data-level="3.6" data-path="lesson-03.html"><a href="lesson-03.html#practice"><i class="fa fa-check"></i><b>3.6</b> Practice</a></li>
+<li class="chapter" data-level="3.7" data-path="lesson-03.html"><a href="lesson-03.html#HWL03"><i class="fa fa-check"></i><b>3.7</b> Homework</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="lesson-04.html"><a href="lesson-04.html"><i class="fa fa-check"></i><b>4</b> Lesson 04</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="lesson-04.html"><a href="lesson-04.html#sustainable-academic-writing-with-markdown-pandoc-and-the-tex-family"><i class="fa fa-check"></i><b>4.1</b> Sustainable Academic Writing with <code>markdown</code>, <code>pandoc</code>, and the <code>*TeX</code> family</a></li>
+<li class="chapter" data-level="4.2" data-path="lesson-04.html"><a href="lesson-04.html#class-notes"><i class="fa fa-check"></i><b>4.2</b> Class Notes</a></li>
+<li class="chapter" data-level="4.3" data-path="lesson-04.html"><a href="lesson-04.html#pandoc-commands"><i class="fa fa-check"></i><b>4.3</b> <code>pandoc</code> <em>Commands</em></a></li>
+<li class="chapter" data-level="4.4" data-path="lesson-04.html"><a href="lesson-04.html#writing-with-markdown-in-atom"><i class="fa fa-check"></i><b>4.4</b> Writing with markdown in Atom</a></li>
+<li class="chapter" data-level="4.5" data-path="lesson-04.html"><a href="lesson-04.html#reference-materials"><i class="fa fa-check"></i><b>4.5</b> Reference Materials:</a></li>
+<li class="chapter" data-level="4.6" data-path="lesson-04.html"><a href="lesson-04.html#HWL04"><i class="fa fa-check"></i><b>4.6</b> Homework</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="lesson-05.html"><a href="lesson-05.html"><i class="fa fa-check"></i><b>5</b> Lesson 05</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="lesson-05.html"><a href="lesson-05.html#constructing-robust-searches"><i class="fa fa-check"></i><b>5.1</b> Constructing Robust Searches</a></li>
+<li class="chapter" data-level="5.2" data-path="lesson-05.html"><a href="lesson-05.html#regular-expressions"><i class="fa fa-check"></i><b>5.2</b> <code>regular expressions</code></a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="lesson-05.html"><a href="lesson-05.html#what-are-regular-expressions"><i class="fa fa-check"></i><b>5.2.1</b> What are <code>regular expressions</code>?**</a></li>
+<li class="chapter" data-level="5.2.2" data-path="lesson-05.html"><a href="lesson-05.html#what-would-we-use-regular-expressions-for"><i class="fa fa-check"></i><b>5.2.2</b> What would we use <code>regular Expressions</code> for?</a></li>
+<li class="chapter" data-level="5.2.3" data-path="lesson-05.html"><a href="lesson-05.html#the-basics"><i class="fa fa-check"></i><b>5.2.3</b> The Basics</a></li>
+<li class="chapter" data-level="5.2.4" data-path="lesson-05.html"><a href="lesson-05.html#characters-special-characters"><i class="fa fa-check"></i><b>5.2.4</b> Characters <em>&amp;</em> Special Characters</a></li>
+<li class="chapter" data-level="5.2.5" data-path="lesson-05.html"><a href="lesson-05.html#character-classes"><i class="fa fa-check"></i><b>5.2.5</b> Character Classes: <code>[]</code></a></li>
+<li class="chapter" data-level="5.2.6" data-path="lesson-05.html"><a href="lesson-05.html#ranges-within-classes"><i class="fa fa-check"></i><b>5.2.6</b> Ranges (within classes)</a></li>
+<li class="chapter" data-level="5.2.7" data-path="lesson-05.html"><a href="lesson-05.html#repeaters"><i class="fa fa-check"></i><b>5.2.7</b> Repeaters</a></li>
+<li class="chapter" data-level="5.2.8" data-path="lesson-05.html"><a href="lesson-05.html#lab-intro-in-the-practicum-file."><i class="fa fa-check"></i><b>5.2.8</b> Lab: <em>Intro</em> (in the <em>practicum file</em>).</a></li>
+<li class="chapter" data-level="5.2.9" data-path="lesson-05.html"><a href="lesson-05.html#anchoring"><i class="fa fa-check"></i><b>5.2.9</b> Anchoring</a></li>
+<li class="chapter" data-level="5.2.10" data-path="lesson-05.html"><a href="lesson-05.html#alternation-pipe"><i class="fa fa-check"></i><b>5.2.10</b> Alternation: “|” (<em>pipe</em>)</a></li>
+<li class="chapter" data-level="5.2.11" data-path="lesson-05.html"><a href="lesson-05.html#grouping"><i class="fa fa-check"></i><b>5.2.11</b> Grouping</a></li>
+<li class="chapter" data-level="5.2.12" data-path="lesson-05.html"><a href="lesson-05.html#lab-part-i-in-the-practicum-file."><i class="fa fa-check"></i><b>5.2.12</b> Lab: Part I (in the <em>practicum file</em>).</a></li>
+<li class="chapter" data-level="5.2.13" data-path="lesson-05.html"><a href="lesson-05.html#replacement"><i class="fa fa-check"></i><b>5.2.13</b> Replacement</a></li>
+<li class="chapter" data-level="5.2.14" data-path="lesson-05.html"><a href="lesson-05.html#capture"><i class="fa fa-check"></i><b>5.2.14</b> Capture</a></li>
+<li class="chapter" data-level="5.2.15" data-path="lesson-05.html"><a href="lesson-05.html#capture-reformat"><i class="fa fa-check"></i><b>5.2.15</b> Capture <em>&amp;</em> Reformat</a></li>
+<li class="chapter" data-level="5.2.16" data-path="lesson-05.html"><a href="lesson-05.html#lab-part-ii-in-the-practicum-file."><i class="fa fa-check"></i><b>5.2.16</b> Lab: Part II (in the <em>practicum file</em>).</a></li>
+<li class="chapter" data-level="5.2.17" data-path="lesson-05.html"><a href="lesson-05.html#to-keep-in-mind"><i class="fa fa-check"></i><b>5.2.17</b> <em>To keep in mind</em></a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="lesson-05.html"><a href="lesson-05.html#class-materials"><i class="fa fa-check"></i><b>5.3</b> Class materials</a></li>
+<li class="chapter" data-level="5.4" data-path="lesson-05.html"><a href="lesson-05.html#digital-materials"><i class="fa fa-check"></i><b>5.4</b> Digital materials</a></li>
+<li class="chapter" data-level="5.5" data-path="lesson-04.html"><a href="lesson-04.html#reference-materials"><i class="fa fa-check"></i><b>5.5</b> Reference Materials</a></li>
+<li class="chapter" data-level="5.6" data-path="lesson-05.html"><a href="lesson-05.html#HWL05"><i class="fa fa-check"></i><b>5.6</b> Homework</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="lesson-06.html"><a href="lesson-06.html"><i class="fa fa-check"></i><b>6</b> Lesson 06</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="lesson-06.html"><a href="lesson-06.html#understanding-structured-data"><i class="fa fa-check"></i><b>6.1</b> Understanding Structured Data</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="lesson-06.html"><a href="lesson-06.html#xml-extensible-markup-language"><i class="fa fa-check"></i><b>6.1.1</b> XML (<em>Extensible Markup Language</em>)</a></li>
+<li class="chapter" data-level="6.1.2" data-path="lesson-06.html"><a href="lesson-06.html#csvtsv-comma-separated-values-tab-separated-values"><i class="fa fa-check"></i><b>6.1.2</b> CSV/TSV (<em>Comma-Separated Values</em>/ <em>Tab-Separated Values</em>)</a></li>
+<li class="chapter" data-level="6.1.3" data-path="lesson-06.html"><a href="lesson-06.html#json-javascript-object-notation"><i class="fa fa-check"></i><b>6.1.3</b> JSON (<em>JavaScript Object Notation</em>)</a></li>
+<li class="chapter" data-level="6.1.4" data-path="lesson-06.html"><a href="lesson-06.html#yml-or-yaml-yet-another-markup-language-yaml-aint-markup-language"><i class="fa fa-check"></i><b>6.1.4</b> YML or YAML (<em>Yet Another Markup Language</em> &gt; <em>YAML Ain’t Markup Language</em>)</a></li>
+<li class="chapter" data-level="6.1.5" data-path="lesson-06.html"><a href="lesson-06.html#bibtex-most-common-bibliographic-format"><i class="fa fa-check"></i><b>6.1.5</b> <code>BibTeX</code>: <em>most common bibliographic format</em></a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="lesson-06.html"><a href="lesson-06.html#larger-examples"><i class="fa fa-check"></i><b>6.2</b> Larger Examples</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="lesson-06.html"><a href="lesson-06.html#csv-tsv"><i class="fa fa-check"></i><b>6.2.1</b> <code>CSV</code> / <code>TSV</code></a></li>
+<li class="chapter" data-level="6.2.2" data-path="lesson-06.html"><a href="lesson-06.html#json"><i class="fa fa-check"></i><b>6.2.2</b> <code>JSON</code></a></li>
+<li class="chapter" data-level="6.2.3" data-path="lesson-06.html"><a href="lesson-06.html#ymlyaml"><i class="fa fa-check"></i><b>6.2.3</b> <code>YML</code>/<code>YAML</code></a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="lesson-06.html"><a href="lesson-06.html#in-class-practice"><i class="fa fa-check"></i><b>6.3</b> In-Class Practice</a></li>
+<li class="chapter" data-level="6.4" data-path="lesson-06.html"><a href="lesson-06.html#HWL06"><i class="fa fa-check"></i><b>6.4</b> Homework</a></li>
+<li class="chapter" data-level="6.5" data-path="lesson-06.html"><a href="lesson-06.html#HWL06S"><i class="fa fa-check"></i><b>6.5</b> Homework Solution</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="lesson-06.html"><a href="lesson-06.html#pseudocode-solution"><i class="fa fa-check"></i><b>6.5.1</b> Pseudocode solution</a></li>
+<li class="chapter" data-level="6.5.2" data-path="lesson-06.html"><a href="lesson-06.html#scripts"><i class="fa fa-check"></i><b>6.5.2</b> Scripts</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="lesson-07.html"><a href="lesson-07.html"><i class="fa fa-check"></i><b>7</b> Lesson 07</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="lesson-07.html"><a href="lesson-07.html#building-memex---step-1"><i class="fa fa-check"></i><b>7.1</b> Building Memex - Step 1</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="lesson-07.html"><a href="lesson-07.html#pseudocode"><i class="fa fa-check"></i><b>7.1.1</b> Pseudocode</a></li>
+<li class="chapter" data-level="7.1.2" data-path="lesson-07.html"><a href="lesson-07.html#code-snippets"><i class="fa fa-check"></i><b>7.1.2</b> Code snippets</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="lesson-06.html"><a href="lesson-06.html#HWL06"><i class="fa fa-check"></i><b>7.2</b> Homework</a></li>
+<li class="chapter" data-level="7.3" data-path="lesson-07.html"><a href="lesson-07.html#HWL07S"><i class="fa fa-check"></i><b>7.3</b> Homework Solution</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="lesson-07.html"><a href="lesson-07.html#pseudocode-1"><i class="fa fa-check"></i><b>7.3.1</b> Pseudocode</a></li>
+<li class="chapter" data-level="7.3.2" data-path="lesson-07.html"><a href="lesson-07.html#note-on-folderfile-organization"><i class="fa fa-check"></i><b>7.3.2</b> Note on Folder/File Organization</a></li>
+<li class="chapter" data-level="7.3.3" data-path="lesson-07.html"><a href="lesson-07.html#script-1_build_structure.py"><i class="fa fa-check"></i><b>7.3.3</b> Script (<code>1_build_structure.py</code>)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="lesson-08.html"><a href="lesson-08.html"><i class="fa fa-check"></i><b>8</b> Lesson 08</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="lesson-08.html"><a href="lesson-08.html#building-memex---step-2"><i class="fa fa-check"></i><b>8.1</b> Building Memex - Step 2</a></li>
+<li class="chapter" data-level="8.2" data-path="lesson-08.html"><a href="lesson-08.html#ocr-software-tesseract"><i class="fa fa-check"></i><b>8.2</b> OCR software: Tesseract</a></li>
+<li class="chapter" data-level="8.3" data-path="lesson-08.html"><a href="lesson-08.html#task-general-map-pseudocode"><i class="fa fa-check"></i><b>8.3</b> Task: General Map Pseudocode</a></li>
+<li class="chapter" data-level="8.4" data-path="lesson-08.html"><a href="lesson-08.html#code-snippets-functions"><i class="fa fa-check"></i><b>8.4</b> Code snippets &amp; functions</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="lesson-08.html"><a href="lesson-08.html#new-libraries"><i class="fa fa-check"></i><b>8.4.1</b> New libraries</a></li>
+<li class="chapter" data-level="8.4.2" data-path="lesson-08.html"><a href="lesson-08.html#code-reuse"><i class="fa fa-check"></i><b>8.4.2</b> Code Reuse</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="lesson-08.html"><a href="lesson-08.html#clean-temporary-copy-of-a-pdf"><i class="fa fa-check"></i><b>8.5</b> Clean Temporary Copy of a PDF</a>
+<ul>
+<li class="chapter" data-level="8.5.1" data-path="lesson-08.html"><a href="lesson-08.html#ocr-ing-pdf"><i class="fa fa-check"></i><b>8.5.1</b> OCR-ing PDF</a></li>
+<li class="chapter" data-level="8.5.2" data-path="lesson-08.html"><a href="lesson-08.html#missing-functions"><i class="fa fa-check"></i><b>8.5.2</b> Missing functions</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="lesson-08.html"><a href="lesson-08.html#one-more-note-on-ocr"><i class="fa fa-check"></i><b>8.6</b> One more note on OCR</a></li>
+<li class="chapter" data-level="8.7" data-path="lesson-08.html"><a href="lesson-08.html#HWL08"><i class="fa fa-check"></i><b>8.7</b> Homework</a></li>
+<li class="chapter" data-level="8.8" data-path="lesson-08.html"><a href="lesson-08.html#HWL08S"><i class="fa fa-check"></i><b>8.8</b> Homework Solution</a></li>
+<li class="chapter" data-level="8.9" data-path="lesson-08.html"><a href="lesson-08.html#tesseract-language-codes"><i class="fa fa-check"></i><b>8.9</b> Tesseract Language Codes</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="lesson-09.html"><a href="lesson-09.html"><i class="fa fa-check"></i><b>9</b> Lesson 09</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="lesson-09.html"><a href="lesson-09.html#building-memex---step-3"><i class="fa fa-check"></i><b>9.1</b> Building Memex - Step 3</a></li>
+<li class="chapter" data-level="9.2" data-path="lesson-08.html"><a href="lesson-08.html#code-snippets-functions"><i class="fa fa-check"></i><b>9.2</b> Code snippets &amp; functions</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="lesson-09.html"><a href="lesson-09.html#the-main-function-publication-interface"><i class="fa fa-check"></i><b>9.2.1</b> The main function: Publication Interface</a></li>
+<li class="chapter" data-level="9.2.2" data-path="lesson-09.html"><a href="lesson-09.html#additional-functions"><i class="fa fa-check"></i><b>9.2.2</b> Additional functions</a></li>
+<li class="chapter" data-level="9.2.3" data-path="lesson-09.html"><a href="lesson-09.html#extra-function"><i class="fa fa-check"></i><b>9.2.3</b> Extra function</a></li>
+<li class="chapter" data-level="9.2.4" data-path="lesson-08.html"><a href="lesson-08.html#code-reuse"><i class="fa fa-check"></i><b>9.2.4</b> Code Reuse</a></li>
+<li class="chapter" data-level="9.2.5" data-path="lesson-09.html"><a href="lesson-09.html#missing-functions-the-index-page-and-the-contents-page"><i class="fa fa-check"></i><b>9.2.5</b> Missing functions: The Index Page and the Contents Page</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="lesson-09.html"><a href="lesson-09.html#HWL09"><i class="fa fa-check"></i><b>9.3</b> Homework</a></li>
+<li class="chapter" data-level="9.4" data-path="lesson-09.html"><a href="lesson-09.html#HWL09S"><i class="fa fa-check"></i><b>9.4</b> Homework Solution</a></li>
+<li class="chapter" data-level="9.5" data-path="lesson-09.html"><a href="lesson-09.html#additional-materials-html-css-tfidf"><i class="fa fa-check"></i><b>9.5</b> Additional materials: HTML, CSS; TFIDF</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="lesson-10.html"><a href="lesson-10.html"><i class="fa fa-check"></i><b>10</b> Lesson 10</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="lesson-10.html"><a href="lesson-10.html#building-memex---step-4"><i class="fa fa-check"></i><b>10.1</b> Building Memex - Step 4</a></li>
+<li class="chapter" data-level="10.2" data-path="lesson-10.html"><a href="lesson-10.html#some-explanations-tf-idf-document-distance"><i class="fa fa-check"></i><b>10.2</b> Some explanations: TF-IDF, Document Distance</a></li>
+<li class="chapter" data-level="10.3" data-path="lesson-10.html"><a href="lesson-10.html#practicalities"><i class="fa fa-check"></i><b>10.3</b> Practicalities</a></li>
+<li class="chapter" data-level="10.4" data-path="lesson-10.html"><a href="lesson-10.html#CSL10"><i class="fa fa-check"></i><b>10.4</b> Code Snippets</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="lesson-10.html"><a href="lesson-10.html#aggregating-publications-into-a-corpus"><i class="fa fa-check"></i><b>10.4.1</b> Aggregating publications into a corpus</a></li>
+<li class="chapter" data-level="10.4.2" data-path="lesson-10.html"><a href="lesson-10.html#getting-tf-idf-values-and-distance-matrix-with-sklearn"><i class="fa fa-check"></i><b>10.4.2</b> Getting <em>tf-idf</em> Values and Distance Matrix with <code>sklearn</code></a></li>
+<li class="chapter" data-level="10.4.3" data-path="lesson-10.html"><a href="lesson-10.html#converting-results"><i class="fa fa-check"></i><b>10.4.3</b> Converting Results</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="lesson-10.html"><a href="lesson-10.html#HWL10"><i class="fa fa-check"></i><b>10.5</b> Homework</a></li>
+<li class="chapter" data-level="10.6" data-path="lesson-10.html"><a href="lesson-10.html#HWL10S"><i class="fa fa-check"></i><b>10.6</b> Homework Solution</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="lesson-11.html"><a href="lesson-11.html"><i class="fa fa-check"></i><b>11</b> Lesson 11</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="lesson-11.html"><a href="lesson-11.html#building-memex---step-5"><i class="fa fa-check"></i><b>11.1</b> Building Memex - Step 5</a></li>
+<li class="chapter" data-level="11.2" data-path="lesson-11.html"><a href="lesson-11.html#running-searches"><i class="fa fa-check"></i><b>11.2</b> Running searches</a></li>
+<li class="chapter" data-level="11.3" data-path="lesson-11.html"><a href="lesson-11.html#wordclouds-as-visual-summaries"><i class="fa fa-check"></i><b>11.3</b> Wordclouds as visual summaries</a></li>
+<li class="chapter" data-level="11.4" data-path="lesson-11.html"><a href="lesson-11.html#stopwords-for-tf-idf"><i class="fa fa-check"></i><b>11.4</b> Stopwords for <em>tf-idf</em></a></li>
+<li class="chapter" data-level="11.5" data-path="lesson-11.html"><a href="lesson-11.html#HWL11"><i class="fa fa-check"></i><b>11.5</b> Homework</a></li>
+<li class="chapter" data-level="11.6" data-path="lesson-11.html"><a href="lesson-11.html#HWL11S"><i class="fa fa-check"></i><b>11.6</b> Homework Solution</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="lesson-12.html"><a href="lesson-12.html"><i class="fa fa-check"></i><b>12</b> Lesson 12</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="lesson-12.html"><a href="lesson-12.html#building-memex---step-6-or-actually-back-to-step-3"><i class="fa fa-check"></i><b>12.1</b> Building Memex - Step 6 (or, actually, back to Step 3)</a></li>
+<li class="chapter" data-level="12.2" data-path="lesson-12.html"><a href="lesson-12.html#the-index-page"><i class="fa fa-check"></i><b>12.2</b> The Index Page</a></li>
+<li class="chapter" data-level="12.3" data-path="lesson-12.html"><a href="lesson-12.html#the-publication-pages"><i class="fa fa-check"></i><b>12.3</b> The Publication Pages</a></li>
+<li class="chapter" data-level="12.4" data-path="lesson-12.html"><a href="lesson-12.html#HWL12"><i class="fa fa-check"></i><b>12.4</b> Homework</a></li>
+<li class="chapter" data-level="12.5" data-path="lesson-12.html"><a href="lesson-12.html#HWL12S"><i class="fa fa-check"></i><b>12.5</b> Homework Solution</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html"><i class="fa fa-check"></i>Syllabus</a>
+<ul>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#course-details"><i class="fa fa-check"></i>Course Details</a></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#aims-contents-and-method-of-the-course"><i class="fa fa-check"></i>Aims, Contents and Method of the Course</a></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#course-evaluation"><i class="fa fa-check"></i>Course Evaluation</a></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#class-participation"><i class="fa fa-check"></i>Class Participation</a></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#homework-assignments"><i class="fa fa-check"></i>Homework Assignments</a></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#final-project"><i class="fa fa-check"></i>Final Project</a></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#study-materials"><i class="fa fa-check"></i>Study materials</a></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#software-tools-technologies"><i class="fa fa-check"></i>Software, Tools, &amp; Technologies</a></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#schedule"><i class="fa fa-check"></i>Schedule</a></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#lesson-topics"><i class="fa fa-check"></i>Lesson Topics</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">070172-1 UE Methodological course - Introduction to DH: Tools &amp; Techniques (2020W) <code>Memex Edition</code></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="lesson-04" class="section level1" number="4">
+<h1><span class="header-section-number">4</span> Lesson 04</h1>
+<div id="sustainable-academic-writing-with-markdown-pandoc-and-the-tex-family" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> Sustainable Academic Writing with <code>markdown</code>, <code>pandoc</code>, and the <code>*TeX</code> family</h2>
+<p>Introduction to sustainable academic writing that avoids any proprietary software solutions and formats. Before the class, make sure to install the following.</p>
+<ul>
+<li><code>pandoc</code> (follow instructions on <a href="https://pandoc.org/installing.html">https://pandoc.org/installing.html</a>)</li>
+<li><code>LaTeX</code> engine (install from here: <a href="https://miktex.org/">https://miktex.org/</a>)
+<ul>
+<li><code>LaTeX</code> for Mac: MikTeX seems to be very finicky with Macs. The following solution proves to be more manageable and stable (you need to run this command in Terminal): <code>brew install librsvg python homebrew/cask/basictex</code> (from Pandoc page); after that missing packages might have to be installed manually, but that is relatively easy — the sustem will prompt you to install them, and that needs to be done only once; alternatively, one can install MacTeX (this one is quite large, about 4Gb).</li>
+</ul></li>
+<li><code>markdown</code></li>
+</ul>
+<div id="htmlwidget-391f0426b35d0bc746d8" style="width:672px;height:600px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-391f0426b35d0bc746d8">{"x":{"diagram":"\ndigraph writing_cycle {\n\n  # a \"graph\" statement\n  graph [overlap = false, fontsize = 10, rankdir = TB]\n\n  # several \"node\" statements\n  node [shape = box,\n        fontname = Baskerville,\n        fontsize = 10,\n        style = rounded,\n        penwidth = 0.1]\n  bibtex [label = \"bibTex bibliography\"]\n  markdown [shape=box, style=filled, fillcolor=grey50, fontcolor=white, fontname=\"courier-bold\", label = \"textfile in markdown\"] ;\n  zotero[label = \"Zotero\"]\n  pandoc[label=\"pandoc engine\"]\n  style[label=\"citation style\"]\n  latex[label=\"TeX engine\"]\n  html[label=\"HTML\"]\n  doc[label=\"MS Word\"]\n  pdf[label=\"PDF\"]\n  \n  \n  zotero->bibtex; bibtex->markdown; bibtex->pandoc;\n  markdown->pandoc; style->pandoc;\n  pandoc->html; pandoc->doc; pandoc->latex->pdf;\n\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="class-notes" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> Class Notes</h2>
+<p><em>Files</em>: Download the following archive file: <a href="./files/sustainable_writing.zip">sustainable_writing.zip</a>. Make sure to unzip it! It contains the following files:</p>
+<ul>
+<li><code>biblio.bib</code>—a bibliography file;</li>
+<li><code>cms-fullnote.csl</code>—a citation style;</li>
+<li><code>main.md</code>—the main text file (its contents are also shown below);</li>
+</ul>
+<p><strong>NB:</strong> remember that all files must be in the same folder; it makes sense to put folders into a subfolder (not to overcrowd your main folder), but then do not forget to change the path in your <code>image</code> code.</p>
+<p><em>TEXT for your <code>main.md</code> file.</em></p>
+<pre><code>---
+title: |
+    *From*: &quot;Modeling: A Study in Words and Meanings&quot; by Willard McCarty
+subtitle: 
+author: 
+date: \today
+bibliography: biblio.bib
+csl: cms-fullnote.csl
+---
+
+&gt;&gt; Out on site, you were never parted from your plans.
+They were your Bible. They got dog-eared, yellowed,
+smeared with mud, peppered with little holes from
+where you had unrolled them on the ground. But
+although so sacred, the plans were only the start.
+Once you got out there on the site everything was
+different. No matter how carefully done, the plans
+could not foresee the *variables*. It was always
+interesting, this moment when you saw for the first
+time the actual site rather than the idealised
+drawings of it.
+
+&gt;&gt; Kate Grenville, *The Idea of Perfection*
+(Sydney: Picador, 1999): 62–3
+
+
+# Introduction
+
+The question of modeling arises naturally for
+humanities computing from the prior question
+of what its practitioners across the disciplines
+have in common. What are they all doing with
+their computers that we might find in their
+diverse activities indications of a coherent or
+cohesible practice? How do we make the best,
+most productive sense of what we observe? There
+are, of course, many answers: practice varies 
+from person to person, from project to project, 
+and ways of construing it perhaps vary even more. 
+In this chapter I argue for modeling as a model 
+of such a practice. I have three confluent goals: 
+to identify humanities computing with an intellectual 
+ground shared by the older disciplines, so that we 
+may say how and to what extent our field is of as 
+well as *in* the humanities, how it draws from and 
+adds to them; at the same time to reflect experience 
+with computers &quot;in the wild&quot;; and to aim at the
+most challenging problems, and so the most
+intellectually rewarding future now imaginable.
+
+My primary concern here is, as Confucius almost 
+said, that we use *the correct word* for the 
+activity we share lest our practice go awry 
+for want of understanding (*Analects 13.3*). 
+Several words are on offer. By what might be 
+called a moral philology I examine them, arguing 
+for the most popular of these, &quot;modeling.&quot; The 
+nominal form, &quot;model&quot;, is of course very useful 
+and even more popular, but for reasons I will 
+adduce, its primary virtue is that properly 
+defined it defaults to the present participle, 
+its semantic lemma. Before getting to the 
+philology I discuss modeling in the light of 
+the available literature and then consider 
+the strong and learned complaints about the 
+term.
+
+# Background
+
+Let me begin with provisional definitions[^1]. 
+By &quot;modeling&quot; I mean *the heuristic process of 
+constructing and manipulating models*, a &quot;model&quot; 
+I take to be either *a representation of something 
+for purposes of study*, or *a design for realizing 
+something new*. These two senses follow Clifford 
+Geertz&#39;s analytic distinction between a denotative 
+&quot;model *of*&quot; such as a grammar describing the 
+features of a language, and an exemplary &quot;model 
+*for*&quot; such as an architectural plan
+[@geertz_interpretation_2017, 93][^2]. In both 
+cases, as the literature consistently emphasizes, 
+a model is by nature a simplified and therefore 
+fictional or idealized representation, often taking 
+quite a rough-and-ready form: hence the term 
+&quot;tinker toy&quot; model from physics, accurately suggesting 
+play, relative crudity, and heuristic purpose 
+[@cartwright_how_1984, 158]. By nature modeling 
+defines a ternary relationship in which it mediates 
+epistemologically, between modeler and modeled, 
+researcher and data or theory and the world 
+[@morgan_models_1999]. Since modeling is 
+fundamentally relational, the same object may 
+in different contexts play either role: thus, 
+e.g., the grammar may function prescriptively, 
+as a model for correct usage, the architectural 
+plan descriptively, as a model of an existing style. 
+The distinction also reaches its vanishing point in 
+the convergent purposes of modeling: the model of 
+exists to tell us that we do not know, the model 
+for to give us what we do not yet have. Models 
+*realize*.
+
+[^1]: My definitions reflect the great majority of 
+the literature explicitly on modeling in the history 
+and philosophy of the natural sciences, especially 
+of physics. The literature tends to be concerned 
+with the role of modeling more in formal scientific 
+theory than in experiment. The close relationship 
+between modeling and experimenting means that the 
+rise of a robust philosophy of experiment since 
+the 1980s is directly relevant to our topic; see 
+[@hacking_stability_1988]. Quite helpful in 
+rethinking the basic issues for the humanities 
+are the writings from the disciplines other 
+than physics, e.g., [@clarke_models_2015] on 
+archaeology; on the social sciences, the essays 
+by de Callatay, Mironesco, Burch, and Gardin 
+in [@franck_explanatory_2011]. For interdisciplinary 
+studies see Shanin (1972) and [@morgan_models_1999], 
+esp. &quot;Models as Mediating Instruments&quot; (pp. 10–37).
+
+[^2]: Cf. Goodman&#39;s distinction between 
+&quot;denotative&quot; and &quot;exemplary&quot; models, respectively 
+(1976: 172–3); H. J. Groenewold&#39;s &quot;more or less 
+poor substitute&quot; and &quot;more or less exemplary ideal&quot; 
+(1960: 98). Similar distinctions are quite common 
+in the literature.
+
+# Bibliography</code></pre>
+</div>
+<div id="pandoc-commands" class="section level2" number="4.3">
+<h2><span class="header-section-number">4.3</span> <code>pandoc</code> <em>Commands</em></h2>
+<p><strong>NB:</strong> On Windows, you may see a pop-up Windows from <code>MikTex</code> asking to download a missing package for <code>LaTeX</code>. This means that some package is missing and you need to download it (or several of them). Uncheck a birdie to install all necessary packages at once. After that everything should work.</p>
+<p>First try to convert to <code>docx</code> or <code>html</code>. These two formats do not require</p>
+<pre><code>pandoc -f markdown -t docx -o main.docx --filter pandoc-citeproc main.md
+pandoc -f markdown -t html -o main.html --filter pandoc-citeproc main.md
+pandoc -f markdown -t epub -o main.epub --filter pandoc-citeproc main.md
+pandoc -f markdown -t latex -o main.pdf --filter pandoc-citeproc main.md</code></pre>
+<p><strong>NB:</strong> it may so happen that your version of <code>pandoc</code> will complain about <code>--filter pandoc-citeproc</code>. If that happens, your commands should look like the following:</p>
+<pre><code>pandoc -f markdown -t docx -o main.docx --citeproc main.md
+pandoc -f markdown -t html -o main.html --citeproc main.md
+pandoc -f markdown -t epub -o main.epub --citeproc main.md
+pandoc -f markdown -t latex -o main.pdf --citeproc main.md</code></pre>
+<p><strong>Comment:</strong></p>
+<ul>
+<li><code>-f</code> means “convert <code>from</code> a specific format.”</li>
+<li><code>-t</code> means “convert <code>to</code> a specific format.”</li>
+</ul>
+<p>Thus, the whole command (say, the first one) reads as follows: <code>pandoc converts from (-f) markdown to (-t) latex, then outputs (-o) main.pdf, to which a ‘filter’ that processes citations (--filter pandoc-citeproc) is applied; and the file to which this all is applied is main.md</code>.</p>
+</div>
+<div id="writing-with-markdown-in-atom" class="section level2" number="4.4">
+<h2><span class="header-section-number">4.4</span> Writing with markdown in Atom</h2>
+<p>Atom (<a href="https://atom.io/" class="uri">https://atom.io/</a>) allows one to integrate writing in markdown with the helpfulness of Zotero, as well as offers quite a few other nice features. You can find how to set everything up in Scott Selisker’s blog post: <a href="http://u.arizona.edu/~selisker/post/workflow/" class="uri">http://u.arizona.edu/~selisker/post/workflow/</a>.</p>
+</div>
+<div id="reference-materials" class="section level2" number="4.5">
+<h2><span class="header-section-number">4.5</span> Reference Materials:</h2>
+<ul>
+<li>Simpkin, Sarah. 2015. “Getting Started with Markdown.” Programming Historian, November. <a href="https://programminghistorian.org/lessons/getting-started-with-markdown">https://programminghistorian.org/lessons/getting-started-with-markdown</a>.</li>
+<li>Tenen, Dennis, and Grant Wythoff. 2014. “Sustainable Authorship in Plain Text Using Pandoc and Markdown.” Programming Historian, March. <a href="https://programminghistorian.org/lessons/sustainable-authorship-in-plain-text-using-pandoc-and-markdown">https://programminghistorian.org/lessons/sustainable-authorship-in-plain-text-using-pandoc-and-markdown</a>.</li>
+</ul>
+</div>
+<div id="HWL04" class="section level2" number="4.6">
+<h2><span class="header-section-number">4.6</span> Homework</h2>
+<ul>
+<li>Convert a plain text paper into markdown and convert it with Pandoc into a PDF, MS Word, and HTML documents.
+<ul>
+<li>Plain text file for the task: <a href="./files/McCarty_Modeling.txt">McCarty_Modeling.txt</a></li>
+<li>Use this PDF file as a guide for your formatting: <a href="./files/McCarty_Modeling.pdf">McCarty_Modeling.pdf</a></li>
+<li>Convert only the first 7 pages. You can skip up to 1/3 of bibliographical records, if you cannot find them online.</li>
+<li>Alternatively, you can use any of your own papers that you have already written: 5 pages, 10 footnotes, 5 bibliography items.</li>
+</ul></li>
+</ul>
+<p><strong>Python</strong></p>
+<ul>
+<li>Work through Chapters 3 and 5 of Zelle’s book; read chapters carefully; work through the chapter summaries and exercises; complete the following programming exercises: 1-8 in Chapter 3; 1-7 in Chapter 5;</li>
+<li>Watch <a href="https://www.youtube.com/playlist?list=PL6kqrM2i6BPIpEF5yHPNkYhjHm-FYWh17">Dr. Vierthaler’s videos</a>:
+<ul>
+<li>Episode 07: Booleans (and Boolean Operators)</li>
+<li>Episode 08: Loops (and file objects)</li>
+</ul></li>
+</ul>
+<p><strong>Submitting homework:</strong></p>
+<ul>
+<li>Homework assignment must be submitted by the beginning of the next class;</li>
+<li>Now, that you know how to use GitHub, you will be submitting your homework pushing it to github:
+<ul>
+<li>Create a relevant subfoler in your <code>HW070172</code> repository and place your HW files there; push them to your GitHub account;
+<ul>
+<li>Email me the link to your repository with a short message (Something like: <em>I have completed homework for Lesson 3, which is uploaded to my repository … in subfolder <code>L03</code></em>)</li>
+<li>In the subject of your email, please, add the following: <code>CCXXXXX-LXX-HW-YourLastName-YourMatriculationNumber</code>, where <code>CCXXXXX</code> is the numeric code of the course; <code>LXX</code> is the lesson for which the homework is being submitted; <code>YourLastName</code> is your last name, and <code>YourMatriculationNumber</code> is your matriculation number.</li>
+</ul></li>
+</ul></li>
+</ul>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="lesson-03.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="lesson-05.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "github"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "serif",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/maximromanov/dh_in_mes/edit/master/02-Lesson04.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/maximromanov/dh_in_mes/blob/master/02-Lesson04.Rmd",
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"search": true,
+"info": true
+});
+});
+</script>
+
+</body>
+
+</html>

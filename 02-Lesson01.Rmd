@@ -1,0 +1,84 @@
+# Lesson 01
+
+## Bibliography Managers
+
+Bibliography managers make your life easier when it comes to collectin, organizing and maintaining bibliographical references and your library of electronic publications (most commonly as PDFs). Additionally, they are an indispensable writing tool as they take care of formatting (and reformatting) references and bibliographies in any writing project that you might undertake. There are plenty of different programs out there with their advantages and disadvantages (for example, Mendeley, RefWorks, Citavi, Endnote, Papers, Zotero, and quite a few more). We will use Zotero---it is being developed by scholars for scholars; it is free and open source; it does pretty much everything you might possibly need from a program of this kind.
+
+## Zotero
+
+### Getting Started
+
+- Zotero can be installed from here: <https://www.zotero.org/download/>; the page will offer you a version suitable for your operating system, but you should also see the links to versions for specific systems (Mac OS, Windows, Linux).
+- During installation Zotero should automatically integrate into your browser (like Chrome or Firefox) and into your word processor (MS Word, LibreOffice, GoogleDocs are supported). It is possible that you may have to do that manually.
+  - Zotero Connector for Chrome can be installed from the same page (<https://www.zotero.org/download/>)
+  - detailed explanations on how to use word processor plugins can be found [here](https://www.zotero.org/support/word_processor_integration); you can use Zotero with [MS Word](https://www.zotero.org/support/word_processor_plugin_usage), [LibreOffice](https://www.zotero.org/support/libreoffice_writer_plugin_usage) and [Google Docs](https://www.zotero.org/support/google_docs); in case you cannot get your plugin activated, check the [Troubleshooting Section](https://www.zotero.org/support/word_processor_plugin_troubleshooting).
+
+    
+### Main Functionality
+
+You need to be able to do the following tasks with your Zotero in order to take full advantage of its functionality.
+
+*Online Tutorials*: If you prefer video tutorials, you can check a series of tutorials prepared by the [McGill Library](https://www.youtube.com/playlist?list=PL4asXgsr6ek5H5mM9GlA1d-YCb9KvP3Ja) (there are also plenty other tutorials on YouTube :); if you prefer to read, you can check a series of tutorials prepared by the [UC Berkley Library](https://guides.lib.berkeley.edu/zotero).
+
+1. **Adding bibliographical records (and PDFs)**
+  - *Using Zotero Connector*: the easiest way to add a reference is from a browser with Zotero connector. This can be done practically from any library or journal database (e.g., Uni Wien Library, Worldcat.org, JSTOR); simply click the connector button while you are on a page with a publication that you want to add to your Zotero database. PDF may be automatically downloaded, if available; keep in mind that in places like JSTOR you need to agree to terms before this function will work; what you need to do is to download one PDF manually from a JSTOR page, where you will be asked to agree to terms of their services;
+  - *Drag-and-dropping PDFs into Zotero*; this however works only when Zotero can parse relevant bibliographical information from a PDF; This might be a good way to start if you already have lots of PDFs that you want to add to Zotero.
+  - *Using Unique Identifiers*: you can use ISBN or DOI numbers.
+  - *Using Import*: you can import bibliographical data from another application or from bibliographical files (formats, like RIS, which you can download from most libraries as well).
+  - *Manually*: you can manually add and fill in a record as well.
+2. **Write-and-cite**
+  - *Detailed Instructions*: [MS Word](https://www.zotero.org/support/word_processor_plugin_usage), [LibreOffice](https://www.zotero.org/support/libreoffice_writer_plugin_usage) and [Google Docs](https://www.zotero.org/support/google_docs); you can also check the video tutorial.
+  - *Add a citation*
+  - *Customize a citation* (by adding prefixes, suffixes, page range for a specific reference, etc.).
+  - *Change citation style*.
+    - For example, change from *Chicago Manual of Style* to *Universität Wien - Institut für Geschichte* (Yes, there is this specific citation style for Zotero: <https://www.zotero.org/styles?q=id%3Auniversitat-wien-institut-fur-geschichte>); in order to do that you need to download the IfG style and install it into Zotero.
+    - You can find lots of different citation styles here: <https://www.zotero.org/styles>; to add a new style to Zotero:
+      - download the style you want.
+      - Open Zotero. Go to Preferences (under Zotero, Edit, or Tools --- depending on your system).
+      - Click the "Cite" button.
+      - Click the "Styles" tab.
+      - Click the `+` button at the bottom right.
+      - Select the style file you saved in the first step.
+  - *Generate and update bibliography* in your paper.
+  - **NB:** If you use Zotero plugin for adding your citations, they remain connected to Zotero and can be automatically reformatted; you can also drag-and-drop any bibliographical record into any text editor---the reference will be formatted according to the currently selelected style, but it will not be connected to Zotero and cannot be reformatted automatically later.
+3. **General Maintenance and Organization**
+  - Zotero can [automatically] rename PDFs using metadata, although the default function is not very robust (see, *Zotfile* plugin below).
+  - You can create “collections” and drag-and-drop publications relevant to a specific topic or project you are working on.
+
+### Additional Functionality: Plug-Ins
+
+There is a variety of third-party plugins that you can add to Zotero for additional functionality. The list of plugins can be found at <https://www.zotero.org/support/plugins>. To install a plugin, you need to download its `.xpi` file to your computer. Then, in Zotero, click “Tools → Add-Ons”, then drag the `.xpi` for the plugin onto the Add-Ons window that opens. Two plugins will be of particular interest to us: `Zotfile` and `BetterBibTeX`.
+
+### Zotfile
+
+Zotfile (<http://zotfile.com/>) is a Zotero plugin to manage your attachments: automatically rename, move, and attach PDFs (or other files) to Zotero items, sync PDFs from your Zotero library to your (mobile) PDF reader (e.g. an iPad, Android tablet, etc.) and extract annotations from PDF files.
+
+This plugin is particularly helpful for organizing PDFs on your hard drive. By default, Zotero saves PDFs in a computationally safe, but humanely incomprehensible manner: each PDF, even if it is renamed from bibliographical metadata and is human readable, it is still placed into a folder whose name is a random sequence of characters. Zotfile allows you to organize PDFs in a more human-friendly manner. The first screenshot below shows Zotero default mode, while the second one shows Zotfile mode: essentially, Zotfile creates a folder for each author and PDFs of all publications by that author get placed in that folder. You can sync this folder with Dropbox or other cloud service and access it from your tablet or phone.
+
+![Zotero default organization.](./images/zotero_default.png)
+
+![Zotfile organization.](./images/zotero_zotfile.png)
+
+### Better BibTeX for Zotero
+
+For a moment this will not be an immediately useful plug-in, but it is the most important one for our Memex project. This plugin exports bibliographical data into a `bibTeX` format, which is very easy to process with python scripts (it also generates *citation keys* which can be used for citation in markdown, which we will cover later). The two screenshots below show how the same record looks in Zotero preview and in the `bibTeX` format.
+
+![A Record in Zotero.](./images/rec_zotero.png)
+
+![The Same Record in `BibTeX` Format.](./images/rec_bibtex.png)
+
+## Homework{#HWL01}
+
+- collect 30-50 bibliographic records into your Zotero (ideally with PDFs); the number may seem like a lot, but you will see that you can do that it will take only about 30 mins on JSTOR; those of you who are already using Zotero must already have more than 50 records in your databases. 
+- clearly, you should be collecting items that are relevant to your fields of study and your research; organize them into folders, if that is necessary;
+- **create Bibliography and email it to me** (this is one-click operation; try to figure on your own how to do this; asking on *Slack* counts);
+- make sure that you are comfortable with the main functionality of Zotero; that you have the discussed plugins installed; to get comfortable with the main functionality, you should practice each listed procedure at least a couple of times.
+- **in preparation for the next class**, please, watch the following  two short videos from Dr. Paul Vierthaler's *Hacking the Humanities* series:
+  - [Episode 1: Introduction to the Hacking the Humanities Tutorial Series](https://www.youtube.com/watch?v=fhsH4ua9zP8&list=PL6kqrM2i6BPIpEF5yHPNkYhjHm-FYWh17&index=1) and install Python via Anaconda; you can also install Python directly from <https://www.python.org/>, but Anaconda distribution might make your life easier, especially if you are on Windows.
+  - [Episode 2: The Command Prompt](https://www.youtube.com/watch?v=q5b19xMb97I&list=PL6kqrM2i6BPIpEF5yHPNkYhjHm-FYWh17&index=2&t=206s).
+
+**Submitting homework:**
+
+- Homework assignment must be submitted by the beginning of the next class;
+- Email your homework to the instructor as attachments.
+		* In the subject of your email, please, add the following: `CCXXXXX-LXX-HW-YourLastName-YourMatriculationNumber`, where `CCXXXXX` is the numeric code of the course; `LXX` is the lesson for which the homework is being submitted; `YourLastName` is your last name, and `YourMatriculationNumber` is your matriculation number.

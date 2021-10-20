@@ -1,0 +1,32 @@
+# Memex and Zettelkasten{-}
+
+The *memex* machine is often thought of as a precursor of the Internet, where information is interconnected. Vannevar Bush, however, seems to have viewed more as a personal machine knowledge organization system, to use a modern term. A system that would facilitate coordination of relevant pieces of information into organized sequences that he himself called "trails".
+
+The idea of a personal knowledge device is still of great relevance and of great importance to scholars and scientists whose job is to construct such trails on a daily basis. Needless to say that historians will particulary benefit from having such a machine at their disposal (as Bush's example about the Turkish bow and the English longbow indicates, see [@BushWe1945]).
+
+While it is not necessary to adhere slavishly to Bush's vision, we can definitely use his vision as a springboad to develop something similar; something that will allow us to navigate the massive volumes of information, which grew significantly since the 1940s.
+
+In the following two sections you will find some relevant materials on memex and the history of this idea. Here, however, I want to take some time to think about how the design of our own memex should look like. What do we want from it? What can we reasonably achieve?
+
+Before I procede to that, I would like to dwell on another relevant and, in my opinion, closely connected idea --- that of *Zettelkasten*. On its own, there is nothing particularly interestin and exciting about it, as the word refers to a rather unexciting piece of furniture: a "slip-box", or a "card-box". However, this term became closely associated with Niklas Luhmann, a German professor of sociology (U Bielefeld), who is considered one of the most prolific scholars of the 20th century. Like others, Luhmann himself attributed his productivity to his working method and the knowledge organization system which he implemented and systematically used throughout his career [See, @LuhmannKommunikation1982; @LuhmannArchimedes1987].
+
+*NB:* Detailed bibliography can be found at the end of the section and in the References section (see, TOC).
+
+## On Memex{-}
+
+- [@BushWe1945] is the first article---"As We May Think"---that Vannevar Bush published on memex in *The Atlantic*. This [animation](https://www.youtube.com/watch?v=c539cK58ees) imagines the way memex would have functioned (produced by the organizers of the Brown/MIT symposium).
+- [@NyceMemex1991] is the book that came out of the symposium held at the The Brown/MIT Vannevar Bush Symposium in 1995, celebrating the 50th anniversary of Bush's groundbreaking article "As We May Think". The book includes several Bush's articles on memex that show the evolution of his thinking about this device. This book is difficult to find; someone made [an EPUB version of it](https://monoskop.org/File:Nyce_James_Kahn_Paul_eds_From_Memex_to_Hypertext_Vannevar_Bush_and_the_Minds_Machine.epub) (also shared via *Slack*). Recordings of the symposium are available on YouTube:; other videos of this symposium can also be found at the Video Archive of *The MIT/Brown Vannevar Bush Symposium* [https://www.dougengelbart.org/content/view/258/000/](https://www.dougengelbart.org/content/view/258/000/). I highly recommend you watch [*Paul Kahn: A Visual Tour of Vannevar Bush's Work*](https://www.youtube.com/watch?v=BwwvMUzasU0&t=1853s); other presentations are very interesting as well.
+- [@ParkMemex2014] is an recent experiment (MA Thesis in Design), trying to create a version of memex.
+
+## On Zettelkasten{-}
+
+
+### Niklas Luhmann on his *Zettelkasten*{-}
+
+- Niklas Luhmann was open about his working method, which he discussed in his interviews [@LuhmannArchimedes1987], and in some of his academic articles[@LuhmannKommunikation1982].
+
+### Others on Luhmann's *Zettelkasten*{-}
+
+<https://niklas-luhmann-archiv.de/>
+
+...
