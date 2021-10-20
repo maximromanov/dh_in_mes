@@ -1,10 +1,10 @@
 --- 
-title: "070172-1 UE Methodological course - Introduction to DH: Tools & Techniques (2020W) `Memex Edition`"
+title: "Digital Humanities in Middle Eastern Studies"
 author: "Maxim G. Romanov"
 date: "`r Sys.Date()`"
-description: "This is a collection of relevant materials for the class '070172-1 UE Methodological course - Introduction to DH: Tools & Techniques (2020W) `Memex Edition`', offered at the University of Vienna and taught by Maxim G. Romanov"
-url: 'https\://maximromanov.github.io/univie2020/'
-github-repo: "maximromanov/univie2020"
+description: "This is a collection of relevant materials for the class '57-525 S: Digital Humanities in Middle East Studies --- Introduction to Algorithmic Analysis' (WS2021), offered at the University of Hamburg (Afrika-Asien Institut) and taught by Maxim G. Romanov"
+url: 'https\://maximromanov.github.io/dh_in_mes/'
+github-repo: "maximromanov/dh_in_mes"
 apple-touch-icon: "touch-icon.png"
 apple-touch-icon-size: 120
 favicon: "favicon.ico"
@@ -18,22 +18,118 @@ biblio-style: apalike
 
 # Preliminaries{-}
 
-This is a collection of relevant materials for a DH course by the Department of History, the University of Vienna.
+This is a collection of relevant materials for a DH course at Afrika-Asien Institut, the University of Hamburg.
+
+* Course: 57-525 S: Digital Humanities in Middle East Studies --- `Introduction to Algorithmic Analysis` (WS2021)
+* Meeting time: Mo 12:00-14:00
+* Meeting place: due to COVID, all meetings will be held online via Zoom
+* Meeting link: *shared via Slack*
+* Instructor: Dr. Maxim Romanov, [maxim.romanov@uni-hamburg.de](maxim.romanov@uni-hamburg.de)
+* Language of instruction: English
+* Office hours: Mo 14:00-15:00 (on Zoom)
+
+# Syllabus{-}
 
 * Course: 070172-1 UE Methodological course - Introduction to DH: Tools & Techniques (2020W) `Memex Edition`
-* u:find Link: <https://ufind.univie.ac.at/en/course.html?lv=070172&semester=2020W>
-* Meeting time: Tu 09:00-10:30
-* Meeting place: Seminarraum Geschichte 3 Hauptgebäude, 2.Stock, Stiege 9; due to COVID, all meetings will be held online
 * Instructor: Dr. Maxim Romanov, [maxim.romanov@univie.ac.at](maxim.romanov@univie.ac.at)
 * Language of instruction: English
 * Office hours: Tu 14:00-15:00 (on Zoom; please, contact beforehand!)
 * Office: Department of History,  Maria-Theresien-Straße 9, 1090 Wien, Room 1.10
 
-![](./images/memex01.jpg)
+## Course Details{-}
 
-Back in 1945, Vannevar Bush, a Director of the US Office of Scientific Research and Development, proposed a device, which he called memex:
+* u:find Link: <https://ufind.univie.ac.at/en/course.html?lv=070172&semester=2020W>
+* Meeting time: Tu 09:00-10:30
+* Meeting place: Seminarraum Geschichte 3 Hauptgebäude, 2.Stock, Stiege 9; due to COVID, all meetings will be held online
 
-> Consider a future device ... in which an individual stores all his books, records, and communications, and which is mechanized so that it may be consulted with exceeding speed and flexibility. It is an enlarged intimate supplement to his memory. ... The owner of the memex, let us say, is interested in the origin and properties of the bow and arrow. Specifically he is studying why the short Turkish bow was apparently superior to the English long bow in the skirmishes of the Crusades. He has dozens of possibly pertinent books and articles in his memex. First he runs through an encyclopedia, finds an interesting but sketchy article, leaves it projected. Next, in a history, he finds another pertinent item, and ties the two together. Thus he goes, building a trail of many items. Occasionally he inserts a comment of his own, either linking it into the main trail or joining it by a side trail to a particular item. When it becomes evident that the elastic properties of available materials had a great deal to do with the bow, he branches off on a side trail which takes him through textbooks on elasticity and tables of physical constants. He inserts a page of longhand analysis of his own. Thus he builds a trail of his interest through the maze of materials available to him. And his trails do not fade. Several years later, his talk with a friend turns to the queer ways in which a people resist innovations, even of vital interest. He has an example, in the fact that the outraged Europeans still failed to adopt the Turkish bow. In fact he has a trail on it. A touch brings up the code book. Tapping a few keys projects the head of the trail. A lever runs through it at will, stopping at interesting items, going off on side excursions. It is an interesting trail, pertinent to the discussion. ... — [The Atlantic, July 1945](https://www.theatlantic.com/magazine/archive/1945/07/as-we-may-think/303881/).
+# Aims, contents and method of the course
 
-![](./images/memex02.jpg)
-![](./images/memex03.jpg)
+The course is a practical introduction to a series of digital tools and techniques that are relevant for analytical work both inside and outside of academia. The course will cover such topics as sustainable academic/analytical writing, organization of research workflow, data collection and structuring, as well as basics of text analysis, mapping, and social network analysis. In the course of these units, you will start working with Python, one of the most prominent programming languages used now by humanists and data scientists alike (no prior programming experience is required, but beneficial). The assessment will be based on your in-class participation, timely submission of homework assignments, and the final project, where you will be encouraged to work with data from your disciplinary domain.
+
+Personal computers are required both for in-class work and for your homework (running full versions of either Windows, MacOS, or Linux; not tablets!).
+
+# Course Evaluation 
+
+Course evaluation will be a combination of in-class participation (30%), weekly homework assignments (50%), and the final project (20%). 
+
+# Class Participation
+
+Each class session will consist in large part of practical hands-on exercises led by the instructor. BRING YOUR LAPTOP! We will accommodate whatever operating system you use (Windows, Mac, Linux), but it should be a laptop rather than a tablet. Don’t forget that asking for help counts as participation!
+
+# Homework
+
+Just as in research and real life, collaboration is a very good way to learn and is therefore encouraged. If you need help with any assignment, you are welcome to ask a fellow student. If you do work together on homework assignments, then when you submit it please include a brief note (just a sentence or two) to indicate who did what.
+
+**NB:** On submitting homework, see below.
+
+# Final Project
+
+The final project is your website built in Jekyll and hosted on Github. Your website must include blogposts about all homework assignments. You are most welcome to work on this in groups, but everybody is required to submit his/her own course website.
+
+# Study materials:
+
+Most study materials will be distributed by the instructor.
+* Zelle, John M. 2016. *Python Programming: An Introduction to Computer Science*. 3rd edition. Portland, Oregon: FRANKLIN BEEDLE & ASSOC.
+* “Programming Historian” offers a number of tutorials for aspiring digital humanists. These will be assigned to you as reference materials. You also are encouraged to explore those tutorials that are not included into the course. <https://programminghistorian.org/lessons/>
+* Paul Vierthaler's “Hacking the Humanities Tutorials” (Python), <https://www.youtube.com/playlist?list=PL6kqrM2i6BPIpEF5yHPNkYhjHm-FYWh17>
+
+# Software, Tools, & Technologies:
+
+The following is the list of software, applications and packages that we will be using in the course. Make sure to have them installed by the class when we are supposed to use them.
+
+* Zotero, <https://www.zotero.org/>;
+* MS Word or Apache OpenOffice (you most likely already have one of these)
+* [Mac] Terminal / [Windows] Powershell (both are already on your machines)
+* Python <https://www.python.org/>
+* git and <https://github.com/>, version control system 
+* pandoc (<https://pandoc.org/>), markdown, bibTeX (bibliographical format for LaTeX)
+* QGIS, a Free and Open Source Geographic Information System (<https://qgis.org/en/site/>)
+* Regular expressions, EditPad Pro/Sublime Text
+* Wget (<https://www.gnu.org/software/wget/>), a free software package for retrieving files
+* [TEI] XML, csv/tsv, json, yml, etc.
+* Gephi (<https://gephi.org/>)
+
+# Submitting Homework:
+
+* Homework assignments are to be submitted by the beginning of the next class;
+* For the first few classes you must email them to the instructor (as attachments)
+* Later, you will be publishing your homework assignments on your github pages and sending an email to the instructor informing that you have completed your homework and providing a relevant github link.
+	*  In the subject of your email, please, use the following format: `CourseID-LessonID-HW-Lastname-matriculationNumber`, for example, if I were to submit homework for the first lesson, my subject header would look like: `070112-L01-HW-Romanov-12435687`.
+* DH is a collaborative field, so you are most welcome to work on your homework assignments in groups, however, you must still submit it. That is, if a groups of three works on one assignment, there must be three separate submissions: either emailed from each member’s email and published at each member’s github page.  
+
+# Schedule
+
+**Location**: Online
+
+* 01 - Mo, 11. Okt. 2021 - 12:00-14:00
+* 02 - Mo, 18. Okt. 2021 - 12:00-14:00
+* 03 - Mo, 25. Okt. 2021 - 12:00-14:00
+* 04 - Mo, 01. Nov. 2021 - 12:00-14:00
+* 05 - Mo, 08. Nov. 2021 - 12:00-14:00
+* 06 - Mo, 15. Nov. 2021 - 12:00-14:00
+* 07 - Mo, 22. Nov. 2021 - 12:00-14:00
+* 08 - Mo, 29. Nov. 2021 - 12:00-14:00
+* 09 - Mo, 06. Dez. 2021 - 12:00-14:00
+* 10 - Mo, 13. Dez. 2021 - 12:00-14:00
+* 11 - Mo, 03. Jan. 2022 - 12:00-14:00
+* 12 - Mo, 10. Jan. 2022 - 12:00-14:00
+* 13 - Mo, 17. Jan. 2022 - 12:00-14:00
+* 14 - Mo, 24. Jan. 2022 - 12:00-14:00
+
+# Lesson Topics (subject to modification)
+
+- **[ #01 ]** Citation Management and Academic Writing I - with Zotero and MS Word or Open Office
+- **[ #02 ]** “Off with the Interface!” Getting to know the command line
+- **[ #03 ]** Version Control and Collaboration: Github.com
+- **[ #04 ]** Citation Management and Academic Writing II - with Pandoc, markdown, Zotero/BibTex
+- **[ #05 ]** Constructing robust searches with Regular expressions
+- **[ #06 ]** Webscraping with Wget, preparing URLs with Python and other tools
+- **[ #07 ]** Text Markup [TEI XML], and how to remove it... - with Python scripts [anaconda]
+- **[ #08 ]** Structuring data with Python scripts
+- **[ #09 ]** Georeferencing with QGIS
+- **[ #10 ]** Text to Map (1/2) - with Python and QGIS
+- **[ #11 ]** Text to Map (2/2) - with Python and QGIS
+- **[ #12 ]** Topic modeling - with Python; TF-IDF with Python
+- **[ #13 ]** Social Network Analysis - with Gephi; preparing network data with Python
+- **[ #14 ]** Final Projects Presentations
+
