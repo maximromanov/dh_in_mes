@@ -1,8 +1,8 @@
 ---
 book_filename: "main"
 delete_merged_file: true
-view: https://github.com/maximromanov/dh_in_mes/blob/master/%s
-edit: https://github.com/maximromanov/dh_in_mes/edit/master/%s
+view: https://github.com/maximromanov/dh_in_mes/blob/main/%s
+edit: https://github.com/maximromanov/dh_in_mes/edit/main/%s
 output_dir: "docs"
 language:
   ui:
