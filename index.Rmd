@@ -28,7 +28,7 @@ This is a collection of relevant materials for a DH course at Afrika-Asien Insti
 * Language of instruction: English
 * Office hours: Mo 14:00-15:00 (on Zoom)
 
-# Syllabus{-}
+## Syllabus{-}
 
 * Course: 070172-1 UE Methodological course - Introduction to DH: Tools & Techniques (2020W) `Memex Edition`
 * Instructor: Dr. Maxim Romanov, [maxim.romanov@univie.ac.at](maxim.romanov@univie.ac.at)
