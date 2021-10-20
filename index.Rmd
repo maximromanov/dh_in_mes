@@ -16,37 +16,26 @@ bibliography:
 biblio-style: apalike
 ---
 
-# Preliminaries{-}
-
-This is a collection of relevant materials for a DH course at Afrika-Asien Institut, the University of Hamburg.
-
-* Course: 57-525 S: Digital Humanities in Middle East Studies --- `Introduction to Algorithmic Analysis` (WS2021)
-* Meeting time: Mo 12:00-14:00
-* Meeting place: due to COVID, all meetings will be held online via Zoom
-* Meeting link: *shared via Slack*; other details are available via STiNE
-* Instructor: Dr. Maxim Romanov, [maxim.romanov@uni-hamburg.de](maxim.romanov@uni-hamburg.de)
-* Language of instruction: English
-* Office hours: Mo 14:00-15:00 (on Zoom)
-
-## Syllabus{-}
-
-* Course: 070172-1 UE Methodological course - Introduction to DH: Tools & Techniques (2020W) `Memex Edition`
-* Instructor: Dr. Maxim Romanov, [maxim.romanov@univie.ac.at](maxim.romanov@univie.ac.at)
-* Language of instruction: English
-* Office hours: Tu 14:00-15:00 (on Zoom; please, contact beforehand!)
-* Office: Department of History,  Maria-Theresien-Straße 9, 1090 Wien, Room 1.10
+# Syllabus{-}
 
 ## Course Details{-}
 
-* u:find Link: <https://ufind.univie.ac.at/en/course.html?lv=070172&semester=2020W>
-* Meeting time: Tu 09:00-10:30
-* Meeting place: Seminarraum Geschichte 3 Hauptgebäude, 2.Stock, Stiege 9; due to COVID, all meetings will be held online
+* Course: 57-525 S: Digital Humanities in Middle East Studies --- `Introduction to Algorithmic Analysis` (WS2021)
+* Language of instruction: English
+* Meeting time: Mo 12:00-14:00
+* Meeting place: due to COVID, all meetings will be held online via Zoom
+* Meeting link: *shared via Slack*; other details are available via STiNE
+* Office hours: Mo 14:00-15:00 (on Zoom); if you have any questions, please, post them on Slack
+* Instructor: Dr. Maxim Romanov, [maxim.romanov@uni-hamburg.de](maxim.romanov@uni-hamburg.de)
+* Course: 070172-1 UE Methodological course - Introduction to DH: Tools & Techniques (2020W) `Memex Edition`
+* Instructor: Dr. Maxim Romanov, [maxim.romanov@univie.ac.at](maxim.romanov@univie.ac.at)
+
 
 ## Aims, contents and method of the course
 
 The course is a practical introduction to a series of digital tools and techniques that are relevant for analytical work both inside and outside of academia. The course will cover such topics as sustainable academic/analytical writing, organization of research workflow, data collection and structuring, as well as basics of text analysis, mapping, and social network analysis. In the course of these units, you will start working with Python, one of the most prominent programming languages used now by humanists and data scientists alike (no prior programming experience is required, but beneficial). The assessment will be based on your in-class participation, timely submission of homework assignments, and the final project, where you will be encouraged to work with data from your disciplinary domain.
 
-Personal computers are required both for in-class work and for your homework (running full versions of either Windows, MacOS, or Linux; not tablets!).
+Personal computers are required both for in-class work and for your homework (running full versions of either Windows, MacOS, or Linux; unfortunately, neither tablets nor Chrome-based laptops are suitable for this course).
 
 ## Course Evaluation 
 
