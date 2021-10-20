@@ -1,6 +1,7 @@
 ---
 book_filename: "main"
 delete_merged_file: true
+always_allow_html: true
 view: https://github.com/maximromanov/dh_in_mes/blob/main/%s
 edit: https://github.com/maximromanov/dh_in_mes/edit/main/%s
 output_dir: "docs"
@@ -14,5 +15,4 @@ output:
   bookdown::pdf_book:
     keep_tex: yes
   bookdown::epub_book: default
-always_allow_html: true
 ---
