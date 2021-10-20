@@ -122,7 +122,6 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-<link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
 <body>
@@ -135,27 +134,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">DH Methods for Middle Eastern Studies: Toward A Handbook</a></li>
-
-<li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preliminaries</a></li>
-<li class="chapter" data-level="" data-path="memex-and-zettelkasten.html"><a href="memex-and-zettelkasten.html"><i class="fa fa-check"></i>Memex and Zettelkasten</a>
-<ul>
-<li class="chapter" data-level="" data-path="memex-and-zettelkasten.html"><a href="memex-and-zettelkasten.html#on-memex"><i class="fa fa-check"></i>On Memex</a></li>
-<li class="chapter" data-level="" data-path="memex-and-zettelkasten.html"><a href="memex-and-zettelkasten.html#on-zettelkasten"><i class="fa fa-check"></i>On Zettelkasten</a>
-<ul>
-<li><a href="memex-and-zettelkasten.html#niklas-luhmann-on-his-zettelkasten">Niklas Luhmann on his <em>Zettelkasten</em></a></li>
-<li><a href="memex-and-zettelkasten.html#others-on-luhmanns-zettelkasten">Others on Luhmann’s <em>Zettelkasten</em></a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="work-plan.html"><a href="work-plan.html"><i class="fa fa-check"></i>Work Plan</a>
-<ul>
-<li class="chapter" data-level="" data-path="work-plan.html"><a href="work-plan.html#memex-building-cycle"><i class="fa fa-check"></i>Memex-Building Cycle</a></li>
-<li class="chapter" data-level="" data-path="work-plan.html"><a href="work-plan.html#research-cycle"><i class="fa fa-check"></i>Research Cycle</a>
-<ul>
-<li class="chapter" data-level="" data-path="work-plan.html"><a href="work-plan.html#building-trails"><i class="fa fa-check"></i>Building Trails</a></li>
-</ul></li>
-</ul></li>
 <li class="chapter" data-level="1" data-path="lesson-01.html"><a href="lesson-01.html"><i class="fa fa-check"></i><b>1</b> Lesson 01</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="lesson-01.html"><a href="lesson-01.html#bibliography-managers"><i class="fa fa-check"></i><b>1.1</b> Bibliography Managers</a></li>
@@ -340,9 +319,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#lesson-topics"><i class="fa fa-check"></i>Lesson Topics</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
-<li class="divider"></li>
-<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
-
 </ul>
 
       </nav>
@@ -926,18 +902,18 @@ yor
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
-"github": true,
+"github": false,
 "facebook": true,
 "twitter": true,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
 "vk": false,
-"all": ["facebook", "twitter", "github"]
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
-"family": "serif",
+"family": "sans",
 "size": 2
 },
 "edit": {
@@ -954,14 +930,8 @@ gitbook.start({
 },
 "download": null,
 "toc": {
-"collapse": "section",
-"scroll_highlight": true
-},
-"toolbar": {
-"position": "fixed"
-},
-"search": true,
-"info": true
+"collapse": "subsection"
+}
 });
 });
 </script>
