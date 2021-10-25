@@ -1,4 +1,4 @@
-# Lesson 02
+# Lesson 02: Command Line
 
 ## Command Line
 
@@ -168,7 +168,7 @@ By now you will have noticed that I've mentioned the **path** a few times, and t
 * The `..` means “one directory back”—if `pwd` gives you `/Users/user`, then `..` means `/Users`.
 * If the path does not start with a `.` or a `/` or a `~`, then it will be assumed to start with a `./`, that is, “start from the current working directory.”
 
-Let’s wander around a bit. But, first, let's download [a zip file with somoe materials for this class](./files/command_line_practice.zip). Unzip it somewhere and go to that folder in your `Terminal` or `Powershell`.
+Let’s wander around a bit. But, first, let's download [a zip file with some materials for this class](./files/command_line_practice.zip). Unzip it somewhere and go to that folder in your `Terminal` or `Powershell`.
 
 ```
 cd /path/to/the/folder/tnt_practice_materials
@@ -292,7 +292,7 @@ If you want to learn about new commands, try to `google`. Googling things like t
 
 **Command line**
 
-* Watch again a short video on `Command Prompt` Dr. Vierthaler's *Hacking the Humanities* series: [Episode 2: The Command Prompt](https://www.youtube.com/watch?v=q5b19xMb97I&list=PL6kqrM2i6BPIpEF5yHPNkYhjHm-FYWh17&index=2&t=206s).
+* Watch again a short video on `Command Prompt` in Dr. Vierthaler's *Hacking the Humanities* series: [Episode 2: The Command Prompt](https://www.youtube.com/watch?v=q5b19xMb97I&list=PL6kqrM2i6BPIpEF5yHPNkYhjHm-FYWh17&index=2&t=206s).
 * Work through the following materials on command line which is relevant to your operating system.
   * Ted Dawson, "Introduction to the Windows Command Line with PowerShell," The Programming Historian 5 (2016), <https://programminghistorian.org/en/lessons/intro-to-powershell>.
   * Ian Milligan and James Baker, "Introduction to the Bash Command Line," The Programming Historian 3 (2014), <https://programminghistorian.org/en/lessons/intro-to-bash>.
