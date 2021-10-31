@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>3 Lesson 03: Version Control | Digital Humanities in Middle Eastern Studies</title>
+  <meta name="description" content="This is a collection of relevant materials for the class ‘57-525 S: Digital Humanities in Middle East Studies — Introduction to Algorithmic Analysis’ (WS2021), offered at the University of Hamburg (Afrika-Asien Institut) and taught by Maxim G. Romanov" />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="3 Lesson 03: Version Control | Digital Humanities in Middle Eastern Studies" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://maximromanov.github.io/dh_in_mes/" />
+  
+  <meta property="og:description" content="This is a collection of relevant materials for the class ‘57-525 S: Digital Humanities in Middle East Studies — Introduction to Algorithmic Analysis’ (WS2021), offered at the University of Hamburg (Afrika-Asien Institut) and taught by Maxim G. Romanov" />
+  <meta name="github-repo" content="maximromanov/dh_in_mes" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="3 Lesson 03: Version Control | Digital Humanities in Middle Eastern Studies" />
+  
+  <meta name="twitter:description" content="This is a collection of relevant materials for the class ‘57-525 S: Digital Humanities in Middle East Studies — Introduction to Algorithmic Analysis’ (WS2021), offered at the University of Hamburg (Afrika-Asien Institut) and taught by Maxim G. Romanov" />
+  
+
+<meta name="author" content="Maxim G. Romanov" />
+
+
+<meta name="date" content="2021-10-31" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="touch-icon.png" />
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="prev" href="lesson-02-command-line.html"/>
+<link rel="next" href="references.html"/>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<script src="libs/viz-1.8.2/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-1.0.6.1/grViz.js"></script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">DH Methods for Middle Eastern Studies: Toward A Handbook</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Syllabus</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-details"><i class="fa fa-check"></i>Course Details</a></li>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#aims-contents-and-method-of-the-course"><i class="fa fa-check"></i><b>0.1</b> Aims, contents and method of the course</a></li>
+<li class="chapter" data-level="0.2" data-path="index.html"><a href="index.html#course-evaluation"><i class="fa fa-check"></i><b>0.2</b> Course Evaluation</a></li>
+<li class="chapter" data-level="0.3" data-path="index.html"><a href="index.html#class-participation"><i class="fa fa-check"></i><b>0.3</b> Class Participation</a></li>
+<li class="chapter" data-level="0.4" data-path="index.html"><a href="index.html#homework"><i class="fa fa-check"></i><b>0.4</b> Homework</a></li>
+<li class="chapter" data-level="0.5" data-path="index.html"><a href="index.html#final-project"><i class="fa fa-check"></i><b>0.5</b> Final Project</a></li>
+<li class="chapter" data-level="0.6" data-path="index.html"><a href="index.html#study-materials"><i class="fa fa-check"></i><b>0.6</b> Study materials:</a></li>
+<li class="chapter" data-level="0.7" data-path="index.html"><a href="index.html#software-tools-technologies"><i class="fa fa-check"></i><b>0.7</b> Software, Tools, &amp; Technologies:</a></li>
+<li class="chapter" data-level="0.8" data-path="index.html"><a href="index.html#submitting-homework"><i class="fa fa-check"></i><b>0.8</b> Submitting Homework:</a></li>
+<li class="chapter" data-level="0.9" data-path="index.html"><a href="index.html#schedule"><i class="fa fa-check"></i><b>0.9</b> Schedule</a></li>
+<li class="chapter" data-level="0.10" data-path="index.html"><a href="index.html#lesson-topics-subject-to-modification"><i class="fa fa-check"></i><b>0.10</b> Lesson Topics (subject to modification)</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="lesson-01-academic-writing-i.html"><a href="lesson-01-academic-writing-i.html"><i class="fa fa-check"></i><b>1</b> Lesson 01: Academic Writing I</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="lesson-01-academic-writing-i.html"><a href="lesson-01-academic-writing-i.html#bibliography-managers"><i class="fa fa-check"></i><b>1.1</b> Bibliography Managers</a></li>
+<li class="chapter" data-level="1.2" data-path="lesson-01-academic-writing-i.html"><a href="lesson-01-academic-writing-i.html#zotero"><i class="fa fa-check"></i><b>1.2</b> Zotero</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="lesson-01-academic-writing-i.html"><a href="lesson-01-academic-writing-i.html#getting-started"><i class="fa fa-check"></i><b>1.2.1</b> Getting Started</a></li>
+<li class="chapter" data-level="1.2.2" data-path="lesson-01-academic-writing-i.html"><a href="lesson-01-academic-writing-i.html#main-functionality"><i class="fa fa-check"></i><b>1.2.2</b> Main Functionality</a></li>
+<li class="chapter" data-level="1.2.3" data-path="lesson-01-academic-writing-i.html"><a href="lesson-01-academic-writing-i.html#additional-functionality-plug-ins"><i class="fa fa-check"></i><b>1.2.3</b> Additional Functionality: Plug-Ins</a></li>
+<li class="chapter" data-level="1.2.4" data-path="lesson-01-academic-writing-i.html"><a href="lesson-01-academic-writing-i.html#zotfile"><i class="fa fa-check"></i><b>1.2.4</b> Zotfile</a></li>
+<li class="chapter" data-level="1.2.5" data-path="lesson-01-academic-writing-i.html"><a href="lesson-01-academic-writing-i.html#better-bibtex-for-zotero"><i class="fa fa-check"></i><b>1.2.5</b> Better BibTeX for Zotero</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="lesson-01-academic-writing-i.html"><a href="lesson-01-academic-writing-i.html#HWL01"><i class="fa fa-check"></i><b>1.3</b> Homework</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="lesson-02-command-line.html"><a href="lesson-02-command-line.html"><i class="fa fa-check"></i><b>2</b> Lesson 02: Command Line</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="lesson-02-command-line.html"><a href="lesson-02-command-line.html#command-line"><i class="fa fa-check"></i><b>2.1</b> Command Line</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="lesson-02-command-line.html"><a href="lesson-02-command-line.html#the-filesystem"><i class="fa fa-check"></i><b>2.1.1</b> The filesystem</a></li>
+<li class="chapter" data-level="2.1.2" data-path="lesson-02-command-line.html"><a href="lesson-02-command-line.html#getting-started-with-the-command-line"><i class="fa fa-check"></i><b>2.1.2</b> Getting started with the command line</a></li>
+<li class="chapter" data-level="2.1.3" data-path="lesson-02-command-line.html"><a href="lesson-02-command-line.html#components-of-the-command-line"><i class="fa fa-check"></i><b>2.1.3</b> Components of the command line</a></li>
+<li class="chapter" data-level="2.1.4" data-path="lesson-02-command-line.html"><a href="lesson-02-command-line.html#file-paths-and-path-notations"><i class="fa fa-check"></i><b>2.1.4</b> File paths and path notations</a></li>
+<li class="chapter" data-level="2.1.5" data-path="lesson-02-command-line.html"><a href="lesson-02-command-line.html#command-line-arguments"><i class="fa fa-check"></i><b>2.1.5</b> Command line arguments</a></li>
+<li class="chapter" data-level="2.1.6" data-path="lesson-02-command-line.html"><a href="lesson-02-command-line.html#more-commands"><i class="fa fa-check"></i><b>2.1.6</b> More commands</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="lesson-02-command-line.html"><a href="lesson-02-command-line.html#HWL02"><i class="fa fa-check"></i><b>2.2</b> Homework</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="lesson-03-version-control.html"><a href="lesson-03-version-control.html"><i class="fa fa-check"></i><b>3</b> Lesson 03: Version Control</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="lesson-03-version-control.html"><a href="lesson-03-version-control.html#version-control-and-collaboration"><i class="fa fa-check"></i><b>3.1</b> Version Control and Collaboration</a></li>
+<li class="chapter" data-level="3.2" data-path="lesson-03-version-control.html"><a href="lesson-03-version-control.html#setting-up-git"><i class="fa fa-check"></i><b>3.2</b> Setting-up <code>git</code></a></li>
+<li class="chapter" data-level="3.3" data-path="lesson-03-version-control.html"><a href="lesson-03-version-control.html#general-git-workflow"><i class="fa fa-check"></i><b>3.3</b> General <code>git</code> workflow</a></li>
+<li class="chapter" data-level="3.4" data-path="lesson-03-version-control.html"><a href="lesson-03-version-control.html#main-git-commands"><i class="fa fa-check"></i><b>3.4</b> Main <code>git</code> Commands</a></li>
+<li class="chapter" data-level="3.5" data-path="lesson-03-version-control.html"><a href="lesson-03-version-control.html#some-useful-command-line-commands-to-remember"><i class="fa fa-check"></i><b>3.5</b> Some useful command line commands to remember</a></li>
+<li class="chapter" data-level="3.6" data-path="lesson-03-version-control.html"><a href="lesson-03-version-control.html#practice"><i class="fa fa-check"></i><b>3.6</b> Practice</a></li>
+<li class="chapter" data-level="3.7" data-path="lesson-03-version-control.html"><a href="lesson-03-version-control.html#HWL03"><i class="fa fa-check"></i><b>3.7</b> Homework</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Digital Humanities in Middle Eastern Studies</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="lesson-03-version-control" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> Lesson 03: Version Control</h1>
+<div id="version-control-and-collaboration" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> Version Control and Collaboration</h2>
+<p>Version control systems are extremely helpful for the development of DH projects, which are often lengthy and complex and require organic collaboration. <code>Git</code> and <code>GitHub</code> are currently the most popular tools of this kind. In fact, it is difficult to imagine a DH project that would not rely on the use of <code>git</code> and <code>GitHub</code>.</p>
+<p>Before we begin, make sure to:</p>
+<ul>
+<li>Create a github account at <a href="https://github.com/" class="uri">https://github.com/</a>, if you do not have one yet.</li>
+<li>Download and install <code>git</code> software:
+<ul>
+<li>for Windows:
+<ul>
+<li>you can download it from <a href="https://git-scm.com/download/win" class="uri">https://git-scm.com/download/win</a>. Please, choose <strong>64-bit Git for Windows Setup</strong>.
+<ul>
+<li>you can also install a portable version of <code>git</code> which does not require installation <a href="https://git-scm.com/download/win" class="uri">https://git-scm.com/download/win</a>. For this, choose <strong>64-bit Git for Windows Portable</strong>. Simply download and unzip (<em>Suggestion</em>: move that unzipped folder to the folder where you keep all class-related files and materials). In the folder, run <code>git-bash.exe</code> (for a more Unix-like command line) or <code>git-cmd.exe</code> (for Windows command line).</li>
+</ul></li>
+</ul></li>
+<li>for Mac: try to run <code>git --version</code> from Terminal. If <code>git</code> is not installed, you will be prompted to install <code>Xcode Command Line Tools</code> which comes with <code>git</code> among other things. This is the easiest way.</li>
+<li><strong>Note:</strong> there are also interface tools for <em>github</em>. We will not be working with them in the class, but you are welcome to test them on your own at home. See, <a href="https://desktop.github.com" class="uri">https://desktop.github.com</a>. The main reason for this is because interface tools will be different for different operating systems, while the command line usage will be exactly the same across all platforms.</li>
+</ul></li>
+</ul>
+<p>In class we will cover the following:</p>
+<ul>
+<li>Basic <code>git</code> functionality;</li>
+<li>Starting a <code>github</code>-based website;</li>
+<li>Basics of <code>markdown</code>;</li>
+</ul>
+</div>
+<div id="setting-up-git" class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> Setting-up <code>git</code></h2>
+<ul>
+<li><code>git config --global user.name "YourName"</code></li>
+<li><code>git config --global user.email "YourEmail"</code></li>
+</ul>
+</div>
+<div id="general-git-workflow" class="section level2" number="3.3">
+<h2><span class="header-section-number">3.3</span> General <code>git</code> workflow</h2>
+<ul>
+<li><em>In <code>Terminal</code> (on Mac) or <code>Git-Bash</code> (on Windows)</em>
+<ol style="list-style-type: decimal">
+<li>create a repository under your account online at <a href="https://github.com" class="uri">https://github.com</a>.</li>
+<li>Alternatively, you can also <code>fork</code> somebody else’s repository.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></li>
+<li><code>clone</code> (<strong>NB:</strong> this is done on <a href="https://github.com" class="uri">https://github.com</a>!)</li>
+<li><em>work</em></li>
+<li><code>add</code></li>
+<li><code>commit</code></li>
+<li><code>push</code> / <code>pull</code></li>
+<li>send <code>pull request</code> (<strong>NB:</strong> this is done on <a href="https://github.com" class="uri">https://github.com</a>)</li>
+</ol></li>
+</ul>
+<p><strong>Note:</strong> Steps 2 and 8 are relevant only when you work on a project (<em>repository</em>) that is owned by somebody else. If you work on a <em>repository</em> that you created under your account, you only need steps 1, 3-7. Below is a visual representation of this cycle.</p>
+<div id="htmlwidget-ac69e8b2225e8bcf4497" style="width:672px;height:600px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-ac69e8b2225e8bcf4497">{"x":{"diagram":"\ndigraph research_cycle {\n\n  # a \"graph\" statement\n  graph [overlap = false, fontsize = 10, rankdir = TB]\n\n  # several \"node\" statements\n  node [shape = box,\n        fontname = Baskerville,\n        fontsize = 10,\n        style = rounded,\n        penwidth = 0.1]\n  github;\n  create;\n  fork;\n\n  # several \"node\" statements\n  work [shape=box, regular=1, style=rounded, fillcolor=grey50, label = \"working...\"]\n\n  # several \"node\" statements\n  node [shape = box,\n        fontname = Courier,\n        fontsize = 10,\n        style = filled,\n        penwidth = 0.1]  \n  clone [label = \"git clone <repository_link>\"];\n  add [label = \"git add .\"];\n  commit [label = \"git commit -m “message”\"];\n  push [label = \"git push origin master\"];\n  pull [label = \"git pull origin master\"];\n  \n  subgraph cluster1 {\n  github->create; github->fork;\n    color = gray;\n    style = rounded;\n    label = \"github.com\";\n    fontcolor = gray;\n  }\n  \n  subgraph cluster2 {\n  clone->work;\n  work->add; add->commit;\n  commit->push;\n  push->github;\n  github->pull; pull->work;\n    color = black;\n    style = rounded;\n    label = \"work cycle\";\n    fontcolor = gray;\n    fillcolor = gray;\n  }\n  \n  create->clone; fork->clone;\n\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="main-git-commands" class="section level2" number="3.4">
+<h2><span class="header-section-number">3.4</span> Main <code>git</code> Commands</h2>
+<ul>
+<li><code>git clone &lt;link&gt;</code>
+<ul>
+<li>clones/downloads a repository on you machine</li>
+</ul></li>
+<li><code>git status</code>
+<ul>
+<li>shows the current status of the repository (new, changed, deleted)</li>
+</ul></li>
+<li><code>git add .</code>
+<ul>
+<li>adds all new files and modified files to the repository</li>
+</ul></li>
+<li><code>git commit -m "message"</code>
+<ul>
+<li>saves all files in their current state into the repository, and created a milestone</li>
+</ul></li>
+<li><code>git push origin master</code>
+<ul>
+<li>uploads changes to <a href="https://github.com" class="uri">https://github.com</a></li>
+<li><code>origin</code> is a specific repository you are pushing your changes to; it is automatically set up, when you clone a repository on your computer.</li>
+<li><code>master</code> is the <em>branch</em> you are pushing to the repository; <code>master</code> is the default name of the main branch in a git repository. To check the names of your branches, you can type <code>git branch</code>.</li>
+<li><strong>NB:</strong> sometimes you may get an error, which in most cases means that you need to <code>pull</code> first</li>
+</ul></li>
+<li><code>git pull origin master</code>
+<ul>
+<li>downloads changes from <a href="https://github.com" class="uri">https://github.com</a></li>
+</ul></li>
+<li><code>git log</code>
+<ul>
+<li>shows the history of <code>commit</code>s; here you can choose where you want to roll back, in case of troubles.</li>
+</ul></li>
+</ul>
+</div>
+<div id="some-useful-command-line-commands-to-remember" class="section level2" number="3.5">
+<h2><span class="header-section-number">3.5</span> Some useful command line commands to remember</h2>
+<ul>
+<li><code>pwd</code>
+<ul>
+<li>shows you where you are on a drive (gives you path)</li>
+</ul></li>
+<li><code>ls</code> / <code>dir</code> [on Windows]
+<ul>
+<li>shows everything in the your current location/folder</li>
+</ul></li>
+<li><code>cd &lt;name of the folder&gt;</code>
+<ul>
+<li>takes you to that folder</li>
+</ul></li>
+<li><code>cd ..</code>
+<ul>
+<li>takes you one level up in the tree structure of your computer</li>
+</ul></li>
+</ul>
+</div>
+<div id="practice" class="section level2" number="3.6">
+<h2><span class="header-section-number">3.6</span> Practice</h2>
+<ul>
+<li>Under your GitHub account, create repository <code>HW070172</code>;</li>
+<li>clone it to your computer (use command line: <code>git clone LinkToYourRepository</code>);</li>
+<li>Now, in the repository:
+<ul>
+<li>let’s edit <code>README.md</code> (create it, if you have not yet); add some text into this file</li>
+<li>create subfolders for Lessons, like <code>L01</code>, <code>L02</code>, <code>L03</code>, etc.</li>
+<li>copy/paste your homework files in respective subfolders.</li>
+<li>Now, do the <code>add</code>-<code>commit</code>-<code>push</code> routine to upload the files to your repository</li>
+</ul></li>
+<li>Now, online:
+<ul>
+<li>check if your files are there</li>
+<li>let’s do some edits to the <code>README.md</code> file (markdown basics / <em>github flavor</em>)</li>
+</ul></li>
+<li><code>pull</code> / <code>push</code></li>
+</ul>
+</div>
+<div id="HWL03" class="section level2" number="3.7">
+<h2><span class="header-section-number">3.7</span> Homework</h2>
+<p><strong>Git and GitHub</strong></p>
+<ul>
+<li>Watch a video on <code>Git &amp; GitHub</code> in Dr. Vierthaler’s <em>Hacking the Humanities</em> series: <a href="https://www.youtube.com/watch?v=YetC-gxgIVY">Supplement 1: A quick Git and Github Tutorial</a>. This will help you to go over the new material and pick up a few more useful <code>git</code> <em>&amp;</em> <code>gitHub</code> tricks.</li>
+<li>There is an interface for github that you can also use, but I strongly recommend to use command line; interfaces change, but commandline commands remain the same!
+<ul>
+<li>Daniel van Strien. 2016. “An Introduction to Version Control Using GitHub Desktop,” The Programming Historian 5, <a href="https://programminghistorian.org/en/lessons/getting-started-with-github-desktop">https://programminghistorian.org/</a>.</li>
+</ul></li>
+<li>Please, also read (for <code>markdown</code>): Simpkin, Sarah. 2015. “Getting Started with Markdown.” Programming Historian, November. <a href="https://programminghistorian.org/lessons/getting-started-with-markdown">https://programminghistorian.org/</a>.
+<ul>
+<li>More on github-flavored <code>markdown</code>: <a href="https://guides.github.com/features/mastering-markdown/" class="uri">https://guides.github.com/features/mastering-markdown/</a>.</li>
+<li>On <code>markdown</code> for academic writing, see <a href="https://pandoc.org/MANUAL.html" class="uri">https://pandoc.org/MANUAL.html</a>.</li>
+<li>A cheat-sheet &amp; interactive tutorial for your practice: <a href="https://commonmark.org/help/" class="uri">https://commonmark.org/help/</a>.</li>
+</ul></li>
+</ul>
+<p><em>Extra</em>: you can build and host a website on <code>github.com</code>; your website will have the name: <code>YourUserName.github.io</code> — you can create a repository with that name and build your website there using Jekyll and GitHub Pages. Any other repository may also be converted into a part of your website, which will be accessible at <code>YourUserName.github.io/YourRepository/</code></p>
+<ul>
+<li>Visconti, Amanda. 2016. “Building a Static Website with Jekyll and GitHub Pages.” Programming Historian, April. <a href="https://programminghistorian.org/lessons/building-static-sites-with-jekyll-github-pages">https://programminghistorian.org/</a>.</li>
+</ul>
+<p><strong>Python</strong></p>
+<ul>
+<li>Work through Chapter II of Zelle’s book; read the entire chapter; retype and run all code snippets as described in the book; work through the chapter summary and exercises; complete all programming exercises;</li>
+<li>Watch <a href="https://www.youtube.com/playlist?list=PL6kqrM2i6BPIpEF5yHPNkYhjHm-FYWh17">Dr. Vierthaler’s videos</a>:
+<ul>
+<li>Episode 04: Strings;</li>
+<li>Episode 05: Integers, Floats, and Math in Python;</li>
+<li>Episode 06: Lists</li>
+</ul></li>
+</ul>
+<p><strong>Submitting homework</strong></p>
+<ul>
+<li>Homework assignment must be submitted by the beginning of the next class;</li>
+<li>Now, that you know how to use GitHub, you will be submitting your homework pushing it to github:
+<ul>
+<li>Create a relevant subfoler in your <code>HW070172</code> repository and place your HW files there; push them to your GitHub account;
+<ul>
+<li>Email me the link to your repository with a short message (Something like: <em>I have completed homework for Lesson 3, which is uploaded to my repository … in subfolder <code>L03</code></em>)</li>
+<li>In the subject of your email, please, add the following: <code>CCXXXXX-LXX-HW-YourLastName-YourMatriculationNumber</code>, where <code>CCXXXXX</code> is the numeric code of the course; <code>LXX</code> is the lesson for which the homework is being submitted; <code>YourLastName</code> is your last name, and <code>YourMatriculationNumber</code> is your matriculation number.</li>
+</ul></li>
+</ul></li>
+</ul>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p><strong>NB:</strong> this is done on <a href="https://github.com" class="uri">https://github.com</a>); forking means creating your own copy of some one’s repository at that specific moment in time<a href="lesson-03-version-control.html#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="lesson-02-command-line.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "github"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "serif",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/maximromanov/dh_in_mes/edit/main/02-Lesson03.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/maximromanov/dh_in_mes/blob/main/02-Lesson03.Rmd",
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"search": true,
+"info": true
+});
+});
+</script>
+
+</body>
+
+</html>

@@ -1,8 +1,8 @@
-# Lesson 03
+# Lesson 03: Version Control
 
 ## Version Control and Collaboration
 
-Version control systems are extremely helpful for the development of DH projects, which are often lengthy and complex and require organic collaboration. `Git` and `GitHub` are currently the most popular tools of this kind. It is difficult to imagine a DH project that would not rely on the use of `git` and `GitHub`. 
+Version control systems are extremely helpful for the development of DH projects, which are often lengthy and complex and require organic collaboration. `Git` and `GitHub` are currently the most popular tools of this kind. In fact, it is difficult to imagine a DH project that would not rely on the use of `git` and `GitHub`. 
 
 Before we begin, make sure to:
 
