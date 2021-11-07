@@ -191,7 +191,7 @@ in the literature.
 
 **NB:** On Windows, you may see a pop-up Windows from `MikTex` asking to download a missing package for `LaTeX`. This means that some package is missing and you need to download it (or several of them). Uncheck a birdie to install all necessary packages at once. After that everything should work.
 
-First try to convert to `docx` or `html`. These two formats do not require
+First try to convert to `docx` or `html`. These two formats do not require `LaTeX`.
 
 ```
 pandoc -f markdown -t docx -o main.docx --filter pandoc-citeproc main.md
@@ -217,14 +217,24 @@ pandoc -f markdown -t latex -o main.pdf --citeproc main.md
 
 Thus, the whole command (say, the first one) reads as follows: `pandoc converts from (-f) markdown to (-t) latex, then outputs (-o) main.pdf, to which a ‘filter’ that processes citations (--filter pandoc-citeproc) is applied; and the file to which this all is applied is main.md`.
 
-## Writing with markdown in Atom
+## Analytical Writing with markdown
 
-Atom (<https://atom.io/>) allows one to integrate writing in markdown with the helpfulness of Zotero, as well as offers quite a few other nice features. You can find how to set everything up in Scott Selisker's blog post: <http://u.arizona.edu/~selisker/post/workflow/>.
+You can find a number of blogposts online about how different scholars are using markdown to write their academic works. For example, Scott Selisker, an Associate professor at the Department of English at the U Arizona, shares his experience of writing his using a popular text editor Atom (<https://atom.io/>), which allows one to integrate writing in markdown with the helpfulness of Zotero, as well as offers quite a few other nice features. (You can find how to set everything up in Scott Selisker's blog post: <http://u.arizona.edu/~selisker/post/workflow/>.)
+
+## Zettelkasten with Obsidian
+
+One of the most useful pieces of software for the purpose of analytical writing is Obsidian (<https://obsidian.md/>), which is available for all major operating systems. The developers of Obsidian call is "a powerful knowledge base on top of a local folder of plain text markdown files". The design of the program gives you the complete control over your data as there are no proprietary formats which may make your data inaccessible and no complicated technologies that hide your data in difficult-to-access formats (like, MySQL, for example). The main power of Obsidian is that it allows you to connect your notes into a network of information, which makes it nearly perfect for complex analytical writing projects where you want to have an option to *branch* your writing into multiple directions and then reassemble your main narrative by including and excluding parts of these branches. This method of academic writing is most famously formalized by the German sociologist Niklas Luhmann, who, however, came up with an index-card system (*Zettelkasten*) which he used to produce 
+
+There are a lot of materials written about the *Zettelkasten* system---many of them, for obvious reasons, are in German. [@AhrensHow2017]
 
 ## Reference Materials:
 
 * Simpkin, Sarah. 2015. “Getting Started with Markdown.” Programming Historian, November. [https://programminghistorian.org/lessons/getting-started-with-markdown](https://programminghistorian.org/lessons/getting-started-with-markdown).
 * Tenen, Dennis, and Grant Wythoff. 2014. “Sustainable Authorship in Plain Text Using Pandoc and Markdown.” Programming Historian, March. [https://programminghistorian.org/lessons/sustainable-authorship-in-plain-text-using-pandoc-and-markdown](https://programminghistorian.org/lessons/sustainable-authorship-in-plain-text-using-pandoc-and-markdown).
+
+## On *Zettelkasten*:
+
+* 
 
 ## Homework{#HWL04}
 
