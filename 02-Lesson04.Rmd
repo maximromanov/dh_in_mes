@@ -1,6 +1,6 @@
-# Lesson 04
+# Lesson 04: Sustainable Academic Writing
 
-## Sustainable Academic Writing with `markdown`, `pandoc`, and the `*TeX` family
+## `markdown`, `pandoc`, the `*TeX` family, and `obsidian`
 
 Introduction to sustainable academic writing that avoids any proprietary software solutions and formats. Before the class, make sure to install the following.
 

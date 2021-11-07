@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>3 Lesson 03: Version Control | Digital Humanities in Middle Eastern Studies</title>
+  <title>4 Lesson 04: Sustainable Academic Writing | Digital Humanities in Middle Eastern Studies</title>
   <meta name="description" content="This is a collection of relevant materials for the class ‘57-525 S: Digital Humanities in Middle East Studies — Introduction to Algorithmic Analysis’ (WS2021), offered at the University of Hamburg (Afrika-Asien Institut) and taught by Maxim G. Romanov" />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="3 Lesson 03: Version Control | Digital Humanities in Middle Eastern Studies" />
+  <meta property="og:title" content="4 Lesson 04: Sustainable Academic Writing | Digital Humanities in Middle Eastern Studies" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://maximromanov.github.io/dh_in_mes/" />
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="maximromanov/dh_in_mes" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="3 Lesson 03: Version Control | Digital Humanities in Middle Eastern Studies" />
+  <meta name="twitter:title" content="4 Lesson 04: Sustainable Academic Writing | Digital Humanities in Middle Eastern Studies" />
   
   <meta name="twitter:description" content="This is a collection of relevant materials for the class ‘57-525 S: Digital Humanities in Middle East Studies — Introduction to Algorithmic Analysis’ (WS2021), offered at the University of Hamburg (Afrika-Asien Institut) and taught by Maxim G. Romanov" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   <link rel="apple-touch-icon-precomposed" sizes="120x120" href="touch-icon.png" />
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-<link rel="prev" href="lesson-02-command-line.html"/>
-<link rel="next" href="lesson-04-sustainable-academic-writing.html"/>
+<link rel="prev" href="lesson-03-version-control.html"/>
+<link rel="next" href="references.html"/>
 <script src="libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -154,168 +154,214 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="lesson-03-version-control" class="section level1" number="3">
-<h1><span class="header-section-number">3</span> Lesson 03: Version Control</h1>
-<div id="version-control-and-collaboration" class="section level2" number="3.1">
-<h2><span class="header-section-number">3.1</span> Version Control and Collaboration</h2>
-<p>Version control systems are extremely helpful for the development of DH projects, which are often lengthy and complex and require organic collaboration. <code>Git</code> and <code>GitHub</code> are currently the most popular tools of this kind. In fact, it is difficult to imagine a DH project that would not rely on the use of <code>git</code> and <code>GitHub</code>.</p>
-<p>Before we begin, make sure to:</p>
+<div id="lesson-04-sustainable-academic-writing" class="section level1" number="4">
+<h1><span class="header-section-number">4</span> Lesson 04: Sustainable Academic Writing</h1>
+<div id="markdown-pandoc-the-tex-family-and-obsidian" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> <code>markdown</code>, <code>pandoc</code>, the <code>*TeX</code> family, and <code>obsidian</code></h2>
+<p>Introduction to sustainable academic writing that avoids any proprietary software solutions and formats. Before the class, make sure to install the following.</p>
 <ul>
-<li>Create a github account at <a href="https://github.com/" class="uri">https://github.com/</a>, if you do not have one yet.</li>
-<li>Download and install <code>git</code> software:
+<li><code>pandoc</code> (follow instructions on <a href="https://pandoc.org/installing.html">https://pandoc.org/installing.html</a>)</li>
+<li><code>LaTeX</code> engine (install from here: <a href="https://miktex.org/">https://miktex.org/</a>)
 <ul>
-<li>for Windows:
-<ul>
-<li>you can download it from <a href="https://git-scm.com/download/win" class="uri">https://git-scm.com/download/win</a>. Please, choose <strong>64-bit Git for Windows Setup</strong>.
-<ul>
-<li>you can also install a portable version of <code>git</code> which does not require installation <a href="https://git-scm.com/download/win" class="uri">https://git-scm.com/download/win</a>. For this, choose <strong>64-bit Git for Windows Portable</strong>. Simply download and unzip (<em>Suggestion</em>: move that unzipped folder to the folder where you keep all class-related files and materials). In the folder, run <code>git-bash.exe</code> (for a more Unix-like command line) or <code>git-cmd.exe</code> (for Windows command line).</li>
+<li><code>LaTeX</code> for Mac: MikTeX seems to be very finicky with Macs. The following solution proves to be more manageable and stable (you need to run this command in Terminal): <code>brew install librsvg python homebrew/cask/basictex</code> (from Pandoc page); after that missing packages might have to be installed manually, but that is relatively easy — the sustem will prompt you to install them, and that needs to be done only once; alternatively, one can install MacTeX (this one is quite large, about 4Gb).</li>
 </ul></li>
-</ul></li>
-<li>for Mac: try to run <code>git --version</code> from Terminal. If <code>git</code> is not installed, you will be prompted to install <code>Xcode Command Line Tools</code> which comes with <code>git</code> among other things. This is the easiest way.</li>
-<li><strong>Note:</strong> there are also interface tools for <em>github</em>. We will not be working with them in the class, but you are welcome to test them on your own at home. See, <a href="https://desktop.github.com" class="uri">https://desktop.github.com</a>. The main reason for this is because interface tools will be different for different operating systems, while the command line usage will be exactly the same across all platforms.</li>
-</ul></li>
+<li><code>markdown</code></li>
 </ul>
-<p>In class we will cover the following:</p>
+<div id="htmlwidget-3ceb296c21235a7423ce" style="width:672px;height:600px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-3ceb296c21235a7423ce">{"x":{"diagram":"\ndigraph writing_cycle {\n\n  # a \"graph\" statement\n  graph [overlap = false, fontsize = 10, rankdir = TB]\n\n  # several \"node\" statements\n  node [shape = box,\n        fontname = Baskerville,\n        fontsize = 10,\n        style = rounded,\n        penwidth = 0.1]\n  bibtex [label = \"bibTex bibliography\"]\n  markdown [shape=box, style=filled, fillcolor=grey50, fontcolor=white, fontname=\"courier-bold\", label = \"textfile in markdown\"] ;\n  zotero[label = \"Zotero\"]\n  pandoc[label=\"pandoc engine\"]\n  style[label=\"citation style\"]\n  latex[label=\"TeX engine\"]\n  html[label=\"HTML\"]\n  doc[label=\"MS Word\"]\n  pdf[label=\"PDF\"]\n  \n  \n  zotero->bibtex; bibtex->markdown; bibtex->pandoc;\n  markdown->pandoc; style->pandoc;\n  pandoc->html; pandoc->doc; pandoc->latex->pdf;\n\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="class-notes" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> Class Notes</h2>
+<p><em>Files</em>: Download the following archive file: <a href="./files/sustainable_writing.zip">sustainable_writing.zip</a>. Make sure to unzip it! It contains the following files:</p>
 <ul>
-<li>Basic <code>git</code> functionality;</li>
-<li>Starting a <code>github</code>-based website;</li>
-<li>Basics of <code>markdown</code>;</li>
+<li><code>biblio.bib</code>—a bibliography file;</li>
+<li><code>cms-fullnote.csl</code>—a citation style;</li>
+<li><code>main.md</code>—the main text file (its contents are also shown below);</li>
+</ul>
+<p><strong>NB:</strong> remember that all files must be in the same folder; it makes sense to put folders into a subfolder (not to overcrowd your main folder), but then do not forget to change the path in your <code>image</code> code.</p>
+<p><em>TEXT for your <code>main.md</code> file.</em></p>
+<pre><code>---
+title: |
+    *From*: &quot;Modeling: A Study in Words and Meanings&quot; by Willard McCarty
+subtitle: 
+author: 
+date: \today
+bibliography: biblio.bib
+csl: cms-fullnote.csl
+---
+
+&gt;&gt; Out on site, you were never parted from your plans.
+They were your Bible. They got dog-eared, yellowed,
+smeared with mud, peppered with little holes from
+where you had unrolled them on the ground. But
+although so sacred, the plans were only the start.
+Once you got out there on the site everything was
+different. No matter how carefully done, the plans
+could not foresee the *variables*. It was always
+interesting, this moment when you saw for the first
+time the actual site rather than the idealised
+drawings of it.
+
+&gt;&gt; Kate Grenville, *The Idea of Perfection*
+(Sydney: Picador, 1999): 62–3
+
+
+# Introduction
+
+The question of modeling arises naturally for
+humanities computing from the prior question
+of what its practitioners across the disciplines
+have in common. What are they all doing with
+their computers that we might find in their
+diverse activities indications of a coherent or
+cohesible practice? How do we make the best,
+most productive sense of what we observe? There
+are, of course, many answers: practice varies 
+from person to person, from project to project, 
+and ways of construing it perhaps vary even more. 
+In this chapter I argue for modeling as a model 
+of such a practice. I have three confluent goals: 
+to identify humanities computing with an intellectual 
+ground shared by the older disciplines, so that we 
+may say how and to what extent our field is of as 
+well as *in* the humanities, how it draws from and 
+adds to them; at the same time to reflect experience 
+with computers &quot;in the wild&quot;; and to aim at the
+most challenging problems, and so the most
+intellectually rewarding future now imaginable.
+
+My primary concern here is, as Confucius almost 
+said, that we use *the correct word* for the 
+activity we share lest our practice go awry 
+for want of understanding (*Analects 13.3*). 
+Several words are on offer. By what might be 
+called a moral philology I examine them, arguing 
+for the most popular of these, &quot;modeling.&quot; The 
+nominal form, &quot;model&quot;, is of course very useful 
+and even more popular, but for reasons I will 
+adduce, its primary virtue is that properly 
+defined it defaults to the present participle, 
+its semantic lemma. Before getting to the 
+philology I discuss modeling in the light of 
+the available literature and then consider 
+the strong and learned complaints about the 
+term.
+
+# Background
+
+Let me begin with provisional definitions[^1]. 
+By &quot;modeling&quot; I mean *the heuristic process of 
+constructing and manipulating models*, a &quot;model&quot; 
+I take to be either *a representation of something 
+for purposes of study*, or *a design for realizing 
+something new*. These two senses follow Clifford 
+Geertz&#39;s analytic distinction between a denotative 
+&quot;model *of*&quot; such as a grammar describing the 
+features of a language, and an exemplary &quot;model 
+*for*&quot; such as an architectural plan
+[@geertz_interpretation_2017, 93][^2]. In both 
+cases, as the literature consistently emphasizes, 
+a model is by nature a simplified and therefore 
+fictional or idealized representation, often taking 
+quite a rough-and-ready form: hence the term 
+&quot;tinker toy&quot; model from physics, accurately suggesting 
+play, relative crudity, and heuristic purpose 
+[@cartwright_how_1984, 158]. By nature modeling 
+defines a ternary relationship in which it mediates 
+epistemologically, between modeler and modeled, 
+researcher and data or theory and the world 
+[@morgan_models_1999]. Since modeling is 
+fundamentally relational, the same object may 
+in different contexts play either role: thus, 
+e.g., the grammar may function prescriptively, 
+as a model for correct usage, the architectural 
+plan descriptively, as a model of an existing style. 
+The distinction also reaches its vanishing point in 
+the convergent purposes of modeling: the model of 
+exists to tell us that we do not know, the model 
+for to give us what we do not yet have. Models 
+*realize*.
+
+[^1]: My definitions reflect the great majority of 
+the literature explicitly on modeling in the history 
+and philosophy of the natural sciences, especially 
+of physics. The literature tends to be concerned 
+with the role of modeling more in formal scientific 
+theory than in experiment. The close relationship 
+between modeling and experimenting means that the 
+rise of a robust philosophy of experiment since 
+the 1980s is directly relevant to our topic; see 
+[@hacking_stability_1988]. Quite helpful in 
+rethinking the basic issues for the humanities 
+are the writings from the disciplines other 
+than physics, e.g., [@clarke_models_2015] on 
+archaeology; on the social sciences, the essays 
+by de Callatay, Mironesco, Burch, and Gardin 
+in [@franck_explanatory_2011]. For interdisciplinary 
+studies see Shanin (1972) and [@morgan_models_1999], 
+esp. &quot;Models as Mediating Instruments&quot; (pp. 10–37).
+
+[^2]: Cf. Goodman&#39;s distinction between 
+&quot;denotative&quot; and &quot;exemplary&quot; models, respectively 
+(1976: 172–3); H. J. Groenewold&#39;s &quot;more or less 
+poor substitute&quot; and &quot;more or less exemplary ideal&quot; 
+(1960: 98). Similar distinctions are quite common 
+in the literature.
+
+# Bibliography</code></pre>
+</div>
+<div id="pandoc-commands" class="section level2" number="4.3">
+<h2><span class="header-section-number">4.3</span> <code>pandoc</code> <em>Commands</em></h2>
+<p><strong>NB:</strong> On Windows, you may see a pop-up Windows from <code>MikTex</code> asking to download a missing package for <code>LaTeX</code>. This means that some package is missing and you need to download it (or several of them). Uncheck a birdie to install all necessary packages at once. After that everything should work.</p>
+<p>First try to convert to <code>docx</code> or <code>html</code>. These two formats do not require</p>
+<pre><code>pandoc -f markdown -t docx -o main.docx --filter pandoc-citeproc main.md
+pandoc -f markdown -t html -o main.html --filter pandoc-citeproc main.md
+pandoc -f markdown -t epub -o main.epub --filter pandoc-citeproc main.md
+pandoc -f markdown -t latex -o main.pdf --filter pandoc-citeproc main.md</code></pre>
+<p><strong>NB:</strong> it may so happen that your version of <code>pandoc</code> will complain about <code>--filter pandoc-citeproc</code>. If that happens, your commands should look like the following:</p>
+<pre><code>pandoc -f markdown -t docx -o main.docx --citeproc main.md
+pandoc -f markdown -t html -o main.html --citeproc main.md
+pandoc -f markdown -t epub -o main.epub --citeproc main.md
+pandoc -f markdown -t latex -o main.pdf --citeproc main.md</code></pre>
+<p><strong>Comment:</strong></p>
+<ul>
+<li><code>-f</code> means “convert <code>from</code> a specific format.”</li>
+<li><code>-t</code> means “convert <code>to</code> a specific format.”</li>
+</ul>
+<p>Thus, the whole command (say, the first one) reads as follows: <code>pandoc converts from (-f) markdown to (-t) latex, then outputs (-o) main.pdf, to which a ‘filter’ that processes citations (--filter pandoc-citeproc) is applied; and the file to which this all is applied is main.md</code>.</p>
+</div>
+<div id="writing-with-markdown-in-atom" class="section level2" number="4.4">
+<h2><span class="header-section-number">4.4</span> Writing with markdown in Atom</h2>
+<p>Atom (<a href="https://atom.io/" class="uri">https://atom.io/</a>) allows one to integrate writing in markdown with the helpfulness of Zotero, as well as offers quite a few other nice features. You can find how to set everything up in Scott Selisker’s blog post: <a href="http://u.arizona.edu/~selisker/post/workflow/" class="uri">http://u.arizona.edu/~selisker/post/workflow/</a>.</p>
+</div>
+<div id="reference-materials" class="section level2" number="4.5">
+<h2><span class="header-section-number">4.5</span> Reference Materials:</h2>
+<ul>
+<li>Simpkin, Sarah. 2015. “Getting Started with Markdown.” Programming Historian, November. <a href="https://programminghistorian.org/lessons/getting-started-with-markdown">https://programminghistorian.org/lessons/getting-started-with-markdown</a>.</li>
+<li>Tenen, Dennis, and Grant Wythoff. 2014. “Sustainable Authorship in Plain Text Using Pandoc and Markdown.” Programming Historian, March. <a href="https://programminghistorian.org/lessons/sustainable-authorship-in-plain-text-using-pandoc-and-markdown">https://programminghistorian.org/lessons/sustainable-authorship-in-plain-text-using-pandoc-and-markdown</a>.</li>
 </ul>
 </div>
-<div id="setting-up-git" class="section level2" number="3.2">
-<h2><span class="header-section-number">3.2</span> Setting-up <code>git</code></h2>
+<div id="HWL04" class="section level2" number="4.6">
+<h2><span class="header-section-number">4.6</span> Homework</h2>
 <ul>
-<li><code>git config --global user.name "YourName"</code></li>
-<li><code>git config --global user.email "YourEmail"</code></li>
-</ul>
-</div>
-<div id="general-git-workflow" class="section level2" number="3.3">
-<h2><span class="header-section-number">3.3</span> General <code>git</code> workflow</h2>
+<li>Convert a plain text paper into markdown and convert it with Pandoc into a PDF, MS Word, and HTML documents.
 <ul>
-<li><em>In <code>Terminal</code> (on Mac) or <code>Git-Bash</code> (on Windows)</em>
-<ol style="list-style-type: decimal">
-<li>create a repository under your account online at <a href="https://github.com" class="uri">https://github.com</a>.</li>
-<li>Alternatively, you can also <code>fork</code> somebody else’s repository.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></li>
-<li><code>clone</code> (<strong>NB:</strong> this is done on <a href="https://github.com" class="uri">https://github.com</a>!)</li>
-<li><em>work</em></li>
-<li><code>add</code></li>
-<li><code>commit</code></li>
-<li><code>push</code> / <code>pull</code></li>
-<li>send <code>pull request</code> (<strong>NB:</strong> this is done on <a href="https://github.com" class="uri">https://github.com</a>)</li>
-</ol></li>
-</ul>
-<p><strong>Note:</strong> Steps 2 and 8 are relevant only when you work on a project (<em>repository</em>) that is owned by somebody else. If you work on a <em>repository</em> that you created under your account, you only need steps 1, 3-7. Below is a visual representation of this cycle.</p>
-<div id="htmlwidget-2cf43ec0dd556c063d0a" style="width:672px;height:600px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-2cf43ec0dd556c063d0a">{"x":{"diagram":"\ndigraph research_cycle {\n\n  # a \"graph\" statement\n  graph [overlap = false, fontsize = 10, rankdir = TB]\n\n  # several \"node\" statements\n  node [shape = box,\n        fontname = Baskerville,\n        fontsize = 10,\n        style = rounded,\n        penwidth = 0.1]\n  github;\n  create;\n  fork;\n\n  # several \"node\" statements\n  work [shape=box, regular=1, style=rounded, fillcolor=grey50, label = \"working...\"]\n\n  # several \"node\" statements\n  node [shape = box,\n        fontname = Courier,\n        fontsize = 10,\n        style = filled,\n        penwidth = 0.1]  \n  clone [label = \"git clone <repository_link>\"];\n  add [label = \"git add .\"];\n  commit [label = \"git commit -m “message”\"];\n  push [label = \"git push origin master\"];\n  pull [label = \"git pull origin master\"];\n  \n  subgraph cluster1 {\n  github->create; github->fork;\n    color = gray;\n    style = rounded;\n    label = \"github.com\";\n    fontcolor = gray;\n  }\n  \n  subgraph cluster2 {\n  clone->work;\n  work->add; add->commit;\n  commit->push;\n  push->github;\n  github->pull; pull->work;\n    color = black;\n    style = rounded;\n    label = \"work cycle\";\n    fontcolor = gray;\n    fillcolor = gray;\n  }\n  \n  create->clone; fork->clone;\n\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
-</div>
-<div id="main-git-commands" class="section level2" number="3.4">
-<h2><span class="header-section-number">3.4</span> Main <code>git</code> Commands</h2>
-<ul>
-<li><code>git clone &lt;link&gt;</code>
-<ul>
-<li>clones/downloads a repository on you machine</li>
+<li>Plain text file for the task: <a href="./files/McCarty_Modeling.txt">McCarty_Modeling.txt</a></li>
+<li>Use this PDF file as a guide for your formatting: <a href="./files/McCarty_Modeling.pdf">McCarty_Modeling.pdf</a></li>
+<li>Convert only the first 7 pages. You can skip up to 1/3 of bibliographical records, if you cannot find them online.</li>
+<li>Alternatively, you can use any of your own papers that you have already written: 5 pages, 10 footnotes, 5 bibliography items.</li>
 </ul></li>
-<li><code>git status</code>
-<ul>
-<li>shows the current status of the repository (new, changed, deleted)</li>
-</ul></li>
-<li><code>git add .</code>
-<ul>
-<li>adds all new files and modified files to the repository</li>
-</ul></li>
-<li><code>git commit -m "message"</code>
-<ul>
-<li>saves all files in their current state into the repository, and created a milestone</li>
-</ul></li>
-<li><code>git push origin master</code>
-<ul>
-<li>uploads changes to <a href="https://github.com" class="uri">https://github.com</a></li>
-<li><code>origin</code> is a specific repository you are pushing your changes to; it is automatically set up, when you clone a repository on your computer.</li>
-<li><code>master</code> is the <em>branch</em> you are pushing to the repository; <code>master</code> is the default name of the main branch in a git repository. To check the names of your branches, you can type <code>git branch</code>.</li>
-<li><strong>NB:</strong> sometimes you may get an error, which in most cases means that you need to <code>pull</code> first</li>
-</ul></li>
-<li><code>git pull origin master</code>
-<ul>
-<li>downloads changes from <a href="https://github.com" class="uri">https://github.com</a></li>
-</ul></li>
-<li><code>git log</code>
-<ul>
-<li>shows the history of <code>commit</code>s; here you can choose where you want to roll back, in case of troubles.</li>
-</ul></li>
-</ul>
-</div>
-<div id="some-useful-command-line-commands-to-remember" class="section level2" number="3.5">
-<h2><span class="header-section-number">3.5</span> Some useful command line commands to remember</h2>
-<ul>
-<li><code>pwd</code>
-<ul>
-<li>shows you where you are on a drive (gives you path)</li>
-</ul></li>
-<li><code>ls</code> / <code>dir</code> [on Windows]
-<ul>
-<li>shows everything in the your current location/folder</li>
-</ul></li>
-<li><code>cd &lt;name of the folder&gt;</code>
-<ul>
-<li>takes you to that folder</li>
-</ul></li>
-<li><code>cd ..</code>
-<ul>
-<li>takes you one level up in the tree structure of your computer</li>
-</ul></li>
-</ul>
-</div>
-<div id="practice" class="section level2" number="3.6">
-<h2><span class="header-section-number">3.6</span> Practice</h2>
-<ul>
-<li>Under your GitHub account, create repository <code>HW070172</code>;</li>
-<li>clone it to your computer (use command line: <code>git clone LinkToYourRepository</code>);</li>
-<li>Now, in the repository:
-<ul>
-<li>let’s edit <code>README.md</code> (create it, if you have not yet); add some text into this file</li>
-<li>create subfolders for Lessons, like <code>L01</code>, <code>L02</code>, <code>L03</code>, etc.</li>
-<li>copy/paste your homework files in respective subfolders.</li>
-<li>Now, do the <code>add</code>-<code>commit</code>-<code>push</code> routine to upload the files to your repository</li>
-</ul></li>
-<li>Now, online:
-<ul>
-<li>check if your files are there</li>
-<li>let’s do some edits to the <code>README.md</code> file (markdown basics / <em>github flavor</em>)</li>
-</ul></li>
-<li><code>pull</code> / <code>push</code></li>
-</ul>
-</div>
-<div id="HWL03" class="section level2" number="3.7">
-<h2><span class="header-section-number">3.7</span> Homework</h2>
-<p><strong>Git and GitHub</strong></p>
-<ul>
-<li>Watch a video on <code>Git &amp; GitHub</code> in Dr. Vierthaler’s <em>Hacking the Humanities</em> series: <a href="https://www.youtube.com/watch?v=YetC-gxgIVY">Supplement 1: A quick Git and Github Tutorial</a>. This will help you to go over the new material and pick up a few more useful <code>git</code> <em>&amp;</em> <code>gitHub</code> tricks.</li>
-<li>There is an interface for github that you can also use, but I strongly recommend to use command line; interfaces change, but commandline commands remain the same!
-<ul>
-<li>Daniel van Strien. 2016. “An Introduction to Version Control Using GitHub Desktop,” The Programming Historian 5, <a href="https://programminghistorian.org/en/lessons/getting-started-with-github-desktop">https://programminghistorian.org/</a>.</li>
-</ul></li>
-<li>Please, also read (for <code>markdown</code>): Simpkin, Sarah. 2015. “Getting Started with Markdown.” Programming Historian, November. <a href="https://programminghistorian.org/lessons/getting-started-with-markdown">https://programminghistorian.org/</a>.
-<ul>
-<li>More on github-flavored <code>markdown</code>: <a href="https://guides.github.com/features/mastering-markdown/" class="uri">https://guides.github.com/features/mastering-markdown/</a>.</li>
-<li>On <code>markdown</code> for academic writing, see <a href="https://pandoc.org/MANUAL.html" class="uri">https://pandoc.org/MANUAL.html</a>.</li>
-<li>A cheat-sheet &amp; interactive tutorial for your practice: <a href="https://commonmark.org/help/" class="uri">https://commonmark.org/help/</a>.</li>
-</ul></li>
-</ul>
-<p><em>Extra</em>: you can build and host a website on <code>github.com</code>; your website will have the name: <code>YourUserName.github.io</code> — you can create a repository with that name and build your website there using Jekyll and GitHub Pages. Any other repository may also be converted into a part of your website, which will be accessible at <code>YourUserName.github.io/YourRepository/</code></p>
-<ul>
-<li>Visconti, Amanda. 2016. “Building a Static Website with Jekyll and GitHub Pages.” Programming Historian, April. <a href="https://programminghistorian.org/lessons/building-static-sites-with-jekyll-github-pages">https://programminghistorian.org/</a>.</li>
 </ul>
 <p><strong>Python</strong></p>
 <ul>
-<li>Work through Chapter II of Zelle’s book; read the entire chapter; retype and run all code snippets as described in the book; work through the chapter summary and exercises; complete all programming exercises;</li>
+<li>Work through Chapters 3 and 5 of Zelle’s book; read chapters carefully; work through the chapter summaries and exercises; complete the following programming exercises: 1-8 in Chapter 3; 1-7 in Chapter 5;</li>
 <li>Watch <a href="https://www.youtube.com/playlist?list=PL6kqrM2i6BPIpEF5yHPNkYhjHm-FYWh17">Dr. Vierthaler’s videos</a>:
 <ul>
-<li>Episode 04: Strings;</li>
-<li>Episode 05: Integers, Floats, and Math in Python;</li>
-<li>Episode 06: Lists</li>
+<li>Episode 07: Booleans (and Boolean Operators)</li>
+<li>Episode 08: Loops (and file objects)</li>
 </ul></li>
 </ul>
-<p><strong>Submitting homework</strong></p>
+<p><strong>Submitting homework:</strong></p>
 <ul>
 <li>Homework assignment must be submitted by the beginning of the next class;</li>
 <li>Now, that you know how to use GitHub, you will be submitting your homework pushing it to github:
@@ -330,19 +376,13 @@
 
 </div>
 </div>
-<div class="footnotes">
-<hr />
-<ol start="1">
-<li id="fn1"><p><strong>NB:</strong> this is done on <a href="https://github.com" class="uri">https://github.com</a>); forking means creating your own copy of some one’s repository at that specific moment in time<a href="lesson-03-version-control.html#fnref1" class="footnote-back">↩︎</a></p></li>
-</ol>
-</div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="lesson-02-command-line.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="lesson-04-sustainable-academic-writing.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="lesson-03-version-control.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -373,7 +413,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/maximromanov/dh_in_mes/edit/main/02-Lesson03.Rmd",
+"link": "https://github.com/maximromanov/dh_in_mes/edit/main/02-Lesson04.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -381,7 +421,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/maximromanov/dh_in_mes/blob/main/02-Lesson03.Rmd",
+"link": "https://github.com/maximromanov/dh_in_mes/blob/main/02-Lesson04.Rmd",
 "text": null
 },
 "download": null,
