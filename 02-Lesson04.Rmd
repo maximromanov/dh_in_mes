@@ -227,16 +227,19 @@ One of the most useful pieces of software for the purpose of analytical writing 
 
 The main power of Obsidian is that it allows you to connect your notes into a network of information, which makes it nearly perfect for complex analytical writing projects where you want to have an option to *branch* your writing into multiple directions and then reassemble your main argument by including and excluding parts of these branches. This method of academic writing has been most famously formalized by the German sociologist [Niklas Luhmann](https://en.wikipedia.org/wiki/Niklas_Luhmann), who came up with an paper-card-based system (*Zettelkasten*) which he used to produce some 50 books and 550 articles [@SchmidtNiklas2016, p. 289].  
 
-There are a lot of materials written about the *Zettelkasten* system---many of them, for obvious reasons, are in German. One of the best expositions of the method is Sonke Ahrens's *How to Take Smart Notes: One Simple Technique to Boost Writing, Learning and Thinking – for Students, Academics and Nonfiction Book Writers*, which is an English version of his *Das Zettelkasten-Prinzip: Erfolgreich wissenschaftlich Schreiben und Studieren mit effektiven Notizen*. [See: @AhrensHow2017; for more: @LuhmannKommunikation1982; @SchmidtNachlass2014; @SchmidtNiklas2018; @SchmidtNiklas2016].
+There are lots of materials written about the *Zettelkasten* system---many of them, for obvious reasons, are in German. One of the best expositions of the method is Sonke Ahrens's *How to Take Smart Notes: One Simple Technique to Boost Writing, Learning and Thinking – for Students, Academics and Nonfiction Book Writers*, which is an English version of his *Das Zettelkasten-Prinzip: Erfolgreich wissenschaftlich Schreiben und Studieren mit effektiven Notizen*. [See: @AhrensHow2017; for more: @LuhmannKommunikation1982; @SchmidtNachlass2014; @SchmidtNiklas2018; @SchmidtNiklas2016].
+
+*How to* with/in Obsidian:
+
+- using markdown;
+- creating notes;
+- linking notes; creating branches; creating a network;
+- crafting the final narrative/argument;
 
 ## Reference Materials:
 
 * Simpkin, Sarah. 2015. “Getting Started with Markdown.” Programming Historian, November. [https://programminghistorian.org/lessons/getting-started-with-markdown](https://programminghistorian.org/lessons/getting-started-with-markdown).
 * Tenen, Dennis, and Grant Wythoff. 2014. “Sustainable Authorship in Plain Text Using Pandoc and Markdown.” Programming Historian, March. [https://programminghistorian.org/lessons/sustainable-authorship-in-plain-text-using-pandoc-and-markdown](https://programminghistorian.org/lessons/sustainable-authorship-in-plain-text-using-pandoc-and-markdown).
-
-## On *Zettelkasten*:
-
-* 
 
 ## Homework{#HWL04}
 
