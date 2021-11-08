@@ -8,6 +8,7 @@ Introduction to sustainable academic writing that avoids any proprietary softwar
 * `LaTeX` engine (install from here: [https://miktex.org/](https://miktex.org/))
 	* `LaTeX` for Mac: MikTeX seems to be very finicky with Macs. The following solution proves to be more manageable and stable (you need to run this command in Terminal): `brew install librsvg python homebrew/cask/basictex` (from Pandoc page); after that missing packages might have to be installed manually, but that is relatively easy --- the sustem will prompt you to install them, and that needs to be done only once; alternatively, one can install MacTeX (this one is quite large, about 4Gb).
 * `markdown`
+* Obsidian (<https://obsidian.md/>)
 
 
 ```{r echo=FALSE}
