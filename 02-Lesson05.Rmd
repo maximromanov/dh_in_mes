@@ -6,7 +6,11 @@
 
 In this lesson we will learn about `regular expressions`, an important semi-language for constructing complex searches. Any text editor that supports `regular expressions` will work fine for this lesson, but let's all use [Sublime Text](https://www.sublimetext.com/) (both Mac and Windows).
 
+The practical materials for this lesson can be downloaded from here: <https://github.com/maximromanov/re_tutorial> (simply download the zip file of the repository.)
+
+<!--
 Let's use the following practicum files (`Right Click > Save File as ...`) for the in-class practice: 1) [version for training](https://raw.githubusercontent.com/maximromanov/re_tutorial/master/re_practucum_text_western.txt); 2) [version with answers](https://raw.githubusercontent.com/maximromanov/re_tutorial/master/re_practucum_text_western_answers.txt).
+-->
 
 Open the practicum file in `Sublime Text`.
 
