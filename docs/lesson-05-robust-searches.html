@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>5 Lesson 05: Robust Searches | Digital Humanities in Middle Eastern Studies</title>
+  <meta name="description" content="This is a collection of relevant materials for the class ‘57-525 S: Digital Humanities in Middle East Studies — Introduction to Algorithmic Analysis’ (WS2021), offered at the University of Hamburg (Afrika-Asien Institut) and taught by Maxim G. Romanov" />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="5 Lesson 05: Robust Searches | Digital Humanities in Middle Eastern Studies" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://maximromanov.github.io/dh_in_mes/" />
+  
+  <meta property="og:description" content="This is a collection of relevant materials for the class ‘57-525 S: Digital Humanities in Middle East Studies — Introduction to Algorithmic Analysis’ (WS2021), offered at the University of Hamburg (Afrika-Asien Institut) and taught by Maxim G. Romanov" />
+  <meta name="github-repo" content="maximromanov/dh_in_mes" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="5 Lesson 05: Robust Searches | Digital Humanities in Middle Eastern Studies" />
+  
+  <meta name="twitter:description" content="This is a collection of relevant materials for the class ‘57-525 S: Digital Humanities in Middle East Studies — Introduction to Algorithmic Analysis’ (WS2021), offered at the University of Hamburg (Afrika-Asien Institut) and taught by Maxim G. Romanov" />
+  
+
+<meta name="author" content="Maxim G. Romanov" />
+
+
+<meta name="date" content="2021-11-15" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="touch-icon.png" />
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="prev" href="lesson-04-sustainable-academic-writing.html"/>
+<link rel="next" href="references.html"/>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<script src="libs/viz-1.8.2/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-1.0.6.1/grViz.js"></script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">DH Methods for Middle Eastern Studies: Toward A Handbook</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Syllabus</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-details"><i class="fa fa-check"></i>Course Details</a></li>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#aims-contents-and-method-of-the-course"><i class="fa fa-check"></i><b>0.1</b> Aims, contents and method of the course</a></li>
+<li class="chapter" data-level="0.2" data-path="index.html"><a href="index.html#course-evaluation"><i class="fa fa-check"></i><b>0.2</b> Course Evaluation</a></li>
+<li class="chapter" data-level="0.3" data-path="index.html"><a href="index.html#class-participation"><i class="fa fa-check"></i><b>0.3</b> Class Participation</a></li>
+<li class="chapter" data-level="0.4" data-path="index.html"><a href="index.html#homework"><i class="fa fa-check"></i><b>0.4</b> Homework</a></li>
+<li class="chapter" data-level="0.5" data-path="index.html"><a href="index.html#final-project"><i class="fa fa-check"></i><b>0.5</b> Final Project</a></li>
+<li class="chapter" data-level="0.6" data-path="index.html"><a href="index.html#study-materials"><i class="fa fa-check"></i><b>0.6</b> Study materials:</a></li>
+<li class="chapter" data-level="0.7" data-path="index.html"><a href="index.html#software-tools-technologies"><i class="fa fa-check"></i><b>0.7</b> Software, Tools, &amp; Technologies:</a></li>
+<li class="chapter" data-level="0.8" data-path="index.html"><a href="index.html#submitting-homework"><i class="fa fa-check"></i><b>0.8</b> Submitting Homework:</a></li>
+<li class="chapter" data-level="0.9" data-path="index.html"><a href="index.html#schedule"><i class="fa fa-check"></i><b>0.9</b> Schedule</a></li>
+<li class="chapter" data-level="0.10" data-path="index.html"><a href="index.html#lesson-topics-subject-to-modification"><i class="fa fa-check"></i><b>0.10</b> Lesson Topics (subject to modification)</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="lesson-01-academic-writing-i.html"><a href="lesson-01-academic-writing-i.html"><i class="fa fa-check"></i><b>1</b> Lesson 01: Academic Writing I</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="lesson-01-academic-writing-i.html"><a href="lesson-01-academic-writing-i.html#bibliography-managers"><i class="fa fa-check"></i><b>1.1</b> Bibliography Managers</a></li>
+<li class="chapter" data-level="1.2" data-path="lesson-01-academic-writing-i.html"><a href="lesson-01-academic-writing-i.html#zotero"><i class="fa fa-check"></i><b>1.2</b> Zotero</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="lesson-01-academic-writing-i.html"><a href="lesson-01-academic-writing-i.html#getting-started"><i class="fa fa-check"></i><b>1.2.1</b> Getting Started</a></li>
+<li class="chapter" data-level="1.2.2" data-path="lesson-01-academic-writing-i.html"><a href="lesson-01-academic-writing-i.html#main-functionality"><i class="fa fa-check"></i><b>1.2.2</b> Main Functionality</a></li>
+<li class="chapter" data-level="1.2.3" data-path="lesson-01-academic-writing-i.html"><a href="lesson-01-academic-writing-i.html#additional-functionality-plug-ins"><i class="fa fa-check"></i><b>1.2.3</b> Additional Functionality: Plug-Ins</a></li>
+<li class="chapter" data-level="1.2.4" data-path="lesson-01-academic-writing-i.html"><a href="lesson-01-academic-writing-i.html#zotfile"><i class="fa fa-check"></i><b>1.2.4</b> Zotfile</a></li>
+<li class="chapter" data-level="1.2.5" data-path="lesson-01-academic-writing-i.html"><a href="lesson-01-academic-writing-i.html#better-bibtex-for-zotero"><i class="fa fa-check"></i><b>1.2.5</b> Better BibTeX for Zotero</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="lesson-01-academic-writing-i.html"><a href="lesson-01-academic-writing-i.html#HWL01"><i class="fa fa-check"></i><b>1.3</b> Homework</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="lesson-02-command-line.html"><a href="lesson-02-command-line.html"><i class="fa fa-check"></i><b>2</b> Lesson 02: Command Line</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="lesson-02-command-line.html"><a href="lesson-02-command-line.html#command-line"><i class="fa fa-check"></i><b>2.1</b> Command Line</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="lesson-02-command-line.html"><a href="lesson-02-command-line.html#the-filesystem"><i class="fa fa-check"></i><b>2.1.1</b> The filesystem</a></li>
+<li class="chapter" data-level="2.1.2" data-path="lesson-02-command-line.html"><a href="lesson-02-command-line.html#getting-started-with-the-command-line"><i class="fa fa-check"></i><b>2.1.2</b> Getting started with the command line</a></li>
+<li class="chapter" data-level="2.1.3" data-path="lesson-02-command-line.html"><a href="lesson-02-command-line.html#components-of-the-command-line"><i class="fa fa-check"></i><b>2.1.3</b> Components of the command line</a></li>
+<li class="chapter" data-level="2.1.4" data-path="lesson-02-command-line.html"><a href="lesson-02-command-line.html#file-paths-and-path-notations"><i class="fa fa-check"></i><b>2.1.4</b> File paths and path notations</a></li>
+<li class="chapter" data-level="2.1.5" data-path="lesson-02-command-line.html"><a href="lesson-02-command-line.html#command-line-arguments"><i class="fa fa-check"></i><b>2.1.5</b> Command line arguments</a></li>
+<li class="chapter" data-level="2.1.6" data-path="lesson-02-command-line.html"><a href="lesson-02-command-line.html#more-commands"><i class="fa fa-check"></i><b>2.1.6</b> More commands</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="lesson-02-command-line.html"><a href="lesson-02-command-line.html#HWL02"><i class="fa fa-check"></i><b>2.2</b> Homework</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="lesson-03-version-control.html"><a href="lesson-03-version-control.html"><i class="fa fa-check"></i><b>3</b> Lesson 03: Version Control</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="lesson-03-version-control.html"><a href="lesson-03-version-control.html#version-control-and-collaboration"><i class="fa fa-check"></i><b>3.1</b> Version Control and Collaboration</a></li>
+<li class="chapter" data-level="3.2" data-path="lesson-03-version-control.html"><a href="lesson-03-version-control.html#setting-up-git"><i class="fa fa-check"></i><b>3.2</b> Setting-up <code>git</code></a></li>
+<li class="chapter" data-level="3.3" data-path="lesson-03-version-control.html"><a href="lesson-03-version-control.html#general-git-workflow"><i class="fa fa-check"></i><b>3.3</b> General <code>git</code> workflow</a></li>
+<li class="chapter" data-level="3.4" data-path="lesson-03-version-control.html"><a href="lesson-03-version-control.html#main-git-commands"><i class="fa fa-check"></i><b>3.4</b> Main <code>git</code> Commands</a></li>
+<li class="chapter" data-level="3.5" data-path="lesson-03-version-control.html"><a href="lesson-03-version-control.html#some-useful-command-line-commands-to-remember"><i class="fa fa-check"></i><b>3.5</b> Some useful command line commands to remember</a></li>
+<li class="chapter" data-level="3.6" data-path="lesson-03-version-control.html"><a href="lesson-03-version-control.html#practice"><i class="fa fa-check"></i><b>3.6</b> Practice</a></li>
+<li class="chapter" data-level="3.7" data-path="lesson-03-version-control.html"><a href="lesson-03-version-control.html#HWL03"><i class="fa fa-check"></i><b>3.7</b> Homework</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="lesson-04-sustainable-academic-writing.html"><a href="lesson-04-sustainable-academic-writing.html"><i class="fa fa-check"></i><b>4</b> Lesson 04: Sustainable Academic Writing</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="lesson-04-sustainable-academic-writing.html"><a href="lesson-04-sustainable-academic-writing.html#markdown-pandoc-the-tex-family-and-obsidian"><i class="fa fa-check"></i><b>4.1</b> <code>markdown</code>, <code>pandoc</code>, the <code>*TeX</code> family, and <code>obsidian</code></a></li>
+<li class="chapter" data-level="4.2" data-path="lesson-04-sustainable-academic-writing.html"><a href="lesson-04-sustainable-academic-writing.html#class-notes"><i class="fa fa-check"></i><b>4.2</b> Class Notes</a></li>
+<li class="chapter" data-level="4.3" data-path="lesson-04-sustainable-academic-writing.html"><a href="lesson-04-sustainable-academic-writing.html#pandoc-commands"><i class="fa fa-check"></i><b>4.3</b> <code>pandoc</code> <em>Commands</em></a></li>
+<li class="chapter" data-level="4.4" data-path="lesson-04-sustainable-academic-writing.html"><a href="lesson-04-sustainable-academic-writing.html#analytical-writing-with-markdown"><i class="fa fa-check"></i><b>4.4</b> Analytical Writing with markdown</a></li>
+<li class="chapter" data-level="4.5" data-path="lesson-04-sustainable-academic-writing.html"><a href="lesson-04-sustainable-academic-writing.html#zettelkasten-with-obsidian"><i class="fa fa-check"></i><b>4.5</b> Zettelkasten with Obsidian</a></li>
+<li class="chapter" data-level="4.6" data-path="lesson-04-sustainable-academic-writing.html"><a href="lesson-04-sustainable-academic-writing.html#reference-materials"><i class="fa fa-check"></i><b>4.6</b> Reference Materials:</a></li>
+<li class="chapter" data-level="4.7" data-path="lesson-04-sustainable-academic-writing.html"><a href="lesson-04-sustainable-academic-writing.html#HWL04"><i class="fa fa-check"></i><b>4.7</b> Homework</a></li>
+<li class="chapter" data-level="4.8" data-path="lesson-04-sustainable-academic-writing.html"><a href="lesson-04-sustainable-academic-writing.html#appendix-text-for-your-main.md-file."><i class="fa fa-check"></i><b>4.8</b> Appendix: <em>TEXT for your <code>main.md</code> file.</em></a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="lesson-05-robust-searches.html"><a href="lesson-05-robust-searches.html"><i class="fa fa-check"></i><b>5</b> Lesson 05: Robust Searches</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="lesson-05-robust-searches.html"><a href="lesson-05-robust-searches.html#constructing-robust-searches-with-regular-expressions"><i class="fa fa-check"></i><b>5.1</b> Constructing Robust Searches with Regular Expressions</a></li>
+<li class="chapter" data-level="5.2" data-path="lesson-05-robust-searches.html"><a href="lesson-05-robust-searches.html#regular-expressions"><i class="fa fa-check"></i><b>5.2</b> <code>regular expressions</code></a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="lesson-05-robust-searches.html"><a href="lesson-05-robust-searches.html#what-are-regular-expressions"><i class="fa fa-check"></i><b>5.2.1</b> What are <code>regular expressions</code>?**</a></li>
+<li class="chapter" data-level="5.2.2" data-path="lesson-05-robust-searches.html"><a href="lesson-05-robust-searches.html#what-would-we-use-regular-expressions-for"><i class="fa fa-check"></i><b>5.2.2</b> What would we use <code>regular Expressions</code> for?</a></li>
+<li class="chapter" data-level="5.2.3" data-path="lesson-05-robust-searches.html"><a href="lesson-05-robust-searches.html#the-basics"><i class="fa fa-check"></i><b>5.2.3</b> The Basics</a></li>
+<li class="chapter" data-level="5.2.4" data-path="lesson-05-robust-searches.html"><a href="lesson-05-robust-searches.html#characters-special-characters"><i class="fa fa-check"></i><b>5.2.4</b> Characters <em>&amp;</em> Special Characters</a></li>
+<li class="chapter" data-level="5.2.5" data-path="lesson-05-robust-searches.html"><a href="lesson-05-robust-searches.html#character-classes"><i class="fa fa-check"></i><b>5.2.5</b> Character Classes: <code>[]</code></a></li>
+<li class="chapter" data-level="5.2.6" data-path="lesson-05-robust-searches.html"><a href="lesson-05-robust-searches.html#ranges-within-classes"><i class="fa fa-check"></i><b>5.2.6</b> Ranges (within classes)</a></li>
+<li class="chapter" data-level="5.2.7" data-path="lesson-05-robust-searches.html"><a href="lesson-05-robust-searches.html#repeaters"><i class="fa fa-check"></i><b>5.2.7</b> Repeaters</a></li>
+<li class="chapter" data-level="5.2.8" data-path="lesson-05-robust-searches.html"><a href="lesson-05-robust-searches.html#lab-intro-in-the-practicum-file."><i class="fa fa-check"></i><b>5.2.8</b> Lab: <em>Intro</em> (in the <em>practicum file</em>).</a></li>
+<li class="chapter" data-level="5.2.9" data-path="lesson-05-robust-searches.html"><a href="lesson-05-robust-searches.html#anchoring"><i class="fa fa-check"></i><b>5.2.9</b> Anchoring</a></li>
+<li class="chapter" data-level="5.2.10" data-path="lesson-05-robust-searches.html"><a href="lesson-05-robust-searches.html#alternation-pipe"><i class="fa fa-check"></i><b>5.2.10</b> Alternation: “|” (<em>pipe</em>)</a></li>
+<li class="chapter" data-level="5.2.11" data-path="lesson-05-robust-searches.html"><a href="lesson-05-robust-searches.html#grouping"><i class="fa fa-check"></i><b>5.2.11</b> Grouping</a></li>
+<li class="chapter" data-level="5.2.12" data-path="lesson-05-robust-searches.html"><a href="lesson-05-robust-searches.html#lab-part-i-in-the-practicum-file."><i class="fa fa-check"></i><b>5.2.12</b> Lab: Part I (in the <em>practicum file</em>).</a></li>
+<li class="chapter" data-level="5.2.13" data-path="lesson-05-robust-searches.html"><a href="lesson-05-robust-searches.html#replacement"><i class="fa fa-check"></i><b>5.2.13</b> Replacement</a></li>
+<li class="chapter" data-level="5.2.14" data-path="lesson-05-robust-searches.html"><a href="lesson-05-robust-searches.html#capture"><i class="fa fa-check"></i><b>5.2.14</b> Capture</a></li>
+<li class="chapter" data-level="5.2.15" data-path="lesson-05-robust-searches.html"><a href="lesson-05-robust-searches.html#capture-reformat"><i class="fa fa-check"></i><b>5.2.15</b> Capture <em>&amp;</em> Reformat</a></li>
+<li class="chapter" data-level="5.2.16" data-path="lesson-05-robust-searches.html"><a href="lesson-05-robust-searches.html#lab-part-ii-in-the-practicum-file."><i class="fa fa-check"></i><b>5.2.16</b> Lab: Part II (in the <em>practicum file</em>).</a></li>
+<li class="chapter" data-level="5.2.17" data-path="lesson-05-robust-searches.html"><a href="lesson-05-robust-searches.html#to-keep-in-mind"><i class="fa fa-check"></i><b>5.2.17</b> <em>To keep in mind</em></a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="lesson-05-robust-searches.html"><a href="lesson-05-robust-searches.html#class-materials"><i class="fa fa-check"></i><b>5.3</b> Class materials</a></li>
+<li class="chapter" data-level="5.4" data-path="lesson-05-robust-searches.html"><a href="lesson-05-robust-searches.html#digital-materials"><i class="fa fa-check"></i><b>5.4</b> Digital materials</a></li>
+<li class="chapter" data-level="5.5" data-path="lesson-04-sustainable-academic-writing.html"><a href="lesson-04-sustainable-academic-writing.html#reference-materials"><i class="fa fa-check"></i><b>5.5</b> Reference Materials</a></li>
+<li class="chapter" data-level="5.6" data-path="lesson-05-robust-searches.html"><a href="lesson-05-robust-searches.html#HWL05"><i class="fa fa-check"></i><b>5.6</b> Homework</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Digital Humanities in Middle Eastern Studies</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="lesson-05-robust-searches" class="section level1" number="5">
+<h1><span class="header-section-number">5</span> Lesson 05: Robust Searches</h1>
+<div id="constructing-robust-searches-with-regular-expressions" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> Constructing Robust Searches with Regular Expressions</h2>
+</div>
+<div id="regular-expressions" class="section level2" number="5.2">
+<h2><span class="header-section-number">5.2</span> <code>regular expressions</code></h2>
+<p>In this lesson we will learn about <code>regular expressions</code>, an important semi-language for constructing complex searches. Any text editor that supports <code>regular expressions</code> will work fine for this lesson, but let’s all use <a href="https://www.sublimetext.com/">Sublime Text</a> (both Mac and Windows).</p>
+<p>The practical materials for this lesson can be downloaded from here: <a href="https://github.com/maximromanov/re_tutorial" class="uri">https://github.com/maximromanov/re_tutorial</a> (simply download the zip file of the repository.)</p>
+<!--
+Let's use the following practicum files (`Right Click > Save File as ...`) for the in-class practice: 1) [version for training](https://raw.githubusercontent.com/maximromanov/re_tutorial/master/re_practucum_text_western.txt); 2) [version with answers](https://raw.githubusercontent.com/maximromanov/re_tutorial/master/re_practucum_text_western_answers.txt).
+-->
+<p>Open the practicum file in <code>Sublime Text</code>.</p>
+<div id="what-are-regular-expressions" class="section level3" number="5.2.1">
+<h3><span class="header-section-number">5.2.1</span> What are <code>regular expressions</code>?**</h3>
+<ul>
+<li>very small language for describing textual patterns</li>
+<li>not a programming language, yet a part of each one</li>
+<li>incredibly powerful tool for find/replace operations</li>
+<li>old (1950s-60s)</li>
+<li>“arcane art”</li>
+<li>ubiquitous</li>
+</ul>
+<div class="figure">
+<img src="https://imgs.xkcd.com/comics/regular_expressions.png" alt="" />
+<p class="caption"><strong>Source</strong>: <a href="https://xkcd.com/208/" class="uri">https://xkcd.com/208/</a></p>
+</div>
+</div>
+<div id="what-would-we-use-regular-expressions-for" class="section level3" number="5.2.2">
+<h3><span class="header-section-number">5.2.2</span> What would we use <code>regular Expressions</code> for?</h3>
+<p><strong>to search</strong>:</p>
+<ul>
+<li>all spelling variations of the same word:
+<ul>
+<li>Österreich, Osterreich or Oesterreich..</li>
+</ul></li>
+<li>words of specific morphological patterns:
+<ul>
+<li>[<em>search</em>], [<em>search</em>]er, [<em>search</em>]ed, [<em>search</em>]ing, [<em>search</em>]es: all derivatives from the same root/word</li>
+</ul></li>
+<li>entities that may be referred to differently:
+<ul>
+<li>references to Vienna in different languages? (Wien, Vienna, Вена, فيينا, etc.)</li>
+<li>references to Austria? (Vienna, Graz, Linz, Salzburg, Innsbruck, etc.)</li>
+</ul></li>
+<li>references to concepts:
+<ul>
+<li>references to education in biographies: “s/he graduated from,” “s/he studied,” etc.</li>
+</ul></li>
+</ul>
+<p><strong>to search and replace</strong>:</p>
+<ul>
+<li>reformat “dirty”/inconsistent data (OCR output, for example)</li>
+</ul>
+<p><strong>to tag</strong>:</p>
+<ul>
+<li>make texts navigable and more readable</li>
+<li>tag information relevant to your research</li>
+</ul>
+<p><strong>and many other uses…</strong></p>
+</div>
+<div id="the-basics" class="section level3" number="5.2.3">
+<h3><span class="header-section-number">5.2.3</span> The Basics</h3>
+<p>A <em>regular expression</em> (can be shortened as <em>regex</em> or <em>regexp</em>) is a sequence of symbols and characters expressing a string or pattern to be searched for within a longer piece of text. In this sequence there are characters that match themselves (most characters) and there are characters that activate special functionality (<em>special characters</em>). For example:</p>
+<ul>
+<li><code>Vienna</code> is a regular expression that matches “Vienna”;</li>
+<li>“<code>Vienna</code>” is a pattern;</li>
+</ul>
+<p><strong>Question:</strong> if the pattern <code>at</code> matches strings with “a” followed by “t,” which of the following strings will it match?<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
+<table>
+<thead>
+<tr class="header">
+<th><a href=""></a></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>at</td>
+<td>hat</td>
+<td>that</td>
+<td>atlas</td>
+<td>aft</td>
+<td>Athens</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="characters-special-characters" class="section level3" number="5.2.4">
+<h3><span class="header-section-number">5.2.4</span> Characters <em>&amp;</em> Special Characters</h3>
+<ul>
+<li>most characters match themselves.</li>
+<li>matching is case sensitive.</li>
+<li>special characters: <code>()^${}[]\|.+?*</code>.</li>
+<li>to match a special character in your text, you need to “escape it,” i.e. precede it with “” in your pattern:
+– <code>Osterreich [sic]</code> **does not* match “Osterreich [sic].”
+– <code>Osterreich \[sic\]</code> matches “Osterreich [sic].”</li>
+</ul>
+</div>
+<div id="character-classes" class="section level3" number="5.2.5">
+<h3><span class="header-section-number">5.2.5</span> Character Classes: <code>[]</code></h3>
+<ul>
+<li>characters within <code>[]</code> are choices for a single-character match; think of this as a type of <strong>either or</strong>.</li>
+<li>the order within <code>[]</code> is unimportant.
+<ul>
+<li><code>x[01]</code> matches “x0” and “x1.”</li>
+<li><code>[10][23]</code> matches “02,” “03,” “12” and “13.”</li>
+</ul></li>
+<li>initial <code>^</code> negates the class:
+– <code>[^45]</code> matches any character except 4 or 5.</li>
+</ul>
+<p><strong>Question:</strong> if the pattern <code>[ch]at</code> matches strings with “c” or “h” followed by “a,” and then by “t,” which of the following strings will this regular expression match?<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>:</p>
+<table>
+<thead>
+<tr class="header">
+<th><a href=""></a></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>that</td>
+<td>at</td>
+<td>chat</td>
+<td>cat</td>
+<td>fat</td>
+<td>phat</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="ranges-within-classes" class="section level3" number="5.2.6">
+<h3><span class="header-section-number">5.2.6</span> Ranges (within classes)</h3>
+<ul>
+<li>Ranges define sets of characters within a class.
+– <code>[1-9]</code> matches any number in the range from 1 to 9 (i.e., any non-zero digit)
+– <code>[a-zA-Z]</code> matches any letter of the English alphabet (ranges for specific languages will vary)
+– <code>[12][0-9]</code> matches numbers between 10 and 29 (i.e., the first digit is either 1 or 2; the second one—any digit)</li>
+</ul>
+<p><strong>Ranges shortcuts</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Shortcut</th>
+<th align="left">Name</th>
+<th align="left">Equivalent Class</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>\d</code></td>
+<td align="left">digit</td>
+<td align="left"><code>[0-9]</code></td>
+</tr>
+<tr class="even">
+<td align="left"><code>\D</code></td>
+<td align="left">not digit</td>
+<td align="left"><code>[^0-9]</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><code>\w</code></td>
+<td align="left">word</td>
+<td align="left"><code>[a-zA-Z0-9_]</code> (<em>actually more</em>)</td>
+</tr>
+<tr class="even">
+<td align="left"><code>\W</code></td>
+<td align="left">not word</td>
+<td align="left"><code>[^a-zA-Z0-9_]</code> (<em>actually more</em>)</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>\s</code></td>
+<td align="left">space</td>
+<td align="left"><code>[\t\n\r\f\v ]</code></td>
+</tr>
+<tr class="even">
+<td align="left"><code>\S</code></td>
+<td align="left">not space</td>
+<td align="left"><code>[^\t\n\r\f\v ]</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><code>.</code></td>
+<td align="left">everything</td>
+<td align="left"><code>[^\n]</code> (depends on mode)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Question:</strong> if the pattern <code>/\d\d\d[- ]\d\d\d\d/</code> matches strings with a group of three digits, followed by a space or a dash, and then—by another group of four digits, which of the following strings will this regular expression match?<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>:</p>
+<table>
+<thead>
+<tr class="header">
+<th><a href=""></a></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>501-1234</td>
+<td>234 1252</td>
+<td>652.2648</td>
+<td>713-342-7452</td>
+<td>PE6-5000</td>
+<td>653-6464x256</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="repeaters" class="section level3" number="5.2.7">
+<h3><span class="header-section-number">5.2.7</span> Repeaters</h3>
+<ul>
+<li>these special characters indicate that the preceding element of the pattern can be repeated in a particular manner:
+<ul>
+<li><code>runs?</code> matches “runs” or “run”</li>
+<li><code>1\d*</code> matches any number beginning with “1”</li>
+</ul></li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th align="left">repeater</th>
+<th align="left">count</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>?</code></td>
+<td align="left">zero or one</td>
+</tr>
+<tr class="even">
+<td align="left"><code>+</code></td>
+<td align="left">one or more</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>*</code></td>
+<td align="left">zero or more</td>
+</tr>
+<tr class="even">
+<td align="left"><code>{n}</code></td>
+<td align="left">exactly <em>n</em> times</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>{n,m}</code></td>
+<td align="left">between <em>n</em> and <em>m</em> times</td>
+</tr>
+<tr class="even">
+<td align="left"><code>{,m}</code></td>
+<td align="left">no more than <em>m</em> times</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>{n,}</code></td>
+<td align="left">no less than <em>n</em> times</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Question:</strong> We have several patterns, which strings will they match?<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a></p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Patterns</th>
+<th align="left"></th>
+<th align="left"></th>
+<th align="left"></th>
+<th align="left"></th>
+<th align="left"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">A) <code>ar?t</code></td>
+<td align="left">B) <code>ar*t</code></td>
+<td align="left">C) <code>a[fr]?t</code></td>
+<td align="left">D) <code>ar+t</code></td>
+<td align="left">E) <code>a.*t</code></td>
+<td align="left">F) <code>a.+t</code></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Strings</th>
+<th align="left"></th>
+<th align="left"></th>
+<th align="left"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">1) “at”</td>
+<td align="left">2) “art”</td>
+<td align="left">3) “arrrrt”</td>
+<td align="left">4) “aft”</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="lab-intro-in-the-practicum-file." class="section level3" number="5.2.8">
+<h3><span class="header-section-number">5.2.8</span> Lab: <em>Intro</em> (in the <em>practicum file</em>).</h3>
+<p><img src="images/regex01.png" /></p>
+</div>
+<div id="anchoring" class="section level3" number="5.2.9">
+<h3><span class="header-section-number">5.2.9</span> Anchoring</h3>
+<ul>
+<li>anchors match <em>between</em> characters.</li>
+<li>anchors are used to assert that the characters you’re matching must appear in a certain place.</li>
+<li>for example, <code>\bat\b</code> matches “<strong>at</strong> work” but not “b<strong>at</strong>ch.”</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Anchor</th>
+<th align="left">matches…</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>^</code></td>
+<td align="left">the beginning of a line or a string</td>
+</tr>
+<tr class="even">
+<td align="left"><code>$</code></td>
+<td align="left">the end of a line of a string</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>\b</code></td>
+<td align="left"><em>word boundary</em></td>
+</tr>
+<tr class="even">
+<td align="left"><code>\B</code></td>
+<td align="left"><em>not word boundary</em></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="alternation-pipe" class="section level3" number="5.2.10">
+<h3><span class="header-section-number">5.2.10</span> Alternation: “|” (<em>pipe</em>)</h3>
+<ul>
+<li>in <code>regex</code>, “|” means “or”
+<ul>
+<li>on the US keyboard layout, this character is in the vicinity of “Enter” and “Right Shift.”</li>
+</ul></li>
+<li>you can put a full expression to the left of the <em>pipe</em> and another full expression to the right, so that either one could match:
+<ul>
+<li><code>seek|seeks|sought</code> matches “seek,” “seeks,” or “sought.”</li>
+<li><code>seeks?|sought</code> matches “seek,” “seeks,” or “sought.”</li>
+</ul></li>
+</ul>
+</div>
+<div id="grouping" class="section level3" number="5.2.11">
+<h3><span class="header-section-number">5.2.11</span> Grouping</h3>
+<ul>
+<li>everything within <code>( … )</code> is grouped into a single element for the purposes of repetition or alternation:
+<ul>
+<li>the expression <code>(la)+</code> matches “la,” “lala,” “lalalala” (but not “all”).</li>
+<li><code>schema(ta)?</code> matches “schema” and “schemata” but not “schematic.”</li>
+</ul></li>
+<li>grouping example: what regular expression would match “eat,” “eats,” “ate” and “eaten?”
+<ul>
+<li><code>eat(s|en)?|ate</code></li>
+<li><strong>NB</strong>: we can make it more precise by adding word boundary anchors to exclude what we do not need, like, for example, words “sate” and “eating”: <code>\b(eat(s|en)?|ate)\b</code>.</li>
+</ul></li>
+</ul>
+</div>
+<div id="lab-part-i-in-the-practicum-file." class="section level3" number="5.2.12">
+<h3><span class="header-section-number">5.2.12</span> Lab: Part I (in the <em>practicum file</em>).</h3>
+<p><img src="images/regex02.png" /></p>
+</div>
+<div id="replacement" class="section level3" number="5.2.13">
+<h3><span class="header-section-number">5.2.13</span> Replacement</h3>
+<ul>
+<li><code>regular expressions</code> are most often used for search/replace operations</li>
+<li>in <em>text editors</em>:
+<ul>
+<li><em>Search Window</em>: search pattern</li>
+<li><em>Replace Window</em>: replacement pattern</li>
+</ul></li>
+</ul>
+</div>
+<div id="capture" class="section level3" number="5.2.14">
+<h3><span class="header-section-number">5.2.14</span> Capture</h3>
+<ul>
+<li>during searches, <code>( … )</code> groups capture patterns for use in replacement.</li>
+<li>special variables <code>\1</code>, <code>\2</code>, <code>\3</code>, etc. contain the capture (in some text editors: <code>$1</code>, <code>$2</code>, <code>$3</code>).</li>
+<li>if we apply <code>(\d\d\d)-(\d\d\d\d)</code> to “123-4567”:
+– <code>\1</code> (or, <code>$1</code>) captures “123”
+– <code>\2</code> (or, <code>$2</code>) captures “4567”</li>
+</ul>
+</div>
+<div id="capture-reformat" class="section level3" number="5.2.15">
+<h3><span class="header-section-number">5.2.15</span> Capture <em>&amp;</em> Reformat</h3>
+<ul>
+<li>How to convert “Schwarzenegger, Arnold” to “Arnold Schwarzenegger?”
+<ul>
+<li>Search: <code>(\w+), (\w+)</code></li>
+<li>Replace (a): <code>\2 \1</code></li>
+<li>Replace (b): <code>$2 $1</code></li>
+</ul></li>
+<li><strong>NB:</strong> (!) Before hitting “Replace,” make sure that your match does not catch what you do NOT want to change</li>
+</ul>
+</div>
+<div id="lab-part-ii-in-the-practicum-file." class="section level3" number="5.2.16">
+<h3><span class="header-section-number">5.2.16</span> Lab: Part II (in the <em>practicum file</em>).</h3>
+<p><img src="images/regex02.png" /></p>
+<ul>
+<li>Finding toponyms (placenames):
+<ul>
+<li><em>very simple:</em> Construct regular expressions that find references to <em>all</em> Austrian cities.<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a></li>
+<li><em>a bit tricky</em>: Construct regular expression that finds only cities from 1) Lower Austria; 2) Salzburg.<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a></li>
+</ul></li>
+</ul>
+</div>
+<div id="to-keep-in-mind" class="section level3" number="5.2.17">
+<h3><span class="header-section-number">5.2.17</span> <em>To keep in mind</em></h3>
+<ul>
+<li><code>regular expressions</code> are “greedy,” i.e. they tend to catch more than you may need. Always test!</li>
+<li>test before applying! (In text editors Ctrl+Z (Win), Cmd+Z (Mac) can help to revert changes)</li>
+<li>check the language/application-specific documentation: some common shortcuts are not universal (for example, some languages/applications use <code>\1</code> to refer to groups, while others use <code>$1</code> for the same purpose).</li>
+</ul>
+</div>
+</div>
+<div id="class-materials" class="section level2" number="5.3">
+<h2><span class="header-section-number">5.3</span> Class materials</h2>
+<ul>
+<li>Presentation with all the slides:
+<ul>
+<li><a href="https://github.com/maximromanov/re_tutorial/blob/master/RegularExpressions_Western.pdf?raw=true">PDF</a> (Windows PowerPoint Format)</li>
+</ul></li>
+</ul>
+</div>
+<div id="digital-materials" class="section level2" number="5.4">
+<h2><span class="header-section-number">5.4</span> Digital materials</h2>
+<ul>
+<li>Online references:
+<ul>
+<li><a href="http://www.regular-expressions.info/" class="uri">http://www.regular-expressions.info/</a></li>
+<li><a href="http://ruby.bastardsbook.com/chapters/regexes/" class="uri">http://ruby.bastardsbook.com/chapters/regexes/</a></li>
+</ul></li>
+<li>Interactive tutorial: <a href="http://regexone.com/" class="uri">http://regexone.com/</a></li>
+<li>Cheat Sheets:
+<ul>
+<li><a href="http://krijnhoetmer.nl/stuff/regex/cheat-sheet/" class="uri">http://krijnhoetmer.nl/stuff/regex/cheat-sheet/</a></li>
+<li><a href="http://www.rexegg.com/regex-quickstart.html" class="uri">http://www.rexegg.com/regex-quickstart.html</a></li>
+</ul></li>
+</ul>
+</div>
+<div id="reference-materials" class="section level2" number="5.5">
+<h2><span class="header-section-number">5.5</span> Reference Materials</h2>
+<ul>
+<li>Goyvaerts, J. and Levithan, S. (2012). <em>Regular Expressions Cookbook</em>. Second edition. Beijing: O’Reilly. <a href="http://www.amazon.com/Regular-Expressions-Cookbook-Jan-Goyvaerts/dp/1449319432/">Amazon Link</a>.</li>
+<li>Friedl, J. E. F. (2006). <em>Mastering Regular Expressions</em>. 3rd ed. Sebastapol, CA: O’Reilly. <a href="http://www.amazon.com/Mastering-Regular-Expressions-Jeffrey-Friedl/dp/0596528124/">Amazon Link</a></li>
+</ul>
+<p>(I will share PDFs of these books via Slack; I strongly recommend to flip through the first book just to get an idea of what kind of things one can do with regular expressions.)</p>
+</div>
+<div id="HWL05" class="section level2" number="5.6">
+<h2><span class="header-section-number">5.6</span> Homework</h2>
+<ul>
+<li>Finish the practicum; push your answers to your github repository.</li>
+</ul>
+<p><strong>Python</strong></p>
+<ul>
+<li>Work through Chapters 6 and 7 of Zelle’s book; read chapters carefully; work through the chapter summaries and exercises; complete the following programming exercises: 1-8 in Chapter 6; 1-9 in Chapter 7;</li>
+<li>Watch <a href="https://www.youtube.com/playlist?list=PL6kqrM2i6BPIpEF5yHPNkYhjHm-FYWh17">Dr. Vierthaler’s videos</a>:
+<ul>
+<li>Episode 09: Dictionaries</li>
+<li>Episode 10: Putting it Together (Analyses)</li>
+<li>Episode 11: Errors (reading and handling)</li>
+</ul></li>
+<li><strong>Note:</strong> the sequences are somewhat different in Zelle’s textbook and Vierthaler’s videos. I would recommend you to always check Vierthaler’s videos and also check videos which cover topics that you read about in Zelle’s book.</li>
+</ul>
+<p><strong>Submitting homework:</strong></p>
+<ul>
+<li>Homework assignment must be submitted by the beginning of the next class;</li>
+<li>Now, that you know how to use GitHub, you will be submitting your homework pushing it to github:
+<ul>
+<li>Create a relevant subfoler in your <code>HW070172</code> repository and place your HW files there; push them to your GitHub account;
+<ul>
+<li>Email me the link to your repository with a short message (Something like: <em>I have completed homework for Lesson 3, which is uploaded to my repository … in subfolder <code>L03</code></em>)</li>
+<li>In the subject of your email, please, add the following: <code>CCXXXXX-LXX-HW-YourLastName-YourMatriculationNumber</code>, where <code>CCXXXXX</code> is the numeric code of the course; <code>LXX</code> is the lesson for which the homework is being submitted; <code>YourLastName</code> is your last name, and <code>YourMatriculationNumber</code> is your matriculation number.</li>
+</ul></li>
+</ul></li>
+</ul>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="2">
+<li id="fn2"><p>Matches are highlighted: <strong>at</strong>, h<strong>at</strong>, th<strong>at</strong>, <strong>at</strong>las, aft, Athens.<a href="lesson-05-robust-searches.html#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>Matches are highlighted: t<strong>hat</strong>, at, c<strong>hat</strong>, <strong>cat</strong>, fat, p<strong>hat</strong>.<a href="lesson-05-robust-searches.html#fnref3" class="footnote-back">↩︎</a></p></li>
+<li id="fn4"><p>Matches are highlighted: <strong>501-1234</strong>, <strong>234 1252</strong>, 652.2648, 713-<strong>342-7452</strong>, PE6-5000, <strong>653-6464</strong>x256.<a href="lesson-05-robust-searches.html#fnref4" class="footnote-back">↩︎</a></p></li>
+<li id="fn5"><p><code>ar?t</code> matches “at” and “art” but not “arrrt”; <code>a[fr]?t</code> matches “at,” “art,” and “aft”; <code>ar*t</code> matches “at,” “art,” and “arrrrt”; <code>ar+t</code> matches “art” and “arrrt” but not “at”; <code>a.*t</code> matches anything with an ‘a’ eventually followed by a ‘t.’<a href="lesson-05-robust-searches.html#fnref5" class="footnote-back">↩︎</a></p></li>
+<li id="fn6"><p><em>Solution</em>: Simply connect all toponyms from the list with a pipe symbol “|”<a href="lesson-05-robust-searches.html#fnref6" class="footnote-back">↩︎</a></p></li>
+<li id="fn7"><p><em>Solution 1</em>: <code>\b([\w ]+) \(Lower Austria\)</code> — for Lower Austria; <code>\b([\w ]+) \(Salzburg\)</code> — for Salzburg; <em>Solution 2 (cooler):</em> <code>\b([\w ]+)(?=( \(Lower Austria\)))</code> — for Lower Austria; <code>\b([\w ]+)(?=( \(Salzburg\)))</code> — for Salzburg.<a href="lesson-05-robust-searches.html#fnref7" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="lesson-04-sustainable-academic-writing.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "github"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "serif",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/maximromanov/dh_in_mes/edit/main/02-Lesson05.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/maximromanov/dh_in_mes/blob/main/02-Lesson05.Rmd",
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"search": true,
+"info": true
+});
+});
+</script>
+
+</body>
+
+</html>

@@ -1,6 +1,6 @@
-# Lesson 05: Regular Expressions
+# Lesson 05: Robust Searches
 
-## Constructing Robust Searches
+## Constructing Robust Searches with Regular Expressions
 
 ## `regular expressions`
 
