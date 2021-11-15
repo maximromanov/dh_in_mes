@@ -1,4 +1,4 @@
-# Lesson 05
+# Lesson 05: Regular Expressions
 
 ## Constructing Robust Searches
 
