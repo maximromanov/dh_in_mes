@@ -71,6 +71,8 @@ https://maximromanov.github.io/dh_in_mes/files/articles/1860-11-12_article_03.tx
 * [Article 14](https://maximromanov.github.io/dh_in_mes/files/articles/1860-11-12_article_14.txt)
 * [Article 15](https://maximromanov.github.io/dh_in_mes/files/articles/1860-11-12_article_15.txt)
 
+test
+
 * [Article 01](/files/articles/1860-11-12_article_01.txt)
 * [Article 02](/files/articles/1860-11-12_article_02.txt)
 * [Article 03](/files/articles/1860-11-12_article_03.txt)
@@ -86,6 +88,8 @@ https://maximromanov.github.io/dh_in_mes/files/articles/1860-11-12_article_03.tx
 * [Article 13](/files/articles/1860-11-12_article_13.txt)
 * [Article 14](/files/articles/1860-11-12_article_14.txt)
 * [Article 15](/files/articles/1860-11-12_article_15.txt)
+
+test
 
 * [Article 01](https://maximromanov.github.io/dh_in_mes/files/articles/1860-11-12_article_01.txt)
 * [Article 02](https://maximromanov.github.io/dh_in_mes/files/articles/1860-11-12_article_02.txt)
@@ -129,7 +133,7 @@ https://maximromanov.github.io/dh_in_mes/files/articles/1860-11-12_article_03.tx
 * [Article 36](../../files/06/articles/1860-11-12_article_36.txt)
 * [Article 37](../../files/06/articles/1860-11-12_article_37.txt)
 * [Article 38](../../files/06/articles/1860-11-12_article_38.txt)
-* [Article 39](/files/06/articles/1860-11-12_article_39.txt)
+* [Article 39](/files/articles/1860-11-12_article_39.txt)
 
 ## Practice 3 (aka *Homework*): a tiny-bit tricky
 
