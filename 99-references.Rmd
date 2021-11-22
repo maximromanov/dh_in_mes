@@ -1,3 +1,22 @@
 `r if (knitr::is_html_output()) '
 # References {-}
 '`
+
+
+**Appendix**
+
+* [Article 01](./files/articles/1860-11-12_article_01.txt)
+* [Article 02](./files/articles/1860-11-12_article_02.txt)
+* [Article 03](./files/articles/1860-11-12_article_03.txt)
+* [Article 04](./files/articles/1860-11-12_article_04.txt)
+* [Article 05](./files/articles/1860-11-12_article_05.txt)
+* [Article 06](./files/articles/1860-11-12_article_06.txt)
+* [Article 07](./files/articles/1860-11-12_article_07.txt)
+* [Article 08](./files/articles/1860-11-12_article_08.txt)
+* [Article 09](./files/articles/1860-11-12_article_09.txt)
+* [Article 10](./files/articles/1860-11-12_article_10.txt)
+* [Article 11](./files/articles/1860-11-12_article_11.txt)
+* [Article 12](./files/articles/1860-11-12_article_12.txt)
+* [Article 13](./files/articles/1860-11-12_article_13.txt)
+* [Article 14](./files/articles/1860-11-12_article_14.txt)
+* [Article 15](./files/articles/1860-11-12_article_15.txt)
