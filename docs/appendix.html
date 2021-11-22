@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>6 Lesson 06: Webscraping | Digital Humanities in Middle Eastern Studies</title>
+  <title>7 Appendix | Digital Humanities in Middle Eastern Studies</title>
   <meta name="description" content="This is a collection of relevant materials for the class ‘57-525 S: Digital Humanities in Middle East Studies — Introduction to Algorithmic Analysis’ (WS2021), offered at the University of Hamburg (Afrika-Asien Institut) and taught by Maxim G. Romanov" />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="6 Lesson 06: Webscraping | Digital Humanities in Middle Eastern Studies" />
+  <meta property="og:title" content="7 Appendix | Digital Humanities in Middle Eastern Studies" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://maximromanov.github.io/dh_in_mes/" />
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="maximromanov/dh_in_mes" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="6 Lesson 06: Webscraping | Digital Humanities in Middle Eastern Studies" />
+  <meta name="twitter:title" content="7 Appendix | Digital Humanities in Middle Eastern Studies" />
   
   <meta name="twitter:description" content="This is a collection of relevant materials for the class ‘57-525 S: Digital Humanities in Middle East Studies — Introduction to Algorithmic Analysis’ (WS2021), offered at the University of Hamburg (Afrika-Asien Institut) and taught by Maxim G. Romanov" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   <link rel="apple-touch-icon-precomposed" sizes="120x120" href="touch-icon.png" />
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-<link rel="prev" href="lesson-05-robust-searches.html"/>
-<link rel="next" href="appendix.html"/>
+<link rel="prev" href="lesson-06-webscraping.html"/>
+<link rel="next" href="references.html"/>
 <script src="libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -199,183 +199,34 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="lesson-06-webscraping" class="section level1" number="6">
-<h1><span class="header-section-number">6</span> Lesson 06: Webscraping</h1>
-<div id="getting-to-know-wget" class="section level2" number="6.1">
-<h2><span class="header-section-number">6.1</span> Getting to Know <code>WGET</code></h2>
-<p>Here we will discuss webscraping — the main process of efficiently collecting large volumes of information from the Internet.</p>
-</div>
-<div id="software" class="section level2" number="6.2">
-<h2><span class="header-section-number">6.2</span> Software</h2>
+<div id="appendix" class="section level1" number="7">
+<h1><span class="header-section-number">7</span> Appendix</h1>
 <ul>
-<li><p><code>wget</code> (<a href="https://www.gnu.org/software/wget/" class="uri">https://www.gnu.org/software/wget/</a>), a free software package for retrieving files using HTTP, HTTPS, FTP and FTPS the most widely-used Internet protocols. It is a non-interactive command line tool, so it may easily be called from scripts, cron jobs, terminals without X-Windows support, etc.</p></li>
-<li><p><strong>NB</strong>: on installing <code>wget</code>:</p>
-<ul>
-<li>On Windows (the easiest): download from <a href="https://eternallybored.org/misc/wget/" class="uri">https://eternallybored.org/misc/wget/</a> &gt; choose the latest 64-bit ZIP file (<code>EXE</code> will most likely be blocked by your browser as a potentially dangerous file).
-<ul>
-<li>Unzip the file and copy <code>wget.exe</code> to the folder where you are planning to scrape data; <em>NB:</em> the easiest approach on Windows is to move/copy this file into relevant folders.</li>
-</ul></li>
-<li>On Mac (and, possibly, Linux): <code>brew install wget</code></li>
-</ul></li>
-</ul>
-</div>
-<div id="class" class="section level2" number="6.3">
-<h2><span class="header-section-number">6.3</span> Class</h2>
-<ul>
-<li>practical examples of working with <code>wget</code></li>
-<li>single link download</li>
-<li>batch download
-<ul>
-<li>web-page analysis</li>
-<li>extraction of links with <code>regular expressions</code></li>
-<li>modification of links with <code>regular expressions</code></li>
-</ul></li>
-</ul>
-</div>
-<div id="sample-commands" class="section level2" number="6.4">
-<h2><span class="header-section-number">6.4</span> Sample commands</h2>
-<pre><code>wget link
-wget -i file_with_links.txt
-wget -i file_with_links.txt -P ./folderYouWantToSaveTo/ -nc </code></pre>
-<!--
-1. The first command will simply download a file specified in the link;
-2. The second command will go over all links given in the `file_with_links.txt` --- in this file links must be stored one per line;
-3. The third command also redirects downloaded results to a subfolder (`-p ./folderYouWantToSaveTo/`, where `-p` is an argument that specifies that `./folderYouWantToSaveTo/` is a folder for saved results; `-nc` is another useful argument, which tells `wget` not to download file if is already exists in the folder --- this command allows you to stop and restart downloading from where you stopped);
--->
-<p>Where:</p>
-<ul>
-<li><code>-P</code> is a folder parameter, which instructs <code>wget</code> where you want to store downloaded files (<em>optional</em>).</li>
-<li><code>-nc</code> is a <em>no-clobber</em> parameter, which instructs <code>wget</code> to skips files, if they already exist (<em>optional</em>)</li>
-</ul>
-<p>Link examples:</p>
-<pre><code>https://maximromanov.github.io/dh_in_mes/files/articles/1860-11-12_article_01.txt
-https://maximromanov.github.io/dh_in_mes/files/articles/1860-11-12_article_02.txt
-https://maximromanov.github.io/dh_in_mes/files/articles/1860-11-12_article_03.txt</code></pre>
-<p><strong>NB:</strong> there are many other parameters with which you can adjust <code>wget</code> to your needs.</p>
-</div>
-<div id="examples-for-downloading" class="section level2" number="6.5">
-<h2><span class="header-section-number">6.5</span> Examples for Downloading</h2>
-</div>
-<div id="practice-1-very-easy" class="section level2" number="6.6">
-<h2><span class="header-section-number">6.6</span> Practice 1: very easy</h2>
-<ul>
-<li><a href="https://maximromanov.github.io/dh_in_mes/files/articles/1860-11-12_article_01.txt">Article 01</a></li>
-<li><a href="https://maximromanov.github.io/dh_in_mes/files/articles/1860-11-12_article_02.txt">Article 02</a></li>
-<li><a href="https://maximromanov.github.io/dh_in_mes/files/articles/1860-11-12_article_03.txt">Article 03</a></li>
-<li><a href="https://maximromanov.github.io/dh_in_mes/files/articles/1860-11-12_article_04.txt">Article 04</a></li>
-<li><a href="https://maximromanov.github.io/dh_in_mes/files/articles/1860-11-12_article_05.txt">Article 05</a></li>
-<li><a href="https://maximromanov.github.io/dh_in_mes/files/articles/1860-11-12_article_06.txt">Article 06</a></li>
-<li><a href="https://maximromanov.github.io/dh_in_mes/files/articles/1860-11-12_article_07.txt">Article 07</a></li>
-<li><a href="https://maximromanov.github.io/dh_in_mes/files/articles/1860-11-12_article_08.txt">Article 08</a></li>
-<li><a href="https://maximromanov.github.io/dh_in_mes/files/articles/1860-11-12_article_09.txt">Article 09</a></li>
-<li><a href="https://maximromanov.github.io/dh_in_mes/files/articles/1860-11-12_article_10.txt">Article 10</a></li>
-<li><a href="https://maximromanov.github.io/dh_in_mes/files/articles/1860-11-12_article_11.txt">Article 11</a></li>
-<li><a href="https://maximromanov.github.io/dh_in_mes/files/articles/1860-11-12_article_12.txt">Article 12</a></li>
-<li><a href="https://maximromanov.github.io/dh_in_mes/files/articles/1860-11-12_article_13.txt">Article 13</a></li>
-<li><a href="https://maximromanov.github.io/dh_in_mes/files/articles/1860-11-12_article_14.txt">Article 14</a></li>
-<li><a href="https://maximromanov.github.io/dh_in_mes/files/articles/1860-11-12_article_15.txt">Article 15</a></li>
-</ul>
-<!--
-* [Article 01](./files/articles/1860-11-12_article_01.txt)
-* [Article 02](./files/articles/1860-11-12_article_02.txt)
-* [Article 03](./files/articles/1860-11-12_article_03.txt)
-* [Article 04](./files/articles/1860-11-12_article_04.txt)
-* [Article 05](./files/articles/1860-11-12_article_05.txt)
-* [Article 06](./files/articles/1860-11-12_article_06.txt)
-* [Article 07](./files/articles/1860-11-12_article_07.txt)
-* [Article 08](./files/articles/1860-11-12_article_08.txt)
-* [Article 09](./files/articles/1860-11-12_article_09.txt)
-* [Article 10](./files/articles/1860-11-12_article_10.txt)
-* [Article 11](./files/articles/1860-11-12_article_11.txt)
-* [Article 12](./files/articles/1860-11-12_article_12.txt)
-* [Article 13](./files/articles/1860-11-12_article_13.txt)
-* [Article 14](./files/articles/1860-11-12_article_14.txt)
-* [Article 15](./files/articles/1860-11-12_article_15.txt)
--->
-</div>
-<div id="practice-2-easy-ish" class="section level2" number="6.7">
-<h2><span class="header-section-number">6.7</span> Practice 2: easy-ish</h2>
-<ul>
-<li><a href="./files/articles/1860-11-12_article_16.txt">Article 16</a></li>
-<li><a href="./files/articles/1860-11-12_article_17.txt">Article 17</a></li>
-<li><a href="./files/articles/1860-11-12_article_18.txt">Article 18</a></li>
-<li><a href="./files/articles/1860-11-12_article_19.txt">Article 19</a></li>
-<li><a href="./files/articles/1860-11-12_article_20.txt">Article 20</a></li>
-<li><a href="./files/articles/1860-11-12_article_21.txt">Article 21</a></li>
-<li><a href="./files/articles/1860-11-12_article_22.txt">Article 22</a></li>
-<li><a href="./files/articles/1860-11-12_article_23.txt">Article 23</a></li>
-<li><a href="./files/articles/1860-11-12_article_24.txt">Article 24</a></li>
-<li><a href="./files/articles/1860-11-12_article_25.txt">Article 25</a></li>
-<li><a href="./files/articles/1860-11-12_article_26.txt">Article 26</a></li>
-<li><a href="./files/articles/1860-11-12_article_27.txt">Article 27</a></li>
-<li><a href="./files/articles/1860-11-12_article_28.txt">Article 28</a></li>
-<li><a href="./files/articles/1860-11-12_article_29.txt">Article 29</a></li>
-<li><a href="./files/articles/1860-11-12_article_30.txt">Article 30</a></li>
-<li><a href="./files/articles/1860-11-12_article_31.txt">Article 31</a></li>
-<li><a href="./files/articles/1860-11-12_article_32.txt">Article 32</a></li>
-<li><a href="./files/articles/1860-11-12_article_33.txt">Article 33</a></li>
-<li><a href="./files/articles/1860-11-12_article_34.txt">Article 34</a></li>
-<li><a href="./files/articles/1860-11-12_article_35.txt">Article 35</a></li>
-<li><a href="./files/articles/1860-11-12_article_36.txt">Article 36</a></li>
-<li><a href="./files/articles/1860-11-12_article_37.txt">Article 37</a></li>
-<li><a href="./files/articles/1860-11-12_article_38.txt">Article 38</a></li>
-<li><a href="./files/articles/1860-11-12_article_39.txt">Article 39</a></li>
-</ul>
-</div>
-<div id="practice-3-aka-homework-a-tiny-bit-tricky" class="section level2" number="6.8">
-<h2><span class="header-section-number">6.8</span> Practice 3 (aka <em>Homework</em>): a tiny-bit tricky</h2>
-<ul>
-<li>download issues of “Richmond Times Dispatch” (Years 1860-1865, only!), which are available at: <a href="http://www.perseus.tufts.edu/hopper/collection?collection=Perseus:collection:RichTimes" class="uri">http://www.perseus.tufts.edu/hopper/collection?collection=Perseus:collection:RichTimes</a>)</li>
-</ul>
-</div>
-<div id="RML06" class="section level2" number="6.9">
-<h2><span class="header-section-number">6.9</span> Reference Materials</h2>
-<ul>
-<li>Milligan, Ian. 2012. “Automated Downloading with Wget.” Programming Historian, June. <a href="https://programminghistorian.org/lessons/automated-downloading-with-wget" class="uri">https://programminghistorian.org/lessons/automated-downloading-with-wget</a>.</li>
-<li>Kurschinski, Kellen. 2013. “Applied Archival Downloading with Wget.” Programming Historian, September. <a href="https://programminghistorian.org/lessons/applied-archival-downloading-with-wget" class="uri">https://programminghistorian.org/lessons/applied-archival-downloading-with-wget</a>.</li>
-<li>Baxter, Richard. 2019. “How to download your website using WGET for Windows.” <a href="https://builtvisible.com/download-your-website-with-wget/" class="uri">https://builtvisible.com/download-your-website-with-wget/</a>.</li>
-<li>Alternatively, this operation can be done with a Python script: Turkel, William J., and Adam Crymble. 2012. “Downloading Web Pages with Python.” Programming Historian, July. <a href="https://programminghistorian.org/lessons/working-with-web-pages" class="uri">https://programminghistorian.org/lessons/working-with-web-pages</a>.</li>
-</ul>
-</div>
-<div id="HWL06" class="section level2" number="6.10">
-<h2><span class="header-section-number">6.10</span> Homework</h2>
-<ol style="list-style-type: decimal">
-<li>Scraping the “Dispatch”: download issues of “Richmond Times Dispatch” (Years 1860-1865, only!), which are available at: <a href="http://www.perseus.tufts.edu/hopper/collection?collection=Perseus:collection:RichTimes" class="uri">http://www.perseus.tufts.edu/hopper/collection?collection=Perseus:collection:RichTimes</a>)</li>
-<li>In a separate markdown file (to be uloaded with the rest of your homework).</li>
-</ol>
-<p><strong>Python</strong></p>
-<ul>
-<li>Work through Chapters 8 and 11 of Zelle’s book; read chapters carefully; work through the chapter summaries and exercises; complete the following programming exercises: 1-8 in Chapter 8 and 1-11 in Chapter 11;</li>
-<li>Watch <a href="https://www.youtube.com/playlist?list=PL6kqrM2i6BPIpEF5yHPNkYhjHm-FYWh17">Dr. Vierthaler’s videos</a>:
-<ul>
-<li>Episode 12: Functions</li>
-<li>Episode 13: Libraries and NLTK</li>
-<li>Episode 14: Regular Expressions</li>
-</ul></li>
-<li><strong>Note:</strong> the sequences are somewhat different in Zelle’s textbook and Vierthaler’s videos. I would recommend you to always check Vierthaler’s videos and also check videos which cover topics that you read about in Zelle’s book.</li>
-</ul>
-</div>
-<div id="SHL06" class="section level2" number="6.11">
-<h2><span class="header-section-number">6.11</span> Submitting homework</h2>
-<ul>
-<li>Homework assignment must be submitted by the beginning of the next class;</li>
-<li>Email your homework to the instructor.
-<ul>
-<li>if your homework is to create a file, email it as an attachment</li>
-<li>if your homework is a blogpost on your website, email the link to your website and to the blogpost with your homework.</li>
-<li>In the subject of your email, please, add the following: <code>070112-LXX-HW-YourLastName-YourMatriculationNumber</code>, where <code>LXX</code> is the lesson for which the homework is submitted, <code>YourLastName</code> is your last name, and <code>YourMatriculationNumber</code> is your matriculation number.</li>
-</ul></li>
+<li><a href="./files/articles/1860-11-12_article_01.txt">Article 01</a></li>
+<li><a href="./files/articles/1860-11-12_article_02.txt">Article 02</a></li>
+<li><a href="./files/articles/1860-11-12_article_03.txt">Article 03</a></li>
+<li><a href="./files/articles/1860-11-12_article_04.txt">Article 04</a></li>
+<li><a href="./files/articles/1860-11-12_article_05.txt">Article 05</a></li>
+<li><a href="./files/articles/1860-11-12_article_06.txt">Article 06</a></li>
+<li><a href="./files/articles/1860-11-12_article_07.txt">Article 07</a></li>
+<li><a href="./files/articles/1860-11-12_article_08.txt">Article 08</a></li>
+<li><a href="./files/articles/1860-11-12_article_09.txt">Article 09</a></li>
+<li><a href="./files/articles/1860-11-12_article_10.txt">Article 10</a></li>
+<li><a href="./files/articles/1860-11-12_article_11.txt">Article 11</a></li>
+<li><a href="./files/articles/1860-11-12_article_12.txt">Article 12</a></li>
+<li><a href="./files/articles/1860-11-12_article_13.txt">Article 13</a></li>
+<li><a href="./files/articles/1860-11-12_article_14.txt">Article 14</a></li>
+<li><a href="./files/articles/1860-11-12_article_15.txt">Article 15</a></li>
 </ul>
 
-</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="lesson-05-robust-searches.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="appendix.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="lesson-06-webscraping.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -406,7 +257,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/maximromanov/dh_in_mes/edit/main/02-Lesson06.Rmd",
+"link": "https://github.com/maximromanov/dh_in_mes/edit/main/99-appendix.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -414,7 +265,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/maximromanov/dh_in_mes/blob/main/02-Lesson06.Rmd",
+"link": "https://github.com/maximromanov/dh_in_mes/blob/main/99-appendix.Rmd",
 "text": null
 },
 "download": null,
