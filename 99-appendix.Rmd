@@ -1,4 +1,6 @@
-# Appendix
+`r if (knitr::is_html_output()) '
+# Appendix {-}
+'`
 
 
 * [Article 01](./files/articles/1860-11-12_article_01.txt)
