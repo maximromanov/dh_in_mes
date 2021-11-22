@@ -13,7 +13,7 @@ Here we will discuss webscraping --- the main process of efficiently collecting 
 		* Unzip the file and copy `wget.exe` to the folder where you are planning to scrape data; *NB:* the easiest approach on Windows is to move/copy this file into relevant folders. 
 	* On Mac (and, possibly, Linux): `brew install wget`
 
-# Class:
+## Class:
 
 * practical examples of working with `wget`
 * single link download
@@ -22,7 +22,7 @@ Here we will discuss webscraping --- the main process of efficiently collecting 
 	* extraction of links with `regular expressions`
 	* modification of links with `regular expressions`
 
-# Sample commands
+## Sample commands
 
 ```
 wget link
@@ -43,7 +43,7 @@ Where:
 
 **NB:** there are many other parameters with which you can adjust `wget` to your needs.
 
-# Examples for Downloading
+## Examples for Downloading
 
 ## Practice 1: very easy
 
