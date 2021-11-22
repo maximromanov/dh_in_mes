@@ -116,8 +116,6 @@ https://maximromanov.github.io/dh_in_mes/files/articles/1860-11-12_article_03.tx
 * [Article 38](./files/articles/1860-11-12_article_38.txt)
 * [Article 39](./files/articles/1860-11-12_article_39.txt)
 
-[test](./files/articles/1860-11-12_article_01.txt)
-
 ## Practice 3 (aka *Homework*): a tiny-bit tricky
 
 * download issues of “Richmond Times Dispatch” (Years 1860-1865, only!), which are available at: <http://www.perseus.tufts.edu/hopper/collection?collection=Perseus:collection:RichTimes>)
