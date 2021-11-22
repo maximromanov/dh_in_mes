@@ -47,7 +47,7 @@ Where:
 
 ## Practice 1: very easy
 
-* [](./files/articles/1860-11-12_article_01.txt)
+* [Article](./files/articles/1860-11-12_article_01.txt)
 
 * [Article 01](https://univie-tnt-2019-fall.github.io/files/06/articles/1860-11-12_article_01.txt)
 * [Article 02](https://univie-tnt-2019-fall.github.io/files/06/articles/1860-11-12_article_02.txt)
