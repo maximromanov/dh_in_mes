@@ -168,7 +168,10 @@
 <li class="chapter" data-level="6.1" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html#getting-to-know-wget"><i class="fa fa-check"></i><b>6.1</b> Getting to Know <code>WGET</code></a></li>
 <li class="chapter" data-level="6.2" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html#software"><i class="fa fa-check"></i><b>6.2</b> Software</a></li>
 <li class="chapter" data-level="6.3" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html#class"><i class="fa fa-check"></i><b>6.3</b> Class</a></li>
-<li class="chapter" data-level="6.4" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html#sample-commands"><i class="fa fa-check"></i><b>6.4</b> Sample commands</a></li>
+<li class="chapter" data-level="6.4" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html#sample-commands"><i class="fa fa-check"></i><b>6.4</b> Sample commands</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html#running-wget-on-windows"><i class="fa fa-check"></i><b>6.4.1</b> Running <code>WGET</code> on Windows</a></li>
+</ul></li>
 <li class="chapter" data-level="6.5" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html#examples-for-downloading"><i class="fa fa-check"></i><b>6.5</b> Examples for Downloading</a></li>
 <li class="chapter" data-level="6.6" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html#practice-1-very-easy"><i class="fa fa-check"></i><b>6.6</b> Practice 1: very easy</a></li>
 <li class="chapter" data-level="6.7" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html#practice-2-easy-ish"><i class="fa fa-check"></i><b>6.7</b> Practice 2: easy-ish</a></li>
@@ -252,6 +255,15 @@ wget -i file_with_links.txt -P ./folderYouWantToSaveTo/ -nc </code></pre>
 https://maximromanov.github.io/dh_in_mes/files/articles/1860-11-12_article_02.txt
 https://maximromanov.github.io/dh_in_mes/files/articles/1860-11-12_article_03.txt</code></pre>
 <p><strong>NB:</strong> there are many other parameters with which you can adjust <code>wget</code> to your needs.</p>
+<div id="running-wget-on-windows" class="section level3" number="6.4.1">
+<h3><span class="header-section-number">6.4.1</span> Running <code>WGET</code> on Windows</h3>
+<p>As we have run into a number of issues with trying to run <code>WGET</code> on Windows, here are some steps that will help to run it smoothly:</p>
+<ul>
+<li>download the <code>wget.exe</code> file (from here: <a href="https://eternallybored.org/misc/wget/" class="uri">https://eternallybored.org/misc/wget/</a>);</li>
+<li>copy/paste it into the <code>C:\Windows\System32</code> folder (<code>C:\Windows\System32</code> is a part of the so-called <code>PATH</code> — a series of paths which all Windows command line <em>check</em>);</li>
+<li>now, all the commands should be working as expected;</li>
+</ul>
+</div>
 </div>
 <div id="examples-for-downloading" class="section level2" number="6.5">
 <h2><span class="header-section-number">6.5</span> Examples for Downloading</h2>

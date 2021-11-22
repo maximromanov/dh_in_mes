@@ -51,6 +51,15 @@ https://maximromanov.github.io/dh_in_mes/files/articles/1860-11-12_article_03.tx
 
 **NB:** there are many other parameters with which you can adjust `wget` to your needs.
 
+### Running `WGET` on Windows
+
+As we have run into a number of issues with trying to run `WGET` on Windows, here are some steps that will help to run it smoothly:
+
+- download the `wget.exe` file (from here: <https://eternallybored.org/misc/wget/>);
+- copy/paste it into the `C:\Windows\System32` folder (`C:\Windows\System32` is a part of the so-called `PATH` --- a series of paths which all Windows command line *check*);
+- now, all the commands should be working as expected;
+
+
 ## Examples for Downloading
 
 ## Practice 1: very easy
