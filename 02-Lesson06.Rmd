@@ -4,7 +4,7 @@
 
 Here we will discuss webscraping --- the main process of efficiently collecting large volumes of information from the Internet.
 
-## Software:
+## Software
 
 * `wget` (<https://www.gnu.org/software/wget/>), a free software package for retrieving files using HTTP, HTTPS, FTP and FTPS the most widely-used Internet protocols. It is a non-interactive command line tool, so it may easily be called from scripts, cron jobs, terminals without X-Windows support, etc.
 
@@ -13,7 +13,7 @@ Here we will discuss webscraping --- the main process of efficiently collecting 
 		* Unzip the file and copy `wget.exe` to the folder where you are planning to scrape data; *NB:* the easiest approach on Windows is to move/copy this file into relevant folders. 
 	* On Mac (and, possibly, Linux): `brew install wget`
 
-## Class:
+## Class
 
 * practical examples of working with `wget`
 * single link download
@@ -102,14 +102,14 @@ https://maximromanov.github.io/dh_in_mes/files/articles/1860-11-12_article_03.tx
 
 * download issues of “Richmond Times Dispatch” (Years 1860-1865, only!), which are available at: <http://www.perseus.tufts.edu/hopper/collection?collection=Perseus:collection:RichTimes>)
 
-## Reference Materials{#RML06}:
+## Reference Materials{#RML06}
 
 * Milligan, Ian. 2012. “Automated Downloading with Wget.” Programming Historian, June. <https://programminghistorian.org/lessons/automated-downloading-with-wget>.
 * Kurschinski, Kellen. 2013. “Applied Archival Downloading with Wget.” Programming Historian, September. <https://programminghistorian.org/lessons/applied-archival-downloading-with-wget>.
 * Baxter, Richard. 2019. “How to download your website using WGET for Windows.” <https://builtvisible.com/download-your-website-with-wget/>.
 * Alternatively, this operation can be done with a Python script: Turkel, William J., and Adam Crymble. 2012. “Downloading Web Pages with Python.” Programming Historian, July. <https://programminghistorian.org/lessons/working-with-web-pages>.
 
-## Homework{#HWL06}:
+## Homework{#HWL06}
 
 1. Scraping the “Dispatch”: download issues of “Richmond Times Dispatch” (Years 1860-1865, only!), which are available at: <http://www.perseus.tufts.edu/hopper/collection?collection=Perseus:collection:RichTimes>)
 2. In a separate markdown file (to be uloaded with the rest of your homework).
@@ -123,7 +123,7 @@ https://maximromanov.github.io/dh_in_mes/files/articles/1860-11-12_article_03.tx
 	- Episode 14: Regular Expressions
 - **Note:** the sequences are somewhat different in Zelle's textbook and Vierthaler's videos. I would recommend you to always check Vierthaler's videos and also check videos which cover topics that you read about in Zelle's book.
 
-## Submitting homework{#SHL06}:
+## Submitting homework{#SHL06}
 
 * Homework assignment must be submitted by the beginning of the next class;
 * Email your homework to the instructor.

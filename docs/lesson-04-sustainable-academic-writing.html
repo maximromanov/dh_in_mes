@@ -166,16 +166,16 @@
 <li class="chapter" data-level="6" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html"><i class="fa fa-check"></i><b>6</b> Lesson 06: Webscraping</a>
 <ul>
 <li class="chapter" data-level="6.1" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html#getting-to-know-wget"><i class="fa fa-check"></i><b>6.1</b> Getting to Know <code>WGET</code></a></li>
-<li class="chapter" data-level="6.2" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html#software"><i class="fa fa-check"></i><b>6.2</b> Software:</a></li>
-<li class="chapter" data-level="6.3" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html#class"><i class="fa fa-check"></i><b>6.3</b> Class:</a></li>
+<li class="chapter" data-level="6.2" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html#software"><i class="fa fa-check"></i><b>6.2</b> Software</a></li>
+<li class="chapter" data-level="6.3" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html#class"><i class="fa fa-check"></i><b>6.3</b> Class</a></li>
 <li class="chapter" data-level="6.4" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html#sample-commands"><i class="fa fa-check"></i><b>6.4</b> Sample commands</a></li>
 <li class="chapter" data-level="6.5" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html#examples-for-downloading"><i class="fa fa-check"></i><b>6.5</b> Examples for Downloading</a></li>
 <li class="chapter" data-level="6.6" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html#practice-1-very-easy"><i class="fa fa-check"></i><b>6.6</b> Practice 1: very easy</a></li>
 <li class="chapter" data-level="6.7" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html#practice-2-easy-ish"><i class="fa fa-check"></i><b>6.7</b> Practice 2: easy-ish</a></li>
 <li class="chapter" data-level="6.8" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html#practice-3-aka-homework-a-tiny-bit-tricky"><i class="fa fa-check"></i><b>6.8</b> Practice 3 (aka <em>Homework</em>): a tiny-bit tricky</a></li>
-<li class="chapter" data-level="6.9" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html#reference-materialsrml06"><i class="fa fa-check"></i><b>6.9</b> Reference Materials{#RML06}:</a></li>
-<li class="chapter" data-level="6.10" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html#homeworkhwl06"><i class="fa fa-check"></i><b>6.10</b> Homework{#HWL06}:</a></li>
-<li class="chapter" data-level="6.11" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html#submitting-homeworkshl06"><i class="fa fa-check"></i><b>6.11</b> Submitting homework{#SHL06}:</a></li>
+<li class="chapter" data-level="6.9" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html#RML06"><i class="fa fa-check"></i><b>6.9</b> Reference Materials</a></li>
+<li class="chapter" data-level="6.10" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html#HWL06"><i class="fa fa-check"></i><b>6.10</b> Homework</a></li>
+<li class="chapter" data-level="6.11" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html#SHL06"><i class="fa fa-check"></i><b>6.11</b> Submitting homework</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -212,8 +212,8 @@
 <li><code>markdown</code></li>
 <li>Obsidian (<a href="https://obsidian.md/" class="uri">https://obsidian.md/</a>)</li>
 </ul>
-<div id="htmlwidget-d95cd8b86e2e5897a4d5" style="width:672px;height:600px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-d95cd8b86e2e5897a4d5">{"x":{"diagram":"\ndigraph writing_cycle {\n\n  # a \"graph\" statement\n  graph [overlap = false, fontsize = 10, rankdir = TB]\n\n  # several \"node\" statements\n  node [shape = box,\n        fontname = Baskerville,\n        fontsize = 10,\n        style = rounded,\n        penwidth = 0.1]\n  bibtex [label = \"bibTex bibliography\"]\n  markdown [shape=box, style=filled, fillcolor=grey50, fontcolor=white, fontname=\"courier-bold\", label = \"textfile in markdown\"] ;\n  zotero[label = \"Zotero\"]\n  pandoc[label=\"pandoc engine\"]\n  style[label=\"citation style\"]\n  latex[label=\"TeX engine\"]\n  html[label=\"HTML\"]\n  doc[label=\"MS Word\"]\n  pdf[label=\"PDF\"]\n  \n  \n  zotero->bibtex; bibtex->markdown; bibtex->pandoc;\n  markdown->pandoc; style->pandoc;\n  pandoc->html; pandoc->doc; pandoc->latex->pdf;\n\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-f9b07ed20b4884a13698" style="width:672px;height:600px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-f9b07ed20b4884a13698">{"x":{"diagram":"\ndigraph writing_cycle {\n\n  # a \"graph\" statement\n  graph [overlap = false, fontsize = 10, rankdir = TB]\n\n  # several \"node\" statements\n  node [shape = box,\n        fontname = Baskerville,\n        fontsize = 10,\n        style = rounded,\n        penwidth = 0.1]\n  bibtex [label = \"bibTex bibliography\"]\n  markdown [shape=box, style=filled, fillcolor=grey50, fontcolor=white, fontname=\"courier-bold\", label = \"textfile in markdown\"] ;\n  zotero[label = \"Zotero\"]\n  pandoc[label=\"pandoc engine\"]\n  style[label=\"citation style\"]\n  latex[label=\"TeX engine\"]\n  html[label=\"HTML\"]\n  doc[label=\"MS Word\"]\n  pdf[label=\"PDF\"]\n  \n  \n  zotero->bibtex; bibtex->markdown; bibtex->pandoc;\n  markdown->pandoc; style->pandoc;\n  pandoc->html; pandoc->doc; pandoc->latex->pdf;\n\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="class-notes" class="section level2" number="4.2">
 <h2><span class="header-section-number">4.2</span> Class Notes</h2>
