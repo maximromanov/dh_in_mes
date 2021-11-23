@@ -139,7 +139,7 @@ As we have run into a number of issues with trying to run `WGET` on Windows, her
 ## Homework{#HWL06}
 
 1. Scraping the “Dispatch”: download issues of “Richmond Times Dispatch” (Years 1860-1865, only!), which are available at: <http://www.perseus.tufts.edu/hopper/collection?collection=Perseus:collection:RichTimes>)
-2. In a separate markdown file (to be uloaded with the rest of your homework).
+2. In a separate markdown file (to be uloaded with the rest of your homework).(THIS IS  NOT CLEAR: WHAT IS TO BE SUBMITTED IN A SEPARATE  MARKDOWN FILE?)
 
 **Python**
 
