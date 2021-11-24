@@ -1,4 +1,4 @@
-# To render book:
+# To render book, run the following command:
 
 bookdown::render_book('foo.Rmd', "bookdown::gitbook")
 
