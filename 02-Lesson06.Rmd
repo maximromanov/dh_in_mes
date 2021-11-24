@@ -51,7 +51,7 @@ https://maximromanov.github.io/dh_in_mes/files/articles/1860-11-12_article_03.tx
 
 **NB:** there are many other parameters with which you can adjust `wget` to your needs.
 
-### Running `WGET` on Windows
+### Issues with `WGET` on Windows
 
 As we have run into a number of issues with trying to run `WGET` on Windows, here are some steps that will help to run it smoothly:
 
@@ -59,6 +59,14 @@ As we have run into a number of issues with trying to run `WGET` on Windows, her
 - copy/paste it into the `C:\Windows\System32` folder (`C:\Windows\System32` is a part of the so-called `PATH` --- a series of paths which all Windows command line *check*);
 - now, all the commands should be working as expected;
 
+### Issues with `WGET` on Mac
+
+It may so happen that `WGET` will not work as intended with the homework assignment (specifically, you may not be able to download all the issues of *Dispatch*). From what I understand this is specifically a Mac issue. Last year the MacOS changed their main command line program from `bash` to `zsh`, and in some cases `WGET` may not work as intended under `zsh`. The solution is, luckily, rather simple: we just need to install `bash` and run `WGET` from `bash`.
+
+- to install `bash`, run `brew install bash`;
+- after that you can start `bash` by running `bash` on the command line; the prompt (the beginning of the command line where you type in your commands) should change into something like: `bash-5.1$`
+- now you can go to a folder where you want to save your downloaded results and run `WGET`;
+- **NB:** you will only need `bash` for this step; after you restart the `Terminal`, you will be back to the default `zsh` (you can also run `exit` command to quit `bash` and return to `zsh`)
 
 ## Examples for Downloading
 

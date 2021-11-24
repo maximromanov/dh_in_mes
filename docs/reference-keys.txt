@@ -72,7 +72,8 @@ getting-to-know-wget
 software
 class
 sample-commands
-running-wget-on-windows
+issues-with-wget-on-windows
+issues-with-wget-on-mac
 examples-for-downloading
 practice-1-very-easy
 practice-2-easy-ish

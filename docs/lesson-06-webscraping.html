@@ -195,7 +195,8 @@ div.csl-indent {
 <li class="chapter" data-level="6.3" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html#class"><i class="fa fa-check"></i><b>6.3</b> Class</a></li>
 <li class="chapter" data-level="6.4" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html#sample-commands"><i class="fa fa-check"></i><b>6.4</b> Sample commands</a>
 <ul>
-<li class="chapter" data-level="6.4.1" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html#running-wget-on-windows"><i class="fa fa-check"></i><b>6.4.1</b> Running <code>WGET</code> on Windows</a></li>
+<li class="chapter" data-level="6.4.1" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html#issues-with-wget-on-windows"><i class="fa fa-check"></i><b>6.4.1</b> Issues with <code>WGET</code> on Windows</a></li>
+<li class="chapter" data-level="6.4.2" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html#issues-with-wget-on-mac"><i class="fa fa-check"></i><b>6.4.2</b> Issues with <code>WGET</code> on Mac</a></li>
 </ul></li>
 <li class="chapter" data-level="6.5" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html#examples-for-downloading"><i class="fa fa-check"></i><b>6.5</b> Examples for Downloading</a></li>
 <li class="chapter" data-level="6.6" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html#practice-1-very-easy"><i class="fa fa-check"></i><b>6.6</b> Practice 1: very easy</a></li>
@@ -280,13 +281,23 @@ wget -i file_with_links.txt -P ./folderYouWantToSaveTo/ -nc </code></pre>
 https://maximromanov.github.io/dh_in_mes/files/articles/1860-11-12_article_02.txt
 https://maximromanov.github.io/dh_in_mes/files/articles/1860-11-12_article_03.txt</code></pre>
 <p><strong>NB:</strong> there are many other parameters with which you can adjust <code>wget</code> to your needs.</p>
-<div id="running-wget-on-windows" class="section level3" number="6.4.1">
-<h3><span class="header-section-number">6.4.1</span> Running <code>WGET</code> on Windows</h3>
+<div id="issues-with-wget-on-windows" class="section level3" number="6.4.1">
+<h3><span class="header-section-number">6.4.1</span> Issues with <code>WGET</code> on Windows</h3>
 <p>As we have run into a number of issues with trying to run <code>WGET</code> on Windows, here are some steps that will help to run it smoothly:</p>
 <ul>
 <li>download the <code>wget.exe</code> file (from here: <a href="https://eternallybored.org/misc/wget/" class="uri">https://eternallybored.org/misc/wget/</a>);</li>
 <li>copy/paste it into the <code>C:\Windows\System32</code> folder (<code>C:\Windows\System32</code> is a part of the so-called <code>PATH</code> — a series of paths which all Windows command line <em>check</em>);</li>
 <li>now, all the commands should be working as expected;</li>
+</ul>
+</div>
+<div id="issues-with-wget-on-mac" class="section level3" number="6.4.2">
+<h3><span class="header-section-number">6.4.2</span> Issues with <code>WGET</code> on Mac</h3>
+<p>It may so happen that <code>WGET</code> will not work as intended with the homework assignment (specifically, you may not be able to download all the issues of <em>Dispatch</em>). From what I understand this is specifically a Mac issue. Last year the MacOS changed their main command line program from <code>bash</code> to <code>zsh</code>, and in some cases <code>WGET</code> may not work as intended under <code>zsh</code>. The solution is, luckily, rather simple: we just need to install <code>bash</code> and run <code>WGET</code> from <code>bash</code>.</p>
+<ul>
+<li>to install <code>bash</code>, run <code>brew install bash</code>;</li>
+<li>after that you can start <code>bash</code> by running <code>bash</code> on the command line; the prompt (the beginning of the command line where you type in your commands) should change into something like: <code>bash-5.1$</code></li>
+<li>now you can go to a folder where you want to save your downloaded results and run <code>WGET</code>;</li>
+<li><strong>NB:</strong> you will only need <code>bash</code> for this step; after you restart the <code>Terminal</code>, you will be back to the default <code>zsh</code> (you can also run <code>exit</code> command to quit <code>bash</code> and return to <code>zsh</code>)</li>
 </ul>
 </div>
 </div>
