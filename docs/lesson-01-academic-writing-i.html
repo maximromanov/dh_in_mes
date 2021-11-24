@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>1 Lesson 01: Academic Writing I | Digital Humanities in Middle Eastern Studies</title>
   <meta name="description" content="This is a collection of relevant materials for the class ‘57-525 S: Digital Humanities in Middle East Studies — Introduction to Algorithmic Analysis’ (WS2021), offered at the University of Hamburg (Afrika-Asien Institut) and taught by Maxim G. Romanov" />
-  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="1 Lesson 01: Academic Writing I | Digital Humanities in Middle Eastern Studies" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Maxim G. Romanov" />
 
 
-<meta name="date" content="2021-11-22" />
+<meta name="date" content="2021-11-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +33,9 @@
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 <link rel="prev" href="index.html"/>
 <link rel="next" href="lesson-02-command-line.html"/>
-<script src="libs/header-attrs-2.7/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,13 +51,37 @@
 
 
 
-
-<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
 <script src="libs/viz-1.8.2/viz.js"></script>
 <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
 <script src="libs/grViz-binding-1.0.6.1/grViz.js"></script>
 
 
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -160,7 +185,7 @@
 </ul></li>
 <li class="chapter" data-level="5.3" data-path="lesson-05-robust-searches.html"><a href="lesson-05-robust-searches.html#class-materials"><i class="fa fa-check"></i><b>5.3</b> Class materials</a></li>
 <li class="chapter" data-level="5.4" data-path="lesson-05-robust-searches.html"><a href="lesson-05-robust-searches.html#digital-materials"><i class="fa fa-check"></i><b>5.4</b> Digital materials</a></li>
-<li class="chapter" data-level="5.5" data-path="lesson-04-sustainable-academic-writing.html"><a href="lesson-04-sustainable-academic-writing.html#reference-materials"><i class="fa fa-check"></i><b>5.5</b> Reference Materials</a></li>
+<li class="chapter" data-level="5.5" data-path="lesson-05-robust-searches.html"><a href="lesson-05-robust-searches.html#reference-materials-1"><i class="fa fa-check"></i><b>5.5</b> Reference Materials</a></li>
 <li class="chapter" data-level="5.6" data-path="lesson-05-robust-searches.html"><a href="lesson-05-robust-searches.html#HWL05"><i class="fa fa-check"></i><b>5.6</b> Homework</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html"><i class="fa fa-check"></i><b>6</b> Lesson 06: Webscraping</a>
@@ -268,7 +293,7 @@
 </div>
 <div id="additional-functionality-plug-ins" class="section level3" number="1.2.3">
 <h3><span class="header-section-number">1.2.3</span> Additional Functionality: Plug-Ins</h3>
-<p>There is a variety of third-party plugins that you can add to Zotero for additional functionality. The list of plugins can be found at <a href="https://www.zotero.org/support/plugins" class="uri">https://www.zotero.org/support/plugins</a>. To install a plugin, you need to download its <code>.xpi</code> file to your computer. Then, in Zotero, click “Tools → Add-Ons,” then drag the <code>.xpi</code> for the plugin onto the Add-Ons window that opens. Two plugins will be of particular interest to us: <code>Zotfile</code> and <code>BetterBibTeX</code>.</p>
+<p>There is a variety of third-party plugins that you can add to Zotero for additional functionality. The list of plugins can be found at <a href="https://www.zotero.org/support/plugins" class="uri">https://www.zotero.org/support/plugins</a>. To install a plugin, you need to download its <code>.xpi</code> file to your computer. Then, in Zotero, click “Tools → Add-Ons”, then drag the <code>.xpi</code> for the plugin onto the Add-Ons window that opens. Two plugins will be of particular interest to us: <code>Zotfile</code> and <code>BetterBibTeX</code>.</p>
 </div>
 <div id="zotfile" class="section level3" number="1.2.4">
 <h3><span class="header-section-number">1.2.4</span> Zotfile</h3>
@@ -328,7 +353,6 @@
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -347,6 +371,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "github"]
 },
 "fontsettings": {
@@ -367,6 +392,10 @@ gitbook.start({
 "text": null
 },
 "download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "section",
 "scroll_highlight": true
@@ -374,7 +403,6 @@ gitbook.start({
 "toolbar": {
 "position": "fixed"
 },
-"search": true,
 "info": true
 });
 });

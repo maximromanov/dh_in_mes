@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>4 Lesson 04: Sustainable Academic Writing | Digital Humanities in Middle Eastern Studies</title>
   <meta name="description" content="This is a collection of relevant materials for the class ‘57-525 S: Digital Humanities in Middle East Studies — Introduction to Algorithmic Analysis’ (WS2021), offered at the University of Hamburg (Afrika-Asien Institut) and taught by Maxim G. Romanov" />
-  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="4 Lesson 04: Sustainable Academic Writing | Digital Humanities in Middle Eastern Studies" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Maxim G. Romanov" />
 
 
-<meta name="date" content="2021-11-22" />
+<meta name="date" content="2021-11-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +33,9 @@
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 <link rel="prev" href="lesson-03-version-control.html"/>
 <link rel="next" href="lesson-05-robust-searches.html"/>
-<script src="libs/header-attrs-2.7/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,13 +51,37 @@
 
 
 
-
-<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
 <script src="libs/viz-1.8.2/viz.js"></script>
 <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
 <script src="libs/grViz-binding-1.0.6.1/grViz.js"></script>
 
 
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -160,7 +185,7 @@
 </ul></li>
 <li class="chapter" data-level="5.3" data-path="lesson-05-robust-searches.html"><a href="lesson-05-robust-searches.html#class-materials"><i class="fa fa-check"></i><b>5.3</b> Class materials</a></li>
 <li class="chapter" data-level="5.4" data-path="lesson-05-robust-searches.html"><a href="lesson-05-robust-searches.html#digital-materials"><i class="fa fa-check"></i><b>5.4</b> Digital materials</a></li>
-<li class="chapter" data-level="5.5" data-path="lesson-04-sustainable-academic-writing.html"><a href="lesson-04-sustainable-academic-writing.html#reference-materials"><i class="fa fa-check"></i><b>5.5</b> Reference Materials</a></li>
+<li class="chapter" data-level="5.5" data-path="lesson-05-robust-searches.html"><a href="lesson-05-robust-searches.html#reference-materials-1"><i class="fa fa-check"></i><b>5.5</b> Reference Materials</a></li>
 <li class="chapter" data-level="5.6" data-path="lesson-05-robust-searches.html"><a href="lesson-05-robust-searches.html#HWL05"><i class="fa fa-check"></i><b>5.6</b> Homework</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html"><i class="fa fa-check"></i><b>6</b> Lesson 06: Webscraping</a>
@@ -216,8 +241,8 @@
 <li><code>markdown</code></li>
 <li>Obsidian (<a href="https://obsidian.md/" class="uri">https://obsidian.md/</a>)</li>
 </ul>
-<div id="htmlwidget-59d00081f3789d81ea94" style="width:672px;height:600px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-59d00081f3789d81ea94">{"x":{"diagram":"\ndigraph writing_cycle {\n\n  # a \"graph\" statement\n  graph [overlap = false, fontsize = 10, rankdir = TB]\n\n  # several \"node\" statements\n  node [shape = box,\n        fontname = Baskerville,\n        fontsize = 10,\n        style = rounded,\n        penwidth = 0.1]\n  bibtex [label = \"bibTex bibliography\"]\n  markdown [shape=box, style=filled, fillcolor=grey50, fontcolor=white, fontname=\"courier-bold\", label = \"textfile in markdown\"] ;\n  zotero[label = \"Zotero\"]\n  pandoc[label=\"pandoc engine\"]\n  style[label=\"citation style\"]\n  latex[label=\"TeX engine\"]\n  html[label=\"HTML\"]\n  doc[label=\"MS Word\"]\n  pdf[label=\"PDF\"]\n  \n  \n  zotero->bibtex; bibtex->markdown; bibtex->pandoc;\n  markdown->pandoc; style->pandoc;\n  pandoc->html; pandoc->doc; pandoc->latex->pdf;\n\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-94497d1606bcc352e07c" style="width:672px;height:600px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-94497d1606bcc352e07c">{"x":{"diagram":"\ndigraph writing_cycle {\n\n  # a \"graph\" statement\n  graph [overlap = false, fontsize = 10, rankdir = TB]\n\n  # several \"node\" statements\n  node [shape = box,\n        fontname = Baskerville,\n        fontsize = 10,\n        style = rounded,\n        penwidth = 0.1]\n  bibtex [label = \"bibTex bibliography\"]\n  markdown [shape=box, style=filled, fillcolor=grey50, fontcolor=white, fontname=\"courier-bold\", label = \"textfile in markdown\"] ;\n  zotero[label = \"Zotero\"]\n  pandoc[label=\"pandoc engine\"]\n  style[label=\"citation style\"]\n  latex[label=\"TeX engine\"]\n  html[label=\"HTML\"]\n  doc[label=\"MS Word\"]\n  pdf[label=\"PDF\"]\n  \n  \n  zotero->bibtex; bibtex->markdown; bibtex->pandoc;\n  markdown->pandoc; style->pandoc;\n  pandoc->html; pandoc->doc; pandoc->latex->pdf;\n\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="class-notes" class="section level2" number="4.2">
 <h2><span class="header-section-number">4.2</span> Class Notes</h2>
@@ -246,8 +271,8 @@ pandoc -f markdown -t epub -o main.epub --citeproc main.md
 pandoc -f markdown -t latex -o main.pdf --citeproc main.md</code></pre>
 <p><strong>Comment:</strong></p>
 <ul>
-<li><code>-f</code> means “convert <code>from</code> a specific format.”</li>
-<li><code>-t</code> means “convert <code>to</code> a specific format.”</li>
+<li><code>-f</code> means “convert <code>from</code> a specific format”.</li>
+<li><code>-t</code> means “convert <code>to</code> a specific format”.</li>
 </ul>
 <p>Thus, the whole command (say, the first one) reads as follows: <code>pandoc converts from (-f) markdown to (-t) latex, then outputs (-o) main.pdf, to which a ‘filter’ that processes citations (--filter pandoc-citeproc) is applied; and the file to which this all is applied is main.md</code>.</p>
 </div>
@@ -257,9 +282,9 @@ pandoc -f markdown -t latex -o main.pdf --citeproc main.md</code></pre>
 </div>
 <div id="zettelkasten-with-obsidian" class="section level2" number="4.5">
 <h2><span class="header-section-number">4.5</span> Zettelkasten with Obsidian</h2>
-<p>One of the most useful pieces of software for the purpose of analytical writing is Obsidian (<a href="https://obsidian.md/" class="uri">https://obsidian.md/</a>), which is available for all major operating systems. The developers of Obsidian call is “a powerful knowledge base on top of a local folder of plain text markdown files.” The design of the program gives you the complete control over your data as there are no proprietary formats which may make your data inaccessible and no complicated technologies that hide your data in difficult-to-access formats (like, MySQL, for example).</p>
-<p>The main power of Obsidian is that it allows you to connect your notes into a network of information, which makes it nearly perfect for complex analytical writing projects where you want to have an option to <em>branch</em> your writing into multiple directions and then reassemble your main argument by including and excluding parts of these branches. This method of academic writing has been most famously formalized by the German sociologist <a href="https://en.wikipedia.org/wiki/Niklas_Luhmann">Niklas Luhmann</a>, who came up with a paper-based slip-box system (<em>Zettelkasten</em>) which he used to produce some 50 books and 550 articles <span class="citation">(<a href="references.html#ref-SchmidtNiklas2016" role="doc-biblioref">Schmidt 2016, 289</a>)</span>.</p>
-<p>There are lots of materials written about the <em>Zettelkasten</em> system—many of them, for obvious reasons, are in German. One of the best expositions of the method is Sönke Ahrens’s <em>How to Take Smart Notes: One Simple Technique to Boost Writing, Learning and Thinking – for Students, Academics and Nonfiction Book Writers</em>, which is an English version of his <em>Das Zettelkasten-Prinzip: Erfolgreich wissenschaftlich Schreiben und Studieren mit effektiven Notizen</em>. <span class="citation">(See: <a href="references.html#ref-AhrensHow2017" role="doc-biblioref">Ahrens 2017</a>; for more: <a href="references.html#ref-LuhmannKommunikation1982" role="doc-biblioref">Luhmann 1982</a>; <a href="references.html#ref-SchmidtNachlass2014" role="doc-biblioref">Schmidt 2014</a>, <a href="references.html#ref-SchmidtNiklas2018" role="doc-biblioref">2018</a>, <a href="references.html#ref-SchmidtNiklas2016" role="doc-biblioref">2016</a>)</span>. There are several videos on YouTube, where Sönke Ahrens discusses his book in great details (for example, <a href="https://www.youtube.com/watch?v=kXnR7qX3BDc">this</a> and <a href="https://www.youtube.com/watch?v=nPOI4f7yCag">this</a>).</p>
+<p>One of the most useful pieces of software for the purpose of analytical writing is Obsidian (<a href="https://obsidian.md/" class="uri">https://obsidian.md/</a>), which is available for all major operating systems. The developers of Obsidian call is “a powerful knowledge base on top of a local folder of plain text markdown files”. The design of the program gives you the complete control over your data as there are no proprietary formats which may make your data inaccessible and no complicated technologies that hide your data in difficult-to-access formats (like, MySQL, for example).</p>
+<p>The main power of Obsidian is that it allows you to connect your notes into a network of information, which makes it nearly perfect for complex analytical writing projects where you want to have an option to <em>branch</em> your writing into multiple directions and then reassemble your main argument by including and excluding parts of these branches. This method of academic writing has been most famously formalized by the German sociologist <a href="https://en.wikipedia.org/wiki/Niklas_Luhmann">Niklas Luhmann</a>, who came up with a paper-based slip-box system (<em>Zettelkasten</em>) which he used to produce some 50 books and 550 articles <span class="citation">(<a href="#ref-SchmidtNiklas2016" role="doc-biblioref">Schmidt 2016, 289</a>)</span>.</p>
+<p>There are lots of materials written about the <em>Zettelkasten</em> system—many of them, for obvious reasons, are in German. One of the best expositions of the method is Sönke Ahrens’s <em>How to Take Smart Notes: One Simple Technique to Boost Writing, Learning and Thinking – for Students, Academics and Nonfiction Book Writers</em>, which is an English version of his <em>Das Zettelkasten-Prinzip: Erfolgreich wissenschaftlich Schreiben und Studieren mit effektiven Notizen</em>. <span class="citation">(See: <a href="#ref-AhrensHow2017" role="doc-biblioref">Ahrens 2017</a>; for more: <a href="#ref-LuhmannKommunikation1982" role="doc-biblioref">Luhmann 1982</a>; <a href="#ref-SchmidtNachlass2014" role="doc-biblioref">Schmidt 2014</a>, <a href="#ref-SchmidtNiklas2018" role="doc-biblioref">2018</a>, <a href="#ref-SchmidtNiklas2016" role="doc-biblioref">2016</a>)</span>. There are several videos on YouTube, where Sönke Ahrens discusses his book in great details (for example, <a href="https://www.youtube.com/watch?v=kXnR7qX3BDc">this</a> and <a href="https://www.youtube.com/watch?v=nPOI4f7yCag">this</a>).</p>
 <p><em>How to</em> with/in Obsidian (<em>a quick demo</em>):</p>
 <ul>
 <li>using markdown;</li>
@@ -442,6 +467,24 @@ in the literature.
 
 </div>
 </div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-AhrensHow2017" class="csl-entry">
+Ahrens, Sönke. 2017. <em>How to Take Smart Notes: One Simple Technique to Boost Writing, Learning and Thinking: For Students, Academics and Nonfiction Book Writers</em>. <span>North Charleston, <span>SC</span></span>: <span>CreateSpace</span>.
+</div>
+<div id="ref-LuhmannKommunikation1982" class="csl-entry">
+Luhmann, Niklas. 1982. <span>“Kommunikation mit Zettelkiisten.”</span> In <em>Öffentliche Meinung und sozialer Wandel: Für Elisabeth Noelle-Neumann = Public opinion and social change</em>, edited by Horst Baier and Elisabeth Noelle-Neumann, 222–28. <span>Opladen</span>: <span>Westdeutscher Verlag</span>.
+</div>
+<div id="ref-SchmidtNachlass2014" class="csl-entry">
+Schmidt, Johannes F. K. 2014. <span>“Der Nachlass Niklas Luhmanns – eine erste Sichtung: Zettelkasten und Manuskripte.”</span> <em>Soziale Systeme</em> 19 (1): 167–83. <a href="https://doi.org/10.1515/sosys-2014-0111">https://doi.org/10.1515/sosys-2014-0111</a>.
+</div>
+<div id="ref-SchmidtNiklas2016" class="csl-entry">
+———. 2016. <span>“Niklas <span>Luhmann</span>’s <span>Card Index</span>: <span>Thinking Tool</span>, <span>Communication Partner</span>, <span>Publication Machine</span>.”</span> In <em>Forgetting <span>Machines</span>: <span>Knowledge Management Evolution</span> in <span>Early Modern Europe</span></em>, 287–311. <span>Leiden</span>: <span>Brill</span>. <a href="https://doi.org/10.1163/9789004325258_014">https://doi.org/10.1163/9789004325258_014</a>.
+</div>
+<div id="ref-SchmidtNiklas2018" class="csl-entry">
+———. 2018. <span>“Niklas <span>Luhmann</span>’s <span>Card Index</span>: <span>The Fabrication</span> of <span>Serendipity</span>.”</span> <em>Sociologica</em> 12 (1, 1): 53–60. <a href="https://doi.org/10.6092/issn.1971-8853/8350">https://doi.org/10.6092/issn.1971-8853/8350</a>.
+</div>
+</div>
             </section>
 
           </div>
@@ -452,7 +495,6 @@ in the literature.
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -471,6 +513,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "github"]
 },
 "fontsettings": {
@@ -491,6 +534,10 @@ gitbook.start({
 "text": null
 },
 "download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "section",
 "scroll_highlight": true
@@ -498,7 +545,6 @@ gitbook.start({
 "toolbar": {
 "position": "fixed"
 },
-"search": true,
 "info": true
 });
 });
