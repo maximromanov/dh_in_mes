@@ -75,7 +75,7 @@ sample-commands
 issues-with-wget-on-windows
 issues-with-wget-on-mac
 a-sidenote-on-issues-in-general
-examples-for-downloading
+practicing-scraping
 practice-1-very-easy
 practice-2-easy-ish
 practice-3-aka-homework-a-tiny-bit-tricky

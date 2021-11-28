@@ -75,7 +75,9 @@ It may so happen that `WGET` will not work as intended with the homework assignm
 
 Keep in mind that one of the most important things that you need to learn in this course is that there are multiple solutions to most of the problems and tasks that you may face and the most common way to solve your problem is to break is down into smaller tasks (remember, there was a detailed discussion of this in Zelle’s book), and then look for efficient solutions to each step. No matter how advanced you are, “googling” will be the major way of finding suitable solutions.
 
-## Examples for Downloading
+## Practicing Scraping
+
+The following sections give you some examples of links that you are most likely to encounter in real life. Your task is to figure out how to prepare lists of links (URLs) for downloading with `WGET`. Your first step will be to look under the hood of the current page, which you can do right clicking on the page and selecting something that looks like “View page source” (in Chrome or Edge) or “Show Page Source” (in Safari; you will need to enable “Show Develop menu in menu bar” in Preferences > Advanced). Now, looking at the HTML code of the page you can find the actual URLs, which you can then extract from the HTML code with regular expressions (one thing you can do is to `copy/paste` the entire code of the page into a text editor that supports regular expressions---like *Sublime Text*). 
 
 ## Practice 1: very easy
 
