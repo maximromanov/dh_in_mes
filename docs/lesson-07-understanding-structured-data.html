@@ -289,7 +289,7 @@ div.csl-indent {
 <li class="chapter" data-level="7.2.4" data-path="lesson-07-understanding-structured-data.html"><a href="lesson-07-understanding-structured-data.html#installing-libraries-for-python"><i class="fa fa-check"></i><b>7.2.4</b> Installing libraries for <code>python</code></a></li>
 </ul></li>
 <li class="chapter" data-level="7.3" data-path="lesson-07-understanding-structured-data.html"><a href="lesson-07-understanding-structured-data.html#in-class-practice-and-homework"><i class="fa fa-check"></i><b>7.3</b> In-Class Practice (and homework)</a></li>
-<li class="chapter" data-level="7.4" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html#HWL06"><i class="fa fa-check"></i><b>7.4</b> Homework</a></li>
+<li class="chapter" data-level="7.4" data-path="lesson-07-understanding-structured-data.html"><a href="lesson-07-understanding-structured-data.html#HWL07"><i class="fa fa-check"></i><b>7.4</b> Homework</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="appendix.html"><a href="appendix.html"><i class="fa fa-check"></i>Appendix</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
@@ -484,20 +484,29 @@ BALANSIYYA_004W394N_R   [&#39;ara&#39;, &#39;eng&#39;]  بلنسية  بلنسي
 BALANSIYYA_004W394N_S   [&#39;ara&#39;, &#39;eng&#39;]  بلنسية  بلنسية  Balansiyya  Balansiyyaŧ Balansiyyaŧ Andalus_RE  cornuData   towns   [-0.41486, 39.43516]
 SHAQR_004W391N_S    [&#39;ara&#39;, &#39;eng&#39;]  الشقر   الشقر   al-Shaqr    al-Šaqr al-Šaqr Andalus_RE  cornuData   villages    [-0.43734, 39.16483]
 QANT_004W383N_S [&#39;ara&#39;, &#39;eng&#39;]  قانت    قانت    Qant    Qānt    Qānt    Andalus_RE  cornuData   towns   [-0.47061, 38.34618]</code></pre>
-<p>Let’s try to convert this <a href="./files/settlements.csv"><code>bibTex</code> file</a> into other formats. Before we begin, however, let’s break down this task into smaller tasks and organize them together in some form of <code>pseudocode</code>.</p>
+<p>You need to convert it into:</p>
 <ul>
-<li>Which of the above-discussed formats would be most suitable? Why yes, why no?</li>
+<li>XML (here, you will need to come up with an format for your XML; use the very first example given in the lesson as your template);</li>
+<li>CSV/TSV;</li>
+<li>JSON;</li>
+<li>YML;</li>
+</ul>
+<p>Suggestions:</p>
+<ul>
+<li>start with some pseudo code: what are the steps into which you can break this operation?</li>
+<li>using a <code>dictionary</code> may help a lot;</li>
+<li>for your solutions, you are welcome to look for “easy” ways to convert these files (like online converters that convert from one format into another) — add those into your solution. But you also need to write scripts that convert from one format into another.</li>
 </ul>
 </div>
-<div id="HWL06" class="section level2" number="7.4">
+<div id="HWL07" class="section level2" number="7.4">
 <h2><span class="header-section-number">7.4</span> Homework</h2>
 <ul>
-<li>Take your bibliography in <code>bibTeX</code> format and convert it into: <code>csv</code>/<code>tsv</code>, <code>json</code>, and <code>yaml</code>;
+<li>Finish the conversion task;
 <ul>
 <li><em>Hint</em>: you should load your data into a <code>dictionary</code>;</li>
-<li>additionally, you might want to create (manually) a dictionary of <code>bibTeX</code> field: some of the fields are named differently, while they contain the same type of information — you want to identify those fields and unify them for your output format, which will improve the quality of your data (the process usually called <em>normalization</em>); <em>hint:</em> in order to figure out how to identify those fields, you may want to look into the <em>Word Frequency</em> program in Chapter 11. You can use this approach to identify all fields and count their frequencies, which will help you to determine which fields to keep and which to normalize (i.e., merge low-frequency fields into high-frequency fields).</li>
+<li>upload your results together with scripts to your homework github repository;</li>
+<li>send me an email with a link to these files</li>
 </ul></li>
-<li>upload your results together with scripts to your homework github repository</li>
 </ul>
 <p><strong>Python</strong></p>
 <ul>
@@ -515,10 +524,9 @@ QANT_004W383N_S [&#39;ara&#39;, &#39;eng&#39;]  قانت    قانت    Qant    
 <li>Homework assignment must be submitted by the beginning of the next class;</li>
 <li>Now, that you know how to use GitHub, you will be submitting your homework pushing it to github:
 <ul>
-<li>Create a relevant subfoler in your <code>HW070172</code> repository and place your HW files there; push them to your GitHub account;
+<li>Create a relevant subfolder in your repository and place your HW files there; push them to your GitHub account;
 <ul>
 <li>Email me the link to your repository with a short message (Something like: <em>I have completed homework for Lesson 3, which is uploaded to my repository … in subfolder <code>L03</code></em>)</li>
-<li>In the subject of your email, please, add the following: <code>CCXXXXX-LXX-HW-YourLastName-YourMatriculationNumber</code>, where <code>CCXXXXX</code> is the numeric code of the course; <code>LXX</code> is the lesson for which the homework is being submitted; <code>YourLastName</code> is your last name, and <code>YourMatriculationNumber</code> is your matriculation number.</li>
 </ul></li>
 </ul></li>
 </ul>

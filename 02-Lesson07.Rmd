@@ -215,18 +215,25 @@ SHAQR_004W391N_S	['ara', 'eng']	الشقر	الشقر	al-Shaqr	al-Šaqr	al-Šaqr
 QANT_004W383N_S	['ara', 'eng']	قانت	قانت	Qant	Qānt	Qānt	Andalus_RE	cornuData	towns	[-0.47061, 38.34618]
 ```
 
+You need to convert it into:
 
+- XML (here, you will need to come up with an format for your XML; use the very first example given in the lesson as your template);
+- CSV/TSV;
+- JSON;
+- YML;
 
-Let's try to convert this [`bibTex` file](./files/settlements.csv) into other formats. Before we begin, however, let's break down this task into smaller tasks and organize them together in some form of `pseudocode`.
+Suggestions:
 
-- Which of the above-discussed formats would be most suitable? Why yes, why no?
+- start with some pseudo code: what are the steps into which you can break this operation?
+- using a `dictionary` may help a lot;
+- for your solutions, you are welcome to look for "easy" ways to convert these files (like online converters that convert from one format into another) --- add those into your solution. But you also need to write scripts that convert from one format into another. 
 
-## Homework{#HWL06}
+## Homework{#HWL07}
 
-- Take your bibliography in `bibTeX` format and convert it into: `csv`/`tsv`, `json`, and `yaml`;
+- Finish the conversion task;
   - *Hint*: you should load your data into a `dictionary`;
-  - additionally, you might want to create (manually) a dictionary of `bibTeX` field: some of the fields are named differently, while they contain the same type of information --- you want to identify those fields and unify them for your output format, which will improve the quality of your data (the process usually called *normalization*); *hint:* in order to figure out how to identify those fields, you may want to look into the *Word Frequency* program in Chapter 11. You can use this approach to identify all fields and count their frequencies, which will help you to determine which fields to keep and which to normalize (i.e., merge low-frequency fields into high-frequency fields).
-- upload your results together with scripts to your homework github repository
+  - upload your results together with scripts to your homework github repository;
+  - send me an email with a link to these files
 
 **Python**
 
@@ -241,7 +248,6 @@ Let's try to convert this [`bibTex` file](./files/settlements.csv) into other fo
 
 * Homework assignment must be submitted by the beginning of the next class;
 * Now, that you know how to use GitHub, you will be submitting your homework pushing it to github:
-  * Create a relevant subfoler in your `HW070172` repository and place your HW files there; push them to your GitHub account;
+  * Create a relevant subfolder in your repository and place your HW files there; push them to your GitHub account;
 	* Email me the link to your repository with a short message (Something like: *I have completed homework for Lesson 3, which is uploaded to my repository ... in subfolder `L03`*)
-	* In the subject of your email, please, add the following: `CCXXXXX-LXX-HW-YourLastName-YourMatriculationNumber`, where `CCXXXXX` is the numeric code of the course; `LXX` is the lesson for which the homework is being submitted; `YourLastName` is your last name, and `YourMatriculationNumber` is your matriculation number.
 	
