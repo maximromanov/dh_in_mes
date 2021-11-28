@@ -1,0 +1,4 @@
+# Lesson 08
+
+- Lesson 07, we discuss different formats
+- Lesson 08, we "decipher" the Dispatch XML, and then extract and convert into some machine-readable format; let's discuss which format would be better and write a converter into that format; 
