@@ -74,6 +74,7 @@ class
 sample-commands
 issues-with-wget-on-windows
 issues-with-wget-on-mac
+a-sidenote-on-issues-in-general
 examples-for-downloading
 practice-1-very-easy
 practice-2-easy-ish

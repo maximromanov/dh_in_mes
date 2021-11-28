@@ -55,9 +55,12 @@ https://maximromanov.github.io/dh_in_mes/files/articles/1860-11-12_article_03.tx
 
 As we have run into a number of issues with trying to run `WGET` on Windows, here are some steps that will help to run it smoothly:
 
+- first of all, `WGET` does not seem to play well with `Powershell`; it does work without any problems via `Command Prompt` (if your Windows “speaks” German, it is called *Eingabeaufforderung*; but if you search for `Command Prompt`, you should still be able to find it.). It also works without any issues via `Git-Bash`. The following steps will make it easier to use with both `Command Prompt` and `Git-Bash`.
 - download the `wget.exe` file (from here: <https://eternallybored.org/misc/wget/>);
-- copy/paste it into the `C:\Windows\System32` folder (`C:\Windows\System32` is a part of the so-called `PATH` --- a series of paths which all Windows command line *check*);
+- copy/paste it into the `C:\Windows\System32` folder (`C:\Windows\System32` is a part of the so-called `PATH` --- a series of paths which all Windows command line tools *check*);
 - now, all the commands should be working as expected;
+
+**NB:** There is an alternative to `WGET` on Windows `Powershell`. Here is a detailed tutorial: https://adamtheautomator.com/powershell-download-file/.
 
 ### Issues with `WGET` on Mac
 
@@ -67,6 +70,10 @@ It may so happen that `WGET` will not work as intended with the homework assignm
 - after that you can start `bash` by running `bash` on the command line; the prompt (the beginning of the command line where you type in your commands) should change into something like: `bash-5.1$`
 - now you can go to a folder where you want to save your downloaded results and run `WGET`;
 - **NB:** you will need `bash` only for this step; after you restart the `Terminal`, you will be back to the default `zsh` (you can also run `exit` command to quit `bash` and return to `zsh`).
+
+## A sidenote on issues in general
+
+Keep in mind that one of the most important things that you need to learn in this course is that there are multiple solutions to most of the problems and tasks that you may face and the most common way to solve your problem is to break is down into smaller tasks (remember, there was a detailed discussion of this in Zelle’s book), and then look for efficient solutions to each step. No matter how advanced you are, “googling” will be the major way of finding suitable solutions.
 
 ## Examples for Downloading
 

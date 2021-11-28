@@ -24,7 +24,7 @@
 <meta name="author" content="Maxim G. Romanov" />
 
 
-<meta name="date" content="2021-11-24" />
+<meta name="date" content="2021-11-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -198,13 +198,14 @@ div.csl-indent {
 <li class="chapter" data-level="6.4.1" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html#issues-with-wget-on-windows"><i class="fa fa-check"></i><b>6.4.1</b> Issues with <code>WGET</code> on Windows</a></li>
 <li class="chapter" data-level="6.4.2" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html#issues-with-wget-on-mac"><i class="fa fa-check"></i><b>6.4.2</b> Issues with <code>WGET</code> on Mac</a></li>
 </ul></li>
-<li class="chapter" data-level="6.5" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html#examples-for-downloading"><i class="fa fa-check"></i><b>6.5</b> Examples for Downloading</a></li>
-<li class="chapter" data-level="6.6" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html#practice-1-very-easy"><i class="fa fa-check"></i><b>6.6</b> Practice 1: very easy</a></li>
-<li class="chapter" data-level="6.7" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html#practice-2-easy-ish"><i class="fa fa-check"></i><b>6.7</b> Practice 2: easy-ish</a></li>
-<li class="chapter" data-level="6.8" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html#practice-3-aka-homework-a-tiny-bit-tricky"><i class="fa fa-check"></i><b>6.8</b> Practice 3 (aka <em>Homework</em>): a tiny-bit tricky</a></li>
-<li class="chapter" data-level="6.9" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html#RML06"><i class="fa fa-check"></i><b>6.9</b> Reference Materials</a></li>
-<li class="chapter" data-level="6.10" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html#HWL06"><i class="fa fa-check"></i><b>6.10</b> Homework</a></li>
-<li class="chapter" data-level="6.11" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html#SHL06"><i class="fa fa-check"></i><b>6.11</b> Submitting homework</a></li>
+<li class="chapter" data-level="6.5" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html#a-sidenote-on-issues-in-general"><i class="fa fa-check"></i><b>6.5</b> A sidenote on issues in general</a></li>
+<li class="chapter" data-level="6.6" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html#examples-for-downloading"><i class="fa fa-check"></i><b>6.6</b> Examples for Downloading</a></li>
+<li class="chapter" data-level="6.7" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html#practice-1-very-easy"><i class="fa fa-check"></i><b>6.7</b> Practice 1: very easy</a></li>
+<li class="chapter" data-level="6.8" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html#practice-2-easy-ish"><i class="fa fa-check"></i><b>6.8</b> Practice 2: easy-ish</a></li>
+<li class="chapter" data-level="6.9" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html#practice-3-aka-homework-a-tiny-bit-tricky"><i class="fa fa-check"></i><b>6.9</b> Practice 3 (aka <em>Homework</em>): a tiny-bit tricky</a></li>
+<li class="chapter" data-level="6.10" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html#RML06"><i class="fa fa-check"></i><b>6.10</b> Reference Materials</a></li>
+<li class="chapter" data-level="6.11" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html#HWL06"><i class="fa fa-check"></i><b>6.11</b> Homework</a></li>
+<li class="chapter" data-level="6.12" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html#SHL06"><i class="fa fa-check"></i><b>6.12</b> Submitting homework</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="appendix.html"><a href="appendix.html"><i class="fa fa-check"></i>Appendix</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
@@ -285,10 +286,12 @@ https://maximromanov.github.io/dh_in_mes/files/articles/1860-11-12_article_03.tx
 <h3><span class="header-section-number">6.4.1</span> Issues with <code>WGET</code> on Windows</h3>
 <p>As we have run into a number of issues with trying to run <code>WGET</code> on Windows, here are some steps that will help to run it smoothly:</p>
 <ul>
+<li>first of all, <code>WGET</code> does not seem to play well with <code>Powershell</code>; it does work without any problems via <code>Command Prompt</code> (if your Windows “speaks” German, it is called <em>Eingabeaufforderung</em>; but if you search for <code>Command Prompt</code>, you should still be able to find it.). It also works without any issues via <code>Git-Bash</code>. The following steps will make it easier to use with both <code>Command Prompt</code> and <code>Git-Bash</code>.</li>
 <li>download the <code>wget.exe</code> file (from here: <a href="https://eternallybored.org/misc/wget/" class="uri">https://eternallybored.org/misc/wget/</a>);</li>
-<li>copy/paste it into the <code>C:\Windows\System32</code> folder (<code>C:\Windows\System32</code> is a part of the so-called <code>PATH</code> — a series of paths which all Windows command line <em>check</em>);</li>
+<li>copy/paste it into the <code>C:\Windows\System32</code> folder (<code>C:\Windows\System32</code> is a part of the so-called <code>PATH</code> — a series of paths which all Windows command line tools <em>check</em>);</li>
 <li>now, all the commands should be working as expected;</li>
 </ul>
+<p><strong>NB:</strong> There is an alternative to <code>WGET</code> on Windows <code>Powershell</code>. Here is a detailed tutorial: <a href="https://adamtheautomator.com/powershell-download-file/" class="uri">https://adamtheautomator.com/powershell-download-file/</a>.</p>
 </div>
 <div id="issues-with-wget-on-mac" class="section level3" number="6.4.2">
 <h3><span class="header-section-number">6.4.2</span> Issues with <code>WGET</code> on Mac</h3>
@@ -301,11 +304,15 @@ https://maximromanov.github.io/dh_in_mes/files/articles/1860-11-12_article_03.tx
 </ul>
 </div>
 </div>
-<div id="examples-for-downloading" class="section level2" number="6.5">
-<h2><span class="header-section-number">6.5</span> Examples for Downloading</h2>
+<div id="a-sidenote-on-issues-in-general" class="section level2" number="6.5">
+<h2><span class="header-section-number">6.5</span> A sidenote on issues in general</h2>
+<p>Keep in mind that one of the most important things that you need to learn in this course is that there are multiple solutions to most of the problems and tasks that you may face and the most common way to solve your problem is to break is down into smaller tasks (remember, there was a detailed discussion of this in Zelle’s book), and then look for efficient solutions to each step. No matter how advanced you are, “googling” will be the major way of finding suitable solutions.</p>
 </div>
-<div id="practice-1-very-easy" class="section level2" number="6.6">
-<h2><span class="header-section-number">6.6</span> Practice 1: very easy</h2>
+<div id="examples-for-downloading" class="section level2" number="6.6">
+<h2><span class="header-section-number">6.6</span> Examples for Downloading</h2>
+</div>
+<div id="practice-1-very-easy" class="section level2" number="6.7">
+<h2><span class="header-section-number">6.7</span> Practice 1: very easy</h2>
 <ul>
 <li><a href="https://maximromanov.github.io/dh_in_mes/files/articles/1860-11-12_article_01.txt">Article 01</a></li>
 <li><a href="https://maximromanov.github.io/dh_in_mes/files/articles/1860-11-12_article_02.txt">Article 02</a></li>
@@ -341,8 +348,8 @@ https://maximromanov.github.io/dh_in_mes/files/articles/1860-11-12_article_03.tx
 * [Article 15](./files/articles/1860-11-12_article_15.txt)
 -->
 </div>
-<div id="practice-2-easy-ish" class="section level2" number="6.7">
-<h2><span class="header-section-number">6.7</span> Practice 2: easy-ish</h2>
+<div id="practice-2-easy-ish" class="section level2" number="6.8">
+<h2><span class="header-section-number">6.8</span> Practice 2: easy-ish</h2>
 <ul>
 <li><a href="./files/articles/1860-11-12_article_16.txt">Article 16</a></li>
 <li><a href="./files/articles/1860-11-12_article_17.txt">Article 17</a></li>
@@ -370,14 +377,14 @@ https://maximromanov.github.io/dh_in_mes/files/articles/1860-11-12_article_03.tx
 <li><a href="./files/articles/1860-11-12_article_39.txt">Article 39</a></li>
 </ul>
 </div>
-<div id="practice-3-aka-homework-a-tiny-bit-tricky" class="section level2" number="6.8">
-<h2><span class="header-section-number">6.8</span> Practice 3 (aka <em>Homework</em>): a tiny-bit tricky</h2>
+<div id="practice-3-aka-homework-a-tiny-bit-tricky" class="section level2" number="6.9">
+<h2><span class="header-section-number">6.9</span> Practice 3 (aka <em>Homework</em>): a tiny-bit tricky</h2>
 <ul>
 <li>download issues of “Richmond Times Dispatch” (Years 1860-1865, only!), which are available at: <a href="http://www.perseus.tufts.edu/hopper/collection?collection=Perseus:collection:RichTimes" class="uri">http://www.perseus.tufts.edu/hopper/collection?collection=Perseus:collection:RichTimes</a>)</li>
 </ul>
 </div>
-<div id="RML06" class="section level2" number="6.9">
-<h2><span class="header-section-number">6.9</span> Reference Materials</h2>
+<div id="RML06" class="section level2" number="6.10">
+<h2><span class="header-section-number">6.10</span> Reference Materials</h2>
 <ul>
 <li>Milligan, Ian. 2012. “Automated Downloading with Wget.” Programming Historian, June. <a href="https://programminghistorian.org/lessons/automated-downloading-with-wget" class="uri">https://programminghistorian.org/lessons/automated-downloading-with-wget</a>.</li>
 <li>Kurschinski, Kellen. 2013. “Applied Archival Downloading with Wget.” Programming Historian, September. <a href="https://programminghistorian.org/lessons/applied-archival-downloading-with-wget" class="uri">https://programminghistorian.org/lessons/applied-archival-downloading-with-wget</a>.</li>
@@ -385,8 +392,8 @@ https://maximromanov.github.io/dh_in_mes/files/articles/1860-11-12_article_03.tx
 <li>Alternatively, this operation can be done with a Python script: Turkel, William J., and Adam Crymble. 2012. “Downloading Web Pages with Python.” Programming Historian, July. <a href="https://programminghistorian.org/lessons/working-with-web-pages" class="uri">https://programminghistorian.org/lessons/working-with-web-pages</a>.</li>
 </ul>
 </div>
-<div id="HWL06" class="section level2" number="6.10">
-<h2><span class="header-section-number">6.10</span> Homework</h2>
+<div id="HWL06" class="section level2" number="6.11">
+<h2><span class="header-section-number">6.11</span> Homework</h2>
 <ol style="list-style-type: decimal">
 <li>Scraping the “Dispatch”: download issues of “Richmond Times Dispatch” (Years 1860-1865, only!), which are available at: <a href="http://www.perseus.tufts.edu/hopper/collection?collection=Perseus:collection:RichTimes" class="uri">http://www.perseus.tufts.edu/hopper/collection?collection=Perseus:collection:RichTimes</a>)</li>
 <li>In a separate markdown file (to be uloaded with the rest of your homework).</li>
@@ -403,8 +410,8 @@ https://maximromanov.github.io/dh_in_mes/files/articles/1860-11-12_article_03.tx
 <li><strong>Note:</strong> the sequences are somewhat different in Zelle’s textbook and Vierthaler’s videos. I would recommend you to always check Vierthaler’s videos and also check videos which cover topics that you read about in Zelle’s book.</li>
 </ul>
 </div>
-<div id="SHL06" class="section level2" number="6.11">
-<h2><span class="header-section-number">6.11</span> Submitting homework</h2>
+<div id="SHL06" class="section level2" number="6.12">
+<h2><span class="header-section-number">6.12</span> Submitting homework</h2>
 <ul>
 <li>Homework assignment must be submitted by the beginning of the next class;</li>
 <li>Email your homework to the instructor.
