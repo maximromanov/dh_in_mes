@@ -156,7 +156,7 @@ The following sections give you some examples of links that you are most likely 
 ## Homework{#HWL06}
 
 1. Scraping the “Dispatch”: download issues of “Richmond Times Dispatch” (Years 1860-1865, only!), which are available at: <http://www.perseus.tufts.edu/hopper/collection?collection=Perseus:collection:RichTimes>)
-2. In a separate markdown file (to be uloaded with the rest of your homework).
+2. In a separate markdown file, describe your steps of how you completed this task (to be uloaded with the rest of your homework).
 
 **Python**
 
