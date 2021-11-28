@@ -1,0 +1,247 @@
+# Lesson 07: Understanding Structured Data
+
+## Major Data Formats
+
+Doing Digital Humanities practically always means working with structured data of some kind. In most general terms, structured data means some explicit annotation or classification that the machine can understand, and therefore --- effectively use. When we see the word “Berlin”, we are likely to automatically assume that this is the name of the capital of Germany The machine cannot know that, unless there is something else in the data that allows it to figure it out (here, an XML tag): `<settlement country="Germany" type="capital city">Berlin</settlement>` --- from this *annotation* (and its attributes) the machine can be instructed to interpret the string `Berlin` as a *settlement* of the type *capital city* in the country of *Germany*. It is important to understand most common data formats in order to be able to create and generate them as well as to convert between different formats.
+
+When we decide which format we want to work with, we need to consider the following: the ease of working with a given format (manual editing); suitability for specific analytic software; human-friendliness and readability; open vs. proprietary. In general, it does not make any sense to engage in *the format wars* (i.e., one format is better than another); one should rather develop an understanding that almost every format has its use and value in specific contexts or for specific tasks. What we also want is not to stick to a specific format and try to do everything with it and only it, but rather to be able to write scripts with which we can generate data in suitable formats or convert our data from one format into another.
+
+Let's take a look at a simple example in some most common formats.
+
+### XML (*Extensible Markup Language*)
+
+``` xml
+<note>
+  <to>Tove</to>
+  <from>Jani</from>
+  <heading>Reminder</heading>
+  <body>Don’t forget me this weekend!</body>
+</note>
+```
+
+### CSV/TSV (*Comma-Separated Values*/ *Tab-Separated Values*)
+
+```
+to,from,heading,body
+Tove,Jani,Reminder,Don’t forget me this weekend!
+```
+
+``` cs
+to,from,heading,body
+"Tove","Jani","Reminder","Don’t forget me this weekend!"
+```
+
+### JSON (*JavaScript Object Notation*)
+
+``` json
+{
+  "to": "Tove",
+  "from": "Jani",
+  "heading": "Reminder",
+  "body": "Don’t forget me this weekend!"
+}
+```
+
+### YML or YAML (*Yet Another Markup Language* > *YAML Ain't Markup Language*)
+
+``` yml
+to: Tove
+from: Jani
+heading: Reminder
+body: Don’t forget me this weekend
+```
+
+### `BibTeX`: *most common bibliographic format*
+
+We have already used this format in our lesson on sustainable writing. If you take a closer look at the record below, you may see that this format contains lots of valuable information. Most of this we will need for our project.
+
+```bibtex
+@incollection{LuhmannKommunikation1982,
+  title = {Kommunikation mit Zettelkiisten},
+  booktitle = {Öffentliche Meinung und sozialer Wandel: Für Elisabeth Noelle-Neumann = Public opinion and social change},
+  author = {Luhmann, Niklas},
+  editor = {Baier, Horst and Noelle-Neumann, Elisabeth},
+  date = {1982},
+  pages = {222--228},
+  publisher = {{westdt. Verl}},
+  location = {{Opladen}},
+  annotation = {OCLC: 256417947},
+  file = {Absolute/Path/To/PDF/Luhmann 1982 - Kommunikation mit Zettelkiisten.pdf},
+  isbn = {978-3-531-11533-7},
+  langid = {german}
+}
+```
+
+## Larger Examples
+
+<!-- **NB** data example from [here](https://gist.github.com/Miserlou/c5cd8364bf9b2420bb29). -->
+
+In most cases, if you do data analysis, you will need formats that allow you to store multiple items. So, let's take a look at some most commonly used options. (**NB**: In some cases, you may still want to opt for a format that stores a single item per file; this may be the case when single items are rather large and it may make sense to keep them as separate files, especially if you need to work more closely with each item --- ready closely, annotate, edit, etc.)
+
+### `CSV` / `TSV`
+
+```
+city,growth_from_2000_to_2013,latitude,longitude,population,rank,state
+New York,4.8%,40.7127837,-74.0059413,8405837,1,New York
+Los Angeles,4.8%,34.0522342,-118.2436849,3884307,2,California
+Chicago,-6.1%,41.8781136,-87.6297982,2718782,3,Illinois
+```
+
+`TSV` is a better option than a `CSV`, since `TAB` characters are very unlikely to appear in values.
+
+Neither `TSV` not `CSV` are good for preserving *new line characters* (`\n`)---or, in other words, text split into multiple lines. As a workaround, one can convert `\n` into some unlikely-to-occur character combination (for example, `;;;`), which would allow to restore `\n` later , if necessary.
+
+### `JSON`
+
+``` json
+[
+    {
+        "city": "New York", 
+        "growth_from_2000_to_2013": "4.8%", 
+        "latitude": 40.7127837, 
+        "longitude": -74.0059413, 
+        "population": "8405837", 
+        "rank": "1", 
+        "state": "New York"
+    }, 
+    {
+        "city": "Los Angeles", 
+        "growth_from_2000_to_2013": "4.8%", 
+        "latitude": 34.0522342, 
+        "longitude": -118.2436849, 
+        "population": "3884307", 
+        "rank": "2", 
+        "state": "California"
+    }, 
+    {
+        "city": "Chicago", 
+        "growth_from_2000_to_2013": "-6.1%", 
+        "latitude": 41.8781136, 
+        "longitude": -87.6297982, 
+        "population": "2718782", 
+        "rank": "3", 
+        "state": "Illinois"
+    }
+]
+```
+
+
+### `YML`/`YAML`
+
+YAML is often used only for a single set of parameters.
+
+``` yml
+city: New York 
+growth_from_2000_to_2013: 4.8% 
+latitude: 40.7127837 
+longitude: -74.0059413
+population: 8405837 
+rank: 1 
+state: New York
+```
+
+But it can also be used for storage of serialized data. It has advantages of both JSON and CSV: the overall simplicity of the format (no tricky syntax) is similar to that of CSV/TSV, but it is more readable than CSV/TSV in any text editor, and is more difficult to break—again, due to the simplicity of the format.
+
+``` yml
+New York:
+  growth_from_2000_to_2013: 4.8% 
+  latitude: 40.7127837 
+  longitude: -74.0059413 
+  population: 8405837 
+  rank: 1 
+  state: New York 
+Los Angeles:
+  growth_from_2000_to_2013: 4.8% 
+  latitude: 34.0522342 
+  longitude: -118.2436849 
+  population: 3884307 
+  rank: 2 
+  state: California
+Chicago:
+  growth_from_2000_to_2013: -6.1% 
+  latitude: 41.8781136 
+  longitude: -87.6297982 
+  population: 2718782 
+  rank: 3 
+  state: Illinois
+```
+
+YAML files can be read with Python into `dictionaries` like so:
+
+```py
+import yaml
+dictionary = yaml.load(open(pathToFile))
+```
+
+You will most likely need to install `yaml` library; it is also quite easy to write a script that would read such serialized data. (`yaml` module may not work on later versions of `python`.)
+
+### Installing libraries for `python`
+
+In general, it should be as easy as running the following command in your command line tool:
+
+```
+pip install --upgrade libraryName
+```
+
+- `pip` is the standard package installer for `python`; if you are running version 3.xx of `python`, it may be `pip3` instead of `pip`. If you have Anaconda installed, you can also use Anacodnda interface to install packages;
+- `install` is the command to install a package that you need;
+- `--upgrade` is an optional argument that you would need only when you upgrade already installed package;
+- `libraryName` is the name of the library that you want to install.
+
+This should work just fine, but sometimes it does not---usually when you have multiple versions of `python` installed and they may start conflicting with each other (another good reason to handle your `python` installations via Anaconda). There is, luckily, a workaround that seems to do the trick.You can modify your command in the following manner:
+
+```
+python -m pip install --upgrade libraryName
+```
+
+- `python` here is whatever alias you are using for running `python`. If you are on Mac, `python` is installed with the original MacOS setup and `python` command remains reserved for the erlier versions of `python` (usually, 2.x). If you installde the latest version of `python`, it will be some 3.x version and the default command to run it on your Mac will be `python3`, so the full command will look: `python3 -m pip install --upgrade libraryName`)
+
+## In-Class Practice (and homework)
+
+Let's try convert this [csv file with geographical data on the medieval Islamic world](./files/settlements.csv) into all the above discussed formats.
+
+This is a CSV file with the following structure:
+
+```
+settlement_id	languages	names_ara_common	names_ara_common_other	names_eng_search	names_eng_translit	names_eng_translit_other	region_URI	source	top_type	coordinates
+QAHIRA_312E300N_S	['ara', 'eng']	القاهرة	القاهرة	Qahira, Cairo	al-Qāhiraŧ	al-Madīnaŧ al-Qāhiraŧ	Misr_RE	maximromanov	metropoles	[31.2357, 30.0444]
+IRBIL_440E361N_S	['ara', 'eng']	إربيل	إربيل	Irbil, Erbil	Irbīl	Irbīl	Aqur_RE	maximromanov	towns	[44.009085, 36.191231]
+DANIYA_001E388N_S	['ara', 'eng']	دانية	دانية	Daniya, Dénia	Dāniyaŧ	Dāniyaŧ	Andalus_RE	maximromanov	towns	[0.105056, 38.838799]
+WASHQA_003W421N_R	['ara', 'eng']	وشقة	وشقة	Washqa	Wašqaŧ	Wašqaŧ	Andalus_RE	cornuData	regions	[-0.35371, 42.16109]
+WASHQA_003W421N_S	['ara', 'eng']	وشقة	وشقة	Washqa	Wašqaŧ	Wašqaŧ	Andalus_RE	cornuData	towns	[-0.35371, 42.16109]
+BALANSIYYA_004W394N_R	['ara', 'eng']	بلنسية	بلنسية	Balansiyya	Balansiyyaŧ	Balansiyyaŧ	Andalus_RE	cornuData	regions	[-0.41486, 39.43516]
+BALANSIYYA_004W394N_S	['ara', 'eng']	بلنسية	بلنسية	Balansiyya	Balansiyyaŧ	Balansiyyaŧ	Andalus_RE	cornuData	towns	[-0.41486, 39.43516]
+SHAQR_004W391N_S	['ara', 'eng']	الشقر	الشقر	al-Shaqr	al-Šaqr	al-Šaqr	Andalus_RE	cornuData	villages	[-0.43734, 39.16483]
+QANT_004W383N_S	['ara', 'eng']	قانت	قانت	Qant	Qānt	Qānt	Andalus_RE	cornuData	towns	[-0.47061, 38.34618]
+```
+
+
+
+Let's try to convert this [`bibTex` file](./files/settlements.csv) into other formats. Before we begin, however, let's break down this task into smaller tasks and organize them together in some form of `pseudocode`.
+
+- Which of the above-discussed formats would be most suitable? Why yes, why no?
+
+## Homework{#HWL06}
+
+- Take your bibliography in `bibTeX` format and convert it into: `csv`/`tsv`, `json`, and `yaml`;
+  - *Hint*: you should load your data into a `dictionary`;
+  - additionally, you might want to create (manually) a dictionary of `bibTeX` field: some of the fields are named differently, while they contain the same type of information --- you want to identify those fields and unify them for your output format, which will improve the quality of your data (the process usually called *normalization*); *hint:* in order to figure out how to identify those fields, you may want to look into the *Word Frequency* program in Chapter 11. You can use this approach to identify all fields and count their frequencies, which will help you to determine which fields to keep and which to normalize (i.e., merge low-frequency fields into high-frequency fields).
+- upload your results together with scripts to your homework github repository
+
+**Python**
+
+- Make sure to finish the last assignment from Zelle's book: work through Chapters 8 and 11 of Zelle's book; read chapters carefully; work through the chapter summaries and exercises; complete the following programming exercises: 1-8 in Chapter 8 and 1-11 in Chapter 11;
+- And watch [Dr. Vierthaler's videos](https://www.youtube.com/playlist?list=PL6kqrM2i6BPIpEF5yHPNkYhjHm-FYWh17), if you have not done that already:
+	- Episode 12: Functions
+	- Episode 13: Libraries and NLTK
+	- Episode 14: Regular Expressions
+- **Note:** the sequences are somewhat different in Zelle's textbook and Vierthaler's videos. I would recommend you to always check Vierthaler's videos and also check videos which cover topics that you read about in Zelle's book.
+
+**Submitting homework:**
+
+* Homework assignment must be submitted by the beginning of the next class;
+* Now, that you know how to use GitHub, you will be submitting your homework pushing it to github:
+  * Create a relevant subfoler in your `HW070172` repository and place your HW files there; push them to your GitHub account;
+	* Email me the link to your repository with a short message (Something like: *I have completed homework for Lesson 3, which is uploaded to my repository ... in subfolder `L03`*)
+	* In the subject of your email, please, add the following: `CCXXXXX-LXX-HW-YourLastName-YourMatriculationNumber`, where `CCXXXXX` is the numeric code of the course; `LXX` is the lesson for which the homework is being submitted; `YourLastName` is your last name, and `YourMatriculationNumber` is your matriculation number.
+	

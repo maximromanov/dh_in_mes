@@ -82,3 +82,16 @@ practice-3-aka-homework-a-tiny-bit-tricky
 RML06
 HWL06
 SHL06
+lesson-07-understanding-structured-data
+major-data-formats
+xml-extensible-markup-language
+csvtsv-comma-separated-values-tab-separated-values
+json-javascript-object-notation
+yml-or-yaml-yet-another-markup-language-yaml-aint-markup-language
+bibtex-most-common-bibliographic-format
+larger-examples
+csv-tsv
+json
+ymlyaml
+installing-libraries-for-python
+in-class-practice-and-homework
