@@ -200,7 +200,7 @@ python -m pip install --upgrade libraryName
 
 Let's try convert this [csv file with geographical data on the medieval Islamic world](./files/settlements.csv) into all the above discussed formats.
 
-This is a CSV file with the following structure:
+This is a TSV file with the following structure:
 
 ```
 settlement_id	languages	names_ara_common	names_ara_common_other	names_eng_search	names_eng_translit	names_eng_translit_other	region_URI	source	top_type	coordinates
@@ -231,7 +231,7 @@ Suggestions:
 ## Homework{#HWL07}
 
 - Finish the conversion task;
-  - *Hint*: you should load your data into a `dictionary`;
+  - *Hint*: loading the TSV file into a `dictionary` may be a good step to start with;
   - upload your results together with scripts to your homework github repository;
   - send me an email with a link to these files
 
