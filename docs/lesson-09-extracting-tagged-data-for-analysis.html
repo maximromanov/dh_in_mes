@@ -429,25 +429,44 @@ div.csl-indent {
 <p>(<code>&lt;rs&gt;</code> is another frequent tag with potentially valuable information (353,521). These tagged entities, however, lack additional metadata, which will make their analysis more complicated, so we will skip it. On the <code>&lt;rs&gt;</code> tag see &lt;/<a href="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-rs.html/" class="uri">https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-rs.html/</a>&gt;.)</p>
 <p>Next step will be to understand the structure of these selected tags and process them accordingly, aggregating results into a tidy format. We can build on the script from the previous lesson, to which we will need to add some modifitations (starting after <code># NEW PART</code>). This is your homework :)</p>
 <p>Our tidy results should look similar to what you see below:</p>
-<pre><code>itemID  date    itemType    itemUnified itemId
-1864-04-28_article_001  1864-04-28  placename   gordonsville, orange, virginia  tgn,2111971
-1864-04-28_article_002  1864-04-28  placename   plymouth, washington, north carolina    tgn,2076159
-1864-04-28_article_002  1864-04-28  placename   plymouth, washington, north carolina    tgn,2076159
-1864-04-28_article_002  1864-04-28  persname    wessels,brigadier-general,,,,   wessels,h.,w.
-1864-04-28_article_002  1864-04-28  persname    lincoln,,,,,    lincoln
-1864-04-28_article_002  1864-04-28  placename   plymouth, washington, north carolina    tgn,2076159
-1864-04-28_article_002  1864-04-28  persname    moffitt,colonel,,,, moffitt
-1864-04-28_article_002  1864-04-28  placename   plymouth, washington, north carolina    tgn,2076159
-1864-04-28_article_002  1864-04-28  orgname free school school
-1864-04-28_article_002  1864-04-28  orgname episcopal church    church
-1864-04-28_article_002  1864-04-28  persname    moffitt,lieutenant-colonel,,,,  moffitt
-1864-04-28_article_002  1864-04-28  persname    wessels,brigadier-general,h.,w.,,   wessels,h.,w.
-1864-04-28_article_002  1864-04-28  persname    stewart,,andrew,,,  stewart,andrew
-1864-04-28_article_002  1864-04-28  placename   plymouth, washington, north carolina    tgn,2076159
-1864-04-28_article_002  1864-04-28  orgname provost guard   guard
-1864-04-28_article_002  1864-04-28  persname    wessels,brigadier-general,h.,w.,,   wessels,h.,w.
-1864-04-28_article_002  1864-04-28  persname    beegle,,d.,f.,, beegle,d.,f.
-1864-04-28_article_002  1864-04-28  placename   plymouth, washington, north carolina    tgn,2076159</code></pre>
+<pre><code>##                    itemID       date  itemType
+## 1  1864-04-28_article_001 1864-04-28 placename
+## 2  1864-04-28_article_002 1864-04-28 placename
+## 3  1864-04-28_article_002 1864-04-28 placename
+## 4  1864-04-28_article_002 1864-04-28  persname
+## 5  1864-04-28_article_002 1864-04-28  persname
+## 6  1864-04-28_article_002 1864-04-28 placename
+## 7  1864-04-28_article_002 1864-04-28  persname
+## 8  1864-04-28_article_002 1864-04-28 placename
+## 9  1864-04-28_article_002 1864-04-28   orgname
+## 10 1864-04-28_article_002 1864-04-28   orgname
+## 11 1864-04-28_article_002 1864-04-28  persname
+## 12 1864-04-28_article_002 1864-04-28  persname
+## 13 1864-04-28_article_002 1864-04-28  persname
+## 14 1864-04-28_article_002 1864-04-28 placename
+## 15 1864-04-28_article_002 1864-04-28   orgname
+## 16 1864-04-28_article_002 1864-04-28  persname
+## 17 1864-04-28_article_002 1864-04-28  persname
+## 18 1864-04-28_article_002 1864-04-28 placename
+##                             itemUnified         itemId
+## 1        gordonsville, orange, virginia    tgn,2111971
+## 2  plymouth, washington, north carolina    tgn,2076159
+## 3  plymouth, washington, north carolina    tgn,2076159
+## 4         wessels,brigadier-general,,,,  wessels,h.,w.
+## 5                          lincoln,,,,,        lincoln
+## 6  plymouth, washington, north carolina    tgn,2076159
+## 7                   moffitt,colonel,,,,        moffitt
+## 8  plymouth, washington, north carolina    tgn,2076159
+## 9                           free school         school
+## 10                     episcopal church         church
+## 11       moffitt,lieutenant-colonel,,,,        moffitt
+## 12    wessels,brigadier-general,h.,w.,,  wessels,h.,w.
+## 13                   stewart,,andrew,,, stewart,andrew
+## 14 plymouth, washington, north carolina    tgn,2076159
+## 15                        provost guard          guard
+## 16    wessels,brigadier-general,h.,w.,,  wessels,h.,w.
+## 17                      beegle,,d.,f.,,   beegle,d.,f.
+## 18 plymouth, washington, north carolina    tgn,2076159</code></pre>
 <p>The structure of this data is as follows:</p>
 <ul>
 <li><code>itemID</code> is the ID of each article;</li>
