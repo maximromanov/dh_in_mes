@@ -298,6 +298,7 @@ div.csl-indent {
 <li class="chapter" data-level="8.2" data-path="lesson-08-converting-the-dispatch.html"><a href="lesson-08-converting-the-dispatch.html#convert-to-a-cleaner-format"><i class="fa fa-check"></i><b>8.2</b> Convert to a cleaner format</a></li>
 <li class="chapter" data-level="8.3" data-path="lesson-08-converting-the-dispatch.html"><a href="lesson-08-converting-the-dispatch.html#in-class-practice-and-homework-1"><i class="fa fa-check"></i><b>8.3</b> In-Class Practice (and homework)</a></li>
 <li class="chapter" data-level="8.4" data-path="lesson-08-converting-the-dispatch.html"><a href="lesson-08-converting-the-dispatch.html#HWL08"><i class="fa fa-check"></i><b>8.4</b> Homework</a></li>
+<li class="chapter" data-level="8.5" data-path="lesson-08-converting-the-dispatch.html"><a href="lesson-08-converting-the-dispatch.html#SolutionL08"><i class="fa fa-check"></i><b>8.5</b> Solution</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="appendix.html"><a href="appendix.html"><i class="fa fa-check"></i>Appendix</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
@@ -372,77 +373,72 @@ div.csl-indent {
 </ul></li>
 </ul></li>
 </ul>
-<!--
-## Solution{#SolutionL08}
-
-Below is the solution to the homework: all issues of the Dispatch (stored in `./Dispatch/`) are converted into `YML` and saved into a different folder (`./Dispatch_Processed/`).
-
-
-```python
-import re
-import os
-
-source = "./Dispatch/"
-target = "./Dispatch_Processed/"  # needs to be created beforehand!
-
-lof = os.listdir(source)
-counter = 0  # general counter to keep track of the progress
-
-for f in lof:
-    if f.startswith("dltext"):  # fileName test
-        newF = f.split(":")[-1] + ".yml"  # in fact, yml-like
-
-        issueVar = []
-        with open(source + f, "r", encoding="utf8") as f1:
-            text = f1.read()
-            date = re.search(r'<date value="([\d-]+)"', text).group(1)
-            split = re.split("<div3 ", text)
-
-            for s in split[1:]:
-                s = "<div3 " + s  # a step to restore the integrity of each item
-
-                try:
-                    unitType = re.search(r'type="([^\"]+)"', s).group(1)
-                except:
-                    unitType = "noType"
-
-                try:
-                    header = re.search(r'<head.*</head>', s).group(0)
-                    header = re.sub("<[^<]+>", "", header)
-
-                except:
-                    header = "NO HEADER"
-
-                text = s
-                text = re.sub("<[^<]+>", " ", text)
-                text = re.sub(" +\n|\n +", "\n", text)
-                text = text.strip()
-                text = re.sub("\n+", ";;; ", text)
-                text = re.sub(" +", " ", text)
-                text = re.sub(r" ([\.,:;!])", r"\1", text)
-
-                itemID = "ID: " + date + "_" + unitType + "_%03d" % c
-
-                if len(re.sub("\W+", "", text)) != 0:
-                    dateVar = "DATE: " + date
-                    unitType = "TYPE: " + unitType
-                    header = "HEADER: " + header
-                    # @§@ is used to replace ":", because in YML : is used
-                    # as a divider between the key and value
-                    text = "TEXT: " + text.replace(":", "@§@") + "\n\n"
-                    var = "\n".join([itemID, dateVar, unitType, header, text])
-
-                    issueVar.append(var)
-
-        issueNew = "".join(issueVar)
-        with open(target + newF, "w", encoding="utf8") as f9:
-            f9.write(issueNew)
-
-        counter += 1
-        if counter % 100 == 0:
-            print(counter)
-```
--->
+</div>
+<div id="SolutionL08" class="section level2" number="8.5">
+<h2><span class="header-section-number">8.5</span> Solution</h2>
+<p>Below is the solution to the homework: all issues of the Dispatch (stored in <code>./Dispatch/</code>) are converted into <code>YML</code> and saved into a different folder (<code>./Dispatch_Processed/</code>).</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb42-1"><a href="lesson-08-converting-the-dispatch.html#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
+<span id="cb42-2"><a href="lesson-08-converting-the-dispatch.html#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb42-3"><a href="lesson-08-converting-the-dispatch.html#cb42-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-4"><a href="lesson-08-converting-the-dispatch.html#cb42-4" aria-hidden="true" tabindex="-1"></a>source <span class="op">=</span> <span class="st">&quot;./Dispatch/&quot;</span></span>
+<span id="cb42-5"><a href="lesson-08-converting-the-dispatch.html#cb42-5" aria-hidden="true" tabindex="-1"></a>target <span class="op">=</span> <span class="st">&quot;./Dispatch_Processed/&quot;</span>  <span class="co"># needs to be created beforehand!</span></span>
+<span id="cb42-6"><a href="lesson-08-converting-the-dispatch.html#cb42-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-7"><a href="lesson-08-converting-the-dispatch.html#cb42-7" aria-hidden="true" tabindex="-1"></a>lof <span class="op">=</span> os.listdir(source)</span>
+<span id="cb42-8"><a href="lesson-08-converting-the-dispatch.html#cb42-8" aria-hidden="true" tabindex="-1"></a>counter <span class="op">=</span> <span class="dv">0</span>  <span class="co"># general counter to keep track of the progress</span></span>
+<span id="cb42-9"><a href="lesson-08-converting-the-dispatch.html#cb42-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-10"><a href="lesson-08-converting-the-dispatch.html#cb42-10" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> f <span class="kw">in</span> lof:</span>
+<span id="cb42-11"><a href="lesson-08-converting-the-dispatch.html#cb42-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> f.startswith(<span class="st">&quot;dltext&quot;</span>):  <span class="co"># fileName test</span></span>
+<span id="cb42-12"><a href="lesson-08-converting-the-dispatch.html#cb42-12" aria-hidden="true" tabindex="-1"></a>        newF <span class="op">=</span> f.split(<span class="st">&quot;:&quot;</span>)[<span class="op">-</span><span class="dv">1</span>] <span class="op">+</span> <span class="st">&quot;.yml&quot;</span>  <span class="co"># in fact, yml-like</span></span>
+<span id="cb42-13"><a href="lesson-08-converting-the-dispatch.html#cb42-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-14"><a href="lesson-08-converting-the-dispatch.html#cb42-14" aria-hidden="true" tabindex="-1"></a>        issueVar <span class="op">=</span> []</span>
+<span id="cb42-15"><a href="lesson-08-converting-the-dispatch.html#cb42-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">with</span> <span class="bu">open</span>(source <span class="op">+</span> f, <span class="st">&quot;r&quot;</span>, encoding<span class="op">=</span><span class="st">&quot;utf8&quot;</span>) <span class="im">as</span> f1:</span>
+<span id="cb42-16"><a href="lesson-08-converting-the-dispatch.html#cb42-16" aria-hidden="true" tabindex="-1"></a>            text <span class="op">=</span> f1.read()</span>
+<span id="cb42-17"><a href="lesson-08-converting-the-dispatch.html#cb42-17" aria-hidden="true" tabindex="-1"></a>            date <span class="op">=</span> re.search(<span class="vs">r&#39;&lt;date value=&quot;([\d-]+)&quot;&#39;</span>, text).group(<span class="dv">1</span>)</span>
+<span id="cb42-18"><a href="lesson-08-converting-the-dispatch.html#cb42-18" aria-hidden="true" tabindex="-1"></a>            split <span class="op">=</span> re.split(<span class="st">&quot;&lt;div3 &quot;</span>, text)</span>
+<span id="cb42-19"><a href="lesson-08-converting-the-dispatch.html#cb42-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-20"><a href="lesson-08-converting-the-dispatch.html#cb42-20" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> s <span class="kw">in</span> split[<span class="dv">1</span>:]:</span>
+<span id="cb42-21"><a href="lesson-08-converting-the-dispatch.html#cb42-21" aria-hidden="true" tabindex="-1"></a>                s <span class="op">=</span> <span class="st">&quot;&lt;div3 &quot;</span> <span class="op">+</span> s  <span class="co"># a step to restore the integrity of each item</span></span>
+<span id="cb42-22"><a href="lesson-08-converting-the-dispatch.html#cb42-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-23"><a href="lesson-08-converting-the-dispatch.html#cb42-23" aria-hidden="true" tabindex="-1"></a>                <span class="cf">try</span>:</span>
+<span id="cb42-24"><a href="lesson-08-converting-the-dispatch.html#cb42-24" aria-hidden="true" tabindex="-1"></a>                    unitType <span class="op">=</span> re.search(<span class="vs">r&#39;type=&quot;([^\&quot;]+)&quot;&#39;</span>, s).group(<span class="dv">1</span>)</span>
+<span id="cb42-25"><a href="lesson-08-converting-the-dispatch.html#cb42-25" aria-hidden="true" tabindex="-1"></a>                <span class="cf">except</span>:</span>
+<span id="cb42-26"><a href="lesson-08-converting-the-dispatch.html#cb42-26" aria-hidden="true" tabindex="-1"></a>                    unitType <span class="op">=</span> <span class="st">&quot;noType&quot;</span></span>
+<span id="cb42-27"><a href="lesson-08-converting-the-dispatch.html#cb42-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-28"><a href="lesson-08-converting-the-dispatch.html#cb42-28" aria-hidden="true" tabindex="-1"></a>                <span class="cf">try</span>:</span>
+<span id="cb42-29"><a href="lesson-08-converting-the-dispatch.html#cb42-29" aria-hidden="true" tabindex="-1"></a>                    header <span class="op">=</span> re.search(<span class="vs">r&#39;&lt;head.*&lt;/head&gt;&#39;</span>, s).group(<span class="dv">0</span>)</span>
+<span id="cb42-30"><a href="lesson-08-converting-the-dispatch.html#cb42-30" aria-hidden="true" tabindex="-1"></a>                    header <span class="op">=</span> re.sub(<span class="st">&quot;&lt;[^&lt;]+&gt;&quot;</span>, <span class="st">&quot;&quot;</span>, header)</span>
+<span id="cb42-31"><a href="lesson-08-converting-the-dispatch.html#cb42-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-32"><a href="lesson-08-converting-the-dispatch.html#cb42-32" aria-hidden="true" tabindex="-1"></a>                <span class="cf">except</span>:</span>
+<span id="cb42-33"><a href="lesson-08-converting-the-dispatch.html#cb42-33" aria-hidden="true" tabindex="-1"></a>                    header <span class="op">=</span> <span class="st">&quot;NO HEADER&quot;</span></span>
+<span id="cb42-34"><a href="lesson-08-converting-the-dispatch.html#cb42-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-35"><a href="lesson-08-converting-the-dispatch.html#cb42-35" aria-hidden="true" tabindex="-1"></a>                text <span class="op">=</span> s</span>
+<span id="cb42-36"><a href="lesson-08-converting-the-dispatch.html#cb42-36" aria-hidden="true" tabindex="-1"></a>                text <span class="op">=</span> re.sub(<span class="st">&quot;&lt;[^&lt;]+&gt;&quot;</span>, <span class="st">&quot; &quot;</span>, text)</span>
+<span id="cb42-37"><a href="lesson-08-converting-the-dispatch.html#cb42-37" aria-hidden="true" tabindex="-1"></a>                text <span class="op">=</span> re.sub(<span class="st">&quot; +</span><span class="ch">\n</span><span class="st">|</span><span class="ch">\n</span><span class="st"> +&quot;</span>, <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>, text)</span>
+<span id="cb42-38"><a href="lesson-08-converting-the-dispatch.html#cb42-38" aria-hidden="true" tabindex="-1"></a>                text <span class="op">=</span> text.strip()</span>
+<span id="cb42-39"><a href="lesson-08-converting-the-dispatch.html#cb42-39" aria-hidden="true" tabindex="-1"></a>                text <span class="op">=</span> re.sub(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">+&quot;</span>, <span class="st">&quot;;;; &quot;</span>, text)</span>
+<span id="cb42-40"><a href="lesson-08-converting-the-dispatch.html#cb42-40" aria-hidden="true" tabindex="-1"></a>                text <span class="op">=</span> re.sub(<span class="st">&quot; +&quot;</span>, <span class="st">&quot; &quot;</span>, text)</span>
+<span id="cb42-41"><a href="lesson-08-converting-the-dispatch.html#cb42-41" aria-hidden="true" tabindex="-1"></a>                text <span class="op">=</span> re.sub(<span class="vs">r&quot; ([\.,:;!])&quot;</span>, <span class="vs">r&quot;\1&quot;</span>, text)</span>
+<span id="cb42-42"><a href="lesson-08-converting-the-dispatch.html#cb42-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-43"><a href="lesson-08-converting-the-dispatch.html#cb42-43" aria-hidden="true" tabindex="-1"></a>                itemID <span class="op">=</span> <span class="st">&quot;ID: &quot;</span> <span class="op">+</span> date <span class="op">+</span> <span class="st">&quot;_&quot;</span> <span class="op">+</span> unitType <span class="op">+</span> <span class="st">&quot;_</span><span class="sc">%03d</span><span class="st">&quot;</span> <span class="op">%</span> c</span>
+<span id="cb42-44"><a href="lesson-08-converting-the-dispatch.html#cb42-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-45"><a href="lesson-08-converting-the-dispatch.html#cb42-45" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> <span class="bu">len</span>(re.sub(<span class="st">&quot;\W+&quot;</span>, <span class="st">&quot;&quot;</span>, text)) <span class="op">!=</span> <span class="dv">0</span>:</span>
+<span id="cb42-46"><a href="lesson-08-converting-the-dispatch.html#cb42-46" aria-hidden="true" tabindex="-1"></a>                    dateVar <span class="op">=</span> <span class="st">&quot;DATE: &quot;</span> <span class="op">+</span> date</span>
+<span id="cb42-47"><a href="lesson-08-converting-the-dispatch.html#cb42-47" aria-hidden="true" tabindex="-1"></a>                    unitType <span class="op">=</span> <span class="st">&quot;TYPE: &quot;</span> <span class="op">+</span> unitType</span>
+<span id="cb42-48"><a href="lesson-08-converting-the-dispatch.html#cb42-48" aria-hidden="true" tabindex="-1"></a>                    header <span class="op">=</span> <span class="st">&quot;HEADER: &quot;</span> <span class="op">+</span> header</span>
+<span id="cb42-49"><a href="lesson-08-converting-the-dispatch.html#cb42-49" aria-hidden="true" tabindex="-1"></a>                    <span class="co"># @§@ is used to replace &quot;:&quot;, because in YML : is used</span></span>
+<span id="cb42-50"><a href="lesson-08-converting-the-dispatch.html#cb42-50" aria-hidden="true" tabindex="-1"></a>                    <span class="co"># as a divider between the key and value</span></span>
+<span id="cb42-51"><a href="lesson-08-converting-the-dispatch.html#cb42-51" aria-hidden="true" tabindex="-1"></a>                    text <span class="op">=</span> <span class="st">&quot;TEXT: &quot;</span> <span class="op">+</span> text.replace(<span class="st">&quot;:&quot;</span>, <span class="st">&quot;@§@&quot;</span>) <span class="op">+</span> <span class="st">&quot;</span><span class="ch">\n\n</span><span class="st">&quot;</span></span>
+<span id="cb42-52"><a href="lesson-08-converting-the-dispatch.html#cb42-52" aria-hidden="true" tabindex="-1"></a>                    var <span class="op">=</span> <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>.join([itemID, dateVar, unitType, header, text])</span>
+<span id="cb42-53"><a href="lesson-08-converting-the-dispatch.html#cb42-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-54"><a href="lesson-08-converting-the-dispatch.html#cb42-54" aria-hidden="true" tabindex="-1"></a>                    issueVar.append(var)</span>
+<span id="cb42-55"><a href="lesson-08-converting-the-dispatch.html#cb42-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-56"><a href="lesson-08-converting-the-dispatch.html#cb42-56" aria-hidden="true" tabindex="-1"></a>        issueNew <span class="op">=</span> <span class="st">&quot;&quot;</span>.join(issueVar)</span>
+<span id="cb42-57"><a href="lesson-08-converting-the-dispatch.html#cb42-57" aria-hidden="true" tabindex="-1"></a>        <span class="cf">with</span> <span class="bu">open</span>(target <span class="op">+</span> newF, <span class="st">&quot;w&quot;</span>, encoding<span class="op">=</span><span class="st">&quot;utf8&quot;</span>) <span class="im">as</span> f9:</span>
+<span id="cb42-58"><a href="lesson-08-converting-the-dispatch.html#cb42-58" aria-hidden="true" tabindex="-1"></a>            f9.write(issueNew)</span>
+<span id="cb42-59"><a href="lesson-08-converting-the-dispatch.html#cb42-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-60"><a href="lesson-08-converting-the-dispatch.html#cb42-60" aria-hidden="true" tabindex="-1"></a>        counter <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb42-61"><a href="lesson-08-converting-the-dispatch.html#cb42-61" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> counter <span class="op">%</span> <span class="dv">100</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb42-62"><a href="lesson-08-converting-the-dispatch.html#cb42-62" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(counter)</span></code></pre></div>
 
 </div>
 </div>
