@@ -530,7 +530,7 @@ div.csl-indent {
 </tbody>
 </table>
 <p>Such abstractions can never fully replace the <em>close reading</em> of text, but they open up possibilities of <em>distant reading</em> of the entire corpus of our newspaper. For example, we can measure the frequencies of mentions of specific entities over time in order to assess their prominence and importance across the entire period as well as to identify specific moments in time, when they (people, places, organizations/institutions) soared to some level of importance. Additionally, we can also assess how traditional reading can be reinforces or informed by distant reading. Let’s now take a look at a couple of simple examples. (After which we will take a look at the code and you will get an assignment to modify it.)</p>
-<p><em>Example 1.</em></p>
+<p><em>Example 1:</em> General Sherman and the burning of Atlanta</p>
 <blockquote>
 <p>William Tecumseh Sherman was a Union General serving under the command of Ulysses Grant during the Civil War. He is most known for his campaign through Georgia and the Carolina’s in 1864 where he followed a scorched earth policy including the capture and burning of Atlanta. During the Grant Presidency, Sherman became Commanding General of the Army, formulating the military response to the conflict with Indian tribes in the west.</p>
 </blockquote>
@@ -540,6 +540,26 @@ div.csl-indent {
 <p>The two graphs below show mentions of both <code>sherman</code> and <code>atlanta</code> in the Dispatch issues: there we can see/show how the prominence of William Sherman went up in the course of his campaign in 1864, while the spike in mentions of Atlanta must reflect the capture and burning of the city.</p>
 <p><img src="files/plot_sherman.png" />
 <img src="files/plot_atlanta.png" /></p>
+<p><em>Example 2.</em> The Battle of Shiloh</p>
+<blockquote>
+<p>The Battle of <strong>Shiloh</strong> (also known as the Battle of Pittsburg Landing) was an early battle in the Western Theater of the American Civil War, <strong>fought April 6–7, 1862</strong>, in southwestern Tennessee. The Union Army of the Tennessee (Major General Ulysses S. <strong>Grant</strong>) had moved via the Tennessee River deep into Tennessee and was encamped principally at Pittsburg Landing on the west bank of the Tennessee River, where the Confederate Army of Mississippi (General Albert Sidney <strong>Johnston</strong>, P. G. T. <strong>Beauregard</strong> second-in-command) launched a surprise attack on Grant’s army from its base in Corinth, Mississippi. <em>Johnston was mortally wounded during the fighting</em>; Beauregard took command of the army and decided against pressing the attack late in the evening. Overnight, Grant was reinforced by one of his divisions stationed farther north and was joined by three divisions from the Army of the Ohio (Maj. Gen. Don Carlos <strong>Buell</strong>). The Union forces began an unexpected counterattack the next morning which reversed the Confederate gains of the previous day. On April 6, the first day of the battle, the Confederates struck with the intention of driving the Union defenders away from the river and into the swamps of Owl Creek to the west. Johnston hoped to defeat Grant’s army before the anticipated arrival of Buell and the Army of the Ohio. The Confederate battle lines became confused during the fighting, and Grant’s men instead fell back to the northeast, in the direction of Pittsburg Landing. A Union position on a slightly sunken road, nicknamed the “Hornet’s Nest” and defended by the divisions of Brig. Gens. Benjamin <strong>Prentiss</strong> and William H. L. <strong>Wallace</strong>, provided time for the remainder of the Union line to stabilize under the protection of numerous artillery batteries. <em>Wallace was mortally wounded when the position collapsed</em>, while several regiments from the two divisions were eventually surrounded and surrendered. Johnston was shot in the leg and bled to death while leading an attack. Beauregard acknowledged how tired the army was from the day’s exertions, and decided against assaulting the final Union position that night. Tired but unfought and well-organized men from Buell’s army and a division of Grant’s army arrived in the evening of April 6 and helped turn the tide the next morning, when the Union commanders launched a counterattack along the entire line. Confederate forces were forced to retreat, ending their hopes of blocking the Union advance into northern Mississippi. Though victorious, the Union army had suffered heavier casualties than the Confederates, and Grant was heavily criticized in the media for being taken by surprise. The Battle of Shiloh was <em>the bloodiest engagement of the Civil War up to that point</em>, with nearly twice as many casualties as the previous major battles of the war combined.</p>
+</blockquote>
+<blockquote>
+<p><em>Source:</em> <a href="https://en.wikipedia.org/wiki/Battle_of_Shiloh" class="uri">https://en.wikipedia.org/wiki/Battle_of_Shiloh</a>.</p>
+</blockquote>
+<pre><code>We now can build a graph of word occurrences over time. In the example below we search for `manassas`, which is the place where the the Second Battle of Bull Run (or, the Second Battle of Manassas) took place on August 28-30, 1862. The battle ended in Confederate victory. Our graph shows the spike of mentions of Manassas in the first days of September --- right after the battle took place.
+
+Such graphs can be used to monitor discussions of different topic in chronological perspective.
+
+# interesting examples:
+
+# deserters, killed,
+
+# donelson (The Battle of Fort Donelson took place in early February of 1862),
+
+# manassas (place of the Second Bull Run, fought in August 28–30, 1862),
+
+# shiloh (Battle of Shiloh took place in April of 1862) &lt;https://en.wikipedia.org/wiki/Battle_of_Shiloh&gt;</code></pre>
 </div>
 <div id="HWL10" class="section level2" number="10.2">
 <h2><span class="header-section-number">10.2</span> Homework</h2>
