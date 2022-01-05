@@ -67,16 +67,17 @@ The two graphs below show mentions of both `sherman` and `atlanta` in the Dispat
 
 Now, let's take a look at the graphs for the names highlighted in bold above:
 
-![](plot_shiloh_beauregard.png)
-![](plot_shiloh_buell.png)
-![](plot_shiloh_johnston.png)
-![](plot_shiloh_prentiss.png)
-![](plot_shiloh_shiloh.png)
-![](plot_shiloh_wallace.png)
+![](./files/plot_shiloh_beauregard.png)
+![](./files/plot_shiloh_buell.png)
+![](./files/plot_shiloh_johnston.png)
+![](./files/plot_shiloh_prentiss.png)
+![](./files/plot_shiloh_shiloh.png)
+![](./files/plot_shiloh_wallace.png)
+![](./files/plot_grant.png)
 
 The battle of Shiloh is considered one of the bloodiest engagements of the Civil War. If we look at the mentions of *deserter(s)*, *killed*, and *wounded*, we discover the most significant spike of all these terms right around the time of the battle.
 
-![](plot_losses_at_war.png)
+![](./files/plot_losses_at_war.png)
 
 <!--
 Such graphs can be used to monitor discussions of different topic in chronological perspective.
