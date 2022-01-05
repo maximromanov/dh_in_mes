@@ -67,28 +67,21 @@ The results will look in the following manner (with some ommissions to save spac
 ```
 0000907398	<milestone
 0000649103	<p
-0000552453	**<persName
+0000552453	<persName  <<<
 0000526235	<surname
 0000446296	<head
-0000402419	**<placeName
+0000402419	<placeName <<<
 0000370390	<num
-0000353521	**<rs
+0000353521	<rs        <<<
 0000342807	<div3
 0000325316	<foreName
 0000197514	<roleName
 0000170166	<measure
-0000164988	**<orgName
+0000164988	<orgName  <<<
 0000106719	<hi
 0000088209	<dateStruct
 0000082942	<name
 0000074722	<day
-0000073048	<cell
-0000061127	<unclear
-0000054812	<lb
-0000054091	<date
-0000050930	<item
-0000049945	<div2
-0000042345	<q
 ...
 0000017332	<div1
 0000015210	<cit
@@ -103,26 +96,13 @@ The results will look in the following manner (with some ommissions to save spac
 0000002571	<table
 0000002445	<sic
 0000002278	<language
-0000001976	<genName
-0000001480	<change
-0000001457	<div5
-0000001433	<byline
-0000001365	<foreign
-0000001349	<titlePart
-0000001349	<titlePage
+...
 0000001349	<textClass
 0000001349	<text
 0000001349	<teiHeader
 0000001349	<taxonomy
 0000001349	<state
-0000001349	<sourceDesc
-0000001349	<revisionDesc
-0000001349	<refsDecl
-0000001349	<projectDesc
 ...
-0000000811	<offset
-0000000637	<back
-0000000372	<occasion
 0000000016	<dateRange
 0000000013	<div6
 0000000001	<div7
