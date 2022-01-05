@@ -112,13 +112,16 @@ The following is the list of software, applications and packages that we will be
 - **[ #03 ]** Version Control and Collaboration: Github.com
 - **[ #04 ]** Citation Management and Academic Writing II - with Pandoc, markdown, Zotero/BibTex
 - **[ #05 ]** Constructing robust searches with Regular expressions
-- **[ #06 ]** Webscraping with Wget, preparing URLs with Python and other tools
+- **[ #06 ]** Webscraping with Wget, preparing URLs with Python and other tools // “The Dispatch”
 - ~~**[ #07 ]** Text Markup [TEI XML], and how to remove it... - with Python scripts [anaconda]~~
 - **[ #07 ]** Understanding Structured Data
-- **[ #08 ]** Structuring data with Python scripts
+- **[ #08 ]** Converting data into different formats // “The Dispatch”
 - ~~**[ #09 ]** Georeferencing with QGIS~~
+- **[ #09 ]** Extracting and structuring data for analysis // “The Dispatch”
 - ~~**[ #10 ]** Text to Map (1/2) - with Python and QGIS~~
+- **[ #10 ]** Graphing chronological data  // “The Dispatch”
 - ~~**[ #11 ]** Text to Map (2/2) - with Python and QGIS~~
-- **[ #12 ]** Topic modeling - with Python; TF-IDF with Python
-- **[ #13 ]** Social Network Analysis - with Gephi; preparing network data with Python
+- **[ #11 ]** Mapping data // “The Dispatch”
+- **[ #12 ]** Topic modeling & TF-IDF // “The Dispatch”
+- **[ #13 ]** Social Network Analysis (with Gephi); modeling network data // “The Dispatch”
 
