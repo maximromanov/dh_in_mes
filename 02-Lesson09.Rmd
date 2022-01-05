@@ -67,17 +67,17 @@ The results will look in the following manner (with some ommissions to save spac
 ```
 0000907398	<milestone
 0000649103	<p
-0000552453	<persName
+0000552453	**<persName
 0000526235	<surname
 0000446296	<head
-0000402419	<placeName
+0000402419	**<placeName
 0000370390	<num
-0000353521	<rs
+0000353521	**<rs
 0000342807	<div3
 0000325316	<foreName
 0000197514	<roleName
 0000170166	<measure
-0000164988	<orgName
+0000164988	**<orgName
 0000106719	<hi
 0000088209	<dateStruct
 0000082942	<name
