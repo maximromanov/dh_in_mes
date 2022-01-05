@@ -2,17 +2,50 @@
 
 ## Abstractions of Newspaper Articles
 
-In the previous lesson we created *abstractions* of our newspaper articles. Namely, we reduced the text in natural languages to mentions of places, persons, and organizations. Together, they give us an idea of the main actors (persons and organizations), i.e. who is involved in some developments described in each article, and 
+In the previous lesson we created *abstractions* of our newspaper articles. Namely, we reduced the text in natural languages to mentions of places, persons, and organizations. Together, they give us an idea of the main actors (persons and organizations), i.e. who is involved in some developments described in each article, and main locations (placenames) of where these developments took place.
 
 ```{yml}
 ID: 1864-04-28_article_002
 DATE: 1864-04-28
 TYPE: article
 HEADER: Yankee rule in Plymouth.
-TEXT: Yankee rule in Plymouth.;;; The following orders are copies of hand-bills posted in the town of Plymouth.;;; It will be seen that Brig. Gen. Wessels is a model after Lincoln 's own heart, and undertook to "run the churches" and the schools besides.;;; As we find the names of the General and the Provost Marshal, and the A. A., G.'s on the register of the Libby Hotel, in this city, it is more than likely that the children "between eight and fourteen " in Plymouth are having a cheerful vacation, and that Col. Moffitt will refrain for the present from the disagreeable duty of reporting the derelict heads of families who don't enforce their attendance.;;; This is the school order@§@;;; Notice.;;; The inhabitants of Plymouth are hereby notified that a Free school, for white children, will be spend under competent teachers,;;; On Monday, 18th inst,;;; in the Episcopal Church.;;; The attention of parents and guardians is called in this important subject; and it is expected that all children between eight and fourteen years of age will attend the school.;;; Those over fourteen may attend if they wish.;;; Lieut. Col. Moffitt, Provost Marshal, will institute careful inquiries, and report such families as neglect to avail themselves of the advantages thus offered. By command of Brig. Gen. H. W. Wessels, Andrew Stewart, Assistant Adjutant General. Plymouth, N. C., April 14th, 1864.;;; And this is the order for running the churches@§@;;; Notice.;;; Until further orders church call will be sounded at the Provost Guard on Sundays, at fifteen minutes before 11 A. M., and at 2.15 P. M. the call to be repeated promptly by the drums of the several regiments and detachments.;;; The annoyance caused by entering and leaving the churches during the performance of Divine service, and by the practice of spitting on the floor is excessive, and it is hoped that these evils will be corrected without the necessity of individual reproof. By order of Brig. Gen. H. W. Wessels, D. F. Beegle, Lieut, A. D. C. &amp; A. A. A. G. Plymouth, N. C, April 11th, 1864.
-
-
+TEXT: Yankee rule in Plymouth.<br> The following orders are copies of hand-bills
+  posted in the town of Plymouth.<br> It will be seen that Brig. Gen. Wessels is
+  a model after Lincoln 's own heart, and undertook to "run the churches" and
+  the schools besides.<br> As we find the names of the General and the Provost
+  Marshal, and the A. A., G.'s on the register of the Libby Hotel, in this city,
+  it is more than likely that the children "between eight and fourteen" in
+  Plymouth are having a cheerful vacation, and that Col. Moffitt will refrain
+  for the present from the disagreeable duty of reporting the derelict heads of
+  families who don't enforce their attendance.<br> This is the school order<br>
+  Notice.<br> The inhabitants of Plymouth are hereby notified that a Free school,
+  for white children, will be spend under competent teachers,<br> On Monday, 18th
+  inst,<br> in the Episcopal Church.<br> The attention of parents and guardians
+  is called in this important subject; and it is expected that all children
+  between eight and fourteen years of age will attend the school.<br> Those over
+  fourteen may attend if they wish.<br> Lieut. Col. Moffitt, Provost Marshal,
+  will institute careful inquiries, and report such families as neglect to avail
+  themselves of the advantages thus offered. By command of Brig. Gen. H. W.
+  Wessels, Andrew Stewart, Assistant Adjutant General. Plymouth, N. C., April
+  14th, 1864.<br> And this is the order for running the churches<br> Notice<br>
+  Until further orders church call will be sounded at the Provost Guard on
+  Sundays, at fifteen minutes before 11 A. M., and at 2.15 P. M. the call to be
+  repeated promptly by the drums of the several regiments and detachments.<br>
+  The annoyance caused by entering and leaving the churches during the
+  performance of Divine service, and by the practice of spitting on the floor
+  is excessive, and it is hoped that these evils will be corrected without the
+  necessity of individual reproof. By order of Brig. Gen. H. W. Wessels, D. F.
+  Beegle, Lieut, A. D. C. & A. A. A. G. Plymouth, N. C, April 11th, 1864.
 ```
+
+Thus, the article above (`1864-04-28_article_002`) can be abstracted to the following data (here, based exclusively on entities already tagged in the initial XML documents):
+
+```{r echo=FALSE, results="asis"}
+library(knitr)
+data<-read.table(file = './files/entities.csv', sep = '\t', header = TRUE)
+kable(data)
+```
+
 
 ## Homework{#HWL10}
 

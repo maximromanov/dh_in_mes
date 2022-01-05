@@ -357,12 +357,178 @@ div.csl-indent {
 <h1><span class="header-section-number">10</span> Lesson 10: Graphing Chronological Distribution of Tagged Entities</h1>
 <div id="abstractions-of-newspaper-articles" class="section level2" number="10.1">
 <h2><span class="header-section-number">10.1</span> Abstractions of Newspaper Articles</h2>
-<p>In the previous lesson we created <em>abstractions</em> of our newspaper articles. Namely, we reduced the text in natural languages to mentions of places, persons, and organizations. Together, they give us an idea of the main actors (persons and organizations), i.e. who is involved in some developments described in each article, and</p>
+<p>In the previous lesson we created <em>abstractions</em> of our newspaper articles. Namely, we reduced the text in natural languages to mentions of places, persons, and organizations. Together, they give us an idea of the main actors (persons and organizations), i.e. who is involved in some developments described in each article, and main locations (placenames) of where these developments took place.</p>
 <div class="sourceCode" id="cb46"><pre class="sourceCode yml"><code class="sourceCode yaml"><span id="cb46-1"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ID</span><span class="kw">:</span><span class="at"> 1864-04-28_article_002</span></span>
 <span id="cb46-2"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="fu">DATE</span><span class="kw">:</span><span class="at"> 1864-04-28</span></span>
 <span id="cb46-3"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="fu">TYPE</span><span class="kw">:</span><span class="at"> article</span></span>
 <span id="cb46-4"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb46-4" aria-hidden="true" tabindex="-1"></a><span class="fu">HEADER</span><span class="kw">:</span><span class="at"> Yankee rule in Plymouth.</span></span>
-<span id="cb46-5"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb46-5" aria-hidden="true" tabindex="-1"></a><span class="fu">TEXT</span><span class="kw">:</span><span class="at"> Yankee rule in Plymouth.;;; The following orders are copies of hand-bills posted in the town of Plymouth.;;; It will be seen that Brig. Gen. Wessels is a model after Lincoln &#39;s own heart, and undertook to &quot;run the churches&quot; and the schools besides.;;; As we find the names of the General and the Provost Marshal, and the A. A., G.&#39;s on the register of the Libby Hotel, in this city, it is more than likely that the children &quot;between eight and fourteen &quot; in Plymouth are having a cheerful vacation, and that Col. Moffitt will refrain for the present from the disagreeable duty of reporting the derelict heads of families who don&#39;t enforce their attendance.;;; This is the school order@§@;;; Notice.;;; The inhabitants of Plymouth are hereby notified that a Free school, for white children, will be spend under competent teachers,;;; On Monday, 18th inst,;;; in the Episcopal Church.;;; The attention of parents and guardians is called in this important subject; and it is expected that all children between eight and fourteen years of age will attend the school.;;; Those over fourteen may attend if they wish.;;; Lieut. Col. Moffitt, Provost Marshal, will institute careful inquiries, and report such families as neglect to avail themselves of the advantages thus offered. By command of Brig. Gen. H. W. Wessels, Andrew Stewart, Assistant Adjutant General. Plymouth, N. C., April 14th, 1864.;;; And this is the order for running the churches@§@;;; Notice.;;; Until further orders church call will be sounded at the Provost Guard on Sundays, at fifteen minutes before 11 A. M., and at 2.15 P. M. the call to be repeated promptly by the drums of the several regiments and detachments.;;; The annoyance caused by entering and leaving the churches during the performance of Divine service, and by the practice of spitting on the floor is excessive, and it is hoped that these evils will be corrected without the necessity of individual reproof. By order of Brig. Gen. H. W. Wessels, D. F. Beegle, Lieut, A. D. C. &amp;amp; A. A. A. G. Plymouth, N. C, April 11th, 1864.</span></span></code></pre></div>
+<span id="cb46-5"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb46-5" aria-hidden="true" tabindex="-1"></a><span class="fu">TEXT</span><span class="kw">:</span><span class="at"> Yankee rule in Plymouth.&lt;br&gt; The following orders are copies of hand-bills</span></span>
+<span id="cb46-6"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb46-6" aria-hidden="true" tabindex="-1"></a><span class="at">  posted in the town of Plymouth.&lt;br&gt; It will be seen that Brig. Gen. Wessels is</span></span>
+<span id="cb46-7"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb46-7" aria-hidden="true" tabindex="-1"></a><span class="at">  a model after Lincoln &#39;s own heart, and undertook to &quot;run the churches&quot; and</span></span>
+<span id="cb46-8"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb46-8" aria-hidden="true" tabindex="-1"></a><span class="at">  the schools besides.&lt;br&gt; As we find the names of the General and the Provost</span></span>
+<span id="cb46-9"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb46-9" aria-hidden="true" tabindex="-1"></a><span class="at">  Marshal, and the A. A., G.&#39;s on the register of the Libby Hotel, in this city,</span></span>
+<span id="cb46-10"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb46-10" aria-hidden="true" tabindex="-1"></a><span class="at">  it is more than likely that the children &quot;between eight and fourteen&quot; in</span></span>
+<span id="cb46-11"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb46-11" aria-hidden="true" tabindex="-1"></a><span class="at">  Plymouth are having a cheerful vacation, and that Col. Moffitt will refrain</span></span>
+<span id="cb46-12"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb46-12" aria-hidden="true" tabindex="-1"></a><span class="at">  for the present from the disagreeable duty of reporting the derelict heads of</span></span>
+<span id="cb46-13"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb46-13" aria-hidden="true" tabindex="-1"></a><span class="at">  families who don&#39;t enforce their attendance.&lt;br&gt; This is the school order&lt;br&gt;</span></span>
+<span id="cb46-14"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb46-14" aria-hidden="true" tabindex="-1"></a><span class="at">  Notice.&lt;br&gt; The inhabitants of Plymouth are hereby notified that a Free school,</span></span>
+<span id="cb46-15"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb46-15" aria-hidden="true" tabindex="-1"></a><span class="at">  for white children, will be spend under competent teachers,&lt;br&gt; On Monday, 18th</span></span>
+<span id="cb46-16"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb46-16" aria-hidden="true" tabindex="-1"></a><span class="at">  inst,&lt;br&gt; in the Episcopal Church.&lt;br&gt; The attention of parents and guardians</span></span>
+<span id="cb46-17"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb46-17" aria-hidden="true" tabindex="-1"></a><span class="at">  is called in this important subject; and it is expected that all children</span></span>
+<span id="cb46-18"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb46-18" aria-hidden="true" tabindex="-1"></a><span class="at">  between eight and fourteen years of age will attend the school.&lt;br&gt; Those over</span></span>
+<span id="cb46-19"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb46-19" aria-hidden="true" tabindex="-1"></a><span class="at">  fourteen may attend if they wish.&lt;br&gt; Lieut. Col. Moffitt, Provost Marshal,</span></span>
+<span id="cb46-20"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb46-20" aria-hidden="true" tabindex="-1"></a><span class="at">  will institute careful inquiries, and report such families as neglect to avail</span></span>
+<span id="cb46-21"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb46-21" aria-hidden="true" tabindex="-1"></a><span class="at">  themselves of the advantages thus offered. By command of Brig. Gen. H. W.</span></span>
+<span id="cb46-22"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb46-22" aria-hidden="true" tabindex="-1"></a><span class="at">  Wessels, Andrew Stewart, Assistant Adjutant General. Plymouth, N. C., April</span></span>
+<span id="cb46-23"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb46-23" aria-hidden="true" tabindex="-1"></a><span class="at">  14th, 1864.&lt;br&gt; And this is the order for running the churches&lt;br&gt; Notice&lt;br&gt;</span></span>
+<span id="cb46-24"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb46-24" aria-hidden="true" tabindex="-1"></a><span class="at">  Until further orders church call will be sounded at the Provost Guard on</span></span>
+<span id="cb46-25"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb46-25" aria-hidden="true" tabindex="-1"></a><span class="at">  Sundays, at fifteen minutes before 11 A. M., and at 2.15 P. M. the call to be</span></span>
+<span id="cb46-26"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb46-26" aria-hidden="true" tabindex="-1"></a><span class="at">  repeated promptly by the drums of the several regiments and detachments.&lt;br&gt;</span></span>
+<span id="cb46-27"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb46-27" aria-hidden="true" tabindex="-1"></a><span class="at">  The annoyance caused by entering and leaving the churches during the</span></span>
+<span id="cb46-28"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb46-28" aria-hidden="true" tabindex="-1"></a><span class="at">  performance of Divine service, and by the practice of spitting on the floor</span></span>
+<span id="cb46-29"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb46-29" aria-hidden="true" tabindex="-1"></a><span class="at">  is excessive, and it is hoped that these evils will be corrected without the</span></span>
+<span id="cb46-30"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb46-30" aria-hidden="true" tabindex="-1"></a><span class="at">  necessity of individual reproof. By order of Brig. Gen. H. W. Wessels, D. F.</span></span>
+<span id="cb46-31"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb46-31" aria-hidden="true" tabindex="-1"></a><span class="at">  Beegle, Lieut, A. D. C. &amp; A. A. A. G. Plymouth, N. C, April 11th, 1864.</span></span></code></pre></div>
+<p>Thus, the article above (<code>1864-04-28_article_002</code>) can be abstracted to the following data (here, based exclusively on entities already tagged in the initial XML documents):</p>
+<table>
+<colgroup>
+<col width="23%" />
+<col width="11%" />
+<col width="10%" />
+<col width="38%" />
+<col width="15%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">itemID</th>
+<th align="left">date</th>
+<th align="left">itemType</th>
+<th align="left">itemUnified</th>
+<th align="left">itemId</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">1864-04-28_article_002</td>
+<td align="left">1864-04-28</td>
+<td align="left">placename</td>
+<td align="left">plymouth, washington, north carolina</td>
+<td align="left">tgn,2076159</td>
+</tr>
+<tr class="even">
+<td align="left">1864-04-28_article_002</td>
+<td align="left">1864-04-28</td>
+<td align="left">placename</td>
+<td align="left">plymouth, washington, north carolina</td>
+<td align="left">tgn,2076159</td>
+</tr>
+<tr class="odd">
+<td align="left">1864-04-28_article_002</td>
+<td align="left">1864-04-28</td>
+<td align="left">persname</td>
+<td align="left">wessels,brigadier-general,,,,</td>
+<td align="left">wessels,h.,w.</td>
+</tr>
+<tr class="even">
+<td align="left">1864-04-28_article_002</td>
+<td align="left">1864-04-28</td>
+<td align="left">persname</td>
+<td align="left">lincoln,,,,,</td>
+<td align="left">lincoln</td>
+</tr>
+<tr class="odd">
+<td align="left">1864-04-28_article_002</td>
+<td align="left">1864-04-28</td>
+<td align="left">placename</td>
+<td align="left">plymouth, washington, north carolina</td>
+<td align="left">tgn,2076159</td>
+</tr>
+<tr class="even">
+<td align="left">1864-04-28_article_002</td>
+<td align="left">1864-04-28</td>
+<td align="left">persname</td>
+<td align="left">moffitt,colonel,,,,</td>
+<td align="left">moffitt</td>
+</tr>
+<tr class="odd">
+<td align="left">1864-04-28_article_002</td>
+<td align="left">1864-04-28</td>
+<td align="left">placename</td>
+<td align="left">plymouth, washington, north carolina</td>
+<td align="left">tgn,2076159</td>
+</tr>
+<tr class="even">
+<td align="left">1864-04-28_article_002</td>
+<td align="left">1864-04-28</td>
+<td align="left">orgname</td>
+<td align="left">free school</td>
+<td align="left">school</td>
+</tr>
+<tr class="odd">
+<td align="left">1864-04-28_article_002</td>
+<td align="left">1864-04-28</td>
+<td align="left">orgname</td>
+<td align="left">episcopal church</td>
+<td align="left">church</td>
+</tr>
+<tr class="even">
+<td align="left">1864-04-28_article_002</td>
+<td align="left">1864-04-28</td>
+<td align="left">persname</td>
+<td align="left">moffitt,lieutenant-colonel,,,,</td>
+<td align="left">moffitt</td>
+</tr>
+<tr class="odd">
+<td align="left">1864-04-28_article_002</td>
+<td align="left">1864-04-28</td>
+<td align="left">persname</td>
+<td align="left">wessels,brigadier-general,h.,w.,,</td>
+<td align="left">wessels,h.,w.</td>
+</tr>
+<tr class="even">
+<td align="left">1864-04-28_article_002</td>
+<td align="left">1864-04-28</td>
+<td align="left">persname</td>
+<td align="left">stewart,,andrew,,,</td>
+<td align="left">stewart,andrew</td>
+</tr>
+<tr class="odd">
+<td align="left">1864-04-28_article_002</td>
+<td align="left">1864-04-28</td>
+<td align="left">placename</td>
+<td align="left">plymouth, washington, north carolina</td>
+<td align="left">tgn,2076159</td>
+</tr>
+<tr class="even">
+<td align="left">1864-04-28_article_002</td>
+<td align="left">1864-04-28</td>
+<td align="left">orgname</td>
+<td align="left">provost guard</td>
+<td align="left">guard</td>
+</tr>
+<tr class="odd">
+<td align="left">1864-04-28_article_002</td>
+<td align="left">1864-04-28</td>
+<td align="left">persname</td>
+<td align="left">wessels,brigadier-general,h.,w.,,</td>
+<td align="left">wessels,h.,w.</td>
+</tr>
+<tr class="even">
+<td align="left">1864-04-28_article_002</td>
+<td align="left">1864-04-28</td>
+<td align="left">persname</td>
+<td align="left">beegle,,d.,f.,,</td>
+<td align="left">beegle,d.,f.</td>
+</tr>
+<tr class="odd">
+<td align="left">1864-04-28_article_002</td>
+<td align="left">1864-04-28</td>
+<td align="left">placename</td>
+<td align="left">plymouth, washington, north carolina</td>
+<td align="left">tgn,2076159</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="HWL10" class="section level2" number="10.2">
 <h2><span class="header-section-number">10.2</span> Homework</h2>
