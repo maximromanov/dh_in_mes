@@ -252,7 +252,7 @@ Suggestions:
 	* Email me the link to your repository with a short message (Something like: *I have completed homework for Lesson 3, which is uploaded to my repository ... in subfolder `L03`*)
 
 
-# Solution{#SolutionL07}
+## Solution{#SolutionL07}
 
 Below is the solution to the homework: three functions that convert a TSV file into XML, YML, and JSON. Your solutions may be different, but they are considered correct as long as your results are what they must be
 
