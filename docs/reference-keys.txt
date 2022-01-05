@@ -97,3 +97,9 @@ installing-libraries-for-python
 in-class-practice-and-homework
 HWL07
 SolutionL07
+lesson-08-converting-the-dispatch
+original-xml-files-analysis
+convert-to-a-cleaner-format
+in-class-practice-and-homework-1
+HWL08
+SolutionL08

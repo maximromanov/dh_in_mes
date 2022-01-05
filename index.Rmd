@@ -117,7 +117,7 @@ The following is the list of software, applications and packages that we will be
 - **[ #07 ]** Understanding Structured Data
 - **[ #08 ]** Converting data into different formats // “The Dispatch”
 - ~~**[ #09 ]** Georeferencing with QGIS~~
-- **[ #09 ]** Extracting and structuring data for analysis // “The Dispatch”
+- **[ #09 ]** Extracting tagged data for analysis // “The Dispatch”
 - ~~**[ #10 ]** Text to Map (1/2) - with Python and QGIS~~
 - **[ #10 ]** Graphing chronological data  // “The Dispatch”
 - ~~**[ #11 ]** Text to Map (2/2) - with Python and QGIS~~

@@ -1,0 +1,112 @@
+# Lesson 08: Converting the Dispatch
+
+## Original XML files analysis
+
+- analyze structure and identify main structural elements;
+- extract main structural units (articles);
+- extract and generate additional metadata elements:
+  - date;
+  - article ID;
+  - header/title;
+  - texts.
+
+## Convert to a cleaner format
+
+- what format would be best for this kind of data? (no single correct answer; any answer must be substantiated);
+- possible formats:
+  - a simple XML;
+  - JSON;
+  - YML;
+  - CSV / TSV;
+  - other formats.
+
+## In-Class Practice (and homework)
+
+Let's start working on the conversion of our initial data into other formats. (*Suggestion*: start with some pseudo code: what are the steps into which you can break this operation?)
+
+## Homework{#HWL08}
+
+- Finish the conversion task;
+- Annotate your script (i.e., add comment to every line of code describing what is happenning there);
+
+**Submitting homework:**
+
+* Homework assignment must be submitted by the beginning of the next class;
+* Now, that you know how to use GitHub, you will be submitting your homework pushing it to github:
+  * Create a relevant subfolder in your repository and place your HW files there; push them to your GitHub account;
+	* Email me the link to your repository with a short message (Something like: *I have completed homework for Lesson 3, which is uploaded to my repository ... in subfolder `L03`*)
+
+
+## Solution{#SolutionL08}
+
+Below is the solution to the homework: three functions that convert a TSV file into XML, YML, and JSON. Your solutions may be different, but they are considered correct as long as your results are what they must be.
+
+```{r engine='python', highlight=TRUE, eval=FALSE}
+
+import re
+import os
+
+source = "./Dispatch/"
+target = "./Dispatch_Processed/"  # needs to be created beforehand!
+
+lof = os.listdir(source)
+counter = 0  # general counter to keep track of the progress
+
+for f in lof:
+    if f.startswith("dltext"):  # fileName test
+        newF = f.split(":")[-1] + ".yml"  # in fact, yml-like
+
+        issueVar = []
+        with open(source + f, "r", encoding="utf8") as f1:
+            text = f1.read()
+            date = re.search(r'<date value="([\d-]+)"', text).group(1)
+            split = re.split("<div3 ", text)
+
+            for s in split[1:]:
+                s = "<div3 " + s  # a step to restore the integrity of items
+
+                try:
+                    unitType = re.search(r'type="([^\"]+)"', s).group(1)
+                except:
+                    unitType = "noType"
+
+                try:
+                    header = re.search(r'<head.*</head>', s).group(0)
+                    header = re.sub("<[^<]+>", "", header)
+
+                except:
+                    header = "NO HEADER"
+
+                text = s
+                text = re.sub("<[^<]+>", " ", text)
+                text = re.sub(" +\n|\n +", "\n", text)
+                text = text.strip()
+                text = re.sub("\n+", ";;; ", text)
+                text = re.sub(" +", " ", text)
+                text = re.sub(r" ([\.,:;!])", r"\1", text)
+
+                itemID = "ID: " + date + "_" + unitType + "_%03d" % c
+
+                if len(re.sub("\W+", "", text)) != 0:
+                    dateVar = "DATE: " + date
+                    unitType = "TYPE: " + unitType
+                    header = "HEADER: " + header
+                    # @§@ is used to replace ":", because in YML : is used
+                    # as a divider between the key and value
+                    text = "TEXT: " + text.replace(":", "@§@") + "\n\n"
+                    var = "\n".join([itemID, dateVar, unitType, header, text])
+
+                    issueVar.append(var)
+
+        issueNew = "".join(issueVar)
+        with open(target + newF, "w", encoding="utf8") as f9:
+            f9.write(issueNew)
+
+        # count processed issues and print progress counter at every 100
+        counter += 1  # counter = counter + 1
+        # if counter is divisible by 100 (i.e., no remainder), then print it
+        if counter % 100 == 0:
+            print(counter)
+
+
+```
