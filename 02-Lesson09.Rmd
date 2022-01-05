@@ -1,0 +1,64 @@
+# Lesson 08: Extracting Tagged Data for Analysis
+
+## Concept of *tidy data*
+
+* Each variable is in its own column
+* Each observation is in its own row
+* Each value is in its own cell
+
+(**NB:** Additionally, data must be normalized, i.e. values in the same columns must be in the same format: if length, all in inches or centimeters; if weight, all in pounds or kilos; etc. It does not matter what units are used; the important part is that the same units are used throughout.)
+
+![*Source:* Wickham, Hadley, and Garrett Grolemund. 2017. R for Data Science: Import, Tidy, Transform, Visualize, and Model Data. Sebastopol, CA: O’Reilly UK Ltd. <https://r4ds.had.co.nz/>; for a Chapter on **tidy data**, see: <https://r4ds.had.co.nz/tidy-data.html>.](https://d33wubrfki0l68.cloudfront.net/6f1ddb544fc5c69a2478e444ab8112fb0eea23f8/91adc/images/tidy-1.png)
+
+*Source:* Wickham, Hadley, and Garrett Grolemund. 2017. R for Data Science: Import, Tidy, Transform, Visualize, and Model Data. Sebastopol, CA: O’Reilly UK Ltd. <https://r4ds.had.co.nz/>; for a Chapter on **tidy data**, see: <https://r4ds.had.co.nz/tidy-data.html>.
+
+
+## Extracting tagged entities
+
+- Why? We can analyze tagged entities as they feature across time and space in the coverage of the Dispatch (again, for all intents and purposes, we can use this newspaper as an equivalent of a chronicle, or even broader, as that of a chronological corpus.)
+- How? Different types of entities are already tagged in the text and we can use this tagging to make abstractions of each article. These abstractions is what we will then use in our initial simple analysis. In order to extract tagged data, we first need to understand what we can extract. This can be done by creating a frequency list of all XML tags used in the issues of the Dispatch. These results will help us to understand what kind of data we can use for analysis. 
+
+
+
+- analyze structure and identify main structural elements;
+- extract main structural units (articles);
+- extract and generate additional metadata elements:
+  - date;
+  - article ID;
+  - header/title;
+  - texts.
+
+## Convert to a cleaner format
+
+- what format would be best for this kind of data? (no single correct answer; any answer must be substantiated);
+- possible formats:
+  - a simple XML;
+  - JSON;
+  - YML;
+  - CSV / TSV;
+  - other formats.
+
+## In-Class Practice (and homework)
+
+... (*Suggestion*: start with some pseudo code: what are the steps into which you can break this operation?)
+
+## Homework{#HWL08}
+
+- Finish the assigned task;
+- Annotate your script (i.e., add comment to every line of code describing what is happenning there);
+
+**Submitting homework:**
+
+* Homework assignment must be submitted by the beginning of the next class;
+* Now, that you know how to use GitHub, you will be submitting your homework pushing it to github:
+  * Create a relevant subfolder in your repository and place your HW files there; push them to your GitHub account;
+	* Email me the link to your repository with a short message (Something like: *I have completed homework for Lesson 3, which is uploaded to my repository ... in subfolder `L03`*)
+
+
+## Solution{#SolutionL09}
+
+Below is the solution to the homework: all issues of the Dispatch (stored in `./Dispatch/`) are converted into `YML` and saved into a different folder (`./Dispatch_Processed/`).
+
+```{r engine='python', highlight=TRUE, eval=FALSE}
+
+```
