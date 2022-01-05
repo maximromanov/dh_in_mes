@@ -106,7 +106,9 @@ SolutionL08
 lesson-09-extracting-tagged-data-for-analysis
 concept-of-tidy-data
 extracting-tagged-entities
+HWL09
 SolutionL09
-lesson-10-extracting-tagged-data-for-analysis
-concept-of-tidy-data-1
-extracting-tagged-entities-1
+lesson-10-graphing-chronological-distribution-of-tagged-entities
+section
+HWL10
+SolutionL10

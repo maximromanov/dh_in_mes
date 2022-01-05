@@ -123,7 +123,7 @@ The structure of this data is as follows:
 - `date` is the date when the article was published (the same date effectively refers to the same issue);
 - `itemType`, `itemUnified`, `itemId`: these following three columns represent each tagged entity. In most cases each entity can be described with a single or multiple variables. A single variable can be used when it represents some kind of unique identifier from some external database/databank. such unique identifiers can be used to collect additional information on our entities from these external databases/databanks. For example, for `<placeName>` entities it could be enough to use the `key=` attribute which contains unique identifiers (for example, `tgn,2111971`) from the Getty Thesaurus of Geographical Names (<http://tgndownloads.getty.edu/default.aspx>). Unfortunately, such data is not available more often than it is. I decided to use the following three elements (ideally trying to preserve (1) the type of an entity (`itemType`), (2) how it appears in the text (*skipped*), (3) its unified/normalized form (`itemUnified`, not available for all types); and (4) its unique identifier (`itemId`, also not available for all types)). 
 
-## Homework{#HWL08}
+## Homework{#HWL09}
 
 - Finish the assigned task;
 - Annotate your script (i.e., add comment to every line of code describing what is happenning there);

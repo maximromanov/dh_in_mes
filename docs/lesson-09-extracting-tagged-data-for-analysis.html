@@ -32,7 +32,7 @@
   <link rel="apple-touch-icon-precomposed" sizes="120x120" href="touch-icon.png" />
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 <link rel="prev" href="lesson-08-converting-the-dispatch.html"/>
-<link rel="next" href="lesson-10-extracting-tagged-data-for-analysis.html"/>
+<link rel="next" href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -304,15 +304,14 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="9.1" data-path="lesson-09-extracting-tagged-data-for-analysis.html"><a href="lesson-09-extracting-tagged-data-for-analysis.html#concept-of-tidy-data"><i class="fa fa-check"></i><b>9.1</b> Concept of <em>tidy data</em></a></li>
 <li class="chapter" data-level="9.2" data-path="lesson-09-extracting-tagged-data-for-analysis.html"><a href="lesson-09-extracting-tagged-data-for-analysis.html#extracting-tagged-entities"><i class="fa fa-check"></i><b>9.2</b> Extracting tagged entities</a></li>
-<li class="chapter" data-level="9.3" data-path="lesson-08-converting-the-dispatch.html"><a href="lesson-08-converting-the-dispatch.html#HWL08"><i class="fa fa-check"></i><b>9.3</b> Homework</a></li>
+<li class="chapter" data-level="9.3" data-path="lesson-09-extracting-tagged-data-for-analysis.html"><a href="lesson-09-extracting-tagged-data-for-analysis.html#HWL09"><i class="fa fa-check"></i><b>9.3</b> Homework</a></li>
 <li class="chapter" data-level="9.4" data-path="lesson-09-extracting-tagged-data-for-analysis.html"><a href="lesson-09-extracting-tagged-data-for-analysis.html#SolutionL09"><i class="fa fa-check"></i><b>9.4</b> Solution</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="lesson-10-extracting-tagged-data-for-analysis.html"><a href="lesson-10-extracting-tagged-data-for-analysis.html"><i class="fa fa-check"></i><b>10</b> Lesson 10: Extracting Tagged Data for Analysis</a>
+<li class="chapter" data-level="10" data-path="lesson-10-graphing-chronological-distribution-of-tagged-entities.html"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html"><i class="fa fa-check"></i><b>10</b> Lesson 10: Graphing Chronological Distribution of Tagged Entities</a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="lesson-10-extracting-tagged-data-for-analysis.html"><a href="lesson-10-extracting-tagged-data-for-analysis.html#concept-of-tidy-data-1"><i class="fa fa-check"></i><b>10.1</b> Concept of <em>tidy data</em></a></li>
-<li class="chapter" data-level="10.2" data-path="lesson-10-extracting-tagged-data-for-analysis.html"><a href="lesson-10-extracting-tagged-data-for-analysis.html#extracting-tagged-entities-1"><i class="fa fa-check"></i><b>10.2</b> Extracting tagged entities</a></li>
-<li class="chapter" data-level="10.3" data-path="lesson-08-converting-the-dispatch.html"><a href="lesson-08-converting-the-dispatch.html#HWL08"><i class="fa fa-check"></i><b>10.3</b> Homework</a></li>
-<li class="chapter" data-level="10.4" data-path="lesson-09-extracting-tagged-data-for-analysis.html"><a href="lesson-09-extracting-tagged-data-for-analysis.html#SolutionL09"><i class="fa fa-check"></i><b>10.4</b> Solution</a></li>
+<li class="chapter" data-level="10.1" data-path="lesson-10-graphing-chronological-distribution-of-tagged-entities.html"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#section"><i class="fa fa-check"></i><b>10.1</b> …</a></li>
+<li class="chapter" data-level="10.2" data-path="lesson-10-graphing-chronological-distribution-of-tagged-entities.html"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#HWL10"><i class="fa fa-check"></i><b>10.2</b> Homework</a></li>
+<li class="chapter" data-level="10.3" data-path="lesson-10-graphing-chronological-distribution-of-tagged-entities.html"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#SolutionL10"><i class="fa fa-check"></i><b>10.3</b> Solution</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="appendix.html"><a href="appendix.html"><i class="fa fa-check"></i>Appendix</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
@@ -589,7 +588,7 @@ div.csl-indent {
 <li><code>itemType</code>, <code>itemUnified</code>, <code>itemId</code>: these following three columns represent each tagged entity. In most cases each entity can be described with a single or multiple variables. A single variable can be used when it represents some kind of unique identifier from some external database/databank. such unique identifiers can be used to collect additional information on our entities from these external databases/databanks. For example, for <code>&lt;placeName&gt;</code> entities it could be enough to use the <code>key=</code> attribute which contains unique identifiers (for example, <code>tgn,2111971</code>) from the Getty Thesaurus of Geographical Names (<a href="http://tgndownloads.getty.edu/default.aspx" class="uri">http://tgndownloads.getty.edu/default.aspx</a>). Unfortunately, such data is not available more often than it is. I decided to use the following three elements (ideally trying to preserve (1) the type of an entity (<code>itemType</code>), (2) how it appears in the text (<em>skipped</em>), (3) its unified/normalized form (<code>itemUnified</code>, not available for all types); and (4) its unique identifier (<code>itemId</code>, also not available for all types)).</li>
 </ul>
 </div>
-<div id="HWL08" class="section level2" number="9.3">
+<div id="HWL09" class="section level2" number="9.3">
 <h2><span class="header-section-number">9.3</span> Homework</h2>
 <ul>
 <li>Finish the assigned task;</li>
@@ -721,7 +720,7 @@ div.csl-indent {
         </div>
       </div>
 <a href="lesson-08-converting-the-dispatch.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="lesson-10-extracting-tagged-data-for-analysis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
