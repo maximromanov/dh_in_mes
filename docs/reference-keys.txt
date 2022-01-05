@@ -107,3 +107,6 @@ lesson-09-extracting-tagged-data-for-analysis
 concept-of-tidy-data
 extracting-tagged-entities
 SolutionL09
+lesson-10-extracting-tagged-data-for-analysis
+concept-of-tidy-data-1
+extracting-tagged-entities-1
