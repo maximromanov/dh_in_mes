@@ -112,3 +112,15 @@ lesson-10-graphing-chronological-distribution-of-tagged-entities
 section
 HWL10
 SolutionL10
+lesson-11-mapping-data-using-tagged-data
+section-1
+HWL11
+SolutionL11
+lesson-12-topic-modeling-tf-idf-automatic-text-analysis
+section-2
+HWL12
+SolutionL12
+lesson-13-social-network-analysis
+section-3
+HWL13
+SolutionL13

@@ -1,0 +1,27 @@
+# Lesson 11: Mapping Data (using tagged data)
+
+## ...
+
+...
+
+## Homework{#HWL11}
+
+- Finish the assigned task;
+- Annotate your script (i.e., add comment to every line of code describing what is happenning there);
+
+**Submitting homework:**
+
+* Homework assignment must be submitted by the beginning of the next class;
+* Now, that you know how to use GitHub, you will be submitting your homework pushing it to github:
+  * Create a relevant subfolder in your repository and place your HW files there; push them to your GitHub account;
+	* Email me the link to your repository with a short message (Something like: *I have completed homework for Lesson 3, which is uploaded to my repository ... in subfolder `L03`*)
+
+
+## Solution{#SolutionL11}
+
+Below is the solution to the homework...
+
+```{r engine='python', highlight=TRUE, eval=FALSE}
+
+
+```
