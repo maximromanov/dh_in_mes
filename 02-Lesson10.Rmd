@@ -78,21 +78,14 @@ The battle of Shiloh is considered one of the bloodiest engagements of the Civil
 
 ![](plot_losses_at_war.png)
 
-```
-We now can build a graph of word occurrences over time. In the example below we search for `manassas`, which is the place where the the Second Battle of Bull Run (or, the Second Battle of Manassas) took place on August 28-30, 1862. The battle ended in Confederate victory. Our graph shows the spike of mentions of Manassas in the first days of September --- right after the battle took place.
-
+<!--
 Such graphs can be used to monitor discussions of different topic in chronological perspective.
-
 # interesting examples:
-
 # deserters, killed,
-
 # donelson (The Battle of Fort Donelson took place in early February of 1862),
-
 # manassas (place of the Second Bull Run, fought in August 28–30, 1862),
-
 # shiloh (Battle of Shiloh took place in April of 1862) <https://en.wikipedia.org/wiki/Battle_of_Shiloh>
-```
+-->
 
 
 ## Homework{#HWL10}
