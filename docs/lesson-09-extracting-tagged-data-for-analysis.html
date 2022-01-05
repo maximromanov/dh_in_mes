@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>9 Lesson 09: Extracting Tagged Data for Analysis | Digital Humanities in Middle Eastern Studies</title>
+  <meta name="description" content="This is a collection of relevant materials for the class ‘57-525 S: Digital Humanities in Middle East Studies — Introduction to Algorithmic Analysis’ (WS2021), offered at the University of Hamburg (Afrika-Asien Institut) and taught by Maxim G. Romanov" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="9 Lesson 09: Extracting Tagged Data for Analysis | Digital Humanities in Middle Eastern Studies" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://maximromanov.github.io/dh_in_mes/" />
+  
+  <meta property="og:description" content="This is a collection of relevant materials for the class ‘57-525 S: Digital Humanities in Middle East Studies — Introduction to Algorithmic Analysis’ (WS2021), offered at the University of Hamburg (Afrika-Asien Institut) and taught by Maxim G. Romanov" />
+  <meta name="github-repo" content="maximromanov/dh_in_mes" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="9 Lesson 09: Extracting Tagged Data for Analysis | Digital Humanities in Middle Eastern Studies" />
+  
+  <meta name="twitter:description" content="This is a collection of relevant materials for the class ‘57-525 S: Digital Humanities in Middle East Studies — Introduction to Algorithmic Analysis’ (WS2021), offered at the University of Hamburg (Afrika-Asien Institut) and taught by Maxim G. Romanov" />
+  
+
+<meta name="author" content="Maxim G. Romanov" />
+
+
+<meta name="date" content="2022-01-05" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="touch-icon.png" />
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="prev" href="lesson-08-converting-the-dispatch.html"/>
+<link rel="next" href="appendix.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/viz-1.8.2/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-1.0.6.1/grViz.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">DH Methods for Middle Eastern Studies: Toward A Handbook</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Syllabus</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-details"><i class="fa fa-check"></i>Course Details</a></li>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#aims-contents-and-method-of-the-course"><i class="fa fa-check"></i><b>0.1</b> Aims, contents and method of the course</a></li>
+<li class="chapter" data-level="0.2" data-path="index.html"><a href="index.html#course-evaluation"><i class="fa fa-check"></i><b>0.2</b> Course Evaluation</a></li>
+<li class="chapter" data-level="0.3" data-path="index.html"><a href="index.html#class-participation"><i class="fa fa-check"></i><b>0.3</b> Class Participation</a></li>
+<li class="chapter" data-level="0.4" data-path="index.html"><a href="index.html#homework"><i class="fa fa-check"></i><b>0.4</b> Homework</a></li>
+<li class="chapter" data-level="0.5" data-path="index.html"><a href="index.html#final-project"><i class="fa fa-check"></i><b>0.5</b> Final Project</a></li>
+<li class="chapter" data-level="0.6" data-path="index.html"><a href="index.html#study-materials"><i class="fa fa-check"></i><b>0.6</b> Study materials:</a></li>
+<li class="chapter" data-level="0.7" data-path="index.html"><a href="index.html#software-tools-technologies"><i class="fa fa-check"></i><b>0.7</b> Software, Tools, &amp; Technologies:</a></li>
+<li class="chapter" data-level="0.8" data-path="index.html"><a href="index.html#submitting-homework"><i class="fa fa-check"></i><b>0.8</b> Submitting Homework:</a></li>
+<li class="chapter" data-level="0.9" data-path="index.html"><a href="index.html#schedule"><i class="fa fa-check"></i><b>0.9</b> Schedule</a></li>
+<li class="chapter" data-level="0.10" data-path="index.html"><a href="index.html#lesson-topics-subject-to-modification"><i class="fa fa-check"></i><b>0.10</b> Lesson Topics (subject to modification)</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="lesson-01-academic-writing-i.html"><a href="lesson-01-academic-writing-i.html"><i class="fa fa-check"></i><b>1</b> Lesson 01: Academic Writing I</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="lesson-01-academic-writing-i.html"><a href="lesson-01-academic-writing-i.html#bibliography-managers"><i class="fa fa-check"></i><b>1.1</b> Bibliography Managers</a></li>
+<li class="chapter" data-level="1.2" data-path="lesson-01-academic-writing-i.html"><a href="lesson-01-academic-writing-i.html#zotero"><i class="fa fa-check"></i><b>1.2</b> Zotero</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="lesson-01-academic-writing-i.html"><a href="lesson-01-academic-writing-i.html#getting-started"><i class="fa fa-check"></i><b>1.2.1</b> Getting Started</a></li>
+<li class="chapter" data-level="1.2.2" data-path="lesson-01-academic-writing-i.html"><a href="lesson-01-academic-writing-i.html#main-functionality"><i class="fa fa-check"></i><b>1.2.2</b> Main Functionality</a></li>
+<li class="chapter" data-level="1.2.3" data-path="lesson-01-academic-writing-i.html"><a href="lesson-01-academic-writing-i.html#additional-functionality-plug-ins"><i class="fa fa-check"></i><b>1.2.3</b> Additional Functionality: Plug-Ins</a></li>
+<li class="chapter" data-level="1.2.4" data-path="lesson-01-academic-writing-i.html"><a href="lesson-01-academic-writing-i.html#zotfile"><i class="fa fa-check"></i><b>1.2.4</b> Zotfile</a></li>
+<li class="chapter" data-level="1.2.5" data-path="lesson-01-academic-writing-i.html"><a href="lesson-01-academic-writing-i.html#better-bibtex-for-zotero"><i class="fa fa-check"></i><b>1.2.5</b> Better BibTeX for Zotero</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="lesson-01-academic-writing-i.html"><a href="lesson-01-academic-writing-i.html#HWL01"><i class="fa fa-check"></i><b>1.3</b> Homework</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="lesson-02-command-line.html"><a href="lesson-02-command-line.html"><i class="fa fa-check"></i><b>2</b> Lesson 02: Command Line</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="lesson-02-command-line.html"><a href="lesson-02-command-line.html#command-line"><i class="fa fa-check"></i><b>2.1</b> Command Line</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="lesson-02-command-line.html"><a href="lesson-02-command-line.html#the-filesystem"><i class="fa fa-check"></i><b>2.1.1</b> The filesystem</a></li>
+<li class="chapter" data-level="2.1.2" data-path="lesson-02-command-line.html"><a href="lesson-02-command-line.html#getting-started-with-the-command-line"><i class="fa fa-check"></i><b>2.1.2</b> Getting started with the command line</a></li>
+<li class="chapter" data-level="2.1.3" data-path="lesson-02-command-line.html"><a href="lesson-02-command-line.html#components-of-the-command-line"><i class="fa fa-check"></i><b>2.1.3</b> Components of the command line</a></li>
+<li class="chapter" data-level="2.1.4" data-path="lesson-02-command-line.html"><a href="lesson-02-command-line.html#file-paths-and-path-notations"><i class="fa fa-check"></i><b>2.1.4</b> File paths and path notations</a></li>
+<li class="chapter" data-level="2.1.5" data-path="lesson-02-command-line.html"><a href="lesson-02-command-line.html#command-line-arguments"><i class="fa fa-check"></i><b>2.1.5</b> Command line arguments</a></li>
+<li class="chapter" data-level="2.1.6" data-path="lesson-02-command-line.html"><a href="lesson-02-command-line.html#more-commands"><i class="fa fa-check"></i><b>2.1.6</b> More commands</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="lesson-02-command-line.html"><a href="lesson-02-command-line.html#HWL02"><i class="fa fa-check"></i><b>2.2</b> Homework</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="lesson-03-version-control.html"><a href="lesson-03-version-control.html"><i class="fa fa-check"></i><b>3</b> Lesson 03: Version Control</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="lesson-03-version-control.html"><a href="lesson-03-version-control.html#version-control-and-collaboration"><i class="fa fa-check"></i><b>3.1</b> Version Control and Collaboration</a></li>
+<li class="chapter" data-level="3.2" data-path="lesson-03-version-control.html"><a href="lesson-03-version-control.html#setting-up-git"><i class="fa fa-check"></i><b>3.2</b> Setting-up <code>git</code></a></li>
+<li class="chapter" data-level="3.3" data-path="lesson-03-version-control.html"><a href="lesson-03-version-control.html#general-git-workflow"><i class="fa fa-check"></i><b>3.3</b> General <code>git</code> workflow</a></li>
+<li class="chapter" data-level="3.4" data-path="lesson-03-version-control.html"><a href="lesson-03-version-control.html#main-git-commands"><i class="fa fa-check"></i><b>3.4</b> Main <code>git</code> Commands</a></li>
+<li class="chapter" data-level="3.5" data-path="lesson-03-version-control.html"><a href="lesson-03-version-control.html#some-useful-command-line-commands-to-remember"><i class="fa fa-check"></i><b>3.5</b> Some useful command line commands to remember</a></li>
+<li class="chapter" data-level="3.6" data-path="lesson-03-version-control.html"><a href="lesson-03-version-control.html#practice"><i class="fa fa-check"></i><b>3.6</b> Practice</a></li>
+<li class="chapter" data-level="3.7" data-path="lesson-03-version-control.html"><a href="lesson-03-version-control.html#HWL03"><i class="fa fa-check"></i><b>3.7</b> Homework</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="lesson-04-sustainable-academic-writing.html"><a href="lesson-04-sustainable-academic-writing.html"><i class="fa fa-check"></i><b>4</b> Lesson 04: Sustainable Academic Writing</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="lesson-04-sustainable-academic-writing.html"><a href="lesson-04-sustainable-academic-writing.html#markdown-pandoc-the-tex-family-and-obsidian"><i class="fa fa-check"></i><b>4.1</b> <code>markdown</code>, <code>pandoc</code>, the <code>*TeX</code> family, and <code>obsidian</code></a></li>
+<li class="chapter" data-level="4.2" data-path="lesson-04-sustainable-academic-writing.html"><a href="lesson-04-sustainable-academic-writing.html#class-notes"><i class="fa fa-check"></i><b>4.2</b> Class Notes</a></li>
+<li class="chapter" data-level="4.3" data-path="lesson-04-sustainable-academic-writing.html"><a href="lesson-04-sustainable-academic-writing.html#pandoc-commands"><i class="fa fa-check"></i><b>4.3</b> <code>pandoc</code> <em>Commands</em></a></li>
+<li class="chapter" data-level="4.4" data-path="lesson-04-sustainable-academic-writing.html"><a href="lesson-04-sustainable-academic-writing.html#analytical-writing-with-markdown"><i class="fa fa-check"></i><b>4.4</b> Analytical Writing with markdown</a></li>
+<li class="chapter" data-level="4.5" data-path="lesson-04-sustainable-academic-writing.html"><a href="lesson-04-sustainable-academic-writing.html#zettelkasten-with-obsidian"><i class="fa fa-check"></i><b>4.5</b> Zettelkasten with Obsidian</a></li>
+<li class="chapter" data-level="4.6" data-path="lesson-04-sustainable-academic-writing.html"><a href="lesson-04-sustainable-academic-writing.html#reference-materials"><i class="fa fa-check"></i><b>4.6</b> Reference Materials:</a></li>
+<li class="chapter" data-level="4.7" data-path="lesson-04-sustainable-academic-writing.html"><a href="lesson-04-sustainable-academic-writing.html#HWL04"><i class="fa fa-check"></i><b>4.7</b> Homework</a></li>
+<li class="chapter" data-level="4.8" data-path="lesson-04-sustainable-academic-writing.html"><a href="lesson-04-sustainable-academic-writing.html#appendix-text-for-your-main.md-file."><i class="fa fa-check"></i><b>4.8</b> Appendix: <em>TEXT for your <code>main.md</code> file.</em></a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="lesson-05-robust-searches.html"><a href="lesson-05-robust-searches.html"><i class="fa fa-check"></i><b>5</b> Lesson 05: Robust Searches</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="lesson-05-robust-searches.html"><a href="lesson-05-robust-searches.html#constructing-robust-searches-with-regular-expressions"><i class="fa fa-check"></i><b>5.1</b> Constructing Robust Searches with Regular Expressions</a></li>
+<li class="chapter" data-level="5.2" data-path="lesson-05-robust-searches.html"><a href="lesson-05-robust-searches.html#regular-expressions"><i class="fa fa-check"></i><b>5.2</b> <code>regular expressions</code></a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="lesson-05-robust-searches.html"><a href="lesson-05-robust-searches.html#what-are-regular-expressions"><i class="fa fa-check"></i><b>5.2.1</b> What are <code>regular expressions</code>?**</a></li>
+<li class="chapter" data-level="5.2.2" data-path="lesson-05-robust-searches.html"><a href="lesson-05-robust-searches.html#what-would-we-use-regular-expressions-for"><i class="fa fa-check"></i><b>5.2.2</b> What would we use <code>regular Expressions</code> for?</a></li>
+<li class="chapter" data-level="5.2.3" data-path="lesson-05-robust-searches.html"><a href="lesson-05-robust-searches.html#the-basics"><i class="fa fa-check"></i><b>5.2.3</b> The Basics</a></li>
+<li class="chapter" data-level="5.2.4" data-path="lesson-05-robust-searches.html"><a href="lesson-05-robust-searches.html#characters-special-characters"><i class="fa fa-check"></i><b>5.2.4</b> Characters <em>&amp;</em> Special Characters</a></li>
+<li class="chapter" data-level="5.2.5" data-path="lesson-05-robust-searches.html"><a href="lesson-05-robust-searches.html#character-classes"><i class="fa fa-check"></i><b>5.2.5</b> Character Classes: <code>[]</code></a></li>
+<li class="chapter" data-level="5.2.6" data-path="lesson-05-robust-searches.html"><a href="lesson-05-robust-searches.html#ranges-within-classes"><i class="fa fa-check"></i><b>5.2.6</b> Ranges (within classes)</a></li>
+<li class="chapter" data-level="5.2.7" data-path="lesson-05-robust-searches.html"><a href="lesson-05-robust-searches.html#repeaters"><i class="fa fa-check"></i><b>5.2.7</b> Repeaters</a></li>
+<li class="chapter" data-level="5.2.8" data-path="lesson-05-robust-searches.html"><a href="lesson-05-robust-searches.html#lab-intro-in-the-practicum-file."><i class="fa fa-check"></i><b>5.2.8</b> Lab: <em>Intro</em> (in the <em>practicum file</em>).</a></li>
+<li class="chapter" data-level="5.2.9" data-path="lesson-05-robust-searches.html"><a href="lesson-05-robust-searches.html#anchoring"><i class="fa fa-check"></i><b>5.2.9</b> Anchoring</a></li>
+<li class="chapter" data-level="5.2.10" data-path="lesson-05-robust-searches.html"><a href="lesson-05-robust-searches.html#alternation-pipe"><i class="fa fa-check"></i><b>5.2.10</b> Alternation: “|” (<em>pipe</em>)</a></li>
+<li class="chapter" data-level="5.2.11" data-path="lesson-05-robust-searches.html"><a href="lesson-05-robust-searches.html#grouping"><i class="fa fa-check"></i><b>5.2.11</b> Grouping</a></li>
+<li class="chapter" data-level="5.2.12" data-path="lesson-05-robust-searches.html"><a href="lesson-05-robust-searches.html#lab-part-i-in-the-practicum-file."><i class="fa fa-check"></i><b>5.2.12</b> Lab: Part I (in the <em>practicum file</em>).</a></li>
+<li class="chapter" data-level="5.2.13" data-path="lesson-05-robust-searches.html"><a href="lesson-05-robust-searches.html#replacement"><i class="fa fa-check"></i><b>5.2.13</b> Replacement</a></li>
+<li class="chapter" data-level="5.2.14" data-path="lesson-05-robust-searches.html"><a href="lesson-05-robust-searches.html#capture"><i class="fa fa-check"></i><b>5.2.14</b> Capture</a></li>
+<li class="chapter" data-level="5.2.15" data-path="lesson-05-robust-searches.html"><a href="lesson-05-robust-searches.html#capture-reformat"><i class="fa fa-check"></i><b>5.2.15</b> Capture <em>&amp;</em> Reformat</a></li>
+<li class="chapter" data-level="5.2.16" data-path="lesson-05-robust-searches.html"><a href="lesson-05-robust-searches.html#lab-part-ii-in-the-practicum-file."><i class="fa fa-check"></i><b>5.2.16</b> Lab: Part II (in the <em>practicum file</em>).</a></li>
+<li class="chapter" data-level="5.2.17" data-path="lesson-05-robust-searches.html"><a href="lesson-05-robust-searches.html#to-keep-in-mind"><i class="fa fa-check"></i><b>5.2.17</b> <em>To keep in mind</em></a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="lesson-05-robust-searches.html"><a href="lesson-05-robust-searches.html#class-materials"><i class="fa fa-check"></i><b>5.3</b> Class materials</a></li>
+<li class="chapter" data-level="5.4" data-path="lesson-05-robust-searches.html"><a href="lesson-05-robust-searches.html#digital-materials"><i class="fa fa-check"></i><b>5.4</b> Digital materials</a></li>
+<li class="chapter" data-level="5.5" data-path="lesson-05-robust-searches.html"><a href="lesson-05-robust-searches.html#reference-materials-1"><i class="fa fa-check"></i><b>5.5</b> Reference Materials</a></li>
+<li class="chapter" data-level="5.6" data-path="lesson-05-robust-searches.html"><a href="lesson-05-robust-searches.html#HWL05"><i class="fa fa-check"></i><b>5.6</b> Homework</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html"><i class="fa fa-check"></i><b>6</b> Lesson 06: Webscraping</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html#getting-to-know-wget"><i class="fa fa-check"></i><b>6.1</b> Getting to Know <code>WGET</code></a></li>
+<li class="chapter" data-level="6.2" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html#software"><i class="fa fa-check"></i><b>6.2</b> Software</a></li>
+<li class="chapter" data-level="6.3" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html#class"><i class="fa fa-check"></i><b>6.3</b> Class</a></li>
+<li class="chapter" data-level="6.4" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html#sample-commands"><i class="fa fa-check"></i><b>6.4</b> Sample commands</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html#issues-with-wget-on-windows"><i class="fa fa-check"></i><b>6.4.1</b> Issues with <code>WGET</code> on Windows</a></li>
+<li class="chapter" data-level="6.4.2" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html#issues-with-wget-on-mac"><i class="fa fa-check"></i><b>6.4.2</b> Issues with <code>WGET</code> on Mac</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html#a-sidenote-on-issues-in-general"><i class="fa fa-check"></i><b>6.5</b> A sidenote on issues in general</a></li>
+<li class="chapter" data-level="6.6" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html#practicing-scraping"><i class="fa fa-check"></i><b>6.6</b> Practicing Scraping</a></li>
+<li class="chapter" data-level="6.7" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html#practice-1-very-easy"><i class="fa fa-check"></i><b>6.7</b> Practice 1: very easy</a></li>
+<li class="chapter" data-level="6.8" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html#practice-2-easy-ish"><i class="fa fa-check"></i><b>6.8</b> Practice 2: easy-ish</a></li>
+<li class="chapter" data-level="6.9" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html#practice-3-aka-homework-a-tiny-bit-tricky"><i class="fa fa-check"></i><b>6.9</b> Practice 3 (aka <em>Homework</em>): a tiny-bit tricky</a></li>
+<li class="chapter" data-level="6.10" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html#RML06"><i class="fa fa-check"></i><b>6.10</b> Reference Materials</a></li>
+<li class="chapter" data-level="6.11" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html#HWL06"><i class="fa fa-check"></i><b>6.11</b> Homework</a></li>
+<li class="chapter" data-level="6.12" data-path="lesson-06-webscraping.html"><a href="lesson-06-webscraping.html#SHL06"><i class="fa fa-check"></i><b>6.12</b> Submitting homework</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="lesson-07-understanding-structured-data.html"><a href="lesson-07-understanding-structured-data.html"><i class="fa fa-check"></i><b>7</b> Lesson 07: Understanding Structured Data</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="lesson-07-understanding-structured-data.html"><a href="lesson-07-understanding-structured-data.html#major-data-formats"><i class="fa fa-check"></i><b>7.1</b> Major Data Formats</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="lesson-07-understanding-structured-data.html"><a href="lesson-07-understanding-structured-data.html#xml-extensible-markup-language"><i class="fa fa-check"></i><b>7.1.1</b> XML (<em>Extensible Markup Language</em>)</a></li>
+<li class="chapter" data-level="7.1.2" data-path="lesson-07-understanding-structured-data.html"><a href="lesson-07-understanding-structured-data.html#csvtsv-comma-separated-values-tab-separated-values"><i class="fa fa-check"></i><b>7.1.2</b> CSV/TSV (<em>Comma-Separated Values</em>/ <em>Tab-Separated Values</em>)</a></li>
+<li class="chapter" data-level="7.1.3" data-path="lesson-07-understanding-structured-data.html"><a href="lesson-07-understanding-structured-data.html#json-javascript-object-notation"><i class="fa fa-check"></i><b>7.1.3</b> JSON (<em>JavaScript Object Notation</em>)</a></li>
+<li class="chapter" data-level="7.1.4" data-path="lesson-07-understanding-structured-data.html"><a href="lesson-07-understanding-structured-data.html#yml-or-yaml-yet-another-markup-language-yaml-aint-markup-language"><i class="fa fa-check"></i><b>7.1.4</b> YML or YAML (<em>Yet Another Markup Language</em> &gt; <em>YAML Ain’t Markup Language</em>)</a></li>
+<li class="chapter" data-level="7.1.5" data-path="lesson-07-understanding-structured-data.html"><a href="lesson-07-understanding-structured-data.html#bibtex-most-common-bibliographic-format"><i class="fa fa-check"></i><b>7.1.5</b> <code>BibTeX</code>: <em>most common bibliographic format</em></a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="lesson-07-understanding-structured-data.html"><a href="lesson-07-understanding-structured-data.html#larger-examples"><i class="fa fa-check"></i><b>7.2</b> Larger Examples</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="lesson-07-understanding-structured-data.html"><a href="lesson-07-understanding-structured-data.html#csv-tsv"><i class="fa fa-check"></i><b>7.2.1</b> <code>CSV</code> / <code>TSV</code></a></li>
+<li class="chapter" data-level="7.2.2" data-path="lesson-07-understanding-structured-data.html"><a href="lesson-07-understanding-structured-data.html#json"><i class="fa fa-check"></i><b>7.2.2</b> <code>JSON</code></a></li>
+<li class="chapter" data-level="7.2.3" data-path="lesson-07-understanding-structured-data.html"><a href="lesson-07-understanding-structured-data.html#ymlyaml"><i class="fa fa-check"></i><b>7.2.3</b> <code>YML</code>/<code>YAML</code></a></li>
+<li class="chapter" data-level="7.2.4" data-path="lesson-07-understanding-structured-data.html"><a href="lesson-07-understanding-structured-data.html#installing-libraries-for-python"><i class="fa fa-check"></i><b>7.2.4</b> Installing libraries for <code>python</code></a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="lesson-07-understanding-structured-data.html"><a href="lesson-07-understanding-structured-data.html#in-class-practice-and-homework"><i class="fa fa-check"></i><b>7.3</b> In-Class Practice (and homework)</a></li>
+<li class="chapter" data-level="7.4" data-path="lesson-07-understanding-structured-data.html"><a href="lesson-07-understanding-structured-data.html#HWL07"><i class="fa fa-check"></i><b>7.4</b> Homework</a></li>
+<li class="chapter" data-level="7.5" data-path="lesson-07-understanding-structured-data.html"><a href="lesson-07-understanding-structured-data.html#SolutionL07"><i class="fa fa-check"></i><b>7.5</b> Solution</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="lesson-08-converting-the-dispatch.html"><a href="lesson-08-converting-the-dispatch.html"><i class="fa fa-check"></i><b>8</b> Lesson 08: Converting the Dispatch</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="lesson-08-converting-the-dispatch.html"><a href="lesson-08-converting-the-dispatch.html#original-xml-files-analysis"><i class="fa fa-check"></i><b>8.1</b> Original XML files analysis</a></li>
+<li class="chapter" data-level="8.2" data-path="lesson-08-converting-the-dispatch.html"><a href="lesson-08-converting-the-dispatch.html#convert-to-a-cleaner-format"><i class="fa fa-check"></i><b>8.2</b> Convert to a cleaner format</a></li>
+<li class="chapter" data-level="8.3" data-path="lesson-08-converting-the-dispatch.html"><a href="lesson-08-converting-the-dispatch.html#in-class-practice-and-homework-1"><i class="fa fa-check"></i><b>8.3</b> In-Class Practice (and homework)</a></li>
+<li class="chapter" data-level="8.4" data-path="lesson-08-converting-the-dispatch.html"><a href="lesson-08-converting-the-dispatch.html#HWL08"><i class="fa fa-check"></i><b>8.4</b> Homework</a></li>
+<li class="chapter" data-level="8.5" data-path="lesson-08-converting-the-dispatch.html"><a href="lesson-08-converting-the-dispatch.html#SolutionL08"><i class="fa fa-check"></i><b>8.5</b> Solution</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="lesson-09-extracting-tagged-data-for-analysis.html"><a href="lesson-09-extracting-tagged-data-for-analysis.html"><i class="fa fa-check"></i><b>9</b> Lesson 09: Extracting Tagged Data for Analysis</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="lesson-09-extracting-tagged-data-for-analysis.html"><a href="lesson-09-extracting-tagged-data-for-analysis.html#concept-of-tidy-data"><i class="fa fa-check"></i><b>9.1</b> Concept of <em>tidy data</em></a></li>
+<li class="chapter" data-level="9.2" data-path="lesson-09-extracting-tagged-data-for-analysis.html"><a href="lesson-09-extracting-tagged-data-for-analysis.html#extracting-tagged-entities"><i class="fa fa-check"></i><b>9.2</b> Extracting tagged entities</a></li>
+<li class="chapter" data-level="9.3" data-path="lesson-08-converting-the-dispatch.html"><a href="lesson-08-converting-the-dispatch.html#HWL08"><i class="fa fa-check"></i><b>9.3</b> Homework</a></li>
+<li class="chapter" data-level="9.4" data-path="lesson-09-extracting-tagged-data-for-analysis.html"><a href="lesson-09-extracting-tagged-data-for-analysis.html#SolutionL09"><i class="fa fa-check"></i><b>9.4</b> Solution</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="appendix.html"><a href="appendix.html"><i class="fa fa-check"></i>Appendix</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Digital Humanities in Middle Eastern Studies</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="lesson-09-extracting-tagged-data-for-analysis" class="section level1" number="9">
+<h1><span class="header-section-number">9</span> Lesson 09: Extracting Tagged Data for Analysis</h1>
+<div id="concept-of-tidy-data" class="section level2" number="9.1">
+<h2><span class="header-section-number">9.1</span> Concept of <em>tidy data</em></h2>
+<ul>
+<li>Each variable is in its own column</li>
+<li>Each observation is in its own row</li>
+<li>Each value is in its own cell</li>
+</ul>
+<p>(<strong>NB:</strong> Additionally, data must be normalized, i.e. values in the same columns must be in the same format: if length, all in inches or centimeters; if weight, all in pounds or kilos; etc. It does not matter what units are used; the important part is that the same units are used throughout.)</p>
+<div class="figure">
+<img src="https://d33wubrfki0l68.cloudfront.net/6f1ddb544fc5c69a2478e444ab8112fb0eea23f8/91adc/images/tidy-1.png" alt="" />
+<p class="caption"><em>Source:</em> Wickham, Hadley, and Garrett Grolemund. 2017. R for Data Science: Import, Tidy, Transform, Visualize, and Model Data. Sebastopol, CA: O’Reilly UK Ltd. <a href="https://r4ds.had.co.nz/" class="uri">https://r4ds.had.co.nz/</a>; for a Chapter on <strong>tidy data</strong>, see: <a href="https://r4ds.had.co.nz/tidy-data.html" class="uri">https://r4ds.had.co.nz/tidy-data.html</a>.</p>
+</div>
+</div>
+<div id="extracting-tagged-entities" class="section level2" number="9.2">
+<h2><span class="header-section-number">9.2</span> Extracting tagged entities</h2>
+<p><em>Why?</em> We can analyze tagged entities as they feature across time and space in the coverage of the Dispatch (again, for all intents and purposes, we can use this newspaper as an equivalent of a chronicle, or even broader, as that of a chronological corpus.)</p>
+<p><em>How?</em> Different types of entities are already tagged in the text and we can use this tagging to make abstractions of each article. These abstractions is what we will then use in our initial simple analysis. In order to extract tagged data, we first need to understand what we can extract. This can be done by creating a frequency list of all XML tags used in the issues of the Dispatch. These results will help us to understand what kind of data we can use for analysis. The following script counts all the tags and saves results into a TSV format organized from the most frequent to the least frequent.</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb43-1"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
+<span id="cb43-2"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb43-3"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb43-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-4"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb43-4" aria-hidden="true" tabindex="-1"></a>source <span class="op">=</span> <span class="st">&quot;./Dispatch/&quot;</span></span>
+<span id="cb43-5"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb43-5" aria-hidden="true" tabindex="-1"></a>target <span class="op">=</span> <span class="st">&quot;./Dispatch_Processed/&quot;</span>  <span class="co"># needs to be created beforehand!</span></span>
+<span id="cb43-6"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb43-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-7"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb43-7" aria-hidden="true" tabindex="-1"></a>lof <span class="op">=</span> os.listdir(source)</span>
+<span id="cb43-8"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb43-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-9"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb43-9" aria-hidden="true" tabindex="-1"></a>resDic <span class="op">=</span> {}</span>
+<span id="cb43-10"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb43-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-11"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb43-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> f <span class="kw">in</span> lof:</span>
+<span id="cb43-12"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb43-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> f.startswith(<span class="st">&quot;dltext&quot;</span>):  <span class="co"># fileName test</span></span>
+<span id="cb43-13"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb43-13" aria-hidden="true" tabindex="-1"></a>        newF <span class="op">=</span> f.split(<span class="st">&quot;:&quot;</span>)[<span class="op">-</span><span class="dv">1</span>] <span class="op">+</span> <span class="st">&quot;.yml&quot;</span>  <span class="co"># in fact, yml-like</span></span>
+<span id="cb43-14"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb43-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-15"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb43-15" aria-hidden="true" tabindex="-1"></a>        <span class="co"># collect and count all XML tags</span></span>
+<span id="cb43-16"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb43-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-17"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb43-17" aria-hidden="true" tabindex="-1"></a>        issueVar <span class="op">=</span> []</span>
+<span id="cb43-18"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb43-18" aria-hidden="true" tabindex="-1"></a>        c <span class="op">=</span> <span class="dv">0</span>  <span class="co"># technical counter</span></span>
+<span id="cb43-19"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb43-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">with</span> <span class="bu">open</span>(source <span class="op">+</span> f, <span class="st">&quot;r&quot;</span>, encoding<span class="op">=</span><span class="st">&quot;utf8&quot;</span>) <span class="im">as</span> f1:</span>
+<span id="cb43-20"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb43-20" aria-hidden="true" tabindex="-1"></a>            text <span class="op">=</span> f1.read()</span>
+<span id="cb43-21"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb43-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-22"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb43-22" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> i <span class="kw">in</span> re.findall(<span class="vs">r&quot;(&lt;\w+)&quot;</span>, text):</span>
+<span id="cb43-23"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb43-23" aria-hidden="true" tabindex="-1"></a>                <span class="co"># print(i)</span></span>
+<span id="cb43-24"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb43-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-25"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb43-25" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> i <span class="kw">in</span> resDic:</span>
+<span id="cb43-26"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb43-26" aria-hidden="true" tabindex="-1"></a>                    resDic[i] <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb43-27"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb43-27" aria-hidden="true" tabindex="-1"></a>                <span class="cf">else</span>:</span>
+<span id="cb43-28"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb43-28" aria-hidden="true" tabindex="-1"></a>                    resDic[i] <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb43-29"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb43-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-30"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb43-30" aria-hidden="true" tabindex="-1"></a>final <span class="op">=</span> []</span>
+<span id="cb43-31"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb43-31" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> k, v <span class="kw">in</span> resDic.items():</span>
+<span id="cb43-32"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb43-32" aria-hidden="true" tabindex="-1"></a>    value <span class="op">=</span> <span class="st">&quot;</span><span class="sc">%010d</span><span class="ch">\t</span><span class="sc">%s</span><span class="st">&quot;</span> <span class="op">%</span> (v, k)</span>
+<span id="cb43-33"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb43-33" aria-hidden="true" tabindex="-1"></a>    final.append(value)</span>
+<span id="cb43-34"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb43-34" aria-hidden="true" tabindex="-1"></a>    <span class="co"># input(value)</span></span>
+<span id="cb43-35"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb43-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-36"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb43-36" aria-hidden="true" tabindex="-1"></a>sortedResults <span class="op">=</span> <span class="bu">sorted</span>(final, reverse<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb43-37"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb43-37" aria-hidden="true" tabindex="-1"></a>finalResults <span class="op">=</span> <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>.join(sortedResults)</span>
+<span id="cb43-38"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb43-38" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&quot;tag_results.csv&quot;</span>, <span class="st">&quot;w&quot;</span>, encoding<span class="op">=</span><span class="st">&quot;utf8&quot;</span>) <span class="im">as</span> f9:</span>
+<span id="cb43-39"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb43-39" aria-hidden="true" tabindex="-1"></a>    f9.write(finalResults)</span>
+<span id="cb43-40"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb43-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-41"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb43-41" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Done!&quot;</span>)</span></code></pre></div>
+<p>The results will look in the following manner (with some ommissions to save space):</p>
+<pre><code>0000907398  &lt;milestone
+0000649103  &lt;p
+0000552453  &lt;persName
+0000526235  &lt;surname
+0000446296  &lt;head
+0000402419  &lt;placeName
+0000370390  &lt;num
+0000353521  &lt;rs
+0000342807  &lt;div3
+0000325316  &lt;foreName
+0000197514  &lt;roleName
+0000170166  &lt;measure
+0000164988  &lt;orgName
+0000106719  &lt;hi
+...
+0000017332  &lt;div1
+0000015210  &lt;cit
+0000013816  &lt;opener
+...
+0000002571  &lt;table
+0000002445  &lt;sic
+0000002278  &lt;language
+...
+0000001349  &lt;text
+0000001349  &lt;teiHeader
+0000001349  &lt;taxonomy
+...
+0000000016  &lt;dateRange
+0000000013  &lt;div6
+0000000001  &lt;div7</code></pre>
+<p>These results suggest that the following tags can be useful, as they have high frequencies and carry meaningful data:</p>
+<ul>
+<li><code>&lt;persName&gt;</code> (552,453);</li>
+<li><code>&lt;placeName&gt;</code> (402,419);</li>
+<li><code>&lt;orgName&gt;</code> (164,988);</li>
+</ul>
+<p>(<code>&lt;rs&gt;</code> is another frequent tag with potentially valuable information (353,521). These tagged entities, however, lack additional metadata, which will make their analysis more complicated, so we will skip it. On the <code>&lt;rs&gt;</code> tag see &lt;/<a href="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-rs.html/" class="uri">https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-rs.html/</a>&gt;.)</p>
+<p>Next step will be to understand the structure of these selected tags and process them accordingly, aggregating results into a tidy format. We can build on the script from the previous lesson, to which we will need to add some modifitations (starting after <code># NEW PART</code>). This is your homework :)</p>
+<p>Our tidy results should look similar to what you see below:</p>
+<pre><code>itemID  date    itemType    itemUnified itemId
+1864-04-28_article_001  1864-04-28  placename   gordonsville, orange, virginia  tgn,2111971
+1864-04-28_article_002  1864-04-28  placename   plymouth, washington, north carolina    tgn,2076159
+1864-04-28_article_002  1864-04-28  placename   plymouth, washington, north carolina    tgn,2076159
+1864-04-28_article_002  1864-04-28  persname    wessels,brigadier-general,,,,   wessels,h.,w.
+1864-04-28_article_002  1864-04-28  persname    lincoln,,,,,    lincoln
+1864-04-28_article_002  1864-04-28  placename   plymouth, washington, north carolina    tgn,2076159
+1864-04-28_article_002  1864-04-28  persname    moffitt,colonel,,,, moffitt
+1864-04-28_article_002  1864-04-28  placename   plymouth, washington, north carolina    tgn,2076159
+1864-04-28_article_002  1864-04-28  orgname free school school
+1864-04-28_article_002  1864-04-28  orgname episcopal church    church
+1864-04-28_article_002  1864-04-28  persname    moffitt,lieutenant-colonel,,,,  moffitt
+1864-04-28_article_002  1864-04-28  persname    wessels,brigadier-general,h.,w.,,   wessels,h.,w.
+1864-04-28_article_002  1864-04-28  persname    stewart,,andrew,,,  stewart,andrew
+1864-04-28_article_002  1864-04-28  placename   plymouth, washington, north carolina    tgn,2076159
+1864-04-28_article_002  1864-04-28  orgname provost guard   guard
+1864-04-28_article_002  1864-04-28  persname    wessels,brigadier-general,h.,w.,,   wessels,h.,w.
+1864-04-28_article_002  1864-04-28  persname    beegle,,d.,f.,, beegle,d.,f.
+1864-04-28_article_002  1864-04-28  placename   plymouth, washington, north carolina    tgn,2076159</code></pre>
+<p>The structure of this data is as follows:</p>
+<ul>
+<li><code>itemID</code> is the ID of each article;</li>
+<li><code>date</code> is the date when the article was published (the same date effectively refers to the same issue);</li>
+<li><code>itemType</code>, <code>itemUnified</code>, <code>itemId</code>: these following three columns represent each tagged entity. In most cases each entity can be described with a single or multiple variables. A single variable can be used when it represents some kind of unique identifier from some external database/databank. such unique identifiers can be used to collect additional information on our entities from these external databases/databanks. For example, for <code>&lt;placeName&gt;</code> entities it could be enough to use the <code>key=</code> attribute which contains unique identifiers (for example, <code>tgn,2111971</code>) from the Getty Thesaurus of Geographical Names (<a href="http://tgndownloads.getty.edu/default.aspx" class="uri">http://tgndownloads.getty.edu/default.aspx</a>). Unfortunately, such data is not available more often than it is. I decided to use the following three elements (ideally trying to preserve (1) the type of an entity (<code>itemType</code>), (2) how it appears in the text (<em>skipped</em>), (3) its unified/normalized form (<code>itemUnified</code>, not available for all types); and (4) its unique identifier (<code>itemId</code>, also not available for all types)).</li>
+</ul>
+</div>
+<div id="HWL08" class="section level2" number="9.3">
+<h2><span class="header-section-number">9.3</span> Homework</h2>
+<ul>
+<li>Finish the assigned task;</li>
+<li>Annotate your script (i.e., add comment to every line of code describing what is happenning there);</li>
+</ul>
+<p><strong>Submitting homework:</strong></p>
+<ul>
+<li>Homework assignment must be submitted by the beginning of the next class;</li>
+<li>Now, that you know how to use GitHub, you will be submitting your homework pushing it to github:
+<ul>
+<li>Create a relevant subfolder in your repository and place your HW files there; push them to your GitHub account;
+<ul>
+<li>Email me the link to your repository with a short message (Something like: <em>I have completed homework for Lesson 3, which is uploaded to my repository … in subfolder <code>L03</code></em>)</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+<div id="SolutionL09" class="section level2" number="9.4">
+<h2><span class="header-section-number">9.4</span> Solution</h2>
+<p>Below is the solution to the homework: all issues of the Dispatch (stored in <code>./Dispatch/</code>) are converted into <code>YML</code> and saved into a different folder (<code>./Dispatch_Processed/</code>).</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb46-1"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
+<span id="cb46-2"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb46-3"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-4"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-4" aria-hidden="true" tabindex="-1"></a>source <span class="op">=</span> <span class="st">&quot;./Dispatch/&quot;</span></span>
+<span id="cb46-5"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-5" aria-hidden="true" tabindex="-1"></a>target <span class="op">=</span> <span class="st">&quot;./Dispatch_Processed/&quot;</span>  <span class="co"># needs to be created beforehand!</span></span>
+<span id="cb46-6"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-7"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-7" aria-hidden="true" tabindex="-1"></a>lof <span class="op">=</span> os.listdir(source)</span>
+<span id="cb46-8"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-8" aria-hidden="true" tabindex="-1"></a>counter <span class="op">=</span> <span class="dv">0</span>  <span class="co"># general counter to keep track of the progress</span></span>
+<span id="cb46-9"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-10"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-10" aria-hidden="true" tabindex="-1"></a>entities <span class="op">=</span> []  <span class="co"># we will collect all extracted data here</span></span>
+<span id="cb46-11"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-12"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-12" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> f <span class="kw">in</span> lof:</span>
+<span id="cb46-13"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> f.startswith(<span class="st">&quot;dltext&quot;</span>):  <span class="co"># fileName test</span></span>
+<span id="cb46-14"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-14" aria-hidden="true" tabindex="-1"></a>        newF <span class="op">=</span> f.split(<span class="st">&quot;:&quot;</span>)[<span class="op">-</span><span class="dv">1</span>] <span class="op">+</span> <span class="st">&quot;.yml&quot;</span>  <span class="co"># in fact, yml-like</span></span>
+<span id="cb46-15"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-16"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-16" aria-hidden="true" tabindex="-1"></a>        c <span class="op">=</span> <span class="dv">0</span>  <span class="co"># technical counter</span></span>
+<span id="cb46-17"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">with</span> <span class="bu">open</span>(source <span class="op">+</span> f, <span class="st">&quot;r&quot;</span>, encoding<span class="op">=</span><span class="st">&quot;utf8&quot;</span>) <span class="im">as</span> f1:</span>
+<span id="cb46-18"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-18" aria-hidden="true" tabindex="-1"></a>            text <span class="op">=</span> f1.read()</span>
+<span id="cb46-19"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-19" aria-hidden="true" tabindex="-1"></a>            date <span class="op">=</span> re.search(<span class="vs">r&#39;&lt;date value=&quot;([\d-]+)&quot;&#39;</span>, text).group(<span class="dv">1</span>)</span>
+<span id="cb46-20"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-20" aria-hidden="true" tabindex="-1"></a>            split <span class="op">=</span> re.split(<span class="st">&quot;&lt;div3 &quot;</span>, text)</span>
+<span id="cb46-21"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-22"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-22" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> s <span class="kw">in</span> split[<span class="dv">1</span>:]:</span>
+<span id="cb46-23"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-23" aria-hidden="true" tabindex="-1"></a>                c <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb46-24"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-24" aria-hidden="true" tabindex="-1"></a>                s <span class="op">=</span> <span class="st">&quot;&lt;div3 &quot;</span> <span class="op">+</span> s  <span class="co"># a step to restore the integrity of items</span></span>
+<span id="cb46-25"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-26"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-26" aria-hidden="true" tabindex="-1"></a>                <span class="cf">try</span>:</span>
+<span id="cb46-27"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-27" aria-hidden="true" tabindex="-1"></a>                    unitType <span class="op">=</span> re.search(<span class="vs">r&#39;type=&quot;([^\&quot;]+)&quot;&#39;</span>, s).group(<span class="dv">1</span>)</span>
+<span id="cb46-28"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-28" aria-hidden="true" tabindex="-1"></a>                <span class="cf">except</span>:</span>
+<span id="cb46-29"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-29" aria-hidden="true" tabindex="-1"></a>                    unitType <span class="op">=</span> <span class="st">&quot;noType&quot;</span></span>
+<span id="cb46-30"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-31"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-31" aria-hidden="true" tabindex="-1"></a>                <span class="cf">try</span>:</span>
+<span id="cb46-32"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-32" aria-hidden="true" tabindex="-1"></a>                    header <span class="op">=</span> re.search(<span class="vs">r&#39;&lt;head.*&lt;/head&gt;&#39;</span>, s).group(<span class="dv">0</span>)</span>
+<span id="cb46-33"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-33" aria-hidden="true" tabindex="-1"></a>                    header <span class="op">=</span> re.sub(<span class="st">&quot;&lt;[^&lt;]+&gt;&quot;</span>, <span class="st">&quot;&quot;</span>, header)</span>
+<span id="cb46-34"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-35"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-35" aria-hidden="true" tabindex="-1"></a>                <span class="cf">except</span>:</span>
+<span id="cb46-36"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-36" aria-hidden="true" tabindex="-1"></a>                    header <span class="op">=</span> <span class="st">&quot;NO HEADER&quot;</span></span>
+<span id="cb46-37"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-38"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-38" aria-hidden="true" tabindex="-1"></a>                text <span class="op">=</span> s</span>
+<span id="cb46-39"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-39" aria-hidden="true" tabindex="-1"></a>                text <span class="op">=</span> re.sub(<span class="st">&quot;&lt;[^&lt;]+&gt;&quot;</span>, <span class="st">&quot; &quot;</span>, text)</span>
+<span id="cb46-40"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-40" aria-hidden="true" tabindex="-1"></a>                text <span class="op">=</span> re.sub(<span class="st">&quot; +</span><span class="ch">\n</span><span class="st">|</span><span class="ch">\n</span><span class="st"> +&quot;</span>, <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>, text)</span>
+<span id="cb46-41"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-41" aria-hidden="true" tabindex="-1"></a>                text <span class="op">=</span> text.strip()</span>
+<span id="cb46-42"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-42" aria-hidden="true" tabindex="-1"></a>                text <span class="op">=</span> re.sub(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">+&quot;</span>, <span class="st">&quot;;;; &quot;</span>, text)</span>
+<span id="cb46-43"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-43" aria-hidden="true" tabindex="-1"></a>                text <span class="op">=</span> re.sub(<span class="st">&quot; +&quot;</span>, <span class="st">&quot; &quot;</span>, text)</span>
+<span id="cb46-44"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-44" aria-hidden="true" tabindex="-1"></a>                text <span class="op">=</span> re.sub(<span class="vs">r&quot; ([\.,:;!])&quot;</span>, <span class="vs">r&quot;\1&quot;</span>, text)</span>
+<span id="cb46-45"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-46"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-46" aria-hidden="true" tabindex="-1"></a>                itemID <span class="op">=</span> date <span class="op">+</span> <span class="st">&quot;_&quot;</span> <span class="op">+</span> unitType <span class="op">+</span> <span class="st">&quot;_</span><span class="sc">%03d</span><span class="st">&quot;</span> <span class="op">%</span> c</span>
+<span id="cb46-47"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-48"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-48" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> <span class="bu">len</span>(re.sub(<span class="st">&quot;\W+&quot;</span>, <span class="st">&quot;&quot;</span>, text)) <span class="op">!=</span> <span class="dv">0</span>:</span>
+<span id="cb46-49"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-49" aria-hidden="true" tabindex="-1"></a>                    itemIdvar <span class="op">=</span> <span class="st">&quot;ID: &quot;</span> <span class="op">+</span> itemID</span>
+<span id="cb46-50"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-50" aria-hidden="true" tabindex="-1"></a>                    dateVar <span class="op">=</span> <span class="st">&quot;DATE: &quot;</span> <span class="op">+</span> date</span>
+<span id="cb46-51"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-51" aria-hidden="true" tabindex="-1"></a>                    unitType <span class="op">=</span> <span class="st">&quot;TYPE: &quot;</span> <span class="op">+</span> unitType</span>
+<span id="cb46-52"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-52" aria-hidden="true" tabindex="-1"></a>                    header <span class="op">=</span> <span class="st">&quot;HEADER: &quot;</span> <span class="op">+</span> header</span>
+<span id="cb46-53"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-53" aria-hidden="true" tabindex="-1"></a>                    text <span class="op">=</span> <span class="st">&quot;TEXT: &quot;</span> <span class="op">+</span> text.replace(<span class="st">&quot;:&quot;</span>, <span class="st">&quot;@§@&quot;</span>) <span class="op">+</span> <span class="st">&quot;</span><span class="ch">\n\n</span><span class="st">&quot;</span></span>
+<span id="cb46-54"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-55"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-55" aria-hidden="true" tabindex="-1"></a>                    <span class="co"># NEW PART</span></span>
+<span id="cb46-56"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-57"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-57" aria-hidden="true" tabindex="-1"></a>                    <span class="cf">for</span> i <span class="kw">in</span> re.findall(<span class="vs">r&quot;(&lt;\w+[^&gt;]+&gt;)&quot;</span>, s):</span>
+<span id="cb46-58"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-58" aria-hidden="true" tabindex="-1"></a>                        <span class="cf">if</span> <span class="st">&quot;persName&quot;</span> <span class="kw">in</span> i <span class="kw">and</span> <span class="st">&quot;authname&quot;</span> <span class="kw">in</span> i <span class="kw">and</span> <span class="st">&quot;n=&quot;</span> <span class="kw">in</span> i:</span>
+<span id="cb46-59"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-59" aria-hidden="true" tabindex="-1"></a>                            <span class="co"># input(i)</span></span>
+<span id="cb46-60"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-60" aria-hidden="true" tabindex="-1"></a>                            itemType <span class="op">=</span> <span class="st">&quot;persName&quot;</span></span>
+<span id="cb46-61"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-61" aria-hidden="true" tabindex="-1"></a>                            itemUnified <span class="op">=</span> re.search(<span class="vs">r&#39;n=&quot;([^&quot;]+)&quot;&#39;</span>, i).group(<span class="dv">1</span>)</span>
+<span id="cb46-62"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-62" aria-hidden="true" tabindex="-1"></a>                            itemId <span class="op">=</span> re.search(</span>
+<span id="cb46-63"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-63" aria-hidden="true" tabindex="-1"></a>                                <span class="vs">r&#39;authname=&quot;([^&quot;]+)&quot;&#39;</span>, i).group(<span class="dv">1</span>)</span>
+<span id="cb46-64"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-65"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-65" aria-hidden="true" tabindex="-1"></a>                            tempVar <span class="op">=</span> <span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>.join(</span>
+<span id="cb46-66"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-66" aria-hidden="true" tabindex="-1"></a>                                [itemID, date, itemType, itemUnified, itemId])</span>
+<span id="cb46-67"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-67" aria-hidden="true" tabindex="-1"></a>                            entities.append(tempVar)</span>
+<span id="cb46-68"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-69"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-69" aria-hidden="true" tabindex="-1"></a>                        <span class="cf">elif</span> <span class="st">&quot;placeName&quot;</span> <span class="kw">in</span> i <span class="kw">and</span> <span class="st">&quot;authname&quot;</span> <span class="kw">in</span> i <span class="kw">and</span> <span class="st">&quot;reg=&quot;</span> <span class="kw">in</span> i:</span>
+<span id="cb46-70"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-70" aria-hidden="true" tabindex="-1"></a>                            <span class="co"># input(i)</span></span>
+<span id="cb46-71"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-71" aria-hidden="true" tabindex="-1"></a>                            itemType <span class="op">=</span> <span class="st">&quot;placeName&quot;</span></span>
+<span id="cb46-72"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-72" aria-hidden="true" tabindex="-1"></a>                            itemUnified <span class="op">=</span> re.search(</span>
+<span id="cb46-73"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-73" aria-hidden="true" tabindex="-1"></a>                                <span class="vs">r&#39;reg=&quot;([^&quot;]*)&quot;&#39;</span>, i).group(<span class="dv">1</span>)</span>
+<span id="cb46-74"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-74" aria-hidden="true" tabindex="-1"></a>                            itemId <span class="op">=</span> re.search(</span>
+<span id="cb46-75"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-75" aria-hidden="true" tabindex="-1"></a>                                <span class="vs">r&#39;authname=&quot;([^&quot;]+)&quot;&#39;</span>, i).group(<span class="dv">1</span>)</span>
+<span id="cb46-76"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-77"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-77" aria-hidden="true" tabindex="-1"></a>                            tempVar <span class="op">=</span> <span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>.join(</span>
+<span id="cb46-78"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-78" aria-hidden="true" tabindex="-1"></a>                                [itemID, date, itemType, itemUnified, itemId])</span>
+<span id="cb46-79"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-79" aria-hidden="true" tabindex="-1"></a>                            entities.append(tempVar)</span>
+<span id="cb46-80"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-81"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-81" aria-hidden="true" tabindex="-1"></a>                        <span class="cf">elif</span> <span class="st">&quot;orgName&quot;</span> <span class="kw">in</span> i <span class="kw">and</span> <span class="st">&quot;type&quot;</span> <span class="kw">in</span> i <span class="kw">and</span> <span class="st">&quot;n=&quot;</span> <span class="kw">in</span> i:</span>
+<span id="cb46-82"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-82" aria-hidden="true" tabindex="-1"></a>                            <span class="co"># print(i)</span></span>
+<span id="cb46-83"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-83" aria-hidden="true" tabindex="-1"></a>                            itemType <span class="op">=</span> <span class="st">&quot;orgName&quot;</span></span>
+<span id="cb46-84"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-84" aria-hidden="true" tabindex="-1"></a>                            itemUnified <span class="op">=</span> re.search(<span class="vs">r&#39;n=&quot;([^&quot;]+)&quot;&#39;</span>, i).group(<span class="dv">1</span>)</span>
+<span id="cb46-85"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-85" aria-hidden="true" tabindex="-1"></a>                            itemId <span class="op">=</span> re.search(</span>
+<span id="cb46-86"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-86" aria-hidden="true" tabindex="-1"></a>                                <span class="vs">r&#39;type=&quot;([^&quot;]+)&quot;&#39;</span>, i).group(<span class="dv">1</span>)</span>
+<span id="cb46-87"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-88"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-88" aria-hidden="true" tabindex="-1"></a>                            tempVar <span class="op">=</span> <span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>.join(</span>
+<span id="cb46-89"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-89" aria-hidden="true" tabindex="-1"></a>                                [itemID, date, itemType, itemUnified, itemId])</span>
+<span id="cb46-90"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-90" aria-hidden="true" tabindex="-1"></a>                            entities.append(tempVar)</span>
+<span id="cb46-91"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-92"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-92" aria-hidden="true" tabindex="-1"></a>                        <span class="cf">else</span>:</span>
+<span id="cb46-93"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-93" aria-hidden="true" tabindex="-1"></a>                            <span class="cf">pass</span></span>
+<span id="cb46-94"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-95"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-95" aria-hidden="true" tabindex="-1"></a>        counter <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb46-96"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-96" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> counter <span class="op">%</span> <span class="dv">100</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb46-97"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-97" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(counter)</span>
+<span id="cb46-98"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-99"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-99" aria-hidden="true" tabindex="-1"></a>header <span class="op">=</span> <span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>.join([<span class="st">&quot;itemID&quot;</span>, <span class="st">&quot;date&quot;</span>, <span class="st">&quot;itemType&quot;</span>, <span class="st">&quot;itemUnified&quot;</span>, <span class="st">&quot;itemId&quot;</span>])</span>
+<span id="cb46-100"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-100" aria-hidden="true" tabindex="-1"></a>entitiesTest <span class="op">=</span> header <span class="op">+</span> <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span> <span class="op">+</span> <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>.join(entities).lower()</span>
+<span id="cb46-101"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-101" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&quot;entities.csv&quot;</span>, <span class="st">&quot;w&quot;</span>, encoding<span class="op">=</span><span class="st">&quot;utf8&quot;</span>) <span class="im">as</span> f9:</span>
+<span id="cb46-102"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-102" aria-hidden="true" tabindex="-1"></a>    f9.write(entitiesTest)</span></code></pre></div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="lesson-08-converting-the-dispatch.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="appendix.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "github"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "serif",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/maximromanov/dh_in_mes/edit/main/02-Lesson09.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/maximromanov/dh_in_mes/blob/main/02-Lesson09.Rmd",
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"info": true
+});
+});
+</script>
+
+</body>
+
+</html>
