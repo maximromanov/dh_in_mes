@@ -261,7 +261,7 @@ Below is the solution to the homework: three functions that convert a TSV file i
 import csv
 import json
 
-# delim should be either "\b" for TSV  or "," for CSV
+# delim should be either "\t" for TSV  or "," for CSV
 def converter_tsv_to_json(file, delim):
     with open(file) as f1:
         reader = csv.DictReader(f1, delimiter=delim)
@@ -270,7 +270,6 @@ def converter_tsv_to_json(file, delim):
             settlements[row["settlement_id"]] = row
     with open(file.replace(".csv", ".json"), "w") as f9:
         json.dump(settlements, f9, indent=4, ensure_ascii=False)
-
 
 def converter_tsv_to_yml(file):
     with open(file, "r", encoding="utf8") as f1:
@@ -289,7 +288,6 @@ def converter_tsv_to_yml(file):
     with open(file.replace(".csv", ".yml"), "w", encoding="utf8") as f9:
         f9.write(ReallyFinalData)
 
-
 def converter_tsv_to_xml(file):
     with open(file) as f1:
         reader = csv.DictReader(f1, delimiter="\t")
@@ -305,9 +303,7 @@ def converter_tsv_to_xml(file):
     with open(file.replace(".csv", ".xml"), "w", encoding="utf8") as f9:
         f9.write(ReallyFinalData)
 
-
 converter_tsv_to_json("settlements.csv", "\t")
 converter_tsv_to_yml("settlements.csv")
 converter_tsv_to_xml("settlements.csv")
-
 ```
