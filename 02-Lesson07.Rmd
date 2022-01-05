@@ -254,7 +254,7 @@ Suggestions:
 
 ## Solution{#SolutionL07}
 
-Below is the solution to the homework: three functions that convert a TSV file into XML, YML, and JSON. Your solutions may be different, but they are considered correct as long as your results are what they must be
+Below is the solution to the homework: three functions that convert a TSV file into XML, YML, and JSON. Your solutions may be different, but they are considered correct as long as your results are what they must be.
 
 ```{r engine='python', highlight=TRUE, eval=FALSE}
 
