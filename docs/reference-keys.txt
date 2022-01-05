@@ -106,6 +106,4 @@ SolutionL08
 lesson-08-extracting-tagged-data-for-analysis
 concept-of-tidy-data
 extracting-tagged-entities
-convert-to-a-cleaner-format-1
-in-class-practice-and-homework-2
 SolutionL09

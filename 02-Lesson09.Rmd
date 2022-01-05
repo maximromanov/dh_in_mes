@@ -67,71 +67,75 @@ The results will look in the following manner (with some ommissions to save spac
 ```
 0000907398	<milestone
 0000649103	<p
-0000552453	<persName  <<<
+0000552453	<persName
 0000526235	<surname
 0000446296	<head
-0000402419	<placeName <<<
+0000402419	<placeName
 0000370390	<num
-0000353521	<rs        <<<
+0000353521	<rs
 0000342807	<div3
 0000325316	<foreName
 0000197514	<roleName
 0000170166	<measure
-0000164988	<orgName  <<<
+0000164988	<orgName
 0000106719	<hi
-0000088209	<dateStruct
-0000082942	<name
-0000074722	<day
 ...
 0000017332	<div1
 0000015210	<cit
 0000013816	<opener
-0000013495	<dateline
-0000008094	<title
-0000006876	<resp
-0000005388	<note
-0000004672	<list
-0000004178	<respStmt
 ...
 0000002571	<table
 0000002445	<sic
 0000002278	<language
 ...
-0000001349	<textClass
 0000001349	<text
 0000001349	<teiHeader
 0000001349	<taxonomy
-0000001349	<state
 ...
 0000000016	<dateRange
 0000000013	<div6
 0000000001	<div7
 ```
 
+These results suggest that the following tags can be useful, as they have high frequencies and carry meaningful data:
 
+- `<persName>` (552,453);
+- `<placeName>` (402,419);
+- `<orgName>` (164,988);
 
+(`<rs>` is another frequent tag with potentially valuable information (353,521). These tagged entities, however, lack additional metadata, which will make their analysis more complicated, so we will skip it. On the `<rs>` tag see </https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-rs.html/>.)
 
-- analyze structure and identify main structural elements;
-- extract main structural units (articles);
-- extract and generate additional metadata elements:
-  - date;
-  - article ID;
-  - header/title;
-  - texts.
+Next step will be to understand the structure of these selected tags and process them accordingly, aggregating results into a tidy format. We can build on the script from the previous lesson, to which we will need to add some modifitations (starting after `# NEW PART`). This is your homework :)
 
-## Convert to a cleaner format
+Our tidy results should look similar to what you see below:
 
-- what format would be best for this kind of data? (no single correct answer; any answer must be substantiated);
-- possible formats:
-  - a simple XML;
-  - JSON;
-  - YML;
-  - CSV / TSV;
-  - other formats.
+```
+itemID	date	itemType	itemUnified	itemId
+1864-04-28_article_001	1864-04-28	placename	gordonsville, orange, virginia	tgn,2111971
+1864-04-28_article_002	1864-04-28	placename	plymouth, washington, north carolina	tgn,2076159
+1864-04-28_article_002	1864-04-28	placename	plymouth, washington, north carolina	tgn,2076159
+1864-04-28_article_002	1864-04-28	persname	wessels,brigadier-general,,,,	wessels,h.,w.
+1864-04-28_article_002	1864-04-28	persname	lincoln,,,,,	lincoln
+1864-04-28_article_002	1864-04-28	placename	plymouth, washington, north carolina	tgn,2076159
+1864-04-28_article_002	1864-04-28	persname	moffitt,colonel,,,,	moffitt
+1864-04-28_article_002	1864-04-28	placename	plymouth, washington, north carolina	tgn,2076159
+1864-04-28_article_002	1864-04-28	orgname	free school	school
+1864-04-28_article_002	1864-04-28	orgname	episcopal church	church
+1864-04-28_article_002	1864-04-28	persname	moffitt,lieutenant-colonel,,,,	moffitt
+1864-04-28_article_002	1864-04-28	persname	wessels,brigadier-general,h.,w.,,	wessels,h.,w.
+1864-04-28_article_002	1864-04-28	persname	stewart,,andrew,,,	stewart,andrew
+1864-04-28_article_002	1864-04-28	placename	plymouth, washington, north carolina	tgn,2076159
+1864-04-28_article_002	1864-04-28	orgname	provost guard	guard
+1864-04-28_article_002	1864-04-28	persname	wessels,brigadier-general,h.,w.,,	wessels,h.,w.
+1864-04-28_article_002	1864-04-28	persname	beegle,,d.,f.,,	beegle,d.,f.
+1864-04-28_article_002	1864-04-28	placename	plymouth, washington, north carolina	tgn,2076159
+```
 
-## In-Class Practice (and homework)
+The structure of this data is as follows:
 
-... (*Suggestion*: start with some pseudo code: what are the steps into which you can break this operation?)
+- `itemID` is the ID of each article;
+- `date` is the date when the article was published (the same date effectively refers to the same issue);
+- `itemType`, `itemUnified`, `itemId`: these following three columns represent each tagged entity. In most cases each entity can be described with a single or multiple variables. A single variable can be used when it represents some kind of unique identifier from some external database/databank. such unique identifiers can be used to collect additional information on our entities from these external databases/databanks. For example, for `<placeName>` entities it could be enough to use the `key=` attribute which contains unique identifiers (for example, `tgn,2111971`) from the Getty Thesaurus of Geographical Names (<http://tgndownloads.getty.edu/default.aspx>). Unfortunately, such data is not available more often than it is. I decided to use the following three elements (ideally trying to preserve (1) the type of an entity (`itemType`), (2) how it appears in the text (*skipped*), (3) its unified/normalized form (`itemUnified`, not available for all types); and (4) its unique identifier (`itemId`, also not available for all types)). 
 
 ## Homework{#HWL08}
 
@@ -151,5 +155,107 @@ The results will look in the following manner (with some ommissions to save spac
 Below is the solution to the homework: all issues of the Dispatch (stored in `./Dispatch/`) are converted into `YML` and saved into a different folder (`./Dispatch_Processed/`).
 
 ```{r engine='python', highlight=TRUE, eval=FALSE}
+```{r engine='python', highlight=TRUE, eval=FALSE}
+import re
+import os
 
+source = "./Dispatch/"
+target = "./Dispatch_Processed/"  # needs to be created beforehand!
+
+lof = os.listdir(source)
+counter = 0  # general counter to keep track of the progress
+
+entities = []  # we will collect all extracted data here
+
+for f in lof:
+    if f.startswith("dltext"):  # fileName test
+        newF = f.split(":")[-1] + ".yml"  # in fact, yml-like
+
+        c = 0  # technical counter
+        with open(source + f, "r", encoding="utf8") as f1:
+            text = f1.read()
+            date = re.search(r'<date value="([\d-]+)"', text).group(1)
+            split = re.split("<div3 ", text)
+
+            for s in split[1:]:
+                c += 1
+                s = "<div3 " + s  # a step to restore the integrity of items
+
+                try:
+                    unitType = re.search(r'type="([^\"]+)"', s).group(1)
+                except:
+                    unitType = "noType"
+
+                try:
+                    header = re.search(r'<head.*</head>', s).group(0)
+                    header = re.sub("<[^<]+>", "", header)
+
+                except:
+                    header = "NO HEADER"
+
+                text = s
+                text = re.sub("<[^<]+>", " ", text)
+                text = re.sub(" +\n|\n +", "\n", text)
+                text = text.strip()
+                text = re.sub("\n+", ";;; ", text)
+                text = re.sub(" +", " ", text)
+                text = re.sub(r" ([\.,:;!])", r"\1", text)
+
+                itemID = date + "_" + unitType + "_%03d" % c
+
+                if len(re.sub("\W+", "", text)) != 0:
+                    itemIdvar = "ID: " + itemID
+                    dateVar = "DATE: " + date
+                    unitType = "TYPE: " + unitType
+                    header = "HEADER: " + header
+                    text = "TEXT: " + text.replace(":", "@§@") + "\n\n"
+
+                    # NEW PART
+
+                    for i in re.findall(r"(<\w+[^>]+>)", s):
+                        if "persName" in i and "authname" in i and "n=" in i:
+                            # input(i)
+                            itemType = "persName"
+                            itemUnified = re.search(r'n="([^"]+)"', i).group(1)
+                            itemId = re.search(
+                                r'authname="([^"]+)"', i).group(1)
+
+                            tempVar = "\t".join(
+                                [itemID, date, itemType, itemUnified, itemId])
+                            entities.append(tempVar)
+
+                        elif "placeName" in i and "authname" in i and "reg=" in i:
+                            # input(i)
+                            itemType = "placeName"
+                            itemUnified = re.search(
+                                r'reg="([^"]*)"', i).group(1)
+                            itemId = re.search(
+                                r'authname="([^"]+)"', i).group(1)
+
+                            tempVar = "\t".join(
+                                [itemID, date, itemType, itemUnified, itemId])
+                            entities.append(tempVar)
+
+                        elif "orgName" in i and "type" in i and "n=" in i:
+                            # print(i)
+                            itemType = "orgName"
+                            itemUnified = re.search(r'n="([^"]+)"', i).group(1)
+                            itemId = re.search(
+                                r'type="([^"]+)"', i).group(1)
+
+                            tempVar = "\t".join(
+                                [itemID, date, itemType, itemUnified, itemId])
+                            entities.append(tempVar)
+
+                        else:
+                            pass
+
+        counter += 1
+        if counter % 100 == 0:
+            print(counter)
+
+header = "\t".join(["itemID", "date", "itemType", "itemUnified", "itemId"])
+entitiesTest = header + "\n" + "\n".join(entities).lower()
+with open("entities.csv", "w", encoding="utf8") as f9:
+    f9.write(entitiesTest)
 ```
