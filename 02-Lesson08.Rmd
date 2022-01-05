@@ -39,7 +39,7 @@ Let's start working on the conversion of our initial data into other formats. (*
 
 ## Solution{#SolutionL08}
 
-Below is the solution to the homework: three functions that convert a TSV file into XML, YML, and JSON. Your solutions may be different, but they are considered correct as long as your results are what they must be.
+Below is the solution to the homework: all issues of the Dispatch (stored in `./Dispatch/`) are converted into `YML` and saved into a different folder (`./Dispatch_Processed/`).
 
 ```{r engine='python', highlight=TRUE, eval=FALSE}
 
@@ -63,7 +63,7 @@ for f in lof:
             split = re.split("<div3 ", text)
 
             for s in split[1:]:
-                s = "<div3 " + s  # a step to restore the integrity of items
+                s = "<div3 " + s  # a step to restore the integrity of each item
 
                 try:
                     unitType = re.search(r'type="([^\"]+)"', s).group(1)
@@ -102,9 +102,7 @@ for f in lof:
         with open(target + newF, "w", encoding="utf8") as f9:
             f9.write(issueNew)
 
-        # count processed issues and print progress counter at every 100
-        counter += 1  # counter = counter + 1
-        # if counter is divisible by 100 (i.e., no remainder), then print it
+        counter += 1
         if counter % 100 == 0:
             print(counter)
 

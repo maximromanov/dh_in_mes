@@ -376,7 +376,7 @@ div.csl-indent {
 </div>
 <div id="SolutionL08" class="section level2" number="8.5">
 <h2><span class="header-section-number">8.5</span> Solution</h2>
-<p>Below is the solution to the homework: three functions that convert a TSV file into XML, YML, and JSON. Your solutions may be different, but they are considered correct as long as your results are what they must be.</p>
+<p>Below is the solution to the homework: all issues of the Dispatch (stored in <code>./Dispatch/</code>) are converted into <code>YML</code> and saved into a different folder (<code>./Dispatch_Processed/</code>).</p>
 <div class="sourceCode" id="cb42"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb42-1"><a href="lesson-08-converting-the-dispatch.html#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
 <span id="cb42-2"><a href="lesson-08-converting-the-dispatch.html#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
 <span id="cb42-3"><a href="lesson-08-converting-the-dispatch.html#cb42-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -397,7 +397,7 @@ div.csl-indent {
 <span id="cb42-18"><a href="lesson-08-converting-the-dispatch.html#cb42-18" aria-hidden="true" tabindex="-1"></a>            split <span class="op">=</span> re.split(<span class="st">&quot;&lt;div3 &quot;</span>, text)</span>
 <span id="cb42-19"><a href="lesson-08-converting-the-dispatch.html#cb42-19" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb42-20"><a href="lesson-08-converting-the-dispatch.html#cb42-20" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> s <span class="kw">in</span> split[<span class="dv">1</span>:]:</span>
-<span id="cb42-21"><a href="lesson-08-converting-the-dispatch.html#cb42-21" aria-hidden="true" tabindex="-1"></a>                s <span class="op">=</span> <span class="st">&quot;&lt;div3 &quot;</span> <span class="op">+</span> s  <span class="co"># a step to restore the integrity of items</span></span>
+<span id="cb42-21"><a href="lesson-08-converting-the-dispatch.html#cb42-21" aria-hidden="true" tabindex="-1"></a>                s <span class="op">=</span> <span class="st">&quot;&lt;div3 &quot;</span> <span class="op">+</span> s  <span class="co"># a step to restore the integrity of each item</span></span>
 <span id="cb42-22"><a href="lesson-08-converting-the-dispatch.html#cb42-22" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb42-23"><a href="lesson-08-converting-the-dispatch.html#cb42-23" aria-hidden="true" tabindex="-1"></a>                <span class="cf">try</span>:</span>
 <span id="cb42-24"><a href="lesson-08-converting-the-dispatch.html#cb42-24" aria-hidden="true" tabindex="-1"></a>                    unitType <span class="op">=</span> re.search(<span class="vs">r&#39;type=&quot;([^\&quot;]+)&quot;&#39;</span>, s).group(<span class="dv">1</span>)</span>
@@ -436,11 +436,9 @@ div.csl-indent {
 <span id="cb42-57"><a href="lesson-08-converting-the-dispatch.html#cb42-57" aria-hidden="true" tabindex="-1"></a>        <span class="cf">with</span> <span class="bu">open</span>(target <span class="op">+</span> newF, <span class="st">&quot;w&quot;</span>, encoding<span class="op">=</span><span class="st">&quot;utf8&quot;</span>) <span class="im">as</span> f9:</span>
 <span id="cb42-58"><a href="lesson-08-converting-the-dispatch.html#cb42-58" aria-hidden="true" tabindex="-1"></a>            f9.write(issueNew)</span>
 <span id="cb42-59"><a href="lesson-08-converting-the-dispatch.html#cb42-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb42-60"><a href="lesson-08-converting-the-dispatch.html#cb42-60" aria-hidden="true" tabindex="-1"></a>        <span class="co"># count processed issues and print progress counter at every 100</span></span>
-<span id="cb42-61"><a href="lesson-08-converting-the-dispatch.html#cb42-61" aria-hidden="true" tabindex="-1"></a>        counter <span class="op">+=</span> <span class="dv">1</span>  <span class="co"># counter = counter + 1</span></span>
-<span id="cb42-62"><a href="lesson-08-converting-the-dispatch.html#cb42-62" aria-hidden="true" tabindex="-1"></a>        <span class="co"># if counter is divisible by 100 (i.e., no remainder), then print it</span></span>
-<span id="cb42-63"><a href="lesson-08-converting-the-dispatch.html#cb42-63" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> counter <span class="op">%</span> <span class="dv">100</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb42-64"><a href="lesson-08-converting-the-dispatch.html#cb42-64" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(counter)</span></code></pre></div>
+<span id="cb42-60"><a href="lesson-08-converting-the-dispatch.html#cb42-60" aria-hidden="true" tabindex="-1"></a>        counter <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb42-61"><a href="lesson-08-converting-the-dispatch.html#cb42-61" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> counter <span class="op">%</span> <span class="dv">100</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb42-62"><a href="lesson-08-converting-the-dispatch.html#cb42-62" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(counter)</span></code></pre></div>
 
 </div>
 </div>
