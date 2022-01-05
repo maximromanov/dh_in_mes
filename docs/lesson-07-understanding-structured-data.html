@@ -24,7 +24,7 @@
 <meta name="author" content="Maxim G. Romanov" />
 
 
-<meta name="date" content="2021-11-28" />
+<meta name="date" content="2022-01-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   <link rel="apple-touch-icon-precomposed" sizes="120x120" href="touch-icon.png" />
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 <link rel="prev" href="lesson-06-webscraping.html"/>
-<link rel="next" href="appendix.html"/>
+<link rel="next" href="SolutionL07.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -291,6 +291,7 @@ div.csl-indent {
 <li class="chapter" data-level="7.3" data-path="lesson-07-understanding-structured-data.html"><a href="lesson-07-understanding-structured-data.html#in-class-practice-and-homework"><i class="fa fa-check"></i><b>7.3</b> In-Class Practice (and homework)</a></li>
 <li class="chapter" data-level="7.4" data-path="lesson-07-understanding-structured-data.html"><a href="lesson-07-understanding-structured-data.html#HWL07"><i class="fa fa-check"></i><b>7.4</b> Homework</a></li>
 </ul></li>
+<li class="chapter" data-level="8" data-path="SolutionL07.html"><a href="SolutionL07.html"><i class="fa fa-check"></i><b>8</b> Solution</a></li>
 <li class="chapter" data-level="" data-path="appendix.html"><a href="appendix.html"><i class="fa fa-check"></i>Appendix</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -319,7 +320,7 @@ div.csl-indent {
 <h2><span class="header-section-number">7.1</span> Major Data Formats</h2>
 <p>Doing Digital Humanities practically always means working with structured data of some kind. In most general terms, structured data means some explicit annotation or classification that the machine can understand, and therefore — effectively use. When we see the word “Berlin”, we are likely to automatically assume that this is the name of the capital of Germany The machine cannot know that, unless there is something else in the data that allows it to figure it out (here, an XML tag): <code>&lt;settlement country="Germany" type="capital city"&gt;Berlin&lt;/settlement&gt;</code> — from this <em>annotation</em> (and its attributes) the machine can be instructed to interpret the string <code>Berlin</code> as a <em>settlement</em> of the type <em>capital city</em> in the country of <em>Germany</em>. It is important to understand most common data formats in order to be able to create and generate them as well as to convert between different formats.</p>
 <p>When we decide which format we want to work with, we need to consider the following: the ease of working with a given format (manual editing); suitability for specific analytic software; human-friendliness and readability; open vs. proprietary. In general, it does not make any sense to engage in <em>the format wars</em> (i.e., one format is better than another); one should rather develop an understanding that almost every format has its use and value in specific contexts or for specific tasks. What we also want is not to stick to a specific format and try to do everything with it and only it, but rather to be able to write scripts with which we can generate data in suitable formats or convert our data from one format into another.</p>
-<p>Let’s take a look at a simple example in some most common formats.</p>
+<p>Let’s take a look at the same example in some of the most common formats.</p>
 <div id="xml-extensible-markup-language" class="section level3" number="7.1.1">
 <h3><span class="header-section-number">7.1.1</span> XML (<em>Extensible Markup Language</em>)</h3>
 <div class="sourceCode" id="cb27"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb27-1"><a href="lesson-07-understanding-structured-data.html#cb27-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">note</span>&gt;</span>
@@ -458,12 +459,12 @@ Chicago,-6.1%,41.8781136,-87.6297982,2718782,3,Illinois</code></pre>
 <p>In general, it should be as easy as running the following command in your command line tool:</p>
 <pre><code>pip install --upgrade libraryName</code></pre>
 <ul>
-<li><code>pip</code> is the standard package installer for <code>python</code>; if you are running version 3.xx of <code>python</code>, it may be <code>pip3</code> instead of <code>pip</code>. If you have Anaconda installed, you can also use Anacodnda interface to install packages;</li>
+<li><code>pip</code> is the standard package installer for <code>python</code>; if you are running version 3.xx of <code>python</code>, it may be <code>pip3</code> instead of <code>pip</code>. If you have Anaconda installed, you can also use Anaconda interface to install packages;</li>
 <li><code>install</code> is the command to install a package that you need;</li>
 <li><code>--upgrade</code> is an optional argument that you would need only when you upgrade already installed package;</li>
 <li><code>libraryName</code> is the name of the library that you want to install.</li>
 </ul>
-<p>This should work just fine, but sometimes it does not—usually when you have multiple versions of <code>python</code> installed and they may start conflicting with each other (another good reason to handle your <code>python</code> installations via Anaconda). There is, luckily, a workaround that seems to do the trick.You can modify your command in the following manner:</p>
+<p>This should work just fine, but sometimes it does not—usually when you have multiple versions of <code>python</code> installed and they may start conflicting with each other (another good reason to handle your <code>python</code> installations via Anaconda). There is, luckily, a workaround that seems to do the trick. You can modify your command in the following manner:</p>
 <pre><code>python -m pip install --upgrade libraryName</code></pre>
 <ul>
 <li><code>python</code> here is whatever alias you are using for running <code>python</code>. If you are on Mac, <code>python</code> is installed with the original MacOS setup and <code>python</code> command remains reserved for the erlier versions of <code>python</code> (usually, 2.x). If you installde the latest version of <code>python</code>, it will be some 3.x version and the default command to run it on your Mac will be <code>python3</code>, so the full command will look: <code>python3 -m pip install --upgrade libraryName</code>)</li>
@@ -530,7 +531,6 @@ QANT_004W383N_S [&#39;ara&#39;, &#39;eng&#39;]  قانت    قانت    Qant    
 </ul></li>
 </ul></li>
 </ul>
-
 </div>
 </div>
             </section>
@@ -539,7 +539,7 @@ QANT_004W383N_S [&#39;ara&#39;, &#39;eng&#39;]  قانت    قانت    Qant    
         </div>
       </div>
 <a href="lesson-06-webscraping.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="appendix.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="SolutionL07.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
