@@ -10,13 +10,124 @@
 
 ![*Source:* Wickham, Hadley, and Garrett Grolemund. 2017. R for Data Science: Import, Tidy, Transform, Visualize, and Model Data. Sebastopol, CA: O’Reilly UK Ltd. <https://r4ds.had.co.nz/>; for a Chapter on **tidy data**, see: <https://r4ds.had.co.nz/tidy-data.html>.](https://d33wubrfki0l68.cloudfront.net/6f1ddb544fc5c69a2478e444ab8112fb0eea23f8/91adc/images/tidy-1.png)
 
-*Source:* Wickham, Hadley, and Garrett Grolemund. 2017. R for Data Science: Import, Tidy, Transform, Visualize, and Model Data. Sebastopol, CA: O’Reilly UK Ltd. <https://r4ds.had.co.nz/>; for a Chapter on **tidy data**, see: <https://r4ds.had.co.nz/tidy-data.html>.
-
-
 ## Extracting tagged entities
 
-- Why? We can analyze tagged entities as they feature across time and space in the coverage of the Dispatch (again, for all intents and purposes, we can use this newspaper as an equivalent of a chronicle, or even broader, as that of a chronological corpus.)
-- How? Different types of entities are already tagged in the text and we can use this tagging to make abstractions of each article. These abstractions is what we will then use in our initial simple analysis. In order to extract tagged data, we first need to understand what we can extract. This can be done by creating a frequency list of all XML tags used in the issues of the Dispatch. These results will help us to understand what kind of data we can use for analysis. 
+*Why?* We can analyze tagged entities as they feature across time and space in the coverage of the Dispatch (again, for all intents and purposes, we can use this newspaper as an equivalent of a chronicle, or even broader, as that of a chronological corpus.)
+
+*How?* Different types of entities are already tagged in the text and we can use this tagging to make abstractions of each article. These abstractions is what we will then use in our initial simple analysis. In order to extract tagged data, we first need to understand what we can extract. This can be done by creating a frequency list of all XML tags used in the issues of the Dispatch. These results will help us to understand what kind of data we can use for analysis. The following script counts all the tags and saves results into a TSV format organized from the most frequent to the least frequent.
+
+```{r engine='python', highlight=TRUE, eval=FALSE}
+
+import re
+import os
+
+source = "./Dispatch/"
+target = "./Dispatch_Processed/"  # needs to be created beforehand!
+
+lof = os.listdir(source)
+
+resDic = {}
+
+for f in lof:
+    if f.startswith("dltext"):  # fileName test
+        newF = f.split(":")[-1] + ".yml"  # in fact, yml-like
+
+        # collect and count all XML tags
+
+        issueVar = []
+        c = 0  # technical counter
+        with open(source + f, "r", encoding="utf8") as f1:
+            text = f1.read()
+
+            for i in re.findall(r"(<\w+)", text):
+                # print(i)
+
+                if i in resDic:
+                    resDic[i] += 1
+                else:
+                    resDic[i] = 1
+
+final = []
+for k, v in resDic.items():
+    value = "%010d\t%s" % (v, k)
+    final.append(value)
+    # input(value)
+
+sortedResults = sorted(final, reverse=True)
+finalResults = "\n".join(sortedResults)
+with open("tag_results.csv", "w", encoding="utf8") as f9:
+    f9.write(finalResults)
+
+print("Done!")
+
+```
+
+The results will look in the following manner (with some ommissions to save space):
+
+```
+0000907398	<milestone
+0000649103	<p
+0000552453	<persName
+0000526235	<surname
+0000446296	<head
+0000402419	<placeName
+0000370390	<num
+0000353521	<rs
+0000342807	<div3
+0000325316	<foreName
+0000197514	<roleName
+0000170166	<measure
+0000164988	<orgName
+0000106719	<hi
+0000088209	<dateStruct
+0000082942	<name
+0000074722	<day
+0000073048	<cell
+0000061127	<unclear
+0000054812	<lb
+0000054091	<date
+0000050930	<item
+0000049945	<div2
+0000042345	<q
+...
+0000017332	<div1
+0000015210	<cit
+0000013816	<opener
+0000013495	<dateline
+0000008094	<title
+0000006876	<resp
+0000005388	<note
+0000004672	<list
+0000004178	<respStmt
+...
+0000002571	<table
+0000002445	<sic
+0000002278	<language
+0000001976	<genName
+0000001480	<change
+0000001457	<div5
+0000001433	<byline
+0000001365	<foreign
+0000001349	<titlePart
+0000001349	<titlePage
+0000001349	<textClass
+0000001349	<text
+0000001349	<teiHeader
+0000001349	<taxonomy
+0000001349	<state
+0000001349	<sourceDesc
+0000001349	<revisionDesc
+0000001349	<refsDecl
+0000001349	<projectDesc
+...
+0000000811	<offset
+0000000637	<back
+0000000372	<occasion
+0000000016	<dateRange
+0000000013	<div6
+0000000001	<div7
+```
+
 
 
 

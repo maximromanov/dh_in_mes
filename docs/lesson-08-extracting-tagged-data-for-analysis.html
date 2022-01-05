@@ -345,16 +345,118 @@ div.csl-indent {
 <img src="https://d33wubrfki0l68.cloudfront.net/6f1ddb544fc5c69a2478e444ab8112fb0eea23f8/91adc/images/tidy-1.png" alt="" />
 <p class="caption"><em>Source:</em> Wickham, Hadley, and Garrett Grolemund. 2017. R for Data Science: Import, Tidy, Transform, Visualize, and Model Data. Sebastopol, CA: O’Reilly UK Ltd. <a href="https://r4ds.had.co.nz/" class="uri">https://r4ds.had.co.nz/</a>; for a Chapter on <strong>tidy data</strong>, see: <a href="https://r4ds.had.co.nz/tidy-data.html" class="uri">https://r4ds.had.co.nz/tidy-data.html</a>.</p>
 </div>
-<p><em>Source:</em> Wickham, Hadley, and Garrett Grolemund. 2017. R for Data Science: Import, Tidy, Transform, Visualize, and Model Data. Sebastopol, CA: O’Reilly UK Ltd. <a href="https://r4ds.had.co.nz/" class="uri">https://r4ds.had.co.nz/</a>; for a Chapter on <strong>tidy data</strong>, see: <a href="https://r4ds.had.co.nz/tidy-data.html" class="uri">https://r4ds.had.co.nz/tidy-data.html</a>.</p>
 </div>
 <div id="extracting-tagged-entities" class="section level2" number="9.2">
 <h2><span class="header-section-number">9.2</span> Extracting tagged entities</h2>
+<p><em>Why?</em> We can analyze tagged entities as they feature across time and space in the coverage of the Dispatch (again, for all intents and purposes, we can use this newspaper as an equivalent of a chronicle, or even broader, as that of a chronological corpus.)</p>
+<p><em>How?</em> Different types of entities are already tagged in the text and we can use this tagging to make abstractions of each article. These abstractions is what we will then use in our initial simple analysis. In order to extract tagged data, we first need to understand what we can extract. This can be done by creating a frequency list of all XML tags used in the issues of the Dispatch. These results will help us to understand what kind of data we can use for analysis. The following script counts all the tags and saves results into a TSV format organized from the most frequent to the least frequent.</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb43-1"><a href="lesson-08-extracting-tagged-data-for-analysis.html#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
+<span id="cb43-2"><a href="lesson-08-extracting-tagged-data-for-analysis.html#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb43-3"><a href="lesson-08-extracting-tagged-data-for-analysis.html#cb43-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-4"><a href="lesson-08-extracting-tagged-data-for-analysis.html#cb43-4" aria-hidden="true" tabindex="-1"></a>source <span class="op">=</span> <span class="st">&quot;./Dispatch/&quot;</span></span>
+<span id="cb43-5"><a href="lesson-08-extracting-tagged-data-for-analysis.html#cb43-5" aria-hidden="true" tabindex="-1"></a>target <span class="op">=</span> <span class="st">&quot;./Dispatch_Processed/&quot;</span>  <span class="co"># needs to be created beforehand!</span></span>
+<span id="cb43-6"><a href="lesson-08-extracting-tagged-data-for-analysis.html#cb43-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-7"><a href="lesson-08-extracting-tagged-data-for-analysis.html#cb43-7" aria-hidden="true" tabindex="-1"></a>lof <span class="op">=</span> os.listdir(source)</span>
+<span id="cb43-8"><a href="lesson-08-extracting-tagged-data-for-analysis.html#cb43-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-9"><a href="lesson-08-extracting-tagged-data-for-analysis.html#cb43-9" aria-hidden="true" tabindex="-1"></a>resDic <span class="op">=</span> {}</span>
+<span id="cb43-10"><a href="lesson-08-extracting-tagged-data-for-analysis.html#cb43-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-11"><a href="lesson-08-extracting-tagged-data-for-analysis.html#cb43-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> f <span class="kw">in</span> lof:</span>
+<span id="cb43-12"><a href="lesson-08-extracting-tagged-data-for-analysis.html#cb43-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> f.startswith(<span class="st">&quot;dltext&quot;</span>):  <span class="co"># fileName test</span></span>
+<span id="cb43-13"><a href="lesson-08-extracting-tagged-data-for-analysis.html#cb43-13" aria-hidden="true" tabindex="-1"></a>        newF <span class="op">=</span> f.split(<span class="st">&quot;:&quot;</span>)[<span class="op">-</span><span class="dv">1</span>] <span class="op">+</span> <span class="st">&quot;.yml&quot;</span>  <span class="co"># in fact, yml-like</span></span>
+<span id="cb43-14"><a href="lesson-08-extracting-tagged-data-for-analysis.html#cb43-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-15"><a href="lesson-08-extracting-tagged-data-for-analysis.html#cb43-15" aria-hidden="true" tabindex="-1"></a>        <span class="co"># collect and count all XML tags</span></span>
+<span id="cb43-16"><a href="lesson-08-extracting-tagged-data-for-analysis.html#cb43-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-17"><a href="lesson-08-extracting-tagged-data-for-analysis.html#cb43-17" aria-hidden="true" tabindex="-1"></a>        issueVar <span class="op">=</span> []</span>
+<span id="cb43-18"><a href="lesson-08-extracting-tagged-data-for-analysis.html#cb43-18" aria-hidden="true" tabindex="-1"></a>        c <span class="op">=</span> <span class="dv">0</span>  <span class="co"># technical counter</span></span>
+<span id="cb43-19"><a href="lesson-08-extracting-tagged-data-for-analysis.html#cb43-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">with</span> <span class="bu">open</span>(source <span class="op">+</span> f, <span class="st">&quot;r&quot;</span>, encoding<span class="op">=</span><span class="st">&quot;utf8&quot;</span>) <span class="im">as</span> f1:</span>
+<span id="cb43-20"><a href="lesson-08-extracting-tagged-data-for-analysis.html#cb43-20" aria-hidden="true" tabindex="-1"></a>            text <span class="op">=</span> f1.read()</span>
+<span id="cb43-21"><a href="lesson-08-extracting-tagged-data-for-analysis.html#cb43-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-22"><a href="lesson-08-extracting-tagged-data-for-analysis.html#cb43-22" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> i <span class="kw">in</span> re.findall(<span class="vs">r&quot;(&lt;\w+)&quot;</span>, text):</span>
+<span id="cb43-23"><a href="lesson-08-extracting-tagged-data-for-analysis.html#cb43-23" aria-hidden="true" tabindex="-1"></a>                <span class="co"># print(i)</span></span>
+<span id="cb43-24"><a href="lesson-08-extracting-tagged-data-for-analysis.html#cb43-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-25"><a href="lesson-08-extracting-tagged-data-for-analysis.html#cb43-25" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> i <span class="kw">in</span> resDic:</span>
+<span id="cb43-26"><a href="lesson-08-extracting-tagged-data-for-analysis.html#cb43-26" aria-hidden="true" tabindex="-1"></a>                    resDic[i] <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb43-27"><a href="lesson-08-extracting-tagged-data-for-analysis.html#cb43-27" aria-hidden="true" tabindex="-1"></a>                <span class="cf">else</span>:</span>
+<span id="cb43-28"><a href="lesson-08-extracting-tagged-data-for-analysis.html#cb43-28" aria-hidden="true" tabindex="-1"></a>                    resDic[i] <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb43-29"><a href="lesson-08-extracting-tagged-data-for-analysis.html#cb43-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-30"><a href="lesson-08-extracting-tagged-data-for-analysis.html#cb43-30" aria-hidden="true" tabindex="-1"></a>final <span class="op">=</span> []</span>
+<span id="cb43-31"><a href="lesson-08-extracting-tagged-data-for-analysis.html#cb43-31" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> k, v <span class="kw">in</span> resDic.items():</span>
+<span id="cb43-32"><a href="lesson-08-extracting-tagged-data-for-analysis.html#cb43-32" aria-hidden="true" tabindex="-1"></a>    value <span class="op">=</span> <span class="st">&quot;</span><span class="sc">%010d</span><span class="ch">\t</span><span class="sc">%s</span><span class="st">&quot;</span> <span class="op">%</span> (v, k)</span>
+<span id="cb43-33"><a href="lesson-08-extracting-tagged-data-for-analysis.html#cb43-33" aria-hidden="true" tabindex="-1"></a>    final.append(value)</span>
+<span id="cb43-34"><a href="lesson-08-extracting-tagged-data-for-analysis.html#cb43-34" aria-hidden="true" tabindex="-1"></a>    <span class="co"># input(value)</span></span>
+<span id="cb43-35"><a href="lesson-08-extracting-tagged-data-for-analysis.html#cb43-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-36"><a href="lesson-08-extracting-tagged-data-for-analysis.html#cb43-36" aria-hidden="true" tabindex="-1"></a>sortedResults <span class="op">=</span> <span class="bu">sorted</span>(final, reverse<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb43-37"><a href="lesson-08-extracting-tagged-data-for-analysis.html#cb43-37" aria-hidden="true" tabindex="-1"></a>finalResults <span class="op">=</span> <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>.join(sortedResults)</span>
+<span id="cb43-38"><a href="lesson-08-extracting-tagged-data-for-analysis.html#cb43-38" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&quot;tag_results.csv&quot;</span>, <span class="st">&quot;w&quot;</span>, encoding<span class="op">=</span><span class="st">&quot;utf8&quot;</span>) <span class="im">as</span> f9:</span>
+<span id="cb43-39"><a href="lesson-08-extracting-tagged-data-for-analysis.html#cb43-39" aria-hidden="true" tabindex="-1"></a>    f9.write(finalResults)</span>
+<span id="cb43-40"><a href="lesson-08-extracting-tagged-data-for-analysis.html#cb43-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-41"><a href="lesson-08-extracting-tagged-data-for-analysis.html#cb43-41" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Done!&quot;</span>)</span></code></pre></div>
+<p>The results will look in the following manner (with some ommissions to save space):</p>
+<pre><code>0000907398  &lt;milestone
+0000649103  &lt;p
+0000552453  &lt;persName
+0000526235  &lt;surname
+0000446296  &lt;head
+0000402419  &lt;placeName
+0000370390  &lt;num
+0000353521  &lt;rs
+0000342807  &lt;div3
+0000325316  &lt;foreName
+0000197514  &lt;roleName
+0000170166  &lt;measure
+0000164988  &lt;orgName
+0000106719  &lt;hi
+0000088209  &lt;dateStruct
+0000082942  &lt;name
+0000074722  &lt;day
+0000073048  &lt;cell
+0000061127  &lt;unclear
+0000054812  &lt;lb
+0000054091  &lt;date
+0000050930  &lt;item
+0000049945  &lt;div2
+0000042345  &lt;q
+...
+0000017332  &lt;div1
+0000015210  &lt;cit
+0000013816  &lt;opener
+0000013495  &lt;dateline
+0000008094  &lt;title
+0000006876  &lt;resp
+0000005388  &lt;note
+0000004672  &lt;list
+0000004178  &lt;respStmt
+...
+0000002571  &lt;table
+0000002445  &lt;sic
+0000002278  &lt;language
+0000001976  &lt;genName
+0000001480  &lt;change
+0000001457  &lt;div5
+0000001433  &lt;byline
+0000001365  &lt;foreign
+0000001349  &lt;titlePart
+0000001349  &lt;titlePage
+0000001349  &lt;textClass
+0000001349  &lt;text
+0000001349  &lt;teiHeader
+0000001349  &lt;taxonomy
+0000001349  &lt;state
+0000001349  &lt;sourceDesc
+0000001349  &lt;revisionDesc
+0000001349  &lt;refsDecl
+0000001349  &lt;projectDesc
+...
+0000000811  &lt;offset
+0000000637  &lt;back
+0000000372  &lt;occasion
+0000000016  &lt;dateRange
+0000000013  &lt;div6
+0000000001  &lt;div7</code></pre>
 <ul>
-<li><p>Why? We can analyze tagged entities as they feature across time and space in the coverage of the Dispatch (again, for all intents and purposes, we can use this newspaper as an equivalent of a chronicle, or even broader, as that of a chronological corpus.)</p></li>
-<li><p>How? Different types of entities are already tagged in the text and we can use this tagging to make abstractions of each article. These abstractions is what we will then use in our initial simple analysis. In order to extract tagged data, we first need to understand what we can extract. This can be done by creating a frequency list of all XML tags used in the issues of the Dispatch. These results will help us to understand what kind of data we can use for analysis.</p></li>
-<li><p>analyze structure and identify main structural elements;</p></li>
-<li><p>extract main structural units (articles);</p></li>
-<li><p>extract and generate additional metadata elements:</p>
+<li>analyze structure and identify main structural elements;</li>
+<li>extract main structural units (articles);</li>
+<li>extract and generate additional metadata elements:
 <ul>
 <li>date;</li>
 <li>article ID;</li>
