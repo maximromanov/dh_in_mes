@@ -37,6 +37,7 @@ Let's start working on the conversion of our initial data into other formats. (*
 	* Email me the link to your repository with a short message (Something like: *I have completed homework for Lesson 3, which is uploaded to my repository ... in subfolder `L03`*)
 
 
+<!--
 ## Solution{#SolutionL08}
 
 Below is the solution to the homework: all issues of the Dispatch (stored in `./Dispatch/`) are converted into `YML` and saved into a different folder (`./Dispatch_Processed/`).
@@ -108,3 +109,4 @@ for f in lof:
 
 
 ```
+-->
