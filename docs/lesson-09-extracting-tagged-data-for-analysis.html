@@ -429,44 +429,152 @@ div.csl-indent {
 <p>(<code>&lt;rs&gt;</code> is another frequent tag with potentially valuable information (353,521). These tagged entities, however, lack additional metadata, which will make their analysis more complicated, so we will skip it. On the <code>&lt;rs&gt;</code> tag see &lt;/<a href="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-rs.html/" class="uri">https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-rs.html/</a>&gt;.)</p>
 <p>Next step will be to understand the structure of these selected tags and process them accordingly, aggregating results into a tidy format. We can build on the script from the previous lesson, to which we will need to add some modifitations (starting after <code># NEW PART</code>). This is your homework :)</p>
 <p>Our tidy results should look similar to what you see below:</p>
-<pre><code>##                    itemID       date  itemType
-## 1  1864-04-28_article_001 1864-04-28 placename
-## 2  1864-04-28_article_002 1864-04-28 placename
-## 3  1864-04-28_article_002 1864-04-28 placename
-## 4  1864-04-28_article_002 1864-04-28  persname
-## 5  1864-04-28_article_002 1864-04-28  persname
-## 6  1864-04-28_article_002 1864-04-28 placename
-## 7  1864-04-28_article_002 1864-04-28  persname
-## 8  1864-04-28_article_002 1864-04-28 placename
-## 9  1864-04-28_article_002 1864-04-28   orgname
-## 10 1864-04-28_article_002 1864-04-28   orgname
-## 11 1864-04-28_article_002 1864-04-28  persname
-## 12 1864-04-28_article_002 1864-04-28  persname
-## 13 1864-04-28_article_002 1864-04-28  persname
-## 14 1864-04-28_article_002 1864-04-28 placename
-## 15 1864-04-28_article_002 1864-04-28   orgname
-## 16 1864-04-28_article_002 1864-04-28  persname
-## 17 1864-04-28_article_002 1864-04-28  persname
-## 18 1864-04-28_article_002 1864-04-28 placename
-##                             itemUnified         itemId
-## 1        gordonsville, orange, virginia    tgn,2111971
-## 2  plymouth, washington, north carolina    tgn,2076159
-## 3  plymouth, washington, north carolina    tgn,2076159
-## 4         wessels,brigadier-general,,,,  wessels,h.,w.
-## 5                          lincoln,,,,,        lincoln
-## 6  plymouth, washington, north carolina    tgn,2076159
-## 7                   moffitt,colonel,,,,        moffitt
-## 8  plymouth, washington, north carolina    tgn,2076159
-## 9                           free school         school
-## 10                     episcopal church         church
-## 11       moffitt,lieutenant-colonel,,,,        moffitt
-## 12    wessels,brigadier-general,h.,w.,,  wessels,h.,w.
-## 13                   stewart,,andrew,,, stewart,andrew
-## 14 plymouth, washington, north carolina    tgn,2076159
-## 15                        provost guard          guard
-## 16    wessels,brigadier-general,h.,w.,,  wessels,h.,w.
-## 17                      beegle,,d.,f.,,   beegle,d.,f.
-## 18 plymouth, washington, north carolina    tgn,2076159</code></pre>
+<table>
+<colgroup>
+<col width="23%" />
+<col width="11%" />
+<col width="10%" />
+<col width="38%" />
+<col width="15%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">itemID</th>
+<th align="left">date</th>
+<th align="left">itemType</th>
+<th align="left">itemUnified</th>
+<th align="left">itemId</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">1864-04-28_article_001</td>
+<td align="left">1864-04-28</td>
+<td align="left">placename</td>
+<td align="left">gordonsville, orange, virginia</td>
+<td align="left">tgn,2111971</td>
+</tr>
+<tr class="even">
+<td align="left">1864-04-28_article_002</td>
+<td align="left">1864-04-28</td>
+<td align="left">placename</td>
+<td align="left">plymouth, washington, north carolina</td>
+<td align="left">tgn,2076159</td>
+</tr>
+<tr class="odd">
+<td align="left">1864-04-28_article_002</td>
+<td align="left">1864-04-28</td>
+<td align="left">placename</td>
+<td align="left">plymouth, washington, north carolina</td>
+<td align="left">tgn,2076159</td>
+</tr>
+<tr class="even">
+<td align="left">1864-04-28_article_002</td>
+<td align="left">1864-04-28</td>
+<td align="left">persname</td>
+<td align="left">wessels,brigadier-general,,,,</td>
+<td align="left">wessels,h.,w.</td>
+</tr>
+<tr class="odd">
+<td align="left">1864-04-28_article_002</td>
+<td align="left">1864-04-28</td>
+<td align="left">persname</td>
+<td align="left">lincoln,,,,,</td>
+<td align="left">lincoln</td>
+</tr>
+<tr class="even">
+<td align="left">1864-04-28_article_002</td>
+<td align="left">1864-04-28</td>
+<td align="left">placename</td>
+<td align="left">plymouth, washington, north carolina</td>
+<td align="left">tgn,2076159</td>
+</tr>
+<tr class="odd">
+<td align="left">1864-04-28_article_002</td>
+<td align="left">1864-04-28</td>
+<td align="left">persname</td>
+<td align="left">moffitt,colonel,,,,</td>
+<td align="left">moffitt</td>
+</tr>
+<tr class="even">
+<td align="left">1864-04-28_article_002</td>
+<td align="left">1864-04-28</td>
+<td align="left">placename</td>
+<td align="left">plymouth, washington, north carolina</td>
+<td align="left">tgn,2076159</td>
+</tr>
+<tr class="odd">
+<td align="left">1864-04-28_article_002</td>
+<td align="left">1864-04-28</td>
+<td align="left">orgname</td>
+<td align="left">free school</td>
+<td align="left">school</td>
+</tr>
+<tr class="even">
+<td align="left">1864-04-28_article_002</td>
+<td align="left">1864-04-28</td>
+<td align="left">orgname</td>
+<td align="left">episcopal church</td>
+<td align="left">church</td>
+</tr>
+<tr class="odd">
+<td align="left">1864-04-28_article_002</td>
+<td align="left">1864-04-28</td>
+<td align="left">persname</td>
+<td align="left">moffitt,lieutenant-colonel,,,,</td>
+<td align="left">moffitt</td>
+</tr>
+<tr class="even">
+<td align="left">1864-04-28_article_002</td>
+<td align="left">1864-04-28</td>
+<td align="left">persname</td>
+<td align="left">wessels,brigadier-general,h.,w.,,</td>
+<td align="left">wessels,h.,w.</td>
+</tr>
+<tr class="odd">
+<td align="left">1864-04-28_article_002</td>
+<td align="left">1864-04-28</td>
+<td align="left">persname</td>
+<td align="left">stewart,,andrew,,,</td>
+<td align="left">stewart,andrew</td>
+</tr>
+<tr class="even">
+<td align="left">1864-04-28_article_002</td>
+<td align="left">1864-04-28</td>
+<td align="left">placename</td>
+<td align="left">plymouth, washington, north carolina</td>
+<td align="left">tgn,2076159</td>
+</tr>
+<tr class="odd">
+<td align="left">1864-04-28_article_002</td>
+<td align="left">1864-04-28</td>
+<td align="left">orgname</td>
+<td align="left">provost guard</td>
+<td align="left">guard</td>
+</tr>
+<tr class="even">
+<td align="left">1864-04-28_article_002</td>
+<td align="left">1864-04-28</td>
+<td align="left">persname</td>
+<td align="left">wessels,brigadier-general,h.,w.,,</td>
+<td align="left">wessels,h.,w.</td>
+</tr>
+<tr class="odd">
+<td align="left">1864-04-28_article_002</td>
+<td align="left">1864-04-28</td>
+<td align="left">persname</td>
+<td align="left">beegle,,d.,f.,,</td>
+<td align="left">beegle,d.,f.</td>
+</tr>
+<tr class="even">
+<td align="left">1864-04-28_article_002</td>
+<td align="left">1864-04-28</td>
+<td align="left">placename</td>
+<td align="left">plymouth, washington, north carolina</td>
+<td align="left">tgn,2076159</td>
+</tr>
+</tbody>
+</table>
 <p>The structure of this data is as follows:</p>
 <ul>
 <li><code>itemID</code> is the ID of each article;</li>
@@ -495,108 +603,108 @@ div.csl-indent {
 <div id="SolutionL09" class="section level2" number="9.4">
 <h2><span class="header-section-number">9.4</span> Solution</h2>
 <p>Below is the solution to the homework: all issues of the Dispatch (stored in <code>./Dispatch/</code>) are converted into <code>YML</code> and saved into a different folder (<code>./Dispatch_Processed/</code>).</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb46-1"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
-<span id="cb46-2"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
-<span id="cb46-3"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-4"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-4" aria-hidden="true" tabindex="-1"></a>source <span class="op">=</span> <span class="st">&quot;./Dispatch/&quot;</span></span>
-<span id="cb46-5"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-5" aria-hidden="true" tabindex="-1"></a>target <span class="op">=</span> <span class="st">&quot;./Dispatch_Processed/&quot;</span>  <span class="co"># needs to be created beforehand!</span></span>
-<span id="cb46-6"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-7"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-7" aria-hidden="true" tabindex="-1"></a>lof <span class="op">=</span> os.listdir(source)</span>
-<span id="cb46-8"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-8" aria-hidden="true" tabindex="-1"></a>counter <span class="op">=</span> <span class="dv">0</span>  <span class="co"># general counter to keep track of the progress</span></span>
-<span id="cb46-9"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-10"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-10" aria-hidden="true" tabindex="-1"></a>entities <span class="op">=</span> []  <span class="co"># we will collect all extracted data here</span></span>
-<span id="cb46-11"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-12"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-12" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> f <span class="kw">in</span> lof:</span>
-<span id="cb46-13"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> f.startswith(<span class="st">&quot;dltext&quot;</span>):  <span class="co"># fileName test</span></span>
-<span id="cb46-14"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-14" aria-hidden="true" tabindex="-1"></a>        newF <span class="op">=</span> f.split(<span class="st">&quot;:&quot;</span>)[<span class="op">-</span><span class="dv">1</span>] <span class="op">+</span> <span class="st">&quot;.yml&quot;</span>  <span class="co"># in fact, yml-like</span></span>
-<span id="cb46-15"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-16"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-16" aria-hidden="true" tabindex="-1"></a>        c <span class="op">=</span> <span class="dv">0</span>  <span class="co"># technical counter</span></span>
-<span id="cb46-17"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">with</span> <span class="bu">open</span>(source <span class="op">+</span> f, <span class="st">&quot;r&quot;</span>, encoding<span class="op">=</span><span class="st">&quot;utf8&quot;</span>) <span class="im">as</span> f1:</span>
-<span id="cb46-18"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-18" aria-hidden="true" tabindex="-1"></a>            text <span class="op">=</span> f1.read()</span>
-<span id="cb46-19"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-19" aria-hidden="true" tabindex="-1"></a>            date <span class="op">=</span> re.search(<span class="vs">r&#39;&lt;date value=&quot;([\d-]+)&quot;&#39;</span>, text).group(<span class="dv">1</span>)</span>
-<span id="cb46-20"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-20" aria-hidden="true" tabindex="-1"></a>            split <span class="op">=</span> re.split(<span class="st">&quot;&lt;div3 &quot;</span>, text)</span>
-<span id="cb46-21"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-22"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-22" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> s <span class="kw">in</span> split[<span class="dv">1</span>:]:</span>
-<span id="cb46-23"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-23" aria-hidden="true" tabindex="-1"></a>                c <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb46-24"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-24" aria-hidden="true" tabindex="-1"></a>                s <span class="op">=</span> <span class="st">&quot;&lt;div3 &quot;</span> <span class="op">+</span> s  <span class="co"># a step to restore the integrity of items</span></span>
-<span id="cb46-25"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-26"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-26" aria-hidden="true" tabindex="-1"></a>                <span class="cf">try</span>:</span>
-<span id="cb46-27"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-27" aria-hidden="true" tabindex="-1"></a>                    unitType <span class="op">=</span> re.search(<span class="vs">r&#39;type=&quot;([^\&quot;]+)&quot;&#39;</span>, s).group(<span class="dv">1</span>)</span>
-<span id="cb46-28"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-28" aria-hidden="true" tabindex="-1"></a>                <span class="cf">except</span>:</span>
-<span id="cb46-29"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-29" aria-hidden="true" tabindex="-1"></a>                    unitType <span class="op">=</span> <span class="st">&quot;noType&quot;</span></span>
-<span id="cb46-30"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-31"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-31" aria-hidden="true" tabindex="-1"></a>                <span class="cf">try</span>:</span>
-<span id="cb46-32"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-32" aria-hidden="true" tabindex="-1"></a>                    header <span class="op">=</span> re.search(<span class="vs">r&#39;&lt;head.*&lt;/head&gt;&#39;</span>, s).group(<span class="dv">0</span>)</span>
-<span id="cb46-33"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-33" aria-hidden="true" tabindex="-1"></a>                    header <span class="op">=</span> re.sub(<span class="st">&quot;&lt;[^&lt;]+&gt;&quot;</span>, <span class="st">&quot;&quot;</span>, header)</span>
-<span id="cb46-34"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-35"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-35" aria-hidden="true" tabindex="-1"></a>                <span class="cf">except</span>:</span>
-<span id="cb46-36"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-36" aria-hidden="true" tabindex="-1"></a>                    header <span class="op">=</span> <span class="st">&quot;NO HEADER&quot;</span></span>
-<span id="cb46-37"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-38"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-38" aria-hidden="true" tabindex="-1"></a>                text <span class="op">=</span> s</span>
-<span id="cb46-39"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-39" aria-hidden="true" tabindex="-1"></a>                text <span class="op">=</span> re.sub(<span class="st">&quot;&lt;[^&lt;]+&gt;&quot;</span>, <span class="st">&quot; &quot;</span>, text)</span>
-<span id="cb46-40"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-40" aria-hidden="true" tabindex="-1"></a>                text <span class="op">=</span> re.sub(<span class="st">&quot; +</span><span class="ch">\n</span><span class="st">|</span><span class="ch">\n</span><span class="st"> +&quot;</span>, <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>, text)</span>
-<span id="cb46-41"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-41" aria-hidden="true" tabindex="-1"></a>                text <span class="op">=</span> text.strip()</span>
-<span id="cb46-42"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-42" aria-hidden="true" tabindex="-1"></a>                text <span class="op">=</span> re.sub(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">+&quot;</span>, <span class="st">&quot;;;; &quot;</span>, text)</span>
-<span id="cb46-43"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-43" aria-hidden="true" tabindex="-1"></a>                text <span class="op">=</span> re.sub(<span class="st">&quot; +&quot;</span>, <span class="st">&quot; &quot;</span>, text)</span>
-<span id="cb46-44"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-44" aria-hidden="true" tabindex="-1"></a>                text <span class="op">=</span> re.sub(<span class="vs">r&quot; ([\.,:;!])&quot;</span>, <span class="vs">r&quot;\1&quot;</span>, text)</span>
-<span id="cb46-45"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-46"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-46" aria-hidden="true" tabindex="-1"></a>                itemID <span class="op">=</span> date <span class="op">+</span> <span class="st">&quot;_&quot;</span> <span class="op">+</span> unitType <span class="op">+</span> <span class="st">&quot;_</span><span class="sc">%03d</span><span class="st">&quot;</span> <span class="op">%</span> c</span>
-<span id="cb46-47"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-48"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-48" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> <span class="bu">len</span>(re.sub(<span class="st">&quot;\W+&quot;</span>, <span class="st">&quot;&quot;</span>, text)) <span class="op">!=</span> <span class="dv">0</span>:</span>
-<span id="cb46-49"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-49" aria-hidden="true" tabindex="-1"></a>                    itemIdvar <span class="op">=</span> <span class="st">&quot;ID: &quot;</span> <span class="op">+</span> itemID</span>
-<span id="cb46-50"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-50" aria-hidden="true" tabindex="-1"></a>                    dateVar <span class="op">=</span> <span class="st">&quot;DATE: &quot;</span> <span class="op">+</span> date</span>
-<span id="cb46-51"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-51" aria-hidden="true" tabindex="-1"></a>                    unitType <span class="op">=</span> <span class="st">&quot;TYPE: &quot;</span> <span class="op">+</span> unitType</span>
-<span id="cb46-52"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-52" aria-hidden="true" tabindex="-1"></a>                    header <span class="op">=</span> <span class="st">&quot;HEADER: &quot;</span> <span class="op">+</span> header</span>
-<span id="cb46-53"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-53" aria-hidden="true" tabindex="-1"></a>                    text <span class="op">=</span> <span class="st">&quot;TEXT: &quot;</span> <span class="op">+</span> text.replace(<span class="st">&quot;:&quot;</span>, <span class="st">&quot;@§@&quot;</span>) <span class="op">+</span> <span class="st">&quot;</span><span class="ch">\n\n</span><span class="st">&quot;</span></span>
-<span id="cb46-54"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-54" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-55"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-55" aria-hidden="true" tabindex="-1"></a>                    <span class="co"># NEW PART</span></span>
-<span id="cb46-56"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-57"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-57" aria-hidden="true" tabindex="-1"></a>                    <span class="cf">for</span> i <span class="kw">in</span> re.findall(<span class="vs">r&quot;(&lt;\w+[^&gt;]+&gt;)&quot;</span>, s):</span>
-<span id="cb46-58"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-58" aria-hidden="true" tabindex="-1"></a>                        <span class="cf">if</span> <span class="st">&quot;persName&quot;</span> <span class="kw">in</span> i <span class="kw">and</span> <span class="st">&quot;authname&quot;</span> <span class="kw">in</span> i <span class="kw">and</span> <span class="st">&quot;n=&quot;</span> <span class="kw">in</span> i:</span>
-<span id="cb46-59"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-59" aria-hidden="true" tabindex="-1"></a>                            <span class="co"># input(i)</span></span>
-<span id="cb46-60"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-60" aria-hidden="true" tabindex="-1"></a>                            itemType <span class="op">=</span> <span class="st">&quot;persName&quot;</span></span>
-<span id="cb46-61"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-61" aria-hidden="true" tabindex="-1"></a>                            itemUnified <span class="op">=</span> re.search(<span class="vs">r&#39;n=&quot;([^&quot;]+)&quot;&#39;</span>, i).group(<span class="dv">1</span>)</span>
-<span id="cb46-62"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-62" aria-hidden="true" tabindex="-1"></a>                            itemId <span class="op">=</span> re.search(</span>
-<span id="cb46-63"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-63" aria-hidden="true" tabindex="-1"></a>                                <span class="vs">r&#39;authname=&quot;([^&quot;]+)&quot;&#39;</span>, i).group(<span class="dv">1</span>)</span>
-<span id="cb46-64"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-64" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-65"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-65" aria-hidden="true" tabindex="-1"></a>                            tempVar <span class="op">=</span> <span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>.join(</span>
-<span id="cb46-66"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-66" aria-hidden="true" tabindex="-1"></a>                                [itemID, date, itemType, itemUnified, itemId])</span>
-<span id="cb46-67"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-67" aria-hidden="true" tabindex="-1"></a>                            entities.append(tempVar)</span>
-<span id="cb46-68"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-68" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-69"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-69" aria-hidden="true" tabindex="-1"></a>                        <span class="cf">elif</span> <span class="st">&quot;placeName&quot;</span> <span class="kw">in</span> i <span class="kw">and</span> <span class="st">&quot;authname&quot;</span> <span class="kw">in</span> i <span class="kw">and</span> <span class="st">&quot;reg=&quot;</span> <span class="kw">in</span> i:</span>
-<span id="cb46-70"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-70" aria-hidden="true" tabindex="-1"></a>                            <span class="co"># input(i)</span></span>
-<span id="cb46-71"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-71" aria-hidden="true" tabindex="-1"></a>                            itemType <span class="op">=</span> <span class="st">&quot;placeName&quot;</span></span>
-<span id="cb46-72"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-72" aria-hidden="true" tabindex="-1"></a>                            itemUnified <span class="op">=</span> re.search(</span>
-<span id="cb46-73"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-73" aria-hidden="true" tabindex="-1"></a>                                <span class="vs">r&#39;reg=&quot;([^&quot;]*)&quot;&#39;</span>, i).group(<span class="dv">1</span>)</span>
-<span id="cb46-74"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-74" aria-hidden="true" tabindex="-1"></a>                            itemId <span class="op">=</span> re.search(</span>
-<span id="cb46-75"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-75" aria-hidden="true" tabindex="-1"></a>                                <span class="vs">r&#39;authname=&quot;([^&quot;]+)&quot;&#39;</span>, i).group(<span class="dv">1</span>)</span>
-<span id="cb46-76"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-76" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-77"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-77" aria-hidden="true" tabindex="-1"></a>                            tempVar <span class="op">=</span> <span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>.join(</span>
-<span id="cb46-78"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-78" aria-hidden="true" tabindex="-1"></a>                                [itemID, date, itemType, itemUnified, itemId])</span>
-<span id="cb46-79"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-79" aria-hidden="true" tabindex="-1"></a>                            entities.append(tempVar)</span>
-<span id="cb46-80"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-80" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-81"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-81" aria-hidden="true" tabindex="-1"></a>                        <span class="cf">elif</span> <span class="st">&quot;orgName&quot;</span> <span class="kw">in</span> i <span class="kw">and</span> <span class="st">&quot;type&quot;</span> <span class="kw">in</span> i <span class="kw">and</span> <span class="st">&quot;n=&quot;</span> <span class="kw">in</span> i:</span>
-<span id="cb46-82"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-82" aria-hidden="true" tabindex="-1"></a>                            <span class="co"># print(i)</span></span>
-<span id="cb46-83"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-83" aria-hidden="true" tabindex="-1"></a>                            itemType <span class="op">=</span> <span class="st">&quot;orgName&quot;</span></span>
-<span id="cb46-84"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-84" aria-hidden="true" tabindex="-1"></a>                            itemUnified <span class="op">=</span> re.search(<span class="vs">r&#39;n=&quot;([^&quot;]+)&quot;&#39;</span>, i).group(<span class="dv">1</span>)</span>
-<span id="cb46-85"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-85" aria-hidden="true" tabindex="-1"></a>                            itemId <span class="op">=</span> re.search(</span>
-<span id="cb46-86"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-86" aria-hidden="true" tabindex="-1"></a>                                <span class="vs">r&#39;type=&quot;([^&quot;]+)&quot;&#39;</span>, i).group(<span class="dv">1</span>)</span>
-<span id="cb46-87"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-87" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-88"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-88" aria-hidden="true" tabindex="-1"></a>                            tempVar <span class="op">=</span> <span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>.join(</span>
-<span id="cb46-89"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-89" aria-hidden="true" tabindex="-1"></a>                                [itemID, date, itemType, itemUnified, itemId])</span>
-<span id="cb46-90"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-90" aria-hidden="true" tabindex="-1"></a>                            entities.append(tempVar)</span>
-<span id="cb46-91"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-91" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-92"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-92" aria-hidden="true" tabindex="-1"></a>                        <span class="cf">else</span>:</span>
-<span id="cb46-93"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-93" aria-hidden="true" tabindex="-1"></a>                            <span class="cf">pass</span></span>
-<span id="cb46-94"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-94" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-95"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-95" aria-hidden="true" tabindex="-1"></a>        counter <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb46-96"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-96" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> counter <span class="op">%</span> <span class="dv">100</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb46-97"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-97" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(counter)</span>
-<span id="cb46-98"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-98" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-99"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-99" aria-hidden="true" tabindex="-1"></a>header <span class="op">=</span> <span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>.join([<span class="st">&quot;itemID&quot;</span>, <span class="st">&quot;date&quot;</span>, <span class="st">&quot;itemType&quot;</span>, <span class="st">&quot;itemUnified&quot;</span>, <span class="st">&quot;itemId&quot;</span>])</span>
-<span id="cb46-100"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-100" aria-hidden="true" tabindex="-1"></a>entitiesTest <span class="op">=</span> header <span class="op">+</span> <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span> <span class="op">+</span> <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>.join(entities).lower()</span>
-<span id="cb46-101"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-101" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&quot;entities.csv&quot;</span>, <span class="st">&quot;w&quot;</span>, encoding<span class="op">=</span><span class="st">&quot;utf8&quot;</span>) <span class="im">as</span> f9:</span>
-<span id="cb46-102"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb46-102" aria-hidden="true" tabindex="-1"></a>    f9.write(entitiesTest)</span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb45-1"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
+<span id="cb45-2"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb45-3"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-4"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-4" aria-hidden="true" tabindex="-1"></a>source <span class="op">=</span> <span class="st">&quot;./Dispatch/&quot;</span></span>
+<span id="cb45-5"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-5" aria-hidden="true" tabindex="-1"></a>target <span class="op">=</span> <span class="st">&quot;./Dispatch_Processed/&quot;</span>  <span class="co"># needs to be created beforehand!</span></span>
+<span id="cb45-6"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-7"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-7" aria-hidden="true" tabindex="-1"></a>lof <span class="op">=</span> os.listdir(source)</span>
+<span id="cb45-8"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-8" aria-hidden="true" tabindex="-1"></a>counter <span class="op">=</span> <span class="dv">0</span>  <span class="co"># general counter to keep track of the progress</span></span>
+<span id="cb45-9"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-10"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-10" aria-hidden="true" tabindex="-1"></a>entities <span class="op">=</span> []  <span class="co"># we will collect all extracted data here</span></span>
+<span id="cb45-11"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-12"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-12" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> f <span class="kw">in</span> lof:</span>
+<span id="cb45-13"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> f.startswith(<span class="st">&quot;dltext&quot;</span>):  <span class="co"># fileName test</span></span>
+<span id="cb45-14"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-14" aria-hidden="true" tabindex="-1"></a>        newF <span class="op">=</span> f.split(<span class="st">&quot;:&quot;</span>)[<span class="op">-</span><span class="dv">1</span>] <span class="op">+</span> <span class="st">&quot;.yml&quot;</span>  <span class="co"># in fact, yml-like</span></span>
+<span id="cb45-15"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-16"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-16" aria-hidden="true" tabindex="-1"></a>        c <span class="op">=</span> <span class="dv">0</span>  <span class="co"># technical counter</span></span>
+<span id="cb45-17"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">with</span> <span class="bu">open</span>(source <span class="op">+</span> f, <span class="st">&quot;r&quot;</span>, encoding<span class="op">=</span><span class="st">&quot;utf8&quot;</span>) <span class="im">as</span> f1:</span>
+<span id="cb45-18"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-18" aria-hidden="true" tabindex="-1"></a>            text <span class="op">=</span> f1.read()</span>
+<span id="cb45-19"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-19" aria-hidden="true" tabindex="-1"></a>            date <span class="op">=</span> re.search(<span class="vs">r&#39;&lt;date value=&quot;([\d-]+)&quot;&#39;</span>, text).group(<span class="dv">1</span>)</span>
+<span id="cb45-20"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-20" aria-hidden="true" tabindex="-1"></a>            split <span class="op">=</span> re.split(<span class="st">&quot;&lt;div3 &quot;</span>, text)</span>
+<span id="cb45-21"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-22"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-22" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> s <span class="kw">in</span> split[<span class="dv">1</span>:]:</span>
+<span id="cb45-23"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-23" aria-hidden="true" tabindex="-1"></a>                c <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb45-24"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-24" aria-hidden="true" tabindex="-1"></a>                s <span class="op">=</span> <span class="st">&quot;&lt;div3 &quot;</span> <span class="op">+</span> s  <span class="co"># a step to restore the integrity of items</span></span>
+<span id="cb45-25"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-26"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-26" aria-hidden="true" tabindex="-1"></a>                <span class="cf">try</span>:</span>
+<span id="cb45-27"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-27" aria-hidden="true" tabindex="-1"></a>                    unitType <span class="op">=</span> re.search(<span class="vs">r&#39;type=&quot;([^\&quot;]+)&quot;&#39;</span>, s).group(<span class="dv">1</span>)</span>
+<span id="cb45-28"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-28" aria-hidden="true" tabindex="-1"></a>                <span class="cf">except</span>:</span>
+<span id="cb45-29"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-29" aria-hidden="true" tabindex="-1"></a>                    unitType <span class="op">=</span> <span class="st">&quot;noType&quot;</span></span>
+<span id="cb45-30"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-31"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-31" aria-hidden="true" tabindex="-1"></a>                <span class="cf">try</span>:</span>
+<span id="cb45-32"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-32" aria-hidden="true" tabindex="-1"></a>                    header <span class="op">=</span> re.search(<span class="vs">r&#39;&lt;head.*&lt;/head&gt;&#39;</span>, s).group(<span class="dv">0</span>)</span>
+<span id="cb45-33"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-33" aria-hidden="true" tabindex="-1"></a>                    header <span class="op">=</span> re.sub(<span class="st">&quot;&lt;[^&lt;]+&gt;&quot;</span>, <span class="st">&quot;&quot;</span>, header)</span>
+<span id="cb45-34"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-35"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-35" aria-hidden="true" tabindex="-1"></a>                <span class="cf">except</span>:</span>
+<span id="cb45-36"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-36" aria-hidden="true" tabindex="-1"></a>                    header <span class="op">=</span> <span class="st">&quot;NO HEADER&quot;</span></span>
+<span id="cb45-37"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-38"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-38" aria-hidden="true" tabindex="-1"></a>                text <span class="op">=</span> s</span>
+<span id="cb45-39"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-39" aria-hidden="true" tabindex="-1"></a>                text <span class="op">=</span> re.sub(<span class="st">&quot;&lt;[^&lt;]+&gt;&quot;</span>, <span class="st">&quot; &quot;</span>, text)</span>
+<span id="cb45-40"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-40" aria-hidden="true" tabindex="-1"></a>                text <span class="op">=</span> re.sub(<span class="st">&quot; +</span><span class="ch">\n</span><span class="st">|</span><span class="ch">\n</span><span class="st"> +&quot;</span>, <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>, text)</span>
+<span id="cb45-41"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-41" aria-hidden="true" tabindex="-1"></a>                text <span class="op">=</span> text.strip()</span>
+<span id="cb45-42"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-42" aria-hidden="true" tabindex="-1"></a>                text <span class="op">=</span> re.sub(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">+&quot;</span>, <span class="st">&quot;;;; &quot;</span>, text)</span>
+<span id="cb45-43"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-43" aria-hidden="true" tabindex="-1"></a>                text <span class="op">=</span> re.sub(<span class="st">&quot; +&quot;</span>, <span class="st">&quot; &quot;</span>, text)</span>
+<span id="cb45-44"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-44" aria-hidden="true" tabindex="-1"></a>                text <span class="op">=</span> re.sub(<span class="vs">r&quot; ([\.,:;!])&quot;</span>, <span class="vs">r&quot;\1&quot;</span>, text)</span>
+<span id="cb45-45"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-46"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-46" aria-hidden="true" tabindex="-1"></a>                itemID <span class="op">=</span> date <span class="op">+</span> <span class="st">&quot;_&quot;</span> <span class="op">+</span> unitType <span class="op">+</span> <span class="st">&quot;_</span><span class="sc">%03d</span><span class="st">&quot;</span> <span class="op">%</span> c</span>
+<span id="cb45-47"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-48"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-48" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> <span class="bu">len</span>(re.sub(<span class="st">&quot;\W+&quot;</span>, <span class="st">&quot;&quot;</span>, text)) <span class="op">!=</span> <span class="dv">0</span>:</span>
+<span id="cb45-49"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-49" aria-hidden="true" tabindex="-1"></a>                    itemIdvar <span class="op">=</span> <span class="st">&quot;ID: &quot;</span> <span class="op">+</span> itemID</span>
+<span id="cb45-50"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-50" aria-hidden="true" tabindex="-1"></a>                    dateVar <span class="op">=</span> <span class="st">&quot;DATE: &quot;</span> <span class="op">+</span> date</span>
+<span id="cb45-51"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-51" aria-hidden="true" tabindex="-1"></a>                    unitType <span class="op">=</span> <span class="st">&quot;TYPE: &quot;</span> <span class="op">+</span> unitType</span>
+<span id="cb45-52"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-52" aria-hidden="true" tabindex="-1"></a>                    header <span class="op">=</span> <span class="st">&quot;HEADER: &quot;</span> <span class="op">+</span> header</span>
+<span id="cb45-53"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-53" aria-hidden="true" tabindex="-1"></a>                    text <span class="op">=</span> <span class="st">&quot;TEXT: &quot;</span> <span class="op">+</span> text.replace(<span class="st">&quot;:&quot;</span>, <span class="st">&quot;@§@&quot;</span>) <span class="op">+</span> <span class="st">&quot;</span><span class="ch">\n\n</span><span class="st">&quot;</span></span>
+<span id="cb45-54"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-55"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-55" aria-hidden="true" tabindex="-1"></a>                    <span class="co"># NEW PART</span></span>
+<span id="cb45-56"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-57"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-57" aria-hidden="true" tabindex="-1"></a>                    <span class="cf">for</span> i <span class="kw">in</span> re.findall(<span class="vs">r&quot;(&lt;\w+[^&gt;]+&gt;)&quot;</span>, s):</span>
+<span id="cb45-58"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-58" aria-hidden="true" tabindex="-1"></a>                        <span class="cf">if</span> <span class="st">&quot;persName&quot;</span> <span class="kw">in</span> i <span class="kw">and</span> <span class="st">&quot;authname&quot;</span> <span class="kw">in</span> i <span class="kw">and</span> <span class="st">&quot;n=&quot;</span> <span class="kw">in</span> i:</span>
+<span id="cb45-59"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-59" aria-hidden="true" tabindex="-1"></a>                            <span class="co"># input(i)</span></span>
+<span id="cb45-60"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-60" aria-hidden="true" tabindex="-1"></a>                            itemType <span class="op">=</span> <span class="st">&quot;persName&quot;</span></span>
+<span id="cb45-61"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-61" aria-hidden="true" tabindex="-1"></a>                            itemUnified <span class="op">=</span> re.search(<span class="vs">r&#39;n=&quot;([^&quot;]+)&quot;&#39;</span>, i).group(<span class="dv">1</span>)</span>
+<span id="cb45-62"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-62" aria-hidden="true" tabindex="-1"></a>                            itemId <span class="op">=</span> re.search(</span>
+<span id="cb45-63"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-63" aria-hidden="true" tabindex="-1"></a>                                <span class="vs">r&#39;authname=&quot;([^&quot;]+)&quot;&#39;</span>, i).group(<span class="dv">1</span>)</span>
+<span id="cb45-64"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-65"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-65" aria-hidden="true" tabindex="-1"></a>                            tempVar <span class="op">=</span> <span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>.join(</span>
+<span id="cb45-66"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-66" aria-hidden="true" tabindex="-1"></a>                                [itemID, date, itemType, itemUnified, itemId])</span>
+<span id="cb45-67"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-67" aria-hidden="true" tabindex="-1"></a>                            entities.append(tempVar)</span>
+<span id="cb45-68"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-69"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-69" aria-hidden="true" tabindex="-1"></a>                        <span class="cf">elif</span> <span class="st">&quot;placeName&quot;</span> <span class="kw">in</span> i <span class="kw">and</span> <span class="st">&quot;authname&quot;</span> <span class="kw">in</span> i <span class="kw">and</span> <span class="st">&quot;reg=&quot;</span> <span class="kw">in</span> i:</span>
+<span id="cb45-70"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-70" aria-hidden="true" tabindex="-1"></a>                            <span class="co"># input(i)</span></span>
+<span id="cb45-71"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-71" aria-hidden="true" tabindex="-1"></a>                            itemType <span class="op">=</span> <span class="st">&quot;placeName&quot;</span></span>
+<span id="cb45-72"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-72" aria-hidden="true" tabindex="-1"></a>                            itemUnified <span class="op">=</span> re.search(</span>
+<span id="cb45-73"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-73" aria-hidden="true" tabindex="-1"></a>                                <span class="vs">r&#39;reg=&quot;([^&quot;]*)&quot;&#39;</span>, i).group(<span class="dv">1</span>)</span>
+<span id="cb45-74"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-74" aria-hidden="true" tabindex="-1"></a>                            itemId <span class="op">=</span> re.search(</span>
+<span id="cb45-75"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-75" aria-hidden="true" tabindex="-1"></a>                                <span class="vs">r&#39;authname=&quot;([^&quot;]+)&quot;&#39;</span>, i).group(<span class="dv">1</span>)</span>
+<span id="cb45-76"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-77"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-77" aria-hidden="true" tabindex="-1"></a>                            tempVar <span class="op">=</span> <span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>.join(</span>
+<span id="cb45-78"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-78" aria-hidden="true" tabindex="-1"></a>                                [itemID, date, itemType, itemUnified, itemId])</span>
+<span id="cb45-79"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-79" aria-hidden="true" tabindex="-1"></a>                            entities.append(tempVar)</span>
+<span id="cb45-80"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-81"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-81" aria-hidden="true" tabindex="-1"></a>                        <span class="cf">elif</span> <span class="st">&quot;orgName&quot;</span> <span class="kw">in</span> i <span class="kw">and</span> <span class="st">&quot;type&quot;</span> <span class="kw">in</span> i <span class="kw">and</span> <span class="st">&quot;n=&quot;</span> <span class="kw">in</span> i:</span>
+<span id="cb45-82"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-82" aria-hidden="true" tabindex="-1"></a>                            <span class="co"># print(i)</span></span>
+<span id="cb45-83"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-83" aria-hidden="true" tabindex="-1"></a>                            itemType <span class="op">=</span> <span class="st">&quot;orgName&quot;</span></span>
+<span id="cb45-84"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-84" aria-hidden="true" tabindex="-1"></a>                            itemUnified <span class="op">=</span> re.search(<span class="vs">r&#39;n=&quot;([^&quot;]+)&quot;&#39;</span>, i).group(<span class="dv">1</span>)</span>
+<span id="cb45-85"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-85" aria-hidden="true" tabindex="-1"></a>                            itemId <span class="op">=</span> re.search(</span>
+<span id="cb45-86"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-86" aria-hidden="true" tabindex="-1"></a>                                <span class="vs">r&#39;type=&quot;([^&quot;]+)&quot;&#39;</span>, i).group(<span class="dv">1</span>)</span>
+<span id="cb45-87"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-88"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-88" aria-hidden="true" tabindex="-1"></a>                            tempVar <span class="op">=</span> <span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>.join(</span>
+<span id="cb45-89"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-89" aria-hidden="true" tabindex="-1"></a>                                [itemID, date, itemType, itemUnified, itemId])</span>
+<span id="cb45-90"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-90" aria-hidden="true" tabindex="-1"></a>                            entities.append(tempVar)</span>
+<span id="cb45-91"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-92"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-92" aria-hidden="true" tabindex="-1"></a>                        <span class="cf">else</span>:</span>
+<span id="cb45-93"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-93" aria-hidden="true" tabindex="-1"></a>                            <span class="cf">pass</span></span>
+<span id="cb45-94"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-95"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-95" aria-hidden="true" tabindex="-1"></a>        counter <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb45-96"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-96" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> counter <span class="op">%</span> <span class="dv">100</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb45-97"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-97" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(counter)</span>
+<span id="cb45-98"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-99"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-99" aria-hidden="true" tabindex="-1"></a>header <span class="op">=</span> <span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>.join([<span class="st">&quot;itemID&quot;</span>, <span class="st">&quot;date&quot;</span>, <span class="st">&quot;itemType&quot;</span>, <span class="st">&quot;itemUnified&quot;</span>, <span class="st">&quot;itemId&quot;</span>])</span>
+<span id="cb45-100"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-100" aria-hidden="true" tabindex="-1"></a>entitiesTest <span class="op">=</span> header <span class="op">+</span> <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span> <span class="op">+</span> <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>.join(entities).lower()</span>
+<span id="cb45-101"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-101" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&quot;entities.csv&quot;</span>, <span class="st">&quot;w&quot;</span>, encoding<span class="op">=</span><span class="st">&quot;utf8&quot;</span>) <span class="im">as</span> f9:</span>
+<span id="cb45-102"><a href="lesson-09-extracting-tagged-data-for-analysis.html#cb45-102" aria-hidden="true" tabindex="-1"></a>    f9.write(entitiesTest)</span></code></pre></div>
 
 </div>
 </div>

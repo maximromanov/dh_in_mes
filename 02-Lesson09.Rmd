@@ -110,8 +110,9 @@ Next step will be to understand the structure of these selected tags and process
 Our tidy results should look similar to what you see below:
 
 ```{r echo=FALSE}
+library(knitr)
 data<-read.table(file = './files/entities.csv', sep = '\t', header = TRUE)
-data
+kable(data)
 ```
 
 
