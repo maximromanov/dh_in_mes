@@ -50,8 +50,12 @@ Such abstractions can never fully replace the *close reading* of text, but they 
 
 *Example 1.* 
 
-![](./files/plot_sherman.png)
+> William Tecumseh Sherman was a Union General serving under the command of Ulysses Grant during the Civil War. He is most known for his campaign through Georgia and the Carolina's in 1864 where he followed a scorched earth policy including the capture and burning of Atlanta. During the Grant Presidency, Sherman became Commanding General of the Army, formulating the military response to the conflict with Indian tribes in the west.
+> [*Source*: Lloyd Sealy Library --- Key Personolities of the Civil War](https://guides.lib.jjay.cuny.edu/c.php?g=288398&p=4496619)
 
+The two graphs below show mentions of both `sherman` and `atlanta` in the Dispatch issues: there we can see/show how the prominence of William Sherman went up in the course of his campaign in 1864, while the spike in mentions of Atlanta must reflect the capture and burning of the city. 
+
+![](./files/plot_sherman.png)
 ![](./files/plot_atlanta.png)
 
 
