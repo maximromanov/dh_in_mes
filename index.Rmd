@@ -114,11 +114,11 @@ The following is the list of software, applications and packages that we will be
 - **[ #05 ]** Constructing robust searches with Regular expressions
 - **[ #06 ]** Webscraping with Wget, preparing URLs with Python and other tools
 - ~~**[ #07 ]** Text Markup [TEI XML], and how to remove it... - with Python scripts [anaconda]~~
+- **[ #07 ]** Understanding Structured Data
 - **[ #08 ]** Structuring data with Python scripts
-- **[ #09 ]** Georeferencing with QGIS
-- **[ #10 ]** Text to Map (1/2) - with Python and QGIS
-- **[ #11 ]** Text to Map (2/2) - with Python and QGIS
+- ~~**[ #09 ]** Georeferencing with QGIS~~
+- ~~**[ #10 ]** Text to Map (1/2) - with Python and QGIS~~
+- ~~**[ #11 ]** Text to Map (2/2) - with Python and QGIS~~
 - **[ #12 ]** Topic modeling - with Python; TF-IDF with Python
 - **[ #13 ]** Social Network Analysis - with Gephi; preparing network data with Python
-- **[ #14 ]** Final Projects Presentations
 
