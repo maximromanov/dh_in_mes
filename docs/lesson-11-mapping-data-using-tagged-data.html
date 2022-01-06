@@ -319,7 +319,7 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="11.1" data-path="lesson-11-mapping-data-using-tagged-data.html"><a href="lesson-11-mapping-data-using-tagged-data.html#preparing-and-modeling-geospatial-data"><i class="fa fa-check"></i><b>11.1</b> Preparing and Modeling Geospatial Data</a>
 <ul>
-<li class="chapter" data-level="11.1.1" data-path="lesson-11-mapping-data-using-tagged-data.html"><a href="lesson-11-mapping-data-using-tagged-data.html#n-triples"><i class="fa fa-check"></i><b>11.1.1</b> <code>N-triples</code></a></li>
+<li class="chapter" data-level="11.1.1" data-path="lesson-11-mapping-data-using-tagged-data.html"><a href="lesson-11-mapping-data-using-tagged-data.html#triples-n-triples"><i class="fa fa-check"></i><b>11.1.1</b> Triples (<code>N-triples</code>)</a></li>
 </ul></li>
 <li class="chapter" data-level="11.2" data-path="lesson-11-mapping-data-using-tagged-data.html"><a href="lesson-11-mapping-data-using-tagged-data.html#HWL11"><i class="fa fa-check"></i><b>11.2</b> Homework</a></li>
 <li class="chapter" data-level="11.3" data-path="lesson-11-mapping-data-using-tagged-data.html"><a href="lesson-11-mapping-data-using-tagged-data.html#SolutionL11"><i class="fa fa-check"></i><b>11.3</b> Solution</a></li>
@@ -372,18 +372,19 @@ div.csl-indent {
 <li>You can download <code>explicit.zip</code> from <a href="http://vocab.getty.edu/dataset/tgn/" class="uri">http://vocab.getty.edu/dataset/tgn/</a></li>
 <li>There is a file <code>TGNOut_Coordinates.nt</code> with coordinates. You will need to write a script to extract coordinates from this file in order to use them. I suggest you convert this file (the format is <code>N-triples</code>)</li>
 </ul>
-<div id="n-triples" class="section level3" number="11.1.1">
-<h3><span class="header-section-number">11.1.1</span> <code>N-triples</code></h3>
+<div id="triples-n-triples" class="section level3" number="11.1.1">
+<h3><span class="header-section-number">11.1.1</span> Triples (<code>N-triples</code>)</h3>
 <p>What are triples? This is one of the most robust formats that can describe any kind of data. The main idea is that every triple is expressed through the structure <code>subject-predicate-object</code>. There are multiple formats for expressing triples (for example, RDF, N-Triples, etc.) (<a href="https://en.wikipedia.org/wiki/Semantic_triple"><em>more details…</em></a>).</p>
-<p>Let’s take a look at the following example from <code>TGNOut_Coordinates.nt</code>. There are three triples (<code>N-triples</code>) which together describe a specific object (which in our data would look like <code>tgn,1000007</code>). Each triple is stored on a separate line, ending with a period (“.”). Elements of each triple are separated with spaces. Each triple has the same structure—<code>subject-predicate-object</code>—and can be read as follows.</p>
+<p>Let’s take a look at the following example from <code>TGNOut_Coordinates.nt</code>. There are three triples (<code>N-triples</code>) which together describe a specific object (which in our data would look like <code>tgn,1000007</code>).</p>
+<pre><code>&lt;http://vocab.getty.edu/tgn/1000007-geometry&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://schema.org/GeoCoordinates&gt; .
+&lt;http://vocab.getty.edu/tgn/1000007-geometry&gt; &lt;http://schema.org/latitude&gt; &quot;-83.843&quot;^^&lt;http://www.w3.org/2001/XMLSchema#decimal&gt; .
+&lt;http://vocab.getty.edu/tgn/1000007-geometry&gt; &lt;http://schema.org/longitude&gt; &quot;65.725&quot;^^&lt;http://www.w3.org/2001/XMLSchema#decimal&gt; .</code></pre>
+<p>Each triple is stored on a separate line, ending with a period (“.”). Elements of each triple are separated with spaces. Each triple has the same structure—<code>subject-predicate-object</code>—and can be read as follows.</p>
 <ul>
 <li>Triple 1: entity <code>tgn,1000007</code> has (expressed in a particular manner) geographical coordinates;</li>
 <li>Triple 2: entity <code>tgn,1000007</code> has decimal latitude <code>-83.843</code>;</li>
 <li>Triple 3: entity <code>tgn,1000007</code> has decimal longitude <code>65.725</code>;</li>
 </ul>
-<pre><code>&lt;http://vocab.getty.edu/tgn/1000007-geometry&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://schema.org/GeoCoordinates&gt; .
-&lt;http://vocab.getty.edu/tgn/1000007-geometry&gt; &lt;http://schema.org/latitude&gt; &quot;-83.843&quot;^^&lt;http://www.w3.org/2001/XMLSchema#decimal&gt; .
-&lt;http://vocab.getty.edu/tgn/1000007-geometry&gt; &lt;http://schema.org/longitude&gt; &quot;65.725&quot;^^&lt;http://www.w3.org/2001/XMLSchema#decimal&gt; .</code></pre>
 <p>You should have no problems writing a script that converts this data into a CSV with the structure: <code>ID</code>, <code>lon</code>, and <code>lat</code>. (Technically, you can also store these triples in a CSV/TSV format, but that would require additional conversion later.)</p>
 <p>If you are not up to this challenge, you can use the CSV file tat I have already prepared, to make your life a bit easier: <a href="./files/TGNOut_Coordinates.csv.zip">TGNOut_Coordinates.csv.zip</a></p>
 </div>
@@ -391,6 +392,14 @@ div.csl-indent {
 <div id="HWL11" class="section level2" number="11.2">
 <h2><span class="header-section-number">11.2</span> Homework</h2>
 <ul>
+<li>Graph geographical data from the Dispatch. Experiment with different periods and different selections of placenames (for example, Richmond and Virginia will be the most frequently mentioned placenames—because the newspaper was published in Richmond, Virginia; this would mean that these two places will overshadow all other places.)
+<ul>
+<li>Suggestions:
+<ul>
+<li>you can create a separate data file that only has placenames (<code>articleID</code>, <code>date</code>, <code>placename</code>, <code>lat</code>, <code>lon</code>)</li>
+<li>you can map places in a more complex manner. For example, map only placenames that are mentioned in the same articles as, say, General Sherman. In this case we may expect the maps to reflect his campaign through Georgia and the Carolinas (or, more precisely, the Dispatch’s coverage of Gen. Sherman’s campaign).</li>
+</ul></li>
+</ul></li>
 <li>Finish the assigned task;</li>
 <li>Annotate your script (i.e., add comment to every line of code describing what is happenning there);</li>
 </ul>

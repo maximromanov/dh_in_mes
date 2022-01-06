@@ -21,15 +21,11 @@ Now, let's get back to our Dispatch data. We have placenames tagged --- and we a
 - You can download `explicit.zip` from <http://vocab.getty.edu/dataset/tgn/>
 - There is a file `TGNOut_Coordinates.nt` with coordinates. You will need to write a script to extract coordinates from this file in order to use them. I suggest you convert this file (the format is `N-triples`)
 
-### `N-triples`
+### Triples (`N-triples`)
 
 What are triples? This is one of the most robust formats that can describe any kind of data. The main idea is that every triple is expressed through the structure `subject-predicate-object`. There are multiple formats for expressing triples (for example, RDF, N-Triples, etc.) ([*more details...*](https://en.wikipedia.org/wiki/Semantic_triple)).
 
-Let's take a look at the following example from `TGNOut_Coordinates.nt`. There are three triples (`N-triples`) which together describe a specific object (which in our data would look like `tgn,1000007`). Each triple is stored on a separate line, ending with a period ("."). Elements of each triple are separated with spaces. Each triple has the same structure---`subject-predicate-object`---and can be read as follows.
-
-- Triple 1: entity `tgn,1000007` has (expressed in a particular manner) geographical coordinates;
-- Triple 2: entity `tgn,1000007` has decimal latitude `-83.843`;
-- Triple 3: entity `tgn,1000007` has decimal longitude `65.725`;
+Let's take a look at the following example from `TGNOut_Coordinates.nt`. There are three triples (`N-triples`) which together describe a specific object (which in our data would look like `tgn,1000007`).
 
 ```
 <http://vocab.getty.edu/tgn/1000007-geometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/GeoCoordinates> .
@@ -37,14 +33,22 @@ Let's take a look at the following example from `TGNOut_Coordinates.nt`. There a
 <http://vocab.getty.edu/tgn/1000007-geometry> <http://schema.org/longitude> "65.725"^^<http://www.w3.org/2001/XMLSchema#decimal> .
 ```
 
+Each triple is stored on a separate line, ending with a period ("."). Elements of each triple are separated with spaces. Each triple has the same structure---`subject-predicate-object`---and can be read as follows.
+
+- Triple 1: entity `tgn,1000007` has (expressed in a particular manner) geographical coordinates;
+- Triple 2: entity `tgn,1000007` has decimal latitude `-83.843`;
+- Triple 3: entity `tgn,1000007` has decimal longitude `65.725`;
+
 You should have no problems writing a script that converts this data into a CSV with the structure: `ID`, `lon`, and `lat`. (Technically, you can also store these triples in a CSV/TSV format, but that would require additional conversion later.)
 
 If you are not up to this challenge, you can use the CSV file tat I have already prepared, to make your life a bit easier: [TGNOut_Coordinates.csv.zip](./files/TGNOut_Coordinates.csv.zip)
 
-
-
 ## Homework{#HWL11}
 
+- Graph geographical data from the Dispatch. Experiment with different periods and different selections of placenames (for example, Richmond and Virginia will be the most frequently mentioned placenames---because the newspaper was published in Richmond, Virginia; this would mean that these two places will overshadow all other places.)
+  - Suggestions:
+    - you can create a separate data file that only has placenames (`articleID`, `date`, `placename`, `lat`, `lon`)
+    - you can map places in a more complex manner. For example, map only placenames that are mentioned in the same articles as, say, General Sherman. In this case we may expect the maps to reflect his campaign through Georgia and the Carolinas (or, more precisely, the Dispatch's coverage of Gen. Sherman's campaign).
 - Finish the assigned task;
 - Annotate your script (i.e., add comment to every line of code describing what is happenning there);
 
