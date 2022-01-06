@@ -4,16 +4,41 @@
 
 In a similar manner we can also graph geographical data --- in combination with the temporary dimension. For this, however, we need to think through what kind of insight we can possibly get from geospatial data and how it should be prepared for mapping.
 
-Let's start with a simple task: we will map the geospatial data from one of the previous lessons: [settlements from the al-Thurayya Gazetteer](./files/settlements.csv). This 
+Let's start with a simple task: we will map the geospatial data from one of the previous lessons: [settlements from the al-Thurayya Gazetteer](./files/settlements.csv). Below is the code that produces an interactive map. (**Note**: it is possible to use `matplotlib` for mapping, but installation of needed components has become rather complicated recently, so we will proceed with a different library: `plotly`)
 
 ```{r engine='python', highlight=TRUE, eval=FALSE}
 
+import plotly.express as px
+import pandas as pd
+
+althurayyaFile = "settlements.csv"
+
+df = pd.read_csv(althurayyaFile, sep="\t", header=0)
+print(df)
+
+fig = px.scatter_geo(df, lon='lon', lat='lat', color="region_URI",
+                     hover_name="names_eng_translit", size=df["top_size"]*df["top_size"],
+                     projection="natural earth", fitbounds='locations')
+
+fig.update_layout(
+    title_text='Provinces of the classical Islamic World (IX-Xthe centuries CE)<br>(Click legend to toggle provinces)',
+    showlegend=True,
+    geo=dict(
+        scope='world',
+        landcolor='rgb(250, 250, 250)',
+    )
+)
+
+fig.show()
+
+# the following line will save the graph into an html file
+fig.write_html("althurayya.html")
 
 ```
 
-We can get the following maps:
+We can get the following map (for an intereactive map, try [this link](./files/althurayya.html)):
 
-...
+![](./files/althurayya.png)
 
 Now, let's get back to our Dispatch data. We have placenames tagged --- and we already have the data ready for processing. We can focus on a specific period of time (by filtering our data, including only dates that we are interested in). Then we need to calculate frequencies of mentions of placenames --- we can use these values to size dots on the final map. Unfortunately, a very important element is missing --- as you recall, our data does not have any coordinates. Luckily, we have unique identifiers from the Getty Thesaurus of Geographical Names. What we can do is to extract coordinates from the Thesaurus and connect them to corresponding placenames in our data.
 
@@ -57,6 +82,8 @@ If you are not up to this challenge, you can use the CSV file tat I have already
   - Basemap Matplotlib Toolkit: [Plotting data on a map (Example Gallery)](https://matplotlib.org/basemap/users/examples.html).
   - Python Data Science Handbook by Jake VanderPlas [Chapter 4. Visualization with Matplotlib](https://www.oreilly.com/library/view/python-data-science/9781491912126/ch04.html); [Geographic Data with Basemap](https://jakevdp.github.io/PythonDataScienceHandbook/04.13-geographic-data-with-basemap.html);
   - Interactive maps with `Plotly`: <https://plotly.com/python/bubble-maps/>;
+  - [How to plot data on maps in Jupyter using Matplotlib, Plotly, and Bokeh](https://www.bigendiandata.com/2017-06-27-Mapping_in_Jupyter/);
+  - [Visualization: Mapping Global Earthquake Activity](http://introtopython.org/visualization_earthquakes.html).
 
 **Submitting homework:**
 
