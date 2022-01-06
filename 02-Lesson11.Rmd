@@ -104,6 +104,8 @@ Last but not least, we may get interesting maps if we map places that cooccur wi
 
 Below is the solution to the homework...
 
+<!--
+
 ```{r engine='python', highlight=TRUE, eval=FALSE}
 # EXTRACT TGN DATA
 
@@ -236,6 +238,8 @@ fig.write_html("dispatch_1860_to_65.html")
 ```{r engine='python', highlight=TRUE, eval=FALSE}
 # "MAPS OF NAMES"
 
-
+...
 
 ```
+
+-->

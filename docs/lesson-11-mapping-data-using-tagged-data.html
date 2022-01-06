@@ -456,64 +456,77 @@ div.csl-indent {
 <div id="SolutionL11" class="section level2" number="11.3">
 <h2><span class="header-section-number">11.3</span> Solution</h2>
 <p>Below is the solution to the homework…</p>
-<div class="sourceCode" id="cb51"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb51-1"><a href="lesson-11-mapping-data-using-tagged-data.html#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># EXTRACT TGN DATA</span></span>
-<span id="cb51-2"><a href="lesson-11-mapping-data-using-tagged-data.html#cb51-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb51-3"><a href="lesson-11-mapping-data-using-tagged-data.html#cb51-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
-<span id="cb51-4"><a href="lesson-11-mapping-data-using-tagged-data.html#cb51-4" aria-hidden="true" tabindex="-1"></a><span class="bu">file</span> <span class="op">=</span> <span class="st">&quot;TGNOut_Coordinates.nt&quot;</span></span>
-<span id="cb51-5"><a href="lesson-11-mapping-data-using-tagged-data.html#cb51-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb51-6"><a href="lesson-11-mapping-data-using-tagged-data.html#cb51-6" aria-hidden="true" tabindex="-1"></a>csvDataDic <span class="op">=</span> {}</span>
-<span id="cb51-7"><a href="lesson-11-mapping-data-using-tagged-data.html#cb51-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb51-8"><a href="lesson-11-mapping-data-using-tagged-data.html#cb51-8" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="bu">file</span>) <span class="im">as</span> f1:</span>
-<span id="cb51-9"><a href="lesson-11-mapping-data-using-tagged-data.html#cb51-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> line <span class="kw">in</span> f1:</span>
-<span id="cb51-10"><a href="lesson-11-mapping-data-using-tagged-data.html#cb51-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="st">&quot;latitude&quot;</span> <span class="kw">in</span> line:</span>
-<span id="cb51-11"><a href="lesson-11-mapping-data-using-tagged-data.html#cb51-11" aria-hidden="true" tabindex="-1"></a>            line <span class="op">=</span> line.split(<span class="st">&quot; &quot;</span>)</span>
-<span id="cb51-12"><a href="lesson-11-mapping-data-using-tagged-data.html#cb51-12" aria-hidden="true" tabindex="-1"></a>            ID <span class="op">=</span> re.search(<span class="vs">r&quot;(tgn/\d+)&quot;</span>, line[<span class="dv">0</span>]).group(<span class="dv">1</span>).replace(<span class="st">&quot;/&quot;</span>, <span class="st">&quot;,&quot;</span>)</span>
-<span id="cb51-13"><a href="lesson-11-mapping-data-using-tagged-data.html#cb51-13" aria-hidden="true" tabindex="-1"></a>            lat <span class="op">=</span> line[<span class="dv">2</span>].split(<span class="st">&#39;&quot;^^&#39;</span>)[<span class="dv">0</span>][<span class="dv">1</span>:]</span>
-<span id="cb51-14"><a href="lesson-11-mapping-data-using-tagged-data.html#cb51-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb51-15"><a href="lesson-11-mapping-data-using-tagged-data.html#cb51-15" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> ID <span class="kw">in</span> csvDataDic:</span>
-<span id="cb51-16"><a href="lesson-11-mapping-data-using-tagged-data.html#cb51-16" aria-hidden="true" tabindex="-1"></a>                csvDataDic[ID][<span class="dv">1</span>] <span class="op">=</span> lat</span>
-<span id="cb51-17"><a href="lesson-11-mapping-data-using-tagged-data.html#cb51-17" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
-<span id="cb51-18"><a href="lesson-11-mapping-data-using-tagged-data.html#cb51-18" aria-hidden="true" tabindex="-1"></a>                csvDataDic[ID] <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>]</span>
-<span id="cb51-19"><a href="lesson-11-mapping-data-using-tagged-data.html#cb51-19" aria-hidden="true" tabindex="-1"></a>                csvDataDic[ID][<span class="dv">0</span>] <span class="op">=</span> ID</span>
-<span id="cb51-20"><a href="lesson-11-mapping-data-using-tagged-data.html#cb51-20" aria-hidden="true" tabindex="-1"></a>                csvDataDic[ID][<span class="dv">1</span>] <span class="op">=</span> lat</span>
-<span id="cb51-21"><a href="lesson-11-mapping-data-using-tagged-data.html#cb51-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb51-22"><a href="lesson-11-mapping-data-using-tagged-data.html#cb51-22" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> <span class="st">&quot;longitude&quot;</span> <span class="kw">in</span> line:</span>
-<span id="cb51-23"><a href="lesson-11-mapping-data-using-tagged-data.html#cb51-23" aria-hidden="true" tabindex="-1"></a>            line <span class="op">=</span> line.split(<span class="st">&quot; &quot;</span>)</span>
-<span id="cb51-24"><a href="lesson-11-mapping-data-using-tagged-data.html#cb51-24" aria-hidden="true" tabindex="-1"></a>            ID <span class="op">=</span> re.search(<span class="vs">r&quot;(tgn/\d+)&quot;</span>, line[<span class="dv">0</span>]).group(<span class="dv">1</span>).replace(<span class="st">&quot;/&quot;</span>, <span class="st">&quot;,&quot;</span>)</span>
-<span id="cb51-25"><a href="lesson-11-mapping-data-using-tagged-data.html#cb51-25" aria-hidden="true" tabindex="-1"></a>            lon <span class="op">=</span> line[<span class="dv">2</span>].split(<span class="st">&#39;&quot;^^&#39;</span>)[<span class="dv">0</span>][<span class="dv">1</span>:]</span>
-<span id="cb51-26"><a href="lesson-11-mapping-data-using-tagged-data.html#cb51-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb51-27"><a href="lesson-11-mapping-data-using-tagged-data.html#cb51-27" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> ID <span class="kw">in</span> csvDataDic:</span>
-<span id="cb51-28"><a href="lesson-11-mapping-data-using-tagged-data.html#cb51-28" aria-hidden="true" tabindex="-1"></a>                csvDataDic[ID][<span class="dv">2</span>] <span class="op">=</span> lon</span>
-<span id="cb51-29"><a href="lesson-11-mapping-data-using-tagged-data.html#cb51-29" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
-<span id="cb51-30"><a href="lesson-11-mapping-data-using-tagged-data.html#cb51-30" aria-hidden="true" tabindex="-1"></a>                csvDataDic[ID] <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>]</span>
-<span id="cb51-31"><a href="lesson-11-mapping-data-using-tagged-data.html#cb51-31" aria-hidden="true" tabindex="-1"></a>                csvDataDic[ID][<span class="dv">0</span>] <span class="op">=</span> ID</span>
-<span id="cb51-32"><a href="lesson-11-mapping-data-using-tagged-data.html#cb51-32" aria-hidden="true" tabindex="-1"></a>                csvDataDic[ID][<span class="dv">2</span>] <span class="op">=</span> lon</span>
-<span id="cb51-33"><a href="lesson-11-mapping-data-using-tagged-data.html#cb51-33" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
-<span id="cb51-34"><a href="lesson-11-mapping-data-using-tagged-data.html#cb51-34" aria-hidden="true" tabindex="-1"></a>            <span class="cf">pass</span></span>
-<span id="cb51-35"><a href="lesson-11-mapping-data-using-tagged-data.html#cb51-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb51-36"><a href="lesson-11-mapping-data-using-tagged-data.html#cb51-36" aria-hidden="true" tabindex="-1"></a>csvData <span class="op">=</span> []</span>
-<span id="cb51-37"><a href="lesson-11-mapping-data-using-tagged-data.html#cb51-37" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> k, v <span class="kw">in</span> csvDataDic.items():</span>
-<span id="cb51-38"><a href="lesson-11-mapping-data-using-tagged-data.html#cb51-38" aria-hidden="true" tabindex="-1"></a>    csvData.append(<span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>.join(v))</span>
-<span id="cb51-39"><a href="lesson-11-mapping-data-using-tagged-data.html#cb51-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb51-40"><a href="lesson-11-mapping-data-using-tagged-data.html#cb51-40" aria-hidden="true" tabindex="-1"></a>csvData <span class="op">=</span> <span class="st">&quot;itemId</span><span class="ch">\t</span><span class="st">LAT</span><span class="ch">\t</span><span class="st">LON</span><span class="ch">\n</span><span class="st">&quot;</span> <span class="op">+</span> <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>.join(csvData)</span>
-<span id="cb51-41"><a href="lesson-11-mapping-data-using-tagged-data.html#cb51-41" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="bu">file</span>.replace(<span class="st">&quot;.nt&quot;</span>, <span class="st">&quot;.csv&quot;</span>), <span class="st">&quot;w&quot;</span>, encoding<span class="op">=</span><span class="st">&quot;utf8&quot;</span>) <span class="im">as</span> f9:</span>
-<span id="cb51-42"><a href="lesson-11-mapping-data-using-tagged-data.html#cb51-42" aria-hidden="true" tabindex="-1"></a>    f9.write(csvData)</span>
-<span id="cb51-43"><a href="lesson-11-mapping-data-using-tagged-data.html#cb51-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb51-44"><a href="lesson-11-mapping-data-using-tagged-data.html#cb51-44" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Done!&quot;</span>)</span></code></pre></div>
-<p>The following lines of code <em>merge</em> two tables in such a way that coordinates are added to all placenames—matching done on the <code>itemId</code> column. Two additional columns are added — with latitudes and longitudes; when</p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb52-1"><a href="lesson-11-mapping-data-using-tagged-data.html#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="co"># MERGE TGN DATA</span></span>
-<span id="cb52-2"><a href="lesson-11-mapping-data-using-tagged-data.html#cb52-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb52-3"><a href="lesson-11-mapping-data-using-tagged-data.html#cb52-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb52-4"><a href="lesson-11-mapping-data-using-tagged-data.html#cb52-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb52-5"><a href="lesson-11-mapping-data-using-tagged-data.html#cb52-5" aria-hidden="true" tabindex="-1"></a>tgnDataFile <span class="op">=</span> <span class="st">&quot;TGNOut_Coordinates.csv&quot;</span></span>
-<span id="cb52-6"><a href="lesson-11-mapping-data-using-tagged-data.html#cb52-6" aria-hidden="true" tabindex="-1"></a>dispatchDataFile <span class="op">=</span> <span class="st">&quot;entities.csv&quot;</span></span>
-<span id="cb52-7"><a href="lesson-11-mapping-data-using-tagged-data.html#cb52-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb52-8"><a href="lesson-11-mapping-data-using-tagged-data.html#cb52-8" aria-hidden="true" tabindex="-1"></a>tgnData <span class="op">=</span> pd.read_csv(tgnDataFile, sep<span class="op">=</span><span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>, header<span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb52-9"><a href="lesson-11-mapping-data-using-tagged-data.html#cb52-9" aria-hidden="true" tabindex="-1"></a>dispatchData <span class="op">=</span> pd.read_csv(dispatchDataFile, sep<span class="op">=</span><span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>, header<span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb52-10"><a href="lesson-11-mapping-data-using-tagged-data.html#cb52-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb52-11"><a href="lesson-11-mapping-data-using-tagged-data.html#cb52-11" aria-hidden="true" tabindex="-1"></a>dispatchDataUpd <span class="op">=</span> pd.merge(dispatchData, tgnData, how<span class="op">=</span><span class="st">&#39;left&#39;</span>, on<span class="op">=</span><span class="st">&quot;itemId&quot;</span>)</span></code></pre></div>
-<p>The final dataframe looks like what you see below. You can see that some rows have <code>NaN</code> values (<code>not a number</code>) in columns <code>LAT</code> and <code>LON</code> — this essentially means that these rows could not be matched (because persnames and orgnames do not have TGN identifiers).</p>
-<pre><code>                     articleID        date   itemType                           itemUnified         itemID      LAT      LON
+<!--
+
+
+```python
+# EXTRACT TGN DATA
+
+import re
+file = "TGNOut_Coordinates.nt"
+
+csvDataDic = {}
+
+with open(file) as f1:
+    for line in f1:
+        if "latitude" in line:
+            line = line.split(" ")
+            ID = re.search(r"(tgn/\d+)", line[0]).group(1).replace("/", ",")
+            lat = line[2].split('"^^')[0][1:]
+
+            if ID in csvDataDic:
+                csvDataDic[ID][1] = lat
+            else:
+                csvDataDic[ID] = [0, 0, 0]
+                csvDataDic[ID][0] = ID
+                csvDataDic[ID][1] = lat
+
+        elif "longitude" in line:
+            line = line.split(" ")
+            ID = re.search(r"(tgn/\d+)", line[0]).group(1).replace("/", ",")
+            lon = line[2].split('"^^')[0][1:]
+
+            if ID in csvDataDic:
+                csvDataDic[ID][2] = lon
+            else:
+                csvDataDic[ID] = [0, 0, 0]
+                csvDataDic[ID][0] = ID
+                csvDataDic[ID][2] = lon
+        else:
+            pass
+
+csvData = []
+for k, v in csvDataDic.items():
+    csvData.append("\t".join(v))
+
+csvData = "itemId\tLAT\tLON\n" + "\n".join(csvData)
+with open(file.replace(".nt", ".csv"), "w", encoding="utf8") as f9:
+    f9.write(csvData)
+
+print("Done!")
+```
+
+The following lines of code *merge* two tables in such a way that coordinates are added to all placenames---matching done on the `itemId` column. Two additional columns are added --- with latitudes and longitudes; when 
+
+
+```python
+# MERGE TGN DATA
+
+import pandas as pd
+
+tgnDataFile = "TGNOut_Coordinates.csv"
+dispatchDataFile = "entities.csv"
+
+tgnData = pd.read_csv(tgnDataFile, sep="\t", header=0)
+dispatchData = pd.read_csv(dispatchDataFile, sep="\t", header=0)
+
+dispatchDataUpd = pd.merge(dispatchData, tgnData, how='left', on="itemId")
+```
+
+The final dataframe looks like what you see below. You can see that some rows have `NaN` values (`not a number`) in columns `LAT` and `LON` --- this essentially means that these rows could not be matched (because persnames and orgnames do not have TGN identifiers).
+
+```
+                     articleID        date   itemType                           itemUnified         itemID      LAT      LON
 0       1864-04-28_article_001  1864-04-28  placename        gordonsville, orange, virginia    tgn,2111971  38.1333 -78.1833
 1       1864-04-28_article_002  1864-04-28  placename  plymouth, washington, north carolina    tgn,2076159  35.8667 -76.7333
 2       1864-04-28_article_002  1864-04-28  placename  plymouth, washington, north carolina    tgn,2076159  35.8667 -76.7333
@@ -524,52 +537,66 @@ div.csl-indent {
 989393  1864-03-31_article_170  1864-03-31   persname                            davis,,,,,    davis,waddy      NaN      NaN
 989394  1864-03-31_article_170  1864-03-31  placename    albemarle, virginia, united states    tgn,2002137  38.0333 -78.5500
 989395  1864-03-31_article_170  1864-03-31   persname                             cook,,,,,           cook      NaN      NaN
-989396  1864-03-31_article_170  1864-03-31   persname                        turner,,geo,,,         turner      NaN      NaN</code></pre>
-<div class="sourceCode" id="cb54"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb54-1"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co"># DYNAMIC MAPS</span></span>
-<span id="cb54-2"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-3"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
-<span id="cb54-4"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb54-5"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
-<span id="cb54-6"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-7"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-7" aria-hidden="true" tabindex="-1"></a>tgnDataFile <span class="op">=</span> <span class="st">&quot;TGNOut_Coordinates.csv&quot;</span></span>
-<span id="cb54-8"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-8" aria-hidden="true" tabindex="-1"></a>dispatchDataFile <span class="op">=</span> <span class="st">&quot;entities.csv&quot;</span></span>
-<span id="cb54-9"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-10"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-10" aria-hidden="true" tabindex="-1"></a>tgnData <span class="op">=</span> pd.read_csv(tgnDataFile, sep<span class="op">=</span><span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>, header<span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb54-11"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-11" aria-hidden="true" tabindex="-1"></a>dispatchData <span class="op">=</span> pd.read_csv(dispatchDataFile, sep<span class="op">=</span><span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>, header<span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb54-12"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-13"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-13" aria-hidden="true" tabindex="-1"></a>dispatchDataUpd <span class="op">=</span> pd.merge(dispatchData, tgnData, how<span class="op">=</span><span class="st">&#39;left&#39;</span>, on<span class="op">=</span><span class="st">&quot;itemID&quot;</span>)</span>
-<span id="cb54-14"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-15"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-15" aria-hidden="true" tabindex="-1"></a>dispatchDataUpd[<span class="st">&quot;month&quot;</span>] <span class="op">=</span> [re.sub(<span class="st">&quot;-\d\d$&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="bu">str</span>(i)) <span class="cf">for</span> i <span class="kw">in</span> dispatchDataUpd[<span class="st">&quot;date&quot;</span>]]</span>
-<span id="cb54-16"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-16" aria-hidden="true" tabindex="-1"></a><span class="co"># FOR THIS MAP WE NEED DATES STORED AS STRINGS</span></span>
-<span id="cb54-17"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-17" aria-hidden="true" tabindex="-1"></a><span class="co"># dispatchDataUpd[&quot;month&quot;] = pd.to_datetime(dispatchDataUpd[&quot;month&quot;], format=&quot;%Y-%m&quot;)</span></span>
-<span id="cb54-18"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-19"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-19" aria-hidden="true" tabindex="-1"></a>dfPlaces <span class="op">=</span> dispatchDataUpd</span>
-<span id="cb54-20"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-20" aria-hidden="true" tabindex="-1"></a>dfPlaces <span class="op">=</span> dfPlaces[dfPlaces.itemType.<span class="bu">str</span>.contains(<span class="st">&quot;placename&quot;</span>, na<span class="op">=</span><span class="va">False</span>)]</span>
-<span id="cb54-21"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-22"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-22" aria-hidden="true" tabindex="-1"></a>dfPersons <span class="op">=</span> dispatchDataUpd</span>
-<span id="cb54-23"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-23" aria-hidden="true" tabindex="-1"></a>dfPersons <span class="op">=</span> dfPersons[dfPersons.itemType.<span class="bu">str</span>.contains(<span class="st">&quot;persname&quot;</span>, na<span class="op">=</span><span class="va">False</span>)]</span>
-<span id="cb54-24"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-25"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-25" aria-hidden="true" tabindex="-1"></a><span class="co"># plot places</span></span>
-<span id="cb54-26"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-26" aria-hidden="true" tabindex="-1"></a>placesAll <span class="op">=</span> dfPlaces[[<span class="st">&#39;month&#39;</span>, <span class="st">&#39;itemUnified&#39;</span>, <span class="st">&#39;LAT&#39;</span>, <span class="st">&#39;LON&#39;</span>]]</span>
-<span id="cb54-27"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-27" aria-hidden="true" tabindex="-1"></a>placesAll[<span class="st">&#39;count&#39;</span>] <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb54-28"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-28" aria-hidden="true" tabindex="-1"></a>placesAll <span class="op">=</span> placesAll.groupby([<span class="st">&#39;month&#39;</span>, <span class="st">&#39;itemUnified&#39;</span>, <span class="st">&#39;LAT&#39;</span>, <span class="st">&#39;LON&#39;</span>]).count()</span>
-<span id="cb54-29"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-29" aria-hidden="true" tabindex="-1"></a>placesAll <span class="op">=</span> placesAll.reset_index()</span>
-<span id="cb54-30"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-30" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(placesAll)</span>
-<span id="cb54-31"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-32"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-32" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.scatter_geo(placesAll, lon<span class="op">=</span><span class="st">&#39;LON&#39;</span>, lat<span class="op">=</span><span class="st">&#39;LAT&#39;</span>,</span>
-<span id="cb54-33"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-33" aria-hidden="true" tabindex="-1"></a>                     hover_name<span class="op">=</span><span class="st">&quot;itemUnified&quot;</span>,</span>
-<span id="cb54-34"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-34" aria-hidden="true" tabindex="-1"></a>                     animation_frame<span class="op">=</span><span class="st">&quot;month&quot;</span>, size<span class="op">=</span><span class="st">&#39;count&#39;</span>)</span>
-<span id="cb54-35"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-36"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-36" aria-hidden="true" tabindex="-1"></a>fig.update_layout(</span>
-<span id="cb54-37"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-37" aria-hidden="true" tabindex="-1"></a>    title_text<span class="op">=</span><span class="st">&#39;Placenames in the &lt;i&gt;Dispatch&lt;/i&gt; (1860-1865)&#39;</span>,</span>
-<span id="cb54-38"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-38" aria-hidden="true" tabindex="-1"></a>    showlegend<span class="op">=</span><span class="va">True</span>,</span>
-<span id="cb54-39"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-39" aria-hidden="true" tabindex="-1"></a>    geo<span class="op">=</span><span class="bu">dict</span>(scope<span class="op">=</span><span class="st">&#39;usa&#39;</span>, landcolor<span class="op">=</span><span class="st">&#39;rgb(235, 235, 235)&#39;</span>,</span>
-<span id="cb54-40"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-40" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb54-41"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-41" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb54-42"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-43"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-43" aria-hidden="true" tabindex="-1"></a><span class="co">#fig.show()</span></span>
-<span id="cb54-44"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-44" aria-hidden="true" tabindex="-1"></a>fig.write_html(<span class="st">&quot;dispatch_1860_to_65.html&quot;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb55"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb55-1"><a href="lesson-11-mapping-data-using-tagged-data.html#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co"># &quot;MAPS OF NAMES&quot;</span></span></code></pre></div>
+989396  1864-03-31_article_170  1864-03-31   persname                        turner,,geo,,,         turner      NaN      NaN
+```
+
+
+```python
+# DYNAMIC MAPS
+
+import plotly.express as px
+import pandas as pd
+import re
+
+tgnDataFile = "TGNOut_Coordinates.csv"
+dispatchDataFile = "entities.csv"
+
+tgnData = pd.read_csv(tgnDataFile, sep="\t", header=0)
+dispatchData = pd.read_csv(dispatchDataFile, sep="\t", header=0)
+
+dispatchDataUpd = pd.merge(dispatchData, tgnData, how='left', on="itemID")
+
+dispatchDataUpd["month"] = [re.sub("-\d\d$", "", str(i)) for i in dispatchDataUpd["date"]]
+# FOR THIS MAP WE NEED DATES STORED AS STRINGS
+# dispatchDataUpd["month"] = pd.to_datetime(dispatchDataUpd["month"], format="%Y-%m")
+
+dfPlaces = dispatchDataUpd
+dfPlaces = dfPlaces[dfPlaces.itemType.str.contains("placename", na=False)]
+
+dfPersons = dispatchDataUpd
+dfPersons = dfPersons[dfPersons.itemType.str.contains("persname", na=False)]
+
+# plot places
+placesAll = dfPlaces[['month', 'itemUnified', 'LAT', 'LON']]
+placesAll['count'] = 1
+placesAll = placesAll.groupby(['month', 'itemUnified', 'LAT', 'LON']).count()
+placesAll = placesAll.reset_index()
+print(placesAll)
+
+fig = px.scatter_geo(placesAll, lon='LON', lat='LAT',
+                     hover_name="itemUnified",
+                     animation_frame="month", size='count')
+
+fig.update_layout(
+    title_text='Placenames in the <i>Dispatch</i> (1860-1865)',
+    showlegend=True,
+    geo=dict(scope='usa', landcolor='rgb(235, 235, 235)',
+    )
+)
+
+#fig.show()
+fig.write_html("dispatch_1860_to_65.html")
+```
+
+
+
+```python
+# "MAPS OF NAMES"
+
+...
+```
+
+-->
 
 </div>
 </div>
