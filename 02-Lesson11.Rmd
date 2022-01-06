@@ -108,7 +108,6 @@ Below is the solution to the homework...
 # EXTRACT TGN DATA
 
 import re
-
 file = "TGNOut_Coordinates.nt"
 
 csvDataDic = {}
@@ -155,7 +154,37 @@ print("Done!")
 
 ```
 
-```{r engine='python', highlight=TRUE, eval=FALSE}
-# 
+The following lines of code *merge* two tables in such a way that coordinates are added to all placenames---matching done on the `itemId` column. Two additional columns are added --- with latitudes and longitudes; when 
 
+```{r engine='python', highlight=TRUE, eval=FALSE}
+# MERGE TGN DATA
+
+import pandas as pd
+
+tgnDataFile = "TGNOut_Coordinates.csv"
+dispatchDataFile = "entities.csv"
+
+tgnData = pd.read_csv(tgnDataFile, sep="\t", header=0)
+dispatchData = pd.read_csv(dispatchDataFile, sep="\t", header=0)
+
+dispatchDataUpd = pd.merge(dispatchData, tgnData, how='left', on="itemId")
+
+print(dispatchDataUpd)
 ```
+
+The final dataframe looks like this:
+```{csv}
+                     articleID        date   itemType                           itemUnified         itemID      LAT      LON
+0       1864-04-28_article_001  1864-04-28  placename        gordonsville, orange, virginia    tgn,2111971  38.1333 -78.1833
+1       1864-04-28_article_002  1864-04-28  placename  plymouth, washington, north carolina    tgn,2076159  35.8667 -76.7333
+2       1864-04-28_article_002  1864-04-28  placename  plymouth, washington, north carolina    tgn,2076159  35.8667 -76.7333
+3       1864-04-28_article_002  1864-04-28   persname         wessels,brigadier-general,,,,  wessels,h.,w.      NaN      NaN
+4       1864-04-28_article_002  1864-04-28   persname                          lincoln,,,,,        lincoln      NaN      NaN
+...                        ...         ...        ...                                   ...            ...      ...      ...
+989392  1864-03-31_article_169  1864-03-31   persname                         hunt,,chas,,,      hunt,chas      NaN      NaN
+989393  1864-03-31_article_170  1864-03-31   persname                            davis,,,,,    davis,waddy      NaN      NaN
+989394  1864-03-31_article_170  1864-03-31  placename    albemarle, virginia, united states    tgn,2002137  38.0333 -78.5500
+989395  1864-03-31_article_170  1864-03-31   persname                             cook,,,,,           cook      NaN      NaN
+989396  1864-03-31_article_170  1864-03-31   persname                        turner,,geo,,,         turner      NaN      NaN
+```
+
