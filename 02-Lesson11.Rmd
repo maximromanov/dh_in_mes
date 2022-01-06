@@ -23,37 +23,24 @@ Now, let's get back to our Dispatch data. We have placenames tagged --- and we a
 
 ### `N-triples`
 
+What are triples? This is one of the most robust formats that can describe any kind of data. The main idea is that every triple is expressed through the structure `subject-predicate-object`. There are multiple formats for expressing triples (for example, RDF, N-Triples, etc.) ([*more details...*](https://en.wikipedia.org/wiki/Semantic_triple)).
+
+Let's take a look at the following example from `TGNOut_Coordinates.nt`. There are three triples (`N-triples`) which together describe a specific object (which in our data would look like `tgn,1000007`). Each triple is stored on a separate line, ending with a period ("."). Elements of each triple are separated with spaces. Each triple has the same structure---`subject-predicate-object`---and can be read as follows.
+
+- Triple 1: entity `tgn,1000007` has (expressed in a particular manner) geographical coordinates;
+- Triple 2: entity `tgn,1000007` has decimal latitude `-83.843`;
+- Triple 3: entity `tgn,1000007` has decimal longitude `65.725`;
+
 ```
-<http://vocab.getty.edu/tgn/1002488-geometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/GeoShape> .
-<http://vocab.getty.edu/tgn/1002488-geometry> <http://schema.org/box> "-77.1875,39.1038 -77.1875,39.3686 -76.693,39.3686 -76.693,39.1038 -77.1875,39.1038" .
-<http://vocab.getty.edu/tgn/3000034-geometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/GeoShape> .
-<http://vocab.getty.edu/tgn/3000034-geometry> <http://schema.org/box> "-92.016,43.156 -92.016,48.812 -82.491,48.812 -82.491,43.156 -92.016,43.156" .
-<http://vocab.getty.edu/tgn/7003080-geometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/GeoShape> .
-<http://vocab.getty.edu/tgn/7003080-geometry> <http://schema.org/box> "11.466,41.133 11.466,42.833 14.033,42.833 14.033,41.133 11.466,41.133" .
-<http://vocab.getty.edu/tgn/7003237-geometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/GeoShape> .
-<http://vocab.getty.edu/tgn/7003237-geometry> <http://schema.org/box> "9.084,45.133 9.084,46.216 10.542,46.216 10.542,45.133 9.084,45.133" .
-<http://vocab.getty.edu/tgn/7009760-geometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/GeoShape> .
-<http://vocab.getty.edu/tgn/7009760-geometry> <http://schema.org/box> "10.101,42.583 10.101,44.066 11.626,44.066 11.626,42.583 10.101,42.583" .
-<http://vocab.getty.edu/tgn/7029370-geometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/GeoShape> .
-<http://vocab.getty.edu/tgn/7029370-geometry> <http://schema.org/box> "-92.016,43.156 -92.016,48.012 -82.491,48.012 -82.491,43.156 -92.016,43.156" .
-<http://vocab.getty.edu/tgn/7031953-geometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/GeoShape> .
-<http://vocab.getty.edu/tgn/7031953-geometry> <http://schema.org/box> "8.25,5.083 8.25,6.483 9.5,6.483 9.5,5.083 8.25,5.083" .
-<http://vocab.getty.edu/tgn/8713257-geometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/GeoShape> .
-<http://vocab.getty.edu/tgn/8713830-geometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/GeoShape> .
-<http://vocab.getty.edu/tgn/8713858-geometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/GeoShape> .
-<http://vocab.getty.edu/tgn/1000001-geometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/GeoCoordinates> .
-<http://vocab.getty.edu/tgn/1000001-geometry> <http://schema.org/latitude> "42.284495"^^<http://www.w3.org/2001/XMLSchema#decimal> .
-<http://vocab.getty.edu/tgn/1000001-geometry> <http://schema.org/longitude> "-101.123047"^^<http://www.w3.org/2001/XMLSchema#decimal> .
-<http://vocab.getty.edu/tgn/1000002-geometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/GeoCoordinates> .
-<http://vocab.getty.edu/tgn/1000002-geometry> <http://schema.org/latitude> "-3.55"^^<http://www.w3.org/2001/XMLSchema#decimal> .
-<http://vocab.getty.edu/tgn/1000002-geometry> <http://schema.org/longitude> "-56.683"^^<http://www.w3.org/2001/XMLSchema#decimal> .
-<http://vocab.getty.edu/tgn/1000003-geometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/GeoCoordinates> .
-<http://vocab.getty.edu/tgn/1000003-geometry> <http://schema.org/latitude> "56.2"^^<http://www.w3.org/2001/XMLSchema#decimal> .
-<http://vocab.getty.edu/tgn/1000003-geometry> <http://schema.org/longitude> "15.016"^^<http://www.w3.org/2001/XMLSchema#decimal> .
-<http://vocab.getty.edu/tgn/1000004-geometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/GeoCoordinates> .
-<http://vocab.getty.edu/tgn/1000004-geometry> <http://schema.org/latitude> "43.8"^^<http://www.w3.org/2001/XMLSchema#decimal> .
-<http://vocab.getty.edu/tgn/1000004-geometry> <http://schema.org/longitude> "87.633"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://vocab.getty.edu/tgn/1000007-geometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/GeoCoordinates> .
+<http://vocab.getty.edu/tgn/1000007-geometry> <http://schema.org/latitude> "-83.843"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://vocab.getty.edu/tgn/1000007-geometry> <http://schema.org/longitude> "65.725"^^<http://www.w3.org/2001/XMLSchema#decimal> .
 ```
+
+You should have no problems writing a script that converts this data into a CSV with the structure: `ID`, `lon`, and `lat`. (Technically, you can also store these triples in a CSV/TSV format, but that would require additional conversion later.)
+
+If you are not up to this challenge, you can use the CSV file tat I have already prepared, to make your life a bit easier: [TGN_Coordinates.csv](./files/tgn_coordinates.zip)
+
 
 
 ## Homework{#HWL11}
