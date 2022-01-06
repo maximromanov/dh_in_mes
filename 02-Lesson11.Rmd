@@ -72,6 +72,10 @@ If everything done correctly, the map may look like this ([although an interacti
 
 ![](./files/dispatch_1860_to_65.png)
 
+Here is the link to the description of how dynamic maps can be done: [Bubble Map with Animation](https://plotly.com/python/bubble-maps/). Use this example to produce something similar for the Dispatch data.
+
+Last but not least, we may get interesting maps if we map places that cooccur with some specific names. An example of Gen. Sherman and Atlanta could be quite interesting (we have seen the graphs in the previous lesson), although in such cases a chronological graph of mentions of Altanta---only in articles where Gen. Sherman is mentioned---may be a more clear option. Please, try to code a solution that will do one or the other :)
+
 ## Homework{#HWL11}
 
 - Graph geographical data from the Dispatch. Experiment with different periods and different selections of placenames (for example, Richmond and Virginia will be the most frequently mentioned placenames---because the newspaper was published in Richmond, Virginia; this would mean that these two places will overshadow all other places.)
@@ -137,17 +141,14 @@ with open(file) as f1:
             pass
 
 csvData = []
-
 for k, v in csvDataDic.items():
     csvData.append("\t".join(v))
 
 csvData = "itemId\tLAT\tLON\n" + "\n".join(csvData)
-
 with open(file.replace(".nt", ".csv"), "w", encoding="utf8") as f9:
     f9.write(csvData)
 
 print("Done!")
-
 ```
 
 The following lines of code *merge* two tables in such a way that coordinates are added to all placenames---matching done on the `itemId` column. Two additional columns are added --- with latitudes and longitudes; when 
@@ -185,7 +186,7 @@ The final dataframe looks like what you see below. You can see that some rows ha
 ```
 
 ```{r engine='python', highlight=TRUE, eval=FALSE}
-# INTERACTIVE MAPS BY MONTHS
+# DYNAMIC MAPS
 
 import plotly.express as px
 import pandas as pd
@@ -199,9 +200,8 @@ dispatchData = pd.read_csv(dispatchDataFile, sep="\t", header=0)
 
 dispatchDataUpd = pd.merge(dispatchData, tgnData, how='left', on="itemID")
 
-dispatchDataUpd["month"] = [
-    re.sub("-\d\d$", "", str(i)) for i in dispatchDataUpd["date"]]
-# for the dynamic map we need to have dates as strings
+dispatchDataUpd["month"] = [re.sub("-\d\d$", "", str(i)) for i in dispatchDataUpd["date"]]
+# FOR THIS MAP WE NEED DATES STORED AS STRINGS
 # dispatchDataUpd["month"] = pd.to_datetime(dispatchDataUpd["month"], format="%Y-%m")
 
 dfPlaces = dispatchDataUpd
@@ -223,11 +223,19 @@ fig = px.scatter_geo(placesAll, lon='LON', lat='LAT',
 
 fig.update_layout(
     title_text='Placenames in the <i>Dispatch</i> (1860-1865)',
+    showlegend=True,
     geo=dict(scope='usa', landcolor='rgb(235, 235, 235)',
     )
 )
 
-fig.show()
+#fig.show()
 fig.write_html("dispatch_1860_to_65.html")
+```
+
+
+```{r engine='python', highlight=TRUE, eval=FALSE}
+# "MAPS OF NAMES"
+
+
 
 ```
