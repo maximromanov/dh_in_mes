@@ -172,8 +172,9 @@ dispatchDataUpd = pd.merge(dispatchData, tgnData, how='left', on="itemId")
 print(dispatchDataUpd)
 ```
 
-The final dataframe looks like this:
-```{csv}
+The final dataframe looks like what you see below. 
+
+```
                      articleID        date   itemType                           itemUnified         itemID      LAT      LON
 0       1864-04-28_article_001  1864-04-28  placename        gordonsville, orange, virginia    tgn,2111971  38.1333 -78.1833
 1       1864-04-28_article_002  1864-04-28  placename  plymouth, washington, north carolina    tgn,2076159  35.8667 -76.7333
