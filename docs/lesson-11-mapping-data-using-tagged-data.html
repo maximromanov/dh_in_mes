@@ -412,10 +412,8 @@ div.csl-indent {
 </ul>
 <p>You should have no problems writing a script that converts this data into a CSV with the structure: <code>ID</code>, <code>lon</code>, and <code>lat</code>. (Technically, you can also store these triples in a CSV/TSV format, but that would require additional conversion later.)</p>
 <p>If you are not up to this challenge, you can use the CSV file that I have already prepared, to make your life a bit easier: <a href="./files/TGNOut_Coordinates.csv.zip">TGNOut_Coordinates.csv.zip</a></p>
-<p>If everything done correctly, the map may look like this:</p>
-<p>…</p>
-<p>Or, even like this — with an interactive temporary component:</p>
-<p>…</p>
+<p>If everything done correctly, the map may look like this (although an interactive temporary component is an extra):</p>
+<p><embed src="./files/dispatch_1860_to_65.html" /></p>
 </div>
 </div>
 <div id="HWL11" class="section level2" number="11.2">
@@ -513,10 +511,8 @@ div.csl-indent {
 <span id="cb52-8"><a href="lesson-11-mapping-data-using-tagged-data.html#cb52-8" aria-hidden="true" tabindex="-1"></a>tgnData <span class="op">=</span> pd.read_csv(tgnDataFile, sep<span class="op">=</span><span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>, header<span class="op">=</span><span class="dv">0</span>)</span>
 <span id="cb52-9"><a href="lesson-11-mapping-data-using-tagged-data.html#cb52-9" aria-hidden="true" tabindex="-1"></a>dispatchData <span class="op">=</span> pd.read_csv(dispatchDataFile, sep<span class="op">=</span><span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>, header<span class="op">=</span><span class="dv">0</span>)</span>
 <span id="cb52-10"><a href="lesson-11-mapping-data-using-tagged-data.html#cb52-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb52-11"><a href="lesson-11-mapping-data-using-tagged-data.html#cb52-11" aria-hidden="true" tabindex="-1"></a>dispatchDataUpd <span class="op">=</span> pd.merge(dispatchData, tgnData, how<span class="op">=</span><span class="st">&#39;left&#39;</span>, on<span class="op">=</span><span class="st">&quot;itemId&quot;</span>)</span>
-<span id="cb52-12"><a href="lesson-11-mapping-data-using-tagged-data.html#cb52-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb52-13"><a href="lesson-11-mapping-data-using-tagged-data.html#cb52-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(dispatchDataUpd)</span></code></pre></div>
-<p>The final dataframe looks like what you see below.</p>
+<span id="cb52-11"><a href="lesson-11-mapping-data-using-tagged-data.html#cb52-11" aria-hidden="true" tabindex="-1"></a>dispatchDataUpd <span class="op">=</span> pd.merge(dispatchData, tgnData, how<span class="op">=</span><span class="st">&#39;left&#39;</span>, on<span class="op">=</span><span class="st">&quot;itemId&quot;</span>)</span></code></pre></div>
+<p>The final dataframe looks like what you see below. You can see that some rows have <code>NaN</code> values (<code>not a number</code>) in columns <code>LAT</code> and <code>LON</code> — this essentially means that these rows could not be matched (because persnames and orgnames do not have TGN identifiers).</p>
 <pre><code>                     articleID        date   itemType                           itemUnified         itemID      LAT      LON
 0       1864-04-28_article_001  1864-04-28  placename        gordonsville, orange, virginia    tgn,2111971  38.1333 -78.1833
 1       1864-04-28_article_002  1864-04-28  placename  plymouth, washington, north carolina    tgn,2076159  35.8667 -76.7333
@@ -529,6 +525,50 @@ div.csl-indent {
 989394  1864-03-31_article_170  1864-03-31  placename    albemarle, virginia, united states    tgn,2002137  38.0333 -78.5500
 989395  1864-03-31_article_170  1864-03-31   persname                             cook,,,,,           cook      NaN      NaN
 989396  1864-03-31_article_170  1864-03-31   persname                        turner,,geo,,,         turner      NaN      NaN</code></pre>
+<div class="sourceCode" id="cb54"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb54-1"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co"># INTERACTIVE MAPS BY MONTHS</span></span>
+<span id="cb54-2"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-3"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
+<span id="cb54-4"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb54-5"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
+<span id="cb54-6"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-7"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-7" aria-hidden="true" tabindex="-1"></a>tgnDataFile <span class="op">=</span> <span class="st">&quot;TGNOut_Coordinates.csv&quot;</span></span>
+<span id="cb54-8"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-8" aria-hidden="true" tabindex="-1"></a>dispatchDataFile <span class="op">=</span> <span class="st">&quot;entities.csv&quot;</span></span>
+<span id="cb54-9"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-10"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-10" aria-hidden="true" tabindex="-1"></a>tgnData <span class="op">=</span> pd.read_csv(tgnDataFile, sep<span class="op">=</span><span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>, header<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb54-11"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-11" aria-hidden="true" tabindex="-1"></a>dispatchData <span class="op">=</span> pd.read_csv(dispatchDataFile, sep<span class="op">=</span><span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>, header<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb54-12"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-13"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-13" aria-hidden="true" tabindex="-1"></a>dispatchDataUpd <span class="op">=</span> pd.merge(dispatchData, tgnData, how<span class="op">=</span><span class="st">&#39;left&#39;</span>, on<span class="op">=</span><span class="st">&quot;itemID&quot;</span>)</span>
+<span id="cb54-14"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-15"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-15" aria-hidden="true" tabindex="-1"></a>dispatchDataUpd[<span class="st">&quot;month&quot;</span>] <span class="op">=</span> [</span>
+<span id="cb54-16"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-16" aria-hidden="true" tabindex="-1"></a>    re.sub(<span class="st">&quot;-\d\d$&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="bu">str</span>(i)) <span class="cf">for</span> i <span class="kw">in</span> dispatchDataUpd[<span class="st">&quot;date&quot;</span>]]</span>
+<span id="cb54-17"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-17" aria-hidden="true" tabindex="-1"></a><span class="co"># for the dynamic map we need to have dates as strings</span></span>
+<span id="cb54-18"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-18" aria-hidden="true" tabindex="-1"></a><span class="co"># dispatchDataUpd[&quot;month&quot;] = pd.to_datetime(dispatchDataUpd[&quot;month&quot;], format=&quot;%Y-%m&quot;)</span></span>
+<span id="cb54-19"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-20"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-20" aria-hidden="true" tabindex="-1"></a>dfPlaces <span class="op">=</span> dispatchDataUpd</span>
+<span id="cb54-21"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-21" aria-hidden="true" tabindex="-1"></a>dfPlaces <span class="op">=</span> dfPlaces[dfPlaces.itemType.<span class="bu">str</span>.contains(<span class="st">&quot;placename&quot;</span>, na<span class="op">=</span><span class="va">False</span>)]</span>
+<span id="cb54-22"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-23"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-23" aria-hidden="true" tabindex="-1"></a>dfPersons <span class="op">=</span> dispatchDataUpd</span>
+<span id="cb54-24"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-24" aria-hidden="true" tabindex="-1"></a>dfPersons <span class="op">=</span> dfPersons[dfPersons.itemType.<span class="bu">str</span>.contains(<span class="st">&quot;persname&quot;</span>, na<span class="op">=</span><span class="va">False</span>)]</span>
+<span id="cb54-25"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-26"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-26" aria-hidden="true" tabindex="-1"></a><span class="co"># plot places</span></span>
+<span id="cb54-27"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-27" aria-hidden="true" tabindex="-1"></a>placesAll <span class="op">=</span> dfPlaces[[<span class="st">&#39;month&#39;</span>, <span class="st">&#39;itemUnified&#39;</span>, <span class="st">&#39;LAT&#39;</span>, <span class="st">&#39;LON&#39;</span>]]</span>
+<span id="cb54-28"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-28" aria-hidden="true" tabindex="-1"></a>placesAll[<span class="st">&#39;count&#39;</span>] <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb54-29"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-29" aria-hidden="true" tabindex="-1"></a>placesAll <span class="op">=</span> placesAll.groupby([<span class="st">&#39;month&#39;</span>, <span class="st">&#39;itemUnified&#39;</span>, <span class="st">&#39;LAT&#39;</span>, <span class="st">&#39;LON&#39;</span>]).count()</span>
+<span id="cb54-30"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-30" aria-hidden="true" tabindex="-1"></a>placesAll <span class="op">=</span> placesAll.reset_index()</span>
+<span id="cb54-31"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-31" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(placesAll)</span>
+<span id="cb54-32"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-33"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-33" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.scatter_geo(placesAll, lon<span class="op">=</span><span class="st">&#39;LON&#39;</span>, lat<span class="op">=</span><span class="st">&#39;LAT&#39;</span>,</span>
+<span id="cb54-34"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-34" aria-hidden="true" tabindex="-1"></a>                     hover_name<span class="op">=</span><span class="st">&quot;itemUnified&quot;</span>,</span>
+<span id="cb54-35"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-35" aria-hidden="true" tabindex="-1"></a>                     animation_frame<span class="op">=</span><span class="st">&quot;month&quot;</span>, size<span class="op">=</span><span class="st">&#39;count&#39;</span>)</span>
+<span id="cb54-36"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-37"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-37" aria-hidden="true" tabindex="-1"></a>fig.update_layout(</span>
+<span id="cb54-38"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-38" aria-hidden="true" tabindex="-1"></a>    title_text<span class="op">=</span><span class="st">&#39;Placenames in the &lt;i&gt;Dispatch&lt;/i&gt; (1860-1865)&#39;</span>,</span>
+<span id="cb54-39"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-39" aria-hidden="true" tabindex="-1"></a>    geo<span class="op">=</span><span class="bu">dict</span>(scope<span class="op">=</span><span class="st">&#39;usa&#39;</span>, landcolor<span class="op">=</span><span class="st">&#39;rgb(235, 235, 235)&#39;</span>,</span>
+<span id="cb54-40"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-40" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb54-41"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-41" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb54-42"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-43"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-43" aria-hidden="true" tabindex="-1"></a>fig.show()</span>
+<span id="cb54-44"><a href="lesson-11-mapping-data-using-tagged-data.html#cb54-44" aria-hidden="true" tabindex="-1"></a>fig.write_html(<span class="st">&quot;dispatch_1860_to_65.html&quot;</span>)</span></code></pre></div>
 
 </div>
 </div>

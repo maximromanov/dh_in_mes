@@ -68,13 +68,9 @@ You should have no problems writing a script that converts this data into a CSV 
 
 If you are not up to this challenge, you can use the CSV file that I have already prepared, to make your life a bit easier: [TGNOut_Coordinates.csv.zip](./files/TGNOut_Coordinates.csv.zip)
 
-If everything done correctly, the map may look like this:
+If everything done correctly, the map may look like this (although an interactive temporary component is an extra):
 
-...
-
-Or, even like this --- with an interactive temporary component:
-
-...
+![](./files/dispatch_1860_to_65.html)
 
 ## Homework{#HWL11}
 
@@ -169,10 +165,9 @@ dispatchData = pd.read_csv(dispatchDataFile, sep="\t", header=0)
 
 dispatchDataUpd = pd.merge(dispatchData, tgnData, how='left', on="itemId")
 
-print(dispatchDataUpd)
 ```
 
-The final dataframe looks like what you see below. 
+The final dataframe looks like what you see below. You can see that some rows have `NaN` values (`not a number`) in columns `LAT` and `LON` --- this essentially means that these rows could not be matched (because persnames and orgnames do not have TGN identifiers).
 
 ```
                      articleID        date   itemType                           itemUnified         itemID      LAT      LON
@@ -189,3 +184,50 @@ The final dataframe looks like what you see below.
 989396  1864-03-31_article_170  1864-03-31   persname                        turner,,geo,,,         turner      NaN      NaN
 ```
 
+```{r engine='python', highlight=TRUE, eval=FALSE}
+# INTERACTIVE MAPS BY MONTHS
+
+import plotly.express as px
+import pandas as pd
+import re
+
+tgnDataFile = "TGNOut_Coordinates.csv"
+dispatchDataFile = "entities.csv"
+
+tgnData = pd.read_csv(tgnDataFile, sep="\t", header=0)
+dispatchData = pd.read_csv(dispatchDataFile, sep="\t", header=0)
+
+dispatchDataUpd = pd.merge(dispatchData, tgnData, how='left', on="itemID")
+
+dispatchDataUpd["month"] = [
+    re.sub("-\d\d$", "", str(i)) for i in dispatchDataUpd["date"]]
+# for the dynamic map we need to have dates as strings
+# dispatchDataUpd["month"] = pd.to_datetime(dispatchDataUpd["month"], format="%Y-%m")
+
+dfPlaces = dispatchDataUpd
+dfPlaces = dfPlaces[dfPlaces.itemType.str.contains("placename", na=False)]
+
+dfPersons = dispatchDataUpd
+dfPersons = dfPersons[dfPersons.itemType.str.contains("persname", na=False)]
+
+# plot places
+placesAll = dfPlaces[['month', 'itemUnified', 'LAT', 'LON']]
+placesAll['count'] = 1
+placesAll = placesAll.groupby(['month', 'itemUnified', 'LAT', 'LON']).count()
+placesAll = placesAll.reset_index()
+print(placesAll)
+
+fig = px.scatter_geo(placesAll, lon='LON', lat='LAT',
+                     hover_name="itemUnified",
+                     animation_frame="month", size='count')
+
+fig.update_layout(
+    title_text='Placenames in the <i>Dispatch</i> (1860-1865)',
+    geo=dict(scope='usa', landcolor='rgb(235, 235, 235)',
+    )
+)
+
+fig.show()
+fig.write_html("dispatch_1860_to_65.html")
+
+```
