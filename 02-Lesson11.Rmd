@@ -53,6 +53,11 @@ If you are not up to this challenge, you can use the CSV file tat I have already
 - Finish the assigned task;
 - Annotate your script (i.e., add comment to every line of code describing what is happenning there);
 
+- Additional materials:
+  - Basemap Matplotlib Toolkit: [Plotting data on a map (Example Gallery)](https://matplotlib.org/basemap/users/examples.html).
+  - *Python Data Science Handbook*: [Geographic Data with Basemap](https://jakevdp.github.io/PythonDataScienceHandbook/04.13-geographic-data-with-basemap.html);
+  - Interactive maps with `Plotly`: <https://plotly.com/python/bubble-maps/>;
+
 **Submitting homework:**
 
 * Homework assignment must be submitted by the beginning of the next class;
