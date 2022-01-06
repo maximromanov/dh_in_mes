@@ -617,13 +617,16 @@ Such graphs can be used to monitor discussions of different topic in chronologic
 <span id="cb47-45"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb47-45" aria-hidden="true" tabindex="-1"></a>    plt.xlabel(<span class="st">&quot;dates (issues aggregated into months)&quot;</span>)</span>
 <span id="cb47-46"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb47-46" aria-hidden="true" tabindex="-1"></a>    plt.title(<span class="st">&quot;entities with </span><span class="ch">\&quot;</span><span class="sc">%s</span><span class="ch">\&quot;</span><span class="st"> in them&quot;</span> <span class="op">%</span> (searchTerm))</span>
 <span id="cb47-47"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb47-47" aria-hidden="true" tabindex="-1"></a>    plt.gca().yaxis.grid(linestyle<span class="op">=</span><span class="st">&#39;:&#39;</span>)</span>
-<span id="cb47-48"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb47-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-49"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb47-49" aria-hidden="true" tabindex="-1"></a>    <span class="co"># the following line will save the graph into a file</span></span>
-<span id="cb47-50"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb47-50" aria-hidden="true" tabindex="-1"></a>    fileNameToSave <span class="op">=</span> <span class="st">&quot;plot1_</span><span class="sc">%s</span><span class="st">_</span><span class="sc">%s</span><span class="st">.png&quot;</span> <span class="op">%</span> (fileName, searchTerm)</span>
-<span id="cb47-51"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb47-51" aria-hidden="true" tabindex="-1"></a>    plt.savefig(fileNameToSave, dpi<span class="op">=</span><span class="dv">300</span>, bbox_inches<span class="op">=</span><span class="st">&quot;tight&quot;</span>)</span>
-<span id="cb47-52"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb47-52" aria-hidden="true" tabindex="-1"></a>    plt.close(<span class="st">&quot;all&quot;</span>)</span>
-<span id="cb47-53"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb47-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-54"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb47-54" aria-hidden="true" tabindex="-1"></a>searchDispatchData(<span class="st">&quot;shiloh&quot;</span>, <span class="st">&quot;shiloh&quot;</span>)</span></code></pre></div>
+<span id="cb47-48"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb47-48" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb47-49"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb47-49" aria-hidden="true" tabindex="-1"></a>    <span class="co"># the following line will simply open a pop-up with the graph</span></span>
+<span id="cb47-50"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb47-50" aria-hidden="true" tabindex="-1"></a>    <span class="co"># plt.show()</span></span>
+<span id="cb47-51"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb47-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-52"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb47-52" aria-hidden="true" tabindex="-1"></a>    <span class="co"># the following line will save the graph into a file</span></span>
+<span id="cb47-53"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb47-53" aria-hidden="true" tabindex="-1"></a>    fileNameToSave <span class="op">=</span> <span class="st">&quot;plot1_</span><span class="sc">%s</span><span class="st">_</span><span class="sc">%s</span><span class="st">.png&quot;</span> <span class="op">%</span> (fileName, searchTerm)</span>
+<span id="cb47-54"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb47-54" aria-hidden="true" tabindex="-1"></a>    plt.savefig(fileNameToSave, dpi<span class="op">=</span><span class="dv">300</span>, bbox_inches<span class="op">=</span><span class="st">&quot;tight&quot;</span>)</span>
+<span id="cb47-55"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb47-55" aria-hidden="true" tabindex="-1"></a>    plt.close(<span class="st">&quot;all&quot;</span>)</span>
+<span id="cb47-56"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb47-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-57"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb47-57" aria-hidden="true" tabindex="-1"></a>searchDispatchData(<span class="st">&quot;shiloh&quot;</span>, <span class="st">&quot;shiloh&quot;</span>)</span></code></pre></div>
 </div>
 <div id="missing-zeros-problem" class="section level2" number="10.3">
 <h2><span class="header-section-number">10.3</span> Missing Zeros Problem</h2>
@@ -695,7 +698,128 @@ In the second graph we simply “collected” all mentions of Shiloh and plotted
 </div>
 <div id="SolutionL10" class="section level2" number="10.5">
 <h2><span class="header-section-number">10.5</span> Solution</h2>
-<p>Below is the solution to the homework…</p>
+<p>Below is the solution to the homework.</p>
+<!--
+
+```python
+import re
+import os
+import io
+import pandas
+import matplotlib.pyplot as plt
+
+source = "./Dispatch/"
+lof = os.listdir(source)
+
+template = """
+=================================================================================
+= Plotting: %s (searching for: `\\b(%s)\\b`)
+=================================================================================
+"""
+
+
+def searchDispatch(searchTermREGEX, searchTermPretty):
+    print(template % (searchTermREGEX, searchTermPretty))
+
+    counter = 0
+    entities = []  # we will collect all extracted data here
+    for f in lof:
+        counter += 1
+        if counter % 100 == 0:
+            print(counter)
+
+        if f.startswith("dltext"):  # fileName test
+            newF = f.split(":")[-1] + ".yml"  # in fact, yml-like
+
+            issueVar = []
+            c = 0  # technical counter
+            with open(source + f, "r", encoding="utf8") as f1:
+                text = f1.read()
+                date = re.search(r'<date value="([\d-]+)"', text).group(1)
+                split = re.split("<div3 ", text)
+
+                for s in split[1:]:
+                    c += 1
+                    s = "<div3 " + s  # a step to restore the integrity of items
+
+                    try:
+                        unitType = re.search(r'type="([^\"]+)"', s).group(1)
+                    except:
+                        unitType = "noType"
+
+                    try:
+                        header = re.search(r'<head.*</head>', s).group(0)
+                        header = re.sub("<[^<]+>", "", header)
+
+                    except:
+                        header = "NO HEADER"
+
+                    text = s
+                    text = re.sub("<[^<]+>", " ", text)
+                    text = re.sub(" +\n|\n +", "\n", text)
+                    text = text.strip()
+                    text = re.sub("\n+", ";;; ", text)
+                    text = re.sub(" +", " ", text)
+                    text = re.sub(r" ([\.,:;!])", r"\1", text)
+
+                    itemID = date + "_" + unitType + "_%03d" % c
+
+                    if len(re.sub("\W+", "", text)) != 0:
+                        itemIdvar = "ID: " + itemID
+                        dateVar = "DATE: " + date
+                        unitType = "TYPE: " + unitType
+                        header = "HEADER: " + header
+                        # @§@ is used to replace ":", because in YML : is used as a divider between the key and value
+                        text = "TEXT: " + text.replace(":", "@§@") + "\n\n"
+                        var = "\n".join(
+                            [itemIdvar, dateVar, unitType, header, text])
+
+                        issueVar.append(var)
+
+                        # NOW, WE CAN ADD SOME CODE TO PROCESS EACH ITEM AND COLLECT ALL INTO OUR TIDY DATA FORMAT
+                        # STRUCTURE: itemID, dateVar, EXTRACTED_ITEM (type, unified_form, id)
+                        # ADDING TO: entities (list)
+
+                        results = re.findall(r"\b(%s)\b" %
+                                             searchTermREGEX, text.lower())
+                        matches = str(len(results))
+                        tempVar = "\t".join([itemID, date, matches])
+                        entities.append(tempVar)
+
+    header = "\t".join(["itemID", "date", searchTermPretty])
+    entitiesFinal = header + "\n" + "\n".join(entities)
+    with open("search_results_%s.csv" % searchTermPretty, "w", encoding="utf8") as f9:
+        f9.write(entitiesFinal)
+
+    # reading our string of data into a pandas dataframe
+    entitiesFinalStringIO = io.StringIO(entitiesFinal)
+    df = pandas.read_csv(entitiesFinalStringIO, sep="\t", header=0)
+
+    df["month"] = [re.sub("-\d\d$", "-01", str(i)) for i in df["date"]]
+    df["month"] = pandas.to_datetime(df["month"], format="%Y-%m-%d")
+
+    df = df[["month", searchTermPretty]]
+    df = df.groupby(["month"]).sum()
+    df = df.reset_index()
+
+    # plot itself
+    plt.rcParams["figure.figsize"] = (20, 9)
+    df.plot(x='month', y=searchTermPretty, legend=True, color='red')
+
+    plt.ylabel("absolute frequencies")
+    plt.xlabel("dates (issues aggregated into months)")
+    plt.title("References to \"%s\" (regex: `\\b(%s)\\b`)" %
+              (searchTermPretty, searchTermREGEX))
+    plt.gca().yaxis.grid(linestyle=':')
+
+    # the following line will save the graph into a file
+    plt.savefig("plot_%s.png" % searchTermPretty, dpi=300, bbox_inches="tight")
+    plt.close("all")
+    print("Done!")
+
+searchDispatch("deserters?|killed|wounded", "losses_at_war")
+```
+-->
 
 </div>
 </div>
