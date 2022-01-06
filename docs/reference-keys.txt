@@ -110,7 +110,7 @@ HWL09
 SolutionL09
 lesson-10-graphing-chronological-distribution-of-tagged-entities
 abstractions-of-newspaper-articles
-code
+code-line-graph
 missing-zeros-problem
 HWL10
 SolutionL10

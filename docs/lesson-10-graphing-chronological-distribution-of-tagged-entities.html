@@ -310,7 +310,7 @@ div.csl-indent {
 <li class="chapter" data-level="10" data-path="lesson-10-graphing-chronological-distribution-of-tagged-entities.html"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html"><i class="fa fa-check"></i><b>10</b> Lesson 10: Graphing Chronological Distribution of Tagged Entities</a>
 <ul>
 <li class="chapter" data-level="10.1" data-path="lesson-10-graphing-chronological-distribution-of-tagged-entities.html"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#abstractions-of-newspaper-articles"><i class="fa fa-check"></i><b>10.1</b> Abstractions of Newspaper Articles</a></li>
-<li class="chapter" data-level="10.2" data-path="lesson-10-graphing-chronological-distribution-of-tagged-entities.html"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#code"><i class="fa fa-check"></i><b>10.2</b> Code</a></li>
+<li class="chapter" data-level="10.2" data-path="lesson-10-graphing-chronological-distribution-of-tagged-entities.html"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#code-line-graph"><i class="fa fa-check"></i><b>10.2</b> Code: Line Graph</a></li>
 <li class="chapter" data-level="10.3" data-path="lesson-10-graphing-chronological-distribution-of-tagged-entities.html"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#missing-zeros-problem"><i class="fa fa-check"></i><b>10.3</b> Missing Zeros Problem</a></li>
 <li class="chapter" data-level="10.4" data-path="lesson-10-graphing-chronological-distribution-of-tagged-entities.html"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#HWL10"><i class="fa fa-check"></i><b>10.4</b> Homework</a></li>
 <li class="chapter" data-level="10.5" data-path="lesson-10-graphing-chronological-distribution-of-tagged-entities.html"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#SolutionL10"><i class="fa fa-check"></i><b>10.5</b> Solution</a></li>
@@ -568,8 +568,8 @@ Such graphs can be used to monitor discussions of different topic in chronologic
 # shiloh (Battle of Shiloh took place in April of 1862) <https://en.wikipedia.org/wiki/Battle_of_Shiloh>
 -->
 </div>
-<div id="code" class="section level2" number="10.2">
-<h2><span class="header-section-number">10.2</span> Code</h2>
+<div id="code-line-graph" class="section level2" number="10.2">
+<h2><span class="header-section-number">10.2</span> Code: Line Graph</h2>
 </div>
 <div id="missing-zeros-problem" class="section level2" number="10.3">
 <h2><span class="header-section-number">10.3</span> Missing Zeros Problem</h2>
@@ -577,14 +577,56 @@ Such graphs can be used to monitor discussions of different topic in chronologic
 <p><img src="files/graphs/plot1_shiloh_shiloh.png" />
 <img src="files/graphs/plot1_shiloh_shiloh_zeroErrorExample.png" />
 In the second graph we simply “collected” all mentions of Shiloh and plotted them with a line graph. The problem is that we have no explicit data on dates when Shiloh is not mentioned and, as a result, the graph suggests that Shiloh is mentioned quite a lot in the course of the year 1861. If we look at the first graph—where we have data for all the dates and each date when Shiloh is not mentioned has a value 0—we can see that Shiloh is mentioned only a couple of times in 1861 and then there is a huge spike of mentions in 1862, when the Battle of Shiloh took place.</p>
-<p>The main takeaway from this is that you should always be mindful of how you are filtering your data and what strategies you use for plotting it. Line graph can make a false suggestion, when some x-values are missing. A more reliable graph in such cases would be a “lollipop” graph that is shown below — lollipop graph does not connect observations, thus clearly showing gaps in data.</p>
-<p><img src="files/graphs/plot1_lollipop_shiloh_shiloh.png" /></p>
+<p>The main takeaway from this is that you should always be mindful of how you are filtering your data and what strategies you use for plotting it. Line graph can make a false suggestion, when some x-values are missing. A more reliable graph in such cases would be a “lollipop” graph that is shown below — lollipop graphs do not connect observations, and due to that they clearly show gaps in data.</p>
+<p><img src="files/graphs/plot1_lollipop_shiloh_shiloh.png" />
+## Code: Lollipop Graph</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb47-1"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
+<span id="cb47-2"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas</span>
+<span id="cb47-3"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb47-4"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb47-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-5"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb47-5" aria-hidden="true" tabindex="-1"></a>template <span class="op">=</span> <span class="st">&quot;&quot;&quot;&gt; Plotting data: </span><span class="sc">%s</span><span class="st">&quot;&quot;&quot;</span></span>
+<span id="cb47-6"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb47-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-7"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb47-7" aria-hidden="true" tabindex="-1"></a><span class="co"># load entities data</span></span>
+<span id="cb47-8"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb47-8" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pandas.read_csv(<span class="st">&quot;entities.csv&quot;</span>, sep<span class="op">=</span><span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>, header<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb47-9"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb47-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df)</span>
+<span id="cb47-10"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb47-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-11"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb47-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-12"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb47-12" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> searchDispatchData(searchTerm, fileName<span class="op">=</span><span class="st">&quot;fromTagged&quot;</span>):</span>
+<span id="cb47-13"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb47-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(template <span class="op">%</span> (searchTerm))</span>
+<span id="cb47-14"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb47-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-15"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb47-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># processing our data</span></span>
+<span id="cb47-16"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb47-16" aria-hidden="true" tabindex="-1"></a>    df[<span class="st">&quot;month&quot;</span>] <span class="op">=</span> [re.sub(<span class="st">&quot;-\d\d$&quot;</span>, <span class="st">&quot;-01&quot;</span>, <span class="bu">str</span>(i)) <span class="cf">for</span> i <span class="kw">in</span> df[<span class="st">&quot;date&quot;</span>]]</span>
+<span id="cb47-17"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb47-17" aria-hidden="true" tabindex="-1"></a>    df[<span class="st">&quot;month&quot;</span>] <span class="op">=</span> pandas.to_datetime(df[<span class="st">&quot;month&quot;</span>], <span class="bu">format</span><span class="op">=</span><span class="st">&quot;%Y-%m-</span><span class="sc">%d</span><span class="st">&quot;</span>)</span>
+<span id="cb47-18"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb47-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-19"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb47-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># create a new table only with values that we want</span></span>
+<span id="cb47-20"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb47-20" aria-hidden="true" tabindex="-1"></a>    dfTemp <span class="op">=</span> df[df.itemUnified.<span class="bu">str</span>.contains(searchTerm, na<span class="op">=</span><span class="va">False</span>)]</span>
+<span id="cb47-21"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb47-21" aria-hidden="true" tabindex="-1"></a>    dfTemp <span class="op">=</span> dfTemp[[<span class="st">&quot;month&quot;</span>, <span class="st">&quot;itemType&quot;</span>]]</span>
+<span id="cb47-22"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb47-22" aria-hidden="true" tabindex="-1"></a>    dfTemp <span class="op">=</span> dfTemp.groupby([<span class="st">&quot;month&quot;</span>]).count()</span>
+<span id="cb47-23"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb47-23" aria-hidden="true" tabindex="-1"></a>    dfTemp <span class="op">=</span> dfTemp.reset_index()</span>
+<span id="cb47-24"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb47-24" aria-hidden="true" tabindex="-1"></a>    dfTemp[searchTerm] <span class="op">=</span> dfTemp[<span class="st">&quot;itemType&quot;</span>]</span>
+<span id="cb47-25"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb47-25" aria-hidden="true" tabindex="-1"></a>    dfTemp <span class="op">=</span> dfTemp[[<span class="st">&quot;month&quot;</span>, searchTerm]]</span>
+<span id="cb47-26"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb47-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-27"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb47-27" aria-hidden="true" tabindex="-1"></a>    <span class="co"># plotting the results - lollipop</span></span>
+<span id="cb47-28"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb47-28" aria-hidden="true" tabindex="-1"></a>    plt.rcParams[<span class="st">&quot;figure.figsize&quot;</span>] <span class="op">=</span> (<span class="dv">20</span>, <span class="dv">9</span>)</span>
+<span id="cb47-29"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb47-29" aria-hidden="true" tabindex="-1"></a>    plt.stem(dfTemp[<span class="st">&#39;month&#39;</span>], dfTemp[searchTerm])</span>
+<span id="cb47-30"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb47-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-31"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb47-31" aria-hidden="true" tabindex="-1"></a>    plt.ylabel(<span class="st">&quot;absolute frequencies&quot;</span>)</span>
+<span id="cb47-32"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb47-32" aria-hidden="true" tabindex="-1"></a>    plt.xlabel(<span class="st">&quot;dates (issues aggregated into months)&quot;</span>)</span>
+<span id="cb47-33"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb47-33" aria-hidden="true" tabindex="-1"></a>    plt.title(<span class="st">&quot;entities with </span><span class="ch">\&quot;</span><span class="sc">%s</span><span class="ch">\&quot;</span><span class="st"> in them&quot;</span> <span class="op">%</span> (searchTerm))</span>
+<span id="cb47-34"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb47-34" aria-hidden="true" tabindex="-1"></a>    plt.gca().yaxis.grid(linestyle<span class="op">=</span><span class="st">&#39;:&#39;</span>)</span>
+<span id="cb47-35"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb47-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-36"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb47-36" aria-hidden="true" tabindex="-1"></a>    <span class="co"># the following line will save the graph into a file</span></span>
+<span id="cb47-37"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb47-37" aria-hidden="true" tabindex="-1"></a>    fileNameToSave <span class="op">=</span> <span class="st">&quot;plot1_lollipop_</span><span class="sc">%s</span><span class="st">_</span><span class="sc">%s</span><span class="st">.png&quot;</span> <span class="op">%</span> (fileName, searchTerm)</span>
+<span id="cb47-38"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb47-38" aria-hidden="true" tabindex="-1"></a>    plt.savefig(fileNameToSave, dpi<span class="op">=</span><span class="dv">300</span>, bbox_inches<span class="op">=</span><span class="st">&quot;tight&quot;</span>)</span>
+<span id="cb47-39"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb47-39" aria-hidden="true" tabindex="-1"></a>    plt.close(<span class="st">&quot;all&quot;</span>)</span>
+<span id="cb47-40"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb47-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-41"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb47-41" aria-hidden="true" tabindex="-1"></a>searchDispatchData(<span class="st">&quot;shiloh&quot;</span>, <span class="st">&quot;shiloh&quot;</span>)</span></code></pre></div>
 </div>
 <div id="HWL10" class="section level2" number="10.4">
 <h2><span class="header-section-number">10.4</span> Homework</h2>
 <ul>
-<li>Finish the assigned task;</li>
-<li>Annotate your script (i.e., add comment to every line of code describing what is happenning there);</li>
+<li>Rewrite the code in such a way that would allow you to graph <em>any kind of words or phrases</em> in a similar manner (“The Losses at War” graph is generated in this manner).;</li>
+<li>Annotate your script (i.e., add comment to every line of code describing what is happening there);</li>
 </ul>
 <p><strong>Submitting homework:</strong></p>
 <ul>
