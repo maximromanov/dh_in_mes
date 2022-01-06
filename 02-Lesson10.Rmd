@@ -56,10 +56,12 @@ Such abstractions can never fully replace the *close reading* of text, but they 
 
 The two graphs below show mentions of both `sherman` and `atlanta` in the Dispatch issues: there we can see/show how the prominence of William Sherman went up in the course of his campaign in 1864, while the spike in mentions of Atlanta must reflect the capture and burning of the city. 
 
-![](./files/plot_sherman.png)
-![](./files/plot_atlanta.png)
+![](./files/graphs/plot1_data_sherman.png)
+![](./files/graphs/plot1_data_atlanta.png)
 
 *Example 2.* The Battle of Shiloh (April 6–7, 1862)
+
+![](./files/plot_shiloh_shiloh.png)
 
 > The Battle of **Shiloh** (also known as the Battle of Pittsburg Landing) was an early battle in the Western Theater of the American Civil War, **fought April 6–7, 1862**, in southwestern Tennessee. The Union Army of the Tennessee (Major General Ulysses S. **Grant**) had moved via the Tennessee River deep into Tennessee and was encamped principally at Pittsburg Landing on the west bank of the Tennessee River, where the Confederate Army of Mississippi (General Albert Sidney **Johnston**, P. G. T. **Beauregard** second-in-command) launched a surprise attack on Grant's army from its base in Corinth, Mississippi. *Johnston was mortally wounded during the fighting*; Beauregard took command of the army and decided against pressing the attack late in the evening. Overnight, Grant was reinforced by one of his divisions stationed farther north and was joined by three divisions from the Army of the Ohio (Maj. Gen. Don Carlos **Buell**). The Union forces began an unexpected counterattack the next morning which reversed the Confederate gains of the previous day. On April 6, the first day of the battle, the Confederates struck with the intention of driving the Union defenders away from the river and into the swamps of Owl Creek to the west. Johnston hoped to defeat Grant's army before the anticipated arrival of Buell and the Army of the Ohio. The Confederate battle lines became confused during the fighting, and Grant's men instead fell back to the northeast, in the direction of Pittsburg Landing. A Union position on a slightly sunken road, nicknamed the "Hornet's Nest" and defended by the divisions of Brig. Gens. Benjamin **Prentiss** and William H. L. **Wallace**, provided time for the remainder of the Union line to stabilize under the protection of numerous artillery batteries. *Wallace was mortally wounded when the position collapsed*, while several regiments from the two divisions were eventually surrounded and surrendered. Johnston was shot in the leg and bled to death while leading an attack. Beauregard acknowledged how tired the army was from the day's exertions, and decided against assaulting the final Union position that night. Tired but unfought and well-organized men from Buell's army and a division of Grant's army arrived in the evening of April 6 and helped turn the tide the next morning, when the Union commanders launched a counterattack along the entire line. Confederate forces were forced to retreat, ending their hopes of blocking the Union advance into northern Mississippi. Though victorious, the Union army had suffered heavier casualties than the Confederates, and Grant was heavily criticized in the media for being taken by surprise. The Battle of Shiloh was *the bloodiest engagement of the Civil War up to that point*, with nearly twice as many casualties as the previous major battles of the war combined.
 
@@ -67,15 +69,14 @@ The two graphs below show mentions of both `sherman` and `atlanta` in the Dispat
 
 Now, let's take a look at the graphs for the names highlighted in bold above:
 
-![](./files/plot_shiloh_beauregard.png)
-![](./files/plot_shiloh_buell.png)
-![](./files/plot_shiloh_johnston.png)
-![](./files/plot_shiloh_prentiss.png)
-![](./files/plot_shiloh_shiloh.png)
-![](./files/plot_shiloh_wallace.png)
-![](./files/plot_grant.png)
+![](./files/graphs/plot1_shiloh_beauregard.png)
+![](./files/graphs/plot1_shiloh_buell.png)
+![](./files/graphs/plot1_shiloh_johnston.png)
+![](./files/graphs/plot1_shiloh_prentiss.png)
+![](./files/graphs/plot1_shiloh_wallace.png)
+![](./files/graphs/plot1_data_grant.png)
 
-The battle of Shiloh is considered one of the bloodiest engagements of the Civil War. If we look at the mentions of *deserter(s)*, *killed*, and *wounded*, we discover the most significant spike of all these terms right around the time of the battle.
+The battle of Shiloh is considered one of the bloodiest engagements of the Civil War. If we look at the mentions of *deserter(s)*, *killed*, and *wounded*, we discover the most significant spike of all these terms soon after the battle.
 
 ![](./files/plot_losses_at_war.png)
 
@@ -88,6 +89,24 @@ Such graphs can be used to monitor discussions of different topic in chronologic
 # shiloh (Battle of Shiloh took place in April of 1862) <https://en.wikipedia.org/wiki/Battle_of_Shiloh>
 -->
 
+## Code
+
+```{r engine='python', highlight=TRUE, eval=FALSE}
+
+
+```
+
+## Missing Zeros Problem
+
+Compare the following two graphs. The first one is "with zeros" and the second one "without zeros". 
+
+![](./files/graphs/plot1_shiloh_shiloh.png)
+![](./files/graphs/plot1_shiloh_shiloh_zeroErrorExample.png)
+In the second graph we simply "collected" all mentions of Shiloh and plotted them with a line graph. The problem is that we have no explicit data on dates when Shiloh is not mentioned and, as a result, the graph suggests that Shiloh is mentioned quite a lot in the course of the year 1861. If we look at the first graph---where we have data for all the dates and each date when Shiloh is not mentioned has a value 0---we can see that Shiloh is mentioned only a couple of times in 1861 and then there is a huge spike of mentions in 1862, when the Battle of Shiloh took place.
+
+The main takeaway from this is that you should always be mindful of how you are filtering your data and what strategies you use for plotting it. Line graph can make a false suggestion, when some x-values are missing. A more reliable graph in such cases would be a "lollipop" graph that is shown below --- lollipop graph does not connect observations, thus clearly showing gaps in data.
+
+![](./files/graphs/plot1_lollipop_shiloh_shiloh.png)
 
 ## Homework{#HWL10}
 
@@ -100,7 +119,6 @@ Such graphs can be used to monitor discussions of different topic in chronologic
 * Now, that you know how to use GitHub, you will be submitting your homework pushing it to github:
   * Create a relevant subfolder in your repository and place your HW files there; push them to your GitHub account;
 	* Email me the link to your repository with a short message (Something like: *I have completed homework for Lesson 3, which is uploaded to my repository ... in subfolder `L03`*)
-
 
 ## Solution{#SolutionL10}
 
