@@ -68,9 +68,9 @@ You should have no problems writing a script that converts this data into a CSV 
 
 If you are not up to this challenge, you can use the CSV file that I have already prepared, to make your life a bit easier: [TGNOut_Coordinates.csv.zip](./files/TGNOut_Coordinates.csv.zip)
 
-If everything done correctly, the map may look like this (although an interactive temporary component is an extra):
+If everything done correctly, the map may look like this ([although an interactive temporary component is an extra](./files/dispatch_1860_to_65.html)):
 
-![](./files/dispatch_1860_to_65.html)
+![](./files/dispatch_1860_to_65.png)
 
 ## Homework{#HWL11}
 
