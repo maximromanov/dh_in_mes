@@ -156,6 +156,7 @@ for f in lof:
     if f.startswith("dltext"):  # fileName test
         newF = f.split(":")[-1] + ".yml"  # in fact, yml-like
 
+        issueVar = []
         c = 0  # technical counter
         with open(source + f, "r", encoding="utf8") as f1:
             text = f1.read()
@@ -193,9 +194,16 @@ for f in lof:
                     dateVar = "DATE: " + date
                     unitType = "TYPE: " + unitType
                     header = "HEADER: " + header
+                    # @§@ is used to replace ":", because in YML : is used as a divider between the key and value
                     text = "TEXT: " + text.replace(":", "@§@") + "\n\n"
+                    var = "\n".join(
+                        [itemIdvar, dateVar, unitType, header, text])
 
-                    # NEW PART
+                    issueVar.append(var)
+
+                    # NOW, WE CAN ADD SOME CODE TO PROCESS EACH ITEM AND COLLECT ALL INTO OUR TIDY DATA FORMAT
+                    # STRUCTURE: itemID, dateVar, EXTRACTED_ITEM (type, unified_form, id)
+                    # ADDING TO: entities (list)
 
                     for i in re.findall(r"(<\w+[^>]+>)", s):
                         if "persName" in i and "authname" in i and "n=" in i:
@@ -235,12 +243,20 @@ for f in lof:
                         else:
                             pass
 
-        counter += 1
+        issueNew = "".join(issueVar)
+        with open(target + newF, "w", encoding="utf8") as f9:
+            f9.write(issueNew)
+
+        # count processed issues and print progress counter at every 100
+        counter += 1  # counter = counter + 1
+        # if counter is divisible by 100 (i.e., no remainder), then print it
         if counter % 100 == 0:
             print(counter)
 
-header = "\t".join(["itemID", "date", "itemType", "itemUnified", "itemId"])
-entitiesTest = header + "\n" + "\n".join(entities).lower()
+header = "\t".join(["articleID", "date", "itemType", "itemUnified", "itemID"])
+entitiesFinal = header + "\n" + "\n".join(entities).lower()
 with open("entities.csv", "w", encoding="utf8") as f9:
-    f9.write(entitiesTest)
+    f9.write(entitiesFinal)
+
+print("Done!")
 ```
