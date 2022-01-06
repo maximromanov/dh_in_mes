@@ -468,7 +468,7 @@ div.csl-indent {
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">itemID</th>
+<th align="left">articleID</th>
 <th align="left">date</th>
 <th align="left">itemType</th>
 <th align="left">itemUnified</th>
@@ -599,7 +599,7 @@ div.csl-indent {
 </table>
 <p>The structure of this data is as follows:</p>
 <ul>
-<li><code>itemID</code> is the ID of each article;</li>
+<li><code>articleID</code> is the ID of each article;</li>
 <li><code>date</code> is the date when the article was published (the same date effectively refers to the same issue);</li>
 <li><code>itemType</code>, <code>itemUnified</code>, <code>itemId</code>: these following three columns represent each tagged entity. In most cases each entity can be described with a single or multiple variables. A single variable can be used when it represents some kind of unique identifier from some external database/databank. such unique identifiers can be used to collect additional information on our entities from these external databases/databanks. For example, for <code>&lt;placeName&gt;</code> entities it could be enough to use the <code>key=</code> attribute which contains unique identifiers (for example, <code>tgn,2111971</code>) from the Getty Thesaurus of Geographical Names (<a href="http://tgndownloads.getty.edu/default.aspx" class="uri">http://tgndownloads.getty.edu/default.aspx</a>). Unfortunately, such data is not available more often than it is. I decided to use the following three elements (ideally trying to preserve (1) the type of an entity (<code>itemType</code>), (2) how it appears in the text (<em>skipped</em>), (3) its unified/normalized form (<code>itemUnified</code>, not available for all types); and (4) its unique identifier (<code>itemId</code>, also not available for all types)).</li>
 </ul>
