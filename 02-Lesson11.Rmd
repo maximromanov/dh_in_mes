@@ -39,7 +39,7 @@ Let's take a look at the following example from `TGNOut_Coordinates.nt`. There a
 
 You should have no problems writing a script that converts this data into a CSV with the structure: `ID`, `lon`, and `lat`. (Technically, you can also store these triples in a CSV/TSV format, but that would require additional conversion later.)
 
-If you are not up to this challenge, you can use the CSV file tat I have already prepared, to make your life a bit easier: [TGN_Coordinates.csv](./files/tgn_coordinates.zip)
+If you are not up to this challenge, you can use the CSV file tat I have already prepared, to make your life a bit easier: [TGNOut_Coordinates.csv.zip](./files/TGNOut_Coordinates.csv.zip)
 
 
 
