@@ -317,19 +317,22 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="11" data-path="lesson-11-mapping-data-using-tagged-data.html"><a href="lesson-11-mapping-data-using-tagged-data.html"><i class="fa fa-check"></i><b>11</b> Lesson 11: Mapping Data (using tagged data)</a>
 <ul>
-<li class="chapter" data-level="11.1" data-path="lesson-11-mapping-data-using-tagged-data.html"><a href="lesson-11-mapping-data-using-tagged-data.html#section"><i class="fa fa-check"></i><b>11.1</b> …</a></li>
+<li class="chapter" data-level="11.1" data-path="lesson-11-mapping-data-using-tagged-data.html"><a href="lesson-11-mapping-data-using-tagged-data.html#preparing-and-modeling-geospatial-data"><i class="fa fa-check"></i><b>11.1</b> Preparing and Modeling Geospatial Data</a>
+<ul>
+<li class="chapter" data-level="11.1.1" data-path="lesson-11-mapping-data-using-tagged-data.html"><a href="lesson-11-mapping-data-using-tagged-data.html#n-triples"><i class="fa fa-check"></i><b>11.1.1</b> <code>N-triples</code></a></li>
+</ul></li>
 <li class="chapter" data-level="11.2" data-path="lesson-11-mapping-data-using-tagged-data.html"><a href="lesson-11-mapping-data-using-tagged-data.html#HWL11"><i class="fa fa-check"></i><b>11.2</b> Homework</a></li>
 <li class="chapter" data-level="11.3" data-path="lesson-11-mapping-data-using-tagged-data.html"><a href="lesson-11-mapping-data-using-tagged-data.html#SolutionL11"><i class="fa fa-check"></i><b>11.3</b> Solution</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="lesson-12-topic-modeling-tf-idf-automatic-text-analysis.html"><a href="lesson-12-topic-modeling-tf-idf-automatic-text-analysis.html"><i class="fa fa-check"></i><b>12</b> Lesson 12: Topic Modeling <em>&amp;</em> TF-IDF (automatic text analysis)</a>
 <ul>
-<li class="chapter" data-level="12.1" data-path="lesson-12-topic-modeling-tf-idf-automatic-text-analysis.html"><a href="lesson-12-topic-modeling-tf-idf-automatic-text-analysis.html#section-1"><i class="fa fa-check"></i><b>12.1</b> …</a></li>
+<li class="chapter" data-level="12.1" data-path="lesson-12-topic-modeling-tf-idf-automatic-text-analysis.html"><a href="lesson-12-topic-modeling-tf-idf-automatic-text-analysis.html#section"><i class="fa fa-check"></i><b>12.1</b> …</a></li>
 <li class="chapter" data-level="12.2" data-path="lesson-12-topic-modeling-tf-idf-automatic-text-analysis.html"><a href="lesson-12-topic-modeling-tf-idf-automatic-text-analysis.html#HWL12"><i class="fa fa-check"></i><b>12.2</b> Homework</a></li>
 <li class="chapter" data-level="12.3" data-path="lesson-12-topic-modeling-tf-idf-automatic-text-analysis.html"><a href="lesson-12-topic-modeling-tf-idf-automatic-text-analysis.html#SolutionL12"><i class="fa fa-check"></i><b>12.3</b> Solution</a></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="lesson-13-social-network-analysis.html"><a href="lesson-13-social-network-analysis.html"><i class="fa fa-check"></i><b>13</b> Lesson 13: Social Network Analysis</a>
 <ul>
-<li class="chapter" data-level="13.1" data-path="lesson-13-social-network-analysis.html"><a href="lesson-13-social-network-analysis.html#section-2"><i class="fa fa-check"></i><b>13.1</b> …</a></li>
+<li class="chapter" data-level="13.1" data-path="lesson-13-social-network-analysis.html"><a href="lesson-13-social-network-analysis.html#section-1"><i class="fa fa-check"></i><b>13.1</b> …</a></li>
 <li class="chapter" data-level="13.2" data-path="lesson-13-social-network-analysis.html"><a href="lesson-13-social-network-analysis.html#HWL13"><i class="fa fa-check"></i><b>13.2</b> Homework</a></li>
 <li class="chapter" data-level="13.3" data-path="lesson-13-social-network-analysis.html"><a href="lesson-13-social-network-analysis.html#SolutionL13"><i class="fa fa-check"></i><b>13.3</b> Solution</a></li>
 </ul></li>
@@ -357,9 +360,50 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="lesson-11-mapping-data-using-tagged-data" class="section level1" number="11">
 <h1><span class="header-section-number">11</span> Lesson 11: Mapping Data (using tagged data)</h1>
-<div id="section" class="section level2" number="11.1">
-<h2><span class="header-section-number">11.1</span> …</h2>
+<div id="preparing-and-modeling-geospatial-data" class="section level2" number="11.1">
+<h2><span class="header-section-number">11.1</span> Preparing and Modeling Geospatial Data</h2>
+<p>In a similar manner we can also graph geographical data — in combination with the temporary dimension. For this, however, we need to think through what kind of insight we can possibly get from geospatial data and how it should be prepared for mapping.</p>
+<p>Let’s start with a simple task: we will map the geospatial data from one of the previous lessons: <a href="./files/settlements.csv">settlements from the al-Thurayya Gazetteer</a>. This</p>
+<p>We can get the following maps:</p>
 <p>…</p>
+<p>Now, let’s get back to our Dispatch data. We have placenames tagged — and we already have the data ready for processing. We can focus on a specific period of time (by filtering our data, including only dates that we are interested in). Then we need to calculate frequencies of mentions of placenames — we can use these values to size dots on the final map. Unfortunately, a very important element is missing — as you recall, our data does not have any coordinates. Luckily, we have unique identifiers from the Getty Thesaurus of Geographical Names. What we can do is to extract coordinates from the Thesaurus and connect them to corresponding placenames in our data.</p>
+<ul>
+<li>Getty Thesaurus is available for download here: <a href="http://tgndownloads.getty.edu/" class="uri">http://tgndownloads.getty.edu/</a> and here: <a href="http://vocab.getty.edu/dataset/tgn/" class="uri">http://vocab.getty.edu/dataset/tgn/</a></li>
+<li>You can download <code>explicit.zip</code> from <a href="http://vocab.getty.edu/dataset/tgn/" class="uri">http://vocab.getty.edu/dataset/tgn/</a></li>
+<li>There is a file <code>TGNOut_Coordinates.nt</code> with coordinates. You will need to write a script to extract coordinates from this file in order to use them. I suggest you convert this file (the format is <code>N-triples</code>)</li>
+</ul>
+<div id="n-triples" class="section level3" number="11.1.1">
+<h3><span class="header-section-number">11.1.1</span> <code>N-triples</code></h3>
+<pre><code>&lt;http://vocab.getty.edu/tgn/1002488-geometry&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://schema.org/GeoShape&gt; .
+&lt;http://vocab.getty.edu/tgn/1002488-geometry&gt; &lt;http://schema.org/box&gt; &quot;-77.1875,39.1038 -77.1875,39.3686 -76.693,39.3686 -76.693,39.1038 -77.1875,39.1038&quot; .
+&lt;http://vocab.getty.edu/tgn/3000034-geometry&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://schema.org/GeoShape&gt; .
+&lt;http://vocab.getty.edu/tgn/3000034-geometry&gt; &lt;http://schema.org/box&gt; &quot;-92.016,43.156 -92.016,48.812 -82.491,48.812 -82.491,43.156 -92.016,43.156&quot; .
+&lt;http://vocab.getty.edu/tgn/7003080-geometry&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://schema.org/GeoShape&gt; .
+&lt;http://vocab.getty.edu/tgn/7003080-geometry&gt; &lt;http://schema.org/box&gt; &quot;11.466,41.133 11.466,42.833 14.033,42.833 14.033,41.133 11.466,41.133&quot; .
+&lt;http://vocab.getty.edu/tgn/7003237-geometry&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://schema.org/GeoShape&gt; .
+&lt;http://vocab.getty.edu/tgn/7003237-geometry&gt; &lt;http://schema.org/box&gt; &quot;9.084,45.133 9.084,46.216 10.542,46.216 10.542,45.133 9.084,45.133&quot; .
+&lt;http://vocab.getty.edu/tgn/7009760-geometry&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://schema.org/GeoShape&gt; .
+&lt;http://vocab.getty.edu/tgn/7009760-geometry&gt; &lt;http://schema.org/box&gt; &quot;10.101,42.583 10.101,44.066 11.626,44.066 11.626,42.583 10.101,42.583&quot; .
+&lt;http://vocab.getty.edu/tgn/7029370-geometry&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://schema.org/GeoShape&gt; .
+&lt;http://vocab.getty.edu/tgn/7029370-geometry&gt; &lt;http://schema.org/box&gt; &quot;-92.016,43.156 -92.016,48.012 -82.491,48.012 -82.491,43.156 -92.016,43.156&quot; .
+&lt;http://vocab.getty.edu/tgn/7031953-geometry&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://schema.org/GeoShape&gt; .
+&lt;http://vocab.getty.edu/tgn/7031953-geometry&gt; &lt;http://schema.org/box&gt; &quot;8.25,5.083 8.25,6.483 9.5,6.483 9.5,5.083 8.25,5.083&quot; .
+&lt;http://vocab.getty.edu/tgn/8713257-geometry&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://schema.org/GeoShape&gt; .
+&lt;http://vocab.getty.edu/tgn/8713830-geometry&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://schema.org/GeoShape&gt; .
+&lt;http://vocab.getty.edu/tgn/8713858-geometry&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://schema.org/GeoShape&gt; .
+&lt;http://vocab.getty.edu/tgn/1000001-geometry&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://schema.org/GeoCoordinates&gt; .
+&lt;http://vocab.getty.edu/tgn/1000001-geometry&gt; &lt;http://schema.org/latitude&gt; &quot;42.284495&quot;^^&lt;http://www.w3.org/2001/XMLSchema#decimal&gt; .
+&lt;http://vocab.getty.edu/tgn/1000001-geometry&gt; &lt;http://schema.org/longitude&gt; &quot;-101.123047&quot;^^&lt;http://www.w3.org/2001/XMLSchema#decimal&gt; .
+&lt;http://vocab.getty.edu/tgn/1000002-geometry&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://schema.org/GeoCoordinates&gt; .
+&lt;http://vocab.getty.edu/tgn/1000002-geometry&gt; &lt;http://schema.org/latitude&gt; &quot;-3.55&quot;^^&lt;http://www.w3.org/2001/XMLSchema#decimal&gt; .
+&lt;http://vocab.getty.edu/tgn/1000002-geometry&gt; &lt;http://schema.org/longitude&gt; &quot;-56.683&quot;^^&lt;http://www.w3.org/2001/XMLSchema#decimal&gt; .
+&lt;http://vocab.getty.edu/tgn/1000003-geometry&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://schema.org/GeoCoordinates&gt; .
+&lt;http://vocab.getty.edu/tgn/1000003-geometry&gt; &lt;http://schema.org/latitude&gt; &quot;56.2&quot;^^&lt;http://www.w3.org/2001/XMLSchema#decimal&gt; .
+&lt;http://vocab.getty.edu/tgn/1000003-geometry&gt; &lt;http://schema.org/longitude&gt; &quot;15.016&quot;^^&lt;http://www.w3.org/2001/XMLSchema#decimal&gt; .
+&lt;http://vocab.getty.edu/tgn/1000004-geometry&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://schema.org/GeoCoordinates&gt; .
+&lt;http://vocab.getty.edu/tgn/1000004-geometry&gt; &lt;http://schema.org/latitude&gt; &quot;43.8&quot;^^&lt;http://www.w3.org/2001/XMLSchema#decimal&gt; .
+&lt;http://vocab.getty.edu/tgn/1000004-geometry&gt; &lt;http://schema.org/longitude&gt; &quot;87.633&quot;^^&lt;http://www.w3.org/2001/XMLSchema#decimal&gt; .</code></pre>
+</div>
 </div>
 <div id="HWL11" class="section level2" number="11.2">
 <h2><span class="header-section-number">11.2</span> Homework</h2>

@@ -1,8 +1,60 @@
 # Lesson 11: Mapping Data (using tagged data)
 
-## ...
+## Preparing and Modeling Geospatial Data
+
+In a similar manner we can also graph geographical data --- in combination with the temporary dimension. For this, however, we need to think through what kind of insight we can possibly get from geospatial data and how it should be prepared for mapping.
+
+Let's start with a simple task: we will map the geospatial data from one of the previous lessons: [settlements from the al-Thurayya Gazetteer](./files/settlements.csv). This 
+
+```{r engine='python', highlight=TRUE, eval=FALSE}
+
+
+```
+
+We can get the following maps:
 
 ...
+
+Now, let's get back to our Dispatch data. We have placenames tagged --- and we already have the data ready for processing. We can focus on a specific period of time (by filtering our data, including only dates that we are interested in). Then we need to calculate frequencies of mentions of placenames --- we can use these values to size dots on the final map. Unfortunately, a very important element is missing --- as you recall, our data does not have any coordinates. Luckily, we have unique identifiers from the Getty Thesaurus of Geographical Names. What we can do is to extract coordinates from the Thesaurus and connect them to corresponding placenames in our data.
+
+- Getty Thesaurus is available for download here: <http://tgndownloads.getty.edu/> and here: <http://vocab.getty.edu/dataset/tgn/>
+- You can download `explicit.zip` from <http://vocab.getty.edu/dataset/tgn/>
+- There is a file `TGNOut_Coordinates.nt` with coordinates. You will need to write a script to extract coordinates from this file in order to use them. I suggest you convert this file (the format is `N-triples`)
+
+### `N-triples`
+
+```
+<http://vocab.getty.edu/tgn/1002488-geometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/GeoShape> .
+<http://vocab.getty.edu/tgn/1002488-geometry> <http://schema.org/box> "-77.1875,39.1038 -77.1875,39.3686 -76.693,39.3686 -76.693,39.1038 -77.1875,39.1038" .
+<http://vocab.getty.edu/tgn/3000034-geometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/GeoShape> .
+<http://vocab.getty.edu/tgn/3000034-geometry> <http://schema.org/box> "-92.016,43.156 -92.016,48.812 -82.491,48.812 -82.491,43.156 -92.016,43.156" .
+<http://vocab.getty.edu/tgn/7003080-geometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/GeoShape> .
+<http://vocab.getty.edu/tgn/7003080-geometry> <http://schema.org/box> "11.466,41.133 11.466,42.833 14.033,42.833 14.033,41.133 11.466,41.133" .
+<http://vocab.getty.edu/tgn/7003237-geometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/GeoShape> .
+<http://vocab.getty.edu/tgn/7003237-geometry> <http://schema.org/box> "9.084,45.133 9.084,46.216 10.542,46.216 10.542,45.133 9.084,45.133" .
+<http://vocab.getty.edu/tgn/7009760-geometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/GeoShape> .
+<http://vocab.getty.edu/tgn/7009760-geometry> <http://schema.org/box> "10.101,42.583 10.101,44.066 11.626,44.066 11.626,42.583 10.101,42.583" .
+<http://vocab.getty.edu/tgn/7029370-geometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/GeoShape> .
+<http://vocab.getty.edu/tgn/7029370-geometry> <http://schema.org/box> "-92.016,43.156 -92.016,48.012 -82.491,48.012 -82.491,43.156 -92.016,43.156" .
+<http://vocab.getty.edu/tgn/7031953-geometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/GeoShape> .
+<http://vocab.getty.edu/tgn/7031953-geometry> <http://schema.org/box> "8.25,5.083 8.25,6.483 9.5,6.483 9.5,5.083 8.25,5.083" .
+<http://vocab.getty.edu/tgn/8713257-geometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/GeoShape> .
+<http://vocab.getty.edu/tgn/8713830-geometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/GeoShape> .
+<http://vocab.getty.edu/tgn/8713858-geometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/GeoShape> .
+<http://vocab.getty.edu/tgn/1000001-geometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/GeoCoordinates> .
+<http://vocab.getty.edu/tgn/1000001-geometry> <http://schema.org/latitude> "42.284495"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://vocab.getty.edu/tgn/1000001-geometry> <http://schema.org/longitude> "-101.123047"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://vocab.getty.edu/tgn/1000002-geometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/GeoCoordinates> .
+<http://vocab.getty.edu/tgn/1000002-geometry> <http://schema.org/latitude> "-3.55"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://vocab.getty.edu/tgn/1000002-geometry> <http://schema.org/longitude> "-56.683"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://vocab.getty.edu/tgn/1000003-geometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/GeoCoordinates> .
+<http://vocab.getty.edu/tgn/1000003-geometry> <http://schema.org/latitude> "56.2"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://vocab.getty.edu/tgn/1000003-geometry> <http://schema.org/longitude> "15.016"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://vocab.getty.edu/tgn/1000004-geometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/GeoCoordinates> .
+<http://vocab.getty.edu/tgn/1000004-geometry> <http://schema.org/latitude> "43.8"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://vocab.getty.edu/tgn/1000004-geometry> <http://schema.org/longitude> "87.633"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+```
+
 
 ## Homework{#HWL11}
 
