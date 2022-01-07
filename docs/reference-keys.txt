@@ -121,12 +121,12 @@ triples-n-triples
 HWL11
 SolutionL11
 lesson-12-topic-modeling-tf-idf-automatic-text-analysis
-section
-thinking-about-topics
+thinking-about-themes-and-topics
+topic-modeling
 tf-idf
 HWL12
 SolutionL12
 lesson-13-social-network-analysis
-section-1
+section
 HWL13
 SolutionL13

@@ -1,8 +1,8 @@
 # Lesson 12: Topic Modeling *&* TF-IDF (automatic text analysis)
 
-## ...
+## Thinking about themes and topics
 
-## Thinking about *topics*
+Let's take a look at the following three examples and think about what themes and topics they cover. More importantly, let's think about *how* we "assign" those themes and topics. What is out thinking process? What textual elements do we keep in mind when we argue that such and such text is about such and such topics?
 
 **Example 1**: *Thursday, March 27, 1862* --- LIGHT ARTILLERY
 
@@ -20,10 +20,14 @@ There is a story circulated in Germany, and some in Paris, that the match betwee
 
 The steamship Scotia arrived at New York on Thursday from Europe, with foreign news to the 7th inst. The news is not important. The Confederate steamer Lord Clyde was searched by order of the British Government, but nothing contraband being found on board her she was permitted to sail. The Russians have been defeated near Grochoury by the Polish insurgents. The three Powers have sent an earnest note to Russia, asking for a representative Government, a general amnesty, and an immediate cessation of hostilities in Poland.
 
+## Topic Modeling
+
+The formal definition of *topic modeling* is "..." (Source: ...)
+
 
 ## TF-IDF
 
-On this important concept see [this page](https://maximromanov.github.io/univie2020/lesson-10.html).
+TF-IDF is the most common automatic method for identifying keywords in texts. This method is the standard approach for identifying keywords. It was first proposed almost fifty years ago, in 1972: @SPARCKJONESStatistical1972. For a humanistic explanation, see chapter 1 in @RamsayReading2011. On this important concept see [this page](https://maximromanov.github.io/univie2020/lesson-10.html).
 
 ## Homework{#HWL12}
 
