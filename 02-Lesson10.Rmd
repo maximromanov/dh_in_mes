@@ -225,7 +225,9 @@ After the Jupyter Notebook starts, you will be taken to your default browser and
 
 ![](./files/jupyter01.png)
 
-You can download [this already prepared notebook](./files/simple_analysis_with_pandas.ipynb).
+You can download [this already prepared notebook](./files/simple_analysis_with_pandas.ipynb), which should look like this when you open it:
+
+![](./files/jupyter02.png)
 
 ## Homework{#HWL10}
 
