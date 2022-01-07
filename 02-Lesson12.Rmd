@@ -24,10 +24,17 @@ The steamship Scotia arrived at New York on Thursday from Europe, with foreign n
 
 The formal definition of *topic modeling* is "..." (Source: ...)
 
+## Implementation
+
+
 
 ## TF-IDF
 
-TF-IDF is the most common automatic method for identifying keywords in texts. This method is the standard approach for identifying keywords. It was first proposed almost fifty years ago, in 1972: @SPARCKJONESStatistical1972. For a humanistic explanation, see chapter 1 in @RamsayReading2011. On this important concept see [this page](https://maximromanov.github.io/univie2020/lesson-10.html).
+TF-IDF is the most common automatic method for identifying keywords in texts. This method is the standard approach for identifying keywords. It was first proposed almost fifty years ago by @SPARCKJONESStatistical1972; @RamsayReading2011, in Chapter 1, offers a detailed humanistic explanation of this approach. This approach is statistical in its nature and therefore requires a sizable collection of texts for meaningful results. In the case of small collections you are likely to observe that the selection of keywords for the same text change significantly with every new addition to the collection of texts. This is because the method takes into account frequencies of each word and the number of documents in which this word occurs. In other words, if your collection includes 10 articles that discuss different aspects of the ʿAbbāsid caliphate, with some focused on politics, some on economics, and some on culture, the word "ʿAbbāsid" will most likely not be included into the list of suggested keywords (since all articles have this term), but words like "politics", "economics", and "culture" will be in this list since they are not used in all article, but only in some. If you add another ten articles to your collection---and these will deal, say, with the Ottomans, then the word "ʿAbbāsid" will crawl up in the list of keywords for articles dealing with the ʿAbbasids. In other words, if your collection includes texts on the same broad topic (say, the ʿAbbāsids), the TF-IDF algorithm will assign high *keywordness* to those terms that point to narrower subjects within the broader subject of the ʿAbbāsids.
+
+In cases when one has to run the topic modeling algorithm on a very large collection of texts, TF-IDF can be used in order to reduce the size of the corpus. That is to say, the corpus is first reduced to the TF-IDF lists and then the topic modeling is applied to these lists rather than to the initial texts.
+
+([Additional materials](https://maximromanov.github.io/univie2020/lesson-10.html).)
 
 ## Homework{#HWL12}
 
