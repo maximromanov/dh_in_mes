@@ -209,6 +209,24 @@ def searchDispatchData(searchTerm, fileName="fromTagged"):
 searchDispatchData("shiloh", "shiloh")
 ```
 
+## Jupyter Notebook
+
+Jupyter Notebook (<https://jupyter.org/>) is a web application for creating and sharing computational documents. It is a very popular way of writing analytical code in Python. It allows one to write and execute code right in your browser, to combine code with regular prose, ans, also, execute written code section by section (or, more correctly, cell by cell --- using the Jupyter lingo) --- which in some cases has a lot of advantages.
+
+Jupyter Notebook can be installed in the manner that you are already familiar with:
+
+`python -m pip install notebook` (or: `python3 -m pip install notebook`)
+
+It can be then opened by running the following command in the command line tool of your choice (you should be in your working directory; make sure to restart your command line tool after installation):
+
+`jupyter notebook`
+
+After the Jupyter Notebook starts, you will be taken to your default browser and the first page of the Jupyter interface should show you the contents of the folder from which you started it. Something like this:
+
+![](./files/jupyter01.png)
+
+You can download [this already prepared notebook](./files/simple_analysis_with_pandas.ipynb).
+
 ## Homework{#HWL10}
 
 - Rewrite the code in such a way that would allow you to graph *any kind of words or phrases* in a similar manner ("The Losses at War" graph is generated in this manner).;

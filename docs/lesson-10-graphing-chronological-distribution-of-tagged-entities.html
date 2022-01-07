@@ -24,7 +24,7 @@
 <meta name="author" content="Maxim G. Romanov" />
 
 
-<meta name="date" content="2022-01-06" />
+<meta name="date" content="2022-01-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -312,8 +312,9 @@ div.csl-indent {
 <li class="chapter" data-level="10.1" data-path="lesson-10-graphing-chronological-distribution-of-tagged-entities.html"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#abstractions-of-newspaper-articles"><i class="fa fa-check"></i><b>10.1</b> Abstractions of Newspaper Articles</a></li>
 <li class="chapter" data-level="10.2" data-path="lesson-10-graphing-chronological-distribution-of-tagged-entities.html"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#code-line-graph"><i class="fa fa-check"></i><b>10.2</b> Code: Line Graph</a></li>
 <li class="chapter" data-level="10.3" data-path="lesson-10-graphing-chronological-distribution-of-tagged-entities.html"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#missing-zeros-problem"><i class="fa fa-check"></i><b>10.3</b> Missing Zeros Problem</a></li>
-<li class="chapter" data-level="10.4" data-path="lesson-10-graphing-chronological-distribution-of-tagged-entities.html"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#HWL10"><i class="fa fa-check"></i><b>10.4</b> Homework</a></li>
-<li class="chapter" data-level="10.5" data-path="lesson-10-graphing-chronological-distribution-of-tagged-entities.html"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#SolutionL10"><i class="fa fa-check"></i><b>10.5</b> Solution</a></li>
+<li class="chapter" data-level="10.4" data-path="lesson-10-graphing-chronological-distribution-of-tagged-entities.html"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#jupyter-notebook"><i class="fa fa-check"></i><b>10.4</b> Jupyter Notebook</a></li>
+<li class="chapter" data-level="10.5" data-path="lesson-10-graphing-chronological-distribution-of-tagged-entities.html"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#HWL10"><i class="fa fa-check"></i><b>10.5</b> Homework</a></li>
+<li class="chapter" data-level="10.6" data-path="lesson-10-graphing-chronological-distribution-of-tagged-entities.html"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#SolutionL10"><i class="fa fa-check"></i><b>10.6</b> Solution</a></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path="lesson-11-mapping-data-using-tagged-data.html"><a href="lesson-11-mapping-data-using-tagged-data.html"><i class="fa fa-check"></i><b>11</b> Lesson 11: Mapping Data (using tagged data)</a>
 <ul>
@@ -681,8 +682,19 @@ In the second graph we simply “collected” all mentions of Shiloh and plotted
 <span id="cb48-39"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb48-39" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb48-40"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb48-40" aria-hidden="true" tabindex="-1"></a>searchDispatchData(<span class="st">&quot;shiloh&quot;</span>, <span class="st">&quot;shiloh&quot;</span>)</span></code></pre></div>
 </div>
-<div id="HWL10" class="section level2" number="10.4">
-<h2><span class="header-section-number">10.4</span> Homework</h2>
+<div id="jupyter-notebook" class="section level2" number="10.4">
+<h2><span class="header-section-number">10.4</span> Jupyter Notebook</h2>
+<p>Jupyter Notebook (<a href="https://jupyter.org/" class="uri">https://jupyter.org/</a>) is a web application for creating and sharing computational documents. It is a very popular way of writing analytical code in Python. It allows one to write and execute code right in your browser, to combine code with regular prose, ans, also, execute written code section by section (or, more correctly, cell by cell — using the Jupyter lingo) — which in some cases has a lot of advantages.</p>
+<p>Jupyter Notebook can be installed in the manner that you are already familiar with:</p>
+<p><code>python -m pip install notebook</code> (or: <code>python3 -m pip install notebook</code>)</p>
+<p>It can be then opened by running the following command in the command line tool of your choice (you should be in your working directory; make sure to restart your command line tool after installation):</p>
+<p><code>jupyter notebook</code></p>
+<p>After the Jupyter Notebook starts, you will be taken to your default browser and the first page of the Jupyter interface should show you the contents of the folder from which you started it. Something like this:</p>
+<p><img src="files/jupyter01.png" /></p>
+<p>You can download <a href="./files/simple_analysis_with_pandas.ipynb">this already prepared notebook</a>.</p>
+</div>
+<div id="HWL10" class="section level2" number="10.5">
+<h2><span class="header-section-number">10.5</span> Homework</h2>
 <ul>
 <li>Rewrite the code in such a way that would allow you to graph <em>any kind of words or phrases</em> in a similar manner (“The Losses at War” graph is generated in this manner).;</li>
 <li>Annotate your script (i.e., add comment to every line of code describing what is happening there);</li>
@@ -699,8 +711,8 @@ In the second graph we simply “collected” all mentions of Shiloh and plotted
 </ul></li>
 </ul>
 </div>
-<div id="SolutionL10" class="section level2" number="10.5">
-<h2><span class="header-section-number">10.5</span> Solution</h2>
+<div id="SolutionL10" class="section level2" number="10.6">
+<h2><span class="header-section-number">10.6</span> Solution</h2>
 <p>Below is the solution to the homework.</p>
 <!--
 
