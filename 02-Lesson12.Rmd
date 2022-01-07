@@ -1,5 +1,98 @@
 # Lesson 12: Topic Modeling *&* TF-IDF (automatic text analysis)
 
+## Goals:
+
+- Introduction to topic modeling, or how to classify texts by shared content (“topics”).
+
+## Software
+
+* python
+* jupyter notebook
+* other python libraries
+  - `nltk`
+  - `gensim`
+  - `spacy`
+  - `pyLDAvis`
+  - `matplotlib`
+  - `numpy`
+  - `pandas`
+  - `plotly`
+  - `pprint`
+
+## Workbooks (jupyter notebooks)
+
+- [for Windows](https://www.dropbox.com/s/b1jg5r3bmgforu5/TnT_L12_materials_final_Win.zip?dl=0)
+- [for Mac and Linux](https://www.dropbox.com/s/zey9qtuht1tnsku/TnT_L12_materials_final.zip?dl=0)
+
+## Installing: on Windows
+
+On Mac and Linux things are easy, just follow the commands below; for Windows things are trickier and the easiest way would be to use Anaconda <https://www.anaconda.com/distribution/#download-section>.
+
+Please, download and install. Most packages will come with Anaconda distribution; others you can install through its interface.
+
+**NB:** After Anaconda is installed, it is still better to install libraries from the terminal opened directly from Anaconda and using the following command `conda install -c conda-forge gensim` (the latest version is not available via Anaconda interface).
+More details: <https://radimrehurek.com/gensim/install.html>
+
+
+## Installing: on Mac and Linux
+
+## python libraries and additional data
+
+``` bash
+
+pip install nameOfLibrary
+
+```
+
+Lemmatization library (although we are not going to be using it in the tutorial)
+
+``` bash
+python -m spacy download en
+```
+
+## jupyter notebook
+
+From command line (in your working folder)
+
+``` bash
+
+# installing
+pip install jupyter
+
+# starting
+jupyter notebook
+
+```
+
+## installing from a jupyter notebook
+
+The required libraries can also be installed directly from your Jupyter notebook as shown below---note `!` in front of `pip`. (*Note*: You might need to use `pip3` instead of `pip`, depending on your overall `python` setup)
+
+```python
+# installing
+
+!pip install nltk
+!pip install gensim
+!pip install spacy
+!pip install pyLDAvis
+
+```
+
+Your default browser should open something like this:
+
+![](/images/L12/jupyter.png)
+
+Click on an `*.ipynb` file to open a notebook.
+
+## Files & Scripts
+
+* Dispatch CSV files
+* [Jupyter notebook](link)
+
+
+
+
+
 ## Thinking about themes and topics
 
 Let's take a look at the following three examples and think about what themes and topics they cover. More importantly, let's think about *how* we "assign" those themes and topics. What is out thinking process? What textual elements do we keep in mind when we argue that such and such text is about such and such topics?
@@ -26,7 +119,7 @@ The formal definition of *topic modeling* is "..." (Source: ...)
 
 ## Implementation
 
-**1.** First, we need to make sure to convert the Dispatch into a suitable format. As I stressed before, TSV/CSV tabular format is one of the most universal. Let's go back to our reformatting script and change it in such a way that it collects data in the TSV format (TSV will help us to avoid the issue with commas in the CSV format) and aggregates all articles published in the same year in one file. You can think of writing a function that takes three arguments:
+**1. Preparing Data.** First, we need to make sure to convert the Dispatch into a suitable format. As I stressed before, TSV/CSV tabular format is one of the most universal. Let's go back to our reformatting script and change it in such a way that it collects data in the TSV format (TSV will help us to avoid the issue with commas in the CSV format) and aggregates all articles published in the same year in one file. You can think of writing a function that takes three arguments:
 
 - (1) a path to the folder with downloaded initial XML files;
 - (2) a path to the folder where you want to save the results; and
@@ -34,7 +127,22 @@ The formal definition of *topic modeling* is "..." (Source: ...)
 
 This script will allow us to aggregate quite a significant amount if text into more manageable chunks (it will give us 5 files instead of 1300+). The solution script will be added to the end of this lesson later.
 
-**2.** ....
+**2. Necessary Libraries** ....
+
+...
+
+**3. Loading Data** ...
+
+...
+
+**4. Preprocessing Data** ...
+
+...
+
+**5. Training a Model** ...
+
+
+**
 
 ## TF-IDF
 
@@ -44,7 +152,7 @@ This approach is statistical in its nature and therefore requires a sizable coll
 
 In cases when one has to run the topic modeling algorithm on a very large collection of texts, TF-IDF can be used in order to reduce the size of the corpus. That is to say, the corpus is first reduced to the TF-IDF abstractions and then the topic modeling algorithm is applied to these abstractions rather than to the complete initial texts.
 
-([Additional materials](https://maximromanov.github.io/univie2020/lesson-10.html))
+TF-IDF abstractions can also be used to identify texts on similar topics across a large corpus of texts. In this approach one would calculate the distance between the vectors of TF-IDF abstractions. This approach mathematically checks whether to what extent two different documents share keywords and to what extent the numeric values of these keywords are similar: the more keywords they share and the more similar the keyword values are, the more similar the texts will be. ([More details...](https://maximromanov.github.io/univie2020/lesson-10.html).)
 
 ## Homework{#HWL12}
 
