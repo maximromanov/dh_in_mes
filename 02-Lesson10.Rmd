@@ -243,9 +243,10 @@ You can download [this already prepared notebook](./files/simple_analysis_with_p
 
 ## Solution{#SolutionL10}
 
-Below is the solution to the homework.
+The solution will be posted here later...
 
-<!--
+<!-- Below is the solution to the homework.
+
 ```{r engine='python', highlight=TRUE, eval=FALSE}
 
 import re
