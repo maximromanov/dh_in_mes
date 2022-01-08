@@ -9,6 +9,7 @@
 * python
 * jupyter notebook
 * other python libraries
+  - `wheel` (this package is helpful for the installation of `gensim` and `pyLDAvis`)
   - `nltk`
   - `gensim`
   - `spacy`
@@ -225,8 +226,9 @@ def convertDispatchToCSV(source, target, YEAR):
 
     print("\tcollected: %d items" % len(issueVar))
     issueNew = "\n".join(issueVar)
+    header = "\t".join(["id", "date", "type", "header", "text"])
     with open(target + "Dispatch_%s.tsv" % str(YEAR), "w", encoding="utf8") as f9:
-        f9.write(issueNew)
+        f9.write(header + "\n" + issueNew)
 
 convertDispatchToCSV(source, target, 1860)
 convertDispatchToCSV(source, target, 1861)
