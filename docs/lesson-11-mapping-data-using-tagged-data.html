@@ -320,8 +320,7 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="11.1" data-path="lesson-11-mapping-data-using-tagged-data.html"><a href="lesson-11-mapping-data-using-tagged-data.html#preparing-and-modeling-geospatial-data"><i class="fa fa-check"></i><b>11.1</b> Preparing and Modeling Geospatial Data</a>
 <ul>
-<li class="chapter" data-level="11.1.1" data-path="lesson-11-mapping-data-using-tagged-data.html"><a href="lesson-11-mapping-data-using-tagged-data.html#code"><i class="fa fa-check"></i><b>11.1.1</b> Code</a></li>
-<li class="chapter" data-level="11.1.2" data-path="lesson-11-mapping-data-using-tagged-data.html"><a href="lesson-11-mapping-data-using-tagged-data.html#triples-n-triples"><i class="fa fa-check"></i><b>11.1.2</b> Triples (<code>N-triples</code>)</a></li>
+<li class="chapter" data-level="11.1.1" data-path="lesson-11-mapping-data-using-tagged-data.html"><a href="lesson-11-mapping-data-using-tagged-data.html#triples-n-triples"><i class="fa fa-check"></i><b>11.1.1</b> Triples (<code>N-triples</code>)</a></li>
 </ul></li>
 <li class="chapter" data-level="11.2" data-path="lesson-11-mapping-data-using-tagged-data.html"><a href="lesson-11-mapping-data-using-tagged-data.html#HWL11"><i class="fa fa-check"></i><b>11.2</b> Homework</a></li>
 <li class="chapter" data-level="11.3" data-path="lesson-11-mapping-data-using-tagged-data.html"><a href="lesson-11-mapping-data-using-tagged-data.html#SolutionL11"><i class="fa fa-check"></i><b>11.3</b> Solution</a></li>
@@ -405,12 +404,9 @@ div.csl-indent {
 <span id="cb49-25"><a href="lesson-11-mapping-data-using-tagged-data.html#cb49-25" aria-hidden="true" tabindex="-1"></a>fig.write_html(<span class="st">&quot;althurayya.html&quot;</span>)</span></code></pre></div>
 <p>We can get the following map (for an intereactive map, try <a href="./files/althurayya.html">this link</a>):</p>
 <p><img src="files/althurayya.png" />
-## Mapping chronological data</p>
-<p>We can also map our geographical data dynamically, if we want to highlight its chronological dimension. Below is the example. <a href="./files/us_cities_pop.html">Click here for the interactive graph</a>.</p>
-<p><img src="files/us_cities_pop.png" /></p>
-<div id="code" class="section level3" number="11.1.1">
-<h3><span class="header-section-number">11.1.1</span> Code</h3>
-<p>The following code is used to produce the visualization above. Use this as a starting point for mapping data from the <em>Dispatch</em>. You can download the <code>us_cities_pop.csv</code> from <a href="./files/us_cities_pop.csv">here</a>. One thing to keep in mind, the chronological data must be passed to the function as <code>string</code>, not as <code>date</code>. (that is why there is no conversion to the date format in the code below.)</p>
+We can also map our geographical data dynamically, if we want to highlight its chronological dimension. Below is the example. <a href="./files/us_cities_pop.html">Click here for the interactive graph</a>.</p>
+<p><img src="files/us_cities_pop.png" />
+The following code is used to produce the visualization above. Use this as a starting point for mapping data from the <em>Dispatch</em>. You can download the <code>us_cities_pop.csv</code> from <a href="./files/us_cities_pop.csv">here</a>. One thing to keep in mind, the chronological data must be passed to the function as <code>string</code>, not as <code>date</code>. (that is why there is no conversion to the date format in the code below.)</p>
 <div class="sourceCode" id="cb50"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb50-1"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
 <span id="cb50-2"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb50-3"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
@@ -444,9 +440,8 @@ div.csl-indent {
 <li>You can download <code>explicit.zip</code> from <a href="http://vocab.getty.edu/dataset/tgn/" class="uri">http://vocab.getty.edu/dataset/tgn/</a></li>
 <li>There is a file <code>TGNOut_Coordinates.nt</code> with coordinates. You will need to write a script to extract coordinates from this file in order to use them. I suggest you convert this file (the format is <code>N-triples</code>)</li>
 </ul>
-</div>
-<div id="triples-n-triples" class="section level3" number="11.1.2">
-<h3><span class="header-section-number">11.1.2</span> Triples (<code>N-triples</code>)</h3>
+<div id="triples-n-triples" class="section level3" number="11.1.1">
+<h3><span class="header-section-number">11.1.1</span> Triples (<code>N-triples</code>)</h3>
 <p>What are triples? This is one of the most robust formats that can describe any kind of data. The main idea is that every triple is expressed through the structure <code>subject-predicate-object</code>. There are multiple formats for expressing triples (for example, RDF, N-Triples, etc.) (<a href="https://en.wikipedia.org/wiki/Semantic_triple"><em>more details…</em></a>).</p>
 <p>Let’s take a look at the following example from <code>TGNOut_Coordinates.nt</code>. There are three triples (<code>N-triples</code>) which together describe a specific object (which in our data would look like <code>tgn,1000007</code>).</p>
 <pre><code>&lt;http://vocab.getty.edu/tgn/1000007-geometry&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://schema.org/GeoCoordinates&gt; .
