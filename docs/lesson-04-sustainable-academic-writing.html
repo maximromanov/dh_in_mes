@@ -320,7 +320,8 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="11.1" data-path="lesson-11-mapping-data-using-tagged-data.html"><a href="lesson-11-mapping-data-using-tagged-data.html#preparing-and-modeling-geospatial-data"><i class="fa fa-check"></i><b>11.1</b> Preparing and Modeling Geospatial Data</a>
 <ul>
-<li class="chapter" data-level="11.1.1" data-path="lesson-11-mapping-data-using-tagged-data.html"><a href="lesson-11-mapping-data-using-tagged-data.html#triples-n-triples"><i class="fa fa-check"></i><b>11.1.1</b> Triples (<code>N-triples</code>)</a></li>
+<li class="chapter" data-level="11.1.1" data-path="lesson-11-mapping-data-using-tagged-data.html"><a href="lesson-11-mapping-data-using-tagged-data.html#code"><i class="fa fa-check"></i><b>11.1.1</b> Code</a></li>
+<li class="chapter" data-level="11.1.2" data-path="lesson-11-mapping-data-using-tagged-data.html"><a href="lesson-11-mapping-data-using-tagged-data.html#triples-n-triples"><i class="fa fa-check"></i><b>11.1.2</b> Triples (<code>N-triples</code>)</a></li>
 </ul></li>
 <li class="chapter" data-level="11.2" data-path="lesson-11-mapping-data-using-tagged-data.html"><a href="lesson-11-mapping-data-using-tagged-data.html#HWL11"><i class="fa fa-check"></i><b>11.2</b> Homework</a></li>
 <li class="chapter" data-level="11.3" data-path="lesson-11-mapping-data-using-tagged-data.html"><a href="lesson-11-mapping-data-using-tagged-data.html#SolutionL11"><i class="fa fa-check"></i><b>11.3</b> Solution</a></li>
@@ -385,8 +386,8 @@ div.csl-indent {
 <li><code>markdown</code></li>
 <li>Obsidian (<a href="https://obsidian.md/" class="uri">https://obsidian.md/</a>)</li>
 </ul>
-<div id="htmlwidget-72be3d1c75f2e498fe7d" style="width:672px;height:600px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-72be3d1c75f2e498fe7d">{"x":{"diagram":"\ndigraph writing_cycle {\n\n  # a \"graph\" statement\n  graph [overlap = false, fontsize = 10, rankdir = TB]\n\n  # several \"node\" statements\n  node [shape = box,\n        fontname = Baskerville,\n        fontsize = 10,\n        style = rounded,\n        penwidth = 0.1]\n  bibtex [label = \"bibTex bibliography\"]\n  markdown [shape=box, style=filled, fillcolor=grey50, fontcolor=white, fontname=\"courier-bold\", label = \"textfile in markdown\"] ;\n  zotero[label = \"Zotero\"]\n  pandoc[label=\"pandoc engine\"]\n  style[label=\"citation style\"]\n  latex[label=\"TeX engine\"]\n  html[label=\"HTML\"]\n  doc[label=\"MS Word\"]\n  pdf[label=\"PDF\"]\n  \n  \n  zotero->bibtex; bibtex->markdown; bibtex->pandoc;\n  markdown->pandoc; style->pandoc;\n  pandoc->html; pandoc->doc; pandoc->latex->pdf;\n\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-d2ee06afd99cb5457870" style="width:672px;height:600px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-d2ee06afd99cb5457870">{"x":{"diagram":"\ndigraph writing_cycle {\n\n  # a \"graph\" statement\n  graph [overlap = false, fontsize = 10, rankdir = TB]\n\n  # several \"node\" statements\n  node [shape = box,\n        fontname = Baskerville,\n        fontsize = 10,\n        style = rounded,\n        penwidth = 0.1]\n  bibtex [label = \"bibTex bibliography\"]\n  markdown [shape=box, style=filled, fillcolor=grey50, fontcolor=white, fontname=\"courier-bold\", label = \"textfile in markdown\"] ;\n  zotero[label = \"Zotero\"]\n  pandoc[label=\"pandoc engine\"]\n  style[label=\"citation style\"]\n  latex[label=\"TeX engine\"]\n  html[label=\"HTML\"]\n  doc[label=\"MS Word\"]\n  pdf[label=\"PDF\"]\n  \n  \n  zotero->bibtex; bibtex->markdown; bibtex->pandoc;\n  markdown->pandoc; style->pandoc;\n  pandoc->html; pandoc->doc; pandoc->latex->pdf;\n\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="class-notes" class="section level2" number="4.2">
 <h2><span class="header-section-number">4.2</span> Class Notes</h2>

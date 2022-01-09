@@ -117,6 +117,7 @@ HWL10
 SolutionL10
 lesson-11-mapping-data-using-tagged-data
 preparing-and-modeling-geospatial-data
+code
 triples-n-triples
 HWL11
 SolutionL11

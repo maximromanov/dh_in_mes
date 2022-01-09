@@ -39,6 +39,48 @@ fig.write_html("althurayya.html")
 We can get the following map (for an intereactive map, try [this link](./files/althurayya.html)):
 
 ![](./files/althurayya.png)
+## Mapping chronological data
+
+We can also map our geographical data dynamically, if we want to highlight its chronological dimension. Below is the example. [Click here for the interactive graph](./files/us_cities_pop.html).
+
+![](./files/us_cities_pop.png)
+
+### Code
+
+The following code is used to produce the visualization above. Use this as a starting point for mapping data from the *Dispatch*. You can download the `us_cities_pop.csv` from [here](./files/us_cities_pop.csv). One thing to keep in mind, the chronological data must be passed to the function as `string`, not as `date`. (that is why there is no conversion to the date format in the code below.)
+
+```{r engine='python', highlight=TRUE, eval=FALSE}
+import plotly.express as px
+import pandas as pd
+import re
+
+us_cities_data = "us_cities_pop.csv"
+usCities = pd.read_csv(us_cities_data, sep=",", header=0)
+
+# plot places
+placesAll = usCities[['year', 'cityst', 'population', 'lat', 'lon']]
+print(placesAll)
+
+fig = px.scatter_geo(placesAll, lon='lon', lat='lat',
+                     hover_name="cityst",
+                     animation_frame="year",
+                     size='population')
+
+fig.update_layout(
+    title_text='Growth of US cities (1790-2010)',
+    showlegend=True,
+    geo=dict(
+        scope='usa',
+        landcolor='rgb(235, 235, 235)',
+    )
+)
+
+fig.show()
+fig.write_html("us_cities_pop.html")
+
+```
+
+
 
 Now, let's get back to our Dispatch data. We have placenames tagged --- and we already have the data ready for processing. We can focus on a specific period of time (by filtering our data, including only dates that we are interested in). Then we need to calculate frequencies of mentions of placenames --- we can use these values to size dots on the final map. Unfortunately, a very important element is missing --- as you recall, our data does not have any coordinates. Luckily, we have unique identifiers from the Getty Thesaurus of Geographical Names. What we can do is to extract coordinates from the Thesaurus and connect them to corresponding placenames in our data.
 

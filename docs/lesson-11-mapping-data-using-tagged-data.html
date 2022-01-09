@@ -320,7 +320,8 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="11.1" data-path="lesson-11-mapping-data-using-tagged-data.html"><a href="lesson-11-mapping-data-using-tagged-data.html#preparing-and-modeling-geospatial-data"><i class="fa fa-check"></i><b>11.1</b> Preparing and Modeling Geospatial Data</a>
 <ul>
-<li class="chapter" data-level="11.1.1" data-path="lesson-11-mapping-data-using-tagged-data.html"><a href="lesson-11-mapping-data-using-tagged-data.html#triples-n-triples"><i class="fa fa-check"></i><b>11.1.1</b> Triples (<code>N-triples</code>)</a></li>
+<li class="chapter" data-level="11.1.1" data-path="lesson-11-mapping-data-using-tagged-data.html"><a href="lesson-11-mapping-data-using-tagged-data.html#code"><i class="fa fa-check"></i><b>11.1.1</b> Code</a></li>
+<li class="chapter" data-level="11.1.2" data-path="lesson-11-mapping-data-using-tagged-data.html"><a href="lesson-11-mapping-data-using-tagged-data.html#triples-n-triples"><i class="fa fa-check"></i><b>11.1.2</b> Triples (<code>N-triples</code>)</a></li>
 </ul></li>
 <li class="chapter" data-level="11.2" data-path="lesson-11-mapping-data-using-tagged-data.html"><a href="lesson-11-mapping-data-using-tagged-data.html#HWL11"><i class="fa fa-check"></i><b>11.2</b> Homework</a></li>
 <li class="chapter" data-level="11.3" data-path="lesson-11-mapping-data-using-tagged-data.html"><a href="lesson-11-mapping-data-using-tagged-data.html#SolutionL11"><i class="fa fa-check"></i><b>11.3</b> Solution</a></li>
@@ -377,41 +378,75 @@ div.csl-indent {
 <h2><span class="header-section-number">11.1</span> Preparing and Modeling Geospatial Data</h2>
 <p>In a similar manner we can also graph geographical data — in combination with the temporary dimension. For this, however, we need to think through what kind of insight we can possibly get from geospatial data and how it should be prepared for mapping.</p>
 <p>Let’s start with a simple task: we will map the geospatial data from one of the previous lessons: <a href="./files/settlements.csv">settlements from the al-Thurayya Gazetteer</a>. Below is the code that produces an interactive map. (<strong>Note</strong>: it is possible to use <code>matplotlib</code> for mapping, but installation of needed components has become rather complicated recently, so we will proceed with a different library: <code>plotly</code>)</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb49-1"><a href="lesson-11-mapping-data-using-tagged-data.html#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
+<span id="cb49-2"><a href="lesson-11-mapping-data-using-tagged-data.html#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb49-3"><a href="lesson-11-mapping-data-using-tagged-data.html#cb49-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-4"><a href="lesson-11-mapping-data-using-tagged-data.html#cb49-4" aria-hidden="true" tabindex="-1"></a>althurayyaFile <span class="op">=</span> <span class="st">&quot;settlements.csv&quot;</span></span>
+<span id="cb49-5"><a href="lesson-11-mapping-data-using-tagged-data.html#cb49-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-6"><a href="lesson-11-mapping-data-using-tagged-data.html#cb49-6" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(althurayyaFile, sep<span class="op">=</span><span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>, header<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb49-7"><a href="lesson-11-mapping-data-using-tagged-data.html#cb49-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df)</span>
+<span id="cb49-8"><a href="lesson-11-mapping-data-using-tagged-data.html#cb49-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-9"><a href="lesson-11-mapping-data-using-tagged-data.html#cb49-9" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.scatter_geo(df, lon<span class="op">=</span><span class="st">&#39;lon&#39;</span>, lat<span class="op">=</span><span class="st">&#39;lat&#39;</span>, color<span class="op">=</span><span class="st">&quot;region_URI&quot;</span>,</span>
+<span id="cb49-10"><a href="lesson-11-mapping-data-using-tagged-data.html#cb49-10" aria-hidden="true" tabindex="-1"></a>                     hover_name<span class="op">=</span><span class="st">&quot;names_eng_translit&quot;</span>, size<span class="op">=</span>df[<span class="st">&quot;top_size&quot;</span>]<span class="op">*</span>df[<span class="st">&quot;top_size&quot;</span>],</span>
+<span id="cb49-11"><a href="lesson-11-mapping-data-using-tagged-data.html#cb49-11" aria-hidden="true" tabindex="-1"></a>                     projection<span class="op">=</span><span class="st">&quot;natural earth&quot;</span>, fitbounds<span class="op">=</span><span class="st">&#39;locations&#39;</span>)</span>
+<span id="cb49-12"><a href="lesson-11-mapping-data-using-tagged-data.html#cb49-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-13"><a href="lesson-11-mapping-data-using-tagged-data.html#cb49-13" aria-hidden="true" tabindex="-1"></a>fig.update_layout(</span>
+<span id="cb49-14"><a href="lesson-11-mapping-data-using-tagged-data.html#cb49-14" aria-hidden="true" tabindex="-1"></a>    title_text<span class="op">=</span><span class="st">&#39;Provinces of the classical Islamic World (IX-Xthe centuries CE)&lt;br&gt;(Click legend to toggle provinces)&#39;</span>,</span>
+<span id="cb49-15"><a href="lesson-11-mapping-data-using-tagged-data.html#cb49-15" aria-hidden="true" tabindex="-1"></a>    showlegend<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb49-16"><a href="lesson-11-mapping-data-using-tagged-data.html#cb49-16" aria-hidden="true" tabindex="-1"></a>    geo<span class="op">=</span><span class="bu">dict</span>(</span>
+<span id="cb49-17"><a href="lesson-11-mapping-data-using-tagged-data.html#cb49-17" aria-hidden="true" tabindex="-1"></a>        scope<span class="op">=</span><span class="st">&#39;world&#39;</span>,</span>
+<span id="cb49-18"><a href="lesson-11-mapping-data-using-tagged-data.html#cb49-18" aria-hidden="true" tabindex="-1"></a>        landcolor<span class="op">=</span><span class="st">&#39;rgb(250, 250, 250)&#39;</span>,</span>
+<span id="cb49-19"><a href="lesson-11-mapping-data-using-tagged-data.html#cb49-19" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb49-20"><a href="lesson-11-mapping-data-using-tagged-data.html#cb49-20" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb49-21"><a href="lesson-11-mapping-data-using-tagged-data.html#cb49-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-22"><a href="lesson-11-mapping-data-using-tagged-data.html#cb49-22" aria-hidden="true" tabindex="-1"></a>fig.show()</span>
+<span id="cb49-23"><a href="lesson-11-mapping-data-using-tagged-data.html#cb49-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-24"><a href="lesson-11-mapping-data-using-tagged-data.html#cb49-24" aria-hidden="true" tabindex="-1"></a><span class="co"># the following line will save the graph into an html file</span></span>
+<span id="cb49-25"><a href="lesson-11-mapping-data-using-tagged-data.html#cb49-25" aria-hidden="true" tabindex="-1"></a>fig.write_html(<span class="st">&quot;althurayya.html&quot;</span>)</span></code></pre></div>
+<p>We can get the following map (for an intereactive map, try <a href="./files/althurayya.html">this link</a>):</p>
+<p><img src="files/althurayya.png" />
+## Mapping chronological data</p>
+<p>We can also map our geographical data dynamically, if we want to highlight its chronological dimension. Below is the example. <a href="./files/us_cities_pop.html">Click here for the interactive graph</a>.</p>
+<p><img src="files/us_cities_pop.png" /></p>
+<div id="code" class="section level3" number="11.1.1">
+<h3><span class="header-section-number">11.1.1</span> Code</h3>
+<p>The following code is used to produce the visualization above. Use this as a starting point for mapping data from the <em>Dispatch</em>. You can download the <code>us_cities_pop.csv</code> from <a href="./files/us_cities_pop.csv">here</a>. One thing to keep in mind, the chronological data must be passed to the function as <code>string</code>, not as <code>date</code>. (that is why there is no conversion to the date format in the code below.)</p>
 <div class="sourceCode" id="cb50"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb50-1"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
 <span id="cb50-2"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb50-3"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb50-4"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-4" aria-hidden="true" tabindex="-1"></a>althurayyaFile <span class="op">=</span> <span class="st">&quot;settlements.csv&quot;</span></span>
-<span id="cb50-5"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb50-6"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-6" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(althurayyaFile, sep<span class="op">=</span><span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>, header<span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb50-7"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df)</span>
-<span id="cb50-8"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb50-9"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-9" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.scatter_geo(df, lon<span class="op">=</span><span class="st">&#39;lon&#39;</span>, lat<span class="op">=</span><span class="st">&#39;lat&#39;</span>, color<span class="op">=</span><span class="st">&quot;region_URI&quot;</span>,</span>
-<span id="cb50-10"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-10" aria-hidden="true" tabindex="-1"></a>                     hover_name<span class="op">=</span><span class="st">&quot;names_eng_translit&quot;</span>, size<span class="op">=</span>df[<span class="st">&quot;top_size&quot;</span>]<span class="op">*</span>df[<span class="st">&quot;top_size&quot;</span>],</span>
-<span id="cb50-11"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-11" aria-hidden="true" tabindex="-1"></a>                     projection<span class="op">=</span><span class="st">&quot;natural earth&quot;</span>, fitbounds<span class="op">=</span><span class="st">&#39;locations&#39;</span>)</span>
-<span id="cb50-12"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb50-13"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-13" aria-hidden="true" tabindex="-1"></a>fig.update_layout(</span>
-<span id="cb50-14"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-14" aria-hidden="true" tabindex="-1"></a>    title_text<span class="op">=</span><span class="st">&#39;Provinces of the classical Islamic World (IX-Xthe centuries CE)&lt;br&gt;(Click legend to toggle provinces)&#39;</span>,</span>
-<span id="cb50-15"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-15" aria-hidden="true" tabindex="-1"></a>    showlegend<span class="op">=</span><span class="va">True</span>,</span>
-<span id="cb50-16"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-16" aria-hidden="true" tabindex="-1"></a>    geo<span class="op">=</span><span class="bu">dict</span>(</span>
-<span id="cb50-17"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-17" aria-hidden="true" tabindex="-1"></a>        scope<span class="op">=</span><span class="st">&#39;world&#39;</span>,</span>
-<span id="cb50-18"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-18" aria-hidden="true" tabindex="-1"></a>        landcolor<span class="op">=</span><span class="st">&#39;rgb(250, 250, 250)&#39;</span>,</span>
-<span id="cb50-19"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-19" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb50-20"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-20" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb50-21"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb50-22"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-22" aria-hidden="true" tabindex="-1"></a>fig.show()</span>
-<span id="cb50-23"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb50-24"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-24" aria-hidden="true" tabindex="-1"></a><span class="co"># the following line will save the graph into an html file</span></span>
-<span id="cb50-25"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-25" aria-hidden="true" tabindex="-1"></a>fig.write_html(<span class="st">&quot;althurayya.html&quot;</span>)</span></code></pre></div>
-<p>We can get the following map (for an intereactive map, try <a href="./files/althurayya.html">this link</a>):</p>
-<p><img src="files/althurayya.png" /></p>
+<span id="cb50-3"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
+<span id="cb50-4"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-5"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-5" aria-hidden="true" tabindex="-1"></a>us_cities_data <span class="op">=</span> <span class="st">&quot;us_cities_pop.csv&quot;</span></span>
+<span id="cb50-6"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-6" aria-hidden="true" tabindex="-1"></a>usCities <span class="op">=</span> pd.read_csv(us_cities_data, sep<span class="op">=</span><span class="st">&quot;,&quot;</span>, header<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb50-7"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-8"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-8" aria-hidden="true" tabindex="-1"></a><span class="co"># plot places</span></span>
+<span id="cb50-9"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-9" aria-hidden="true" tabindex="-1"></a>placesAll <span class="op">=</span> usCities[[<span class="st">&#39;year&#39;</span>, <span class="st">&#39;cityst&#39;</span>, <span class="st">&#39;population&#39;</span>, <span class="st">&#39;lat&#39;</span>, <span class="st">&#39;lon&#39;</span>]]</span>
+<span id="cb50-10"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(placesAll)</span>
+<span id="cb50-11"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-12"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-12" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.scatter_geo(placesAll, lon<span class="op">=</span><span class="st">&#39;lon&#39;</span>, lat<span class="op">=</span><span class="st">&#39;lat&#39;</span>,</span>
+<span id="cb50-13"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-13" aria-hidden="true" tabindex="-1"></a>                     hover_name<span class="op">=</span><span class="st">&quot;cityst&quot;</span>,</span>
+<span id="cb50-14"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-14" aria-hidden="true" tabindex="-1"></a>                     animation_frame<span class="op">=</span><span class="st">&quot;year&quot;</span>,</span>
+<span id="cb50-15"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-15" aria-hidden="true" tabindex="-1"></a>                     size<span class="op">=</span><span class="st">&#39;population&#39;</span>)</span>
+<span id="cb50-16"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-17"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-17" aria-hidden="true" tabindex="-1"></a>fig.update_layout(</span>
+<span id="cb50-18"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-18" aria-hidden="true" tabindex="-1"></a>    title_text<span class="op">=</span><span class="st">&#39;Growth of US cities (1790-2010)&#39;</span>,</span>
+<span id="cb50-19"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-19" aria-hidden="true" tabindex="-1"></a>    showlegend<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb50-20"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-20" aria-hidden="true" tabindex="-1"></a>    geo<span class="op">=</span><span class="bu">dict</span>(</span>
+<span id="cb50-21"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-21" aria-hidden="true" tabindex="-1"></a>        scope<span class="op">=</span><span class="st">&#39;usa&#39;</span>,</span>
+<span id="cb50-22"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-22" aria-hidden="true" tabindex="-1"></a>        landcolor<span class="op">=</span><span class="st">&#39;rgb(235, 235, 235)&#39;</span>,</span>
+<span id="cb50-23"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-23" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb50-24"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-24" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb50-25"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-26"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-26" aria-hidden="true" tabindex="-1"></a>fig.show()</span>
+<span id="cb50-27"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-27" aria-hidden="true" tabindex="-1"></a>fig.write_html(<span class="st">&quot;us_cities_pop.html&quot;</span>)</span></code></pre></div>
 <p>Now, let’s get back to our Dispatch data. We have placenames tagged — and we already have the data ready for processing. We can focus on a specific period of time (by filtering our data, including only dates that we are interested in). Then we need to calculate frequencies of mentions of placenames — we can use these values to size dots on the final map. Unfortunately, a very important element is missing — as you recall, our data does not have any coordinates. Luckily, we have unique identifiers from the Getty Thesaurus of Geographical Names. What we can do is to extract coordinates from the Thesaurus and connect them to corresponding placenames in our data.</p>
 <ul>
 <li>Getty Thesaurus is available for download here: <a href="http://tgndownloads.getty.edu/" class="uri">http://tgndownloads.getty.edu/</a> and here: <a href="http://vocab.getty.edu/dataset/tgn/" class="uri">http://vocab.getty.edu/dataset/tgn/</a></li>
 <li>You can download <code>explicit.zip</code> from <a href="http://vocab.getty.edu/dataset/tgn/" class="uri">http://vocab.getty.edu/dataset/tgn/</a></li>
 <li>There is a file <code>TGNOut_Coordinates.nt</code> with coordinates. You will need to write a script to extract coordinates from this file in order to use them. I suggest you convert this file (the format is <code>N-triples</code>)</li>
 </ul>
-<div id="triples-n-triples" class="section level3" number="11.1.1">
-<h3><span class="header-section-number">11.1.1</span> Triples (<code>N-triples</code>)</h3>
+</div>
+<div id="triples-n-triples" class="section level3" number="11.1.2">
+<h3><span class="header-section-number">11.1.2</span> Triples (<code>N-triples</code>)</h3>
 <p>What are triples? This is one of the most robust formats that can describe any kind of data. The main idea is that every triple is expressed through the structure <code>subject-predicate-object</code>. There are multiple formats for expressing triples (for example, RDF, N-Triples, etc.) (<a href="https://en.wikipedia.org/wiki/Semantic_triple"><em>more details…</em></a>).</p>
 <p>Let’s take a look at the following example from <code>TGNOut_Coordinates.nt</code>. There are three triples (<code>N-triples</code>) which together describe a specific object (which in our data would look like <code>tgn,1000007</code>).</p>
 <pre><code>&lt;http://vocab.getty.edu/tgn/1000007-geometry&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://schema.org/GeoCoordinates&gt; .
