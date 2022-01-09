@@ -261,7 +261,7 @@ with open("entities.csv", "w", encoding="utf8") as f9:
 print("Done!")
 ```
 
-This function will preprocess data for topic modeling: each text is converted into a list and high frequency words are filtered out.
+This function will preprocess data for topic modeling: each text is converted into a list and high frequency words are filtered out; also, empty articles (`ad-blank`) are removed.
 
 ```{r engine='python', highlight=TRUE, eval=FALSE}
 from gensim.utils import simple_preprocess
@@ -337,7 +337,7 @@ def prepDispatchLightByYears(dispatchSubfolder, dispatchFile):
     # TEXT CLEANING
     dispatch_light["textDataListsFiltered"] = remove_words(dispatch_light["textDataLists"], stop_words_custom)
 
-    dispatch_light = dispatch_light[["id", "month", "date", "type", "header", "text", "textDataListsFiltered"]]
+    dispatch_light = dispatch_light[["id", "textDataListsFiltered"]]
     dispatch_light.to_csv("./Dispatch_Processed_TSV/%s_Light_Preprocessed_New.tsv" % dispatchFile[:-4], sep="\t", index=False)
 
 
