@@ -139,7 +139,7 @@ Last but not least, we may get interesting maps if we map places that cooccur wi
 
 ## Solution{#SolutionL11}
 
-Below is the solution to the homework...
+The solution for the homework will be added soon...
 
 <!--
 
@@ -269,14 +269,6 @@ fig.update_layout(
 
 #fig.show()
 fig.write_html("dispatch_1860_to_65.html")
-```
-
-
-```{r engine='python', highlight=TRUE, eval=FALSE}
-# "MAPS OF NAMES"
-
-...
-
 ```
 
 -->
