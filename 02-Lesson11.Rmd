@@ -4,7 +4,7 @@
 
 In a similar manner we can also graph geographical data --- in combination with the temporary dimension. For this, however, we need to think through what kind of insight we can possibly get from geospatial data and how it should be prepared for mapping.
 
-Let's start with a simple task: we will map the geospatial data from one of the previous lessons: [settlements from the al-Thurayya Gazetteer](./files/settlements.csv). Below is the code that produces an interactive map. (**Note**: it is possible to use `matplotlib` for mapping, but installation of needed components has become rather complicated recently, so we will proceed with a different library: `plotly`)
+Let's start with a simple task: we will map the geospatial data from one of the previous lessons: [settlements from the al-Thurayya Gazetteer](./files/settlements.csv). Below is the code that produces an interactive map. (**Note**: it is possible to use `matplotlib` for mapping, but installation of needed components has become rather complicated recently, so we will proceed with a different library, `plotly`, which produced web-oriented maps.)
 
 ```{r engine='python', highlight=TRUE, eval=FALSE}
 
@@ -36,13 +36,13 @@ fig.write_html("althurayya.html")
 
 ```
 
-We can get the following map (for an intereactive map, try [this link](./files/althurayya.html)):
+We can get the following map (for an interactive map, try [this link](./files/althurayya.html)):
 
 ![](./files/althurayya.png)
-We can also map our geographical data dynamically, if we want to highlight its chronological dimension. Below is the example. [Click here for the interactive graph](./files/us_cities_pop.html).
+We can also map our geographical data dynamically, if we want to highlight its chronological dimension. Below is the example of the growth of US cities. [Click here for the interactive graph](./files/us_cities_pop.html).
 
 ![](./files/us_cities_pop.png)
-The following code is used to produce the visualization above. Use this as a starting point for mapping data from the *Dispatch*. You can download the `us_cities_pop.csv` from [here](./files/us_cities_pop.csv). One thing to keep in mind, the chronological data must be passed to the function as `string`, not as `date`. (that is why there is no conversion to the date format in the code below.)
+The following code is used to produce the visualization above. Use this as a starting point for mapping data from the *Dispatch*. You can download the `us_cities_pop.csv` from [here](./files/us_cities_pop.csv). One thing to keep in mind, the chronological data must be passed to the function as `string`, not as `date` (that is why there is no conversion to the date format in the code below).
 
 ```{r engine='python', highlight=TRUE, eval=FALSE}
 import plotly.express as px
@@ -76,12 +76,11 @@ fig.write_html("us_cities_pop.html")
 ```
 
 
-
 Now, let's get back to our Dispatch data. We have placenames tagged --- and we already have the data ready for processing. We can focus on a specific period of time (by filtering our data, including only dates that we are interested in). Then we need to calculate frequencies of mentions of placenames --- we can use these values to size dots on the final map. Unfortunately, a very important element is missing --- as you recall, our data does not have any coordinates. Luckily, we have unique identifiers from the Getty Thesaurus of Geographical Names. What we can do is to extract coordinates from the Thesaurus and connect them to corresponding placenames in our data.
 
 - Getty Thesaurus is available for download here: <http://tgndownloads.getty.edu/> and here: <http://vocab.getty.edu/dataset/tgn/>
 - You can download `explicit.zip` from <http://vocab.getty.edu/dataset/tgn/>
-- There is a file `TGNOut_Coordinates.nt` with coordinates. You will need to write a script to extract coordinates from this file in order to use them. I suggest you convert this file (the format is `N-triples`)
+- There is a file `TGNOut_Coordinates.nt` with coordinates. You will need to write a script to extract coordinates from this file in order to use them. I suggest you convert this file into a usable CSV/TSV (the format is `N-triples`).
 
 ### Triples (`N-triples`)
 
@@ -95,7 +94,7 @@ Let's take a look at the following example from `TGNOut_Coordinates.nt`. There a
 <http://vocab.getty.edu/tgn/1000007-geometry> <http://schema.org/longitude> "65.725"^^<http://www.w3.org/2001/XMLSchema#decimal> .
 ```
 
-Each triple is stored on a separate line, ending with a period ("."). Elements of each triple are separated with spaces. Each triple has the same structure---`subject-predicate-object`---and can be read as follows.
+Each triple is stored on a separate line, ending with a period ("."). Elements of each triple are separated with spaces. Each triple has the same structure---`subject-predicate-object`---and can be read as follows:
 
 - Triple 1: entity `tgn,1000007` has (expressed in a particular manner) geographical coordinates;
 - Triple 2: entity `tgn,1000007` has decimal latitude `-83.843`;
@@ -105,13 +104,13 @@ You should have no problems writing a script that converts this data into a CSV 
 
 If you are not up to this challenge, you can use the CSV file that I have already prepared, to make your life a bit easier: [TGNOut_Coordinates.csv.zip](./files/TGNOut_Coordinates.csv.zip)
 
-If everything done correctly, the map may look like this ([although an interactive temporary component is an extra](./files/dispatch_1860_to_65.html)):
+If everything done correctly, the final map may look like what you see below. [The complete interactive map can be found here.](./files/dispatch_1860_to_65.html)):
 
 ![](./files/dispatch_1860_to_65.png)
 
-Here is the link to the description of how dynamic maps can be done: [Bubble Map with Animation](https://plotly.com/python/bubble-maps/). Use this example to produce something similar for the Dispatch data.
+<!-- Here is the link to the description of how dynamic maps can be done: [Bubble Map with Animation](https://plotly.com/python/bubble-maps/). Use this example to produce something similar for the Dispatch data. -->
 
-Last but not least, we may get interesting maps if we map places that cooccur with some specific names. An example of Gen. Sherman and Atlanta could be quite interesting (we have seen the graphs in the previous lesson), although in such cases a chronological graph of mentions of Altanta---only in articles where Gen. Sherman is mentioned---may be a more clear option. Please, try to code a solution that will do one or the other :)
+Last but not least, we may get interesting maps if we map places that co-occur with some specific names. An example of Gen. Sherman and Atlanta could be quite interesting (we have seen the graphs in the previous lesson), although in such cases a chronological graph of mentions of Atlanta---only in articles where Gen. Sherman is mentioned---may be a more clear option (see the preceding lesson). Please, try to code a solution that will do one or the other.
 
 ## Homework{#HWL11}
 
@@ -121,7 +120,7 @@ Last but not least, we may get interesting maps if we map places that cooccur wi
     - you can map places in a more complex manner. For example, map only placenames that are mentioned in the same articles as, say, General Sherman. In this case we may expect the maps to reflect his campaign through Georgia and the Carolinas (or, more precisely, the Dispatch's coverage of Gen. Sherman's campaign).
     - for interactive maps, you can use `Plotly` library: <https://plotly.com/python/bubble-maps/>.
 - Finish the assigned task;
-- Annotate your script (i.e., add comment to every line of code describing what is happenning there);
+- Annotate your script (i.e., add comment to every line of code describing what is happening there);
 
 - Additional materials:
   - Interactive maps with `Plotly`: <https://plotly.com/python/bubble-maps/>;

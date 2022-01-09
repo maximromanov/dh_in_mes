@@ -377,7 +377,7 @@ div.csl-indent {
 <div id="preparing-and-modeling-geospatial-data" class="section level2" number="11.1">
 <h2><span class="header-section-number">11.1</span> Preparing and Modeling Geospatial Data</h2>
 <p>In a similar manner we can also graph geographical data — in combination with the temporary dimension. For this, however, we need to think through what kind of insight we can possibly get from geospatial data and how it should be prepared for mapping.</p>
-<p>Let’s start with a simple task: we will map the geospatial data from one of the previous lessons: <a href="./files/settlements.csv">settlements from the al-Thurayya Gazetteer</a>. Below is the code that produces an interactive map. (<strong>Note</strong>: it is possible to use <code>matplotlib</code> for mapping, but installation of needed components has become rather complicated recently, so we will proceed with a different library: <code>plotly</code>)</p>
+<p>Let’s start with a simple task: we will map the geospatial data from one of the previous lessons: <a href="./files/settlements.csv">settlements from the al-Thurayya Gazetteer</a>. Below is the code that produces an interactive map. (<strong>Note</strong>: it is possible to use <code>matplotlib</code> for mapping, but installation of needed components has become rather complicated recently, so we will proceed with a different library, <code>plotly</code>, which produced web-oriented maps.)</p>
 <div class="sourceCode" id="cb50"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb50-1"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
 <span id="cb50-2"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb50-3"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -403,11 +403,11 @@ div.csl-indent {
 <span id="cb50-23"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-23" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb50-24"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-24" aria-hidden="true" tabindex="-1"></a><span class="co"># the following line will save the graph into an html file</span></span>
 <span id="cb50-25"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-25" aria-hidden="true" tabindex="-1"></a>fig.write_html(<span class="st">&quot;althurayya.html&quot;</span>)</span></code></pre></div>
-<p>We can get the following map (for an intereactive map, try <a href="./files/althurayya.html">this link</a>):</p>
+<p>We can get the following map (for an interactive map, try <a href="./files/althurayya.html">this link</a>):</p>
 <p><img src="files/althurayya.png" />
-We can also map our geographical data dynamically, if we want to highlight its chronological dimension. Below is the example. <a href="./files/us_cities_pop.html">Click here for the interactive graph</a>.</p>
+We can also map our geographical data dynamically, if we want to highlight its chronological dimension. Below is the example of the growth of US cities. <a href="./files/us_cities_pop.html">Click here for the interactive graph</a>.</p>
 <p><img src="files/us_cities_pop.png" />
-The following code is used to produce the visualization above. Use this as a starting point for mapping data from the <em>Dispatch</em>. You can download the <code>us_cities_pop.csv</code> from <a href="./files/us_cities_pop.csv">here</a>. One thing to keep in mind, the chronological data must be passed to the function as <code>string</code>, not as <code>date</code>. (that is why there is no conversion to the date format in the code below.)</p>
+The following code is used to produce the visualization above. Use this as a starting point for mapping data from the <em>Dispatch</em>. You can download the <code>us_cities_pop.csv</code> from <a href="./files/us_cities_pop.csv">here</a>. One thing to keep in mind, the chronological data must be passed to the function as <code>string</code>, not as <code>date</code> (that is why there is no conversion to the date format in the code below).</p>
 <div class="sourceCode" id="cb51"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb51-1"><a href="lesson-11-mapping-data-using-tagged-data.html#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
 <span id="cb51-2"><a href="lesson-11-mapping-data-using-tagged-data.html#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb51-3"><a href="lesson-11-mapping-data-using-tagged-data.html#cb51-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
@@ -439,7 +439,7 @@ The following code is used to produce the visualization above. Use this as a sta
 <ul>
 <li>Getty Thesaurus is available for download here: <a href="http://tgndownloads.getty.edu/" class="uri">http://tgndownloads.getty.edu/</a> and here: <a href="http://vocab.getty.edu/dataset/tgn/" class="uri">http://vocab.getty.edu/dataset/tgn/</a></li>
 <li>You can download <code>explicit.zip</code> from <a href="http://vocab.getty.edu/dataset/tgn/" class="uri">http://vocab.getty.edu/dataset/tgn/</a></li>
-<li>There is a file <code>TGNOut_Coordinates.nt</code> with coordinates. You will need to write a script to extract coordinates from this file in order to use them. I suggest you convert this file (the format is <code>N-triples</code>)</li>
+<li>There is a file <code>TGNOut_Coordinates.nt</code> with coordinates. You will need to write a script to extract coordinates from this file in order to use them. I suggest you convert this file into a usable CSV/TSV (the format is <code>N-triples</code>).</li>
 </ul>
 <div id="triples-n-triples" class="section level3" number="11.1.1">
 <h3><span class="header-section-number">11.1.1</span> Triples (<code>N-triples</code>)</h3>
@@ -448,7 +448,7 @@ The following code is used to produce the visualization above. Use this as a sta
 <pre><code>&lt;http://vocab.getty.edu/tgn/1000007-geometry&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://schema.org/GeoCoordinates&gt; .
 &lt;http://vocab.getty.edu/tgn/1000007-geometry&gt; &lt;http://schema.org/latitude&gt; &quot;-83.843&quot;^^&lt;http://www.w3.org/2001/XMLSchema#decimal&gt; .
 &lt;http://vocab.getty.edu/tgn/1000007-geometry&gt; &lt;http://schema.org/longitude&gt; &quot;65.725&quot;^^&lt;http://www.w3.org/2001/XMLSchema#decimal&gt; .</code></pre>
-<p>Each triple is stored on a separate line, ending with a period (“.”). Elements of each triple are separated with spaces. Each triple has the same structure—<code>subject-predicate-object</code>—and can be read as follows.</p>
+<p>Each triple is stored on a separate line, ending with a period (“.”). Elements of each triple are separated with spaces. Each triple has the same structure—<code>subject-predicate-object</code>—and can be read as follows:</p>
 <ul>
 <li>Triple 1: entity <code>tgn,1000007</code> has (expressed in a particular manner) geographical coordinates;</li>
 <li>Triple 2: entity <code>tgn,1000007</code> has decimal latitude <code>-83.843</code>;</li>
@@ -456,10 +456,10 @@ The following code is used to produce the visualization above. Use this as a sta
 </ul>
 <p>You should have no problems writing a script that converts this data into a CSV with the structure: <code>ID</code>, <code>lon</code>, and <code>lat</code>. (Technically, you can also store these triples in a CSV/TSV format, but that would require additional conversion later.)</p>
 <p>If you are not up to this challenge, you can use the CSV file that I have already prepared, to make your life a bit easier: <a href="./files/TGNOut_Coordinates.csv.zip">TGNOut_Coordinates.csv.zip</a></p>
-<p>If everything done correctly, the map may look like this (<a href="./files/dispatch_1860_to_65.html">although an interactive temporary component is an extra</a>):</p>
+<p>If everything done correctly, the final map may look like what you see below. <a href="./files/dispatch_1860_to_65.html">The complete interactive map can be found here.</a>):</p>
 <p><img src="files/dispatch_1860_to_65.png" /></p>
-<p>Here is the link to the description of how dynamic maps can be done: <a href="https://plotly.com/python/bubble-maps/">Bubble Map with Animation</a>. Use this example to produce something similar for the Dispatch data.</p>
-<p>Last but not least, we may get interesting maps if we map places that cooccur with some specific names. An example of Gen. Sherman and Atlanta could be quite interesting (we have seen the graphs in the previous lesson), although in such cases a chronological graph of mentions of Altanta—only in articles where Gen. Sherman is mentioned—may be a more clear option. Please, try to code a solution that will do one or the other :)</p>
+<!-- Here is the link to the description of how dynamic maps can be done: [Bubble Map with Animation](https://plotly.com/python/bubble-maps/). Use this example to produce something similar for the Dispatch data. -->
+<p>Last but not least, we may get interesting maps if we map places that co-occur with some specific names. An example of Gen. Sherman and Atlanta could be quite interesting (we have seen the graphs in the previous lesson), although in such cases a chronological graph of mentions of Atlanta—only in articles where Gen. Sherman is mentioned—may be a more clear option (see the preceding lesson). Please, try to code a solution that will do one or the other.</p>
 </div>
 </div>
 <div id="HWL11" class="section level2" number="11.2">
@@ -475,7 +475,7 @@ The following code is used to produce the visualization above. Use this as a sta
 </ul></li>
 </ul></li>
 <li><p>Finish the assigned task;</p></li>
-<li><p>Annotate your script (i.e., add comment to every line of code describing what is happenning there);</p></li>
+<li><p>Annotate your script (i.e., add comment to every line of code describing what is happening there);</p></li>
 <li><p>Additional materials:</p>
 <ul>
 <li>Interactive maps with <code>Plotly</code>: <a href="https://plotly.com/python/bubble-maps/" class="uri">https://plotly.com/python/bubble-maps/</a>;</li>
