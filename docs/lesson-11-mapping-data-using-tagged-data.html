@@ -24,7 +24,7 @@
 <meta name="author" content="Maxim G. Romanov" />
 
 
-<meta name="date" content="2022-01-08" />
+<meta name="date" content="2022-01-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -377,31 +377,31 @@ div.csl-indent {
 <h2><span class="header-section-number">11.1</span> Preparing and Modeling Geospatial Data</h2>
 <p>In a similar manner we can also graph geographical data — in combination with the temporary dimension. For this, however, we need to think through what kind of insight we can possibly get from geospatial data and how it should be prepared for mapping.</p>
 <p>Let’s start with a simple task: we will map the geospatial data from one of the previous lessons: <a href="./files/settlements.csv">settlements from the al-Thurayya Gazetteer</a>. Below is the code that produces an interactive map. (<strong>Note</strong>: it is possible to use <code>matplotlib</code> for mapping, but installation of needed components has become rather complicated recently, so we will proceed with a different library: <code>plotly</code>)</p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb49-1"><a href="lesson-11-mapping-data-using-tagged-data.html#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
-<span id="cb49-2"><a href="lesson-11-mapping-data-using-tagged-data.html#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb49-3"><a href="lesson-11-mapping-data-using-tagged-data.html#cb49-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-4"><a href="lesson-11-mapping-data-using-tagged-data.html#cb49-4" aria-hidden="true" tabindex="-1"></a>althurayyaFile <span class="op">=</span> <span class="st">&quot;settlements.csv&quot;</span></span>
-<span id="cb49-5"><a href="lesson-11-mapping-data-using-tagged-data.html#cb49-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-6"><a href="lesson-11-mapping-data-using-tagged-data.html#cb49-6" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(althurayyaFile, sep<span class="op">=</span><span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>, header<span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb49-7"><a href="lesson-11-mapping-data-using-tagged-data.html#cb49-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df)</span>
-<span id="cb49-8"><a href="lesson-11-mapping-data-using-tagged-data.html#cb49-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-9"><a href="lesson-11-mapping-data-using-tagged-data.html#cb49-9" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.scatter_geo(df, lon<span class="op">=</span><span class="st">&#39;lon&#39;</span>, lat<span class="op">=</span><span class="st">&#39;lat&#39;</span>, color<span class="op">=</span><span class="st">&quot;region_URI&quot;</span>,</span>
-<span id="cb49-10"><a href="lesson-11-mapping-data-using-tagged-data.html#cb49-10" aria-hidden="true" tabindex="-1"></a>                     hover_name<span class="op">=</span><span class="st">&quot;names_eng_translit&quot;</span>, size<span class="op">=</span>df[<span class="st">&quot;top_size&quot;</span>]<span class="op">*</span>df[<span class="st">&quot;top_size&quot;</span>],</span>
-<span id="cb49-11"><a href="lesson-11-mapping-data-using-tagged-data.html#cb49-11" aria-hidden="true" tabindex="-1"></a>                     projection<span class="op">=</span><span class="st">&quot;natural earth&quot;</span>, fitbounds<span class="op">=</span><span class="st">&#39;locations&#39;</span>)</span>
-<span id="cb49-12"><a href="lesson-11-mapping-data-using-tagged-data.html#cb49-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-13"><a href="lesson-11-mapping-data-using-tagged-data.html#cb49-13" aria-hidden="true" tabindex="-1"></a>fig.update_layout(</span>
-<span id="cb49-14"><a href="lesson-11-mapping-data-using-tagged-data.html#cb49-14" aria-hidden="true" tabindex="-1"></a>    title_text<span class="op">=</span><span class="st">&#39;Provinces of the classical Islamic World (IX-Xthe centuries CE)&lt;br&gt;(Click legend to toggle provinces)&#39;</span>,</span>
-<span id="cb49-15"><a href="lesson-11-mapping-data-using-tagged-data.html#cb49-15" aria-hidden="true" tabindex="-1"></a>    showlegend<span class="op">=</span><span class="va">True</span>,</span>
-<span id="cb49-16"><a href="lesson-11-mapping-data-using-tagged-data.html#cb49-16" aria-hidden="true" tabindex="-1"></a>    geo<span class="op">=</span><span class="bu">dict</span>(</span>
-<span id="cb49-17"><a href="lesson-11-mapping-data-using-tagged-data.html#cb49-17" aria-hidden="true" tabindex="-1"></a>        scope<span class="op">=</span><span class="st">&#39;world&#39;</span>,</span>
-<span id="cb49-18"><a href="lesson-11-mapping-data-using-tagged-data.html#cb49-18" aria-hidden="true" tabindex="-1"></a>        landcolor<span class="op">=</span><span class="st">&#39;rgb(250, 250, 250)&#39;</span>,</span>
-<span id="cb49-19"><a href="lesson-11-mapping-data-using-tagged-data.html#cb49-19" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb49-20"><a href="lesson-11-mapping-data-using-tagged-data.html#cb49-20" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb49-21"><a href="lesson-11-mapping-data-using-tagged-data.html#cb49-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-22"><a href="lesson-11-mapping-data-using-tagged-data.html#cb49-22" aria-hidden="true" tabindex="-1"></a>fig.show()</span>
-<span id="cb49-23"><a href="lesson-11-mapping-data-using-tagged-data.html#cb49-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-24"><a href="lesson-11-mapping-data-using-tagged-data.html#cb49-24" aria-hidden="true" tabindex="-1"></a><span class="co"># the following line will save the graph into an html file</span></span>
-<span id="cb49-25"><a href="lesson-11-mapping-data-using-tagged-data.html#cb49-25" aria-hidden="true" tabindex="-1"></a>fig.write_html(<span class="st">&quot;althurayya.html&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb50-1"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
+<span id="cb50-2"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb50-3"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-4"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-4" aria-hidden="true" tabindex="-1"></a>althurayyaFile <span class="op">=</span> <span class="st">&quot;settlements.csv&quot;</span></span>
+<span id="cb50-5"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-6"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-6" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(althurayyaFile, sep<span class="op">=</span><span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>, header<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb50-7"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df)</span>
+<span id="cb50-8"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-9"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-9" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.scatter_geo(df, lon<span class="op">=</span><span class="st">&#39;lon&#39;</span>, lat<span class="op">=</span><span class="st">&#39;lat&#39;</span>, color<span class="op">=</span><span class="st">&quot;region_URI&quot;</span>,</span>
+<span id="cb50-10"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-10" aria-hidden="true" tabindex="-1"></a>                     hover_name<span class="op">=</span><span class="st">&quot;names_eng_translit&quot;</span>, size<span class="op">=</span>df[<span class="st">&quot;top_size&quot;</span>]<span class="op">*</span>df[<span class="st">&quot;top_size&quot;</span>],</span>
+<span id="cb50-11"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-11" aria-hidden="true" tabindex="-1"></a>                     projection<span class="op">=</span><span class="st">&quot;natural earth&quot;</span>, fitbounds<span class="op">=</span><span class="st">&#39;locations&#39;</span>)</span>
+<span id="cb50-12"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-13"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-13" aria-hidden="true" tabindex="-1"></a>fig.update_layout(</span>
+<span id="cb50-14"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-14" aria-hidden="true" tabindex="-1"></a>    title_text<span class="op">=</span><span class="st">&#39;Provinces of the classical Islamic World (IX-Xthe centuries CE)&lt;br&gt;(Click legend to toggle provinces)&#39;</span>,</span>
+<span id="cb50-15"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-15" aria-hidden="true" tabindex="-1"></a>    showlegend<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb50-16"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-16" aria-hidden="true" tabindex="-1"></a>    geo<span class="op">=</span><span class="bu">dict</span>(</span>
+<span id="cb50-17"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-17" aria-hidden="true" tabindex="-1"></a>        scope<span class="op">=</span><span class="st">&#39;world&#39;</span>,</span>
+<span id="cb50-18"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-18" aria-hidden="true" tabindex="-1"></a>        landcolor<span class="op">=</span><span class="st">&#39;rgb(250, 250, 250)&#39;</span>,</span>
+<span id="cb50-19"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-19" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb50-20"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-20" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb50-21"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-22"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-22" aria-hidden="true" tabindex="-1"></a>fig.show()</span>
+<span id="cb50-23"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-24"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-24" aria-hidden="true" tabindex="-1"></a><span class="co"># the following line will save the graph into an html file</span></span>
+<span id="cb50-25"><a href="lesson-11-mapping-data-using-tagged-data.html#cb50-25" aria-hidden="true" tabindex="-1"></a>fig.write_html(<span class="st">&quot;althurayya.html&quot;</span>)</span></code></pre></div>
 <p>We can get the following map (for an intereactive map, try <a href="./files/althurayya.html">this link</a>):</p>
 <p><img src="files/althurayya.png" /></p>
 <p>Now, let’s get back to our Dispatch data. We have placenames tagged — and we already have the data ready for processing. We can focus on a specific period of time (by filtering our data, including only dates that we are interested in). Then we need to calculate frequencies of mentions of placenames — we can use these values to size dots on the final map. Unfortunately, a very important element is missing — as you recall, our data does not have any coordinates. Luckily, we have unique identifiers from the Getty Thesaurus of Geographical Names. What we can do is to extract coordinates from the Thesaurus and connect them to corresponding placenames in our data.</p>
