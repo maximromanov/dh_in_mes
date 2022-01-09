@@ -112,6 +112,7 @@ lesson-10-graphing-chronological-distribution-of-tagged-entities
 abstractions-of-newspaper-articles
 code-line-graph
 missing-zeros-problem
+code-lollipop-graph
 jupyter-notebook
 HWL10
 SolutionL10

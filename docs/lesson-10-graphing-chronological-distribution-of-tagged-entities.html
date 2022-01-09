@@ -312,9 +312,10 @@ div.csl-indent {
 <li class="chapter" data-level="10.1" data-path="lesson-10-graphing-chronological-distribution-of-tagged-entities.html"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#abstractions-of-newspaper-articles"><i class="fa fa-check"></i><b>10.1</b> Abstractions of Newspaper Articles</a></li>
 <li class="chapter" data-level="10.2" data-path="lesson-10-graphing-chronological-distribution-of-tagged-entities.html"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#code-line-graph"><i class="fa fa-check"></i><b>10.2</b> Code: Line Graph</a></li>
 <li class="chapter" data-level="10.3" data-path="lesson-10-graphing-chronological-distribution-of-tagged-entities.html"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#missing-zeros-problem"><i class="fa fa-check"></i><b>10.3</b> Missing Zeros Problem</a></li>
-<li class="chapter" data-level="10.4" data-path="lesson-10-graphing-chronological-distribution-of-tagged-entities.html"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#jupyter-notebook"><i class="fa fa-check"></i><b>10.4</b> Jupyter Notebook</a></li>
-<li class="chapter" data-level="10.5" data-path="lesson-10-graphing-chronological-distribution-of-tagged-entities.html"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#HWL10"><i class="fa fa-check"></i><b>10.5</b> Homework</a></li>
-<li class="chapter" data-level="10.6" data-path="lesson-10-graphing-chronological-distribution-of-tagged-entities.html"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#SolutionL10"><i class="fa fa-check"></i><b>10.6</b> Solution</a></li>
+<li class="chapter" data-level="10.4" data-path="lesson-10-graphing-chronological-distribution-of-tagged-entities.html"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#code-lollipop-graph"><i class="fa fa-check"></i><b>10.4</b> Code: Lollipop Graph</a></li>
+<li class="chapter" data-level="10.5" data-path="lesson-10-graphing-chronological-distribution-of-tagged-entities.html"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#jupyter-notebook"><i class="fa fa-check"></i><b>10.5</b> Jupyter Notebook</a></li>
+<li class="chapter" data-level="10.6" data-path="lesson-10-graphing-chronological-distribution-of-tagged-entities.html"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#HWL10"><i class="fa fa-check"></i><b>10.6</b> Homework</a></li>
+<li class="chapter" data-level="10.7" data-path="lesson-10-graphing-chronological-distribution-of-tagged-entities.html"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#SolutionL10"><i class="fa fa-check"></i><b>10.7</b> Solution</a></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path="lesson-11-mapping-data-using-tagged-data.html"><a href="lesson-11-mapping-data-using-tagged-data.html"><i class="fa fa-check"></i><b>11</b> Lesson 11: Mapping Data (using tagged data)</a>
 <ul>
@@ -574,7 +575,7 @@ div.csl-indent {
 <img src="files/graphs/plot1_shiloh_wallace.png" />
 <img src="files/graphs/plot1_data_grant.png" /></p>
 <p>The battle of Shiloh is considered one of the bloodiest engagements of the Civil War. If we look at the mentions of <em>deserter(s)</em>, <em>killed</em>, and <em>wounded</em>, we discover the most significant spike of all these terms soon after the battle.</p>
-<p><img src="./files/plot_losses_at_war.png" /></p>
+<p><img src="files/graphs/plot_losses_at_war.png" /></p>
 <!--
 Such graphs can be used to monitor discussions of different topic in chronological perspective.
 # interesting examples:
@@ -651,8 +652,10 @@ Such graphs can be used to monitor discussions of different topic in chronologic
 <img src="files/graphs/plot1_shiloh_shiloh_zeroErrorExample.png" />
 In the second graph we simply “collected” all mentions of Shiloh and plotted them with a line graph. The problem is that we have no explicit data on dates when Shiloh is not mentioned and, as a result, the graph suggests that Shiloh is mentioned quite a lot in the course of the year 1861. If we look at the first graph—where we have data for all the dates and each date when Shiloh is not mentioned has a value 0—we can see that Shiloh is mentioned only a couple of times in 1861 and then there is a huge spike of mentions in 1862, when the Battle of Shiloh took place.</p>
 <p>The main takeaway from this is that you should always be mindful of how you are filtering your data and what strategies you use for plotting it. Line graph can make a false suggestion, when some x-values are missing. A more reliable graph in such cases would be a “lollipop” graph that is shown below — lollipop graphs do not connect observations, and due to that they clearly show gaps in data.</p>
-<p><img src="files/graphs/plot1_lollipop_shiloh_shiloh.png" />
-## Code: Lollipop Graph</p>
+<p><img src="files/graphs/plot1_lollipop_shiloh_shiloh.png" /></p>
+</div>
+<div id="code-lollipop-graph" class="section level2" number="10.4">
+<h2><span class="header-section-number">10.4</span> Code: Lollipop Graph</h2>
 <div class="sourceCode" id="cb48"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb48-1"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
 <span id="cb48-2"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas</span>
 <span id="cb48-3"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb48-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -694,8 +697,8 @@ In the second graph we simply “collected” all mentions of Shiloh and plotted
 <span id="cb48-39"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb48-39" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb48-40"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb48-40" aria-hidden="true" tabindex="-1"></a>searchDispatchData(<span class="st">&quot;shiloh&quot;</span>, <span class="st">&quot;shiloh&quot;</span>)</span></code></pre></div>
 </div>
-<div id="jupyter-notebook" class="section level2" number="10.4">
-<h2><span class="header-section-number">10.4</span> Jupyter Notebook</h2>
+<div id="jupyter-notebook" class="section level2" number="10.5">
+<h2><span class="header-section-number">10.5</span> Jupyter Notebook</h2>
 <p>Jupyter Notebook (<a href="https://jupyter.org/" class="uri">https://jupyter.org/</a>) is a web application for creating and sharing computational documents. It is a very popular way of writing analytical code in Python. It allows one to write and execute code right in your browser, to combine code with regular prose, ans, also, execute written code section by section (or, more correctly, cell by cell — using the Jupyter lingo) — which in some cases has a lot of advantages.</p>
 <p>Jupyter Notebook can be installed in the manner that you are already familiar with:</p>
 <p><code>python -m pip install notebook</code> (or: <code>python3 -m pip install notebook</code>)</p>
@@ -706,8 +709,8 @@ In the second graph we simply “collected” all mentions of Shiloh and plotted
 <p>You can download <a href="./files/simple_analysis_with_pandas.ipynb">this already prepared notebook</a>, which should look like this when you open it:</p>
 <p><img src="files/jupyter02.png" /></p>
 </div>
-<div id="HWL10" class="section level2" number="10.5">
-<h2><span class="header-section-number">10.5</span> Homework</h2>
+<div id="HWL10" class="section level2" number="10.6">
+<h2><span class="header-section-number">10.6</span> Homework</h2>
 <ul>
 <li>Rewrite the code in such a way that would allow you to graph <em>any kind of words or phrases</em> in a similar manner (“The Losses at War” graph is generated in this manner).;</li>
 <li>Annotate your script (i.e., add comment to every line of code describing what is happening there);</li>
@@ -724,131 +727,126 @@ In the second graph we simply “collected” all mentions of Shiloh and plotted
 </ul></li>
 </ul>
 </div>
-<div id="SolutionL10" class="section level2" number="10.6">
-<h2><span class="header-section-number">10.6</span> Solution</h2>
-<p>The solution will be posted here later…</p>
-<!-- Below is the solution to the homework.
-
-
-```python
-import re
-import os
-import io
-import pandas
-import matplotlib.pyplot as plt
-
-source = "./Dispatch/"
-lof = os.listdir(source)
-
-template = """
-=================================================================================
-= Plotting: %s (searching for: `\\b(%s)\\b`)
-=================================================================================
-"""
-
-
-def searchDispatch(searchTermREGEX, searchTermPretty):
-    print(template % (searchTermREGEX, searchTermPretty))
-
-    counter = 0
-    entities = []  # we will collect all extracted data here
-    for f in lof:
-        counter += 1
-        if counter % 100 == 0:
-            print(counter)
-
-        if f.startswith("dltext"):  # fileName test
-            newF = f.split(":")[-1] + ".yml"  # in fact, yml-like
-
-            issueVar = []
-            c = 0  # technical counter
-            with open(source + f, "r", encoding="utf8") as f1:
-                text = f1.read()
-                date = re.search(r'<date value="([\d-]+)"', text).group(1)
-                split = re.split("<div3 ", text)
-
-                for s in split[1:]:
-                    c += 1
-                    s = "<div3 " + s  # a step to restore the integrity of items
-
-                    try:
-                        unitType = re.search(r'type="([^\"]+)"', s).group(1)
-                    except:
-                        unitType = "noType"
-
-                    try:
-                        header = re.search(r'<head.*</head>', s).group(0)
-                        header = re.sub("<[^<]+>", "", header)
-
-                    except:
-                        header = "NO HEADER"
-
-                    text = s
-                    text = re.sub("<[^<]+>", " ", text)
-                    text = re.sub(" +\n|\n +", "\n", text)
-                    text = text.strip()
-                    text = re.sub("\n+", ";;; ", text)
-                    text = re.sub(" +", " ", text)
-                    text = re.sub(r" ([\.,:;!])", r"\1", text)
-
-                    itemID = date + "_" + unitType + "_%03d" % c
-
-                    if len(re.sub("\W+", "", text)) != 0:
-                        itemIdvar = "ID: " + itemID
-                        dateVar = "DATE: " + date
-                        unitType = "TYPE: " + unitType
-                        header = "HEADER: " + header
-                        # @§@ is used to replace ":", because in YML : is used as a divider between the key and value
-                        text = "TEXT: " + text.replace(":", "@§@") + "\n\n"
-                        var = "\n".join(
-                            [itemIdvar, dateVar, unitType, header, text])
-
-                        issueVar.append(var)
-
-                        # NOW, WE CAN ADD SOME CODE TO PROCESS EACH ITEM AND COLLECT ALL INTO OUR TIDY DATA FORMAT
-                        # STRUCTURE: itemID, dateVar, EXTRACTED_ITEM (type, unified_form, id)
-                        # ADDING TO: entities (list)
-
-                        results = re.findall(r"\b(%s)\b" %
-                                             searchTermREGEX, text.lower())
-                        matches = str(len(results))
-                        tempVar = "\t".join([itemID, date, matches])
-                        entities.append(tempVar)
-
-    header = "\t".join(["itemID", "date", searchTermPretty])
-    entitiesFinal = header + "\n" + "\n".join(entities)
-    with open("search_results_%s.csv" % searchTermPretty, "w", encoding="utf8") as f9:
-        f9.write(entitiesFinal)
-
-    # reading our string of data into a pandas dataframe
-    entitiesFinalStringIO = io.StringIO(entitiesFinal)
-    df = pandas.read_csv(entitiesFinalStringIO, sep="\t", header=0)
-
-    df["month"] = [re.sub("-\d\d$", "-01", str(i)) for i in df["date"]]
-    df["month"] = pandas.to_datetime(df["month"], format="%Y-%m-%d")
-
-    df = df[["month", searchTermPretty]]
-    df = df.groupby(["month"]).sum()
-    df = df.reset_index()
-
-    # plot itself
-    plt.rcParams["figure.figsize"] = (20, 9)
-    df.plot(x='month', y=searchTermPretty, legend=True, color='red')
-
-    plt.ylabel("absolute frequencies")
-    plt.xlabel("dates (issues aggregated into months)")
-    plt.title("References to \"%s\" (regex: `\\b(%s)\\b`)" %
-              (searchTermPretty, searchTermREGEX))
-    plt.gca().yaxis.grid(linestyle=':')
-
-    # the following line will save the graph into a file
-    plt.savefig("plot_%s.png" % searchTermPretty, dpi=300, bbox_inches="tight")
-    plt.close("all")
-    print("Done!")
-
-searchDispatch("deserters?|killed|wounded", "losses_at_war")
-```
--->
+<div id="SolutionL10" class="section level2" number="10.7">
+<h2><span class="header-section-number">10.7</span> Solution</h2>
+<!-- The solution will be posted here later... -->
+<p>Below is the solution to the homework.</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb49-1"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
+<span id="cb49-2"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb49-3"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> io</span>
+<span id="cb49-4"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas</span>
+<span id="cb49-5"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb49-6"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-7"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-7" aria-hidden="true" tabindex="-1"></a>source <span class="op">=</span> <span class="st">&quot;./Dispatch/&quot;</span></span>
+<span id="cb49-8"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-8" aria-hidden="true" tabindex="-1"></a>lof <span class="op">=</span> os.listdir(source)</span>
+<span id="cb49-9"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-10"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-10" aria-hidden="true" tabindex="-1"></a>template <span class="op">=</span> <span class="st">&quot;&quot;&quot;</span></span>
+<span id="cb49-11"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-11" aria-hidden="true" tabindex="-1"></a><span class="st">=================================================================================</span></span>
+<span id="cb49-12"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-12" aria-hidden="true" tabindex="-1"></a><span class="st">= Plotting: </span><span class="sc">%s</span><span class="st"> (searching for: `</span><span class="ch">\\</span><span class="st">b(</span><span class="sc">%s</span><span class="st">)</span><span class="ch">\\</span><span class="st">b`)</span></span>
+<span id="cb49-13"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-13" aria-hidden="true" tabindex="-1"></a><span class="st">=================================================================================</span></span>
+<span id="cb49-14"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-14" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span></span>
+<span id="cb49-15"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-16"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-17"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-17" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> searchDispatch(searchTermREGEX, searchTermPretty):</span>
+<span id="cb49-18"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-18" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(template <span class="op">%</span> (searchTermREGEX, searchTermPretty))</span>
+<span id="cb49-19"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-20"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-20" aria-hidden="true" tabindex="-1"></a>    counter <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb49-21"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-21" aria-hidden="true" tabindex="-1"></a>    entities <span class="op">=</span> []  <span class="co"># we will collect all extracted data here</span></span>
+<span id="cb49-22"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> f <span class="kw">in</span> lof:</span>
+<span id="cb49-23"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-23" aria-hidden="true" tabindex="-1"></a>        counter <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb49-24"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-24" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> counter <span class="op">%</span> <span class="dv">100</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb49-25"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-25" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(counter)</span>
+<span id="cb49-26"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-27"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-27" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> f.startswith(<span class="st">&quot;dltext&quot;</span>):  <span class="co"># fileName test</span></span>
+<span id="cb49-28"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-28" aria-hidden="true" tabindex="-1"></a>            newF <span class="op">=</span> f.split(<span class="st">&quot;:&quot;</span>)[<span class="op">-</span><span class="dv">1</span>] <span class="op">+</span> <span class="st">&quot;.yml&quot;</span>  <span class="co"># in fact, yml-like</span></span>
+<span id="cb49-29"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-30"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-30" aria-hidden="true" tabindex="-1"></a>            issueVar <span class="op">=</span> []</span>
+<span id="cb49-31"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-31" aria-hidden="true" tabindex="-1"></a>            c <span class="op">=</span> <span class="dv">0</span>  <span class="co"># technical counter</span></span>
+<span id="cb49-32"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-32" aria-hidden="true" tabindex="-1"></a>            <span class="cf">with</span> <span class="bu">open</span>(source <span class="op">+</span> f, <span class="st">&quot;r&quot;</span>, encoding<span class="op">=</span><span class="st">&quot;utf8&quot;</span>) <span class="im">as</span> f1:</span>
+<span id="cb49-33"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-33" aria-hidden="true" tabindex="-1"></a>                text <span class="op">=</span> f1.read()</span>
+<span id="cb49-34"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-34" aria-hidden="true" tabindex="-1"></a>                date <span class="op">=</span> re.search(<span class="vs">r&#39;&lt;date value=&quot;([\d-]+)&quot;&#39;</span>, text).group(<span class="dv">1</span>)</span>
+<span id="cb49-35"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-35" aria-hidden="true" tabindex="-1"></a>                split <span class="op">=</span> re.split(<span class="st">&quot;&lt;div3 &quot;</span>, text)</span>
+<span id="cb49-36"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-37"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-37" aria-hidden="true" tabindex="-1"></a>                <span class="cf">for</span> s <span class="kw">in</span> split[<span class="dv">1</span>:]:</span>
+<span id="cb49-38"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-38" aria-hidden="true" tabindex="-1"></a>                    c <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb49-39"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-39" aria-hidden="true" tabindex="-1"></a>                    s <span class="op">=</span> <span class="st">&quot;&lt;div3 &quot;</span> <span class="op">+</span> s  <span class="co"># a step to restore the integrity of items</span></span>
+<span id="cb49-40"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-41"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-41" aria-hidden="true" tabindex="-1"></a>                    <span class="cf">try</span>:</span>
+<span id="cb49-42"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-42" aria-hidden="true" tabindex="-1"></a>                        unitType <span class="op">=</span> re.search(<span class="vs">r&#39;type=&quot;([^\&quot;]+)&quot;&#39;</span>, s).group(<span class="dv">1</span>)</span>
+<span id="cb49-43"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-43" aria-hidden="true" tabindex="-1"></a>                    <span class="cf">except</span>:</span>
+<span id="cb49-44"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-44" aria-hidden="true" tabindex="-1"></a>                        unitType <span class="op">=</span> <span class="st">&quot;noType&quot;</span></span>
+<span id="cb49-45"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-46"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-46" aria-hidden="true" tabindex="-1"></a>                    <span class="cf">try</span>:</span>
+<span id="cb49-47"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-47" aria-hidden="true" tabindex="-1"></a>                        header <span class="op">=</span> re.search(<span class="vs">r&#39;&lt;head.*&lt;/head&gt;&#39;</span>, s).group(<span class="dv">0</span>)</span>
+<span id="cb49-48"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-48" aria-hidden="true" tabindex="-1"></a>                        header <span class="op">=</span> re.sub(<span class="st">&quot;&lt;[^&lt;]+&gt;&quot;</span>, <span class="st">&quot;&quot;</span>, header)</span>
+<span id="cb49-49"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-50"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-50" aria-hidden="true" tabindex="-1"></a>                    <span class="cf">except</span>:</span>
+<span id="cb49-51"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-51" aria-hidden="true" tabindex="-1"></a>                        header <span class="op">=</span> <span class="st">&quot;NO HEADER&quot;</span></span>
+<span id="cb49-52"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-53"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-53" aria-hidden="true" tabindex="-1"></a>                    text <span class="op">=</span> s</span>
+<span id="cb49-54"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-54" aria-hidden="true" tabindex="-1"></a>                    text <span class="op">=</span> re.sub(<span class="st">&quot;&lt;[^&lt;]+&gt;&quot;</span>, <span class="st">&quot; &quot;</span>, text)</span>
+<span id="cb49-55"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-55" aria-hidden="true" tabindex="-1"></a>                    text <span class="op">=</span> re.sub(<span class="st">&quot; +</span><span class="ch">\n</span><span class="st">|</span><span class="ch">\n</span><span class="st"> +&quot;</span>, <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>, text)</span>
+<span id="cb49-56"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-56" aria-hidden="true" tabindex="-1"></a>                    text <span class="op">=</span> text.strip()</span>
+<span id="cb49-57"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-57" aria-hidden="true" tabindex="-1"></a>                    text <span class="op">=</span> re.sub(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">+&quot;</span>, <span class="st">&quot;;;; &quot;</span>, text)</span>
+<span id="cb49-58"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-58" aria-hidden="true" tabindex="-1"></a>                    text <span class="op">=</span> re.sub(<span class="st">&quot; +&quot;</span>, <span class="st">&quot; &quot;</span>, text)</span>
+<span id="cb49-59"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-59" aria-hidden="true" tabindex="-1"></a>                    text <span class="op">=</span> re.sub(<span class="vs">r&quot; ([\.,:;!])&quot;</span>, <span class="vs">r&quot;\1&quot;</span>, text)</span>
+<span id="cb49-60"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-61"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-61" aria-hidden="true" tabindex="-1"></a>                    itemID <span class="op">=</span> date <span class="op">+</span> <span class="st">&quot;_&quot;</span> <span class="op">+</span> unitType <span class="op">+</span> <span class="st">&quot;_</span><span class="sc">%03d</span><span class="st">&quot;</span> <span class="op">%</span> c</span>
+<span id="cb49-62"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-63"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-63" aria-hidden="true" tabindex="-1"></a>                    <span class="cf">if</span> <span class="bu">len</span>(re.sub(<span class="st">&quot;\W+&quot;</span>, <span class="st">&quot;&quot;</span>, text)) <span class="op">!=</span> <span class="dv">0</span>:</span>
+<span id="cb49-64"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-64" aria-hidden="true" tabindex="-1"></a>                        itemIdvar <span class="op">=</span> <span class="st">&quot;ID: &quot;</span> <span class="op">+</span> itemID</span>
+<span id="cb49-65"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-65" aria-hidden="true" tabindex="-1"></a>                        dateVar <span class="op">=</span> <span class="st">&quot;DATE: &quot;</span> <span class="op">+</span> date</span>
+<span id="cb49-66"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-66" aria-hidden="true" tabindex="-1"></a>                        unitType <span class="op">=</span> <span class="st">&quot;TYPE: &quot;</span> <span class="op">+</span> unitType</span>
+<span id="cb49-67"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-67" aria-hidden="true" tabindex="-1"></a>                        header <span class="op">=</span> <span class="st">&quot;HEADER: &quot;</span> <span class="op">+</span> header</span>
+<span id="cb49-68"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-68" aria-hidden="true" tabindex="-1"></a>                        <span class="co"># @§@ is used to replace &quot;:&quot;, because in YML : is used as a divider between the key and value</span></span>
+<span id="cb49-69"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-69" aria-hidden="true" tabindex="-1"></a>                        text <span class="op">=</span> <span class="st">&quot;TEXT: &quot;</span> <span class="op">+</span> text.replace(<span class="st">&quot;:&quot;</span>, <span class="st">&quot;@§@&quot;</span>) <span class="op">+</span> <span class="st">&quot;</span><span class="ch">\n\n</span><span class="st">&quot;</span></span>
+<span id="cb49-70"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-70" aria-hidden="true" tabindex="-1"></a>                        var <span class="op">=</span> <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>.join(</span>
+<span id="cb49-71"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-71" aria-hidden="true" tabindex="-1"></a>                            [itemIdvar, dateVar, unitType, header, text])</span>
+<span id="cb49-72"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-73"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-73" aria-hidden="true" tabindex="-1"></a>                        issueVar.append(var)</span>
+<span id="cb49-74"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-75"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-75" aria-hidden="true" tabindex="-1"></a>                        <span class="co"># NOW, WE CAN ADD SOME CODE TO PROCESS EACH ITEM AND COLLECT ALL INTO OUR TIDY DATA FORMAT</span></span>
+<span id="cb49-76"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-76" aria-hidden="true" tabindex="-1"></a>                        <span class="co"># STRUCTURE: itemID, dateVar, EXTRACTED_ITEM (type, unified_form, id)</span></span>
+<span id="cb49-77"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-77" aria-hidden="true" tabindex="-1"></a>                        <span class="co"># ADDING TO: entities (list)</span></span>
+<span id="cb49-78"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-79"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-79" aria-hidden="true" tabindex="-1"></a>                        results <span class="op">=</span> re.findall(<span class="vs">r&quot;\b(</span><span class="sc">%s</span><span class="vs">)\b&quot;</span> <span class="op">%</span></span>
+<span id="cb49-80"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-80" aria-hidden="true" tabindex="-1"></a>                                             searchTermREGEX, text.lower())</span>
+<span id="cb49-81"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-81" aria-hidden="true" tabindex="-1"></a>                        matches <span class="op">=</span> <span class="bu">str</span>(<span class="bu">len</span>(results))</span>
+<span id="cb49-82"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-82" aria-hidden="true" tabindex="-1"></a>                        tempVar <span class="op">=</span> <span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>.join([itemID, date, matches])</span>
+<span id="cb49-83"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-83" aria-hidden="true" tabindex="-1"></a>                        entities.append(tempVar)</span>
+<span id="cb49-84"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-85"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-85" aria-hidden="true" tabindex="-1"></a>    header <span class="op">=</span> <span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>.join([<span class="st">&quot;itemID&quot;</span>, <span class="st">&quot;date&quot;</span>, searchTermPretty])</span>
+<span id="cb49-86"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-86" aria-hidden="true" tabindex="-1"></a>    entitiesFinal <span class="op">=</span> header <span class="op">+</span> <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span> <span class="op">+</span> <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>.join(entities)</span>
+<span id="cb49-87"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-87" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> <span class="bu">open</span>(<span class="st">&quot;search_results_</span><span class="sc">%s</span><span class="st">.csv&quot;</span> <span class="op">%</span> searchTermPretty, <span class="st">&quot;w&quot;</span>, encoding<span class="op">=</span><span class="st">&quot;utf8&quot;</span>) <span class="im">as</span> f9:</span>
+<span id="cb49-88"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-88" aria-hidden="true" tabindex="-1"></a>        f9.write(entitiesFinal)</span>
+<span id="cb49-89"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-90"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-90" aria-hidden="true" tabindex="-1"></a>    <span class="co"># reading our string of data into a pandas dataframe</span></span>
+<span id="cb49-91"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-91" aria-hidden="true" tabindex="-1"></a>    entitiesFinalStringIO <span class="op">=</span> io.StringIO(entitiesFinal)</span>
+<span id="cb49-92"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-92" aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> pandas.read_csv(entitiesFinalStringIO, sep<span class="op">=</span><span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>, header<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb49-93"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-94"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-94" aria-hidden="true" tabindex="-1"></a>    df[<span class="st">&quot;month&quot;</span>] <span class="op">=</span> [re.sub(<span class="st">&quot;-\d\d$&quot;</span>, <span class="st">&quot;-01&quot;</span>, <span class="bu">str</span>(i)) <span class="cf">for</span> i <span class="kw">in</span> df[<span class="st">&quot;date&quot;</span>]]</span>
+<span id="cb49-95"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-95" aria-hidden="true" tabindex="-1"></a>    df[<span class="st">&quot;month&quot;</span>] <span class="op">=</span> pandas.to_datetime(df[<span class="st">&quot;month&quot;</span>], <span class="bu">format</span><span class="op">=</span><span class="st">&quot;%Y-%m-</span><span class="sc">%d</span><span class="st">&quot;</span>)</span>
+<span id="cb49-96"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-97"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-97" aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> df[[<span class="st">&quot;month&quot;</span>, searchTermPretty]]</span>
+<span id="cb49-98"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-98" aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> df.groupby([<span class="st">&quot;month&quot;</span>]).<span class="bu">sum</span>()</span>
+<span id="cb49-99"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-99" aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> df.reset_index()</span>
+<span id="cb49-100"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-101"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-101" aria-hidden="true" tabindex="-1"></a>    <span class="co"># plot itself</span></span>
+<span id="cb49-102"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-102" aria-hidden="true" tabindex="-1"></a>    plt.rcParams[<span class="st">&quot;figure.figsize&quot;</span>] <span class="op">=</span> (<span class="dv">20</span>, <span class="dv">9</span>)</span>
+<span id="cb49-103"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-103" aria-hidden="true" tabindex="-1"></a>    df.plot(x<span class="op">=</span><span class="st">&#39;month&#39;</span>, y<span class="op">=</span>searchTermPretty, legend<span class="op">=</span><span class="va">True</span>, color<span class="op">=</span><span class="st">&#39;red&#39;</span>)</span>
+<span id="cb49-104"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-105"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-105" aria-hidden="true" tabindex="-1"></a>    plt.ylabel(<span class="st">&quot;absolute frequencies&quot;</span>)</span>
+<span id="cb49-106"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-106" aria-hidden="true" tabindex="-1"></a>    plt.xlabel(<span class="st">&quot;dates (issues aggregated into months)&quot;</span>)</span>
+<span id="cb49-107"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-107" aria-hidden="true" tabindex="-1"></a>    plt.title(<span class="st">&quot;References to </span><span class="ch">\&quot;</span><span class="sc">%s</span><span class="ch">\&quot;</span><span class="st"> (regex: `</span><span class="ch">\\</span><span class="st">b(</span><span class="sc">%s</span><span class="st">)</span><span class="ch">\\</span><span class="st">b`)&quot;</span> <span class="op">%</span></span>
+<span id="cb49-108"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-108" aria-hidden="true" tabindex="-1"></a>              (searchTermPretty, searchTermREGEX))</span>
+<span id="cb49-109"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-109" aria-hidden="true" tabindex="-1"></a>    plt.gca().yaxis.grid(linestyle<span class="op">=</span><span class="st">&#39;:&#39;</span>)</span>
+<span id="cb49-110"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-111"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-111" aria-hidden="true" tabindex="-1"></a>    <span class="co"># the following line will save the graph into a file</span></span>
+<span id="cb49-112"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-112" aria-hidden="true" tabindex="-1"></a>    plt.savefig(<span class="st">&quot;plot_</span><span class="sc">%s</span><span class="st">.png&quot;</span> <span class="op">%</span> searchTermPretty, dpi<span class="op">=</span><span class="dv">300</span>, bbox_inches<span class="op">=</span><span class="st">&quot;tight&quot;</span>)</span>
+<span id="cb49-113"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-113" aria-hidden="true" tabindex="-1"></a>    plt.close(<span class="st">&quot;all&quot;</span>)</span>
+<span id="cb49-114"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-114" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Done!&quot;</span>)</span>
+<span id="cb49-115"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-116"><a href="lesson-10-graphing-chronological-distribution-of-tagged-entities.html#cb49-116" aria-hidden="true" tabindex="-1"></a>searchDispatch(<span class="st">&quot;deserters?|killed|wounded&quot;</span>, <span class="st">&quot;losses_at_war&quot;</span>)</span></code></pre></div>
 
 </div>
 </div>

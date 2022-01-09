@@ -78,7 +78,7 @@ Now, let's take a look at the graphs for the names highlighted in bold above:
 
 The battle of Shiloh is considered one of the bloodiest engagements of the Civil War. If we look at the mentions of *deserter(s)*, *killed*, and *wounded*, we discover the most significant spike of all these terms soon after the battle.
 
-![](./files/plot_losses_at_war.png)
+![](./files/graphs/plot_losses_at_war.png)
 
 <!--
 Such graphs can be used to monitor discussions of different topic in chronological perspective.
@@ -88,6 +88,7 @@ Such graphs can be used to monitor discussions of different topic in chronologic
 # manassas (place of the Second Bull Run, fought in August 28–30, 1862),
 # shiloh (Battle of Shiloh took place in April of 1862) <https://en.wikipedia.org/wiki/Battle_of_Shiloh>
 -->
+
 
 ## Code: Line Graph
 
@@ -164,6 +165,7 @@ In the second graph we simply "collected" all mentions of Shiloh and plotted the
 The main takeaway from this is that you should always be mindful of how you are filtering your data and what strategies you use for plotting it. Line graph can make a false suggestion, when some x-values are missing. A more reliable graph in such cases would be a "lollipop" graph that is shown below --- lollipop graphs do not connect observations, and due to that they clearly show gaps in data.
 
 ![](./files/graphs/plot1_lollipop_shiloh_shiloh.png)
+
 ## Code: Lollipop Graph
 
 ```{r engine='python', highlight=TRUE, eval=FALSE}
@@ -243,9 +245,9 @@ You can download [this already prepared notebook](./files/simple_analysis_with_p
 
 ## Solution{#SolutionL10}
 
-The solution will be posted here later...
+<!-- The solution will be posted here later... -->
 
-<!-- Below is the solution to the homework.
+Below is the solution to the homework.
 
 ```{r engine='python', highlight=TRUE, eval=FALSE}
 
@@ -367,4 +369,3 @@ def searchDispatch(searchTermREGEX, searchTermPretty):
 searchDispatch("deserters?|killed|wounded", "losses_at_war")
 
 ```
--->
