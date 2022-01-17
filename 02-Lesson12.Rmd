@@ -45,6 +45,12 @@ More details: <https://radimrehurek.com/gensim/install.html>
 pip install nameOfLibrary
 ```
 
+Although a better way would be (where `python3` is the exact version of `python` that you are using):
+
+```bash
+python3 -m pip install nameOfLibrary
+```
+
 Lemmatization library (although we are not going to be using it in the tutorial)
 
 ``` bash
@@ -86,6 +92,7 @@ Click on an `*.ipynb` file to open a notebook.
 * Dispatch CSV files (you should be able to generate them on your own)
 * [Jupyter notebook 01](./files/tm/__tm_dispatch_part01.ipynb)
 * [Jupyter notebook 02](./files/tm/__tm_dispatch_part02.ipynb)
+  * For Windows: you will need to deactivate `%time` in those blocks of code that have it (either delete it, or comment it out with `#`).
 
 ## Thinking about themes and topics
 
@@ -107,9 +114,11 @@ There is a story circulated in Germany, and some in Paris, that the match betwee
 
 The steamship Scotia arrived at New York on Thursday from Europe, with foreign news to the 7th inst. The news is not important. The Confederate steamer Lord Clyde was searched by order of the British Government, but nothing contraband being found on board her she was permitted to sail. The Russians have been defeated near Grochoury by the Polish insurgents. The three Powers have sent an earnest note to Russia, asking for a representative Government, a general amnesty, and an immediate cessation of hostilities in Poland.
 
+<!--
 ## Topic Modeling
 
 The formal definition of *topic modeling* is "..." (Source: ...)
+-->
 
 ## Implementation
 
