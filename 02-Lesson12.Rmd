@@ -22,8 +22,10 @@
 
 ## Workbooks (jupyter notebooks)
 
+<!--
 - [for Windows](https://www.dropbox.com/s/b1jg5r3bmgforu5/TnT_L12_materials_final_Win.zip?dl=0)
 - [for Mac and Linux](https://www.dropbox.com/s/zey9qtuht1tnsku/TnT_L12_materials_final.zip?dl=0)
+-->
 
 ## Installing: on Windows
 
@@ -40,9 +42,7 @@ More details: <https://radimrehurek.com/gensim/install.html>
 ## python libraries and additional data
 
 ``` bash
-
 pip install nameOfLibrary
-
 ```
 
 Lemmatization library (although we are not going to be using it in the tutorial)
@@ -56,13 +56,11 @@ python -m spacy download en
 From command line (in your working folder)
 
 ``` bash
-
 # installing
 pip install jupyter
 
 # starting
 jupyter notebook
-
 ```
 
 ## installing from a jupyter notebook

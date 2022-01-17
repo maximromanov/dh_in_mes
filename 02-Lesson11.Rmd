@@ -138,9 +138,10 @@ Last but not least, we may get interesting maps if we map places that co-occur w
 
 ## Solution{#SolutionL11}
 
-The solution for the homework will be added soon...
+<!--The solution for the homework will be added soon...-->
 
-<!--
+These are model solutions to the assignments to this lesson: 
+
 
 ```{r engine='python', highlight=TRUE, eval=FALSE}
 # EXTRACT TGN DATA
@@ -223,6 +224,8 @@ The final dataframe looks like what you see below. You can see that some rows ha
 989396  1864-03-31_article_170  1864-03-31   persname                        turner,,geo,,,         turner      NaN      NaN
 ```
 
+The following will generate "dynamic" maps:
+
 ```{r engine='python', highlight=TRUE, eval=FALSE}
 # DYNAMIC MAPS
 
@@ -269,5 +272,3 @@ fig.update_layout(
 #fig.show()
 fig.write_html("dispatch_1860_to_65.html")
 ```
-
--->
