@@ -89,7 +89,7 @@ Click on an `*.ipynb` file to open a notebook.
 
 ## Files & Scripts
 
-* Dispatch CSV files (you should be able to generate them on your own)
+* [Dispatch CSV](./files/tm/0_processing_dispatch_data_to_TSV.py) files (you should be able to generate them on your own)
 * [TM - Jupyter Notebook](./files/tm/0_tModeling_Dispatch_clean.ipynb)
   * For Windows: you will need to deactivate `%time` in those blocks of code that have it (either delete it, or comment it out with `#`).
 
