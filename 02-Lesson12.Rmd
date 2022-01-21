@@ -120,7 +120,7 @@ The formal definition of *topic modeling* is "..." (Source: ...)
 
 This script will allow us to aggregate quite a significant amount if text into more manageable chunks (it will give us 5 files instead of 1300+). The solution script will be added to the end of this lesson later.
 
-```{r, code = readLines("./files/tm/tm_1_processing_dispatch_data_to_TSV.py")}
+```{python, file = "./files/tm/tm_1_processing_dispatch_data_to_TSV.py"}
 ```
 
 ```{r comment=""}
