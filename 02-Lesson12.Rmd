@@ -7,7 +7,6 @@
 ## Software
 
 * python
-* jupyter notebook
 * other python libraries
   - `wheel` (this package is helpful for the installation of `gensim` and `pyLDAvis`)
   - `nltk`
@@ -19,10 +18,11 @@
   - `pandas`
   - `plotly`
   - `pprint`
-
-## Workbooks (jupyter notebooks)
+* *alternatively*: jupyter notebook (see the last part of the Lesson)
 
 <!--
+## Workbooks (jupyter notebooks)
+
 - [for Windows](https://www.dropbox.com/s/b1jg5r3bmgforu5/TnT_L12_materials_final_Win.zip?dl=0)
 - [for Mac and Linux](https://www.dropbox.com/s/zey9qtuht1tnsku/TnT_L12_materials_final.zip?dl=0)
 -->
@@ -57,61 +57,52 @@ Lemmatization library (although we are not going to be using it in the tutorial)
 python -m spacy download en
 ```
 
-## jupyter notebook
-
-From command line (in your working folder)
-
-``` bash
-# installing
-pip install jupyter
-
-# starting
-jupyter notebook
-```
-
-## installing from a jupyter notebook
-
-The required libraries can also be installed directly from your Jupyter notebook as shown below---note `!` in front of `pip`. (*Note*: You might need to use `pip3` instead of `pip`, depending on your overall `python` setup)
-
-```python
-# installing
-!pip install nltk
-!pip install gensim
-!pip install spacy
-!pip install pyLDAvis
-```
-
-Your default browser should open something like this:
-
-![](./files/jupyter01.png)
-
-Click on an `*.ipynb` file to open a notebook.
-
-## Files & Scripts
-
-* [Dispatch CSV](./files/tm/0_processing_dispatch_data_to_TSV.py) files (you should be able to generate them on your own)
-* [TM - Jupyter Notebook](./files/tm/0_tModeling_Dispatch_clean.ipynb)
-  * For Windows: you will need to deactivate `%time` in those blocks of code that have it (either delete it, or comment it out with `#`).
-
 ## Thinking about themes and topics
+
+### First set of Examples
 
 Let's take a look at the following three examples and think about what themes and topics they cover. More importantly, let's think about *how* we "assign" those themes and topics. What is out thinking process? What textual elements do we keep in mind when we argue that such and such text is about such and such topics?
 
-**Example 1**: *Thursday, March 27, 1862* --- LIGHT ARTILLERY
+**Example 1**: *March 27, 1862* --- Light Artillery
 
-I am authorized by the Governor of Virginia to raise a Company of Light Artillery for the war. All those desirous of enlisting in this the most effective arm of the service, would do well to call at once at the office of Johnson & Guigon, Whig Building.
+I am authorized by the Governor of Virginia to raise a Company of Light Artillery for the war. All those desirous of enlisting in this the most effective arm of the service, would do well to call at once at the office of Johnson & Guigon, Whig Building. Uniforms and subsistence furnished. A.B.GUIGON. mh 25—6t
 
-Uniforms and subsistence furnished.
-
-A. B. GUIGON. mh 25—6t
-
-**Example 2**: *Wednesday, August 17, 1864* --- Royal Marriages.
+**Example 2**: *August 17, 1864* --- Royal Marriages.
 
 There is a story circulated in Germany, and some in Paris, that the match between the heir-apparent of the Imperial throne of Russia and the Princess Dagmar of Denmark having been definitively broken off, another is in the course of negotiation between His Imperial Highness and the Princess Helens of England.
 
-**Example 3**: *Monday, June 22, 1863* --- NEWS FROM EUROPE.
+**Example 3**: *June 22, 1863* --- News from Europe.
 
 The steamship Scotia arrived at New York on Thursday from Europe, with foreign news to the 7th inst. The news is not important. The Confederate steamer Lord Clyde was searched by order of the British Government, but nothing contraband being found on board her she was permitted to sail. The Russians have been defeated near Grochoury by the Polish insurgents. The three Powers have sent an earnest note to Russia, asking for a representative Government, a general amnesty, and an immediate cessation of hostilities in Poland.
+
+### Second Set of Examples
+
+**Example 1**: *March 27, 1862* --- Light Artillery
+
+I am authorized by the Governor of Virginia to raise a Company of Light Artillery for the war. All those desirous of enlisting in this the most effective arm of the service, would do well to call at once at the office of Johnson & Guigon, Whig Building. Uniforms and subsistence furnished. A.B.Guigon. mh 25—6t
+
+
+**Example 2**: *July 17, 1861* --- Another improvement in fire-arms
+
+Mr. T.W.Cofer, of Portsmouth, Va., has just completed an improvement in revolving fire-arms by which the process of loading is so much facilitated that the ordinary Colt or other Revolver, with this improvement attached, may be loaded and discharged with fourfold rapidity. Mr.Cofer left that place for Richmond yesterday for the purpose of securing a patent for his invention.
+
+
+**Example 3**: *January 21, 186!* --- [Advertisement]
+
+Just received and for sale low, a complete assortment of Colt's, Sharpe's, Smith *&* Wesson's, and other Revolvers. A call is solicited from those in want of anything in the Gun way. T.W.Tignor, Gun Maker, Main st., below the Market.
+
+
+**Example 4**: *December 17, 1861* --- Unlawful shooting
+
+On Saturday night, while Peter Padractti was pursuing the even tenor of his way on 11th and Cary streets, a man in a sky blue coat approached and discharged a pistol at him, and made use of most fearful expletives, which were quite enough to alarm a peaceful citizen. The strange individual, who was soon afterward arrested, gave his name as William Leftwich. When arraigned before the Mayor yesterday, he represented that he was a soldier on furlough, and was quite oblivious when he performed the deed which he now deeply deplored. The Mayor remanded him for indictment.
+
+**Example 5**: *January 18, 1861* --- South Carolina Legislature
+
+Charleston, S.C., January 17. The Senate report of the Military Committee, for raising four companies of artillery to meet the exigencies of the times, that demand South Carolina to be on a war footing, meets no opposers from any quarter, it being the general impression that she should have permanent military establishments for garrison purposes in the State fortifications. This establishment, the Committee recommend, to consist of a regiment of four companies, as it will form the nucleus around which volunteers and militia can rally, and will, besides, be a peace establishment, or furnish South Carolina 's quota in the army of the Southern Confederacy. The Senate went into secret session on the proposition to lay a submarine telegraph between Charleston, Morris' Island, Forts Moultrie, Johnson, Castle Pinckney, *&*c.
+
+**Example 6**: *May 29, 1861* --- For the defence of Virginia
+
+Twenty five men are wanted to enlist in the ranks of the Henrico Artillery under the command of Major Johnson H. Sands now encamped at Richmond College, one mile from this city, already mustered into service, and daily expecting orders to go into active duty. Rendezvous on Main street, between 7th and 8th. Hours between 10 A.M. and 3 P.M. H.Lansing Burrows, Recruiting Officer.
 
 <!--
 ## Topic Modeling
@@ -155,6 +146,48 @@ This approach is statistical in its nature and therefore requires a sizable coll
 In cases when one has to run the topic modeling algorithm on a very large collection of texts, TF-IDF can be used in order to reduce the size of the corpus. That is to say, the corpus is first reduced to the TF-IDF abstractions and then the topic modeling algorithm is applied to these abstractions rather than to the complete initial texts.
 
 TF-IDF abstractions can also be used to identify texts on similar topics across a large corpus of texts. In this approach one would calculate the distance between the vectors of TF-IDF abstractions. This approach mathematically checks whether to what extent two different documents share keywords and to what extent the numeric values of these keywords are similar: the more keywords they share and the more similar the keyword values are, the more similar the texts will be. ([More details...](https://maximromanov.github.io/univie2020/lesson-10.html).)
+
+## Implementation in Jupyter Notebook
+
+Jupyter notebooks is a very popular alternative to regular python scripts. You can try the same code with a jupyter notebook as well. There are some advantages and disadvantages to using them. JN can be quite useful when you are experimenting with some fast operations when you explore your dataset and want to try different things like graphs or data reshaping. If your code requires long time to run, JN maybe rather inconvenient to use. 
+
+### jupyter notebook
+
+From command line (in your working folder)
+
+``` bash
+# installing
+pip install jupyter
+
+# starting
+jupyter notebook
+```
+
+<!--
+## installing from a jupyter notebook
+
+The required libraries can also be installed directly from your Jupyter notebook as shown below---note `!` in front of `pip`. (*Note*: You might need to use `pip3` instead of `pip`, depending on your overall `python` setup)
+
+```python
+# installing
+!pip install nltk
+!pip install gensim
+!pip install spacy
+!pip install pyLDAvis
+```
+-->
+
+Your default browser should open something like this:
+
+![](./files/jupyter01.png)
+
+Click on an `*.ipynb` file to open a notebook.
+
+## Files & Scripts
+
+* [Script that converts the Dispatch to TSV](./files/tm/0_processing_dispatch_data_to_TSV.py) files necessary for the Jupyter Notebook; generate these TSV files first, then you can start the Notebook
+* [TM - Jupyter Notebook](./files/tm/0_tModeling_Dispatch_clean.ipynb)
+  * For Windows: you will need to deactivate `%time` in those blocks of code that have it (either delete it, or comment it out with `#`).
 
 ## Homework{#HWL12}
 
