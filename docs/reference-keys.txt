@@ -126,7 +126,6 @@ goals
 software-1
 installing-on-windows
 installing-on-mac-and-linux
-python-libraries-and-additional-data
 thinking-about-themes-and-topics
 first-set-of-examples
 second-set-of-examples
