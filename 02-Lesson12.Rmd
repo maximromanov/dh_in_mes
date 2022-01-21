@@ -123,9 +123,11 @@ This script will allow us to aggregate quite a significant amount if text into m
 ```{python, file = "./files/tm/tm_1_processing_dispatch_data_to_TSV.py"}
 ```
 
+<!--
 ```{r comment=""}
 cat(readLines('tm_1_processing_dispatch_data_to_TSV.py'), sep = '\n')
 ```
+-->
 
 
 **2. Necessary Libraries** ....
