@@ -2906,6 +2906,11 @@ This script will allow us to aggregate quite a significant amount if text into m
 ```{r, code = readLines("./files/tm/tm_1_processing_dispatch_data_to_TSV.py")}
 ```
 
+```{r engine='bash', comment=""}
+cat tm_1_processing_dispatch_data_to_TSV.py
+```
+
+
 **2. Necessary Libraries** ....
 
 ...
