@@ -137,6 +137,8 @@ files-scripts
 HWL12
 SolutionL12
 lesson-13-social-network-analysis
-section
+networks-and-sna
+software-gephi-and-python
+sna-basic-concepts
 HWL13
 SolutionL13
