@@ -130,13 +130,14 @@ Our script will create 6 files from our Dispatch data (one per each year; years 
 - `text`: text of the "article" in its original form (`\n` replaced with `;;;`)
 - `textDataLists`: these are the filtered word lists that will be used in TM
 
-You can get the script from here: [`topic_modeling_script01.py`](./files/tm/topic_modeling_script01.py). Make sure to change `source` and `target` folders accordingly; I would recommend to keep `target` as is, just make sure to create that folder.
+You can get the script from here: [`topic_modeling_script01.py`](./files/tm_scripts/topic_modeling_script01.py). Make sure to change `source` and `target` folders accordingly; I would recommend to keep `target` as is, just make sure to create that folder.
 
 Successful execution of this script will prepare you for the next step.
 
 **NB:** possible improvements of this step may include *lemmatization* and/or *stemming*; these steps will reduce the linguistic complexity of text in different ways and will allow to group texts in a different way (this is usually considered to be a better practice, but any reduction also leads to loss of some information, which mat be valuable.) The most optimal way would be to create additional columns with lemmatized and stemmed texts (with most frequent words also filtered out).
 
 ```{r engine='python', highlight=TRUE, eval=FALSE}
+
 # the script converts Dispatch data into TSV and prepares text for topic modeling
 
 import re, os, io
@@ -147,18 +148,22 @@ import pandas as pd
 source = "./Dispatch/"
 target = "./Dispatch_Processed_TSV/"  # needs to be created beforehand!
 
-# function that removes words supplied with word_list_filter variable/argument
+print("""
+    ######################################################
+    Preparing text data for topic modeling
+    ######################################################
+""")
+
 def remove_words(texts, word_list_filter):
     return [[word for word in simple_preprocess(str(doc)) if word not in word_list_filter] for doc in texts]
 
-# function that converts sentences into words
 def sent_to_words(sentences):
     for sentence in sentences:
         yield(gensim.utils.simple_preprocess(str(sentence), deacc=True))  # deacc=True removes punctuations
 
 def convertDispatchToCSV(source, target, YEAR):
     # PART I: AGGREGATING ALL into LARGE TSV
-    print("Collecting data for year: %s" % YEAR)
+    print("\tCollecting data for year: %s" % YEAR)
     issueVar = []
     lof = os.listdir(source)
     for f in lof:
@@ -205,7 +210,7 @@ def convertDispatchToCSV(source, target, YEAR):
                                 [itemID, date, unitType, header, text])
                             issueVar.append(var)
 
-    print("\tcollected: %d items" % len(issueVar))
+    print("\t\tcollected: %d items" % len(issueVar))
     issueNew = "\n".join(issueVar)
     header = "\t".join(["id", "date", "type", "header", "text"])
     final = header + "\n" + issueNew
@@ -262,12 +267,15 @@ def convertDispatchToCSV(source, target, YEAR):
                     "thursday", "full", "apply", "see", "though", "seven", "tuesday", "11", "done",
                     "whose", "let", "how", "making", "immediately", "forty", "early", "wednesday",
                     "either", "too", "amount", "fact", "heard", "receive", "short", "less", "100",
-                    "know", "might", "except", "supposed", "others", "doubt", "set", "works"]
+                    "know", "might", "except", "supposed", "others", "doubt", "set", "works",
+                    # MANUALLY ADDED AFTER TOPIC RESULTS REVIEW
+                    "ts", "amp", "co", "st", "nov", "dec", "december", "november", "october", "richmond"]
 
     # TEXT CLEANING
     dispatch["textDataLists"] = remove_words(dispatch["textDataLists"], stop_words_custom)
     dispatch = dispatch[["id", "month", "date", "type", "header", "text", "textDataLists"]]
     dispatch.to_csv(target + "Dispatch_%s_tmReady.tsv" % str(YEAR), sep="\t", index=False)
+    print("\t\tsaved to: Dispatch_%s_tmReady.tsv" % str(YEAR))
 
 
 convertDispatchToCSV(source, target, 1860)
@@ -276,6 +284,7 @@ convertDispatchToCSV(source, target, 1862)
 convertDispatchToCSV(source, target, 1863)
 convertDispatchToCSV(source, target, 1864)
 convertDispatchToCSV(source, target, 1865)
+
 ```
 
 **2. Running Topic Modeling (with `gensim`)**
