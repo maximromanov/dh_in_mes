@@ -1067,7 +1067,29 @@ The formal definition of *topic modeling* is "..." (Source: ...)
 <p><img src="files/tm_results/TopicChronoGraph__years_1860_1864_40topics_T07_sum.png" /></p>
 <p><img src="files/tm_results/TopicChronoGraph__years_1860_1864_40topics_T07_mean.png" /></p>
 <p><img src="files/tm_results/TopicChronoGraph__years_1860_1864_40topics_T07_relative.png" /></p>
+<p>And here is an example (a small part) from a file that includes “articles” that are most representative of the Topic 07 (<a href="./files/tm_results/TopicSamples__years_1860_1864_40topics_T07.yml">the complete YML file is here</a>)</p>
+<pre><code>- T07: 0.9249956607818604
+  id: 1861-08-12_advert_0209
+  text: State Bonds for sale.;;; Virginia six per Cent Bonds.;;; Tenn. Six per Cent.
+    Bonds.;;; For sale by R. H. Maury &amp;amp; Co. au 2--2w
+- T07: 0.8206296563148499
+  id: 1862-01-04_article_0192
+  text: Stock sale.;;; -- Raleigh and Gaston Railroad stock sale at Raleigh recently
+    at 850 per share.
+- T07: 0.8078803420066833
+  id: 1861-01-18_article_0315
+  text: &quot;Sales of Stocks in Richmond, by John A. Lancaster &amp;amp; Son, no. 197 Main\
+    \ st, two doors above Farmers&#39; Bank, for the week ending January 17, 1861;;; Virginia\
+    \ 6 per cent, Registered Bonds sales $78 \xBD to $80. --;;; Richmond City Bonds,\
+    \ sales $87 \xBD;;; Petersburg City Bonds \u2014 no recent sales.;;; Lynchburg\
+    \ City Bonds \u2014 no recent sales.;;; Norfolk City Bonds \u2014 no&#39; recent sales.;;;\
+    \ Exchange Bank Stock, sales $100.;;; Farmers&#39; Bank Stock, sales 99.;;; Bank of\
+    \ Virginia Stock, offered at 68.;;; Bank of the Commonwealth Stock --no sales\
+    \ since dividend.;;; Richmond and Danville R. R. Bonds, guaranteed by State of\
+    \ Va. No recent sales.;;; Virginia Central R. R. Bonds, guaranteed by State of\</code></pre>
 <p>You can get the script from here: <a href="./files/tm_scripts/topic_modeling_script04.py"><code>topic_modeling_script04.py</code></a>. Make sure to change <code>dispatchSubfolder</code> if necessary.</p>
+<p><strong>Final Note</strong></p>
+<p>This set of scripts can be quite easily adapted for any other data set.</p>
 </div>
 <div id="tf-idf" class="section level2" number="12.5">
 <h2><span class="header-section-number">12.5</span> TF-IDF</h2>
@@ -1082,11 +1104,11 @@ The formal definition of *topic modeling* is "..." (Source: ...)
 <div id="jupyter-notebook-1" class="section level3" number="12.6.1">
 <h3><span class="header-section-number">12.6.1</span> jupyter notebook</h3>
 <p>From command line (in your working folder)</p>
-<div class="sourceCode" id="cb64"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb64-1"><a href="lesson-12-topic-modeling-tf-idf-automatic-text-analysis.html#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="co"># installing</span></span>
-<span id="cb64-2"><a href="lesson-12-topic-modeling-tf-idf-automatic-text-analysis.html#cb64-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install jupyter</span>
-<span id="cb64-3"><a href="lesson-12-topic-modeling-tf-idf-automatic-text-analysis.html#cb64-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb64-4"><a href="lesson-12-topic-modeling-tf-idf-automatic-text-analysis.html#cb64-4" aria-hidden="true" tabindex="-1"></a><span class="co"># starting</span></span>
-<span id="cb64-5"><a href="lesson-12-topic-modeling-tf-idf-automatic-text-analysis.html#cb64-5" aria-hidden="true" tabindex="-1"></a><span class="ex">jupyter</span> notebook</span></code></pre></div>
+<div class="sourceCode" id="cb65"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb65-1"><a href="lesson-12-topic-modeling-tf-idf-automatic-text-analysis.html#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="co"># installing</span></span>
+<span id="cb65-2"><a href="lesson-12-topic-modeling-tf-idf-automatic-text-analysis.html#cb65-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install jupyter</span>
+<span id="cb65-3"><a href="lesson-12-topic-modeling-tf-idf-automatic-text-analysis.html#cb65-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-4"><a href="lesson-12-topic-modeling-tf-idf-automatic-text-analysis.html#cb65-4" aria-hidden="true" tabindex="-1"></a><span class="co"># starting</span></span>
+<span id="cb65-5"><a href="lesson-12-topic-modeling-tf-idf-automatic-text-analysis.html#cb65-5" aria-hidden="true" tabindex="-1"></a><span class="ex">jupyter</span> notebook</span></code></pre></div>
 <!--
 ## installing from a jupyter notebook
 

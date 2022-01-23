@@ -758,11 +758,35 @@ To give you an idea of what the script produces, below are results for Topic 7 (
 
 ![](./files/tm_results/TopicChronoGraph__years_1860_1864_40topics_T07_relative.png) 
 
+And here is an example (a small part) from a file that includes “articles” that are most representative of the Topic 07 ([the complete YML file is here](./files/tm_results/TopicSamples__years_1860_1864_40topics_T07.yml))
 
-
-
+```
+- T07: 0.9249956607818604
+  id: 1861-08-12_advert_0209
+  text: State Bonds for sale.;;; Virginia six per Cent Bonds.;;; Tenn. Six per Cent.
+    Bonds.;;; For sale by R. H. Maury &amp; Co. au 2--2w
+- T07: 0.8206296563148499
+  id: 1862-01-04_article_0192
+  text: Stock sale.;;; -- Raleigh and Gaston Railroad stock sale at Raleigh recently
+    at 850 per share.
+- T07: 0.8078803420066833
+  id: 1861-01-18_article_0315
+  text: "Sales of Stocks in Richmond, by John A. Lancaster &amp; Son, no. 197 Main\
+    \ st, two doors above Farmers' Bank, for the week ending January 17, 1861;;; Virginia\
+    \ 6 per cent, Registered Bonds sales $78 \xBD to $80. --;;; Richmond City Bonds,\
+    \ sales $87 \xBD;;; Petersburg City Bonds \u2014 no recent sales.;;; Lynchburg\
+    \ City Bonds \u2014 no recent sales.;;; Norfolk City Bonds \u2014 no' recent sales.;;;\
+    \ Exchange Bank Stock, sales $100.;;; Farmers' Bank Stock, sales 99.;;; Bank of\
+    \ Virginia Stock, offered at 68.;;; Bank of the Commonwealth Stock --no sales\
+    \ since dividend.;;; Richmond and Danville R. R. Bonds, guaranteed by State of\
+    \ Va. No recent sales.;;; Virginia Central R. R. Bonds, guaranteed by State of\
+```
 
 You can get the script from here: [`topic_modeling_script04.py`](./files/tm_scripts/topic_modeling_script04.py). Make sure to change `dispatchSubfolder` if necessary.
+
+**Final Note**
+
+This set of scripts can be quite easily adapted for any other data set.
 
 ## TF-IDF
 
