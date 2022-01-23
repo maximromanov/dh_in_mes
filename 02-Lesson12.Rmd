@@ -752,9 +752,12 @@ if __name__ == "__main__":
 
 To give you an idea of what the script produces, below are results for Topic 7 (*treasury, bonds, cent, notes, january, exchange, interest, coupon, payment, registered*). (**NB:** PDFs are better for publications, as they are in vector graphic, while PNG files are usually better for online use.)
 
-!()[./files/tm_results/TopicChronoGraph__years_1860_1864_40topics_T07_sum.png]
-!()[./files/tm_results/TopicChronoGraph__years_1860_1864_40topics_T07_mean.png]
-!()[./files/tm_results/TopicChronoGraph__years_1860_1864_40topics_T07_relative.png]
+![](./files/tm_results/TopicChronoGraph__years_1860_1864_40topics_T07_sum.png)
+
+![](./files/tm_results/TopicChronoGraph__years_1860_1864_40topics_T07_mean.png)
+
+![](./files/tm_results/TopicChronoGraph__years_1860_1864_40topics_T07_relative.png) 
+
 
 
 
