@@ -134,6 +134,8 @@ You can get the script from here: [`topic_modeling_script01.py`](./files/tm/topi
 
 Successful execution of this script will prepare you for the next step.
 
+**NB:** possible improvements of this step may include *lemmatization* and/or *stemming*; these steps will reduce the linguistic complexity of text in different ways and will allow to group texts in a different way (this is usually considered to be a better practice, but any reduction also leads to loss of some information, which mat be valuable.) The most optimal way would be to create additional columns with lemmatized and stemmed texts (with most frequent words also filtered out).
+
 ```{r engine='python', highlight=TRUE, eval=FALSE}
 # the script converts Dispatch data into TSV and prepares text for topic modeling
 
@@ -145,9 +147,11 @@ import pandas as pd
 source = "./Dispatch/"
 target = "./Dispatch_Processed_TSV/"  # needs to be created beforehand!
 
+# function that removes words supplied with word_list_filter variable/argument
 def remove_words(texts, word_list_filter):
     return [[word for word in simple_preprocess(str(doc)) if word not in word_list_filter] for doc in texts]
 
+# function that converts sentences into words
 def sent_to_words(sentences):
     for sentence in sentences:
         yield(gensim.utils.simple_preprocess(str(sentence), deacc=True))  # deacc=True removes punctuations
@@ -274,24 +278,59 @@ convertDispatchToCSV(source, target, 1864)
 convertDispatchToCSV(source, target, 1865)
 ```
 
+**2. Running Topic Modeling (with `gensim`)**
 
-**2. Necessary Libraries** ....
+In the next script we will load all the preprocessed data and run topic modeling.
 
-...
+In the code below I have added one more parameter: `random_state` (used in `gensim.models.LdaModel` function). This parameter is crucial for reproducibility. The issue with generating statistical models is that they always get generated slightly differently. In order to avoid this, we can use `random_state` parameter with the same number (`random_state = 2023`); the number itself is not important; what is important is that you reuse the same number, which will guarantee the same results.
+
+You will see that there is a section `# VARIABLES` at the beginning of the script. This is a rather convenient way to keep all key variables that you might want to change in one place  for easier script adjustment (especially when they are scattered across a long script). Here we determine the `seed_value` for the `random_state` parameter, and the range of numbers of topics for which we want to run our test. The `fileSuffix` is a suffix that will be automatically added to generated files, allowing to keep results of different tests separate and clear.
+
+You can see that there are several `print()` statements in the script. These are very convenient to keep you informed on the progress.
+
+The output of the script (for each run with different parameters in `# VARIABLES`) will generate a set of files:
+
+1) the LDA model for the selected number of topics;
+2) topic "names" as a json file (names include most frequent terms);
+3) topic-word probabilities for each topic for SNA (see next lesson);
+4) topic probabilities --- the main output file --- which includes columns with topic probabilities for each "article"l in order to save space, only the column with IDs is included from the original table (we can merge these results with the complete original whenever we need later).
+
+You can get the script from here: [`topic_modeling_script02.py`](./files/tm/topic_modeling_script02.py). Make sure to change `dispatchSubfolder` if necessary. Keep in mind that running this script with a high number of topics (`maxTopic`) is likely to take quite a while.
+
+(One important note: because of some issues with code duplication in `gensim` (see, [here](https://github.com/RaRe-Technologies/gensim/issues/2291)) it is recommended to wrap the main code into `main()` function.
+)
+
 
 ```{r engine='python', highlight=TRUE, eval=FALSE}
 
+# to be added later
+
 ```
 
-**3. Loading Data** ...
+**3. Finding the Optimal Number of Topics (with `gensim`)**
 
-...
+The number of topics is a tricky issue, since we pre-determine this number and the algorithm then splits all data into that number of topics. In other words, if you tell the machine to find 10 topics, it will use 10 buckets to sort all the data into; if you give it 20, it will do that for 20. For this reason topic modeling often takes multiple attempts. Additionally, it is not uncommon to then pull out a specific topic from your data and re-run the algorithm on that subset of texts.
+
+Nonetheless, there is a mathematical way that may help to identify the optimal number of topics. The common practice is to generate several models and calculate coherence score (k) for them all---the number with the highest coherence score is considered optimal (ideally, above 0.55).
+
+The output of the script (for each run with different parameters in `# VARIABLES`) will generate two files: (1) a TSV file with two columns --- the number of topics and corresponding coherence scores; and (2) a graph that visualizes these results. You can reuse the TSV file to graph them differently without rerunning the entire script.
+
+You can get the script from here: [`topic_modeling_script03.py`](./files/tm/topic_modeling_script03.py). Make sure to change `dispatchSubfolder` if necessary. Keep in mind that running this script with a high number of topics (`maxTopic`) is likely to take quite a while.
 
 ```{r engine='python', highlight=TRUE, eval=FALSE}
 
+# to be added later
+
 ```
 
-**4. Preprocessing Data** ...
+
+
+**4. Analyzing Topic Modeling Data**
+
+The next script will run a series of analyses on the topic modeling data that we generated in the previous steps. These will include:
+
+- graphing the distribution of topics over time;
+- extract texts that are most representative of each topic;
 
 ...
 
