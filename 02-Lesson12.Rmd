@@ -758,7 +758,7 @@ To give you an idea of what the script produces, below are results for Topic 7 (
 
 ![](./files/tm_results/TopicChronoGraph__years_1860_1864_40topics_T07_relative.png) 
 
-And here is an example (a small part) from a file that includes “articles” that are most representative of the Topic 07 ([the complete YML file is here](./files/tm_results/TopicSamples__years_1860_1864_40topics_T07.yml))
+And here is an example (a small part) from a file that includes “articles” that are most representative of the Topic 07 ([the complete YML file is here](./files/tm_results/TopicSamples__years_1860_1864_40topics_T07.yml)):
 
 ```
 - T07: 0.9249956607818604
@@ -783,8 +783,6 @@ And here is an example (a small part) from a file that includes “articles” t
 ```
 
 You can get the script from here: [`topic_modeling_script04.py`](./files/tm_scripts/topic_modeling_script04.py). Make sure to change `dispatchSubfolder` if necessary.
-
-**Final Note**
 
 This set of scripts can be quite easily adapted for any other data set.
 
