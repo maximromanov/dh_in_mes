@@ -5,16 +5,11 @@
 - Any information can be aggregated into a network or represented as a network; we are constantly doing that when we conduct research and connect different bits of information around the subject of our studies (including people, places, events, and any other kind of physical objects). These connections can be represented as a network (hyperlinked information).
 - This kind of networks help us establish connections among bits of evidence and various objects, and through that find new insights into objects of our studies. This kind of networks even though it can be presented as a growing digital object: we discussed this kind of network when we were looking into the Obsidian software (<https://obsidian.md/>) and how one can link different notes together. These notes can be visualized in order to discover new links and connections. However, this kind of network cannot be studied with the methods of *social network analysis* (SNA).
 - SNA is a formalized method of analysis (rooted firmly in graph theory) of patterns of relationships in networks. The word social here is largely due to a significant popularity of this method in sociology and other social sciences, but it can be efficiently used to study patterns of relationships among any kind of objects (languages, texts, words, etc.).
-- Unlike in the case of the first kind of network where any kind of object can be linked to any other kind of object through whatever kind of relationship, SNA requires formalized networks---an abstract model of some more complex reality, where the same kind of objects (nodes) are connected to each other through the same kind of relationship (edge).
-  - For example, if we are studying some community of individuals who are connected to each other through different kinds of social ties, in order to apply SNA methods, we will will most likely need to create several different networks, each representing different type of relationships. For example, a network of family relationships is likely to be different from, say, professional relationships
-
-
-## Software: Gephi and Python
-
-- Software: Gephi, <https://gephi.org/>
-- Python implementation:
-  - [Network analysis with NetworkX](https://melaniewalsh.github.io/Intro-Cultural-Analytics/06-Network-Analysis/01-Network-Analysis.html) by Melanie Walsh
-  - [Make an Interactive Network Visualization with Bokeh](https://melaniewalsh.github.io/Intro-Cultural-Analytics/06-Network-Analysis/02-Making-Network-Viz-with-Bokeh.html) by Melanie Walsh
+- Unlike in the case of the first kind of network where any kind of object can be linked to any other kind of object through whatever kind of relationship, SNA requires formalized networks---an abstract model of some more complex reality, where the same kind of objects (*unimodal network*) are connected to each other through the same kind of relationship, which are represented with edges.
+  - For example, if we are studying some community of individuals who are connected to each other through different kinds of social ties, in order to apply SNA methods, we will will most likely need to create several different networks, each representing different type of relationships. For example, a network of family relationships is likely to be different from, say, professional relationships, or study circles. At the same time studying where and how these networks overlap will give us insights into how this community works. Modeling what constitutes "relationships" is largely in the hands of a researcher as different assumptions promise new insights.
+  - We can study inanimate objects in a similar manner. For example, relationships between books: where books will be nodes and edges between them will be determined by the amount of text one book "borrows" from another (see, <https://kitab-project.org/>); or by how similar their topics or authorial styles are, and so on.
+  - One of the "easiest" networks would be a route network and the SNA methods (or, here better, the graph theory) will be very helpful for improving our understanding of the space over which this network extends.
+  - Another example of a network will be individuals that appear in the Dispatch: we can create a network of people whose names appear in the same articles; the number of articles where they appear together will determine the weight of their connections. Such a network is very likely to reveal clusters of individuals whose lives were closely connected in real life. (Although the "real" type of connection here will be obscured by way we model the network).
 
 ## SNA: Basic Concepts
 
@@ -37,6 +32,34 @@
     - *Betweenness* – the extent to which a particular point lies ‘between’ other points in the graph; how many shortest paths (geodesics) is it on? A measure of brokerage or gate-keeping (How often a node lies on the shortest path between two other nodes)
     - *Eigenvector* – a weighted measure of centrality that takes into account the centrality of other nodes to which a node is connected. That is, being connected with other central nodes increases centrality. E.g., secretary of powerful person. Google’s page rank algorithm is based on a variation of this approach.
     - *Communities* - clusters of nodes that are more closely connected with each other than with other nodes in the network. There are many different algorithms that calculate communities.
+
+## Software: Gephi and Python
+
+- Software: Gephi, <https://gephi.org/>
+- Python implementation:
+  - SNA Package: [https://networkx.org/](https://networkx.org/)
+  - [Network analysis with NetworkX](https://melaniewalsh.github.io/Intro-Cultural-Analytics/06-Network-Analysis/01-Network-Analysis.html) by Melanie Walsh
+  - [Make an Interactive Network Visualization with Bokeh](https://melaniewalsh.github.io/Intro-Cultural-Analytics/06-Network-Analysis/02-Making-Network-Viz-with-Bokeh.html) by Melanie Walsh
+
+## Data
+
+- [Star Wars](./files/sna/sw_network_data_latest.zip):
+  - the networks here are rather simple: nodes are characters, edges are determined by whether characters share a scene; weight is based on how many scenes the characters share.
+- [Topic Models of the Dispatch](./files/tm_results/LDA_model__years_1860_1864_40topics_TIDY_for_SNA.tsv)
+  - the link is to the "RAW" TSV file with the following columns: topic, term, and term's probability. The network can be generated from this data: nodes are terms; edges are co-occurence of terms in the same topic; weights can be derived from probabilities of terms. 
+  - this is the [converted data](./files/tm_results/TM_network.tsv)
+  
+## Scripts
+
+- [networkfun_mod.py](./files/sna/networkfun_mod.py)
+- [networkfun_simple.py](./files/sna/networkfun_simple.py)
+- [networkfun_tm.py](./files/sna/networkfun_tm.py)
+
+## Graphs
+
+![](./files/sna/tm.svg)
+![](./files/sna/TopicNetwork.png)
+
 
 ## Homework{#HWL13}
 

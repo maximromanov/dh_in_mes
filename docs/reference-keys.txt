@@ -138,7 +138,10 @@ HWL12
 SolutionL12
 lesson-13-social-network-analysis
 networks-and-sna
-software-gephi-and-python
 sna-basic-concepts
+software-gephi-and-python
+data
+scripts
+graphs
 HWL13
 SolutionL13

@@ -24,7 +24,7 @@
 <meta name="author" content="Maxim G. Romanov" />
 
 
-<meta name="date" content="2022-01-23" />
+<meta name="date" content="2022-01-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -351,10 +351,13 @@ div.csl-indent {
 <li class="chapter" data-level="13" data-path="lesson-13-social-network-analysis.html"><a href="lesson-13-social-network-analysis.html"><i class="fa fa-check"></i><b>13</b> Lesson 13: Social Network Analysis</a>
 <ul>
 <li class="chapter" data-level="13.1" data-path="lesson-13-social-network-analysis.html"><a href="lesson-13-social-network-analysis.html#networks-and-sna"><i class="fa fa-check"></i><b>13.1</b> Networks and SNA</a></li>
-<li class="chapter" data-level="13.2" data-path="lesson-13-social-network-analysis.html"><a href="lesson-13-social-network-analysis.html#software-gephi-and-python"><i class="fa fa-check"></i><b>13.2</b> Software: Gephi and Python</a></li>
-<li class="chapter" data-level="13.3" data-path="lesson-13-social-network-analysis.html"><a href="lesson-13-social-network-analysis.html#sna-basic-concepts"><i class="fa fa-check"></i><b>13.3</b> SNA: Basic Concepts</a></li>
-<li class="chapter" data-level="13.4" data-path="lesson-13-social-network-analysis.html"><a href="lesson-13-social-network-analysis.html#HWL13"><i class="fa fa-check"></i><b>13.4</b> Homework</a></li>
-<li class="chapter" data-level="13.5" data-path="lesson-13-social-network-analysis.html"><a href="lesson-13-social-network-analysis.html#SolutionL13"><i class="fa fa-check"></i><b>13.5</b> Solution</a></li>
+<li class="chapter" data-level="13.2" data-path="lesson-13-social-network-analysis.html"><a href="lesson-13-social-network-analysis.html#sna-basic-concepts"><i class="fa fa-check"></i><b>13.2</b> SNA: Basic Concepts</a></li>
+<li class="chapter" data-level="13.3" data-path="lesson-13-social-network-analysis.html"><a href="lesson-13-social-network-analysis.html#software-gephi-and-python"><i class="fa fa-check"></i><b>13.3</b> Software: Gephi and Python</a></li>
+<li class="chapter" data-level="13.4" data-path="lesson-13-social-network-analysis.html"><a href="lesson-13-social-network-analysis.html#data"><i class="fa fa-check"></i><b>13.4</b> Data</a></li>
+<li class="chapter" data-level="13.5" data-path="lesson-13-social-network-analysis.html"><a href="lesson-13-social-network-analysis.html#scripts"><i class="fa fa-check"></i><b>13.5</b> Scripts</a></li>
+<li class="chapter" data-level="13.6" data-path="lesson-13-social-network-analysis.html"><a href="lesson-13-social-network-analysis.html#graphs"><i class="fa fa-check"></i><b>13.6</b> Graphs</a></li>
+<li class="chapter" data-level="13.7" data-path="lesson-13-social-network-analysis.html"><a href="lesson-13-social-network-analysis.html#HWL13"><i class="fa fa-check"></i><b>13.7</b> Homework</a></li>
+<li class="chapter" data-level="13.8" data-path="lesson-13-social-network-analysis.html"><a href="lesson-13-social-network-analysis.html#SolutionL13"><i class="fa fa-check"></i><b>13.8</b> Solution</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="appendix.html"><a href="appendix.html"><i class="fa fa-check"></i>Appendix</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
@@ -386,25 +389,17 @@ div.csl-indent {
 <li>Any information can be aggregated into a network or represented as a network; we are constantly doing that when we conduct research and connect different bits of information around the subject of our studies (including people, places, events, and any other kind of physical objects). These connections can be represented as a network (hyperlinked information).</li>
 <li>This kind of networks help us establish connections among bits of evidence and various objects, and through that find new insights into objects of our studies. This kind of networks even though it can be presented as a growing digital object: we discussed this kind of network when we were looking into the Obsidian software (<a href="https://obsidian.md/" class="uri">https://obsidian.md/</a>) and how one can link different notes together. These notes can be visualized in order to discover new links and connections. However, this kind of network cannot be studied with the methods of <em>social network analysis</em> (SNA).</li>
 <li>SNA is a formalized method of analysis (rooted firmly in graph theory) of patterns of relationships in networks. The word social here is largely due to a significant popularity of this method in sociology and other social sciences, but it can be efficiently used to study patterns of relationships among any kind of objects (languages, texts, words, etc.).</li>
-<li>Unlike in the case of the first kind of network where any kind of object can be linked to any other kind of object through whatever kind of relationship, SNA requires formalized networks—an abstract model of some more complex reality, where the same kind of objects (nodes) are connected to each other through the same kind of relationship (edge).
+<li>Unlike in the case of the first kind of network where any kind of object can be linked to any other kind of object through whatever kind of relationship, SNA requires formalized networks—an abstract model of some more complex reality, where the same kind of objects (<em>unimodal network</em>) are connected to each other through the same kind of relationship, which are represented with edges.
 <ul>
-<li>For example, if we are studying some community of individuals who are connected to each other through different kinds of social ties, in order to apply SNA methods, we will will most likely need to create several different networks, each representing different type of relationships. For example, a network of family relationships is likely to be different from, say, professional relationships</li>
+<li>For example, if we are studying some community of individuals who are connected to each other through different kinds of social ties, in order to apply SNA methods, we will will most likely need to create several different networks, each representing different type of relationships. For example, a network of family relationships is likely to be different from, say, professional relationships, or study circles. At the same time studying where and how these networks overlap will give us insights into how this community works. Modeling what constitutes “relationships” is largely in the hands of a researcher as different assumptions promise new insights.</li>
+<li>We can study inanimate objects in a similar manner. For example, relationships between books: where books will be nodes and edges between them will be determined by the amount of text one book “borrows” from another (see, <a href="https://kitab-project.org/" class="uri">https://kitab-project.org/</a>); or by how similar their topics or authorial styles are, and so on.</li>
+<li>One of the “easiest” networks would be a route network and the SNA methods (or, here better, the graph theory) will be very helpful for improving our understanding of the space over which this network extends.</li>
+<li>Another example of a network will be individuals that appear in the Dispatch: we can create a network of people whose names appear in the same articles; the number of articles where they appear together will determine the weight of their connections. Such a network is very likely to reveal clusters of individuals whose lives were closely connected in real life. (Although the “real” type of connection here will be obscured by way we model the network).</li>
 </ul></li>
 </ul>
 </div>
-<div id="software-gephi-and-python" class="section level2" number="13.2">
-<h2><span class="header-section-number">13.2</span> Software: Gephi and Python</h2>
-<ul>
-<li>Software: Gephi, <a href="https://gephi.org/" class="uri">https://gephi.org/</a></li>
-<li>Python implementation:
-<ul>
-<li><a href="https://melaniewalsh.github.io/Intro-Cultural-Analytics/06-Network-Analysis/01-Network-Analysis.html">Network analysis with NetworkX</a> by Melanie Walsh</li>
-<li><a href="https://melaniewalsh.github.io/Intro-Cultural-Analytics/06-Network-Analysis/02-Making-Network-Viz-with-Bokeh.html">Make an Interactive Network Visualization with Bokeh</a> by Melanie Walsh</li>
-</ul></li>
-</ul>
-</div>
-<div id="sna-basic-concepts" class="section level2" number="13.3">
-<h2><span class="header-section-number">13.3</span> SNA: Basic Concepts</h2>
+<div id="sna-basic-concepts" class="section level2" number="13.2">
+<h2><span class="header-section-number">13.2</span> SNA: Basic Concepts</h2>
 <ul>
 <li>Networks / Graphs
 <ul>
@@ -435,8 +430,47 @@ div.csl-indent {
 </ul></li>
 </ul>
 </div>
-<div id="HWL13" class="section level2" number="13.4">
-<h2><span class="header-section-number">13.4</span> Homework</h2>
+<div id="software-gephi-and-python" class="section level2" number="13.3">
+<h2><span class="header-section-number">13.3</span> Software: Gephi and Python</h2>
+<ul>
+<li>Software: Gephi, <a href="https://gephi.org/" class="uri">https://gephi.org/</a></li>
+<li>Python implementation:
+<ul>
+<li>SNA Package: <a href="https://networkx.org/">https://networkx.org/</a></li>
+<li><a href="https://melaniewalsh.github.io/Intro-Cultural-Analytics/06-Network-Analysis/01-Network-Analysis.html">Network analysis with NetworkX</a> by Melanie Walsh</li>
+<li><a href="https://melaniewalsh.github.io/Intro-Cultural-Analytics/06-Network-Analysis/02-Making-Network-Viz-with-Bokeh.html">Make an Interactive Network Visualization with Bokeh</a> by Melanie Walsh</li>
+</ul></li>
+</ul>
+</div>
+<div id="data" class="section level2" number="13.4">
+<h2><span class="header-section-number">13.4</span> Data</h2>
+<ul>
+<li><a href="./files/sna/sw_network_data_latest.zip">Star Wars</a>:
+<ul>
+<li>the networks here are rather simple: nodes are characters, edges are determined by whether characters share a scene; weight is based on how many scenes the characters share.</li>
+</ul></li>
+<li><a href="./files/tm_results/LDA_model__years_1860_1864_40topics_TIDY_for_SNA.tsv">Topic Models of the Dispatch</a>
+<ul>
+<li>the link is to the “RAW” TSV file with the following columns: topic, term, and term’s probability. The network can be generated from this data: nodes are terms; edges are co-occurence of terms in the same topic; weights can be derived from probabilities of terms.</li>
+<li>this is the <a href="./files/tm_results/TM_network.tsv">converted data</a></li>
+</ul></li>
+</ul>
+</div>
+<div id="scripts" class="section level2" number="13.5">
+<h2><span class="header-section-number">13.5</span> Scripts</h2>
+<ul>
+<li><a href="./files/sna/networkfun_mod.py">networkfun_mod.py</a></li>
+<li><a href="./files/sna/networkfun_simple.py">networkfun_simple.py</a></li>
+<li><a href="./files/sna/networkfun_tm.py">networkfun_tm.py</a></li>
+</ul>
+</div>
+<div id="graphs" class="section level2" number="13.6">
+<h2><span class="header-section-number">13.6</span> Graphs</h2>
+<p><img src="files/sna/tm.svg" />
+<img src="files/sna/TopicNetwork.png" /></p>
+</div>
+<div id="HWL13" class="section level2" number="13.7">
+<h2><span class="header-section-number">13.7</span> Homework</h2>
 <ul>
 <li>Finish the assigned task;</li>
 <li>Annotate your script (i.e., add comment to every line of code describing what is happenning there);</li>
@@ -453,8 +487,8 @@ div.csl-indent {
 </ul></li>
 </ul>
 </div>
-<div id="SolutionL13" class="section level2" number="13.5">
-<h2><span class="header-section-number">13.5</span> Solution</h2>
+<div id="SolutionL13" class="section level2" number="13.8">
+<h2><span class="header-section-number">13.8</span> Solution</h2>
 <p>Below is the solution to the homework…</p>
 
 </div>
