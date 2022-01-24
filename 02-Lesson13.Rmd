@@ -31,7 +31,7 @@
     - *Closeness* – the sum of shortest paths to all other points in the graph. Divide by (n-1), then invert. For example: it may measure how quickly information can travel.
     - *Betweenness* – the extent to which a particular point lies ‘between’ other points in the graph; how many shortest paths (geodesics) is it on? A measure of brokerage or gate-keeping (How often a node lies on the shortest path between two other nodes)
     - *Eigenvector* – a weighted measure of centrality that takes into account the centrality of other nodes to which a node is connected. That is, being connected with other central nodes increases centrality. E.g., secretary of powerful person. Google’s page rank algorithm is based on a variation of this approach.
-    - *Communities* - clusters of nodes that are more closely connected with each other than with other nodes in the network. There are many different algorithms that calculate communities.
+- *Communities* - clusters of nodes that are more closely connected with each other than with other nodes in the network. There are many different algorithms that calculate communities.
 
 ## Software: Gephi and Python
 
